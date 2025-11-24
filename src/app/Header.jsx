@@ -7,9 +7,9 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 export default function Header() {
     return (
-        <header className="w-[95%] flex mx-auto bg-white font-[Roboto] rounded-2xl p-2">
+        <header className="w-[95%] flex mx-auto bg-gray-200 font-[Roboto] rounded-2xl p-2">
             <div className="flex ">
-                <img src="/logo.webp" alt="TechIn Logo" className="h-auto w-full" />
+                <img src="/logo.webp" alt="TechIn Logo" className="h-[150px] w-[250px]" />
             </div>
             <div className="flex flex-col w-full">
                 <div className="w-full flex justify-between items-center px-5 py-3 text-gray-700 text-[14px]">
@@ -53,12 +53,12 @@ export default function Header() {
                             <FaSearch size={18} />
                         </div>
 
-                        <div className="bg-white text-[#312CF0] w-12 h-12 rounded-full flex justify-center items-center cursor-pointer">
+                        {/* <div className="bg-white text-[#312CF0] w-12 h-12 rounded-full flex justify-center items-center cursor-pointer">
                             <RxHamburgerMenu size={20} />
-                        </div>
+                        </div> */}
 
                         <button className="bg-[#00C6F8] text-white font-bold px-8 py-3 rounded-lg text-[18px] shadow-md hover:bg-[#05d1ff]">
-                            Get A Quote
+                            Product Profile
                         </button>
 
                     </div>
