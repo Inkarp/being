@@ -4,7 +4,7 @@ import HeaderNew from "./HeaderNew";
 export default function Home() {
   return (
     <div className="">
-      <div className="py-3 bg-gray-500">
+      <div className="py-3">
      <Header />
      {/* <HeaderNew /> */}
 
