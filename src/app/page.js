@@ -6,7 +6,9 @@ export default function Home() {
     <div className="">
       <div className="py-3 bg-gray-500">
      <Header />
-     <HeaderNew />
+     {/* <HeaderNew /> */}
+
+
      </div>
     </div>
   );
