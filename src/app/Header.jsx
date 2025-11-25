@@ -9,7 +9,7 @@ export default function Header() {
     return (
         <header className="w-[95%] flex mx-auto bg-gray-200 font-[Roboto] rounded-2xl p-2">
             <div className="flex ">
-                <img src="/logo.webp" alt="TechIn Logo" className="h-[150px] w-[250px]" />
+                <img src="/logo.webp" alt="TechIn Logo" className="h-[120px] w-[250px]" />
             </div>
             <div className="flex flex-col w-full">
                 <div className="w-full flex justify-between items-center px-5 py-3 text-gray-700 text-[14px]">
@@ -33,11 +33,10 @@ export default function Header() {
                         <FaWhatsapp className="cursor-pointer hover:opacity-80" size={20} />
                         <FaFacebookF className="cursor-pointer hover:opacity-80" size={20} />
                         <FaInstagram className="cursor-pointer hover:opacity-80" size={20} />
-                        {/* <FaPinterestP className="cursor-pointer hover:opacity-80" size={20} /> */}
                     </div>
                 </div>
 
-                <div className="w-full px-5 py-5 bg-[#312CF0] rounded-2xl flex justify-between items-center text-white">
+                <div className="w-full px-5 py-3 bg-[#2B7EC2] rounded-2xl flex justify-between items-center text-white">
                     <div className="flex items-center gap-14">
                         <nav className="flex items-center gap-10 font-semibold">
                             <a className="hover:text-gray-200 cursor-pointer">Home</a>
