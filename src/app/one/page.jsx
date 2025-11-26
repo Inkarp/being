@@ -5,7 +5,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaPinterestP } from "react-icons/f
 import { FaSearch } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-export default function Header() {
+export default function One() {
     return (
         <header className="w-[95%] flex mx-auto bg-gray-200 font-[Roboto] rounded-2xl p-2">
             <div className="flex ">
