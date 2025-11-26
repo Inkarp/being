@@ -9,7 +9,7 @@ export default function Header() {
         <>
         <header className="w-[95%] mx-auto py-3 font-[Roboto] flex gap-5">
             <div className="w-[30%] mx-auto flex items-center justify-between px-6 rounded-full bg-gray-200 border-r-5 border-[#2F4191] ">
-                <div className="flex justify-end w-full px-5">
+                <div className="flex justify-center items-center w-full px-5">
                     <Image
                         src="/logo.webp"
                         alt="TechIn Logo"
