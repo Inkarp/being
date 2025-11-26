@@ -4,9 +4,11 @@ import { FaClock } from "react-icons/fa6";
 import { FaFacebookF, FaTwitter, FaInstagram, FaPinterestP } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Hero from "../one/Hero";
 
 export default function HeaderOne() {
     return (
+        <>
         <header className="w-[95%] flex mx-auto bg-white font-[Roboto] rounded-2xl p-2">
             <div className="flex flex-col w-full">
                 <div className="w-full px-5 py-2 bg-[#2B7EC2] rounded-2xl flex justify-between items-center text-white">
@@ -39,7 +41,8 @@ export default function HeaderOne() {
                     </div>
                 </div>
             </div>
-
         </header>
+        <Hero />
+        </>
     );
 }
