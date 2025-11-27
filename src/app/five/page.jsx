@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Header from './Header';
 import Hero from './Hero';
 import AboutSection from '../one/about';
+import Recent from './Recent';
 
 export default function HeaderThree() {
     return (
@@ -13,6 +14,8 @@ export default function HeaderThree() {
        <Header />
        <Hero />
        <AboutSection />
+       <Recent />
+    
         </>
     );
 }
