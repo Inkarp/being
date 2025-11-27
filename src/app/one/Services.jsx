@@ -26,7 +26,7 @@ const stats = [
 
 export default function Services() {
     return (
-        <section className="bg-gradient-to-br from-blue-700 to-blue-900 py-20 text-white relative">
+        <section className=" py-20 text-white relative">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="mb-8 flex items-center space-x-3">
                     <span className="text-blue-300 font-bold text-lg">Facts</span>

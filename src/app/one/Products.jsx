@@ -29,15 +29,15 @@ const services = [
 
 const Products = () => {
     return (
-        <section className="bg-[#f4f4ff] w-[95%] mx-auto py-6">
+        <section className=" w-[95%] mt- mx-auto py-6">
             <div className="container mx-auto px-4 text-center">
-                <p className="text-indigo-600 font-semibold text-sm flex justify-center items-center gap-2 mb-2">
+                <p className="text-white font-semibold text-3xl flex justify-center items-center gap-2 mb-2">
                     {/* <span>🔷</span> Our Products <span>🔷</span> */}
                     Our Products
                 </p>
-                <h2 className="text-3xl md:text-4xl font-bold mb-10">
+                {/* <h2 className="text-3xl md:text-4xl font-bold mb-10">
                     Our Unique And Awesome Products
-                </h2>
+                </h2> */}
 
                 <div className="flex items-centet justify-center gap-5 px-20">
                     {services.map((service, idx) => (

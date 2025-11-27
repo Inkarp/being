@@ -4,9 +4,9 @@ import Image from 'next/image';
 import { FaHeadphones } from 'react-icons/fa';
 import { BsShieldCheck, BsPeople } from 'react-icons/bs';
 
-export default function AboutSection() {
+export default function AboutNew() {
   return (
-    <section className="py-20 px-4  text-black">
+    <section className="py-20 px-4 bg-white text-black">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
         {/* Left side: images */}
@@ -41,14 +41,14 @@ export default function AboutSection() {
 
         {/* Right side: content */}
         <div>
-          <p className="text-white font-semibold mb-2 flex items-center gap-2">
+          <p className="text-blue-700 font-semibold mb-2 flex items-center gap-2">
             <span className="text-xl">🪄</span> About Us
           </p>
           <h2 className="text-4xl font-bold leading-snug mb-4">
             Empowering Your Business <br />
-            With <span className="text-white">techin IT Solutions</span>
+            With <span className="text-blue-700">techin IT Solutions</span>
           </h2>
-          <p className="text-black mb-8 leading-relaxed">
+          <p className="text-gray-600 mb-8 leading-relaxed">
             At techin, we are dedicated to delivering innovative IT solutions and services that empower businesses to thrive in the digital age. With a team of experienced professionals, we provide customized technology strategies, robust support, and cutting-edge solutions tailored to your unique needs. Our mission is to help you achieve your goals by making technology work for you efficiently, securely, and reliably.
           </p>
 
@@ -58,7 +58,7 @@ export default function AboutSection() {
                 <BsShieldCheck />
               </div>
               <div>
-                <h4 className="text-lg text-white font-semibold">Providing Skillful Services</h4>
+                <h4 className="text-lg font-semibold">Providing Skillful Services</h4>
               </div>
             </div>
 
@@ -67,7 +67,7 @@ export default function AboutSection() {
                 <BsPeople />
               </div>
               <div>
-                <h4 className="text-lg text-white font-semibold">24/7 Support For Clients</h4>
+                <h4 className="text-lg font-semibold">24/7 Support For Clients</h4>
               </div>
             </div>
           </div>

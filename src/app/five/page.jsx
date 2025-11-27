@@ -5,17 +5,16 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import Image from 'next/image';
 import Header from './Header';
 import Hero from './Hero';
-import AboutSection from '../one/about';
 import Recent from './Recent';
+import AboutNew from './AboutNew';
 
 export default function HeaderThree() {
     return (
         <>
        <Header />
        <Hero />
-       <AboutSection />
+       <AboutNew />
        <Recent />
-    
         </>
     );
 }

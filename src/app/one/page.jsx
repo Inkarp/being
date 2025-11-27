@@ -11,8 +11,8 @@ import AboutSection from "./about";
 
 export default function One() {
     return (
-        <>
-            <header className="w-[95%] flex mx-auto bg-gray-200 font-[Roboto] rounded-2xl p-2">
+        <div className="bg-[#2B7EC2] p-5">
+            <header className="w-[95%] flex mx-auto  bg-gray-200 font-[Roboto] rounded-2xl p-2">
                 <div className="flex ">
                     <img src="/logo.webp" alt="TechIn Logo" className="h-[120px] w-[250px]" />
                 </div>
@@ -73,6 +73,6 @@ export default function One() {
             <Products />
             <Services />
             <AboutSection />
-        </>
+        </div>
     );
 }
