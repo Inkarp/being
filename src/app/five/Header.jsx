@@ -24,7 +24,7 @@ export default function Header() {
       } py-3 font-[Roboto] flex gap-5 rounded-full`}
     >
       {/* Logo Section */}
-      <div className="w-[15%] flex items-center justify-between px-6 rounded-full bg-gray-200 border-r-4 border-[#2F4191]">
+      <div className="w-[15%] flex items-center justify-between px-6 rounded-full bg-gray-200 border-x-4  border-[#2F4191]">
         <div className="flex justify-center items-center w-full px-5">
           <Image
             src="/logo.webp"
@@ -37,7 +37,7 @@ export default function Header() {
       </div>
 
       {/* Navigation + Search */}
-      <div className="w-[85%] flex justify-between bg-[#2B7EC2] rounded-full py-3 px-3 border-l-4 border-[#2F4191]">
+      <div className="w-[85%] flex justify-between bg-[#2B7EC2] rounded-full py-3 px-3 border-x-4 border-[#2F4191]">
         <nav className="flex items-center gap-8 text-white font-semibold text-[18px] px-5">
           <span className="cursor-pointer group-hover:text-cyan-300">Home</span>
           <span className="cursor-pointer group-hover:text-cyan-300">About Us</span>
