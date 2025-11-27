@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="w-[95%] mx-auto h-[600px] bg-[#2B7EC2] text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto lg:flex flex flex-row justify-center items-center gap-10">
+    <section className="w-[95%] mx-auto rounded-[50px] mt-22 h-[600px] bg-[#2B7EC2] text-white overflow-hidden">
+      <div className="max-w-7xl mx-auto lg:flex  flex flex-row justify-center items-center gap-10">
 
         {/* Left Content */}
         <div className="space-y-6 max-w-xl">
