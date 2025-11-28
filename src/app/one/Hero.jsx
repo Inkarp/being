@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { FaFlask, FaLeaf } from 'react-icons/fa';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';

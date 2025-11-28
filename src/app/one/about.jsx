@@ -1,93 +1,83 @@
-'use client';
+'use client'
 
+import { useEffect } from 'react';
 import Image from 'next/image';
-import { FaHeadphones } from 'react-icons/fa';
-import { BsShieldCheck, BsPeople } from 'react-icons/bs';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+// import '@/styles/odometer.css'; 
+
+
+
 
 export default function AboutSection() {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    // Register GSAP plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Dynamically load odometer.js only on client side
+    import('odometer').then(() => {
+      const counters = document.querySelectorAll('.odometer');
+
+      counters.forEach((counter) => {
+        const targetValue = counter.getAttribute('data-value');
+
+        ScrollTrigger.create({
+          trigger: counter,
+          start: 'top 80%',
+          onEnter: () => {
+            counter.innerHTML = targetValue; // Odometer will animate this
+          },
+          once: true,
+        });
+      });
+    });
+
+    // Section fade-in animation
+    gsap.fromTo(
+      '#about-content',
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '#about-content',
+          start: 'top 80%',
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className="py-20 px-4  text-black">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section className="relative py-20 bg-white text-black">
+      <div id="about-content" className="max-w-7xl mx-auto px-6">
+        <h2 className="text-4xl font-bold text-[#F67A45] mb-6 uppercase font-[Teko]">
+          GYM Fitness Meets <span className="text-black">Excellence!</span>
+        </h2>
+        <p className="text-gray-700 max-w-2xl mb-8">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+        </p>
 
-        {/* Left side: images */}
-        <div className="relative space-y-6">
-          <div className="rounded-2xl overflow-hidden">
-            <Image
-              src="/about-us.png"
-              alt="Professional"
-              width={600}
-              height={700}
-              className="w-full h-auto object-cover"
-            />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-10">
+          <div className="text-center">
+            <div className="odometer text-5xl font-bold text-[#F67A45]" data-value="10">0</div>
+            <div className="text-sm font-semibold text-gray-600 mt-2">Years of Service</div>
           </div>
-
-          {/* <div className="absolute top-6 left-2/3 bg-white shadow-lg rounded-xl py-4 px-6 text-center flex flex-col items-center justify-center w-28 h-40">
-            <div className="text-lg font-semibold text-gray-700 rotate-[-90deg] absolute -left-10 top-[35%] whitespace-nowrap">
-              Years of Experience
-            </div>
-            <div className="text-4xl font-bold text-blue-700 mt-12">30</div>
-          </div> */}
-
-          <div className="rounded-2xl overflow-hidden w-64 mt-4 ml-10">
-            <Image
-              src="/about-us.png"
-              alt="Developer at work"
-              width={400}
-              height={250}
-              className="w-full h-auto object-cover"
-            />
+          <div className="text-center">
+            <div className="odometer text-5xl font-bold text-[#F67A45]" data-value="29">0</div>
+            <div className="text-sm font-semibold text-gray-600 mt-2">Fitness Trainee</div>
           </div>
-        </div>
-
-        {/* Right side: content */}
-        <div>
-          <p className="text-white font-semibold mb-2 flex items-center gap-2">
-            <span className="text-xl">🪄</span> About Us
-          </p>
-          <h2 className="text-4xl font-bold leading-snug mb-4">
-            Empowering Your Business <br />
-            With <span className="text-white">techin IT Solutions</span>
-          </h2>
-          <p className="text-black mb-8 leading-relaxed">
-            At techin, we are dedicated to delivering innovative IT solutions and services that empower businesses to thrive in the digital age. With a team of experienced professionals, we provide customized technology strategies, robust support, and cutting-edge solutions tailored to your unique needs. Our mission is to help you achieve your goals by making technology work for you efficiently, securely, and reliably.
-          </p>
-
-          <div className="grid grid-cols-2 gap-6 mb-10">
-            <div className="flex items-start gap-3">
-              <div className="bg-cyan-200 text-cyan-800 p-3 rounded-full text-2xl">
-                <BsShieldCheck />
-              </div>
-              <div>
-                <h4 className="text-lg text-white font-semibold">Providing Skillful Services</h4>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <div className="bg-cyan-200 text-cyan-800 p-3 rounded-full text-2xl">
-                <BsPeople />
-              </div>
-              <div>
-                <h4 className="text-lg text-white font-semibold">24/7 Support For Clients</h4>
-              </div>
-            </div>
+          <div className="text-center">
+            <div className="odometer text-5xl font-bold text-[#F67A45]" data-value="3000">0</div>
+            <div className="text-sm font-semibold text-gray-600 mt-2">Hours Trained</div>
           </div>
-
-          <div className="flex flex-wrap gap-4 items-center">
-            <button className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-md">
-              More Information
-            </button>
-
-            <div className="flex items-center gap-3">
-              <div className="bg-blue-100 text-blue-700 p-3 rounded-full text-xl">
-                <FaHeadphones />
-              </div>
-              <div>
-                <p className="font-semibold text-sm">Call Us Any Time</p>
-                <p className="text-lg font-bold">(+009) 1888 000 2222</p>
-              </div>
-            </div>
+          <div className="text-center">
+            <div className="odometer text-5xl font-bold text-[#F67A45]" data-value="42">0</div>
+            <div className="text-sm font-semibold text-gray-600 mt-2">Happy Clients</div>
           </div>
-
         </div>
       </div>
     </section>

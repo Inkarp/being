@@ -11,10 +11,12 @@ import AboutNew from './AboutNew';
 export default function HeaderThree() {
     return (
         <>
-       <Header />
-       <Hero />
-       <AboutNew />
-       <Recent />
+            <Header />
+            <Hero />
+            <AboutNew />
+            <Recent />
+            <AboutNew />
+            <AboutNew />
         </>
     );
 }
