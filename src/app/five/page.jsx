@@ -7,6 +7,7 @@ import Header from './Header';
 import Hero from './Hero';
 import Recent from './Recent';
 import AboutNew from './AboutNew';
+import Footer from '../Footer';
 
 export default function HeaderThree() {
     return (
@@ -16,7 +17,7 @@ export default function HeaderThree() {
             <AboutNew />
             <Recent />
             <AboutNew />
-            <AboutNew />
+           <Footer />
         </>
     );
 }

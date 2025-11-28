@@ -24,7 +24,7 @@ export default function Header() {
       } py-3 font-[Roboto] flex gap-5 rounded-full`}
     >
       {/* Logo Section */}
-      <div className="w-[15%] flex items-center justify-between px-6 rounded-full bg-gray-200 border-x-4  border-[#2F4191]">
+      <div className="w-[15%] flex items-center justify-between px-6 rounded-full bg-gray-200 border-x-4 border-[#2F4191]">
         <div className="flex justify-center items-center w-full px-5">
           <Image
             src="/logo.webp"

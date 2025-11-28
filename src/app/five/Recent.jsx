@@ -6,37 +6,50 @@ import { useEffect, useRef, useState } from 'react';
 const causes = [
   {
     title: 'Ovens',
-    percentage: 63,
+    percentage:10,
     image: '/about-us.png',
     description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
   },
   {
     title: 'Incubators',
-    percentage: 42,
+    percentage: 12,
     image: '/about-us.png',
     description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
   },
   {
-    title: 'Shakers & Stirrers',
-    percentage: 70,
+    title: 'Shakers',
+    percentage: 9,
+    image: '/about-us.png',
+    description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+  },
+
+   {
+    title: 'Stirrers',
+    percentage: 7,
     image: '/about-us.png',
     description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
   },
   {
-    title: 'Water Baths, Circulators & Chillers',
-    percentage: 55,
+    title: 'Water Baths',
+    percentage: 20,
+    image: '/about-us.png',
+    description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+  },
+   {
+    title: 'Circulators & Chillers',
+    percentage: 15,
     image: '/about-us.png',
     description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
   },
   {
-    title: 'Rotavaps',
-    percentage: 50,
+    title: 'Rotary Evaporators',
+    percentage: 5,
     image: '/about-us.png',
     description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
   },
   {
     title: 'Pumps',
-    percentage: 61,
+    percentage: 6,
     image: '/about-us.png',
     description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
   },
@@ -101,9 +114,9 @@ export default function Recent() {
           Our <span className="text-yellow-600 font-medium">charity helps</span> those people who have no hope
         </p> */}
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 transition-all duration-500">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 transition-all duration-500 ">
           {causes.slice(0, visibleCards).map((cause, index) => (
-            <div key={index} className="bg-white shadow-sm rounded-md overflow-hidden">
+            <div key={index} className="bg-white shadow-sm rounded-tr-[100px] border-tr-4 border-[#2F4191] overflow-hidden ">
               <div className="relative">
                 <Image
                   src={cause.image}
