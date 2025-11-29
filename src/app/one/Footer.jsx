@@ -40,7 +40,7 @@ export default function Footer() {
                 {/* Column 3 - Explore */}
                 <div className='pt-10'>
                     <h3 className="text-xl font-bold mb-4 relative pb-1 inline-block border-b-2 border-cyan-400">
-                        Products
+                        Explore Products
                     </h3>
                     <ul className="text-md space-y-2 text-gray-300">
                         <li>Ovens</li>
@@ -59,18 +59,18 @@ export default function Footer() {
                     <h3 className="text-xl font-bold mb-4 relative pb-1 inline-block border-b-2 border-cyan-400 ">
                         Social Media
                     </h3>
-                    <div className='flex flex-col gap-5'>
-                    <div className="flex items-center mt-5 justify-center gap-4 " >
-                        <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
+                    <div className='flex flex-col gap-5  '>
+                    <div className="flex items-center mt-5 justify-center gap-4 mt-2 md:mt-0 transform absolute right-3 -rotate-90 origin-center" >
+                        <div className="bg-cyan-400 p-2 text-xl rounded-full text-white cursor-pointer rotate-90 origin-center">
                             <FaFacebookF />
                         </div>
-                        <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer">
+                        <div className="bg-cyan-400 p-2 text-xl rounded-full text-white cursor-pointer rotate-90 origin-center">
                             <FaInstagram />
                         </div>
-                        <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
+                        <div className="bg-cyan-400 p-2 text-xl rounded-full text-white cursor-pointer rotate-90 origin-center">
                             <FaYoutube />
                         </div>
-                        <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
+                        <div className="bg-cyan-400 p-2 text-xl rounded-full text-white cursor-pointer rotate-90 origin-center">
                             <FaLinkedin />
                         </div>
                     </div>
@@ -80,7 +80,7 @@ export default function Footer() {
                             placeholder="Your Email Address"
                             className="py-3 px-4 rounded-l-md bg-white text-black w-full outline-none"
                         />
-                        <button className="bg-[#2B7EC2] px-6 rounded-r-md flex items-center gap-2 font-bold">
+                        <button className="bg-cyan-400 px-6 rounded-r-md flex items-center gap-2 font-bold">
                             <FaPaperPlane /> Subscribe
                         </button>
                     </div>
@@ -103,7 +103,7 @@ export default function Footer() {
 
             {/* Contact Strip */}
             <div className="py-5 px-15">
-                <div className="max-w-7xl bg-white mx-auto py-3 px-5 flex flex-col lg:flex-row justify-between items-center gap-6 text-black font-bold text-sm md:text-base rounded-xl">
+                <div className="max-w-7xl bg-cyan-400 mx-auto py-3 px-5 flex flex-col lg:flex-row justify-between items-center gap-6 text-black font-bold text-sm md:text-base rounded-xl">
                     <div className="flex items-center gap-10">
                         {/* <FaMapMarkerAlt size={32} /> */}
                         <img src="/icon1.svg" className='' />
@@ -111,7 +111,7 @@ export default function Footer() {
                             <p className="text-sm font-semibold">Office Address</p>
                             <p className="text-xl font-bold">12th Street, New York, USA</p>
                         </div>
-                        <div className='h-20 bg-black w-px'></div>
+                        <div className='h-20 bg-white w-px'></div>
                     </div>
                     <div className="flex items-center gap-10">
                         {/* <FaEnvelope size={32} /> */}
@@ -120,7 +120,7 @@ export default function Footer() {
                             <p className="text-sm font-semibold">Email Address</p>
                             <p className="text-xl font-bold">info@techin.com</p>
                         </div>
-                        <div className='h-20 bg-black w-px'></div>
+                        <div className='h-20 bg-white w-px'></div>
                     </div>
                     <div className="flex items-center gap-10">
                         {/* <FaPhoneAlt size={32} /> */}

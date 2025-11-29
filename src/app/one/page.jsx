@@ -8,6 +8,7 @@ import Hero from "./Hero";
 import Products from "./Products";
 import Services from "./Services";
 import AboutSection from "./about";
+import Footer from "../Footer";
 
 export default function One() {
     return (
@@ -73,6 +74,7 @@ export default function One() {
             <Products />
             <Services />
             <AboutSection />
+            <Footer />
         </div>
     );
 }

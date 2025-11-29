@@ -1,8 +1,5 @@
 'use client';
 
-import { FaSearch } from 'react-icons/fa';
-import { RxHamburgerMenu } from 'react-icons/rx';
-import Image from 'next/image';
 import Header from './Header';
 import Hero from './Hero';
 import Recent from './Recent';
@@ -17,7 +14,7 @@ export default function HeaderThree() {
             <AboutNew />
             <Recent />
             <AboutNew />
-           <Footer />
+            <Footer />
         </>
     );
 }
