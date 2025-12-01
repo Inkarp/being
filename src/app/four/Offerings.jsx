@@ -55,7 +55,7 @@ const causes = [
   },
 ];
 
-export default function Recent() {
+export default function Offerings() {
   const sectionRef = useRef(null);
   const [visibleCards, setVisibleCards] = useState(3);
   const [scrollEnabled, setScrollEnabled] = useState(true);
@@ -103,18 +103,18 @@ export default function Recent() {
   return (
     <section
       ref={sectionRef}
-      className="py-5 relative z-10 bg-gray-100 "
+      className="py-5 relative z-10 bg-[#2B7EC2]"
       // style={{ height: 'auto', overflow: 'hidden' }}
     >
       <div className="w-[95%] mx-auto px-4 text-center h-[700px] overflow-y-auto no-scrollbar">
         <h2 className="text-3xl font-bold py-3">
-          Our <span className="text-[#2B7EC2] ">Products</span>
+          Our <span className="text-white">Products</span>
         </h2>
-        <p className="text-gray-600 ">
-          Our <span className="text-yellow-600 font-medium">charity helps</span> those people who have no hope
+        <p className="text-black">
+          Our <span className="text-white font-medium">charity helps</span> those people who have no hope
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 transition-all duration-500 bg-[#2B7EC2] p-10 rounded-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 transition-all duration-500 bg-gray-300  p-10 rounded-2xl">
           {causes.slice(0, visibleCards).map((cause, index) => (
             <div key={index} className="bg-white shadow-sm rounded-tr-[100px] border-tr-4 border-[#2F4191] overflow-hidden ">
               <div className="relative">
