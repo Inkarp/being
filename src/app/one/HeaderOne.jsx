@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 
-export default function NewHeader() {
+export default function HeaderOne() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -20,18 +20,18 @@ export default function NewHeader() {
     return (
 
         <div
-            className={`transition-all duration-300 ${isScrolled ? "fixed top-0 left-0 right-0 z-50 py-2" : ""
+            className={`transition-all duration-300 ${isScrolled ? "fixed top-0 left-0 right-0 z-50 py-2" : "py-5"
                 }`}
         >
-            <header className={` ${isScrolled ? "p-0 w-[80%] flex mx-auto font-[Roboto] overflow-hidden gap-5" : "w-[95%] flex mx-auto font-[Roboto] rounded-2xl overflow-hidden bg-gray-200 gap-5 p-3"}`}>
+            <header className={` ${isScrolled ? "p-0 w-[90%] flex mx-auto font-[Roboto] overflow-hidden gap-5" : "w-[95%] flex mx-auto font-[Roboto] rounded-2xl overflow-hidden bg-gray-200 gap-5 p-3"}`}>
                 {/* Logo block – stays left, just shrinks on scroll */}
                 <div className="flex items-stretch ">
-                    <div className="flex items-center bg-white shadow-xl border-r-15 border-[#2F4191] rounded-[30px] px-5 ">
+                    <div className="flex items-center bg-white shadow-xl border-r-5 border-[#2F4191] rounded-[30px] px-5 ">
                         <img
                             src="/logo.webp"
                             alt="TechIn Logo"
                             className={` object-contain transition-all duration-300
-                  ${isScrolled ? "rounded-xl h-[70px] w-[200px]" : "rounded-3xl h-[120px] w-[250px]"}`}
+                  ${isScrolled ? "rounded-xl h-[70px] w-[200px]" : "rounded-full h-[120px] w-[250px]"}`}
                         />
                     </div>
                 </div>
@@ -70,8 +70,8 @@ export default function NewHeader() {
                     <div
                         className={`w-full px-5 flex justify-between items-center text-white transition-all duration-300
               ${isScrolled
-                                ? "py-3 bg-[#2B7EC2] rounded-2xl"
-                                : "py-3 bg-[#2B7EC2] rounded-2xl"
+                                ? "py-3 bg-[#2B7EC2] rounded-full border-x-5 border-white "
+                                : "py-3 bg-[#2B7EC2] rounded-full border-x-5 border-[#2F4191]"
                             }`}
                     >
                         {/* Menu links */}

@@ -4,7 +4,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 const Hero = () => {
     return (
-        <section className="relative mt-25 w-[95%] mx-auto rounded-2xl my-3 min-h-screen overflow-hidden">
+        <section className="relative  w-[95%] mx-auto rounded-2xl my-3 min-h-screen overflow-hidden">
             <div className="absolute inset-0">
                 <img
                     src="/about-us.png"

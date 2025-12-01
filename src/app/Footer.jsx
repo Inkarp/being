@@ -18,13 +18,11 @@ export default function Footer() {
                         At Techin, we deliver innovative IT solutions to help businesses thrive, offering customized strategies,
                         robust support, and cutting-edge technology for efficiency, security, and reliability.
                     </p>
-
-                    
                 </div>
 
                 {/* Column 2 - Quick Links */}
                 <div className='pt-10'>
-                    <h3 className="text-xl font-bold mb-4 relative pb-1 inline-block border-b-2 border-cyan-400">
+                    <h3 className="text-xl font-bold mb-4 relative pb-1 inline-block border-b-2 border-[#2B7EC2]">
                         Quick Links
                     </h3>
                     <ul className="text-md space-y-2 text-gray-300">
@@ -39,7 +37,7 @@ export default function Footer() {
 
                 {/* Column 3 - Explore */}
                 <div className='pt-10'>
-                    <h3 className="text-xl font-bold mb-4 relative pb-1 inline-block border-b-2 border-cyan-400">
+                    <h3 className="text-xl font-bold mb-4 relative pb-1 inline-block border-b-2 border-[#2B7EC2]">
                         Products
                     </h3>
                     <ul className="text-md space-y-2 text-gray-300">
@@ -55,35 +53,37 @@ export default function Footer() {
                 </div>
 
                 {/* Column 4 - Instagram */}
-                <div className='py-10 space-y-5'>
-                    <h3 className="text-xl font-bold mb-4 relative pb-1 inline-block border-b-2 border-cyan-400 ">
+                <div className='py-10 space-y-5 flex items-start flex-col'>
+                  
+                    <h3 className="text-xl font-bold mb-4 relative pb-1 inline-block border-b-2 border-[#2B7EC2] ">
                         Social Media
                     </h3>
+                 
                     <div className='flex flex-col gap-5'>
-                    <div className="flex items-center mt-5 justify-center gap-4 " >
-                        <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
-                            <FaFacebookF />
+                        <div className="flex items-center justify-start gap-4" >
+                            <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
+                                <FaFacebookF />
+                            </div>
+                            <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer">
+                                <FaInstagram />
+                            </div>
+                            <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
+                                <FaYoutube />
+                            </div>
+                            <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
+                                <FaLinkedin />
+                            </div>
                         </div>
-                        <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer">
-                            <FaInstagram />
+                        <div className="flex">
+                            <input
+                                type="email"
+                                placeholder="Your Email Address"
+                                className="py-3 px-4 rounded-l-md bg-white text-black w-full outline-none"
+                            />
+                            <button className="bg-[#2B7EC2] px-6 rounded-r-md flex items-center gap-2 font-bold">
+                                <FaPaperPlane /> Subscribe
+                            </button>
                         </div>
-                        <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
-                            <FaYoutube />
-                        </div>
-                        <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
-                            <FaLinkedin />
-                        </div>
-                    </div>
-                    <div className="flex">
-                        <input
-                            type="email"
-                            placeholder="Your Email Address"
-                            className="py-3 px-4 rounded-l-md bg-white text-black w-full outline-none"
-                        />
-                        <button className="bg-[#2B7EC2] px-6 rounded-r-md flex items-center gap-2 font-bold">
-                            <FaPaperPlane /> Subscribe
-                        </button>
-                    </div>
                     </div>
                     {/* <div className="grid grid-cols-3 gap-2">
             {[...Array(6)].map((_, i) => (
@@ -135,15 +135,16 @@ export default function Footer() {
             </div>
 
             {/* Footer Bottom */}
-            {/* <div className="bg-white py-4">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-black">
-          <p>
-            Copyright © <span className=" font-semibold">Inkarp</span>. All rights reserved by{' '}
-           
-          </p>
-          
-        </div>
-      </div> */}
+            <div className="bg-gray-200 py-4">
+                <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-black">
+                    <p>Privacy Policy</p>
+                     <p>
+                        Copyright © <span className=" font-semibold">Inkarp</span>. All rights reserved by{' '}
+
+                    </p>
+                    <p>Terms and Conditions</p>
+                </div>
+            </div>
         </footer>
     );
 }

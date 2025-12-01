@@ -1,49 +1,87 @@
-import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { FaClock } from "react-icons/fa6";
-import { FaFacebookF, FaTwitter, FaInstagram, FaPinterestP } from "react-icons/fa";
+'use client'
+
+import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Hero from "../one/Hero";
+import Footer from "../Footer";
 
 export default function HeaderNew() {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 80);
+        };
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <>
-            <header className="w-[95%] flex mx-auto bg-white font-[Roboto] rounded-2xl p-2">
-                <div className="flex flex-col w-full">
-                    <div className="w-full px-5 py-2 bg-[#2B7EC2] rounded-2xl flex justify-between items-center text-white">
-                        <div className="flex bg-white rounded-3xl">
-                            <img src="/logo.webp" alt="TechIn Logo" className="h-[100px] w-full" />
-                        </div>
-                        <div className="flex items-center gap-14">
-                            <nav className="flex items-start gap-10 font-semibold">
-                                <a className="hover:text-gray-200 cursor-pointer">Home</a>
-                                <a className="hover:text-gray-200 cursor-pointer">About</a>
-                                <a className="hover:text-gray-200 cursor-pointer">Products</a>
-                                <a className="hover:text-gray-200 cursor-pointer">Contact Us</a>
-                                <a className="hover:text-gray-200 cursor-pointer">News and Events</a>
-                            </nav>
-                        </div>
+            <header
+                className={`w-[95%] mx-auto font-[Roboto] transition-all duration-300 z-50 
+                ${isScrolled ? "fixed top-0 left-0 right-0 bg-transparent py-2" : "relative bg-white py-3"}
+                `}
+            >
+                <div
+                    className={`w-full mx-auto flex items-center transition-all duration-300 
+                    ${isScrolled ? "justify-center" : "bg-gray-300 justify-between rounded-2xl"}
+                    `}
+                >
+                    {/* LOGO — now dynamically positioned */}
+                    <div
+                        className={`transition-all duration-300 
+                        ${isScrolled ? "bg-white shadow-lg absolute left-[600] top-3 px-6 py-2 rounded-2xl" : "bg-transparent"}
+                        `}
+                    >
+                        <img
+                            src="/logo.webp"
+                            alt="TechIn Logo"
+                            className={`object-contain transition-all duration-300
+                                ${isScrolled ? "h-[60px] w-[160px]" : "h-[100px] w-[220px]"}
+                            `}
+                        />
+                    </div>
+
+                    {/* MENU + ICONS + CTA — hidden on scroll */}
+                    <div
+                        className={`flex items-center gap-10 transition-all duration-300 
+                        ${isScrolled ? "opacity-0 pointer-events-none scale-90" : "opacity-100 scale-100 px-5"}
+                        `}
+                    >
+                        <nav className="flex items-center gap-10 font-semibold text-[#2B7EC2]">
+                            <a className="hover:text-gray-600 cursor-pointer">Home</a>
+                            <a className="hover:text-gray-600 cursor-pointer">About</a>
+                            <a className="hover:text-gray-600 cursor-pointer">Products</a>
+                            <a className="hover:text-gray-600 cursor-pointer">Contact Us</a>
+                            <a className="hover:text-gray-600 cursor-pointer">News & Events</a>
+                        </nav>
 
                         <div className="flex items-center gap-5">
-                            <div className="bg-white text-[#312CF0] w-12 h-12 rounded-full flex justify-center items-center cursor-pointer">
+                            <div className="bg-white text-[#312CF0] w-12 h-12 rounded-full flex justify-center items-center cursor-pointer shadow">
                                 <FaSearch size={18} />
                             </div>
 
-                            <div className="bg-white text-[#312CF0] w-12 h-12 rounded-full flex justify-center items-center cursor-pointer">
+                            <div className="bg-white text-[#312CF0] w-12 h-12 rounded-full flex justify-center items-center cursor-pointer shadow">
                                 <RxHamburgerMenu size={20} />
                             </div>
 
-                            <button className="bg-[#00C6F8] text-white font-bold px-8 py-3 rounded-lg text-[18px] shadow-md hover:bg-[#05d1ff]">
+                            <button className="bg-[#00C6F8] text-white font-bold px-8 py-3 rounded-lg text-[18px] shadow hover:bg-[#05d1ff]">
                                 Product Profile
                             </button>
-
                         </div>
                     </div>
                 </div>
-
             </header>
-            <Hero />
+
+            {/* Push content down when header is fixed */}
+            <div className={isScrolled ? "pt-[120px]" : ""}>
+                <Hero />
+                
+            </div>
+            <Footer />
         </>
     );
 }

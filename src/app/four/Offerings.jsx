@@ -60,28 +60,25 @@ export default function Offerings() {
   const [visibleCards, setVisibleCards] = useState(3);
   const [scrollEnabled, setScrollEnabled] = useState(true);
 
-  // Handle scroll inside section
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
 
     const handleWheel = (e) => {
       const atBottom = visibleCards >= causes.length;
-
-      // If scrolling down inside section, reveal more cards
+     
       if (e.deltaY > 0 && visibleCards < causes.length) {
-        e.preventDefault(); // Stop main scroll
+        e.preventDefault(); 
         setScrollEnabled(false);
         setVisibleCards((prev) => Math.min(prev + 1, causes.length));
       }
 
-      // Once all cards are visible, allow scroll again after a buffer
       if (atBottom) {
         setScrollEnabled(true);
       }
     };
 
-    // Lock scroll outside this section when not finished
+    
     const lockScroll = () => {
       if (!scrollEnabled) {
         document.body.style.overflow = 'hidden';
