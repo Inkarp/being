@@ -52,7 +52,7 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section className="relative py-20 bg-white text-black">
+    <section className="relative py-20  text-black">
       <div id="about-content" className="max-w-7xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-[#F67A45] mb-6 uppercase font-[Teko]">
           GYM Fitness Meets <span className="text-black">Excellence!</span>

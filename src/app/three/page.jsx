@@ -10,25 +10,29 @@ import Hero from "../one/Hero";
 import NewHeader from "./NewHeader";
 import Products from "../one/Products";
 import { useEffect, useState } from "react";
+import NewFooter from "./NewFooter";
+import Recent from "../five/Recent";
 
 export default function HeaderOne() {
 
     const [isScrolled, setIsScrolled] = useState(false);
-    
-        useEffect(() => {
-            const onScroll = () => {
-                setIsScrolled(window.scrollY > 80);
-            };
-            window.addEventListener("scroll", onScroll);
-            return () => window.removeEventListener("scroll", onScroll);
-        }, []);
+
+    useEffect(() => {
+        const onScroll = () => {
+            setIsScrolled(window.scrollY > 80);
+        };
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     return (
         <>
             <NewHeader />
             <div className={isScrolled ? "pt-[160px]" : "pt-0"}>
-            <Hero />
-            <Products />
+                <Hero />
+                <Products />
+                <Recent />
+                <NewFooter />
             </div>
         </>
     );

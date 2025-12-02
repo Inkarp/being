@@ -103,10 +103,10 @@ export default function Recent() {
   return (
     <section
       ref={sectionRef}
-      className="py-5 relative z-10 bg-gray-100 "
+      className="py-5 relative z-50 bg-gray-100 "
       // style={{ height: 'auto', overflow: 'hidden' }}
     >
-      <div className="w-[95%] mx-auto px-4 text-center h-[700px] overflow-y-auto no-scrollbar">
+      <div  ref={sectionRef} className="w-[95%] mx-auto px-4 text-center h-[700px] overflow-y-auto no-scrollbar">
         <h2 className="text-3xl font-bold py-3">
           Our <span className="text-[#2B7EC2] ">Products</span>
         </h2>

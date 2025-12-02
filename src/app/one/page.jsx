@@ -25,7 +25,8 @@ export default function Layout() {
   }, []);
 
   return (
-    <div className="bg-[#2B7EC2]">
+    // <div className="bg-gradient-to-r from-[#E0F2FE] via-[#E0F2FE] to-[#E0F2FE]">
+    <div className="bg-black/20">
      <HeaderOne />  
       <div className={isScrolled ? "pt-[160px]" : "pt-0"}>
         <Hero />

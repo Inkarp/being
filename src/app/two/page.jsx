@@ -5,6 +5,8 @@ import { FaSearch } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Hero from "../one/Hero";
 import Footer from "../Footer";
+import Recent from "../five/Recent";
+import FooterTwo from "./FooterTwo";
 
 export default function HeaderNew() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -79,9 +81,9 @@ export default function HeaderNew() {
             {/* Push content down when header is fixed */}
             <div className={isScrolled ? "pt-[120px]" : ""}>
                 <Hero />
-                
+                <Recent />
             </div>
-            <Footer />
+            <FooterTwo />
         </>
     );
 }
