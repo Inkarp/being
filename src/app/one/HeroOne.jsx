@@ -1,5 +1,6 @@
 
 import Image from 'next/image';
+import { FaArrowCircleRight } from 'react-icons/fa';
 
 export default function HeroOne() {
   return (
@@ -20,10 +21,25 @@ export default function HeroOne() {
             and advanced performance for every scientific environment.
           </p>
 
-          <button className="mt-4 bg-[#381dfa] hover:bg-[#4a36fc] text-white font-bold px-6 py-3 rounded shadow">
+          {/* <button className="mt-4 bg-[#381dfa] hover:bg-[#4a36fc] text-white font-bold px-6 py-3 rounded shadow">
             Explore Instruments
-          </button>
+          </button> */}
+          <div className="group relative p-2 bg-[#2B7EC2] rounded-full w-fit flex items-center justify-center">
+            <img
+              src="/Circle-Button.svg"
+              className="w-20 h-20 transition-transform duration-500 group-hover:animate-spin"
+              alt="Spinning Image"
+            />
+            <FaArrowCircleRight
+              size={32}
+              className="absolute text-white transition-transform duration-500 group-hover:animate-bounce"
+            />
+          </div>
+
         </div>
+
+
+
 
         {/* Right Image */}
         <div className=''>

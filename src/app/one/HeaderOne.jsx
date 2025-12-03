@@ -23,18 +23,26 @@ export default function HeaderOne() {
             className={`transition-all duration-300 ${isScrolled ? "fixed top-0 left-0 right-0 z-50 py-2" : ""
                 }`}
         >
-            <header className={` ${isScrolled ? "p-0 w-[90%] flex mx-auto font-[Roboto] overflow-hidden gap-5" : "w-[95%] flex mx-auto font-[Roboto] rounded-2xl overflow-hidden bg-white gap-5 p-3"}`}>
+            <header className={` ${isScrolled ? "p-0 w-[90%] flex mx-auto font-[Roboto] overflow-hidden gap-5" : "w-[95%] flex mx-auto font-[Roboto] rounded-2xl overflow-hidden gap-5 p-3"}`}>
                 {/* Logo block – stays left, just shrinks on scroll */}
-                <div className="flex items-stretch ">
-                    <div className="flex items-center bg-white shadow-xl border-r-5 border-[#2F4191] rounded-[30px] px-5 ">
+                <div className="flex items-stretch">
+                    <div
+                        className={`${isScrolled
+                            ? "flex items-center border-r-[5px] bg-white/50 border-[#2F4191] rounded-[30px] px-5 "
+                            : ""
+                            }`}
+                    >
                         <img
                             src="/logo.webp"
                             alt="TechIn Logo"
-                            className={` object-contain transition-all duration-300
-                  ${isScrolled ? "rounded-xl h-[70px] w-[200px]" : "rounded-full h-[120px] w-[250px]"}`}
+                            className={`object-contain transition-all duration-300 ${isScrolled
+                                ? "rounded-xl h-[70px] w-[200px]"
+                                : "rounded-full h-[120px] w-[250px]"
+                                }`}
                         />
                     </div>
                 </div>
+
 
                 {/* Right side content */}
                 <div className="flex flex-col w-full">
@@ -70,18 +78,24 @@ export default function HeaderOne() {
                     <div
                         className={`w-full px-5 flex justify-between items-center text-white transition-all duration-300
               ${isScrolled
-                                ? "py-3 bg-black/60 rounded-full border-x-5 border-white "
+                                ? "py-3 bg-white/60 rounded-full border-x-5 border-[#2F4191] transition-all duration-300 "
                                 : "py-3 bg-[#2B7EC2] rounded-full border-x-5 border-[#2F4191]"
                             }`}
                     >
                         {/* Menu links */}
-                        <nav className="flex items-center gap-10 font-semibold">
-                            <a className="hover:text-gray-200 cursor-pointer">Demo</a>
-                            <a className="hover:text-gray-200 cursor-pointer">Pages</a>
-                            <a className="hover:text-gray-200 cursor-pointer">Service</a>
-                            <a className="hover:text-gray-200 cursor-pointer">Blog</a>
-                            <a className="hover:text-gray-200 cursor-pointer">Contact Us</a>
+                        <nav
+                            className={`${isScrolled
+                                    ? "flex items-center gap-10 font-semibold text-[#2B7EC2]"
+                                    : "flex items-center gap-10 font-semibold text-white"
+                                }`}
+                        >
+                            <a className="hover:text-gray-300 cursor-pointer">Demo</a>
+                            <a className="hover:text-gray-300 cursor-pointer">Pages</a>
+                            <a className="hover:text-gray-300 cursor-pointer">Service</a>
+                            <a className="hover:text-gray-300 cursor-pointer">Blog</a>
+                            <a className="hover:text-gray-300 cursor-pointer">Contact Us</a>
                         </nav>
+
 
                         {/* Right icons + CTA */}
                         <div className="flex items-center gap-5">

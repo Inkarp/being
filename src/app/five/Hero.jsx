@@ -14,7 +14,7 @@ export default function Hero() {
             Advancing Precision in <br /> Laboratory Technology
           </h1>
 
-          <p className=" text-md">
+          <p className="text-black text-md">
             We provide high‑quality, reliable, and innovative laboratory instruments designed to support
             research, diagnostics, and industrial applications. Our solutions deliver accuracy, durability,
             and advanced performance for every scientific environment.

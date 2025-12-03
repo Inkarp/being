@@ -1,0 +1,15 @@
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        slowspin: 'slowspin 10s linear infinite',
+      },
+      keyframes: {
+        slowspin: {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
+      },
+    },
+  },
+};

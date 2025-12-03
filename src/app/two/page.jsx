@@ -8,7 +8,7 @@ import Footer from "../Footer";
 import Recent from "../five/Recent";
 import FooterTwo from "./FooterTwo";
 import Offerings from "../four/Offerings";
-import AboutSection from "../one/about";
+import AboutSection from "../one/AboutOne";
 
 export default function HeaderNew() {
     const [isScrolled, setIsScrolled] = useState(false);

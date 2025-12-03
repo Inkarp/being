@@ -18,8 +18,6 @@ export default function Footer() {
                         At Techin, we deliver innovative IT solutions to help businesses thrive, offering customized strategies,
                         robust support, and cutting-edge technology for efficiency, security, and reliability.
                     </p>
-
-                    
                 </div>
 
                 {/* Column 2 - Quick Links */}
@@ -60,30 +58,30 @@ export default function Footer() {
                         Social Media
                     </h3>
                     <div className='flex flex-col gap-5 '>
-                    <div className="flex items-start mt-5 justify-start gap-4 mt-2 md:mt-0 transform " >
-                        <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
-                            <FaFacebookF />
+                        <div className="flex items-start mt-5 justify-start gap-4 mt-2 md:mt-0 transform " >
+                            <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
+                                <FaFacebookF />
+                            </div>
+                            <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
+                                <FaInstagram />
+                            </div>
+                            <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
+                                <FaYoutube />
+                            </div>
+                            <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
+                                <FaLinkedin />
+                            </div>
                         </div>
-                        <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
-                            <FaInstagram />
+                        <div className="flex">
+                            <input
+                                type="email"
+                                placeholder="Your Email Address"
+                                className="py-3 px-4 rounded-l-md bg-white text-black w-full outline-none"
+                            />
+                            <button className="bg-[#2B7EC2] px-6 rounded-r-md flex items-center gap-2 font-bold">
+                                <FaPaperPlane className='hover:rotate-30' /> Subscribe
+                            </button>
                         </div>
-                        <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
-                            <FaYoutube />
-                        </div>
-                        <div className="bg-[#2B7EC2] p-2 text-xl rounded-full text-white cursor-pointer ">
-                            <FaLinkedin />
-                        </div>
-                    </div>
-                    <div className="flex">
-                        <input
-                            type="email"
-                            placeholder="Your Email Address"
-                            className="py-3 px-4 rounded-l-md bg-white text-black w-full outline-none"
-                        />
-                        <button className="bg-[#2B7EC2] px-6 rounded-r-md flex items-center gap-2 font-bold">
-                            <FaPaperPlane className='hover:rotate-30' /> Subscribe
-                        </button>
-                    </div>
                     </div>
                     {/* <div className="grid grid-cols-3 gap-2">
             {[...Array(6)].map((_, i) => (
@@ -109,7 +107,7 @@ export default function Footer() {
                         <img src="/icon1.svg" className='' />
                         <div className='  '>
                             <p className="text-sm font-semibold">Office Address</p>
-                            <p className="text-xl font-bold">12th Street, New York, USA</p>
+                            <p className="text-xl font-bold">Nacharam, Habsiguda , Hyderabad, Telangana</p>
                         </div>
                         <div className='h-20 bg-white w-px'></div>
                     </div>
@@ -118,7 +116,7 @@ export default function Footer() {
                         <img src="/icon2.svg" className='' />
                         <div>
                             <p className="text-sm font-semibold">Email Address</p>
-                            <p className="text-xl font-bold">info@techin.com</p>
+                            <p className="text-xl font-bold">info@being.com</p>
                         </div>
                         <div className='h-20 bg-white w-px'></div>
                     </div>
@@ -127,7 +125,7 @@ export default function Footer() {
                         <img src="/icon3.svg" className='' />
                         <div>
                             <p className="text-sm font-semibold">Call Us For Support</p>
-                            <p className="text-xl font-bold">+(009) 1888 000 2222</p>
+                            <p className="text-xl font-bold">+91 9030357676</p>
                         </div>
 
                     </div>

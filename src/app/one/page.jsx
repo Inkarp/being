@@ -7,12 +7,13 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 import Products from "./Products";
 import Services from "./Services";
-import AboutSection from "./about";
+import AboutSection from "./AboutOne";
 import Footer from "./Footer";
 import HeaderOne from "./HeaderOne";
 
 import HeroOne from "./HeroOne";
-
+import AboutOne from "./AboutOne";
+import OfferingsSection from "./Offerings";
 
 
 export default function Layout() {
@@ -32,9 +33,11 @@ export default function Layout() {
      <HeaderOne />  
       <div className={isScrolled ? "pt-[0px]" : "pt-0"}>
         <HeroOne />
-        {/* <Products />
-        <Services />
-        <AboutSection /> */}
+        {/* <Products /> */}
+        {/* <Services /> */}
+        {/* <AboutSection /> */}
+        <AboutOne />
+        <OfferingsSection />
         <Footer />
       </div>
     </div>
