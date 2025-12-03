@@ -4,10 +4,10 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 const Hero = () => {
     return (
-        <section className="relative  w-[95%] mx-auto rounded-2xl my-3 min-h-screen overflow-hidden">
+        <section className="relative w-[95%] mx-auto h-[500px] rounded-2xl my-3 overflow-hidden">
             <div className="absolute inset-0">
                 <img
-                    src="/about-us.png"
+                    src="/about.jpg"
                     alt="Lab Background"
                     className="w-full h-full object-cover"
                 />
