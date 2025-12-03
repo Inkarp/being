@@ -20,10 +20,10 @@ export default function HeaderOne() {
     return (
 
         <div
-            className={`transition-all duration-300 ${isScrolled ? "fixed top-0 left-0 right-0 z-50 py-2" : "py-5"
+            className={`transition-all duration-300 ${isScrolled ? "fixed top-0 left-0 right-0 z-50 py-2" : ""
                 }`}
         >
-            <header className={` ${isScrolled ? "p-0 w-[90%] flex mx-auto font-[Roboto] overflow-hidden gap-5" : "w-[95%] flex mx-auto font-[Roboto] rounded-2xl overflow-hidden bg-[#2B7EC2]/30 gap-5 p-3"}`}>
+            <header className={` ${isScrolled ? "p-0 w-[90%] flex mx-auto font-[Roboto] overflow-hidden gap-5" : "w-[95%] flex mx-auto font-[Roboto] rounded-2xl overflow-hidden bg-white gap-5 p-3"}`}>
                 {/* Logo block – stays left, just shrinks on scroll */}
                 <div className="flex items-stretch ">
                     <div className="flex items-center bg-white shadow-xl border-r-5 border-[#2F4191] rounded-[30px] px-5 ">
@@ -100,7 +100,6 @@ export default function HeaderOne() {
                     </div>
                 </div>
             </header>
-
         </div>
 
     );

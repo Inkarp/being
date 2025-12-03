@@ -24,10 +24,10 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <nav className="p-4 bg-gray-300  text-black flex gap-4">
-          {/* <Link className="hover:text-[#E63946]" href="/one">Home 1</Link>
-          <Link className="hover:text-[#E63946]" href="/two">Home 2</Link> */}
-          <Link className="hover:text-[#E63946]" href="/three">Home 1</Link>
-          <Link className="hover:text-[#E63946]" href="/five">Home 2</Link>
+          <Link className="hover:text-[#E63946]" href="/one">Home 1</Link>
+          {/* <Link className="hover:text-[#E63946]" href="/two">Home 2</Link> */}
+          <Link className="hover:text-[#E63946]" href="/three">Home 3</Link>
+          <Link className="hover:text-[#E63946]" href="/five">Home 5</Link>
           {/* <Link className="hover:text-[#E63946]" href="/four">Home 4</Link> */}
 
         </nav>

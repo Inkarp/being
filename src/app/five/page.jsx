@@ -13,8 +13,8 @@ export default function HeaderThree() {
             <Header />
             <Hero />
             <AboutNew />
-            <Recent />
-            <OurProducts />
+            {/* <Recent />
+            <OurProducts /> */}
             <Footer />
         </>
     );

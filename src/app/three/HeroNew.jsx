@@ -2,7 +2,7 @@ import React from 'react';
 import { FaFlask, FaLeaf } from 'react-icons/fa';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-const Hero = () => {
+const HeroNew = () => {
     return (
         <section className="relative w-[95%] mx-auto h-[500px] rounded-2xl my-3 overflow-hidden">
             <div className="absolute inset-0">
@@ -55,4 +55,4 @@ const Hero = () => {
     );
 };
 
-export default Hero;
+export default HeroNew;

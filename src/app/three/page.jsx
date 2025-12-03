@@ -6,7 +6,7 @@ import { FaClock } from "react-icons/fa6";
 import { FaFacebookF, FaTwitter, FaInstagram, FaPinterestP } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
-import Hero from "../one/Hero";
+import Hero from "./HeroNew";
 import NewHeader from "./NewHeader";
 import Products from "../one/Products";
 import { useEffect, useState } from "react";

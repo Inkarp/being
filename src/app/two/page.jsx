@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
-import Hero from "../one/Hero";
+import Hero from "../three/HeroNew";
 import Footer from "../Footer";
 import Recent from "../five/Recent";
 import FooterTwo from "./FooterTwo";
