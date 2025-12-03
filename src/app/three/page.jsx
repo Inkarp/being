@@ -12,6 +12,7 @@ import Products from "../one/Products";
 import { useEffect, useState } from "react";
 import NewFooter from "./NewFooter";
 import Recent from "../five/Recent";
+import FooterTwo from "../two/FooterTwo";
 
 export default function HeaderOne() {
 
@@ -33,6 +34,7 @@ export default function HeaderOne() {
                 <Products />
                 <Recent />
                 <NewFooter />
+                <FooterTwo />
             </div>
         </>
     );

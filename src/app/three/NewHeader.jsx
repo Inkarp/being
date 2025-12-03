@@ -31,7 +31,7 @@ export default function NewHeader() {
                             src="/logo.webp"
                             alt="TechIn Logo"
                             className={` object-contain transition-all duration-300
-                  ${isScrolled ? "rounded-xl h-[70px] w-[200px]" : "rounded-3xl h-[120px] w-[250px]"}`}
+                  ${isScrolled ? "rounded-xl h-[90px] w-[200px] absolute left-[45%] top-3 bg-white/60" : "rounded-3xl h-[120px] w-[250px]"}`}
                         />
                     </div>
                 </div>
@@ -70,14 +70,14 @@ export default function NewHeader() {
                     <div
                         className={`w-full px-5 flex justify-between items-center text-white transition-all duration-300
               ${isScrolled
-                                ? "py-3 bg-[#2B7EC2] rounded-2xl"
+                                ? "py-3 bg-[#2B7EC2] rounded-2xl hidden"
                                 : "py-3 bg-[#2B7EC2] rounded-2xl"
                             }`}
                     >
                         {/* Menu links */}
                         <nav className="flex items-center gap-10 font-semibold">
-                            <a className="hover:text-gray-200 cursor-pointer">Demo</a>
-                            <a className="hover:text-gray-200 cursor-pointer">Pages</a>
+                            <a className="hover:text-gray-200 cursor-pointer">Home</a>
+                            <a className="hover:text-gray-200 cursor-pointer">Products</a>
                             <a className="hover:text-gray-200 cursor-pointer">Service</a>
                             <a className="hover:text-gray-200 cursor-pointer">Blog</a>
                             <a className="hover:text-gray-200 cursor-pointer">Contact Us</a>

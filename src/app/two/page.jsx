@@ -7,6 +7,8 @@ import Hero from "../one/Hero";
 import Footer from "../Footer";
 import Recent from "../five/Recent";
 import FooterTwo from "./FooterTwo";
+import Offerings from "../four/Offerings";
+import AboutSection from "../one/about";
 
 export default function HeaderNew() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -35,14 +37,14 @@ export default function HeaderNew() {
                     {/* LOGO — now dynamically positioned */}
                     <div
                         className={`transition-all duration-300 
-                        ${isScrolled ? "bg-white shadow-lg absolute left-[600] top-3 px-6 py-2 rounded-2xl" : "bg-transparent"}
+                        ${isScrolled ? "z-100 absolute left-[600] top-3 px-6 py-2 rounded-2xl" : ""}
                         `}
                     >
                         <img
                             src="/logo.webp"
                             alt="TechIn Logo"
-                            className={`object-contain transition-all duration-300
-                                ${isScrolled ? "h-[60px] w-[160px]" : "h-[100px] w-[220px]"}
+                            className={`object-contain transition-all duration-300 bg-white/60
+                                ${isScrolled ? "rounded-xl h-[100px] w-[200px]" : "h-[100px] w-[220px]"}
                             `}
                         />
                     </div>
@@ -81,7 +83,9 @@ export default function HeaderNew() {
             {/* Push content down when header is fixed */}
             <div className={isScrolled ? "pt-[120px]" : ""}>
                 <Hero />
-                <Recent />
+                {/* <Recent /> */}
+                <Offerings />
+                <AboutSection />
             </div>
             <FooterTwo />
         </>
