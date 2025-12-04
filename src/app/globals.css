@@ -6,17 +6,23 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 
 @keyframes bounceRight {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateX(0);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
+
   50% {
     transform: translateX(6px);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -32,7 +38,7 @@
 }
 
 .group:hover .spin-slow {
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 .animate-spinslow {

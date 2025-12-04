@@ -89,10 +89,10 @@ export default function HeaderOne() {
                                     : "flex items-center gap-10 font-semibold text-white"
                                 }`}
                         >
-                            <a className="hover:text-gray-300 cursor-pointer">Demo</a>
-                            <a className="hover:text-gray-300 cursor-pointer">Pages</a>
-                            <a className="hover:text-gray-300 cursor-pointer">Service</a>
-                            <a className="hover:text-gray-300 cursor-pointer">Blog</a>
+                            <a className="hover:text-gray-300 cursor-pointer">Home</a>
+                            <a className="hover:text-gray-300 cursor-pointer">About Us</a>
+                            <a className="hover:text-gray-300 cursor-pointer">Products</a>
+                            <a className="hover:text-gray-300 cursor-pointer">Updates</a>
                             <a className="hover:text-gray-300 cursor-pointer">Contact Us</a>
                         </nav>
 

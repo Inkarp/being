@@ -35,8 +35,9 @@ export default function HeroOne() {
               className="absolute text-white transition-transform duration-500 group-hover:animate-bounce"
             />
           </div>
-        
         </div>
+
+        
         {/* Right Image */}
         <div className=''>
           <Image

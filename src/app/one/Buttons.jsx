@@ -78,7 +78,7 @@ export default function Buttons() {
                 <FaPaperPlane className="transition-transform duration-300 group-hover:rotate-45" />
             </button>
 
-               <button className="bg-white px-6 py-3 text-black rounded-r-md flex items-center gap-2 font-bold group">
+            <button className="bg-white px-6 py-3 text-black rounded-r-md flex items-center gap-2 font-bold group">
                 <FaPaperPlane className="transition-transform duration-300 group-hover:rotate-45" />
                 Know More
                 <FaPaperPlane className="transition-transform duration-300 group-hover:rotate-45" />
