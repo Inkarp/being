@@ -11,23 +11,32 @@
   scrollbar-width: none; /* Firefox */
 }
 
+
 @keyframes bounceRight {
   0%, 100% {
     transform: translateX(0);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
   50% {
-    transform: translateX(10px);
+    transform: translateX(6px);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
 .bounce-right {
-  animation: bounceRight 0.6s infinite;
+  animation: bounceRight 1s infinite;
 }
 
 .spin-slow {
-  animation: spin 3s linear infinite;
+  animation: spin 10s linear infinite;
+}
+
+.group:hover .spin-slow {
+  animation: spin 1s linear infinite;
+}
+
+.animate-spinslow {
+  animation: spin 10s linear infinite;
 }
 
 @keyframes spin {

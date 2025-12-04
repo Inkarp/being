@@ -1,6 +1,6 @@
 
 import Image from 'next/image';
-import { FaArrowCircleRight } from 'react-icons/fa';
+import { FaArrowCircleRight, FaArrowRight } from 'react-icons/fa';
 
 export default function HeroOne() {
   return (
@@ -27,7 +27,7 @@ export default function HeroOne() {
           <div className="group relative p-2 bg-[#2B7EC2] rounded-full w-fit flex items-center justify-center">
             <img
               src="/Circle-Button.svg"
-              className="w-20 h-20 transition-transform duration-500 group-hover:animate-spin"
+              className="w-20 h-20 transition-transform duration-500  spin-slow group-hover:animate-spin"
               alt="Spinning Image"
             />
             <FaArrowCircleRight
@@ -35,12 +35,8 @@ export default function HeroOne() {
               className="absolute text-white transition-transform duration-500 group-hover:animate-bounce"
             />
           </div>
-
+        
         </div>
-
-
-
-
         {/* Right Image */}
         <div className=''>
           <Image

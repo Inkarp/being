@@ -72,15 +72,17 @@ export default function Footer() {
                                 <FaLinkedin />
                             </div>
                         </div>
-                        <div className="flex">
+                        <div className="flex group">
                             <input
                                 type="email"
                                 placeholder="Your Email Address"
                                 className="py-3 px-4 rounded-l-md bg-white text-black w-full outline-none"
                             />
-                            <button className="bg-[#2B7EC2] px-6 rounded-r-md flex items-center gap-2 font-bold">
-                                <FaPaperPlane className='hover:rotate-30' /> Subscribe
+                            <button className="bg-[#2B7EC2] px-6 rounded-r-md flex items-center gap-2 font-bold group">
+                                Subscribe
+                                <FaPaperPlane className="transition-transform duration-300 group-hover:rotate-45 " />
                             </button>
+
                         </div>
                     </div>
                     {/* <div className="grid grid-cols-3 gap-2">
@@ -104,7 +106,7 @@ export default function Footer() {
                 <div className="max-w-7xl bg-[#2B7EC2] text-white mx-auto py-3 px-5 flex flex-col lg:flex-row justify-between items-center gap-6 text-black font-bold text-sm md:text-base rounded-xl">
                     <div className="flex items-center gap-10">
                         {/* <FaMapMarkerAlt size={32} /> */}
-                        <img src="/icon1.svg" className='' />
+                        <img src="/White_3.svg" className='h-10 w-10' />
                         <div className='  '>
                             <p className="text-sm font-semibold">Office Address</p>
                             <p className="text-xl font-bold">Nacharam, Habsiguda , Hyderabad, Telangana</p>
@@ -113,7 +115,7 @@ export default function Footer() {
                     </div>
                     <div className="flex items-center gap-10">
                         {/* <FaEnvelope size={32} /> */}
-                        <img src="/icon2.svg" className='' />
+                        <img src="/White_1.svg" className='h-10 w-10' />
                         <div>
                             <p className="text-sm font-semibold">Email Address</p>
                             <p className="text-xl font-bold">info@being.com</p>
@@ -122,7 +124,7 @@ export default function Footer() {
                     </div>
                     <div className="flex items-center gap-10">
                         {/* <FaPhoneAlt size={32} /> */}
-                        <img src="/icon3.svg" className='' />
+                        <img src="/White_2.svg" className='h-10 w-10' />
                         <div>
                             <p className="text-sm font-semibold">Call Us For Support</p>
                             <p className="text-xl font-bold">+91 9030357676</p>

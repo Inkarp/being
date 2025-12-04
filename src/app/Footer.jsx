@@ -106,7 +106,7 @@ export default function Footer() {
                 <div className="max-w-7xl bg-white mx-auto py-3 px-5 flex flex-col lg:flex-row justify-between items-center gap-6 text-black font-bold text-sm md:text-base rounded-xl">
                     <div className="flex items-center gap-10">
                         {/* <FaMapMarkerAlt size={32} /> */}
-                        <img src="/icon1.svg" className='' />
+                       <img src="/blue_3.svg" className='h-15 w-15' />
                         <div className='  '>
                             <p className="text-sm font-semibold">Office Address</p>
                             <p className="text-xl font-bold">12th Street, New York, USA</p>
@@ -115,7 +115,7 @@ export default function Footer() {
                     </div>
                     <div className="flex items-center gap-10">
                         {/* <FaEnvelope size={32} /> */}
-                        <img src="/icon2.svg" className='' />
+                        <img src="/blue_1.svg" className='h-15 w-15' />
                         <div>
                             <p className="text-sm font-semibold">Email Address</p>
                             <p className="text-xl font-bold">info@techin.com</p>
@@ -124,7 +124,7 @@ export default function Footer() {
                     </div>
                     <div className="flex items-center gap-10">
                         {/* <FaPhoneAlt size={32} /> */}
-                        <img src="/icon3.svg" className='' />
+                        <img src="/blue_2.svg" className='h-15 w-15' />
                         <div>
                             <p className="text-sm font-semibold">Call Us For Support</p>
                             <p className="text-xl font-bold">+(009) 1888 000 2222</p>
