@@ -42,7 +42,7 @@ export default function AboutOne() {
         {/* Right side: content */}
         <div>
           {/* <p className="text-blue-700 font-semibold mb-2 flex items-center gap-2"> */}
-          <div></div>
+
           <div className="text-blue-700 font-semibold mb-2 flex items-center gap-2">
             <div className="relative group w-[120px] h-[120px] text-black">
               {/* Wavy background spinning on hover */}
@@ -81,6 +81,10 @@ export default function AboutOne() {
             </div>
             <img src={'/molecule.svg'} className='h-5 w-5 spin-slow' />
             {/* <RiTestTubeFill className='text-black' /> */}
+
+            <span className="text-white bg-[#2B7EC2] p-2 uppercase font-bold text-sm tracking-wider inline-block border-2 border-[#2F3F8D] rounded-full mb-2">
+              About Us
+            </span>
           </div>
           {/* </p> */}
           <h2 className="text-4xl font-bold leading-snug mb-4">

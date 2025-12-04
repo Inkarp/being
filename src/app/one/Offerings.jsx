@@ -62,9 +62,19 @@ export default function OfferingsSection() {
   return (
     <section className=" text-white py-16 px-6 md:px-16 font-sans">
       <div className="text-center py-3 flex flex-col justify-center items-center">
-        <span className="text-red-500 uppercase font-bold text-sm tracking-wider inline-block border-b-2 border-red-500 mb-2">
+        <div className="flex gap-3">
+        <span className="text-[#2B7EC2] bg-white p-2 uppercase font-bold text-sm tracking-wider inline-block border-2 border-[#2F3F8D] mb-2">
           Our Offerings
         </span>
+
+        <span className="text-black bg-[#2B7EC2] p-2 uppercase font-bold text-sm tracking-wider inline-block border-2 border-[#2F3F8D] mb-2">
+          Our Offerings
+        </span>
+
+        <span className="text-white bg-[#2B7EC2] p-2 uppercase font-bold text-sm tracking-wider inline-block border-2 border-[#2F3F8D] rounded-full mb-2">
+          Our Offerings
+        </span>
+        </div>
         {/* <div className="w-fit">
           <div className="relative group w-[120px] h-[120px] text-white">
 
@@ -85,7 +95,20 @@ export default function OfferingsSection() {
             </div>
           </div>
         </div> */}
-        <h2 className="text-3xl md:text-4xl text-black font-bold">Explore Our Scientific Focus Areas</h2>
+        <div className="flex justify-center items-center py-3">
+          <h2 className="text-3xl md:text-4xl text-black font-bold flex flex-wrap gap-1">
+            {"Explore Our Scientific Focus Areas".split("").map((char, index) => (
+              <span
+                key={index}
+                className="inline-block animate-bounce"
+                style={{ animationDelay: `${index * 0.02}s` }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </h2>
+        </div>
+
       </div>
 
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6  ">

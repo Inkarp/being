@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 
 import { useEffect, useState } from "react";
 import { FaPhoneAlt, FaClock, FaWhatsapp, FaFacebookF, FaInstagram, FaSearch } from "react-icons/fa";
@@ -85,14 +86,19 @@ export default function HeaderOne() {
                         {/* Menu links */}
                         <nav
                             className={`${isScrolled
-                                    ? "flex items-center gap-10 font-semibold text-[#2B7EC2]"
-                                    : "flex items-center gap-10 font-semibold text-white"
+                                ? "flex items-center gap-10 font-semibold text-[#2B7EC2]"
+                                : "flex items-center gap-10 font-semibold text-white"
                                 }`}
                         >
-                            <a className="hover:text-gray-300 cursor-pointer">Home</a>
+                            <Link href="/one">
+                            <span className="hover:text-gray-300 cursor-pointer">Home</span>
+                            </Link>
                             <a className="hover:text-gray-300 cursor-pointer">About Us</a>
                             <a className="hover:text-gray-300 cursor-pointer">Products</a>
                             <a className="hover:text-gray-300 cursor-pointer">Updates</a>
+                            <Link href="/blog">
+                                <span className="hover:text-gray-200 cursor-pointer">Blog</span>
+                            </Link>
                             <a className="hover:text-gray-300 cursor-pointer">Contact Us</a>
                         </nav>
 
