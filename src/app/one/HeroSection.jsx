@@ -5,7 +5,7 @@ import { FaArrowCircleRight, FaArrowRight } from 'react-icons/fa';
 
 export default function HeroSection() {
   return (
-    <section className="relative w-[95%] mx-auto rounded-[35px] bg-gradient-to-r from-[#0a0a8f] via-[#2b44c2] to-[#0a0a8f] h-[600px] text-white py-20 overflow-hidden">
+    <section className="relative w-[90%] mx-auto rounded-[35px] bg-gradient-to-r from-[#0a0a8f] via-[#2b44c2] to-[#0a0a8f] h-[600px] text-white py-20 overflow-hidden">
       {/* Background abstract lines - you can replace with actual SVG if you have */}
       <div className="absolute inset-0  bg-[url('/about.jpg')] bg-cover bg-center opacity-30 z-0" />
 

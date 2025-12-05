@@ -24,15 +24,15 @@ export default function HeaderOne() {
     return (
 
         <div
-            className={`transition-all duration-300 ${isScrolled ? "fixed top-0 left-0 right-0 z-50 py-2" : ""
+            className={`transition-all duration-300 ${isScrolled ? "fixed top-0 left-0 right-0 z-50 py-2 transition-all duration-500" : ""
                 }`}
         >
-            <header className={` ${isScrolled ? "p-0 w-[90%] flex mx-auto font-[Roboto] overflow-hidden gap-5" : "w-[95%] flex mx-auto font-[Roboto] rounded-2xl overflow-hidden gap-5 p-3"}`}>
+            <header className={` ${isScrolled ? "p-0 w-[90%] flex mx-auto font-[Roboto] overflow-hidden gap-5 transition-all duration-500" : "w-[95%] flex mx-auto font-[Roboto] rounded-2xl overflow-hidden gap-5 p-3"}`}>
                 {/* Logo block – stays left, just shrinks on scroll */}
                 <div className="flex items-stretch">
                     <div
                         className={`${isScrolled
-                            ? "flex items-center border-r-[5px] bg-white/50 border-[#2F4191] rounded-[30px] px-5 "
+                            ? "flex items-center border-r-[5px] bg-black/80 border-[#2F4191] rounded-[30px] px-5 transition-all duration-500 "
                             : ""
                             }`}
                     >
@@ -40,7 +40,7 @@ export default function HeaderOne() {
                             src="/logo.webp"
                             alt="TechIn Logo"
                             className={`object-contain transition-all duration-300 ${isScrolled
-                                ? "rounded-xl h-[70px] w-[200px]"
+                                ? "rounded-xl h-[70px] w-[200px] "
                                 : "rounded-full h-[120px] w-[250px]"
                                 }`}
                         />
@@ -80,7 +80,7 @@ export default function HeaderOne() {
 
                     {/* MAIN NAV BAR – same layout, just slightly tighter + fully dark on scroll (layout 2) */}
                     <div
-                        className={`w-full px-5 flex justify-between items-center text-white transition-all duration-300
+                        className={`w-full px-5 flex justify-between items-center text-white
               ${isScrolled
                                 ? "py-3 bg-black/85 rounded-full border-x-5 border-[#2F3F8D] transition-all duration-300 "
                                 : "py-3 bg-[#2B7EC2] rounded-full border-x-5 border-[#2F3F8D]"
@@ -89,7 +89,7 @@ export default function HeaderOne() {
                         {/* Menu links */}
                         <nav
                             className={`${isScrolled
-                                ? "flex items-center gap-6 font-semibold text-white"
+                                ? "flex items-center gap-6 font-semibold text-white transition-all duration-300"
                                 : "flex items-center gap-6 font-semibold text-white"
                                 }`}
                         >

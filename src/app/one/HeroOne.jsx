@@ -4,7 +4,7 @@ import { FaArrowCircleRight, FaArrowRight } from 'react-icons/fa';
 
 export default function HeroOne() {
   return (
-    <section className="w-[95%] mx-auto rounded-[50px] py-2 h-[550px] text-white overflow-hidden">
+    <section className="w-[90%] mx-auto rounded-[50px] py-2 h-[550px] text-white overflow-hidden">
       <div className="w-full mx-auto lg:flex  flex flex-row justify-center items-center gap-10">
         <div className="space-y-6 max-w-4xl p-8  ">
           <button className="bg-[#381dfa] text-white text-sm font-semibold px-4 py-2 rounded bounce-right">

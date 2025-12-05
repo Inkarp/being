@@ -72,7 +72,7 @@ export default function Footer() {
                                 <FaLinkedin />
                             </div>
                         </div>
-                        <div className="flex group">
+                        <div className="flex group border">
                             <input
                                 type="email"
                                 placeholder="Your Email Address"

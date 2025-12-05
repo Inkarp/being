@@ -44,7 +44,7 @@ const Odometer = ({ target, suffix = '', duration = 10000 }) => {
 
 export default function AboutOneNew() {
   return (
-    <section className="py-12 px-6 md:px-16 bg-white">
+    <section className="py-12 px-6 md:px-16">
       <div className="grid md:grid-cols-2 gap-10 items-center">
         {/* Left: Images */}
         <div className="relative flex gap-5">

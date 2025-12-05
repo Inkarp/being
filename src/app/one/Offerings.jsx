@@ -60,7 +60,7 @@ const offerings = [
 
 export default function OfferingsSection() {
   return (
-    <section className=" text-white py-16 px-6 md:px-16 font-sans">
+    <section className=" w-[90%] mx-auto text-white py-5 px-6  font-sans">
       <div className="text-center py-3 flex flex-col justify-center items-center">
         <div className="flex gap-3">
         <span className="text-[#2B7EC2] bg-white p-2 uppercase font-bold text-sm tracking-wider inline-block border-2 border-[#2F3F8D] mb-2">
@@ -131,7 +131,7 @@ export default function OfferingsSection() {
             {/* Read More */}
             <a href="#" className="text-sm text-white font-semibold hover:text-cyan-400">
               <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full w-fit">
-                <span className="text-[#2F3F8D] font-medium text-[16px]">Read More</span>
+                <span className="text-[#2F3F8D] font-medium text-[16px]">Know More</span>
                 {/* Gear SVG with arrow inside */}
                 <div className="relative w-[30px] h-[30px] text-[#2B7EC2]">
                   <svg
