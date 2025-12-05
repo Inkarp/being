@@ -1,13 +1,26 @@
 'use client'
 
+'use client'
+
 import { useEffect, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import Image from 'next/image';
 
-import { FaPaperPlane, FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa';
-import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa';
-import { FaLocationPin } from 'react-icons/fa6';
+// Font Awesome 5 Icons
+import {
+  FaPaperPlane,
+  FaMapMarkerAlt,
+  FaEnvelope,
+
+  FaInstagram,
+  FaYoutube,
+  FaLinkedin,
+  FaFacebookF     // <-- ADDED
+} from 'react-icons/fa';
+
+
+
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);

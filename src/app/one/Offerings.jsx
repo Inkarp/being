@@ -96,7 +96,7 @@ export default function OfferingsSection() {
           </div>
         </div> */}
         <div className="flex justify-center items-center py-3">
-          <h2 className="text-3xl md:text-4xl text-black font-bold flex flex-wrap gap-1">
+          <h2 className="text-2xl md:text-2xl text-black  flex flex-wrap gap-1">
             {"Explore Our Scientific Focus Areas".split("").map((char, index) => (
               <span
                 key={index}
@@ -115,7 +115,7 @@ export default function OfferingsSection() {
         {offerings.map((item, idx) => (
           <div
             key={idx}
-            className="relative group bg-[#0C2A3A] border border-white p-6 hover:shadow-lg hover:border-cyan-400 transition-all duration-300"
+            className="relative group bg-black/80 border border-white p-6 hover:shadow-lg hover:border-cyan-400 transition-all duration-300"
           >
             {/* Icon and Title */}
             <div className="flex items-center gap-4 mb-4">

@@ -16,6 +16,8 @@ import AboutOne from "./AboutOne";
 import OfferingsSection from "./Offerings";
 import HeroSection from "./HeroSection";
 import Buttons from "./Buttons";
+import Navbar from "./Navbar";
+import AboutOneNew from "./AboutOneNew";
 
 
 export default function Layout() {
@@ -34,13 +36,15 @@ export default function Layout() {
      {/* <div className=""> */}
      <HeaderOne />  
       <div className={isScrolled ? "pt-[0px]" : "pt-0"}>
+        {/* <Navbar /> */}
         <HeroOne />
-        <Buttons />
+        {/* <Buttons /> */}
         <HeroSection />
         {/* <Products /> */}
         {/* <Services /> */}
         {/* <AboutSection /> */}
         <AboutOne />
+        <AboutOneNew />
         <OfferingsSection />
         <Footer />
       </div>
