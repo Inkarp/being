@@ -44,7 +44,7 @@ export default function BlogSection() {
         {blogs.map((blog, index) => (
           <div
             key={index}
-            className="bg-[#F5F7FF] rounded-2xl overflow-hidden shadow hover:shadow-md transition"
+            className="bg-[#F5F7FF] rounded-2xl overflow-hidden shadow hover:shadow-md transition-all duration-500 hover:scale-[1.1]"
           >
             {/* Image & Date */}
             <div className="relative">

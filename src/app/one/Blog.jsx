@@ -54,7 +54,7 @@ export default function Blog() {
                 {projects.map((project, idx) => (
                     <div
                         key={idx}
-                        className="relative overflow-hidden rounded-3xl shadow-md hover:shadow-lg transition group"
+                        className="relative overflow-hidden rounded-3xl shadow-md hover:shadow-lg transition-all duration-500 hover:scale-[1.1] group"
                     >
                         {/* Image */}
                         <img

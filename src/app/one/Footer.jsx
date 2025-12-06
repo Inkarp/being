@@ -6,11 +6,11 @@ import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa';
 
 export default function Footer() {
     return (
-        <footer className=" mt-3 text-white pt-5 w-[95%] mx-auto rounded-t-[50px]">
+        <footer className="text-white pt-5 w-[95%] mx-auto rounded-t-[50px]">
             {/* Top Grid Section */}
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
                 {/* Column 1 - Logo and Description */}
-                <div>
+                <div className=''>
                     <div className="flex items-center gap-2 mb-4">
                         <Image src="/logo.webp" alt="Logo" width={180} height={100} />
                     </div>
