@@ -4,6 +4,7 @@ import { FaArrowRight } from "react-icons/fa6";
 export default function Buttons() {
     return (
         <div className="flex justify-center items-center h-[400px] gap-3">
+            
             <div className="flex items-center gap-3 bg-[#f7f9f7] px-6 py-3 rounded-full w-fit">
                 <span className="text-black font-medium text-[16px]">About Us</span>
 

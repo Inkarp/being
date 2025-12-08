@@ -1,5 +1,6 @@
 import { FaPaperPlane, FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa';
 import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa';
+import ScrollToTop from './ScrollToTop';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
           <FaLinkedin />
         </div>
       </div> */}
+      {/* <ScrollToTop /> */}
     </div>
   );
 }
