@@ -97,7 +97,7 @@ export default function HeaderOne() {
                                 { name: "Home", href: "/one" },
                                 { name: "About Us", href: "#" },
                                 { name: "Products", href: "/products" },
-                                { name: "Updates", href: "#" },
+                                { name: "Updates", href: "/events" },
                                 { name: "Blog", href: "/blog" },
                                 { name: "Contact Us", href: "#" },
                             ].map((item, index) => (

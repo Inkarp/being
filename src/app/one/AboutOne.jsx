@@ -219,7 +219,6 @@ export default function AboutOne() {
             </div> */}
 
         </div>
-
       </div>
     </div>
     </section >
