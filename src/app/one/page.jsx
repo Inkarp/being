@@ -48,7 +48,7 @@ export default function Layout() {
         <HeroSection />
         <HeroOne />
         <HeroVideo />
-        <Buttons />
+        {/* <Buttons /> */}
         {/* <Products /> */}
         {/* <Services /> */}
         {/* <AboutSection /> */}
