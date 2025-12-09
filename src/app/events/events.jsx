@@ -4,7 +4,7 @@ import { FaArrowRight, FaClock, FaMapMarkerAlt, FaSearch } from 'react-icons/fa'
 
 const events = [
   {
-    title: 'Donate For Handicapped Child',
+    title: 'PMEc Hyderabad',
     date: 'May 14, 2015 3.00 PM',
     location: 'Conference Hall, 12 Marcon Street, Africa',
     description:
@@ -12,7 +12,7 @@ const events = [
     image: '/about.jpg', // Replace with actual path
   },
   {
-    title: 'Donate For Handicapped Child',
+    title: 'Wapii Lucknow',
     date: 'May 14, 2015 3.00 PM',
     location: 'Conference Hall, 12 Marcon Street, Africa',
     description:
@@ -23,10 +23,9 @@ const events = [
 
 const categories = [
   { name: 'All', count: 52 },
-  { name: 'Food', count: 11 },
-  { name: 'Disease', count: 10 },
-  { name: 'Nature', count: 52 },
-  { name: 'Education', count: 52 },
+  { name: 'Conferences', count: 11 },
+  { name: 'Events', count: 10 },
+  { name: 'Pages', count: 52 },
 ];
 
 const archives = [
@@ -38,12 +37,12 @@ const archives = [
 
 export default function Events() {
   return (
-    <section className=" px-6 py-10">
+    <section className="w-[95%] mx-auto p-5">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
         {/* Left Content */}
         <div className="flex-1">
           {/* Filter Bar */}
-          <div className="bg-white px-6 py-4 border rounded mb-8 flex flex-wrap gap-4 items-center justify-between text-sm font-medium text-gray-700">
+          <div className="bg-white px-6 py-4 shawdow-xl rounded-xl mb-8 flex flex-wrap gap-4 items-center justify-between text-sm font-medium text-gray-700">
             <div className="flex items-center gap-2">
               <span className="font-semibold">EVENTS FILTER:</span>
             </div>
@@ -62,7 +61,7 @@ export default function Events() {
 
           {/* Event Cards */}
           {events.map((event, index) => (
-            <div key={index} className="bg-white flex flex-col md:flex-row mb-6 shadow-sm rounded overflow-hidden">
+            <div key={index} className="bg-white flex flex-col md:flex-row mb-6 shadow-sm rounded-xl overflow-hidden">
               <img src={event.image} alt={event.title} className="w-full md:w-1/2 h-auto object-cover" />
               <div className="p-6 flex flex-col justify-between">
                 <div>
@@ -113,7 +112,7 @@ export default function Events() {
             <input
               type="text"
               placeholder="Search Here"
-              className="w-full border px-4 py-2 pr-10 text-sm"
+              className="w-full bg-white shadow-xl rounded-xl px-4 py-2 pr-10 text-sm"
             />
             <FaSearch className="absolute right-3 top-3 text-gray-500" />
           </div>
@@ -123,7 +122,7 @@ export default function Events() {
             <h4 className="font-bold text-sm mb-3">CATEGORIES</h4>
             <ul className="space-y-2 text-sm text-gray-700">
               {categories.map((cat, i) => (
-                <li key={i} className="flex justify-between border-b pb-1">
+                <li key={i} className="flex justify-between border-b border-black/30 pb-1">
                   <span>{cat.name}</span>
                   <span>({cat.count})</span>
                 </li>
@@ -136,7 +135,7 @@ export default function Events() {
             <h4 className="font-bold text-sm mb-3">ARCHIVES</h4>
             <ul className="space-y-2 text-sm text-gray-700">
               {archives.map((arch, i) => (
-                <li key={i} className="flex justify-between border-b pb-1">
+                <li key={i} className="flex justify-between border-b border-gray-500 pb-1">
                   <span>{arch.name}</span>
                   <span>({arch.count})</span>
                 </li>

@@ -117,7 +117,7 @@ export default function NewOfferings() {
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 transition-all duration-500 rounded-2xl">
                     {causes.slice(0, visibleCards).map((cause, index) => (
-                        <div key={index} className="bg-white shadow-sm  overflow-hidden rounded-[30px] hover:border border-[#2B7EC2] hover:scale-[1.1] transition-all duration-500">
+                        <div key={index} className="bg-white shadow-sm  overflow-hidden rounded-[30px] hover:border border-[#2B7EC2] hover:scale-y-[1.1] transition-all duration-500">
                             <div className="relative">
                                 <Image
                                     src={cause.image}
