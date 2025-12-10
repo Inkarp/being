@@ -17,7 +17,7 @@ const profiles = [
     name: "Sample Preparation & Processing",
     description:
       "Innovating scalable synthesis pathways and continuous flow technologies for precise, efficient chemical development.",
-    link: "/products/ovens",
+    link: "/applications/sample-preparation-and-processing",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
@@ -26,7 +26,7 @@ const profiles = [
     name: "Material Characterization & Testing",
     description:
       "Delivering precise analytical instrumentation for peak resolution and unmatched data reproducibility.",
-    link: "/products/ovens",
+    link: "applications/material-characterization-and-testing",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
@@ -35,7 +35,7 @@ const profiles = [
     name: "Cell & Microbiology Research",
     description:
       "Precision analytical instruments ensuring resolution and reproducibility.",
-    link: "/products/ovens",
+    link: "/applications/cell-and-microbiology-research",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
@@ -44,7 +44,7 @@ const profiles = [
     name: "Cleanroom & Contamination Control",
     description:
       "Material characterization & thermal analysis tools for semiconductors, polymers, and energy storage.",
-    link: "/products/ovens",
+    link: "/applications/cleanroom-and-contamination-control",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
@@ -53,7 +53,7 @@ const profiles = [
     name: "Cold Storage & Sample Preservation",
     description:
       "Implementing pilot-scale automation for chemical and pharmaceutical scale-ups.",
-    link: "/products/ovens",
+    link: "/applications/cold-storage-and-sample-preservation",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
@@ -103,7 +103,7 @@ function ProfileCard({ profile, isOpen, index, setOpenIndex }) {
             src={profile.image}
             alt={profile.name}
             fill
-            className="object-cover"
+            className="object-cover h-auto"
           />
         </div>
       </Link>
