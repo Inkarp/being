@@ -82,7 +82,7 @@ export default function HeaderOne() {
                     <div
                         className={`w-full px-5 flex justify-between items-center text-white
               ${isScrolled
-                                ? "py-1 text-black bg-white rounded-full border-x-5 border-[#2F3F8D] transition-all duration-300 "
+                                ? "py-1 text-black bg-white/60 rounded-full border-x-5 border-[#2F3F8D] transition-all duration-300 "
                                 : "py-3 bg-[#2B7EC2] rounded-full border-x-5 border-[#2F3F8D]"
                             }`}
                     >
@@ -97,6 +97,7 @@ export default function HeaderOne() {
                                 { name: "Home", href: "/one" },
                                 { name: "About Us", href: "#" },
                                 { name: "Products", href: "/products" },
+                                { name: "Applications", href: "/applications" },
                                 { name: "Updates", href: "/events" },
                                 { name: "Blog", href: "/blog" },
                                 { name: "Contact Us", href: "#" },

@@ -7,7 +7,7 @@ import { FiShare2 } from "react-icons/fi";
 import { FaWhatsapp, FaShare } from "react-icons/fa";
 
 export const metadata = {
-  title: "Verticals – Inkarp Instruments Private Ltd",
+  title: "Products – Inkarp Instruments Private Ltd",
   description: "Explore Inkarp's scientific focus areas including synthesis, analytical solutions, life sciences, and more.",
 };
 
@@ -17,7 +17,7 @@ const profiles = [
     name: "Ovens",
     description:
       "Innovating scalable synthesis pathways and continuous flow technologies for precise, efficient chemical development.",
-    link: "/verticals/synthesis-and-flow-chemistry",
+    link: "/products/ovens",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
@@ -26,7 +26,7 @@ const profiles = [
     name: "Incubators",
     description:
       "Delivering precise analytical instrumentation for peak resolution and unmatched data reproducibility.",
-    link: "/verticals/analytical-and-chromatography-solutions",
+    link: "/products/ovens",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
@@ -35,7 +35,7 @@ const profiles = [
     name: "Shakers And Stirrers",
     description:
       "Precision analytical instruments ensuring resolution and reproducibility.",
-    link: "/verticals/analytical-chemistry-and-weighing",
+    link: "/products/ovens",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
@@ -44,7 +44,7 @@ const profiles = [
     name: "Water Baths, Circulators and chillers",
     description:
       "Material characterization & thermal analysis tools for semiconductors, polymers, and energy storage.",
-    link: "/verticals/material-science-and-battery",
+    link: "/products/ovens",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
@@ -53,7 +53,7 @@ const profiles = [
     name: "Rotary Evaporators",
     description:
       "Implementing pilot-scale automation for chemical and pharmaceutical scale-ups.",
-    link: "/verticals/pilot-plants-and-automation",
+    link: "/products/ovens",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
@@ -62,39 +62,12 @@ const profiles = [
     name: "Pumps",
     description:
       "Cutting-edge cell analysis, imaging, and molecular biology platforms.",
-    link: "/verticals/lifesciences",
+    link: "/products/ovens",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
-  //   {
-  //     name: "Extrusion and Homogenization",
-  //     description:
-  //       "High-pressure homogenization & extrusion equipment for nanoemulsions & formulations.",
-  //     link: "/verticals/extrusion-and-homogenization",
-  //     image: "/about.jpg",
-  //     icon: "/icon1.svg",
-  //     socials: { whatsapp: "https://wa.me/918019828999" },
-  //   },
-  //   {
-  //     name: "Rheology and Thermal Analysis",
-  //     description:
-  //       "Measure material behavior with precision rheometers and calorimeters.",
-  //     link: "/verticals/rheology-and-thermal-analysis",
-  //     image: "/about.jpg",
-  //     icon: "/icon1.svg",
-  //     socials: { whatsapp: "https://wa.me/918019828999" },
-  //   },
-  //   {
-  //     name: "General Laboratory Instruments",
-  //     description:
-  //       "Everyday laboratory essentials from pH meters to purification systems.",
-  //     link: "/verticals/general-laboratory-instrument",
-  //     image: "/about.jpg",
-  //     icon: "/icon1.svg",
-  //     socials: { whatsapp: "https://wa.me/918019828999" },
-  //   },
-];
+]
 
 function ProfileCard({ profile, isOpen, index, setOpenIndex }) {
   const { whatsapp } = profile.socials || {};
@@ -173,7 +146,7 @@ function ProfileCard({ profile, isOpen, index, setOpenIndex }) {
   );
 }
 
-export default function Verticals() {
+export default function Products() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
@@ -181,7 +154,7 @@ export default function Verticals() {
       {/* Heading */}
       <div className="text-center">
         <h1 className="text-3xl font-bold font-[MaxOT]">
-          Explore Our <span className="text-[#E63946]">Scientific Verticals</span>
+          Explore Our <span className="text-[#E63946]">Scientific Products</span>
         </h1>
         <p className="mt-4 text-lg text-gray-700">
           From research to production, discover how our solutions support every lab need.
@@ -204,8 +177,6 @@ export default function Verticals() {
           ))}
         </div>
       </div>
-
-
     </section>
   );
 }

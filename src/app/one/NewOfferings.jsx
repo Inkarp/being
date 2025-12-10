@@ -136,7 +136,7 @@ export default function NewOfferings() {
                                 <h3 className="text-lg font-semibold">{cause.title}</h3>
                                 <p className="text-gray-500 text-sm">{cause.description}</p>
 
-                                <div className="flex group items-center justify-center gap-3 bg-[#2B7EC2] px-3 py-3 rounded-full w-fit">
+                                <div className="flex group items-center justify-center gap-3 bg-[#2B7EC2] px-3 py-2 rounded-full w-fit">
                                     <span className="text-white font-medium text-[16px] bounce-right">Explore More</span>
                                     <div className="relative w-[30px] h-[30px] text-black">
                                         <svg

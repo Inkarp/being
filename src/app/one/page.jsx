@@ -54,9 +54,9 @@ export default function Layout() {
         {/* <AboutSection /> */}
         <AboutOne />
         <AboutOneNew />
-        <OfferingsSection />
         <OfferingsNew />
         <NewOfferings />
+        <OfferingsSection />
         <Blog />
         <BlogSection />
         <Footer />

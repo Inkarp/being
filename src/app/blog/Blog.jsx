@@ -11,7 +11,7 @@ export default function Blog() {
        <div className="flex flex-col lg:flex-row gap-10 max-h-screen overflow-hidden">
 
           {/* Left Section (Main Blog Grid) */}
-         <div className="lg:w-2/3 space-y-5 overflow-y-auto pr-4">
+         <div className="lg:w-3/4 space-y-5 overflow-y-auto pr-4">
 
             {/* Blog Header */}
             <div className="flex items-center justify-between">
@@ -101,8 +101,7 @@ export default function Blog() {
           </div>
 
           {/* Right Section (Sidebar) */}
-         <aside className="lg:w-1/3 space-y-10 sticky top-0 h-fit">
-
+         <aside className="lg:w-2/5 space-y-5 sticky top-0 h-fit">
             {/* Search Widget */}
             <div className="bg-white p-4 rounded-lg shadow-xl">
               <h4 className="text-lg font-bold mb-3">Search Here...</h4>

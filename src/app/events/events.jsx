@@ -42,20 +42,20 @@ export default function Events() {
         {/* Left Content */}
         <div className="flex-1">
           {/* Filter Bar */}
-          <div className="bg-white px-6 py-4 shawdow-xl rounded-xl mb-8 flex flex-wrap gap-4 items-center justify-between text-sm font-medium text-gray-700">
+          <div className="bg-white px-6 py-4 shadow-xl rounded-xl mb-8 flex flex-wrap gap-4 items-center justify-between text-sm font-medium text-gray-700">
             <div className="flex items-center gap-2">
               <span className="font-semibold">EVENTS FILTER:</span>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap justify-between gap-10">
               <select className="border-none outline-none bg-transparent">
                 <option>All Events</option>
               </select>
               <select className="border-none outline-none bg-transparent">
                 <option>Place</option>
               </select>
-              <select className="border-none outline-none bg-transparent">
+              {/* <select className="border-none outline-none bg-transparent">
                 <option>Keyword</option>
-              </select>
+              </select> */}
             </div>
           </div>
 

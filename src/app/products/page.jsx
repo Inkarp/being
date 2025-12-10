@@ -4,12 +4,13 @@ import Verticals from "./verticals";
 
 
 
-export default function page(){
-    return(
+export default function page() {
+    return (
         <>
-        <HeaderOne />
-        <Verticals />
-        <Footer />
+            <HeaderOne />
+            <Verticals />
+            <Footer />
+
         </>
     )
 }
