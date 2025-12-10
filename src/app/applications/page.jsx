@@ -1,9 +1,19 @@
-import HeaderOne from "../one/HeaderOne";
+'use client'
 
-export default function page(){
-    return(
+import Footer from "../Footer";
+import HeaderOne from "../one/HeaderOne";
+import Verticals from "../products/verticals";
+import Applications from "./Applications";
+
+
+
+
+export default function page() {
+    return (
         <>
-        <HeaderOne />
+            <HeaderOne />
+            <Applications />
+            <Footer />
         </>
     )
 }

@@ -14,7 +14,7 @@ export const metadata = {
 // Dummy data using public images
 const profiles = [
   {
-    name: "Ovens",
+    name: "Sample Preparation & Processing",
     description:
       "Innovating scalable synthesis pathways and continuous flow technologies for precise, efficient chemical development.",
     link: "/products/ovens",
@@ -23,7 +23,7 @@ const profiles = [
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
-    name: "Incubators",
+    name: "Material Characterization & Testing",
     description:
       "Delivering precise analytical instrumentation for peak resolution and unmatched data reproducibility.",
     link: "/products/ovens",
@@ -32,7 +32,7 @@ const profiles = [
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
-    name: "Shakers And Stirrers",
+    name: "Cell & Microbiology Research",
     description:
       "Precision analytical instruments ensuring resolution and reproducibility.",
     link: "/products/ovens",
@@ -41,7 +41,7 @@ const profiles = [
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
-    name: "Water Baths, Circulators and chillers",
+    name: "Cleanroom & Contamination Control",
     description:
       "Material characterization & thermal analysis tools for semiconductors, polymers, and energy storage.",
     link: "/products/ovens",
@@ -50,7 +50,7 @@ const profiles = [
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
-    name: "Rotary Evaporators",
+    name: "Cold Storage & Sample Preservation",
     description:
       "Implementing pilot-scale automation for chemical and pharmaceutical scale-ups.",
     link: "/products/ovens",
@@ -58,15 +58,15 @@ const profiles = [
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
-  {
-    name: "Pumps",
-    description:
-      "Cutting-edge cell analysis, imaging, and molecular biology platforms.",
-    link: "/products/ovens",
-    image: "/about.jpg",
-    icon: "/icon1.svg",
-    socials: { whatsapp: "https://wa.me/918019828999" },
-  },
+//   {
+//     name: "Pumps",
+//     description:
+//       "Cutting-edge cell analysis, imaging, and molecular biology platforms.",
+//     link: "/products/ovens",
+//     image: "/about.jpg",
+//     icon: "/icon1.svg",
+//     socials: { whatsapp: "https://wa.me/918019828999" },
+//   },
 ]
 
 function ProfileCard({ profile, isOpen, index, setOpenIndex }) {
@@ -146,7 +146,7 @@ function ProfileCard({ profile, isOpen, index, setOpenIndex }) {
   );
 }
 
-export default function Verticals() {
+export default function Applications() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
