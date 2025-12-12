@@ -85,19 +85,6 @@ export default function Footer() {
                             </button>
                         </div>
                     </div>
-                    {/* <div className="grid grid-cols-3 gap-2">
-            {[...Array(6)].map((_, i) => (
-              <Image
-                key={i}
-                // src={`/insta${i + 1}.jpg`} 
-                src={"/about-us.png"}
-                alt={`Instagram ${i + 1}`}
-                width={100}
-                height={100}
-                className="rounded-md object-cover w-full h-[70px]"
-              />
-            ))}
-          </div> */}
                 </div>
             </div>
 
