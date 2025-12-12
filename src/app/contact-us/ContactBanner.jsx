@@ -1,4 +1,4 @@
-// components/ContactHeader.jsx
+'use client';
 export default function ContactHeader() {
   return (
     <section className="relative w-full h-[300px] overflow-hidden">

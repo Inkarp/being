@@ -6,7 +6,7 @@ import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa';
 
 export default function Footer() {
     return (
-        <footer className="bg-black/80 text-white pt-5 w-[90%] mx-auto rounded-t-[50px]">
+        <footer className="bg-black/80 text-white pt-5 w-[full]">
             {/* Top Grid Section */}
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10s">
                 {/* Column 1 - Logo and Description */}

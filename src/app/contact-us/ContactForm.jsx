@@ -1,10 +1,10 @@
-// components/ContactFormSection.jsx
+'use client';
 import { FaUser, FaEnvelope } from 'react-icons/fa';
 
 export default function ContactFormSection() {
     return (
         <section className="w-[95%] mx-auto py-12">
-            <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-xl overflow-hidden">
+            <div className="flex flex-col md:flex-row  overflow-hidden">
 
                 {/* Left: Form */}
                 <div className="w-full md:w-1/2 bg-[#f7f6ff] p-10 space-y-6">
@@ -94,11 +94,11 @@ export default function ContactFormSection() {
                 </div>
 
                 {/* Right: Image */}
-                <div className="w-full md:w-1/2">
+                <div className="w-1/2 md:w-1/2">
                     <img
                         src="/about.jpg" // Replace with actual image
                         alt="Contact Visual"
-                        className="w-full h-full object-cover rounded-l-none rounded-r-xl"
+                        className="w-auto h-full object-contain rounded-l-none rounded-r-xl"
                     />
                 </div>
             </div>
