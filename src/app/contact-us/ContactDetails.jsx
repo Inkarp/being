@@ -4,7 +4,6 @@ export default function ContactDetails() {
     return (
         <section className="w-[95%]  mx-auto py-12 overflow-hidden">
             <div className="flex flex-col md:flex-row">
-                {/* Left: Image */}
                 <div className="w-full md:w-1/2">
                     <img
                         src="/contact.png" // Replace with actual image path
@@ -12,7 +11,6 @@ export default function ContactDetails() {
                         className="w-full h-full object-contain rounded-l-xl"
                     />
                 </div>
-                {/* Right: Contact Info */}
                 <div className="w-full md:w-1/2 p-8 text-black flex flex-col justify-center">
                     <h2 className="text-3xl font-bold mb-8">Let’s Get In Touch!</h2>
 
@@ -72,8 +70,6 @@ export default function ContactDetails() {
                         className="w-full h-full object-contain rounded-l-xl"
                     />
                 </div>
-
-
             </div>
         </section>
     );
