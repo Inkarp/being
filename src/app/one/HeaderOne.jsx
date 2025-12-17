@@ -93,6 +93,14 @@ export default function HeaderOne() {
                 : "flex items-center gap-6 font-semibold text-white"
                 }`}
             >
+               <img
+              src="/logo.webp"
+              alt="TechIn Logo"
+              className={`object-contain transition-all duration-300 ${isScrolled
+                ? "rounded-xl h-[50px] w-[200px] "
+                : "rounded-full h-[120px] w-[250px] hidden"
+                }`}
+            />
               {[
                 { name: "Home", href: "/one" },
                 { name: "Applications", href: "/applications" },
