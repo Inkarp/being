@@ -25,6 +25,8 @@ import Recent from "../five/Recent";
 import NewOfferings from "./NewOfferings";
 import ScrollToTop from "../ScrollToTop";
 import HeroVideo from "./HeroVideo";
+import Stats from "./Stats";
+import Showcase from "./Showcase";
 
 
 export default function Layout() {
@@ -43,24 +45,26 @@ export default function Layout() {
       {/* <div className=""> */}
       <ScrollToTop />
       <HeaderOne />
-      <div className={isScrolled ? "pt-[0px]" : "pt-0"}>
+      {/* <div className={isScrolled ? "pt-[0px]" : "pt-0"}> */}
         {/* <Navbar /> */}
         <HeroSection />
         <HeroOne />
         <HeroVideo />
+        {/* <Showcase /> */}
         {/* <Buttons /> */}
         {/* <Products /> */}
         {/* <Services /> */}
         {/* <AboutSection /> */}
         <AboutOne />
         <AboutOneNew />
+        <Stats />
         <OfferingsNew />
         <NewOfferings />
         <OfferingsSection />
         <Blog />
         <BlogSection />
         <Footer />
-      </div>
+      {/* </div> */}
     </div>
   );
 }

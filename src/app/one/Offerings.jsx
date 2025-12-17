@@ -120,7 +120,7 @@ export default function OfferingsSection() {
 
             {/* Icon and Title */}
             <div className="flex items-center gap-4 mb-4">
-              <span className="p-3 rounded-3xl border transition-transform duration-600 group-hover:rotate-360 text-[#2B7EC2]">
+              <span className="p-3 rounded-3xl border transition-transform duration-600 group-hover:rotate-y-180 text-[#2B7EC2]">
                 {item.icon}
               </span>
               <h3 className="text-lg font-semibold">{item.title}</h3>

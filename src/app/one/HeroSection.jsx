@@ -36,10 +36,8 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-[90%] mx-auto rounded-[35px] bg-gradient-to-r from-[#0a0a8f] via-[#2b44c2] to-[#0a0a8f] h-[600px] text-white py-20 overflow-hidden">
-
       {/* BG image */}
       <div className="absolute inset-0 bg-[url('/about.jpg')] bg-cover bg-center opacity-30 z-0" />
-
       <div className="relative z-10 max-w-6xl mx-auto px-4 flex flex-col items-center text-center">
 
         {/* Tagline BOUNCE */}
@@ -59,7 +57,7 @@ export default function HeroSection() {
         <h1
           ref={typeRef}
           className={`
-            text-4xl md:text-5xl font-bold leading-tight
+            text-4xl md:text-5xl font-bold leading-tight font-[Roboto]
             ${typing ? "typewriter-active" : ""}
             ${finished ? "typewriter-done" : ""}
           `}

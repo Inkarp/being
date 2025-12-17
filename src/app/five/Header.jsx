@@ -37,8 +37,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed z-50  transition-all duration-300 ease-in-out ${isScrolled ? 'top-0 w-[90%] mx-auto left-20' : 'top-12 w-[95%] mx-auto left-10'
-        } py-3 font-[Roboto] flex gap-5 rounded-full`}
+      className={`fixed z-50 transition-all duration-300 ease-in-out ${isScrolled ? 'top-0 w-[90%] mx-auto left-20' : 'top-12 w-[95%] mx-auto left-10'
+        } py-1 font-[Roboto] flex gap-5 rounded-full`}
     >
       {/* Logo Section */}
       <div className="w-[15%] flex items-center justify-between px-6 rounded-full bg-gray-200 border-x-4 border-[#2F4191]">

@@ -32,7 +32,7 @@ export default function HeaderOne() {
         <div className="flex items-stretch">
           <div
             className={`${isScrolled
-              ? "flex items-center border-r-[5px] hidden border-[#2F4191] rounded-[30px] px-5 transition-all duration-500 "
+              ? "flex items-center border-r-[5px] hidden border-[#2F4191] rounded-[30px] px-5 transition-all duration-500"
               : ""
               }`}
           >
@@ -82,7 +82,7 @@ export default function HeaderOne() {
           <div
             className={`w-full px-5 flex justify-between items-center text-white
               ${isScrolled
-                ? "py-1 text-black bg-white rounded-full border-x-5 border-[#2F3F8D] transition-all duration-300 "
+                ? "py-1 text-black bg-white rounded-full border-x-5 border-[#2F3F8D] "
                 : "py-3 bg-[#2B7EC2] rounded-full border-x-5 border-[#2F3F8D]"
               }`}
           >

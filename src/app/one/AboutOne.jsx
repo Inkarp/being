@@ -122,8 +122,8 @@ export default function AboutOne() {
         </div>
         {/* </p> */}
         <h2 className="text-4xl font-bold leading-snug mb-4">
-          A Lab Patner<br />
-          With<span className="text-blue-700"> Best Provided Instruments</span>
+          A Lab Partner<br />
+          With<span className="text-blue-700">Best Provided Instruments</span>
         </h2>
         <p className="text-gray-600 mb-8 leading-relaxed">
           At techin, we are dedicated to delivering innovative IT solutions and services that empower businesses to thrive in the digital age. With a team of experienced professionals, we provide customized technology strategies, robust support, and cutting-edge solutions tailored to your unique needs. Our mission is to help you achieve your goals by making technology work for you efficiently, securely, and reliably.

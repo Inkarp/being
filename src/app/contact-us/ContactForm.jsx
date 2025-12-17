@@ -1,18 +1,16 @@
 'use client';
 import { FaUser, FaEnvelope } from 'react-icons/fa';
+import { FaClock, FaPhoneAlt,  FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function ContactFormSection() {
     return (
-        <section className="w-[95%] mx-auto py-12">
-            <div className="flex flex-col md:flex-row  overflow-hidden">
-
+        <section className="w-[95%] mx-auto py-3 ">
+            <div className="flex flex-col justify-center items-center md:flex-row overflow-hidden space-x-3 p-5">
                 {/* Left: Form */}
-                <div className="w-full md:w-1/2 bg-[#f7f6ff] p-10 space-y-6">
+                <div className="w-full h-auto md:w-1/2 bg-[#f7f6ff] p-5 space-y-3 rounded-2xl">
                     <div>
-                        <p className="text-blue-600 font-bold flex items-center gap-2">
-                            <span>💠</span> Contact Us <span>💠</span>
-                        </p>
-                        <h2 className="text-3xl font-extrabold mt-2">TechIn Contact Information Here</h2>
+
+                        <h2 className="text-3xl font-extrabold mt-2"> Contact Information Here</h2>
                     </div>
 
                     <form className="space-y-4">
@@ -57,7 +55,7 @@ export default function ContactFormSection() {
                             </div>
                         </div>
 
-                           <div className="flex gap-4">
+                        <div className="flex gap-4">
                             <div className="flex-1 relative">
                                 <input
                                     type="text"
@@ -92,14 +90,68 @@ export default function ContactFormSection() {
                         </button>
                     </form>
                 </div>
-
                 {/* Right: Image */}
-                <div className="w-1/2 md:w-1/2">
-                    <img
-                        src="/about.jpg" // Replace with actual image
-                        alt="Contact Visual"
-                        className="w-auto h-full object-contain rounded-l-none rounded-r-xl"
+                <div className="relative w-full md:w-1/2 h-full md:h-auto">
+                    <video
+                        src="/bg-video.mov"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover rounded-2xl"
                     />
+
+                    <div className="absolute inset-0 flex items-center justify-center px-4 ">
+                        <div className="w-full max-w-md px-4 py-5 shadow-2xl rounded-3xl bg-black/10 text-black ">
+                            <h2 className="text-3xl font-bold mb-8">Let’s Get In Touch!</h2>
+
+                            <div className="space-y-6">
+                                {/* Item 1 */}
+                                <div className="flex items-start gap-4">
+                                    <div className="bg-black p-3 rounded-lg">
+                                        <FaClock className="text-white text-xl" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-black">Office Time</h4>
+                                        <p className="text-sm text-white">Mon–Fri: 10:00Am–09:00Pm</p>
+                                    </div>
+                                </div>
+
+                                {/* Item 2 */}
+                                <div className="flex items-start gap-4">
+                                    <div className="bg-black p-3 rounded-lg">
+                                        <FaPhoneAlt className="text-white text-xl" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-black">Call Us Any Time</h4>
+                                        <p className="text-sm text-blue-100">+(009) 1888 000 2222</p>
+                                    </div>
+                                </div>
+
+                                {/* Item 3 */}
+                                <div className="flex items-start gap-4">
+                                    <div className="bg-black p-3 rounded-lg">
+                                        <FaEnvelope className="text-white text-xl" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-black">Email Address</h4>
+                                        <p className="text-sm text-blue-100">info@techin.com</p>
+                                    </div>
+                                </div>
+
+                                {/* Item 4 */}
+                                <div className="flex items-start gap-4">
+                                    <div className="bg-black p-3 rounded-lg">
+                                        <FaMapMarkerAlt className="text-white text-xl" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-black">Office Address</h4>
+                                        <p className="text-sm text-blue-100">12th Street, New York, USA</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
