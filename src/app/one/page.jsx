@@ -58,7 +58,7 @@ export default function Layout() {
         <AboutOne />
         <AboutOneNew />
         <Stats />
-        <OfferingsNew />
+        {/* <OfferingsNew /> */}
         <NewOfferings />
         <OfferingsSection />
         <Blog />

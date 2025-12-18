@@ -5,33 +5,33 @@ import { FaArrowRight } from 'react-icons/fa';
 const projects = [
     {
         title: 'Ovens',
-        tag: 'CloudStream Integration',
-        image: '/about.jpg',
+        tag: 'Sample Preparation & Processing',
+        image: '/ovens1.png',
     },
     {
         title: 'Incubators',
-        tag: 'Cybersecurity',
-        image: '/about.jpg',
+        tag: 'Material Characterization & Testing',
+        image: '/ovens.png',
     },
     {
         title: 'Shakers',
-        tag: 'SecureNet Shield',
-        image: '/about.jpg',
+        tag: 'Cell & Microbiology Research',
+        image: '/incubators.png',
     },
     {
         title: 'Ovens',
-        tag: 'CloudStream Integration',
-        image: '/about.jpg',
+        tag: 'Cleanroom & Contamination Control',
+        image: '/ovens1.png',
     },
     {
         title: 'Incubators',
-        tag: 'Cybersecurity',
-        image: '/about.jpg',
+        tag: 'Cold Storage & Sample Preservation',
+        image: '/water-baths.png',
     },
     {
         title: 'Shakers',
-        tag: 'SecureNet Shield',
-        image: '/about.jpg',
+        tag: 'Cold Storage & Sample Preservation',
+        image: '/incubators.png',
     },
 ];
 
@@ -44,8 +44,7 @@ export default function Blog() {
                     💠 Our Products 💠
                 </p>
                 <h2 className="text-4xl font-extrabold text-black mt-2 leading-snug">
-                    Explore Our <br className="hidden md:block" />
-                    Product Categories
+                    Explore Our Product Categories
                 </h2>
             </div>
 
@@ -54,13 +53,13 @@ export default function Blog() {
                 {projects.map((project, idx) => (
                     <div
                         key={idx}
-                        className="relative overflow-hidden rounded-3xl shadow-md hover:shadow-lg transition-all duration-500 hover:scale-[1.1] group"
+                        className="relative overflow-hidden rounded-3xl shadow-md hover:shadow-lg transition-all duration-500 hover:scale-[1.05] group bg-white"
                     >
                         {/* Image */}
                         <img
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-[360px] object-cover"
+                            className="w-[70%] mx-auto h-[400px] object-contain"
                         />
 
                         {/* Overlay Content */}
