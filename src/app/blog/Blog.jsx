@@ -6,26 +6,13 @@ import { FaArrowRight } from 'react-icons/fa';
 
 export default function Blog() {
   return (
-    <section className="p-5 w-[90%] mx-auto">
-      {/* <div className="max-w-7xl mx-auto px-4"> */}
+    <section className="p-5 w-full mx-auto">
       <div className="flex flex-col lg:flex-row gap-10 ">
-
         {/* Left Section (Main Blog Grid) */}
         <div className=" space-y-5 ">
-          {/* <div className="w-full flex justify-end mb-4">
-            <div className="bg-white w-full max-w-sm p-3 rounded-lg shadow-xl flex items-center gap-2">
-              <input
-                type="text"
-                className="w-full border border-gray-300 px-3 py-2 rounded text-sm"
-                placeholder="Search here..."
-              />
-            </div>
-          </div> */}
-
-
           {/* Blog Grid (Example of two cards, repeat as needed) */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((blog, index) => (
+            {[1, 2, 3, ].map((blog, index) => (
               <div key={index} className="bg-white shadow-xl rounded-[20px] overflow-scroll-y">
                 <div className="relative">
                   <Image
@@ -72,25 +59,7 @@ export default function Blog() {
               </div>
             ))}
           </div>
-
-          {/* Pagination */}
-          <div className="flex items-center justify-center gap-4 mt-6">
-            <button className="text-blue-600 text-xl">&larr;</button>
-            {[1, 2, 3, 4].map((n) => (
-              <button
-                key={n}
-                className={`w-8 h-8 rounded-full ${n === 1 ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600'
-                  }`}
-              >
-                {n}
-              </button>
-            ))}
-            <button className="text-blue-600 text-xl">&rarr;</button>
-          </div>
         </div>
-
-
-        {/* </div> */}
       </div>
     </section>
   );

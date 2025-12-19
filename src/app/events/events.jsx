@@ -42,8 +42,8 @@ const archives = [
 
 export default function Events() {
   return (
-    <section className="w-[95%] mx-auto p-5">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
+    <section className="w-full mx-auto p-5">
+      <div className=" mx-auto flex flex-col lg:flex-row gap-10">
         <div className="flex-1">
           <div className="bg-white px-6 py-6 shadow-xl rounded-xl mb-8 space-y-6 text-sm font-medium text-gray-700">
 
