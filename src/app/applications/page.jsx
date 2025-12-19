@@ -1,7 +1,7 @@
 'use client'
 
 import Footer from "../Footer";
-import HeaderOne from "../one/HeaderOne";
+import HeaderOne from "../Home/Header";
 import Verticals from "../products/verticals";
 import Applications from "./Applications";
 

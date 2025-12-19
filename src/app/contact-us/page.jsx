@@ -7,7 +7,6 @@ import ContactFormSection from "./ContactForm";
 export default function ContactUs() {
     return (
         <>
-            <Header />
             <ContactHeader />
             <ContactFormSection />
             <ContactDetails />

@@ -8,7 +8,7 @@ const sliderImages = ['/incubators.png', '/water-baths.png', '/ovens.png'];
 
 const names = ['Incubators', 'Water Baths', 'Ovens'];
 
-export default function HeroVideo() {
+export default function Hero() {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function HeroVideo() {
     }, []);
 
     return (
-        <section className="w-[90%] mx-auto rounded-[50px] h-[90vh] flex overflow-hidden">
+        <section className="w-[90%] mx-auto rounded-[30px] h-[80vh] flex overflow-hidden">
             {/* Left: Video + text */}
             <div className="relative w-3/5 h-full">
                 {/* Video */}

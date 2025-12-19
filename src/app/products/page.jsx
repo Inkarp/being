@@ -1,5 +1,5 @@
-import Footer from "../one/Footer";
-import HeaderOne from "../one/HeaderOne";
+import Footer from "../Home/Footer";
+import HeaderOne from "../Home/Header";
 import Verticals from "./verticals";
 
 
@@ -7,10 +7,7 @@ import Verticals from "./verticals";
 export default function page() {
     return (
         <>
-            <HeaderOne />
             <Verticals />
-            <Footer />
-
         </>
     )
 }

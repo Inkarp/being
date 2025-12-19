@@ -7,24 +7,24 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 import Products from "./Products";
 import Services from "./Services";
-import AboutSection from "./AboutOne";
-import Footer from "./Footer";
-import HeaderOne from "./HeaderOne";
+import AboutSection from "../Home/About";
+import Footer from "../Home/Footer";
+import HeaderOne from "../Home/Header";
 
 import HeroOne from "./HeroOne";
-import AboutOne from "./AboutOne";
+import AboutOne from "../Home/About";
 import OfferingsSection from "./Offerings";
 import HeroSection from "./HeroSection";
 import Buttons from "./Buttons";
 import Navbar from "./Navbar";
 import AboutOneNew from "./AboutOneNew";
 import OfferingsNew from "./OfferingsNew";
-import BlogSection from "./BlogSection";
+import BlogSection from "../Home/Blogs";
 import Blog from "./Blog";
 import Recent from "../five/Recent";
-import NewOfferings from "./NewOfferings";
+import NewOfferings from "../Home/Offerings";
 import ScrollToTop from "../ScrollToTop";
-import HeroVideo from "./HeroVideo";
+import HeroVideo from "../Home/Hero";
 import Stats from "./Stats";
 import Showcase from "./Showcase";
 

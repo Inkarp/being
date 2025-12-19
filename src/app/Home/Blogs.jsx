@@ -26,7 +26,7 @@ const blogs = [
   },
 ];
 
-export default function BlogSection() {
+export default function Blogs() {
   return (
     <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto text-center mb-12">

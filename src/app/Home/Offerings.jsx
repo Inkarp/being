@@ -8,55 +8,55 @@ const causes = [
     {
         title: 'Ovens',
         percentage: 10,
-        image: '/about-us.png',
+        image: '/ovens.png',
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
     {
         title: 'Incubators',
         percentage: 12,
-        image: '/about-us.png',
+        image: '/incubators.png',
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
     {
         title: 'Shakers',
         percentage: 9,
-        image: '/about-us.png',
+        image: '/incubators.png',
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
 
     {
         title: 'Stirrers',
         percentage: 7,
-        image: '/about-us.png',
+        image: '/incubators.png',
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
     {
         title: 'Water Baths',
         percentage: 20,
-        image: '/about-us.png',
+        image: '/water-baths.png',
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
     {
         title: 'Circulators & Chillers',
         percentage: 15,
-        image: '/about-us.png',
+        image: '/incubators.png',
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
     {
         title: 'Rotary Evaporators',
         percentage: 5,
-        image: '/about-us.png',
+        image: '/incubators.png',
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
     {
         title: 'Pumps',
         percentage: 6,
-        image: '/about-us.png',
+        image: '/incubators.png',
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
 ];
 
-export default function NewOfferings() {
+export default function Offerings() {
     const sectionRef = useRef(null);
     const [visibleCards, setVisibleCards] = useState(3);
     const [scrollEnabled, setScrollEnabled] = useState(true);
@@ -112,23 +112,23 @@ export default function NewOfferings() {
                     Our <span className="text-[#2B7EC2] ">Products</span>
                 </h2>
                 <p className="text-gray-600 ">
-                    Our <span className="text-yellow-600 font-medium">charity helps</span> those people who have no hope
+                    Our <span className="text-black font-medium">charity helps</span> those people who have no hope
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 transition-all duration-500 rounded-2xl">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 transition-all duration-500 rounded-2xl py-3">
                     {causes.slice(0, visibleCards).map((cause, index) => (
-                        <div key={index} className="bg-white shadow-sm  overflow-hidden rounded-[30px] hover:border border-[#2B7EC2] hover:scale-[1.05] transition-all duration-500">
-                            <div className="relative">
+                        <div key={index} className="border border-gray-100 shadow-xl  overflow-hidden rounded-[30px] hover:border border-[#2B7EC2] hover:scale-[1.05] transition-all duration-500">
+                            <div className="relative ">
                                 <Image
                                     src={cause.image}
                                     alt={cause.title}
                                     width={600}
                                     height={400}
-                                    className="w-full h-64 object-cover"
+                                    className="w-full h-48 object-contain border-b-2 border-[#2B7EC2] bg-gradient-to-r from-blue-50 via-white to-blue-50 p-6"
                                 />
 
-                                <div className="absolute bottom-[-16px] left-1/3 bg-white border-2 border-[#2B7EC2] text-yellow-600 font-semibold text-sm px-3 py-1 rounded-full shadow-sm">
-                                    {cause.percentage}+ Products
+                                <div className="absolute bottom-[-16px] left-1/3 bg-white border-2 border-[#2B7EC2] text-[#2B7EC2] font-semibold text-sm px-3 py-1 rounded-full shadow-sm">
+                                 <span className='text-[#2F3F8D]'> {cause.percentage}+</span> Products
                                 </div>
                             </div>
 
@@ -136,7 +136,7 @@ export default function NewOfferings() {
                                 <h3 className="text-lg font-semibold">{cause.title}</h3>
                                 <p className="text-gray-500 text-sm">{cause.description}</p>
 
-                                <div className="flex items-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-fit">
+                                <div className="flex items-center justify-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-fit">
                                     <span className="text-white font-medium text-[16px]">Know More</span>
                                     {/* Gear SVG with arrow inside */}
                                     <div className="relative w-[30px] h-[30px] text-white">

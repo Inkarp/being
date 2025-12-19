@@ -2,6 +2,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import ScrollToTop from "./ScrollToTop";
+import Header from "./Home/Header";
+import Footer from "./Home/Footer";
 
 // Load Google Fonts
 const geistSans = Geist({
@@ -28,14 +31,21 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="antialiased">
         {/* Navbar */}
-        <nav className="p-4 bg-gray-300 text-black flex gap-4 flex justify-center font-semibold text-lg ">
+        {/* <nav className="p-4 bg-gray-300 text-black flex gap-4 flex justify-center font-semibold text-lg ">
           <Link className="hover:text-[#E63946] hover:underline" href="/one">Home 1</Link>
           <Link className="hover:text-[#E63946] hover:underline" href="/three">Home 3</Link>
           <Link className="hover:text-[#E63946] hover:underline" href="/five">Home 5</Link>
-        </nav>
+        </nav> */}
 
         {/* Main Content */}
-        {children}
+
+        <ScrollToTop />
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
+
       </body>
     </html>
   );
