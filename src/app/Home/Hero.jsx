@@ -19,7 +19,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="w-[90%] mx-auto rounded-[30px] h-[80vh] flex overflow-hidden">
+        <section className="w-full mx-auto rounded-[30px] h-[80vh] flex overflow-hidden">
             {/* Left: Video + text */}
             <div className="relative w-3/5 h-full">
                 {/* Video */}

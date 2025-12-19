@@ -8,7 +8,7 @@ import { BsShieldCheck, BsPeople } from 'react-icons/bs';
 export default function About() {
   return (
     <section className="py-20 px-4 text-black">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="w-full mx-auto grid md:grid-cols-2 gap-12 items-center">
 
         {/* Left side: images */}
         <div className="relative space-y-6">
@@ -99,20 +99,8 @@ export default function About() {
               </div>
             </div>
 
-            {/* <div className="group relative p-2 bg-[#2B7EC2] rounded-full  w-fit flex items-center justify-center">
-            <img
-              src="/Circle-Button.svg"
-              className="w-15 h-15 transition-transform duration-500 spin-slow"
-              alt="Spinning Image"
-            />
-            <FaArrowCircleRight
-              size={24}
-              className="absolute text-white transition-transform duration-500 group-hover:animate-bounce "
-            />
-          </div> */}
-
             <div className="flex items-center gap-3 bg-[#2F3F8D] px-6 py-3 rounded-full w-fit">
-              <span className="text-white font-medium text-[16px]">About Us</span>
+              <span className="text-white font-medium text-[16px]">Know More</span>
               {/* Gear SVG with arrow inside */}
               <div className="relative w-[30px] h-[30px] text-white">
                 <svg

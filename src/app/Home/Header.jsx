@@ -24,26 +24,28 @@ export default function Header() {
   return (
 
     <div
-      className={`transition-all duration-300 ${isScrolled ? "fixed top-0 left-0 right-0 z-50 py-2 transition-all duration-500" : ""
+      className={`transition-all duration-300 ${isScrolled ? "fixed top-0 left-0 right-0 z-50  transition-all duration-500" : "px-10"
         }`}
     >
-      <header className={` ${isScrolled ? "p-0 w-[90%] flex mx-auto font-[Roboto] overflow-hidden gap-5 transition-all duration-500" : "w-[95%] flex mx-auto font-[Roboto] rounded-2xl overflow-hidden gap-5 p-2"}`}>
+      <header className={` ${isScrolled ? "p-0 w-full flex mx-auto font-[Roboto] overflow-hidden gap-5 transition-all duration-500" : "w-full flex mx-auto font-[Roboto] rounded-2xl overflow-hidden gap-5 p-2"}`}>
         {/* Logo block – stays left, just shrinks on scroll */}
         <div className="flex items-stretch">
           <div
             className={`${isScrolled
-              ? "flex items-center border-r-[5px] hidden border-[#2F4191] rounded-[30px] px-5 transition-all duration-500"
+              ? "flex items-center border-r-[5px] hidden border-[#2F4191]  px-5 transition-all duration-500"
               : ""
               }`}
           >
-            <img
-              src="/logo.webp"
-              alt="TechIn Logo"
-              className={`object-contain transition-all duration-300 ${isScrolled
-                ? "rounded-xl h-[70px] w-[200px] "
-                : "rounded-full h-[120px] w-[250px]"
-                }`}
-            />
+            <Link href="/" passHref>
+              <img
+                src="/logo.webp"
+                alt="TechIn Logo"
+                className={`object-contain transition-all duration-300 ${isScrolled
+                  ? "rounded-xl h-[70px] w-[200px] "
+                  : "rounded-full h-[120px] w-[250px]"
+                  }`}
+              />
+            </Link>
           </div>
         </div>
 
@@ -94,22 +96,23 @@ export default function Header() {
                 : "flex items-center gap-6 font-semibold text-white"
                 }`}
             >
-              <img
-                src="/logo.webp"
-                alt="TechIn Logo"
-                className={`object-contain transition-all duration-300 ${isScrolled
-                  ? "rounded-xl h-[50px] w-[150px] bg-white"
-                  : "rounded-full h-[120px] w-[250px] hidden"
-                  }`}
-              />
+              <Link href="/" passHref>
+                <img
+                  src="/logo.webp"
+                  alt="TechIn Logo"
+                  className={`object-contain transition-all duration-300 ${isScrolled
+                    ? "rounded-xl h-[50px] w-[150px] bg-white"
+                    : "rounded-full h-[120px] w-[250px] hidden"
+                    }`}
+                />
+              </Link>
               {[
                 { name: "Home", href: "/" },
-                // { name: "Applications", href: "/applications" },
                 { name: "Products", href: "/products" },
                 { name: "Events", href: "/events" },
                 { name: "Blogs", href: "/blog" },
-                { name: "About Us", href: "/about-us" },
                 { name: "Contact Us", href: "/contact-us" },
+                 { name: "About Us", href: "/about-us" },
               ].map((item, index) => (
                 <Link key={index} href={item.href} passHref>
                   <div className="group relative h-[30px] flex items-center cursor-pointer overflow-hidden px-3">

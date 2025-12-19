@@ -29,7 +29,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="antialiased">
+      <body className="antialiased bg-gradient-to-r from-[#E0F2FE] via-[#E0F2FE] to-[#E0F2FE] ">
         {/* Navbar */}
         {/* <nav className="p-4 bg-gray-300 text-black flex gap-4 flex justify-center font-semibold text-lg ">
           <Link className="hover:text-[#E63946] hover:underline" href="/one">Home 1</Link>
@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
 
         <ScrollToTop />
         <Header />
-        <main>
+        <main className="w-[90%] mx-auto">
           {children}
         </main>
         <Footer />

@@ -46,13 +46,11 @@ export default function ScrollToTop() {
 
           {/* Text and arrow overlaid (not spinning) */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center ">
-            <span className="text-white font-bold text-xs mb-1">
+            <span className="text-[#2B7EC2] font-bold text-xs mb-1">
               Go To Top
             </span>
-            <FaArrowUp className="text-[#2B7EC2] animate-bounce group-hover:animate-bounce " size={14} />
+            <FaArrowUp className="text-white animate-bounce group-hover:animate-bounce transition" size={16} />
           </div>
-
-
         </button>
       )}
     </>

@@ -107,7 +107,7 @@ export default function Offerings() {
             className="py-5 relative"
         // style={{ height: 'auto', overflow: 'hidden' }}
         >
-            <div ref={sectionRef} className="w-[90%] mx-auto px-4 text-center ">
+            <div ref={sectionRef} className="w-full mx-auto px-4 text-center">
                 <h2 className="text-3xl font-bold py-3">
                     Our <span className="text-[#2B7EC2] ">Products</span>
                 </h2>
@@ -132,7 +132,7 @@ export default function Offerings() {
                                 </div>
                             </div>
 
-                            <div className="px-6 pt-8 pb-6 text-center space-y-3">
+                            <div className="p-5 flex flex-col justify-center items-center text-center space-y-3">
                                 <h3 className="text-lg font-semibold">{cause.title}</h3>
                                 <p className="text-gray-500 text-sm">{cause.description}</p>
 
