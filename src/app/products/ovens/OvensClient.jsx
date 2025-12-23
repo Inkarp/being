@@ -13,7 +13,7 @@ export default function OvensClient() {
   useEffect(() => {
     const fetchInitialData = async () => {
       try {
-        const res = await fetch('http://localhost:5001/api/products/ovens');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/products/ovens`);
         const data = await res.json();
 
         setOvensData(data);
@@ -32,8 +32,8 @@ export default function OvensClient() {
     setLoading(true);
     try {
       const url = subcategory
-        ? `http://localhost:5001/api/products/ovens?subcategory=${encodeURIComponent(subcategory)}`
-        : `http://localhost:5001/api/products/ovens`;
+        ? `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/products/ovens?subcategory=${encodeURIComponent(subcategory)}`
+        : `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/products/ovens`;
 
       const res = await fetch(url);
       const data = await res.json();
