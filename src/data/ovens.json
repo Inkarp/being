@@ -1,0 +1,611 @@
+{
+    "category": "Ovens",
+    "subcategories": [
+        {
+            "name": "Laboratory Drying Oven",
+            "models": [
+                {
+                    "model": "BPG-9040A",
+                    "meta": {
+                        "id": "bpg-9040a",
+                        "slug": "bpg-9040a",
+                        "title": "BPG-9040A Precision Hot Air Oven",
+                        "tags": [
+                            "40L",
+                            "LCD",
+                            "Forced Air",
+                            "Compact",
+                            "Entry Level"
+                        ],
+                        "thumbnail": "/ovens.png",
+                        "available": true,
+                        "createdAt": "2025-12-22T00:00:00Z"
+                    },
+                    "overview": "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples...",
+                    "keyFeatures": [
+                        "Stainless steel chamber with rounded corners for easy cleaning.",
+                        "Large LCD controller with timer, multiple program settings...",
+                        "Forced air circulation for fast, even heating...",
+                        "Adjustable shelves...",
+                        "Over-temperature protection with alarms...",
+                        "Data connectivity (optional RS-485/RS-232)...",
+                        "Side test port for inserting probes and sensors."
+                    ],
+                    "specifications": {
+                        "temperatureRange": "Ambient +10 °C to 250 °C",
+                        "accuracy": "±1 °C",
+                        "uniformity": "±2.5%",
+                        "capacity": "40 L",
+                        "chamberSize": "350 × 320 × 350 mm",
+                        "exteriorSize": "480 × 566 × 650 mm",
+                        "shelves": 2,
+                        "timer": "Up to 5999 minutes",
+                        "powerSupply": "220 V, 50 Hz",
+                        "consumption": "850 W",
+                        "weight": {
+                            "net": "40 kg",
+                            "gross": "62 kg"
+                        }
+                    },
+                    "applications": [
+                        "Pharmaceuticals: Drying powders, glassware...",
+                        "Research Labs: Heat treatment, sample preparation...",
+                        "Biotechnology: Sterilising instruments...",
+                        "Chemical Industry: Curing, stability testing...",
+                        "Food & Agriculture: Moisture analysis..."
+                    ]
+                },
+                {
+                    "model": "BPG-9070A",
+                    "meta": {
+                        "id": "bpg-9070a",
+                        "slug": "bpg-9070a",
+                        "title": "BPG-9070A Laboratory Drying Oven",
+                        "tags": [
+                            "80L",
+                            "High Accuracy",
+                            "Forced Air",
+                            "Mid Size",
+                            "LCD"
+                        ],
+                        "thumbnail": "/ovens.png",
+                        "available": true,
+                        "createdAt": "2025-12-22T00:00:00Z"
+                    },
+                    "overview": "The BPG-9070A is a reliable 80-litre forced-air drying oven designed for consistent heating and drying in labs...",
+                    "keyFeatures": [
+                        "Stainless steel chamber with smooth edges...",
+                        "Large LCD controller with timer...",
+                        "Forced air circulation for fast heating...",
+                        "Adjustable shelves...",
+                        "Safety alarms for over-temperature...",
+                        "Optional RS-485/Printer for data..."
+                    ],
+                    "specifications": {
+                        "temperatureRange": "Ambient +10 °C to 250 °C",
+                        "accuracy": "±0.5 °C",
+                        "resolution": "0.1 °C",
+                        "uniformity": "Excellent airflow",
+                        "capacity": "80 L",
+                        "chamberSize": "400 × 425 × 445 mm",
+                        "exteriorSize": "545 × 580 × 800 mm",
+                        "shelves": 2,
+                        "timer": "1 to 9,999 minutes",
+                        "powerSupply": "220 V, 50 Hz",
+                        "consumption": "1,100 W"
+                    },
+                    "applications": [
+                        "Pharma & Biotech: Drying powders, sterilising glassware...",
+                        "Research Labs: Solvent removal, thermal studies...",
+                        "Material Science: Polymer curing...",
+                        "Food & Agriculture: Moisture analysis...",
+                        "Chemical Labs: Stability checks..."
+                    ]
+                },
+                {
+                    "model": "BPG-9140A",
+                    "meta": {
+                        "id": "bpg-9140a",
+                        "slug": "bpg-9140a",
+                        "title": "BPG-9140A Large Capacity Drying Oven",
+                        "tags": [
+                            "150L",
+                            "Heavy Duty",
+                            "Forced Air",
+                            "High Power",
+                            "Industrial"
+                        ],
+                        "thumbnail": "/incubators.png",
+                        "available": true,
+                        "createdAt": "2025-12-22T00:00:00Z"
+                    },
+                    "overview": "The BPG-9140A is a 150-litre forced-air drying oven designed for larger sample loads...",
+                    "keyFeatures": [
+                        "Stainless steel chamber with smooth corners...",
+                        "LCD controller with multi-program timer...",
+                        "Forced air circulation for fast and even heating...",
+                        "Three adjustable shelves...",
+                        "Built-in safety alarms...",
+                        "Optional RS-485/printer..."
+                    ],
+                    "specifications": {
+                        "temperatureRange": "Ambient +10 °C to 250 °C",
+                        "accuracy": "±1 °C",
+                        "resolution": "0.1 °C",
+                        "uniformity": "±2.5%",
+                        "capacity": "150 L",
+                        "chamberSize": "500 × 380 × 750 mm",
+                        "exteriorSize": "645 × 640 × 1114 mm",
+                        "shelves": 3,
+                        "timer": "Up to 5999 minutes",
+                        "powerSupply": "220 V, 50 Hz",
+                        "consumption": "1550 W",
+                        "weight": {
+                            "net": "81 kg",
+                            "gross": "117 kg"
+                        }
+                    },
+                    "applications": [
+                        "Pharmaceuticals: Sterilising materials...",
+                        "Research Labs: Solvent evaporation, thermal studies...",
+                        "Material Science: Composite testing...",
+                        "Food & Agriculture: Drying powders...",
+                        "Industrial Labs: Wax melting, component testing..."
+                    ]
+                },
+                {
+                    "model": "BPG-9040",
+                    "meta": {
+                        "id": "bpg-9040",
+                        "slug": "bpg-9040",
+                        "title": "BPG-9040A Precision Hot Air Oven",
+                        "tags": [
+                            "40L",
+                            "LCD",
+                            "Forced Air",
+                            "Compact",
+                            "Entry Level"
+                        ],
+                        "thumbnail": "/ovens.png",
+                        "available": true,
+                        "createdAt": "2025-12-22T00:00:00Z"
+                    },
+                    "overview": "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples...",
+                    "keyFeatures": [
+                        "Stainless steel chamber with rounded corners for easy cleaning.",
+                        "Large LCD controller with timer, multiple program settings...",
+                        "Forced air circulation for fast, even heating...",
+                        "Adjustable shelves...",
+                        "Over-temperature protection with alarms...",
+                        "Data connectivity (optional RS-485/RS-232)...",
+                        "Side test port for inserting probes and sensors."
+                    ],
+                    "specifications": {
+                        "temperatureRange": "Ambient +10 °C to 250 °C",
+                        "accuracy": "±1 °C",
+                        "uniformity": "±2.5%",
+                        "capacity": "40 L",
+                        "chamberSize": "350 × 320 × 350 mm",
+                        "exteriorSize": "480 × 566 × 650 mm",
+                        "shelves": 2,
+                        "timer": "Up to 5999 minutes",
+                        "powerSupply": "220 V, 50 Hz",
+                        "consumption": "850 W",
+                        "weight": {
+                            "net": "40 kg",
+                            "gross": "62 kg"
+                        }
+                    },
+                    "applications": [
+                        "Pharmaceuticals: Drying powders, glassware...",
+                        "Research Labs: Heat treatment, sample preparation...",
+                        "Biotechnology: Sterilising instruments...",
+                        "Chemical Industry: Curing, stability testing...",
+                        "Food & Agriculture: Moisture analysis..."
+                    ]
+                },
+                {
+                    "model": "BPG-9070",
+                    "meta": {
+                        "id": "bpg-9070",
+                        "slug": "bpg-9070",
+                        "title": "BPG-9070A Laboratory Drying Oven",
+                        "tags": [
+                            "80L",
+                            "High Accuracy",
+                            "Forced Air",
+                            "Mid Size",
+                            "LCD"
+                        ],
+                        "thumbnail": "/ovens.png",
+                        "available": true,
+                        "createdAt": "2025-12-22T00:00:00Z"
+                    },
+                    "overview": "The BPG-9070A is a reliable 80-litre forced-air drying oven designed for consistent heating and drying in labs...",
+                    "keyFeatures": [
+                        "Stainless steel chamber with smooth edges...",
+                        "Large LCD controller with timer...",
+                        "Forced air circulation for fast heating...",
+                        "Adjustable shelves...",
+                        "Safety alarms for over-temperature...",
+                        "Optional RS-485/Printer for data..."
+                    ],
+                    "specifications": {
+                        "temperatureRange": "Ambient +10 °C to 250 °C",
+                        "accuracy": "±0.5 °C",
+                        "resolution": "0.1 °C",
+                        "uniformity": "Excellent airflow",
+                        "capacity": "80 L",
+                        "chamberSize": "400 × 425 × 445 mm",
+                        "exteriorSize": "545 × 580 × 800 mm",
+                        "shelves": 2,
+                        "timer": "1 to 9,999 minutes",
+                        "powerSupply": "220 V, 50 Hz",
+                        "consumption": "1,100 W"
+                    },
+                    "applications": [
+                        "Pharma & Biotech: Drying powders, sterilising glassware...",
+                        "Research Labs: Solvent removal, thermal studies...",
+                        "Material Science: Polymer curing...",
+                        "Food & Agriculture: Moisture analysis...",
+                        "Chemical Labs: Stability checks..."
+                    ]
+                },
+                {
+                    "model": "BPG-9140",
+                    "meta": {
+                        "id": "bpg-9140",
+                        "slug": "bpg-9140",
+                        "title": "BPG-9140A Large Capacity Drying Oven",
+                        "tags": [
+                            "150L",
+                            "Heavy Duty",
+                            "Forced Air",
+                            "High Power",
+                            "Industrial"
+                        ],
+                        "thumbnail": "/incubators.png",
+                        "available": true,
+                        "createdAt": "2025-12-22T00:00:00Z"
+                    },
+                    "overview": "The BPG-9140A is a 150-litre forced-air drying oven designed for larger sample loads...",
+                    "keyFeatures": [
+                        "Stainless steel chamber with smooth corners...",
+                        "LCD controller with multi-program timer...",
+                        "Forced air circulation for fast and even heating...",
+                        "Three adjustable shelves...",
+                        "Built-in safety alarms...",
+                        "Optional RS-485/printer..."
+                    ],
+                    "specifications": {
+                        "temperatureRange": "Ambient +10 °C to 250 °C",
+                        "accuracy": "±1 °C",
+                        "resolution": "0.1 °C",
+                        "uniformity": "±2.5%",
+                        "capacity": "150 L",
+                        "chamberSize": "500 × 380 × 750 mm",
+                        "exteriorSize": "645 × 640 × 1114 mm",
+                        "shelves": 3,
+                        "timer": "Up to 5999 minutes",
+                        "powerSupply": "220 V, 50 Hz",
+                        "consumption": "1550 W",
+                        "weight": {
+                            "net": "81 kg",
+                            "gross": "117 kg"
+                        }
+                    },
+                    "applications": [
+                        "Pharmaceuticals: Sterilising materials...",
+                        "Research Labs: Solvent evaporation, thermal studies...",
+                        "Material Science: Composite testing...",
+                        "Food & Agriculture: Drying powders...",
+                        "Industrial Labs: Wax melting, component testing..."
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Drying Oven",
+            "models": [
+                {
+                    "model": "BPG-90",
+                    "meta": {
+                        "id": "bpg-90",
+                        "slug": "bpg-90",
+                        "title": "BPG-90A Precision Hot Air Oven",
+                        "tags": [
+                            "40L",
+                            "LCD",
+                            "Forced Air",
+                            "Compact",
+                            "Entry Level"
+                        ],
+                        "thumbnail": "/ovens.png",
+                        "available": true,
+                        "createdAt": "2025-12-22T00:00:00Z"
+                    },
+                    "overview": "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples...",
+                    "keyFeatures": [
+                        "Stainless steel chamber with rounded corners for easy cleaning.",
+                        "Large LCD controller with timer, multiple program settings...",
+                        "Forced air circulation for fast, even heating...",
+                        "Adjustable shelves...",
+                        "Over-temperature protection with alarms...",
+                        "Data connectivity (optional RS-485/RS-232)...",
+                        "Side test port for inserting probes and sensors."
+                    ],
+                    "specifications": {
+                        "temperatureRange": "Ambient +10 °C to 250 °C",
+                        "accuracy": "±1 °C",
+                        "uniformity": "±2.5%",
+                        "capacity": "40 L",
+                        "chamberSize": "350 × 320 × 350 mm",
+                        "exteriorSize": "480 × 566 × 650 mm",
+                        "shelves": 2,
+                        "timer": "Up to 5999 minutes",
+                        "powerSupply": "220 V, 50 Hz",
+                        "consumption": "850 W",
+                        "weight": {
+                            "net": "40 kg",
+                            "gross": "62 kg"
+                        }
+                    },
+                    "applications": [
+                        "Pharmaceuticals: Drying powders, glassware...",
+                        "Research Labs: Heat treatment, sample preparation...",
+                        "Biotechnology: Sterilising instruments...",
+                        "Chemical Industry: Curing, stability testing...",
+                        "Food & Agriculture: Moisture analysis..."
+                    ]
+                },
+                {
+                    "model": "BPG-9",
+                    "meta": {
+                        "id": "bpg-9",
+                        "slug": "bpg-9",
+                        "title": "BPG-9 Laboratory Drying Oven",
+                        "tags": [
+                            "80L",
+                            "High Accuracy",
+                            "Forced Air",
+                            "Mid Size",
+                            "LCD"
+                        ],
+                        "thumbnail": "/ovens.png",
+                        "available": true,
+                        "createdAt": "2025-12-22T00:00:00Z"
+                    },
+                    "overview": "The BPG-9070A is a reliable 80-litre forced-air drying oven designed for consistent heating and drying in labs...",
+                    "keyFeatures": [
+                        "Stainless steel chamber with smooth edges...",
+                        "Large LCD controller with timer...",
+                        "Forced air circulation for fast heating...",
+                        "Adjustable shelves...",
+                        "Safety alarms for over-temperature...",
+                        "Optional RS-485/Printer for data..."
+                    ],
+                    "specifications": {
+                        "temperatureRange": "Ambient +10 °C to 250 °C",
+                        "accuracy": "±0.5 °C",
+                        "resolution": "0.1 °C",
+                        "uniformity": "Excellent airflow",
+                        "capacity": "80 L",
+                        "chamberSize": "400 × 425 × 445 mm",
+                        "exteriorSize": "545 × 580 × 800 mm",
+                        "shelves": 2,
+                        "timer": "1 to 9,999 minutes",
+                        "powerSupply": "220 V, 50 Hz",
+                        "consumption": "1,100 W"
+                    },
+                    "applications": [
+                        "Pharma & Biotech: Drying powders, sterilising glassware...",
+                        "Research Labs: Solvent removal, thermal studies...",
+                        "Material Science: Polymer curing...",
+                        "Food & Agriculture: Moisture analysis...",
+                        "Chemical Labs: Stability checks..."
+                    ]
+                },
+                {
+                    "model": "BPG-920",
+                    "meta": {
+                        "id": "bpg-920",
+                        "slug": "bpg-920",
+                        "title": "BPG-920 Large Capacity Drying Oven",
+                        "tags": [
+                            "150L",
+                            "Heavy Duty",
+                            "Forced Air",
+                            "High Power",
+                            "Industrial"
+                        ],
+                        "thumbnail": "/incubators.png",
+                        "available": true,
+                        "createdAt": "2025-12-22T00:00:00Z"
+                    },
+                    "overview": "The BPG-9140A is a 150-litre forced-air drying oven designed for larger sample loads...",
+                    "keyFeatures": [
+                        "Stainless steel chamber with smooth corners...",
+                        "LCD controller with multi-program timer...",
+                        "Forced air circulation for fast and even heating...",
+                        "Three adjustable shelves...",
+                        "Built-in safety alarms...",
+                        "Optional RS-485/printer..."
+                    ],
+                    "specifications": {
+                        "temperatureRange": "Ambient +10 °C to 250 °C",
+                        "accuracy": "±1 °C",
+                        "resolution": "0.1 °C",
+                        "uniformity": "±2.5%",
+                        "capacity": "150 L",
+                        "chamberSize": "500 × 380 × 750 mm",
+                        "exteriorSize": "645 × 640 × 1114 mm",
+                        "shelves": 3,
+                        "timer": "Up to 5999 minutes",
+                        "powerSupply": "220 V, 50 Hz",
+                        "consumption": "1550 W",
+                        "weight": {
+                            "net": "81 kg",
+                            "gross": "117 kg"
+                        }
+                    },
+                    "applications": [
+                        "Pharmaceuticals: Sterilising materials...",
+                        "Research Labs: Solvent evaporation, thermal studies...",
+                        "Material Science: Composite testing...",
+                        "Food & Agriculture: Drying powders...",
+                        "Industrial Labs: Wax melting, component testing..."
+                    ]
+                },
+                {
+                    "model": "BPG-904",
+                    "meta": {
+                        "id": "bpg-904",
+                        "slug": "bpg-904",
+                        "title": "BPG-904 Precision Hot Air Oven",
+                        "tags": [
+                            "40L",
+                            "LCD",
+                            "Forced Air",
+                            "Compact",
+                            "Entry Level"
+                        ],
+                        "thumbnail": "/ovens.png",
+                        "available": true,
+                        "createdAt": "2025-12-22T00:00:00Z"
+                    },
+                    "overview": "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples...",
+                    "keyFeatures": [
+                        "Stainless steel chamber with rounded corners for easy cleaning.",
+                        "Large LCD controller with timer, multiple program settings...",
+                        "Forced air circulation for fast, even heating...",
+                        "Adjustable shelves...",
+                        "Over-temperature protection with alarms...",
+                        "Data connectivity (optional RS-485/RS-232)...",
+                        "Side test port for inserting probes and sensors."
+                    ],
+                    "specifications": {
+                        "temperatureRange": "Ambient +10 °C to 250 °C",
+                        "accuracy": "±1 °C",
+                        "uniformity": "±2.5%",
+                        "capacity": "40 L",
+                        "chamberSize": "350 × 320 × 350 mm",
+                        "exteriorSize": "480 × 566 × 650 mm",
+                        "shelves": 2,
+                        "timer": "Up to 5999 minutes",
+                        "powerSupply": "220 V, 50 Hz",
+                        "consumption": "850 W",
+                        "weight": {
+                            "net": "40 kg",
+                            "gross": "62 kg"
+                        }
+                    },
+                    "applications": [
+                        "Pharmaceuticals: Drying powders, glassware...",
+                        "Research Labs: Heat treatment, sample preparation...",
+                        "Biotechnology: Sterilising instruments...",
+                        "Chemical Industry: Curing, stability testing...",
+                        "Food & Agriculture: Moisture analysis..."
+                    ]
+                },
+                {
+                    "model": "BPG-907",
+                    "meta": {
+                        "id": "bpg-907",
+                        "slug": "bpg-907",
+                        "title": "BPG-907 Laboratory Drying Oven",
+                        "tags": [
+                            "80L",
+                            "High Accuracy",
+                            "Forced Air",
+                            "Mid Size",
+                            "LCD"
+                        ],
+                        "thumbnail": "/ovens.png",
+                        "available": true,
+                        "createdAt": "2025-12-22T00:00:00Z"
+                    },
+                    "overview": "The BPG-9070A is a reliable 80-litre forced-air drying oven designed for consistent heating and drying in labs...",
+                    "keyFeatures": [
+                        "Stainless steel chamber with smooth edges...",
+                        "Large LCD controller with timer...",
+                        "Forced air circulation for fast heating...",
+                        "Adjustable shelves...",
+                        "Safety alarms for over-temperature...",
+                        "Optional RS-485/Printer for data..."
+                    ],
+                    "specifications": {
+                        "temperatureRange": "Ambient +10 °C to 250 °C",
+                        "accuracy": "±0.5 °C",
+                        "resolution": "0.1 °C",
+                        "uniformity": "Excellent airflow",
+                        "capacity": "80 L",
+                        "chamberSize": "400 × 425 × 445 mm",
+                        "exteriorSize": "545 × 580 × 800 mm",
+                        "shelves": 2,
+                        "timer": "1 to 9,999 minutes",
+                        "powerSupply": "220 V, 50 Hz",
+                        "consumption": "1,100 W"
+                    },
+                    "applications": [
+                        "Pharma & Biotech: Drying powders, sterilising glassware...",
+                        "Research Labs: Solvent removal, thermal studies...",
+                        "Material Science: Polymer curing...",
+                        "Food & Agriculture: Moisture analysis...",
+                        "Chemical Labs: Stability checks..."
+                    ]
+                },
+                {
+                    "model": "BPG-914",
+                    "meta": {
+                        "id": "bpg-914",
+                        "slug": "bpg-914",
+                        "title": "BPG-914 Large Capacity Drying Oven",
+                        "tags": [
+                            "150L",
+                            "Heavy Duty",
+                            "Forced Air",
+                            "High Power",
+                            "Industrial"
+                        ],
+                        "thumbnail": "/incubators.png",
+                        "available": true,
+                        "createdAt": "2025-12-22T00:00:00Z"
+                    },
+                    "overview": "The BPG-9140A is a 150-litre forced-air drying oven designed for larger sample loads...",
+                    "keyFeatures": [
+                        "Stainless steel chamber with smooth corners...",
+                        "LCD controller with multi-program timer...",
+                        "Forced air circulation for fast and even heating...",
+                        "Three adjustable shelves...",
+                        "Built-in safety alarms...",
+                        "Optional RS-485/printer..."
+                    ],
+                    "specifications": {
+                        "temperatureRange": "Ambient +10 °C to 250 °C",
+                        "accuracy": "±1 °C",
+                        "resolution": "0.1 °C",
+                        "uniformity": "±2.5%",
+                        "capacity": "150 L",
+                        "chamberSize": "500 × 380 × 750 mm",
+                        "exteriorSize": "645 × 640 × 1114 mm",
+                        "shelves": 3,
+                        "timer": "Up to 5999 minutes",
+                        "powerSupply": "220 V, 50 Hz",
+                        "consumption": "1550 W",
+                        "weight": {
+                            "net": "81 kg",
+                            "gross": "117 kg"
+                        }
+                    },
+                    "applications": [
+                        "Pharmaceuticals: Sterilising materials...",
+                        "Research Labs: Solvent evaporation, thermal studies...",
+                        "Material Science: Composite testing...",
+                        "Food & Agriculture: Drying powders...",
+                        "Industrial Labs: Wax melting, component testing..."
+                    ]
+                }
+            ]
+        }
+    ]
+}

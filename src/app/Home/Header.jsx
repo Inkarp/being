@@ -112,7 +112,8 @@ export default function Header() {
                 { name: "Events", href: "/events" },
                 { name: "Blogs", href: "/blog" },
                 { name: "Contact Us", href: "/contact-us" },
-                 { name: "About Us", href: "/about-us" },
+                { name: "About Us", href: "/about-us" },
+
               ].map((item, index) => (
                 <Link key={index} href={item.href} passHref>
                   <div className="group relative h-[30px] flex items-center cursor-pointer overflow-hidden px-3">

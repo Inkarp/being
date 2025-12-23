@@ -132,14 +132,14 @@ function ProfileCard({ profile, isOpen, index, setOpenIndex }) {
   );
 }
 
-export default function ProductsPage() {
+export default function productsPage() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
     <section className="relative w-[98%] mx-auto py-5">
       <div className="text-center">
         <h1 className="text-3xl font-bold font-[MaxOT]">
-          Explore Our <span className="text-[#E63946]">Scientific Products</span>
+          Explore Our <span className="text-[#E63946]">Scientific products</span>
         </h1>
         <p className="mt-4 text-lg text-gray-700">
           From research to production, discover how our solutions support every lab need.

@@ -1,11 +1,10 @@
-// export default function Page({ params }) {
-//     const slug = params?.slug ?? [];
 
-//     return (
-//         <div>
-//             <h1>
-//                 Docs Page - {slug.length ? slug.join('/') : 'Docs Home'}
-//             </h1>
-//         </div>
-//     );
-// }
+
+export default function DocsSlugPage() {
+  return (
+    <div>
+      <h1>Docs Slug Page</h1>
+      <p>This is a placeholder for the dynamic docs slug page.</p>
+    </div>
+  );
+}
