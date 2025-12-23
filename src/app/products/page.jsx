@@ -7,18 +7,19 @@ import { FiShare2 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
 const profiles = [
+
   {
-    name: "Incubators",
-    description: "Controlled temperature chambers for cell culture and microbiology.",
-    link: "/products/incubators",
+    name: "Ovens",
+    description: "Hot air ovens for drying, sterilization and thermal testing.",
+    link: "/products/ovens",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
-    name: "Ovens",
-    description: "Hot air ovens for drying, sterilization and thermal testing.",
-    link: "/products/ovens",
+    name: "Incubators",
+    description: "Controlled temperature chambers for cell culture and microbiology.",
+    link: "/products/incubators",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
