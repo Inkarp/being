@@ -3,6 +3,7 @@
 import { useParams } from 'next/navigation';
 import CategoryClient from './CategoryClient';
 import ModelClient from './ModelClient';
+import Model from './Model';
 
 export default function CategorySlugPage() {
   const { slug } = useParams();
@@ -20,10 +21,12 @@ export default function CategorySlugPage() {
    */
 
   // ✅ MODEL DETAIL PAGE
+  // if (slug.length === 3) {
+  //   return <ModelClient />;
+  // }
   if (slug.length === 3) {
-    return <ModelClient />;
+    return <Model />;
   }
-
   // ✅ CATEGORY / SUBCATEGORY PAGE
   return <CategoryClient />;
 }
