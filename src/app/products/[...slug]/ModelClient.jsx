@@ -1,138 +1,228 @@
 'use client';
 
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-export default function ModelClient() {
-  const { slug } = useParams();
+export default function Model() {
+    const router = useRouter();
+    const { slug } = useParams();
+    // slug = [category, subcategory, model]
 
-  const categorySlug = slug[0];
-  const subSlug = slug[1];
-  const modelSlug = slug[2];
+    const [categorySlug, subSlug, modelSlug] = slug;
 
-  const [product, setProduct] = useState(null);
-  const [activeTab, setActiveTab] = useState('specs');
-  const [loading, setLoading] = useState(true);
+    const [subCategory, setSubCategory] = useState(null);
+    const [product, setProduct] = useState(null);
+    const [activeTab, setActiveTab] = useState('info');
+    const [activeImg, setActiveImg] = useState(0);
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchModel = async () => {
-      try {
-        const res = await fetch(`/api/products/${categorySlug}`);
-        const data = await res.json();
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await fetch(`/api/products/${categorySlug}`);
+                const data = await res.json();
 
-        const sub = data.subcategories.find(s => s.slug === subSlug);
-        const model = sub?.models.find(m => m.meta.slug === modelSlug);
+                const sub = data.subcategories.find(s => s.slug === subSlug);
+                const model = sub?.models.find(m => m.meta.slug === modelSlug);
 
-        setProduct(model || null);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
+                setSubCategory(sub || null);
+                setProduct(model || null);
+            } catch (e) {
+                console.error(e);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    fetchModel();
-  }, [categorySlug, subSlug, modelSlug]);
+        fetchData();
+    }, [categorySlug, subSlug, modelSlug]);
 
-  if (loading) {
-    return <p className="text-center py-20">Loading product...</p>;
-  }
+    if (loading) {
+        return <p className="text-center py-20">Loading product…</p>;
+    }
 
-  if (!product) {
+    if (!product || !subCategory) {
+        return <p className="text-center py-20 text-red-500">Product not found</p>;
+    }
+
+    const images = [
+        product.meta.thumbnail,
+        product.meta.thumbnail,
+        product.meta.thumbnail,
+    ];
+
     return (
-      <p className="text-center py-20 text-red-500">
-        Product not found
-      </p>
-    );
-  }
+        <section className="max-w-7xl mx-auto px-6 py-10">
+            {/* TOP SECTION */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
-  return (
-    <div className="max-w-6xl mx-auto p-6 space-y-8">
+                {/* LEFT THUMBNAILS */}
+                <div className="flex lg:flex-col gap-3">
+                    {images.map((img, i) => (
+                        <button
+                            key={i}
+                            onClick={() => setActiveImg(i)}
+                            className={`border rounded-md p-1 ${activeImg === i ? 'border-blue-600' : 'border-gray-300'
+                                }`}
+                        >
+                            <Image
+                                src={img}
+                                alt="thumb"
+                                width={80}
+                                height={80}
+                                className="object-contain"
+                            />
+                        </button>
+                    ))}
+                </div>
 
-      {/* TITLE */}
-      <h1 className="text-3xl font-bold text-center">
-        {product.meta.title}
-      </h1>
+                {/* MAIN IMAGE */}
+                <div className="flex items-center justify-center">
+                    <Image
+                        src={images[activeImg]}
+                        alt={product.meta.title}
+                        width={420}
+                        height={420}
+                        className="object-contain"
+                    />
+                </div>
 
-      {/* IMAGE + OVERVIEW */}
-      <div className="flex flex-col md:flex-row gap-8">
+                {/* RIGHT INFO */}
+                <div>
+                    <h1 className="text-2xl font-bold mb-4">
+                        {product.meta.title}
+                    </h1>
 
-        <div className="md:w-1/3 flex justify-center">
-          <Image
-            src={product.meta.thumbnail}
-            alt={product.meta.title}
-            width={350}
-            height={350}
-            className="rounded-lg object-contain"
-          />
-        </div>
+                    <p className="text-sm text-gray-600 mb-3">
+                        Internal Volume
+                    </p>
 
-        <div className="md:w-2/3 space-y-6">
-          <section>
-            <h2 className="text-xl font-semibold mb-2">Overview</h2>
-            <p className="text-gray-700 leading-relaxed">
-              {product.overview}
-            </p>
-          </section>
+                    {/* MODEL SELECTOR */}
+                    <div className="space-y-3">
+                        {subCategory.models.map(m => (
+                            <label
+                                key={m.meta.slug}
+                                className="flex items-center gap-2 text-sm cursor-pointer"
+                            >
+                                <input
+                                    type="radio"
+                                    checked={m.meta.slug === modelSlug}
+                                    onChange={() =>
+                                        router.push(
+                                            `/products/${categorySlug}/${subSlug}/${m.meta.slug}`
+                                        )
+                                    }
+                                />
+                                {m.meta.title}
+                            </label>
+                        ))}
+                    </div>
+                    <div className='flex gap-5'>
+                        <button className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-orange-600">
+                            Request a Quote
+                        </button>
 
-          {product.keyFeatures && (
-            <section>
-              <h2 className="text-xl font-semibold mb-2">Key Features</h2>
-              <ul className="list-disc list-inside space-y-1">
-                {product.keyFeatures.map((f, i) => (
-                  <li key={i}>{f}</li>
-                ))}
-              </ul>
-            </section>
-          )}
-        </div>
-      </div>
-
-      {/* TABS */}
-      <div className="border-b flex gap-8">
-        <button
-          onClick={() => setActiveTab('specs')}
-          className={`pb-3 ${
-            activeTab === 'specs'
-              ? 'border-b-2 border-blue-600 text-blue-600'
-              : 'text-gray-500'
-          }`}
-        >
-          Technical Specifications
-        </button>
-
-        <button
-          onClick={() => setActiveTab('applications')}
-          className={`pb-3 ${
-            activeTab === 'applications'
-              ? 'border-b-2 border-blue-600 text-blue-600'
-              : 'text-gray-500'
-          }`}
-        >
-          Applications
-        </button>
-      </div>
-
-      {/* TAB CONTENT */}
-      {activeTab === 'specs' && product.specifications && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {Object.entries(product.specifications).map(([key, val]) => (
-            <div key={key} className="flex justify-between border-b pb-2">
-              <span className="font-medium">{key}</span>
-              <span>{val}</span>
+                        <button className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-orange-600">
+                            Enquiry
+                        </button>
+                    </div>
+                </div>
             </div>
-          ))}
-        </div>
-      )}
 
-      {activeTab === 'applications' && product.applications && (
-        <ul className="list-disc list-inside space-y-2">
-          {product.applications.map((a, i) => (
-            <li key={i}>{a}</li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
+            {/* PRODUCT INFO */}
+            <div className="mt-14">
+                <h2 className="text-lg font-bold mb-3">PRODUCT INFO</h2>
+                <p className="text-sm text-gray-700 leading-relaxed max-w-5xl">
+                    {product.overview}
+                </p>
+            </div>
+
+            {/* ================= TABS ================= */}
+            <div className="mt-10 bg-white p-6 border border-gray-200 rounded-3xl shadow-xl">
+                <div className=" flex gap-6 text-sm ">
+
+                    {product.keyFeatures && (
+                        <button
+                            onClick={() => setActiveTab('features')}
+                            className={`pb-2 ${activeTab === 'features'
+                                    ? 'border-b-2 border-blue-600 font-medium '
+                                    : 'text-gray-600 hover:bg-black/20'
+                                }`}
+                        >
+                            Features
+                        </button>
+                    )}
+
+                    {product.specifications && (
+                        <button
+                            onClick={() => setActiveTab('specs')}
+                            className={`pb-2 ${activeTab === 'specs'
+                                    ? 'border-b-2 border-blue-600 font-medium'
+                                    : 'text-gray-600'
+                                }`}
+                        >
+                            Specifications
+                        </button>
+                    )}
+
+                    {product.applications && (
+                        <button
+                            onClick={() => setActiveTab('applications')}
+                            className={`pb-2 ${activeTab === 'applications'
+                                    ? 'border-b-2 border-blue-600 font-medium'
+                                    : 'text-gray-600'
+                                }`}
+                        >
+                            Applications
+                        </button>
+                    )}
+                </div>
+
+                {/* ================= TAB CONTENT ================= */}
+                <div className="mt-6 text-sm">
+
+                    {/* ✅ FEATURES */}
+                    {activeTab === 'features' && product.keyFeatures && (
+                        <ul className="list-disc list-inside space-y-2 max-w-5xl">
+                            {product.keyFeatures.map((feature, index) => (
+                                <li key={index}>{feature}</li>
+                            ))}
+                        </ul>
+                    )}
+
+                    {/* ✅ SPECIFICATIONS */}
+                    {activeTab === 'specs' && product.specifications && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
+                            {Object.entries(product.specifications).map(([key, value]) => (
+                                <div
+                                    key={key}
+                                    className="flex justify-between border-b pb-2"
+                                >
+                                    <span className="font-medium capitalize">
+                                        {key.replace(/([A-Z])/g, ' $1')}
+                                    </span>
+                                    <span>
+                                        {typeof value === 'object'
+                                            ? JSON.stringify(value)
+                                            : value}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                    {/* ✅ APPLICATIONS */}
+                    {activeTab === 'applications' && product.applications && (
+                        <ul className="list-disc list-inside space-y-2 max-w-5xl">
+                            {product.applications.map((app, index) => (
+                                <li key={index}>{app}</li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+            </div>
+
+        </section>
+    );
 }
