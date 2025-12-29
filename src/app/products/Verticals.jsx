@@ -24,14 +24,7 @@ const profiles = [
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
-  // {
-  //   name: "Shakers And Stirrers",
-  //   description: "Orbital shakers, magnetic stirrers for uniform mixing.",
-  //   link: "/products/shakers-and-stirrers",
-  //   image: "/about.jpg",
-  //   icon: "/icon1.svg",
-  //   socials: { whatsapp: "https://wa.me/918019828999" },
-  // },
+
   {
     name: "Chillers",
     description: "Precision temperature-controlled baths for lab workflows.",
@@ -92,9 +85,9 @@ const profiles = [
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
    {
-    name: "Muffle Furnace",
+    name: "Muffle Furnance",
     description: "Vacuum and peristaltic pumps for lab applications.",
-    link: "/products/muffle-furnace",
+    link: "/products/muffle-furnance",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },

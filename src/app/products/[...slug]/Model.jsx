@@ -90,7 +90,8 @@ export default function Model() {
                         <span className="opacity-60">/</span>
                         <span className="capitalize opacity-80">{categorySlug}</span>
                         <span className="opacity-60">/</span>
-                        <span className="capitalize opacity-80">{subSlug}</span>
+                        {/* <span className="capitalize ">{subSlug}</span> */}
+                        <span className="capitalize text-slate-100 text-xl font-bold hover:text-[#2F4191]">{subSlug}</span>
                         <span className="opacity-60">/</span>
                         <span className="text-slate-100">{product.meta.title}</span>
                     </div>
@@ -256,7 +257,7 @@ export default function Model() {
 
                     <div className="bg-slate-950/70 border border-slate-800/70 rounded-3xl shadow-[0_26px_80px_rgba(15,23,42,1)] p-4 sm:p-6 lg:p-7 backdrop-blur-2xl">
                         <div className="flex flex-wrap gap-3 text-xs md:text-sm ">
-                            <button 
+                            <button
                                 onClick={() => setActiveTab('info')}
                                 className={`relative rounded-full px-3 py-1.5 transition-all ${activeTab === 'info'
                                     ? 'bg-slate-800 text-slate-50'

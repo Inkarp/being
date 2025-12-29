@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
@@ -9,49 +10,71 @@ const causes = [
         title: 'Ovens',
         percentage: 10,
         image: '/ovens.png',
+        link: "/products/ovens",
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
     {
         title: 'Incubators',
         percentage: 12,
         image: '/incubators.png',
+        link: "/products/incubators",
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
     {
-        title: 'Shakers',
+        title: 'Chillers',
         percentage: 9,
         image: '/incubators.png',
+        link: "/products/chillers",
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
 
     {
-        title: 'Stirrers',
+        title: 'Water Baths',
         percentage: 7,
         image: '/incubators.png',
-        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
-    },
-    {
-        title: 'Water Baths',
-        percentage: 20,
-        image: '/water-baths.png',
-        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
-    },
-    {
-        title: 'Circulators & Chillers',
-        percentage: 15,
-        image: '/incubators.png',
+        link: "/products/water-baths",
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
     {
         title: 'Rotary Evaporators',
-        percentage: 5,
-        image: '/incubators.png',
+        percentage: 20,
+        image: '/water-baths.png',
+        link: "/products/rotary-evaporators",
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
     {
         title: 'Pumps',
+        percentage: 15,
+        image: '/incubators.png',
+        link: "/products/pumps",
+        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+    },
+    {
+        title: 'Cabinet',
+        percentage: 5,
+        image: '/incubators.png',
+        link: "/products/cabinet",
+        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+    },
+    {
+        title: 'Freezers',
         percentage: 6,
         image: '/incubators.png',
+        link: "/products/freezers",
+        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+    },
+    {
+        title: 'Digital Viscometers',
+        percentage: 6,
+        image: '/incubators.png',
+        link: "/products/digital-viscometer",
+        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+    },
+    {
+        title: 'Muffle furnance',
+        percentage: 6,
+        image: '/incubators.png',
+        link: "/products/muffle-furnance",
         description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
     },
 ];
@@ -114,7 +137,6 @@ export default function Offerings() {
                 <p className="text-gray-600 ">
                     Our <span className="text-black font-medium">charity helps</span> those people who have no hope
                 </p>
-
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 transition-all duration-500 rounded-2xl py-3">
                     {causes.slice(0, visibleCards).map((cause, index) => (
                         <div key={index} className="border border-gray-100 shadow-xl  overflow-hidden rounded-[30px] hover:border border-[#2B7EC2] hover:scale-[1.05] transition-all duration-500">
@@ -128,7 +150,7 @@ export default function Offerings() {
                                 />
 
                                 <div className="absolute bottom-[-16px] left-1/3 bg-white border-2 border-[#2B7EC2] text-[#2B7EC2] font-semibold text-sm px-3 py-1 rounded-full shadow-sm">
-                                 <span className='text-[#2F3F8D]'> {cause.percentage}+</span> Products
+                                    <span className='text-[#2F3F8D]'> {cause.percentage}+</span> Products
                                 </div>
                             </div>
 
@@ -136,7 +158,7 @@ export default function Offerings() {
                                 <h3 className="text-lg font-semibold">{cause.title}</h3>
                                 <p className="text-gray-500 text-sm">{cause.description}</p>
 
-                                <div className="flex items-center justify-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-fit">
+                                <Link href={cause.link} ><div className="flex items-center justify-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-fit">
                                     <span className="text-white font-medium text-[16px]">Know More</span>
                                     {/* Gear SVG with arrow inside */}
                                     <div className="relative w-[30px] h-[30px] text-white">
@@ -157,12 +179,12 @@ export default function Offerings() {
                                             className="absolute top-1/2 left-1/2 text-black transform -translate-x-1/2 -translate-y-1/2 "
                                         />
                                     </div>
-                                </div>
+                                </div></Link>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
