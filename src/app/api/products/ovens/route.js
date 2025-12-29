@@ -194,6 +194,55 @@ export async function GET() {
         ]
       },
 
+       {
+        name: "Vaccum Oven (Led-display)",
+        slug: "vaccum-ovens",
+        models: [
+
+          /* ================== BPG-9040A ================== */
+          {
+            model: "DZF-6032",
+            meta: {
+              slug: "dzf-6032",
+              title: "BPG-9040A Precision Hot Air Oven",
+              thumbnail: "/ovens.png"
+            },
+            overview:
+              "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.",
+            keyFeatures: [
+              "Stainless steel chamber with rounded corners for easy cleaning",
+              "Large LCD controller with timer and multi-program settings",
+              "Forced air circulation for fast and even heating",
+              "Adjustable shelves for flexible sample placement",
+              "Over-temperature protection with alarms",
+              "Optional RS-485/RS-232 data connectivity",
+              "Side test port for probes and sensors"
+            ],
+            specifications: {
+              temperatureRange: "Ambient +10 °C to 250 °C",
+              accuracy: "±1 °C",
+              uniformity: "±2.5%",
+              capacity: "40 L",
+              chamberSize: "350 × 320 × 350 mm",
+              exteriorSize: "480 × 566 × 650 mm",
+              shelves: 2,
+              timer: "Up to 5999 minutes",
+              powerSupply: "220 V, 50 Hz",
+              consumption: "850 W",
+              weight: "40 kg (net), 62 kg (gross)"
+            },
+            applications: [
+              "Pharmaceutical drying of powders and glassware",
+              "Research sample preparation and heat treatment",
+              "Biotechnology instrument sterilisation",
+              "Chemical curing and stability testing",
+              "Food and agriculture moisture analysis"
+            ]
+          },
+
+        ]
+      },
+
         {
         name: "Vaccum Oven",
         slug: "vaccum-oven",
