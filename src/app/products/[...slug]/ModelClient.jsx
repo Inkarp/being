@@ -3,7 +3,7 @@
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import EnquiryModal from '@/components/EnquiryModal';
+import EnquiryModal from '../../../components/EnquiryModal'; 
 
 export default function Model() {
     const router = useRouter();
