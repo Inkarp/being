@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   return NextResponse.json({
-    category: "Ovens",
+    category: "Laboratory Ovens",
     subcategories: [
       {
         name: "Laboratory Drying Oven",

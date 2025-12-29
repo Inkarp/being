@@ -11,7 +11,7 @@ const profiles = [
   {
     name: "Ovens",
     description: "Hot air ovens for drying, sterilization and thermal testing.",
-    link: "/products/ovens",
+    link: "/products/laboratory-ovens",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },

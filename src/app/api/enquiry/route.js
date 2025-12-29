@@ -19,7 +19,7 @@ export async function POST(request) {
       from: `"Inkarp Instruments" <${process.env.EMAIL_USER}>`,
       to: COMPANY_EMAIL,
       replyTo: formData.email,
-      subject: `New Enquiry: ${formData.name} - ${formData.product}`,
+      subject: `New Enquiry from Being : ${formData.name} - ${formData.product}`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 600px; margin: 0 auto; background: #0f172a; padding: 40px; border-radius: 20px;">
           <h2 style="color: #f97316; margin-bottom: 30px;">🆕 New Product Enquiry</h2>

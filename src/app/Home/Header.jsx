@@ -72,8 +72,8 @@ export default function Header() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-[#2B7EC2]">
-                <div className='flex animate-bounce border px-2 py-1 '>Follow Us:  <FaLinkedin className="cursor-pointer hover:opacity-80 hover:scale-110" size={20} /></div>
+              <div className="flex items-center gap-2 text-[#2B7EC2] bg-white px-3 py-2 border font-bold animate-bounce text-xl font-[Roboto] rounded-full">Follow Us:
+                <div className='flex px-2 py-1 '>  <FaLinkedin className="cursor-pointer hover:opacity-80 hover:scale-110" size={20} /></div>
                 <FaWhatsapp className="cursor-pointer hover:opacity-80" size={20} />
                 <FaFacebookF className="cursor-pointer hover:opacity-80" size={20} />
                 <FaInstagram className="cursor-pointer hover:opacity-80" size={20} />
