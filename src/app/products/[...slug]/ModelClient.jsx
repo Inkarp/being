@@ -3,6 +3,7 @@
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import EnquiryModal from '@/components/EnquiryModal';
 
 export default function Model() {
     const router = useRouter();
@@ -16,6 +17,8 @@ export default function Model() {
     const [activeTab, setActiveTab] = useState('info');
     const [activeImg, setActiveImg] = useState(0);
     const [loading, setLoading] = useState(true);
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -222,6 +225,8 @@ export default function Model() {
                     )}
                 </div>
             </div>
+{/* Contact Modal */}
+<EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
         </section>
     );
