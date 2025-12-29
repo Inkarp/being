@@ -24,18 +24,26 @@ const profiles = [
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
+  // {
+  //   name: "Shakers And Stirrers",
+  //   description: "Orbital shakers, magnetic stirrers for uniform mixing.",
+  //   link: "/products/shakers-and-stirrers",
+  //   image: "/about.jpg",
+  //   icon: "/icon1.svg",
+  //   socials: { whatsapp: "https://wa.me/918019828999" },
+  // },
   {
-    name: "Shakers And Stirrers",
-    description: "Orbital shakers, magnetic stirrers for uniform mixing.",
-    link: "/products/shakers-and-stirrers",
+    name: "Chillers",
+    description: "Precision temperature-controlled baths for lab workflows.",
+    link: "/products/chillers",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
-    name: "Water Baths, Circulators and chillers",
+    name: "Water Baths",
     description: "Precision temperature-controlled baths for lab workflows.",
-    link: "/products/water-baths-circulators-and-chillers",
+    link: "/products/water-baths",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
@@ -52,6 +60,41 @@ const profiles = [
     name: "Pumps",
     description: "Vacuum and peristaltic pumps for lab applications.",
     link: "/products/pumps",
+    image: "/about.jpg",
+    icon: "/icon1.svg",
+    socials: { whatsapp: "https://wa.me/918019828999" },
+  },
+
+    {
+    name: "Cabinet",
+    description: "Vacuum and peristaltic pumps for lab applications.",
+    link: "/products/cabinet",
+    image: "/about.jpg",
+    icon: "/icon1.svg",
+    socials: { whatsapp: "https://wa.me/918019828999" },
+  },
+
+   {
+    name: "Freezers",
+    description: "Vacuum and peristaltic pumps for lab applications.",
+    link: "/products/freezers",
+    image: "/about.jpg",
+    icon: "/icon1.svg",
+    socials: { whatsapp: "https://wa.me/918019828999" },
+  },
+
+    {
+    name: "Digital Viscometer",
+    description: "Vacuum and peristaltic pumps for lab applications.",
+    link: "/products/digital-viscometer",
+    image: "/about.jpg",
+    icon: "/icon1.svg",
+    socials: { whatsapp: "https://wa.me/918019828999" },
+  },
+   {
+    name: "Muffle Furnace",
+    description: "Vacuum and peristaltic pumps for lab applications.",
+    link: "/products/muffle-furnace",
     image: "/about.jpg",
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
@@ -147,7 +190,7 @@ export default function Verticals() {
       </div>
 
       <div className="w-full py-3 flex justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-7 ">
           {profiles.map((profile, index) => (
             <div key={index} className="max-w-[350px] w-full mx-auto">
               <ProfileCard

@@ -24,10 +24,10 @@ export default function Header() {
   return (
 
     <div
-      className={`transition-all duration-300 ${isScrolled ? "fixed top-0 left-0 right-0 z-50  transition-all duration-500" : "px-10"
+      className={`transition-all duration-300 ${isScrolled ? "fixed top-0 left-0 right-0 z-50 transition-all duration-500" : "px-10"
         }`}
     >
-      <header className={` ${isScrolled ? "p-0 w-full flex mx-auto font-[Roboto] overflow-hidden gap-5 transition-all duration-500" : "w-full flex mx-auto font-[Roboto] rounded-2xl overflow-hidden gap-5 p-2"}`}>
+      <header className={` ${isScrolled ? "p-0 w-full flex mx-auto font-[Roboto] overflow-hidden gap-5 transition-all duration-1000" : "w-full flex mx-auto font-[Roboto] rounded-2xl overflow-hidden gap-5 p-2"}`}>
         {/* Logo block – stays left, just shrinks on scroll */}
         <div className="flex items-stretch">
           <div
