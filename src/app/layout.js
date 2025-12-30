@@ -29,23 +29,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className=" bg-gradient-to-r from-[#E0F2FE] via-[#E0F2FE] to-[#E0F2FE] ">
-        {/* Navbar */}
-        {/* <nav className="p-4 bg-gray-300 text-black flex gap-4 flex justify-center font-semibold text-lg ">
-          <Link className="hover:text-[#E63946] hover:underline" href="/one">Home 1</Link>
-          <Link className="hover:text-[#E63946] hover:underline" href="/three">Home 3</Link>
-          <Link className="hover:text-[#E63946] hover:underline" href="/five">Home 5</Link>
-        </nav> */}
-
-        {/* Main Content */}
-
+      {/* <body className=" bg-gradient-to-r from-[#E0F2FE] via-[#E0F2FE] to-[#E0F2FE]"> */}
+              <body className=" bg-white">
         <ScrollToTop />
         <Header />
-        <main className="w-[90%] mx-auto">
+        <main className="w-[90%] mx-auto pt-20">
           {children}
         </main>
         <Footer />
-
       </body>
     </html>
   );

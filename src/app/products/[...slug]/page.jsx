@@ -25,7 +25,7 @@ export default function CategorySlugPage() {
   //   return <ModelClient />;
   // }
   if (slug.length === 3) {
-    return <Model />;
+    return <ModelClient />;
   }
   // ✅ CATEGORY / SUBCATEGORY PAGE
   return <CategoryClient />;

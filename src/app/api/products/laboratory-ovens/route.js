@@ -15,10 +15,11 @@ export async function GET() {
             meta: {
               slug: "bpg-9040a",
               title: "BPG-9040A Precision Hot Air Oven",
-              thumbnail: "/ovens.png"
+              thumbnail: "/ovens.png",
+              price:"15000"
             },
             overview:
-              "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.",
+              "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.",
             keyFeatures: [
               "Stainless steel chamber with rounded corners for easy cleaning",
               "Large LCD controller with timer and multi-program settings",

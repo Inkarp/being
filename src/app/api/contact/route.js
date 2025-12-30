@@ -32,7 +32,7 @@ export async function POST(request) {
       from: `"Being Instruments India" <${process.env.EMAIL_USER}>`,
       to: COMPANY_EMAIL,
       replyTo: formData.email,
-      subject: `New Product Enquiry | ${formData.product}`,
+      subject: `Contact Us | ${formData.product}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 620px; margin: auto; background:#0f172a; padding:32px; border-radius:16px;">
           
@@ -77,6 +77,13 @@ export async function POST(request) {
               </td>
             </tr>
           </table>
+
+          <div style="margin-top:24px; background:#1e293b; padding:16px; border-radius:10px;">
+            <h4 style="color:#f8fafc; margin-bottom:8px;">Message</h4>
+            <p style="color:#cbd5e1; line-height:1.6;">
+              ${(formData.message || 'No message').replace(/\n/g, '<br />')}
+            </p>
+          </div>
 
           <p style="margin-top:28px; color:#64748b; font-size:13px; text-align:center;">
             Submitted on ${new Date().toLocaleString('en-IN')}

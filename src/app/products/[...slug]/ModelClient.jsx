@@ -3,22 +3,29 @@
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import EnquiryModal from '../../../components/EnquiryModal'; 
+import Head from 'next/head';
+import EnquiryModal from '../../../components/EnquiryModal';
+import PopupModal from '../../../components/PopupModal';
+import { FaArrowRight } from 'react-icons/fa';
+import { MdOutlineSettingsApplications } from 'react-icons/md';
+
 
 export default function Model() {
     const router = useRouter();
     const { slug } = useParams();
-    // slug = [category, subcategory, model]
 
-    const [categorySlug, subSlug, modelSlug] = slug;
+    // slug = [category, subcategory, model]
+    const slugArray = Array.isArray(slug) ? slug : [];
+    const [categorySlug, subSlug, modelSlug] = slugArray;
 
     const [subCategory, setSubCategory] = useState(null);
     const [product, setProduct] = useState(null);
-    const [activeTab, setActiveTab] = useState('info');
+    const [activeTab, setActiveTab] = useState('features');
     const [activeImg, setActiveImg] = useState(0);
     const [loading, setLoading] = useState(true);
-
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [priceUnlocked, setPriceUnlocked] = useState(false);
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -31,8 +38,8 @@ export default function Model() {
 
                 setSubCategory(sub || null);
                 setProduct(model || null);
-            } catch (e) {
-                console.error(e);
+            } catch (error) {
+                console.error(error);
             } finally {
                 setLoading(false);
             }
@@ -46,7 +53,11 @@ export default function Model() {
     }
 
     if (!product || !subCategory) {
-        return <p className="text-center py-20 text-red-500">Product not found</p>;
+        return (
+            <p className="text-center py-20 text-red-500">
+                Product not found
+            </p>
+        );
     }
 
     const images = [
@@ -56,178 +67,269 @@ export default function Model() {
     ];
 
     return (
-        <section className="max-w-7xl mx-auto px-6 py-10">
-            {/* TOP SECTION */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <section className="w-full mx-auto px-6 py-10 ">
 
-                {/* LEFT THUMBNAILS */}
-                <div className="flex lg:flex-col gap-3">
-                    {images.map((img, i) => (
-                        <button
-                            key={i}
-                            onClick={() => setActiveImg(i)}
-                            className={`border rounded-md p-1 ${activeImg === i ? 'border-blue-600' : 'border-gray-300'
-                                }`}
-                        >
-                            <Image
-                                src={img}
-                                alt="thumb"
-                                width={80}
-                                height={80}
-                                className="object-contain"
-                            />
-                        </button>
-                    ))}
-                </div>
+            {/* ================= SEO META ================= */}
+            <Head>
+                <title>
+                    {product?.meta?.title
+                        ? `${product.meta.title} | Inkarp Instruments`
+                        : 'Product | Inkarp Instruments'}
+                </title>
 
-                {/* MAIN IMAGE */}
-                <div className="flex items-center justify-center">
-                    <Image
-                        src={images[activeImg]}
-                        alt={product.meta.title}
-                        width={420}
-                        height={420}
-                        className="object-contain"
+                {product?.meta?.description && (
+                    <meta
+                        name="description"
+                        content={product.meta.description}
                     />
+                )}
+            </Head>
+
+            {/* ================= TOP 3-COLUMN LAYOUT ================= */}
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr_1fr] gap-10 items-start">
+
+                {/* ================= COLUMN 1: IMAGE ================= */}
+                <div className="flex flex-col justify-center">
+                    <div className="border border-gray-200 rounded-2xl p-6 bg-white">
+                        <Image
+                            src={product.meta.thumbnail}
+                            alt={product.meta.title}
+                            width={420}
+                            height={420}
+                            className="object-contain mx-auto"
+                            priority
+                        />
+                    </div>
+                     {/* CTA BUTTONS */}
+                    <div className="flex flex-wrap gap-4 pt-2">
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="bg-[#2F4191] text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#2B7EC2]"
+                        >
+                            Enquiry
+                        </button>
+
+                        {/* <button
+                            onClick={() => {
+                                if (!priceUnlocked) setIsModalOpen(true);
+                            }}
+                            className="bg-[#2F4191] text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#2B7EC2]"
+                        >
+                            {priceUnlocked && product.meta.price
+                                ? `₹ ${product.meta.price}`
+                                : 'Request Price'}
+                        </button> */}
+                       
+                    </div>
                 </div>
 
-                {/* RIGHT INFO */}
-                <div>
-                    <h1 className="text-2xl font-bold mb-4">
+                {/* ================= COLUMN 2: PRODUCT OVERVIEW ================= */}
+                <div className="space-y-6">
+
+                    <h1 className="text-2xl font-semibold text-gray-900">
                         {product.meta.title}
                     </h1>
 
-                    <p className="text-sm text-gray-600 mb-3">
-                        Internal Volume
-                    </p>
+                    {product.overview && (
+                        <div>
+                            <h2 className="text-lg font-semibold mb-2">
+                                Product Overview
+                            </h2>
+                            <p className="text-sm text-gray-700 leading-relaxed">
+                                {product.overview}
+                            </p>
+                        </div>
+                    )}
 
-                    {/* MODEL SELECTOR */}
-                    <div className="space-y-3">
-                        {subCategory.models.map(m => (
-                            <label
-                                key={m.meta.slug}
-                                className="flex items-center gap-2 text-sm cursor-pointer"
-                            >
-                                <input
-                                    type="radio"
-                                    checked={m.meta.slug === modelSlug}
-                                    onChange={() =>
+                   
+                </div>
+
+                {/* ================= COLUMN 3: MODELS ================= */}
+                <div className="border border-gray-200 rounded-2xl p-4 bg-white">
+
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                        Available Models
+                    </h3>
+
+                    <div className="space-y-2">
+                        {subCategory.models.map((m) => {
+                            const isActive = m.meta.slug === modelSlug;
+
+                            return (
+                                <button
+                                    key={m.meta.slug}
+                                    onClick={() =>
                                         router.push(
                                             `/products/${categorySlug}/${subSlug}/${m.meta.slug}`
                                         )
                                     }
-                                />
-                                {m.meta.title}
-                            </label>
-                        ))}
-                    </div>
-                    <div className='flex gap-5'>
-                        <button className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-orange-600">
-                            Request a Quote
-                        </button>
+                                    className={`
+              w-full flex items-center justify-between rounded-xl p-3 transition-all duration-300
+              ${isActive
+                                            ? 'bg-[#2F4191] text-white shadow-md'
+                                            : 'bg-gray-50 hover:bg-gray-100 text-gray-800'
+                                        }
+            `}
+                                >
+                                    <span className="text-sm font-medium">
+                                        {m.meta.title}
+                                    </span>
 
-                        <button className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-orange-600">
-                            Enquiry
-                        </button>
+                                    <FaArrowRight
+                                        className={`text-sm ${isActive ? 'text-white' : 'text-[#2F4191]'
+                                            }`}
+                                    />
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
 
-            {/* PRODUCT INFO */}
-            <div className="mt-14">
-                <h2 className="text-lg font-bold mb-3">PRODUCT INFO</h2>
-                <p className="text-sm text-gray-700 leading-relaxed max-w-5xl">
-                    {product.overview}
-                </p>
-            </div>
 
-            {/* ================= TABS ================= */}
-            <div className="mt-10 bg-white p-6 border border-gray-200 rounded-3xl shadow-xl">
-                <div className=" flex gap-6 text-sm ">
 
-                    {product.keyFeatures && (
-                        <button
-                            onClick={() => setActiveTab('features')}
-                            className={`pb-2 ${activeTab === 'features'
-                                    ? 'border-b-2 border-blue-600 font-medium '
-                                    : 'text-gray-600 hover:bg-black/20'
-                                }`}
-                        >
-                            Features
-                        </button>
-                    )}
+            {/* ================= TAB PILLS ================= */}
+            <div className="mt-12 border border-gray-200 rounded-xl">
 
-                    {product.specifications && (
-                        <button
-                            onClick={() => setActiveTab('specs')}
-                            className={`pb-2 ${activeTab === 'specs'
-                                    ? 'border-b-2 border-blue-600 font-medium'
-                                    : 'text-gray-600'
-                                }`}
-                        >
-                            Specifications
-                        </button>
-                    )}
+                {/* TAB BUTTONS */}
+                <div className="px-6 pt-6 flex justify-center items-center">
+                    <div className="bg-gray-100 rounded-full p-1 flex gap-1">
 
-                    {product.applications && (
-                        <button
-                            onClick={() => setActiveTab('applications')}
-                            className={`pb-2 ${activeTab === 'applications'
-                                    ? 'border-b-2 border-blue-600 font-medium'
-                                    : 'text-gray-600'
-                                }`}
-                        >
-                            Applications
-                        </button>
-                    )}
+                        {product.keyFeatures && (
+                            <button
+                                onClick={() => setActiveTab('features')}
+                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
+            ${activeTab === 'features'
+                                        ? 'bg-white text-gray-900 shadow-md'
+                                        : 'text-gray-600 hover:text-gray-900'
+                                    }
+          `}
+                            >
+                                Features
+                            </button>
+                        )}
+
+                        {product.specifications && (
+                            <button
+                                onClick={() => setActiveTab('specs')}
+                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
+            ${activeTab === 'specs'
+                                        ? 'bg-white text-gray-900 shadow-md'
+                                        : 'text-gray-600 hover:text-gray-900'
+                                    }
+          `}
+                            >
+                                Specifications
+                            </button>
+                        )}
+
+                        {product.applications && (
+                            <button
+                                onClick={() => setActiveTab('applications')}
+                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
+            ${activeTab === 'applications'
+                                        ? 'bg-white text-gray-900 shadow-md'
+                                        : 'text-gray-600 hover:text-gray-900'
+                                    }
+          `}
+                            >
+                                Applications
+                            </button>
+                        )}
+                     
+                    </div>
                 </div>
 
-                {/* ================= TAB CONTENT ================= */}
-                <div className="mt-6 text-sm">
+                {/* TAB CONTENT */}
+                <div className="p-6 text-sm text-gray-700">
 
-                    {/* ✅ FEATURES */}
+                    {/* FEATURES – Card Grid */}
                     {activeTab === 'features' && product.keyFeatures && (
-                        <ul className="list-disc list-inside space-y-2 max-w-5xl">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {product.keyFeatures.map((feature, index) => (
-                                <li key={index}>{feature}</li>
+                                <div
+                                    key={index}
+                                    className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-lg transition flex gap-5"
+                                >
+                                    <h4 className="text-blue-500 text-xl">
+                                        <MdOutlineSettingsApplications />
+                                    </h4>
+                                    
+                                    <p className="text-sm text-gray-700 leading-relaxed">
+                                        {feature}
+                                    </p>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     )}
 
-                    {/* ✅ SPECIFICATIONS */}
+                    {/* SPECIFICATIONS – Clean Spec Grid */}
                     {activeTab === 'specs' && product.specifications && (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
                             {Object.entries(product.specifications).map(([key, value]) => (
                                 <div
                                     key={key}
-                                    className="flex justify-between border-b pb-2"
+                                    className="flex justify-between bg-gray-50 rounded-lg p-4"
                                 >
-                                    <span className="font-medium capitalize">
+                                    <span className="text-sm font-medium text-gray-900">
                                         {key.replace(/([A-Z])/g, ' $1')}
                                     </span>
-                                    <span>
-                                        {typeof value === 'object'
-                                            ? JSON.stringify(value)
-                                            : value}
+                                    <span className="text-sm text-gray-600 text-right">
+                                        {value}
                                     </span>
                                 </div>
                             ))}
                         </div>
                     )}
 
-                    {/* ✅ APPLICATIONS */}
+                    {/* APPLICATIONS – Use Case Cards */}
                     {activeTab === 'applications' && product.applications && (
-                        <ul className="list-disc list-inside space-y-2 max-w-5xl">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {product.applications.map((app, index) => (
-                                <li key={index}>{app}</li>
+                                <div
+                                    key={index}
+                                    className="border border-gray-200 rounded-xl p-5 hover:border-blue-600 transition"
+                                >
+                                    {/* <h4 className="font-semibold text-gray-900 mb-2">
+                                        Use Case {index + 1}
+                                    </h4> */}
+                                    <p className="text-sm text-gray-700 leading-relaxed">
+                                        {app}
+                                    </p>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     )}
+
                 </div>
             </div>
-{/* Contact Modal */}
-<EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
+
+            {/* ================= ENQUIRY MODAL ================= */}
+            <EnquiryModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                productData={{
+                    model: product.meta.title,
+                    category: categorySlug,
+                    subcategory: subSlug,
+                }}
+                onSuccess={() => setPriceUnlocked(true)} // 🔥 unlock price
+            />
+
+            {/* {subCategory?.models?.length > 1 && (
+                <PopupModal
+                    models={subCategory.models}
+                    categorySlug={categorySlug}
+                    subSlug={subSlug}
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    onSuccess={() => {
+                        setPriceUnlocked(true);
+                        setIsModalOpen(false);
+                    }}
+                />
+            )} */}
         </section>
     );
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { FaTimes, FaPaperPlane } from 'react-icons/fa';
+import { FaTimes, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 
 const INITIAL_STATE = {
   name: '',
@@ -13,7 +13,7 @@ const INITIAL_STATE = {
   city: '',
   state: '',
   country: '',
-  message: '',
+ 
   product: '',
   category: '',
 };
@@ -24,7 +24,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  /* ✅ Sync product data every time modal opens or product changes */
+  /* Sync product data */
   useEffect(() => {
     if (isOpen && productData) {
       setFormData((prev) => ({
@@ -35,7 +35,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
     }
   }, [isOpen, productData]);
 
-  /* ✅ Reset modal completely on close */
+  /* Reset modal */
   const handleClose = () => {
     setFormData(INITIAL_STATE);
     setSubmitted(false);
@@ -78,115 +78,176 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[1000] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="bg-slate-900/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-700/50 max-w-lg w-full max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-[1000] bg-black/50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-xl shadow-2xl border border-gray-200 max-w-lg w-full max-h-[90vh] overflow-y-auto">
 
         {/* HEADER */}
-        <div className="p-6 border-b border-slate-700/50">
-          <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-bold text-slate-100">Get Quote</h2>
-            <button
-              onClick={handleClose}
-              className="p-2 rounded-xl hover:bg-slate-800/50 transition"
-            >
-              <FaTimes className="text-slate-400 hover:text-slate-200" />
-            </button>
-          </div>
+        <div className="flex items-center justify-between p-5 border-b border-gray-200">
+          <h2 className="text-lg font-semibold text-[#2F4191]">
+            Product Enquiry
+          </h2>
+          <button
+            onClick={handleClose}
+            className="p-2 rounded-md hover:bg-gray-100"
+          >
+            <FaTimes className="text-gray-500" />
+          </button>
+        </div>
 
-          {productData && (
-            <div className="mt-4 p-4 bg-gradient-to-r from-orange-500/10 to-blue-500/10 border border-orange-400/30 rounded-2xl">
-              <p className="text-sm text-slate-300">
-                For:{' '}
-                <span className="font-semibold text-orange-300">
+        {/* PRODUCT INFO */}
+        {productData && (
+          <div className="px-5 pt-4">
+            <div className="rounded-lg border border-[#2B7EC2]/30 bg-[#2B7EC2]/10 px-4 py-3">
+              <p className="text-sm text-gray-700">
+                Product:{' '}
+                <span className="font-medium text-[#2F4191]">
                   {productData.model}
                 </span>
               </p>
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-xs text-gray-500 mt-1">
                 {productData.category} → {productData.subcategory}
               </p>
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* FORM */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="p-5 space-y-4">
 
+          {/* NAME & COMPANY */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input name="name" required placeholder="Full Name *" value={formData.name} onChange={handleChange} className="input" />
-            <input name="company" placeholder="Company" value={formData.company} onChange={handleChange} className="input" />
+            <input
+              name="name"
+              required
+              placeholder="Full Name *"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+                         focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
+            />
+            <input
+              name="company"
+              placeholder="Company"
+              value={formData.company}
+              onChange={handleChange}
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+                         focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
+            />
           </div>
 
+          {/* DESIGNATION & PHONE */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input name="designation" placeholder="Designation" value={formData.designation} onChange={handleChange} className="input" />
-            <input name="phone" type="tel" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className="input" />
+            <input
+              name="designation"
+              placeholder="Designation"
+              value={formData.designation}
+              onChange={handleChange}
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+                         focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
+            />
+            <input
+              name="phone"
+              type="tel"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+                         focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
+            />
           </div>
 
-          <input name="email" type="email" required placeholder="Email *" value={formData.email} onChange={handleChange} className="input" />
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <input name="department" placeholder="Department" value={formData.department} onChange={handleChange} className="input" />
-            <input name="city" placeholder="City" value={formData.city} onChange={handleChange} className="input" />
-            <input name="state" placeholder="State" value={formData.state} onChange={handleChange} className="input" />
-          </div>
-
-          <input name="country" placeholder="Country" value={formData.country} onChange={handleChange} className="input" />
-
-          <textarea
-            name="message"
-            rows={4}
+          {/* EMAIL */}
+          <input
+            name="email"
+            type="email"
             required
-            placeholder="Message *"
-            value={formData.message}
+            placeholder="Email *"
+            value={formData.email}
             onChange={handleChange}
-            className="input resize-none"
+            className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+                       focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
           />
 
+          {/* DEPARTMENT / CITY / STATE */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <input
+              name="department"
+              placeholder="Department"
+              value={formData.department}
+              onChange={handleChange}
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+                         focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
+            />
+            <input
+              name="city"
+              placeholder="City"
+              value={formData.city}
+              onChange={handleChange}
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+                         focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
+            />
+            <input
+              name="state"
+              placeholder="State"
+              value={formData.state}
+              onChange={handleChange}
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+                         focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
+            />
+          </div>
+
+          {/* COUNTRY */}
+          <input
+            name="country"
+            placeholder="Country"
+            value={formData.country}
+            onChange={handleChange}
+            className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+                       focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
+          />
+
+       
+
           {error && (
-            <p className="text-sm text-red-400 text-center">{error}</p>
+            <p className="text-sm text-red-500 text-center">{error}</p>
           )}
 
+          {/* SUBMIT BUTTON */}
           <button
             type="submit"
-            disabled={loading}
-            className="w-full bg-gradient-to-r from-orange-500 via-orange-600 to-amber-500 text-slate-900 font-semibold py-4 rounded-2xl flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl transition disabled:opacity-50"
+            disabled={loading || submitted}
+            className={`w-full py-3 rounded-md text-sm font-medium flex items-center justify-center gap-2 transition
+              ${
+                submitted
+                  ? 'bg-[#2B7EC2] text-white'
+                  : 'bg-[#2F4191] text-white hover:bg-[#2B7EC2]'
+              }
+              ${(loading || submitted) && 'opacity-80 cursor-not-allowed'}
+            `}
           >
-            {loading ? (
+            {loading && (
               <>
-                <span className="w-5 h-5 border-2 border-slate-900/30 border-t-slate-900 rounded-full animate-spin" />
+                <span className="w-4 h-4 border-2 border-white/50 border-t-white rounded-full animate-spin" />
                 Sending...
               </>
-            ) : submitted ? (
+            )}
+
+            {!loading && submitted && (
               <>
-                <FaPaperPlane /> Sent Successfully!
+                <FaCheckCircle />
+                Enquiry Sent Successfully
               </>
-            ) : (
+            )}
+
+            {!loading && !submitted && (
               <>
-                <FaPaperPlane /> Send Enquiry
+                <FaPaperPlane />
+                Send Enquiry
               </>
             )}
           </button>
         </form>
       </div>
-
-      {/* Tailwind shortcut */}
-      <style jsx>{`
-        .input {
-          width: 100%;
-          padding: 0.75rem 1rem;
-          background: rgba(30, 41, 59, 0.5);
-          border: 1px solid rgba(100, 116, 139, 0.5);
-          border-radius: 1rem;
-          color: #f8fafc;
-          outline: none;
-        }
-        .input::placeholder {
-          color: #94a3b8;
-        }
-        .input:focus {
-          border-color: #fb923c;
-          box-shadow: 0 0 0 2px rgba(251, 146, 60, 0.4);
-        }
-      `}</style>
     </div>
   );
 }
