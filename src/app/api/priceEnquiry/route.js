@@ -32,12 +32,11 @@ export async function POST(request) {
       from: `"Being Instruments India" <${process.env.EMAIL_USER}>`,
       to: COMPANY_EMAIL,
       replyTo: formData.email,
-      subject: `New Product Enquiry | ${formData.product}`,
+      subject: `New price Enquiry | ${formData.product}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 620px; margin: auto; background:#0f172a; padding:32px; border-radius:16px;">
-          
+        <div style="font-family: Arial, sans-serif; max-width: 620px; margin: auto; background:#0f172a; padding:32px; border-radius:16px;">       
           <h2 style="color:#f97316; margin-bottom:24px;">
-            🆕 New Product Enquiry
+            Price Enquiry
           </h2>
 
           <div style="background:#1e293b; padding:16px; border-radius:10px; margin-bottom:20px;">
@@ -54,24 +53,31 @@ export async function POST(request) {
               <td style="padding:10px; color:#94a3b8;">Company</td>
               <td style="padding:10px; color:#f8fafc;">${formData.company || 'N/A'}</td>
             </tr>
-          
+             <tr>
+              <td style="padding:10px; color:#94a3b8;">GST Number</td>
+              <td style="padding:10px; color:#f8fafc;">${formData.gstNumber|| 'N/A'}</td>
+            </tr>
+             <tr>
+              <td style="padding:10px; color:#94a3b8;">Industry</td>
+              <td style="padding:10px; color:#f8fafc;">${formData.industry || 'N/A'}</td>
+            </tr>
             <tr>
               <td style="padding:10px; color:#94a3b8;">Designation</td>
               <td style="padding:10px; color:#f8fafc;">${formData.designation || 'N/A'}</td>
             </tr>
-            
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Phone</td>
-              <td style="padding:10px; color:#f8fafc;">${formData.phone || 'N/A'}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Email</td>
-              <td style="padding:10px; color:#f8fafc;">${formData.email}</td>
-            </tr>            
             <tr>
               <td style="padding:10px; color:#94a3b8;">Department</td>
               <td style="padding:10px; color:#f8fafc;">${formData.department || 'N/A'}</td>
             </tr>
+            <tr>
+              <td style="padding:10px; color:#94a3b8;">Email</td>
+              <td style="padding:10px; color:#f8fafc;">${formData.email}</td>
+            </tr>
+            <tr>
+              <td style="padding:10px; color:#94a3b8;">Phone</td>
+              <td style="padding:10px; color:#f8fafc;">${formData.phone || 'N/A'}</td>
+            </tr>
+            
             <tr>
               <td style="padding:10px; color:#94a3b8;">Country</td>
               <td style="padding:10px; color:#f8fafc;">
@@ -81,18 +87,18 @@ export async function POST(request) {
             <tr>
               <td style="padding:10px; color:#94a3b8;">State</td>
               <td style="padding:10px; color:#f8fafc;">
-                ${ formData.state  || 'N/A'}
+                ${formData.state || 'N/A'}
               </td>
             </tr>
-              <tr>
+            <tr>
               <td style="padding:10px; color:#94a3b8;">City</td>
               <td style="padding:10px; color:#f8fafc;">
-                ${ formData.city || 'N/A'}
+                ${formData.city|| 'N/A'}
               </td>
             </tr>
              <tr>
-              <td style="padding:10px; color:#94a3b8;">Application/Message</td>             
-                 <td style="padding:10px; color:#f8fafc;">${formData.message || 'N/A'}</td>     
+              <td style="padding:10px; color:#94a3b8;">Application/Message</td>
+              <td style="padding:10px; color:#f8fafc;">${formData.message}</td>
             </tr>
           </table>
 

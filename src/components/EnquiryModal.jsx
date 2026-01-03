@@ -7,13 +7,13 @@ const INITIAL_STATE = {
   name: '',
   company: '',
   designation: '',
+  department: '',
   phone: '',
   email: '',
-  department: '',
-  city: '',
-  state: '',
   country: '',
- 
+  state: '',
+  city: '',
+  message: "",
   product: '',
   category: '',
 };
@@ -95,7 +95,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
         </div>
 
         {/* PRODUCT INFO */}
-        {productData && (
+        {/* {productData && (
           <div className="px-5 pt-4">
             <div className="rounded-lg border border-[#2B7EC2]/30 bg-[#2B7EC2]/10 px-4 py-3">
               <p className="text-sm text-gray-700">
@@ -109,11 +109,10 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
               </p>
             </div>
           </div>
-        )}
+        )} */}
 
         {/* FORM */}
         <form onSubmit={handleSubmit} className="p-5 space-y-4">
-
           {/* NAME & COMPANY */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
@@ -122,73 +121,81 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
               placeholder="Full Name *"
               value={formData.name}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+              className="w-full rounded-full border border-gray-300 px-3 py-2 text-sm
                          focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
             />
+
             <input
               name="company"
-              placeholder="Company"
+              required
+              placeholder="Company *"
               value={formData.company}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+              className="w-full rounded-full border border-gray-300 px-3 py-2 text-sm
                          focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
             />
           </div>
-
-          {/* DESIGNATION & PHONE */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               name="designation"
-              placeholder="Designation"
+              required
+              placeholder="Designation *"
               value={formData.designation}
               onChange={handleChange}
               className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
                          focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
             />
             <input
-              name="phone"
-              type="tel"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
-                         focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
-            />
-          </div>
-
-          {/* EMAIL */}
-          <input
-            name="email"
-            type="email"
-            required
-            placeholder="Email *"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
-                       focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
-          />
-
-          {/* DEPARTMENT / CITY / STATE */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <input
               name="department"
-              placeholder="Department"
+              required
+              placeholder="Department *"
               value={formData.department}
               onChange={handleChange}
               className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
                          focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
             />
+          </div>
+          {/* DESIGNATION & PHONE */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
             <input
-              name="city"
-              placeholder="City"
-              value={formData.city}
+              name="phone"
+              required
+              type="tel"
+              placeholder="Phone Number *"
+              value={formData.phone}
               onChange={handleChange}
               className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
                          focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
             />
             <input
+              name="email"
+              type="email"
+              required
+              placeholder="Email *"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+                       focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
+            />
+
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* COUNTRY */}
+            <input
+              name="country"
+              required
+              placeholder="Country *"
+              value={formData.country}
+              onChange={handleChange}
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+                       focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
+            />
+
+            <input
               name="state"
-              placeholder="State"
+              required
+              placeholder="State *"
               value={formData.state}
               onChange={handleChange}
               className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
@@ -196,17 +203,24 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
             />
           </div>
 
-          {/* COUNTRY */}
           <input
-            name="country"
-            placeholder="Country"
-            value={formData.country}
+            name="city"
+            required
+            placeholder="City *"
+            value={formData.city}
             onChange={handleChange}
             className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
-                       focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
+                         focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
           />
 
-       
+          <textarea
+            rows="5"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Message Here..."
+            className="w-full px-4 py-3 rounded-md shadow-sm resize-none border border-gray-300"
+          />
 
           {error && (
             <p className="text-sm text-red-500 text-center">{error}</p>
@@ -217,10 +231,9 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
             type="submit"
             disabled={loading || submitted}
             className={`w-full py-3 rounded-md text-sm font-medium flex items-center justify-center gap-2 transition
-              ${
-                submitted
-                  ? 'bg-[#2B7EC2] text-white'
-                  : 'bg-[#2F4191] text-white hover:bg-[#2B7EC2]'
+              ${submitted
+                ? 'bg-[#2B7EC2] text-white'
+                : 'bg-[#2F4191] text-white hover:bg-[#2B7EC2]'
               }
               ${(loading || submitted) && 'opacity-80 cursor-not-allowed'}
             `}
