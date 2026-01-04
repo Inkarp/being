@@ -18,7 +18,7 @@ export default function PricePopup({
                 {/* CLOSE */}
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 border p-2"
                 >
                     <FaTimes />
                 </button>
@@ -69,7 +69,7 @@ export default function PricePopup({
                         onClick={onClose}
                         className="mt-4 w-full bg-[#2F4191] text-white py-2.5 rounded-full text-sm font-medium hover:bg-[#2B7EC2]"
                     >
-                        Continue Browsing
+                        We will get back to you Soon
                     </button>
                 </div>
             </div>

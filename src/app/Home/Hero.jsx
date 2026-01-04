@@ -36,7 +36,7 @@ export default function Hero() {
 
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-black/30 z-10" />
-                <div className="absolute top-50 left-0 z-20 bg-white flex flex-col gap-5 rounded-r-xl flex justify-center items-center px-2 py-5 shadow-lg">
+                {/* <div className="absolute top-50 left-0 z-20 bg-white flex flex-col gap-5 rounded-r-xl flex justify-center items-center px-2 py-5 shadow-lg">
                     <div className='rounded-full p-1 bg-black text-white shadow-2xl'>
                         <MdNavigateNext className='h-5 w-5' />
 
@@ -44,10 +44,10 @@ export default function Hero() {
                     <div className='rounded-full p-1 bg-black text-white shadow-2xl '>
                         <MdNavigateBefore className='h-5 w-5' />
                     </div>
-                </div>
+                </div> */}
 
                 {/* Top-right floating vertical button with animated letters */}
-                <div className="absolute top-30 right-0 z-20 bg-white rounded-l-2xl flex justify-center items-center px-3 py-5 shadow-lg">
+                {/* <div className="absolute top-30 right-0 z-20 bg-white rounded-l-2xl flex justify-center items-center px-3 py-5 shadow-lg">
                     <button className="text-lg text-black uppercase flex flex-col items-center font-semibold tracking-wider">
                         {"EXPLORE".split("").map((char, index) => (
                             <span
@@ -59,10 +59,8 @@ export default function Hero() {
                             </span>
                         ))}
 
-                        {/* ✅ SPACE BETWEEN WORDS */}
                         <span className="h-4"></span>
 
-                        {/* NOW */}
                         {"NOW".split("").map((char, index) => (
                             <span
                                 key={`now-${index}`}
@@ -73,9 +71,7 @@ export default function Hero() {
                             </span>
                         ))}
                     </button>
-                </div>
-
-
+                </div> */}
 
                 {/* Main Text Content over video */}
                 <div className="relative z-20 h-full flex items-center px-6 md:px-16 text-white">
@@ -107,7 +103,7 @@ export default function Hero() {
 
             {/* Right: Auto-sliding image */}
             <div className="w-2/5 h-full relative bg-white">
-                <div className="absolute top-50 left-0 z-20 bg-white flex flex-col gap-5 rounded-r-xl flex justify-center items-center px-2 py-5 shadow-lg">
+                {/* <div className="absolute top-50 left-0 z-20 bg-white flex flex-col gap-5 rounded-r-xl flex justify-center items-center px-2 py-5 shadow-lg">
                     <div className='rounded-full p-1 bg-black text-white shadow-2xl'>
                         <MdNavigateNext className='h-5 w-5' />
 
@@ -115,7 +111,7 @@ export default function Hero() {
                     <div className='rounded-full p-1 bg-black text-white shadow-2xl '>
                         <MdNavigateBefore className='h-5 w-5' />
                     </div>
-                </div>
+                </div> */}
 
                  <div className="absolute top-50 right-0 z-20 bg-white flex flex-col gap-5 rounded-l-xl flex justify-center items-center px-2 py-5 shadow-lg">
                     <div className='rounded-full p-1 bg-[#2B7EC2] text-white shadow-2xl'>
@@ -130,7 +126,7 @@ export default function Hero() {
                     src={sliderImages[currentSlide]}
                     alt="Auto slider"
                     fill
-                    className="object-contain bg-black/20 transition-all duration-700"
+                    className="object-contain bg-gray-200 transition-all duration-700"
                 />
 
                  <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 duration-300 flex items-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-fit">
