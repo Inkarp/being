@@ -199,62 +199,85 @@ export default function Header() {
         />
       )}
 
-      {/* SIDEBAR (unchanged) */}
+      {/* SIDEBAR */}
       <aside
-        className={`fixed top-0 right-0 h-full w-[340px] bg-white shadow-xl z-50 transform transition-transform duration-300
-        ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 h-screen w-[340px] bg-white shadow-xl z-50
+  transform transition-transform duration-300
+  ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
       >
-        {/* ... rest of sidebar code stays exactly the same ... */}
-        <div className="flex justify-end p-4">
+        {/* Header (fixed) */}
+        <div className="flex items-center justify-between p-4 border-b sticky top-0 bg-white z-10">
+          <Image src="/logo.webp" alt="Logo" width={160} height={50} />
+
           <button
             onClick={() => setIsSidebarOpen(false)}
             className="bg-[#2B7EC2] text-white px-3 py-1 rounded"
+            aria-label="Close sidebar"
           >
             ✕
           </button>
         </div>
-        <div className="px-6 space-y-6">
-          <Image src="/logo.webp" alt="Logo" width={200} height={60} />
+
+        {/* Scrollable content */}
+        <div className="h-[calc(100vh-72px)] overflow-y-auto px-6 py-6 space-y-8">
+
+          {/* Navigation */}
           <nav className="space-y-4 font-semibold text-gray-700">
             {menuItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsSidebarOpen(false)}
-                className="block border-b pb-2"
+                className="block border-b pb-2 hover:text-[#2B7EC2] transition"
               >
                 {item.name}
               </Link>
             ))}
           </nav>
+
+          {/* Social */}
           <div>
             <h3 className="font-bold mb-3 text-gray-700">Follow Us</h3>
             <div className="flex gap-3">
               {[FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube, FaLinkedin].map(
                 (Icon, i) => (
-                  <div
+                  <a
                     key={i}
-                    className="bg-[#2B7EC2] p-2 rounded-full text-white cursor-pointer"
+                    href="#"
+                    className="bg-[#2B7EC2] p-2 rounded-full text-white cursor-pointer hover:opacity-90 transition"
+                    aria-label="Social link"
                   >
                     <Icon />
-                  </div>
+                  </a>
                 )
               )}
             </div>
           </div>
+
+          {/* Contact */}
           <div className="space-y-4">
             <h3 className="font-bold text-gray-700">Get in Touch</h3>
-            <div className="flex gap-3">
-              <FaMapMarkerAlt className="text-[#2B7EC2]" />
-              <p className="text-sm text-gray-700">12th Street, New York, USA</p>
+
+            <div className="flex gap-3 items-start">
+              <FaMapMarkerAlt className="text-[#2B7EC2] mt-1" />
+              <p className="text-sm text-gray-700">
+                12th Street, New York, USA
+              </p>
             </div>
-            <div className="flex gap-3">
-              <FaEnvelope className="text-[#2B7EC2]" />
-              <p className="text-sm text-gray-700">[info@techin.com](mailto:info@techin.com)</p>
+
+            <div className="flex gap-3 items-start">
+              <FaEnvelope className="text-[#2B7EC2] mt-1" />
+              <a
+                href="mailto:info@techin.com"
+                className="text-sm text-gray-700 hover:text-[#2B7EC2]"
+              >
+                info@techin.com
+              </a>
             </div>
           </div>
         </div>
       </aside>
+
     </div>
   );
 }

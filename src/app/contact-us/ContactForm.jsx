@@ -86,8 +86,68 @@ export default function ContactFormSection() {
     <section className="w-[95%] mx-auto py-3">
       <div className="flex flex-col justify-center items-center md:flex-row overflow-hidden space-x-3 p-5">
         {/* Left: Form */}
+     
+        <div className="relative w-full md:w-1/2 h-full md:h-auto">
+          {/* <video
+            src="/bg-video.mov"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover rounded-2xl"
+          /> */}
+
+          <div className="absolute inset-0 flex items-center justify-center px-4 ">
+            <div className="w-full max-w-md px-4 py-5 shadow-2xl rounded-3xl bg-black/10 text-black ">
+              <h2 className="text-3xl font-bold mb-8">Let’s Get In Touch!</h2>
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-black p-3 rounded-lg">
+                  
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-black">Office Time</h4>
+                    <p className="text-sm text-white">Mon–Fri: 10:00Am–09:00Pm</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="bg-black p-3 rounded-lg">
+                
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-black">Call Us Any Time</h4>
+                    <p className="text-sm text-blue-100">+(009) 1888 000 2222</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="bg-black p-3 rounded-lg">
+              
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-black">Email Address</h4>
+                    <p className="text-sm text-blue-100">info@techin.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="bg-black p-3 rounded-lg">
+                   
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-black">Office Address</h4>
+                    <p className="text-sm text-blue-100">12th Street, New York, USA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+           {/* Right: Form */}
         <div className="w-full h-auto md:w-1/2 bg-[#f7f6ff] p-5 space-y-3 rounded-2xl">
-          <div>
+          <div className=''>
             <h2 className="text-3xl font-extrabold mt-2">Contact Information Here</h2>
           </div>
 
@@ -104,7 +164,7 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                 />
-                <FaUser className="absolute right-3 top-2.5 text-gray-400" />
+               
               </div>
               <div className="flex-1 relative">
                 <input
@@ -116,7 +176,7 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                 />
-                <FaUser className="absolute right-3 top-2.5 text-gray-400" />
+            
               </div>
             </div>
 
@@ -132,7 +192,7 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                 />
-                <FaUser className="absolute right-3 top-2.5 text-gray-400" />
+               
               </div>
               <div className="flex-1 relative">
                 <input
@@ -144,7 +204,7 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                 />
-                <FaUser className="absolute right-3 top-2.5 text-gray-400" />
+               
               </div>
             </div>
 
@@ -160,7 +220,7 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                 />
-                <FaUser className="absolute right-3 top-2.5 text-gray-400" />
+               
               </div>
               <div className="flex-1 relative">
                 <input
@@ -172,7 +232,7 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                 />
-                <FaEnvelope className="absolute right-3 top-2.5 text-gray-400" />
+             
               </div>
             </div>
 
@@ -188,7 +248,7 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                 />
-                <FaPhoneAlt className="absolute right-3 top-2.5 text-gray-400" />
+               
               </div>
               <div className="flex-1 relative">
                 <input
@@ -200,7 +260,7 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                 />
-                <FaUser className="absolute right-3 top-2.5 text-gray-400" />
+               
               </div>
             </div>
 
@@ -231,7 +291,7 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                 />
-                <FaUser className="absolute right-3 top-2.5 text-gray-400" />
+             
               </div>
             </div>
 
@@ -247,7 +307,7 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                 />
-                <FaMapMarkerAlt className="absolute right-3 top-2.5 text-gray-400" />
+               
               </div>
               <div className="flex-1 relative">
                 <input
@@ -259,7 +319,7 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                 />
-                <FaMapMarkerAlt className="absolute right-3 top-2.5 text-gray-400" />
+              
               </div>
             </div>
 
@@ -275,7 +335,7 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                 />
-                <FaMapMarkerAlt className="absolute right-3 top-2.5 text-gray-400" />
+              
               </div>
             </div>
 
@@ -307,66 +367,6 @@ export default function ContactFormSection() {
               </p>
             )}
           </form>
-        </div>
-
-        {/* Right: Video + Info */}
-        <div className="relative w-full md:w-1/2 h-full md:h-auto">
-          <video
-            src="/bg-video.mov"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover rounded-2xl"
-          />
-
-          <div className="absolute inset-0 flex items-center justify-center px-4 ">
-            <div className="w-full max-w-md px-4 py-5 shadow-2xl rounded-3xl bg-black/10 text-black ">
-              <h2 className="text-3xl font-bold mb-8">Let’s Get In Touch!</h2>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-black p-3 rounded-lg">
-                    <FaClock className="text-white text-xl" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-black">Office Time</h4>
-                    <p className="text-sm text-white">Mon–Fri: 10:00Am–09:00Pm</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-black p-3 rounded-lg">
-                    <FaPhoneAlt className="text-white text-xl" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-black">Call Us Any Time</h4>
-                    <p className="text-sm text-blue-100">+(009) 1888 000 2222</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-black p-3 rounded-lg">
-                    <FaEnvelope className="text-white text-xl" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-black">Email Address</h4>
-                    <p className="text-sm text-blue-100">info@techin.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-black p-3 rounded-lg">
-                    <FaMapMarkerAlt className="text-white text-xl" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-black">Office Address</h4>
-                    <p className="text-sm text-blue-100">12th Street, New York, USA</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
