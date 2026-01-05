@@ -1,7 +1,86 @@
 'use client';
-import { FaUser, FaEnvelope, FaClock, FaPhoneAlt, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaUser, FaEnvelope } from 'react-icons/fa';
+import { FaClock, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function ContactDetails() {
+    const [form, setForm] = useState({
+        name: '',
+        company: '',
+        industry: '',
+        designation: '',
+        department: '',
+        email: '',
+        phone: '',
+        enquiredProduct: '',
+        typeOfCustomer: '',
+        purchasePlan: '',
+        country: '',
+        state: '',
+        city: '',
+        message: '',
+      });
+    
+      const [loading, setLoading] = useState(false);
+      const [status, setStatus] = useState(null);
+    
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm(prev => ({ ...prev, [name]: value }));
+      };
+    
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatus(null);
+    
+        try {
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: form.name,
+              company: form.company,
+              industry: form.industry,
+              designation: form.designation,
+              department: form.department,
+              email: form.email,
+              phone: form.phone,
+              enquiredProduct: form.enquiredProduct,
+              typeOfCustomer: form.typeOfCustomer,
+              purchasePlan: form.purchasePlan,
+              country: form.country,
+              state: form.state,
+              city: form.city,
+              message: form.message,
+            }),
+          });
+    
+          if (!res.ok) throw new Error('Failed');
+    
+          setStatus('success');
+          setForm({
+            name: '',
+            company: '',
+            industry: '',
+            designation: '',
+            department: '',
+            email: '',
+            phone: '',
+            enquiredProduct: '',
+            typeOfCustomer: '',
+            purchasePlan: '',
+            country: '',
+            state: '',
+            city: '',
+            message: '',
+          });
+        } catch (err) {
+          setStatus('error');
+        } finally {
+          setLoading(false);
+        }
+      };
     return (
         <section className="relative w-full h-[550px] overflow-hidden">
             {/* Fullscreen background video */}
@@ -17,157 +96,293 @@ export default function ContactDetails() {
             {/* Dark overlay for readability (optional) */}
             <div className="absolute inset-0 bg-black/40" />
             {/* Foreground content */}
-            <div className="relative z-10 w-[80%] mx-auto h-full flex flex-col md:flex-row items-center justify-center gap-6 py-6">
-                {/* Left: Form */}
-                <div className="w-full md:w-1/2 bg-[#f7f6ff]/95 p-5 space-y-4 rounded-2xl shadow-xl">
-                    <h2 className="text-3xl font-extrabold mt-2">Contact Us Here</h2>
-
-                    <form className="space-y-4">
-                        {/* Row 1 */}
-                        <div className="flex gap-4">
-                            <div className="flex-1 relative">
-                                <input
-                                    type="text"
-                                    placeholder="Name"
-                                    className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                                />
-                                <FaUser className="absolute right-3 top-2.5 text-gray-400" />
-                            </div>
-                            <div className="flex-1 relative">
-                                <input
-                                    type="email"
-                                    placeholder="Email Address"
-                                    className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                                />
-                                <FaEnvelope className="absolute right-3 top-2.5 text-gray-400" />
-                            </div>
+            <section className="w-[95%] mx-auto py-3">
+                <div className="flex flex-col justify-center items-center md:flex-row overflow-hidden space-x-3 p-5">
+                    {/* Left: Form */}
+                    <div className="w-full h-auto md:w-1/2 bg-white p-5 space-y-3 rounded-2xl">
+                        <div>
+                            <h2 className="text-3xl font-extrabold mt-2">Contact Information Here</h2>
                         </div>
 
-                        {/* Row 2 */}
-                        <div className="flex gap-4">
-                            <div className="flex-1 relative">
-                                <input
-                                    type="text"
-                                    placeholder="Company Name"
-                                    className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                                />
-                                <FaUser className="absolute right-3 top-2.5 text-gray-400" />
-                            </div>
-                            <div className="flex-1 relative">
-                                <input
-                                    type="text"
-                                    placeholder="Designation"
-                                    className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                                />
-                                <FaUser className="absolute right-3 top-2.5 text-gray-400" />
-                            </div>
-                        </div>
-
-                        {/* Row 3 */}
-                        <div className="flex gap-4">
-                            <div className="flex-1 relative">
-                                <input
-                                    type="text"
-                                    placeholder="Phone Number"
-                                    className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                                />
-                                <FaUser className="absolute right-3 top-2.5 text-gray-400" />
-                            </div>
-                            <div className="flex-1 relative">
-                                <input
-                                    type="text"
-                                    placeholder="Subject"
-                                    className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                                />
-                                <FaUser className="absolute right-3 top-2.5 text-gray-400" />
-                            </div>
-                        </div>
-
-                        {/* Message */}
-                        <textarea
-                            rows="5"
-                            placeholder="Message Here..."
-                            className="w-full px-4 py-3 rounded-md shadow-sm resize-none"
-                        ></textarea>
-
-                        <div className="flex items-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-fit">
-                            <span className="text-white font-medium text-[16px]">Send Message</span>
-                            {/* Gear SVG with arrow inside */}
-                            <div className="relative w-[30px] h-[30px] text-white">
-                                <svg
-                                    width="30"
-                                    height="30"
-                                    viewBox="0 0 30 30"
-                                    fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className='spin-slow'
-                                >
-                                    <path d="M14.2257 0.947522C14.6258 0.457905 15.3742 0.457905 15.7743 0.947522L16.8781 2.29817C17.181 2.66879 17.704 2.77283 18.1256 2.54633L19.6623 1.72088C20.2193 1.42165 20.9107 1.70806 21.093 2.31352L21.5959 3.98376C21.7339 4.44207 22.1773 4.73834 22.6535 4.69044L24.3891 4.51587C25.0182 4.45258 25.5474 4.98179 25.4841 5.61093L25.3096 7.34647C25.2617 7.8227 25.5579 8.2661 26.0162 8.40409L27.6865 8.90697C28.2919 9.08926 28.5783 9.7807 28.2791 10.3377L27.4537 11.8744C27.2272 12.296 27.3312 12.819 27.7018 13.1219L29.0525 14.2257C29.5421 14.6258 29.5421 15.3742 29.0525 15.7743L27.7018 16.8781C27.3312 17.181 27.2272 17.704 27.4537 18.1256L28.2791 19.6623C28.5783 20.2193 28.2919 20.9107 27.6865 21.093L26.0162 21.5959C25.5579 21.7339 25.2617 22.1773 25.3096 22.6535L25.4841 24.3891C25.5474 25.0182 25.0182 25.5474 24.3891 25.4841L22.6535 25.3096C22.1773 25.2617 21.7339 25.5579 21.5959 26.0162L21.093 27.6865C20.9107 28.2919 20.2193 28.5783 19.6623 28.2791L18.1256 27.4537C17.704 27.2272 17.181 27.3312 16.8781 27.7018L15.7743 29.0525C15.3742 29.5421 14.6258 29.5421 14.2257 29.0525L13.1219 27.7018C12.819 27.3312 12.296 27.2272 11.8744 27.4537L10.3377 28.2791C9.7807 28.5783 9.08926 28.2919 8.90697 27.6865L8.40409 26.0162C8.2661 25.5579 7.8227 25.2617 7.34647 25.3096L5.61093 25.4841C4.98179 25.5474 4.45258 25.0182 4.51587 24.3891L4.69044 22.6535C4.73834 22.1773 4.44207 21.7339 3.98376 21.5959L2.31352 21.093C1.70806 20.9107 1.42165 20.2193 1.72088 19.6623L2.54633 18.1256C2.77283 17.704 2.66879 17.181 2.29817 16.8781L0.947522 15.7743C0.457905 15.3742 0.457905 14.6258 0.947522 14.2257L2.29817 13.1219C2.66879 12.819 2.77283 12.296 2.54633 11.8744L1.72088 10.3377C1.42165 9.7807 1.70806 9.08926 2.31352 8.90697L3.98376 8.40409C4.44207 8.2661 4.73834 7.8227 4.69044 7.34647L4.51587 5.61093C4.45258 4.98179 4.98179 4.45258 5.61093 4.51587L7.34647 4.69044C7.8227 4.73834 8.2661 4.44207 8.40409 3.98376L8.90697 2.31352C9.08926 1.70806 9.7807 1.42165 10.3377 1.72088L11.8744 2.54633C12.296 2.77283 12.819 2.66879 13.1219 2.29817L14.2257 0.947522Z" />
-                                </svg>
-
-                                {/* Center arrow */}
-                                <FaArrowRight
-                                    size={12}
-                                    className="absolute top-1/2 left-1/2 text-black transform -translate-x-1/2 -translate-y-1/2 "
-                                />
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                {/* Right: Contact info card */}
-                <div className="w-full md:w-1/2 ">
-                    <div className="w-full max-w-md mx-auto px-6 py-6 shadow-2xl rounded-3xl bg-black/30 text-white backdrop-blur">
-                        <h2 className="text-3xl font-bold mb-8">Let’s Get In Touch!</h2>
-
-                        <div className="space-y-6">
-                            {/* Item 1 */}
-                            <div className="flex items-start gap-4">
-                                <div className="bg-black p-3 rounded-lg">
-                                    <FaClock className="text-white text-xl spin-slow" />
+                        <form className="space-y-4 bg-red-500" onSubmit={handleSubmit}>
+                            {/* Row 1: Name, Company */}
+                            <div className="flex gap-4 bg-white">
+                                <div className="flex-1 relative">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Name"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
+                                        value={form.name}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <FaUser className="absolute right-3 top-2.5 text-gray-400" />
                                 </div>
-                                <div>
-                                    <h4 className="font-bold">Office Time</h4>
-                                    <p className="text-sm text-gray-200">Mon–Fri: 10:00Am–09:00Pm</p>
+                                <div className="flex-1 relative">
+                                    <input
+                                        type="text"
+                                        name="company"
+                                        placeholder="Company Name"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
+                                        value={form.company}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <FaUser className="absolute right-3 top-2.5 text-gray-400" />
                                 </div>
                             </div>
 
-                            {/* Item 2 */}
-                            <div className="flex items-start gap-4 bounce-right">
-                                <div className="bg-black p-3 rounded-lg">
-                                    <FaPhoneAlt className="text-white text-xl" />
+                            {/* Row 2: Industry, Designation */}
+                            <div className="flex gap-4">
+                                <div className="flex-1 relative">
+                                    <input
+                                        type="text"
+                                        name="industry"
+                                        placeholder="Industry"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
+                                        value={form.industry}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <FaUser className="absolute right-3 top-2.5 text-gray-400" />
                                 </div>
-                                <div>
-                                    <h4 className="font-bold">Call Us Any Time</h4>
-                                    <p className="text-sm text-blue-200">+91 9030357676</p>
+                                <div className="flex-1 relative">
+                                    <input
+                                        type="text"
+                                        name="designation"
+                                        placeholder="Designation"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
+                                        value={form.designation}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <FaUser className="absolute right-3 top-2.5 text-gray-400" />
                                 </div>
                             </div>
 
-                            {/* Item 3 */}
-                            <div className="flex items-start gap-4 bounce-right">
-                                <div className="bg-black p-3 rounded-lg">
-                                    <FaEnvelope className="text-white text-xl " />
+                            {/* Row 3: Department, Email */}
+                            <div className="flex gap-4">
+                                <div className="flex-1 relative">
+                                    <input
+                                        type="text"
+                                        name="department"
+                                        placeholder="Department"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
+                                        value={form.department}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <FaUser className="absolute right-3 top-2.5 text-gray-400" />
                                 </div>
-                                <div>
-                                    <h4 className="font-bold">Email Address</h4>
-                                    <p className="text-sm text-blue-200">info@techin.com</p>
+                                <div className="flex-1 relative">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Email Address"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
+                                        value={form.email}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <FaEnvelope className="absolute right-3 top-2.5 text-gray-400" />
                                 </div>
                             </div>
 
-                            {/* Item 4 */}
-                            <div className="flex items-start gap-4">
-                                <div className="bg-black p-3 rounded-lg">
-                                    <FaMapMarkerAlt className="text-white text-xl spin-slow" />
+                            {/* Row 4: Phone, Enquired Product */}
+                            <div className="flex gap-4">
+                                <div className="flex-1 relative">
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="Contact Number"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
+                                        value={form.phone}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <FaPhoneAlt className="absolute right-3 top-2.5 text-gray-400" />
                                 </div>
-                                <div>
-                                    <h4 className="font-bold">Office Address</h4>
-                                    <p className="text-sm text-blue-200">12th Street, New York, USA</p>
+                                <div className="flex-1 relative">
+                                    <input
+                                        type="text"
+                                        name="enquiredProduct"
+                                        placeholder="Enquired Product"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
+                                        value={form.enquiredProduct}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <FaUser className="absolute right-3 top-2.5 text-gray-400" />
+                                </div>
+                            </div>
+
+                            {/* Row 5: Type Of Customer, Purchase Plan */}
+                            <div className="flex gap-4">
+                                <div className="flex-1 relative">
+                                    <select
+                                        name="typeOfCustomer"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10 bg-white"
+                                        value={form.typeOfCustomer}
+                                        onChange={handleChange}
+                                        required
+                                    >
+                                        <option value="" disabled>
+                                            Type Of Customer
+                                        </option>
+                                        <option value="existing">Existing</option>
+                                        <option value="new">New</option>
+                                    </select>
+                                </div>
+                                <div className="flex-1 relative">
+                                    <input
+                                        type="text"
+                                        name="purchasePlan"
+                                        placeholder="Purchase Plan"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
+                                        value={form.purchasePlan}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <FaUser className="absolute right-3 top-2.5 text-gray-400" />
+                                </div>
+                            </div>
+
+                            {/* Row 6: Country, State */}
+                            <div className="flex gap-4">
+                                <div className="flex-1 relative">
+                                    <input
+                                        type="text"
+                                        name="country"
+                                        placeholder="Country"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
+                                        value={form.country}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <FaMapMarkerAlt className="absolute right-3 top-2.5 text-gray-400" />
+                                </div>
+                                <div className="flex-1 relative">
+                                    <input
+                                        type="text"
+                                        name="state"
+                                        placeholder="State"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
+                                        value={form.state}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <FaMapMarkerAlt className="absolute right-3 top-2.5 text-gray-400" />
+                                </div>
+                            </div>
+
+                            {/* Row 7: City */}
+                            <div className="flex gap-4">
+                                <div className="flex-1 relative">
+                                    <input
+                                        type="text"
+                                        name="city"
+                                        placeholder="City"
+                                        className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
+                                        value={form.city}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <FaMapMarkerAlt className="absolute right-3 top-2.5 text-gray-400" />
+                                </div>
+                            </div>
+
+                            {/* Message (optional) */}
+                            <textarea
+                                rows={5}
+                                name="message"
+                                placeholder="Message Here..."
+                                className="w-full px-4 py-3 rounded-md shadow-sm resize-none"
+                                value={form.message}
+                                onChange={handleChange}
+                            />
+
+                            {/* Submit Button + Status */}
+                            <button
+                                type="submit"
+                                className="bg-blue-600 text-white font-bold py-2 px-6 rounded-md shadow hover:bg-blue-700 transition disabled:opacity-60"
+                                disabled={loading}
+                            >
+                                {loading ? 'Sending...' : 'Send Message'}
+                            </button>
+
+                            {status === 'success' && (
+                                <p className="text-sm text-green-600 mt-2">Enquiry sent successfully!</p>
+                            )}
+                            {status === 'error' && (
+                                <p className="text-sm text-red-600 mt-2">
+                                    Failed to send enquiry. Please try again.
+                                </p>
+                            )}
+                        </form>
+                    </div>
+
+                    {/* Right: Video + Info */}
+                    <div className="relative w-full md:w-1/2 h-full md:h-auto">
+                        <video
+                            src="/bg-video.mov"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            className="w-full h-full object-cover rounded-2xl"
+                        />
+
+                        <div className="absolute inset-0 flex items-center justify-center px-4 ">
+                            <div className="w-full max-w-md px-4 py-5 shadow-2xl rounded-3xl bg-black/10 text-black ">
+                                <h2 className="text-3xl font-bold mb-8">Let’s Get In Touch!</h2>
+
+                                <div className="space-y-6">
+                                    <div className="flex items-start gap-4">
+                                        <div className="bg-black p-3 rounded-lg">
+                                            <FaClock className="text-white text-xl" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-black">Office Time</h4>
+                                            <p className="text-sm text-white">Mon–Fri: 10:00Am–09:00Pm</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-start gap-4">
+                                        <div className="bg-black p-3 rounded-lg">
+                                            <FaPhoneAlt className="text-white text-xl" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-black">Call Us Any Time</h4>
+                                            <p className="text-sm text-blue-100">+(009) 1888 000 2222</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-start gap-4">
+                                        <div className="bg-black p-3 rounded-lg">
+                                            <FaEnvelope className="text-white text-xl" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-black">Email Address</h4>
+                                            <p className="text-sm text-blue-100">info@techin.com</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-start gap-4">
+                                        <div className="bg-black p-3 rounded-lg">
+                                            <FaMapMarkerAlt className="text-white text-xl" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-black">Office Address</h4>
+                                            <p className="text-sm text-blue-100">12th Street, New York, USA</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </section>
     );
 }

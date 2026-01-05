@@ -6,7 +6,7 @@ import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa';
 
 export default function Footer() {
     return (
-        <footer className="bg-black/80 text-white w-[full]">
+        <footer className="bg-[#2B7EC2] text-white w-[full]">
             {/* Top Grid Section */}
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10s">
                 {/* Column 1 - Logo and Description */}
@@ -93,7 +93,7 @@ export default function Footer() {
                 <div className="max-w-7xl bg-white mx-auto py-3 px-5 flex flex-col lg:flex-row justify-between items-center gap-6 text-black font-bold text-sm md:text-base rounded-xl">
                     <div className="flex items-center gap-10">
                         {/* <FaMapMarkerAlt size={32} /> */}
-                       <img src="/blue_3.svg" className='h-15 w-15' />
+                       <img src="/map.svg" className='h-15 w-15' />
                         <div className='  '>
                             <p className="text-sm font-semibold">Office Address</p>
                             <p className="text-xl font-bold">12th Street, New York, USA</p>
@@ -102,7 +102,7 @@ export default function Footer() {
                     </div>
                     <div className="flex items-center gap-10">
                         {/* <FaEnvelope size={32} /> */}
-                        <img src="/blue_1.svg" className='h-15 w-15' />
+                        <img src="/email.svg" className='h-15 w-15' />
                         <div>
                             <p className="text-sm font-semibold">Email Address</p>
                             <p className="text-xl font-bold">info@techin.com</p>
@@ -111,7 +111,7 @@ export default function Footer() {
                     </div>
                     <div className="flex items-center gap-10">
                         {/* <FaPhoneAlt size={32} /> */}
-                        <img src="/blue_2.svg" className='h-15 w-15' />
+                        <img src="/contact.svg" className='h-15 w-15' />
                         <div>
                             <p className="text-sm font-semibold">Call Us For Support</p>
                             <p className="text-xl font-bold">+(009) 1888 000 2222</p>
