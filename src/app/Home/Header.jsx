@@ -82,10 +82,8 @@ export default function Header() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-[#2B7EC2]/80 shadow-lg">
-      {/* HEADER BAR */}
       <header className="w-[90%] mx-auto px-4 lg:px-8 py-2 flex items-center justify-between font-[Roboto]">
-        {/* LOGO */}
-        <Link href="/" className="flex items-center bg-white">
+        <Link href="/" className="flex items-center bg-white border-r-6 border-black rounded-r-xl">
           <Image
             src="/logo.webp"
             alt="TechIn Logo"
@@ -116,7 +114,6 @@ export default function Header() {
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-3">
-          {/* DESKTOP SEARCH */}
           <div className="hidden md:flex items-center bg-white rounded-full px-4 py-2 w-[300px] shadow-inner relative group">
             <form onSubmit={handleSearchSubmit} className="w-full flex items-center">
               <input

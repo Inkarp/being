@@ -20,7 +20,7 @@ export async function GET() {
               price: "15000"
             },
             overview:
-              "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.",
+              "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications. The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications. The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.",
             keyFeatures: [
               "Stainless steel chamber with rounded corners for easy cleaning",
               "Large LCD controller with timer and multi-program settings",
@@ -49,6 +49,33 @@ export async function GET() {
               "Biotechnology instrument sterilisation",
               "Chemical curing and stability testing",
               "Food and agriculture moisture analysis"
+            ],
+            faqs: [
+              {
+                question: "What is the maximum operating temperature of the BPG-9040A hot air oven?",
+                answer:
+                  "The BPG-9040A Precision Hot Air Oven supports a maximum operating temperature of 250 °C. This wide temperature range makes it suitable for most laboratory drying, heating, and thermal treatment applications."
+              },
+              {
+                question: "Is the temperature distribution uniform inside the chamber?",
+                answer:
+                  "Yes. The oven uses forced air circulation technology to ensure uniform temperature distribution throughout the chamber, with a uniformity of ±2.5%, ensuring consistent results across all samples."
+              },
+              {
+                question: "Can this oven be used for sterilization purposes?",
+                answer:
+                  "The BPG-9040A can be used for dry heat sterilisation of glassware, metal tools, and laboratory accessories, making it suitable for pharmaceutical, biotechnology, and research laboratories."
+              },
+              {
+                question: "Does the oven support data logging or external communication?",
+                answer:
+                  "Yes. The oven supports optional RS-485 or RS-232 communication interfaces, allowing users to connect external devices for monitoring, data logging, or system integration."
+              },
+              {
+                question: "What safety features are included in the BPG-9040A oven?",
+                answer:
+                  "The oven includes over-temperature protection, alarm systems, and a robust controller to prevent overheating and ensure safe operation during extended heating cycles."
+              }
             ]
           },
 
@@ -193,7 +220,6 @@ export async function GET() {
               "Chemical heat treatment"
             ]
           }
-
         ]
       },
 
