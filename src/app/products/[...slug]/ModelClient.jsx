@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import EnquiryModal from '../../../components/EnquiryModal';
-import PopupModal from '../../../components/PopupModal';
 import { FaArrowRight } from 'react-icons/fa';
 import { MdOutlineSettingsApplications } from 'react-icons/md';
 import PriceEnquiryForm from '../../../components/PriceEnquiryForm';
@@ -29,10 +28,6 @@ export default function Model() {
     const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
     const [isPriceOpen, setIsPriceOpen] = useState(false);
     const [showPricePopup, setShowPricePopup] = useState(false);
-
-
-
-
 
     useEffect(() => {
         const fetchData = async () => {
@@ -70,7 +65,6 @@ export default function Model() {
 
     return (
         <section className="w-full mx-auto px-6 py-10 ">
-
             {/* ================= SEO META ================= */}
             <Head>
                 <title>
@@ -91,7 +85,22 @@ export default function Model() {
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr_1fr] gap-10 items-start">
                 {/* ================= COLUMN 1: IMAGE ================= */}
                 <div className="flex flex-col justify-center">
-                    <div className="border border-gray-200 rounded-2xl p-6 bg-white">
+                    {/* IMAGE WRAPPER */}
+                    <div className="relative border border-gray-200 rounded-2xl p-6 bg-white">
+
+                        {/* GEM BADGE */}
+                        {product.gem && (
+                            <Image
+                                src="/Gem.png"   // <-- your gem image path
+                                alt="Featured Product"
+                                width={60}
+                                height={60}
+                                className="absolute top-3 right-3 z-10"
+                                priority
+                            />
+                        )}
+
+                        {/* PRODUCT IMAGE */}
                         <Image
                             src={product.meta.thumbnail}
                             alt={product.meta.title}
@@ -101,8 +110,10 @@ export default function Model() {
                             priority
                         />
                     </div>
+
                     {/* CTA BUTTONS */}
                     <div className="flex flex-wrap gap-4 pt-2">
+
                         {/* ENQUIRY BUTTON */}
                         <button
                             onClick={() => setIsEnquiryOpen(true)}
@@ -110,21 +121,22 @@ export default function Model() {
                         >
                             Enquiry
                         </button>
+
+                        {/* PRICE BUTTON */}
                         {product.meta.price && (
                             <button
                                 onClick={() => {
-                                    if (!priceUnlocked) setIsPriceOpen(true); // ✅ CORRECT
+                                    if (!priceUnlocked) setIsPriceOpen(true);
                                 }}
                                 className="bg-[#2F4191] text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#2B7EC2]"
                             >
-                                {priceUnlocked
-                                    ? `₹ ${product.meta.price}`
-                                    : 'Request Price'}
+                                {priceUnlocked ? `₹ ${product.meta.price}` : 'Request Price'}
                             </button>
-
                         )}
+
                     </div>
                 </div>
+
 
                 {/* ================= COLUMN 2: PRODUCT OVERVIEW ================= */}
                 <div className="space-y-6">
@@ -142,8 +154,6 @@ export default function Model() {
                             </p>
                         </div>
                     )}
-
-
                 </div>
 
                 {/* ================= COLUMN 3: MODELS ================= */}
