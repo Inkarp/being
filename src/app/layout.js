@@ -5,6 +5,7 @@ import Link from "next/link";
 import ScrollToTop from "./ScrollToTop";
 import Header from "./Home/Header";
 import Footer from "./Home/Footer";
+import ShareButton from "./ShareButton";
 
 // Load Google Fonts
 const geistSans = Geist({
@@ -30,9 +31,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       {/* <body className=" bg-gradient-to-r from-[#E0F2FE] via-[#E0F2FE] to-[#E0F2FE]"> */}
-              <body className=" bg-white">
+      <body className=" bg-white">
         <ScrollToTop />
         <Header />
+        <ShareButton />
         <main className="w-[90%] mx-auto pt-20">
           {children}
         </main>

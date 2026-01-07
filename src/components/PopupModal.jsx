@@ -29,7 +29,7 @@ export default function PopupModel({ models, categorySlug, subSlug }) {
     const activeModel = models[activeIndex];
 
     return (
-        <div className="fixed bottom-8 right-8 z-[60] w-[380px] max-w-[90vw]">
+        <div className="fixed top-1/3 left-2 z-[60] w-[300px] max-w-[90vw]">
             {/* Enhanced glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/20 to-cyan-500/30 rounded-3xl blur-xl -z-10 animate-pulse" />
 

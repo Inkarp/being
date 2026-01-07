@@ -11,6 +11,7 @@ export async function GET() {
           {
             model: "BPG-9040A",
             gem:true,
+            pdf:"/pdfs/test.pdf",
             meta: {
               id: "bpg-9040a",
               slug: "bpg-9040a",
