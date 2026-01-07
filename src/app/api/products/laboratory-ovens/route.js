@@ -76,7 +76,35 @@ export async function GET() {
                 answer:
                   "The oven includes over-temperature protection, alarm systems, and a robust controller to prevent overheating and ensure safe operation during extended heating cycles."
               }
-            ]
+            ],
+            feedback: [
+              "/contact.png",
+              "/ovens.png",
+              "/incubators.png",
+              "/ovens.png",
+              "/contact.png",
+              "/incubators.png",
+              "/ovens.png",
+              "/incubators.png",
+              "/contact.png",
+            ],
+            services: {
+              title: "Our Services",
+              description:
+                "We support our customers with complete lifecycle services, from installation to preventive maintenance and expert technical support.",
+              photos: [
+                "/contact.png",
+                "/ovens.png",
+                "/incubators.png",
+                "/ovens.png",
+                "/contact.png",
+                "/incubators.png",
+                "/ovens.png",
+                "/incubators.png",
+                "/contact.png",
+              ]
+            }
+
           },
 
           /* ================== BPG-9070A ================== */

@@ -13,6 +13,7 @@ import PopupModal from '../../../components/PopupModal';
 import ExclusivePartner from '../../../components/ExclusivePatnership';
 import { FaChevronDown } from 'react-icons/fa';
 import { FcCollaboration } from "react-icons/fc";
+import RelatedModels from '../../../components/RelatedModels';
 
 
 
@@ -93,9 +94,7 @@ export default function Model() {
                 )}
             </Head>
 
-            {/* ================= MAIN PRODUCT LAYOUT ================= */}
             <div className="space-y-8">
-                {/* ================= TOP 3-COLUMN LAYOUT ================= */}
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr_1fr] gap-10 items-start">
 
                     {/* ================= LEFT: AVAILABLE MODELS ================= */}
@@ -204,7 +203,7 @@ export default function Model() {
             {/* ================= TAB PILLS ================= */}
             <div className="mt-5 border border-gray-200 rounded-2xl">
                 {/* ================= CTA ROW (SPANS INFO + IMAGE) ================= */}
-                <div className="flex justify-between items-center border bg-gray-200 py-2">
+                <div className="flex justify-between items-center  bg-gray-200 py-2">
                     <div className="flex justify-center items-center gap-5 px-10">
                         {/* <div className='text-lg rotate-90'>
                             GEM Certified
@@ -249,7 +248,6 @@ export default function Model() {
                             <span>Download Brochure</span>
                         </button>
                     </div>
-
 
                     {/* ENQUIRY */}
                     <div className="flex justify-center items-center gap-5 px-10">
@@ -335,9 +333,33 @@ export default function Model() {
                             </button>
                         )}
 
+                        {product.services && (
+                            <button
+                                onClick={() => setActiveTab('services')}
+                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
+                                            ${activeTab === 'services'
+                                        ? 'bg-white text-gray-900 shadow-md'
+                                        : 'text-gray-600 hover:text-gray-900'
+                                    }`}
+                            >
+                                Service
+                            </button>
+                        )}
+
+                        {product.feedback && (
+                            <button
+                                onClick={() => setActiveTab('feedback')}
+                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
+                                            ${activeTab === 'feedback'
+                                        ? 'bg-white text-gray-900 shadow-md'
+                                        : 'text-gray-600 hover:text-gray-900'
+                                    }`}
+                            >
+                                Customer Feedback
+                            </button>
+                        )}
                     </div>
                 </div>
-
 
                 {/* TAB CONTENT */}
                 <div className="p-6 text-sm text-gray-700 flex justify-center items-center">
@@ -483,6 +505,90 @@ export default function Model() {
                         </div>
                     )}
 
+                    {/* ================= CUSTOMER FEEDBACK TAB ================= */}
+                    {activeTab === 'feedback' && product.feedback && (
+                        <div className="space-y-6 w-full max-w-6xl">
+
+                            {/* TAB HEADING */}
+                            <div className="flex flex-col justify-center items-center text-center">
+                                <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                                    Customer Feedback
+                                </h2>
+                                <p className="text-sm text-gray-700 leading-relaxed max-w-3xl">
+                                    Real feedback and experiences shared by customers using {product.meta.title}.
+                                </p>
+                            </div>
+
+                            {/* SCROLLABLE IMAGE GRID */}
+                            <div className="max-h-[420px] overflow-y-auto pr-2">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {product.feedback.map((img, index) => (
+                                        <div
+                                            key={index}
+                                            className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
+                                        >
+                                            <img
+                                                src={img}
+                                                alt={`Customer feedback ${index + 1} for ${product.meta.title}`}
+                                                className="w-full h-[220px] object-contain bg-gray-50 p-3"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                        </div>
+                    )}
+
+                    {activeTab === 'services' && product.services && (
+                        <div className="space-y-6 w-full ">
+
+                            {/* TAB HEADING */}
+                            <div className="flex justify-center items-center text-center gap-5">
+                                <div className='flex flex-col'>
+                                    <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                                        {product.services.title || "Service Provides"}
+                                    </h2>
+                                    <p className="text-sm text-gray-700 leading-relaxed max-w-3xl">
+                                        {product.services.description ||
+                                            `Comprehensive service and support for ${product.meta.title}, covering installation, maintenance, and technical assistance.`}
+                                    </p>
+                                </div>
+                                <div>
+                                    <button
+                                        onClick={() => setIsEnquiryOpen(true)}
+                                        className="bg-[#2F4191] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2B7EC2] cursor-pointer"
+                                    >
+                                        Need a service??
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* SCROLLABLE IMAGE GRID */}
+                            <div className="max-h-[420px] overflow-y-auto pr-2">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                                    {product.services.photos?.map((img, index) => (
+                                        <div
+                                            key={index}
+                                            className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
+                                        >
+                                            <img
+                                                src={img}
+                                                alt={`Service ${index + 1} for ${product.meta.title}`}
+                                                className="w-full h-[220px] object-contain bg-gray-50 p-4"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                    ))}
+
+                                </div>
+                            </div>
+
+                        </div>
+                    )}
+
 
                 </div>
 
@@ -535,7 +641,7 @@ export default function Model() {
             />
 
 
-            {subCategory?.models?.length > 1 && (
+            {/* {subCategory?.models?.length > 1 && (
                 <PopupModal
                     models={subCategory.models}
                     categorySlug={categorySlug}
@@ -547,7 +653,15 @@ export default function Model() {
                         setIsModalOpen(false);
                     }}
                 />
+            )} */}
+            {subCategory?.models?.length > 1 && (
+                <RelatedModels
+                    models={subCategory.models}
+                    categorySlug={categorySlug}
+                    subSlug={subSlug}
+                />
             )}
+
         </section>
     );
 }
