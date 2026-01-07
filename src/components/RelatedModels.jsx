@@ -32,7 +32,7 @@ export default function RelatedModels({ models = [], categorySlug, subSlug }) {
   if (!models.length) return null;
 
   return (
-    <section className="w-full max-w-6xl mx-auto py-10">
+    <section className="w-full  mx-auto py-10">
       {/* Heading */}
       <div className="mb-6 text-center">
         <h3 className="text-2xl font-semibold text-gray-900">
