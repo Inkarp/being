@@ -32,12 +32,12 @@ export async function POST(request) {
       from: `"Being Instruments India" <${process.env.EMAIL_USER}>`,
       to: COMPANY_EMAIL,
       replyTo: formData.email,
-      subject: `New Product Enquiry | ${formData.product}`,
+      subject: `New Service Enquiry| ${formData.product}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 620px; margin: auto; background:#0f172a; padding:32px; border-radius:16px;">
           
           <h2 style="color:#f97316; margin-bottom:24px;">
-            🆕 New Product Enquiry
+            New Service Enquiry
           </h2>
 
           <div style="background:#1e293b; padding:16px; border-radius:10px; margin-bottom:20px;">

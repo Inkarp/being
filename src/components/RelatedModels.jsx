@@ -12,12 +12,12 @@ export default function RelatedModels({
   const router = useRouter();
   const sliderRef = useRef(null);
 
-  // EXCLUDE current subcategory
+  /* EXCLUDE CURRENT SUBCATEGORY */
   const relatedSubs = subcategories.filter(
     (sub) => sub.slug !== currentSubSlug && sub.models?.length
   );
 
-  // Flatten models (limit for UX)
+  /* FLATTEN MODELS */
   const relatedModels = relatedSubs
     .flatMap((sub) =>
       sub.models.map((m) => ({
@@ -25,14 +25,14 @@ export default function RelatedModels({
         subSlug: sub.slug,
       }))
     )
-    .slice(0, 10); // control how many you want
+    .slice(0, 10);
 
-  // Auto slide
+  /* AUTO SLIDE */
   useEffect(() => {
     if (!sliderRef.current || relatedModels.length <= 3) return;
 
     const slider = sliderRef.current;
-    const cardWidth = 280;
+    const cardWidth = 300;
 
     const interval = setInterval(() => {
       if (
@@ -43,7 +43,7 @@ export default function RelatedModels({
       } else {
         slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
       }
-    }, 3000);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, [relatedModels.length]);
@@ -51,57 +51,89 @@ export default function RelatedModels({
   if (!relatedModels.length) return null;
 
   return (
-    <section className="max-w-5xl  mx-auto py-10 border-t mt-14">
-      {/* Heading */}
-      <div className="mb-6 text-center">
-        <h3 className="text-2xl font-semibold text-gray-900">
+    <section className="max-w-7xl mx-auto py-14 mt-20 border-t border-gray-200">
+      {/* HEADER */}
+      <div className="mb-10 text-center">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900">
           Related Products
         </h3>
-        <p className="text-sm text-gray-600 mt-1">
-          Explore products from other categories
+        <p className="text-sm text-gray-600 mt-2 max-w-xl mx-auto">
+          Explore alternative models and related solutions from other categories
         </p>
       </div>
 
-      {/* Slider */}
-      <div
-        ref={sliderRef}
-        className="flex gap-6 overflow-x-auto pb-4 scroll-smooth scrollbar-hide bg-gray-200"
-      >
-        {relatedModels.map((model) => (
-          <div
-             key={`${model.subSlug}-${model.meta.slug}`} // ✅ UNIQUE KEY
-            className="shrink-0 w-[260px] h-[340px]
-                       bg-white border border-gray-200 rounded-xl
-                       hover:shadow-lg transition cursor-pointer"
-            onClick={() =>
-              router.push(
-                `/products/${categorySlug}/${model.subSlug}/${model.meta.slug}`
-              )
-            }
-          >
-            {/* Image */}
-            <div className="h-[180px] bg-gray-50 rounded-t-xl flex items-center justify-center p-4">
-              <img
-                src={model.meta.thumbnail}
-                alt={model.meta.title}
-                className="max-h-full object-contain"
-                loading="lazy"
-              />
-            </div>
+      {/* SLIDER */}
+      <div className="relative">
+        {/* FADE EDGES */}
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-white to-transparent z-10" />
 
-            {/* Content */}
-            <div className="p-4 flex flex-col justify-between h-[160px]">
-              <h4 className="text-sm font-semibold text-gray-900 line-clamp-2">
-                {model.meta.title}
-              </h4>
+        <div
+          ref={sliderRef}
+          className="
+            flex gap-6
+            overflow-x-auto scroll-smooth
+            pb-6 px-2
+            scrollbar-hide
+          "
+        >
+          {relatedModels.map((model) => (
+            <div
+              key={`${model.subSlug}-${model.meta.slug}`}
+              onClick={() =>
+                router.push(
+                  `/products/${categorySlug}/${model.subSlug}/${model.meta.slug}`
+                )
+              }
+              className="
+                group shrink-0 w-[280px] h-[360px]
+                rounded-2xl cursor-pointer
+                bg-white border border-gray-200
+                shadow-sm hover:shadow-xl
+                transition-all duration-300
+                hover:-translate-y-1
+              "
+            >
+              {/* IMAGE */}
+              <div className="relative h-[190px] rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4 overflow-hidden">
+                <img
+                  src={model.meta.thumbnail}
+                  alt={model.meta.title}
+                  className="
+                    max-h-full object-contain
+                    transition-transform duration-300
+                    group-hover:scale-105
+                  "
+                  loading="lazy"
+                />
+              </div>
 
-              <div className="mt-3 flex items-center gap-2 text-[#2F4191] text-sm font-medium">
-                View Model
-                <FaArrowRight size={12} />
+              {/* CONTENT */}
+              <div className="p-5 flex flex-col justify-between h-[170px]">
+                <h4 className="text-sm font-semibold text-gray-900 line-clamp-2">
+                  {model.meta.title}
+                </h4>
+
+                <div className="mt-4 flex items-center justify-between">
+                  <span className="text-xs text-gray-500">
+                    Explore details
+                  </span>
+
+                  <span
+                    className="
+                      inline-flex items-center gap-2
+                      text-sm font-medium text-[#2F4191]
+                      group-hover:gap-3 transition-all
+                    "
+                  >
+                    View Model
+                    <FaArrowRight size={12} />
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

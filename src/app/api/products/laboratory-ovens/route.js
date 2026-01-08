@@ -160,7 +160,7 @@ export async function GET() {
             meta: {
               slug: "bpg-9070a",
               title: "BPG-9070A Laboratory Drying Oven",
-              thumbnail: "/ovens.png"
+               thumbnail: "/testImg.webp",
             },
             overview:
               "The BPG-9070A is an 80-litre forced-air drying oven designed for consistent heating and drying in laboratory and industrial environments. It offers excellent temperature accuracy and repeatability up to 250 °C. The BPG-9070A is an 80-litre forced-air drying oven designed for consistent heating and drying in laboratory and industrial environments. It offers excellent temperature accuracy and repeatability up to 250 °C. The BPG-9070A is an 80-litre forced-air drying oven designed for consistent heating and drying in laboratory and industrial environments. It offers excellent temperature accuracy and repeatability up to 250 °C.",
@@ -199,7 +199,7 @@ export async function GET() {
             meta: {
               slug: "bpg-9140a",
               title: "BPG-9140A Large Capacity Drying Oven",
-              thumbnail: "/ovens.png"
+              thumbnail: "/testImg.webp",
             },
             overview:
               "The BPG-9140A is a 150-litre forced-air drying oven designed for larger sample volumes with precise temperature control and reliable airflow.",
@@ -235,7 +235,7 @@ export async function GET() {
             meta: {
               slug: "bpg-9240a",
               title: "BPG-9240A High Capacity Drying Oven",
-              thumbnail: "/ovens.png"
+               thumbnail: "/testImg.webp",
             },
             overview:
               "The BPG-9240A is a 250-litre drying oven designed for high-throughput laboratory and industrial applications.",
@@ -267,7 +267,7 @@ export async function GET() {
             meta: {
               slug: "bpg-9420a",
               title: "BPG-9420A Heavy Duty Drying Oven",
-              thumbnail: "/ovens.png"
+               thumbnail: "/testImg.webp",
             },
             overview:
               "The BPG-9420A is a 420-litre heavy-duty drying oven engineered for high-volume industrial and research laboratories.",
@@ -308,7 +308,7 @@ export async function GET() {
             meta: {
               slug: "dzf-6032",
               title: "BPG-9040A Precision Hot Air Oven",
-              thumbnail: "/ovens.png"
+              thumbnail: "/testImg.webp",
             },
             overview:
               "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.",
@@ -363,7 +363,7 @@ export async function GET() {
             meta: {
               slug: "dzf-6032",
               title: "DZF-6032",
-              thumbnail: "/ovens.png"
+               thumbnail: "/testImg.webp",
             },
             overview:
               "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.",
@@ -404,7 +404,7 @@ export async function GET() {
             meta: {
               slug: "dzf-6053",
               title: "DZF-6053",
-              thumbnail: "/ovens.png"
+              thumbnail: "/testImg.webp",
             },
             overview:
               "The BPG-9070A is an 80-litre forced-air drying oven designed for consistent heating and drying in laboratory and industrial environments. It offers excellent temperature accuracy and repeatability up to 250 °C.",

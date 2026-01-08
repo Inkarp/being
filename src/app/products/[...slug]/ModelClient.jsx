@@ -281,27 +281,37 @@ export default function Model() {
 
             {/* ================= TAB PILLS ================= */}
             <div className="mt-5 border border-gray-200 rounded-2xl">
-                {/* ================= CTA ROW (SPANS INFO + IMAGE) ================= */}
-                <div className="flex justify-between items-center  bg-gray-200 py-2">
-                    <div className="flex justify-center items-center gap-5 px-10">
-                        {/* <div className='text-lg rotate-90'>
-                            GEM Certified
-                        </div> */}
+                {/* ================= CTA ROW (RESPONSIVE) ================= */}
+                <div
+                    className="
+    flex flex-col gap-6
+    lg:flex-row lg:justify-between lg:items-center
+    bg-gray-200 py-4
+  "
+                >
+                    {/* LEFT GROUP */}
+                    <div className="flex flex-wrap justify-center items-center gap-4 px-4 sm:px-6 lg:px-10">
                         {product.gem && (
-                            <button className="flex items-center justify-center gap-2 rounded-full text-sm font-medium">
-                                <Image
-                                    src="/Gem.png"
-                                    alt="Gem Product"
-                                    width={150}
-                                    height={150}
-                                />
-                                {/* GEM Product */}
-                            </button>
+                            <Image
+                                src="/Gem.png"
+                                alt="Gem Product"
+                                width={130}
+                                height={130}
+                                className="shrink-0"
+                            />
                         )}
 
                         <button
                             onClick={() => setIsExclusivePatnership(true)}
-                            className="group flex items-center gap-3 bg-[#2B7EC2] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#2F4191] transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#2B7EC2]/40"
+                            className="
+        group flex items-center gap-3
+        bg-[#2B7EC2] text-white
+        px-4 sm:px-6 py-2.5 sm:py-3
+        rounded-full text-sm font-semibold
+        hover:bg-[#2F4191]
+        transition-all duration-200
+        focus:outline-none focus:ring-2 focus:ring-[#2B7EC2]/40
+      "
                         >
                             <span className="flex items-center justify-center w-9 h-9 bg-white rounded-full">
                                 <FcCollaboration size={20} />
@@ -312,143 +322,222 @@ export default function Model() {
                                 <span className="block font-bold">Exclusive Partner</span>
                             </span>
                         </button>
-
                     </div>
-                    <div className="flex justify-center items-center gap-5 px-10">
+
+                    {/* CENTER GROUP */}
+                    <div className="flex flex-wrap justify-center items-center gap-4 px-4 sm:px-6 lg:px-10">
                         <button
                             onClick={() => setIsEnquiryOpen(true)}
-                            className="flex items-center gap-3 bg-[#2F4191] text-white
-               px-6 py-3 rounded-full text-sm font-semibold
-               hover:bg-[#2B7EC2] transition-all duration-200
-               cursor-pointer shadow-lg
-               focus:outline-none focus:ring-2 focus:ring-[#2F4191]/40"
+                            className="
+        flex items-center gap-3
+        bg-[#2F4191] text-white
+        px-4 sm:px-6 py-2.5 sm:py-3
+        rounded-full text-sm font-semibold
+        hover:bg-[#2B7EC2]
+        transition-all duration-200
+        shadow-lg
+        focus:outline-none focus:ring-2 focus:ring-[#2F4191]/40
+      "
                         >
-                            <FaFileDownload size={20} className='animate-bounce' />
+                            <FaFileDownload size={18} className="animate-bounce" />
                             <span>Download Brochure</span>
                         </button>
+
                         <button
                             onClick={handleShare}
-                            className="flex items-center gap-3 bg-[#2F4191] text-white
-                 px-6 py-3 rounded-full text-sm font-semibold
-                 hover:bg-[#2B7EC2] transition-all duration-200
-                 cursor-pointer shadow-lg
-                 focus:outline-none focus:ring-2 focus:ring-[#2F4191]/40"
+                            className="
+        flex items-center gap-3
+        bg-[#2F4191] text-white
+        px-4 sm:px-6 py-2.5 sm:py-3
+        rounded-full text-sm font-semibold
+        hover:bg-[#2B7EC2]
+        transition-all duration-200
+        shadow-lg
+        focus:outline-none focus:ring-2 focus:ring-[#2F4191]/40
+      "
                             aria-label="Share this page"
                             title="Share this page"
                         >
-                            <FaShare size={20} className="animate-bounce" />
+                            <FaShare size={18} className="animate-bounce" />
                             <span>Share</span>
                         </button>
                     </div>
 
-                    {/* ENQUIRY */}
-                    <div className="flex justify-center items-center gap-5 px-10">
+                    {/* RIGHT GROUP */}
+                    <div className="flex flex-wrap justify-center items-center gap-4 px-4 sm:px-6 lg:px-10">
                         <button
                             onClick={() => setIsEnquiryOpen(true)}
-                            className="bg-[#2F4191] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2B7EC2] cursor-pointer"
+                            className="
+        bg-[#2F4191] text-white
+        px-4 sm:px-6 py-2.5 sm:py-3
+        rounded-full text-sm font-medium
+        hover:bg-[#2B7EC2]
+        transition-all
+      "
                         >
                             Enquiry
                         </button>
 
-
-                        {/* PRICE */}
                         {product.meta.price && (
                             <button
                                 onClick={() => {
                                     if (!priceUnlocked) setIsPriceOpen(true);
                                 }}
-                                className="bg-[#2F4191] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2B7EC2] cursor-pointer"
+                                className="
+          bg-[#2F4191] text-white
+          px-4 sm:px-6 py-2.5 sm:py-3
+          rounded-full text-sm font-medium
+          hover:bg-[#2B7EC2]
+          transition-all
+        "
                             >
-                                {priceUnlocked
-                                    ? `₹ ${product.meta.price}`
-                                    : 'Request Price'}
+                                {priceUnlocked ? `₹ ${product.meta.price}` : 'Request Price'}
                             </button>
                         )}
                     </div>
-
                 </div>
-                <div className="px-6 pt-6 flex justify-center items-center">
-                    <div className="bg-gray-100 rounded-full p-1 flex gap-1">
 
+                {/* ================= TAB PILLS (RESPONSIVE) ================= */}
+                <div className="px-3 sm:px-6 pt-6">
+                    <div
+                        className="
+      bg-gray-100 rounded-full p-1
+      flex gap-1
+      overflow-x-auto scrollbar-hide
+      w-full
+      justify-start
+      sm:justify-center
+    "
+                    >
                         {/* FEATURES */}
-                        {product.features && (
+                        {product.features?.items?.length > 0 && (
                             <button
                                 onClick={() => setActiveTab('features')}
-                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === 'features'
-                                    ? 'bg-white text-gray-900 shadow-md'
-                                    : 'text-gray-600 hover:text-gray-900'
-                                    }`}
+                                className={`
+          px-4 sm:px-6 py-2
+          rounded-full
+          text-xs sm:text-sm
+          font-medium
+          whitespace-nowrap
+          transition-all duration-300
+          ${activeTab === 'features'
+                                        ? 'bg-white text-gray-900 shadow-md'
+                                        : 'text-gray-600 hover:text-gray-900'
+                                    }
+        `}
                             >
-                                Features
+                                Key Features
                             </button>
                         )}
 
                         {/* SPECIFICATIONS */}
-                        {product.specifications && (
+                        {product.specifications?.items?.length > 0 && (
                             <button
                                 onClick={() => setActiveTab('specs')}
-                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === 'specs'
-                                    ? 'bg-white text-gray-900 shadow-md'
-                                    : 'text-gray-600 hover:text-gray-900'
-                                    }`}
+                                className={`
+          px-4 sm:px-6 py-2
+          rounded-full
+          text-xs sm:text-sm
+          font-medium
+          whitespace-nowrap
+          transition-all duration-300
+          ${activeTab === 'specs'
+                                        ? 'bg-white text-gray-900 shadow-md'
+                                        : 'text-gray-600 hover:text-gray-900'
+                                    }
+        `}
                             >
                                 Specifications
                             </button>
                         )}
 
                         {/* APPLICATIONS */}
-                        {product.applications && (
+                        {product.applications?.items?.length > 0 && (
                             <button
                                 onClick={() => setActiveTab('applications')}
-                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === 'applications'
+                                className={`
+          px-4 sm:px-6 py-2
+          rounded-full
+          text-xs sm:text-sm
+          font-medium
+          whitespace-nowrap
+          transition-all duration-300
+          ${activeTab === 'applications'
                                         ? 'bg-white text-gray-900 shadow-md'
                                         : 'text-gray-600 hover:text-gray-900'
-                                    }`}
+                                    }
+        `}
                             >
                                 Applications
                             </button>
                         )}
 
-                        {/* FAQs – NEW */}
-                        {product.faqs && product.faqs.length > 0 && (
+                        {/* FAQs */}
+                        {product.faqs?.length > 0 && (
                             <button
                                 onClick={() => setActiveTab('faqs')}
-                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === 'faqs'
+                                className={`
+          px-4 sm:px-6 py-2
+          rounded-full
+          text-xs sm:text-sm
+          font-medium
+          whitespace-nowrap
+          transition-all duration-300
+          ${activeTab === 'faqs'
                                         ? 'bg-white text-gray-900 shadow-md'
                                         : 'text-gray-600 hover:text-gray-900'
-                                    }`}
+                                    }
+        `}
                             >
                                 FAQs
                             </button>
                         )}
 
+                        {/* SERVICE & SUPPORT */}
                         {product.services && (
                             <button
                                 onClick={() => setActiveTab('services')}
-                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
-                                            ${activeTab === 'services'
+                                className={`
+          px-4 sm:px-6 py-2
+          rounded-full
+          text-xs sm:text-sm
+          font-medium
+          whitespace-nowrap
+          transition-all duration-300
+          ${activeTab === 'services'
                                         ? 'bg-white text-gray-900 shadow-md'
                                         : 'text-gray-600 hover:text-gray-900'
-                                    }`}
+                                    }
+        `}
                             >
                                 Service & Support
                             </button>
                         )}
 
+                        {/* CUSTOMER FEEDBACK */}
                         {product.feedback && (
                             <button
                                 onClick={() => setActiveTab('feedback')}
-                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
-                                            ${activeTab === 'feedback'
+                                className={`
+          px-4 sm:px-6 py-2
+          rounded-full
+          text-xs sm:text-sm
+          font-medium
+          whitespace-nowrap
+          transition-all duration-300
+          ${activeTab === 'feedback'
                                         ? 'bg-white text-gray-900 shadow-md'
                                         : 'text-gray-600 hover:text-gray-900'
-                                    }`}
+                                    }
+        `}
                             >
                                 Customer Feedback
                             </button>
                         )}
                     </div>
                 </div>
+
+
 
                 {/* TAB CONTENT */}
                 <div className="p-6 text-sm text-gray-700 flex justify-center items-center">
@@ -700,23 +789,23 @@ export default function Model() {
                             {/* SCROLLABLE IMAGE GRID */}
                             <div className=" p-2 border border-gray-300 p-10 bg-gray-300 rounded-xl">
                                 <div className='bg-white p-10 max-h-[420px] overflow-y-auto rounded-xl'>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                                    {product.services.photos?.map((img, index) => (
-                                        <div
-                                            key={index}
-                                            className="rounded-xl overflow-hidden transition"
-                                        >
-                                            <img
-                                                src={img}
-                                                alt={`Service ${index + 1} for ${product.meta.title}`}
-                                                className="w-full h-[220px] object-contain"
-                                                loading="lazy"
-                                            />
-                                        </div>
-                                    ))}
+                                        {product.services.photos?.map((img, index) => (
+                                            <div
+                                                key={index}
+                                                className="rounded-xl overflow-hidden transition"
+                                            >
+                                                <img
+                                                    src={img}
+                                                    alt={`Service ${index + 1} for ${product.meta.title}`}
+                                                    className="w-full h-[220px] object-contain"
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                        ))}
 
-                                </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -775,7 +864,7 @@ export default function Model() {
                 }}
             />
 
-             <ServiceForm
+            <ServiceForm
                 isOpen={isServiceOpen}
                 onClose={() => setIsSeriveOpen(false)}
                 productData={{

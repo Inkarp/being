@@ -83,7 +83,7 @@ export default function Header() {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-[#2B7EC2] shadow-lg">
       <header className="w-[90%] mx-auto px-4 lg:px-8 py-2 flex items-center justify-between font-[Roboto]">
-        <Link href="/" className="flex items-center bg-white border-r-6 border-black rounded-r-xl">
+        <Link href="/" className="flex items-center bg-white border-r-6 border-[#2F4191] rounded-r-xl">
           <Image
             src="/logo.webp"
             alt="TechIn Logo"
