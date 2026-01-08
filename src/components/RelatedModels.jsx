@@ -4,16 +4,35 @@ import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaArrowRight } from 'react-icons/fa';
 
-export default function RelatedModels({ models = [], categorySlug, subSlug }) {
+export default function RelatedModels({
+  subcategories = [],
+  categorySlug,
+  currentSubSlug,
+}) {
   const router = useRouter();
   const sliderRef = useRef(null);
 
+  // EXCLUDE current subcategory
+  const relatedSubs = subcategories.filter(
+    (sub) => sub.slug !== currentSubSlug && sub.models?.length
+  );
+
+  // Flatten models (limit for UX)
+  const relatedModels = relatedSubs
+    .flatMap((sub) =>
+      sub.models.map((m) => ({
+        ...m,
+        subSlug: sub.slug,
+      }))
+    )
+    .slice(0, 10); // control how many you want
+
   // Auto slide
   useEffect(() => {
-    if (!sliderRef.current || models.length <= 3) return;
+    if (!sliderRef.current || relatedModels.length <= 3) return;
 
     const slider = sliderRef.current;
-    const cardWidth = 280; // card width + gap
+    const cardWidth = 280;
 
     const interval = setInterval(() => {
       if (
@@ -27,42 +46,36 @@ export default function RelatedModels({ models = [], categorySlug, subSlug }) {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [models.length]);
+  }, [relatedModels.length]);
 
-  if (!models.length) return null;
+  if (!relatedModels.length) return null;
 
   return (
-    <section className="w-full  mx-auto py-10">
+    <section className="max-w-5xl  mx-auto py-10 border-t mt-14">
       {/* Heading */}
       <div className="mb-6 text-center">
         <h3 className="text-2xl font-semibold text-gray-900">
           Related Products
         </h3>
         <p className="text-sm text-gray-600 mt-1">
-          Explore similar models you may be interested in
+          Explore products from other categories
         </p>
       </div>
 
       {/* Slider */}
       <div
         ref={sliderRef}
-        className="
-          flex gap-6 overflow-x-auto pb-4
-          scroll-smooth
-          scrollbar-hide
-        "
+        className="flex gap-6 overflow-x-auto pb-4 scroll-smooth scrollbar-hide bg-gray-200"
       >
-        {models.map((model) => (
+        {relatedModels.map((model) => (
           <div
-            key={model.meta.slug}
-            className="
-              shrink-0 w-[260px] h-[340px]
-              bg-white border border-gray-200 rounded-xl
-              hover:shadow-lg transition cursor-pointer
-            "
+             key={`${model.subSlug}-${model.meta.slug}`} // ✅ UNIQUE KEY
+            className="shrink-0 w-[260px] h-[340px]
+                       bg-white border border-gray-200 rounded-xl
+                       hover:shadow-lg transition cursor-pointer"
             onClick={() =>
               router.push(
-                `/products/${categorySlug}/${subSlug}/${model.meta.slug}`
+                `/products/${categorySlug}/${model.subSlug}/${model.meta.slug}`
               )
             }
           >
@@ -82,7 +95,7 @@ export default function RelatedModels({ models = [], categorySlug, subSlug }) {
                 {model.meta.title}
               </h4>
 
-              <div className="mt-3 flex items-center gap-2 text-blue-600 text-sm font-medium">
+              <div className="mt-3 flex items-center gap-2 text-[#2F4191] text-sm font-medium">
                 View Model
                 <FaArrowRight size={12} />
               </div>

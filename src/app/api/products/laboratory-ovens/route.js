@@ -11,45 +11,81 @@ export async function GET() {
 
           /* ================== BPG-9040A ================== */
           {
-            model: "BPG-9040A",
+            model: "Laboratory Drying Oven – BPG-9040A",
             gem: true,
             meta: {
-              slug: "bpg-9040a",
-              title: "BPG-9040A Precision Hot Air Oven",
-              thumbnail: "/ovens.png",
+              slug: "BPG-9040A",
+              title: "Laboratory Drying Oven – BPG-9040A",
+              thumbnail: "/testImg.webp",
               price: "15000"
             },
-            overview:
-              "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications. The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications. The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.",
-            keyFeatures: [
-              "Stainless steel chamber with rounded corners for easy cleaning",
-              "Large LCD controller with timer and multi-program settings",
-              "Forced air circulation for fast and even heating",
-              "Adjustable shelves for flexible sample placement",
-              "Over-temperature protection with alarms",
-              "Optional RS-485/RS-232 data connectivity",
-              "Side test port for probes and sensors"
+            "overview": [
+              "The BPG-9040A Laboratory Drying Oven is a precision hot air oven engineered for reliable drying, heating, and thermal processing of laboratory samples under stable and uniform temperature conditions. It features a 40-liter stainless steel chamber and an advanced forced air circulation system, ensuring even heat distribution and minimizing temperature variations that can affect sample integrity and reproducibility.",
+
+              "Widely used in pharmaceutical, research, biotechnology, chemical, and food testing laboratories across India, this laboratory drying oven supports applications such as glassware drying, sample conditioning, heat treatment, and controlled evaporation. Its high-accuracy digital temperature controller enables precise thermal regulation, while the compact design allows easy installation in space-constrained laboratories. Backed by OEM-authorized support in India, it delivers dependable performance, long-term reliability, and professional after-sales service.",
             ],
-            specifications: {
-              temperatureRange: "Ambient +10 °C to 250 °C",
-              accuracy: "±1 °C",
-              uniformity: "±2.5%",
-              capacity: "40 L",
-              chamberSize: "350 × 320 × 350 mm",
-              exteriorSize: "480 × 566 × 650 mm",
-              shelves: 2,
-              timer: "Up to 5999 minutes",
-              powerSupply: "220 V, 50 Hz",
-              consumption: "850 W",
-              weight: "40 kg (net), 62 kg (gross)"
+            features: {
+              "overview": [
+                "The BPG-9040A Laboratory Drying Oven is designed to deliver consistent performance, operational safety, and process flexibility for a wide range of laboratory workflows. Its construction, airflow design, and control architecture are optimized for regulated laboratory environments where cleanliness, temperature stability, and repeatability are critical. The integrated control system and uniform airflow mechanism ensure reliable drying and heating results across both routine and precision-driven laboratory applications.",
+              ],
+              "items": [
+                "Stainless steel inner chamber with rounded corners for durability and easy cleaning",
+                "Large LCD digital controller with timer, multi-program settings, and real-time parameter display",
+                "Forced air circulation system for fast heat-up and uniform temperature distribution",
+                "Adjustable shelves for flexible sample placement and efficient chamber utilization",
+                "Over-temperature protection with audible and visual alarms for enhanced operational safety",
+                "Optional RS-485 / RS-232 interfaces for data monitoring, validation, and recording",
+                "Side test port for insertion of external probes, sensors, and calibration instruments"
+              ]
             },
-            applications: [
-              "Pharmaceutical drying of powders and glassware",
-              "Research sample preparation and heat treatment",
-              "Biotechnology instrument sterilisation",
-              "Chemical curing and stability testing",
-              "Food and agriculture moisture analysis"
-            ],
+
+            specifications: {
+              "overview": [
+                "The BPG-9040A Laboratory Drying Oven is engineered to deliver stable thermal performance, precise temperature control, and full compatibility with standard laboratory infrastructure in India. Its technical specifications support continuous operation in pharmaceutical quality control, research, and industrial testing environments where accuracy, repeatability, and reliability are essential.",
+              ],
+              "items": [
+                { "label": "Temperature Range", "value": "Ambient +10 °C to 250 °C" },
+                { "label": "Temperature Accuracy", "value": "±1 °C" },
+                { "label": "Temperature Uniformity", "value": "±2.5%" },
+                { "label": "Chamber Capacity", "value": "40 L" },
+                { "label": "Chamber Size (W × D × H)", "value": "350 × 320 × 350 mm" },
+                { "label": "Exterior Size (W × D × H)", "value": "480 × 566 × 650 mm" },
+                { "label": "Number of Shelves", "value": "2 (adjustable)" },
+                { "label": "Timer Range", "value": "Up to 5999 minutes" },
+                { "label": "Power Supply", "value": "220 V, 50 Hz" },
+                { "label": "Power Consumption", "value": "850 W" },
+                { "label": "Weight", "value": "40 kg (net), 62 kg (gross)" }
+              ]
+            },
+
+            "applications": {
+              "overview": [
+                "The BPG-9040A Laboratory Drying Oven is used across multiple scientific and industrial sectors in India due to its precise temperature control, uniform heating, and robust safety features. It supports laboratory processes where controlled drying and heating are essential for achieving accurate, repeatable, and compliant results.",
+              ],
+              "items": [
+                {
+                  "label": "Pharmaceutical laboratories",
+                  "value": "Drying powders, granules, glassware, and packaging materials under controlled temperature conditions."
+                },
+                {
+                  "label": "Research laboratories",
+                  "value": "Sample preparation, heat treatment, and controlled solvent evaporation for experimental workflows."
+                },
+                {
+                  "label": "Biotechnology laboratories",
+                  "value": "Sterilising laboratory instruments and incubating non-volatile samples for biological research."
+                },
+                {
+                  "label": "Chemical industry",
+                  "value": "Curing processes, stability studies, and controlled heating applications in production and testing."
+                },
+                {
+                  "label": "Food and agriculture laboratories",
+                  "value": "Moisture content analysis and packaging material testing to ensure quality and compliance."
+                }
+              ]
+            },
+
             faqs: [
               {
                 question: "What is the maximum operating temperature of the BPG-9040A hot air oven?",
@@ -117,7 +153,7 @@ export async function GET() {
               thumbnail: "/ovens.png"
             },
             overview:
-              "The BPG-9070A is an 80-litre forced-air drying oven designed for consistent heating and drying in laboratory and industrial environments. It offers excellent temperature accuracy and repeatability up to 250 °C.",
+              "The BPG-9070A is an 80-litre forced-air drying oven designed for consistent heating and drying in laboratory and industrial environments. It offers excellent temperature accuracy and repeatability up to 250 °C. The BPG-9070A is an 80-litre forced-air drying oven designed for consistent heating and drying in laboratory and industrial environments. It offers excellent temperature accuracy and repeatability up to 250 °C. The BPG-9070A is an 80-litre forced-air drying oven designed for consistent heating and drying in laboratory and industrial environments. It offers excellent temperature accuracy and repeatability up to 250 °C.",
             keyFeatures: [
               "Stainless steel chamber with smooth edges",
               "Large LCD controller with programmable timer",
@@ -266,15 +302,21 @@ export async function GET() {
             },
             overview:
               "The BPG-9040A Precision Hot Air Oven is designed for reliable drying, heating, and thermal processing of laboratory samples. With a 40-liter chamber, uniform air circulation, and precise temperature control, it ensures consistent results for daily scientific and industrial applications.",
-            keyFeatures: [
-              "Stainless steel chamber with rounded corners for easy cleaning",
-              "Large LCD controller with timer and multi-program settings",
-              "Forced air circulation for fast and even heating",
-              "Adjustable shelves for flexible sample placement",
-              "Over-temperature protection with alarms",
-              "Optional RS-485/RS-232 data connectivity",
-              "Side test port for probes and sensors"
-            ],
+            features: {
+              "overview": [
+                "The BPG-9040A Laboratory Drying Oven is designed to deliver consistent performance, operational safety, and process flexibility for a wide range of laboratory workflows. Its construction, airflow design, and control architecture are optimized for regulated laboratory environments where cleanliness, temperature stability, and repeatability are critical.",
+              ],
+              "items": [
+                "Stainless steel inner chamber with rounded corners for durability and easy cleaning",
+                "Large LCD digital controller with timer, multi-program settings, and real-time parameter display",
+                "Forced air circulation system for fast heat-up and uniform temperature distribution",
+                "Adjustable shelves for flexible sample placement and efficient chamber utilization",
+                "Over-temperature protection with audible and visual alarms for enhanced operational safety",
+                "Optional RS-485 / RS-232 interfaces for data monitoring, validation, and recording",
+                "Side test port for insertion of external probes, sensors, and calibration instruments"
+              ]
+            },
+
             specifications: {
               temperatureRange: "Ambient +10 °C to 250 °C",
               accuracy: "±1 °C",

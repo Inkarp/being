@@ -26,21 +26,6 @@ export default function ScrollToTop() {
     <>
       {isVisible && (
         <div className="fixed bottom-30 right-2 z-50 flex flex-col items-center gap-4">
-
-          {/* WhatsApp Button */}
-          <button
-            onClick={openWhatsApp}
-            className="relative w-14 h-14 rounded-full bg-green-500
-                       flex items-center justify-center shadow-lg
-                       hover:bg-green-600 transition"
-            aria-label="Talk to us on WhatsApp"
-          >
-            <FaWhatsapp size={26} className="text-white" />
-            <span className="absolute -top-6 text-xs font-semibold text-green-600">
-              Talk to Us
-            </span>
-          </button>
-
           {/* Scroll to Top Button */}
           <button
             onClick={scrollToTop}

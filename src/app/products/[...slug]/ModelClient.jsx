@@ -4,26 +4,57 @@ import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
+
 import EnquiryModal from '../../../components/EnquiryModal';
-import { FaArrowRight, FaArrowUp, FaFileDownload } from 'react-icons/fa';
+import {
+    FaArrowRight,
+    FaArrowUp,
+    FaFileDownload,
+    FaShare
+} from 'react-icons/fa';
 import { MdOutlineSettingsApplications } from 'react-icons/md';
 import PriceEnquiryForm from '../../../components/PriceEnquiryForm';
 import PricePopup from '../../../components/PricePopUp';
 import PopupModal from '../../../components/PopupModal';
 import ExclusivePartner from '../../../components/ExclusivePatnership';
 import { FaChevronDown } from 'react-icons/fa';
-import { FcCollaboration } from "react-icons/fc";
+import { FcCollaboration } from 'react-icons/fc';
 import RelatedModels from '../../../components/RelatedModels';
 
-
+// ✅ ADD CONTEXT IMPORT
+import { useProductContext } from '../../../app/context/ProductContext';
 
 export default function Model() {
+
+    /* ---------------- SHARE BUTTON ---------------- */
+    const handleShare = async () => {
+        const url = window.location.href;
+
+        try {
+            if (navigator.share) {
+                await navigator.share({
+                    title: document.title,
+                    url,
+                });
+            } else {
+                await navigator.clipboard.writeText(url);
+                alert('Page link copied to clipboard!');
+            }
+        } catch (error) {
+            console.error('Share failed:', error);
+        }
+    };
+
     const router = useRouter();
     const { slug } = useParams();
 
     const slugArray = Array.isArray(slug) ? slug : [];
     const [categorySlug, subSlug, modelSlug] = slugArray;
 
+    // ✅ CONTEXT
+    const { categoryData, setCategoryData } = useProductContext();
+
+    /* ---------------- STATE ---------------- */
     const [subCategory, setSubCategory] = useState(null);
     const [product, setProduct] = useState(null);
     const [activeTab, setActiveTab] = useState('features');
@@ -37,14 +68,43 @@ export default function Model() {
 
     const [isExclusivePatnership, setIsExclusivePatnership] = useState(false);
 
+    /* ---------------- DATA LOADING ---------------- */
     useEffect(() => {
-        const fetchData = async () => {
+        if (!categorySlug || !subSlug || !modelSlug) return;
+
+        // ✅ 1. TRY CONTEXT FIRST (NO FETCH)
+        if (categoryData) {
+            const sub = categoryData.subcategories?.find(
+                (s) => s.slug === subSlug
+            );
+
+            const model = sub?.models?.find(
+                (m) => m.meta.slug === modelSlug
+            );
+
+            if (sub && model) {
+                setSubCategory(sub);
+                setProduct(model);
+                setLoading(false);
+                return;
+            }
+        }
+
+        // ✅ 2. FALLBACK FETCH (REFRESH / DIRECT URL)
+        const fetchFallback = async () => {
             try {
                 const res = await fetch(`/api/products/${categorySlug}`);
                 const data = await res.json();
 
-                const sub = data.subcategories.find(s => s.slug === subSlug);
-                const model = sub?.models.find(m => m.meta.slug === modelSlug);
+                setCategoryData(data); // rehydrate context
+
+                const sub = data.subcategories?.find(
+                    (s) => s.slug === subSlug
+                );
+
+                const model = sub?.models?.find(
+                    (m) => m.meta.slug === modelSlug
+                );
 
                 setSubCategory(sub || null);
                 setProduct(model || null);
@@ -55,18 +115,25 @@ export default function Model() {
             }
         };
 
-        fetchData();
-    }, [categorySlug, subSlug, modelSlug]);
+        fetchFallback();
+    }, [
+        categorySlug,
+        subSlug,
+        modelSlug,
+        categoryData,
+        setCategoryData,
+    ]);
 
+    /* ---------------- LOADING ---------------- */
     if (loading) {
         return (
-            <div className="fixed inset-0 z-50 flex items-center justify-center ">
+            <div className="fixed inset-0 z-50 flex items-center justify-center">
                 <div className="w-10 h-10 border-4 border-gray-300 border-t-[#2F4191] rounded-full animate-spin" />
             </div>
-        )
+        );
     }
 
-
+    /* ---------------- ERROR ---------------- */
     if (!product || !subCategory) {
         return (
             <p className="text-center py-20 text-red-500">
@@ -74,6 +141,7 @@ export default function Model() {
             </p>
         );
     }
+
 
 
     return (
@@ -148,7 +216,6 @@ export default function Model() {
                             })}
                         </div>
                     </div>
-
                     {/* ================= CENTER: PRODUCT INFO ================= */}
                     <div className="space-y-6">
                         <h1 className="text-2xl font-semibold text-gray-900">
@@ -157,20 +224,32 @@ export default function Model() {
 
                         {product.overview && (
                             <div>
-                                <h2 className="text-lg font-semibold mb-2">
+                                {/* <h2 className="text-lg font-semibold mb-3">
                                     Product Overview
-                                </h2>
-                                <p className="text-sm text-gray-700 leading-relaxed">
-                                    {product.overview}
-                                </p>
+                                </h2> */}
+
+                                {Array.isArray(product.overview) ? (
+                                    product.overview.map((para, index) => (
+                                        <p
+                                            key={index}
+                                            className="text-sm text-gray-700 leading-relaxed mb-4"
+                                        >
+                                            {para}
+                                        </p>
+                                    ))
+                                ) : (
+                                    <p className="text-sm text-gray-700 leading-relaxed">
+                                        {product.overview}
+                                    </p>
+                                )}
                             </div>
                         )}
+
                     </div>
 
                     {/* ================= RIGHT: PRODUCT IMAGE ================= */}
                     <div className="flex flex-col justify-center">
                         <div className="relative border border-gray-200 rounded-2xl p-6 bg-white">
-
                             {/* GEM BADGE ON IMAGE */}
                             {product.gem && (
                                 <Image
@@ -193,10 +272,7 @@ export default function Model() {
                             />
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
 
 
@@ -235,7 +311,7 @@ export default function Model() {
                         </button>
 
                     </div>
-                    <div className="flex justify-center items-center px-10">
+                    <div className="flex justify-center items-center gap-5 px-10">
                         <button
                             onClick={() => setIsEnquiryOpen(true)}
                             className="flex items-center gap-3 bg-[#2F4191] text-white
@@ -246,6 +322,19 @@ export default function Model() {
                         >
                             <FaFileDownload size={20} className='animate-bounce' />
                             <span>Download Brochure</span>
+                        </button>
+                        <button
+                            onClick={handleShare}
+                            className="flex items-center gap-3 bg-[#2F4191] text-white
+                 px-6 py-3 rounded-full text-sm font-semibold
+                 hover:bg-[#2B7EC2] transition-all duration-200
+                 cursor-pointer shadow-lg
+                 focus:outline-none focus:ring-2 focus:ring-[#2F4191]/40"
+                            aria-label="Share this page"
+                            title="Share this page"
+                        >
+                            <FaShare size={20} className="animate-bounce" />
+                            <span>Share</span>
                         </button>
                     </div>
 
@@ -279,7 +368,7 @@ export default function Model() {
                     <div className="bg-gray-100 rounded-full p-1 flex gap-1">
 
                         {/* FEATURES */}
-                        {product.keyFeatures && (
+                        {product.features && (
                             <button
                                 onClick={() => setActiveTab('features')}
                                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === 'features'
@@ -295,10 +384,9 @@ export default function Model() {
                         {product.specifications && (
                             <button
                                 onClick={() => setActiveTab('specs')}
-                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
-          ${activeTab === 'specs'
-                                        ? 'bg-white text-gray-900 shadow-md'
-                                        : 'text-gray-600 hover:text-gray-900'
+                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === 'specs'
+                                    ? 'bg-white text-gray-900 shadow-md'
+                                    : 'text-gray-600 hover:text-gray-900'
                                     }`}
                             >
                                 Specifications
@@ -363,106 +451,134 @@ export default function Model() {
 
                 {/* TAB CONTENT */}
                 <div className="p-6 text-sm text-gray-700 flex justify-center items-center">
-
-                    {/* FEATURES TAB */}
-                    {activeTab === 'features' && product.keyFeatures && (
-                        <div className="space-y-6">
-
-                            {/* TAB HEADING + OVERVIEW */}
-                            <div className='flex flex-col justify-center items-center'>
-                                <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                    {activeTab === 'features' && product.features && (
+                        <div className="space-y-8 max-w-5xl">
+                            {/* TAB HEADING */}
+                            <div className="flex flex-col items-center text-center">
+                                <h2 className="text-2xl font-semibold text-gray-900 mb-3">
                                     Key Features of {product.meta.title}
                                 </h2>
-                                <p className="text-sm text-gray-700 leading-relaxed ">
-                                    {product.overview}
-                                </p>
+
+                                {/* FEATURES OVERVIEW (PARAGRAPHS) */}
+                                {Array.isArray(product.features.overview) &&
+                                    product.features.overview.map((para, index) => (
+                                        <p
+                                            key={index}
+                                            className="text-sm text-gray-700 leading-relaxed"
+                                        >
+                                            {para}
+                                        </p>
+                                    ))}
                             </div>
 
                             {/* FEATURES GRID */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {product.keyFeatures.map((feature, index) => (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+                                {product.features.items.map((feature, index) => (
                                     <div
                                         key={index}
-                                        className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-lg transition flex gap-5"
+                                        className="bg-white border border-gray-200 rounded-xl p-5
+                     hover:shadow-lg transition flex gap-5"
                                     >
-                                        <h4 className="text-blue-500 text-xl">
+                                        <div className="text-blue-500 text-xl mt-1">
                                             <MdOutlineSettingsApplications />
-                                        </h4>
+                                        </div>
+
                                         <p className="text-sm text-gray-700 leading-relaxed">
                                             {feature}
                                         </p>
                                     </div>
                                 ))}
                             </div>
+
                         </div>
                     )}
 
                     {/* SPECIFICATIONS TAB */}
                     {activeTab === 'specs' && product.specifications && (
-                        <div className="space-y-6">
-
+                        <div className="space-y-8">
                             {/* TAB HEADING + OVERVIEW */}
-                            <div className='flex flex-col justify-center items-center max-w-5xl mx-auto '>
-                                <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                            <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+                                <h2 className="text-2xl font-semibold text-gray-900 mb-3">
                                     Technical Specifications of {product.meta.title}
                                 </h2>
-                                <p className="text-sm text-gray-700 leading-relaxed ">
-                                    {product.overview}
-                                </p>
+
+                                {Array.isArray(product.specifications.overview) &&
+                                    product.specifications.overview.map((para, index) => (
+                                        <p
+                                            key={index}
+                                            className="text-sm text-gray-700 leading-relaxed mb-3"
+                                        >
+                                            {para}
+                                        </p>
+                                    ))}
                             </div>
 
-                            {/* SPEC GRID */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto ">
-                                {Object.entries(product.specifications).map(([key, value]) => (
+                            {/* SPECIFICATIONS GRID */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                                {product.specifications.items.map((spec, index) => (
                                     <div
-                                        key={key}
-                                        className="flex justify-between bg-gray-50 rounded-lg p-4"
+                                        key={index}
+                                        className="flex justify-between items-start
+                     bg-gray-50 border border-gray-200
+                     rounded-lg p-4 gap-4"
                                     >
                                         <span className="text-sm font-medium text-gray-900">
-                                            {key.replace(/([A-Z])/g, ' $1')}
+                                            {spec.label}
                                         </span>
                                         <span className="text-sm text-gray-600 text-right">
-                                            {value}
+                                            {spec.value}
                                         </span>
                                     </div>
                                 ))}
                             </div>
+
                         </div>
                     )}
 
                     {/* APPLICATIONS TAB */}
                     {activeTab === 'applications' && product.applications && (
-                        <div className="space-y-6">
+                        <div className="space-y-8 max-w-5xl">
 
                             {/* TAB HEADING + OVERVIEW */}
-                            <div className='flex flex-col justify-center items-center'>
-                                <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                            <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+                                <h2 className="text-2xl font-semibold text-gray-900 mb-3">
                                     Applications of {product.meta.title}
                                 </h2>
-                                <p className="text-sm text-gray-700 leading-relaxed ">
-                                    {product.overview}
-                                </p>
+
+                                {Array.isArray(product.applications.overview) &&
+                                    product.applications.overview.map((para, index) => (
+                                        <p
+                                            key={index}
+                                            className="text-sm text-gray-700 leading-relaxed mb-3"
+                                        >
+                                            {para}
+                                        </p>
+                                    ))}
                             </div>
 
-                            {/* APPLICATION CARDS */}
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {product.applications.map((app, index) => (
+                                {product.applications.items.map((app, index) => (
                                     <div
                                         key={index}
-                                        className="border border-gray-200 rounded-xl p-5 hover:border-blue-600 transition"
+                                        className="border border-gray-200 rounded-xl p-5 hover:border-blue-600 hover:shadow-smtransition bg-white"
                                     >
+                                        <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                                            {app.label}
+                                        </h4>
+
                                         <p className="text-sm text-gray-700 leading-relaxed">
-                                            {app}
+                                            {app.value}
                                         </p>
                                     </div>
                                 ))}
                             </div>
+
                         </div>
                     )}
 
                     {/* ================= FAQ TAB ================= */}
                     {activeTab === 'faqs' && product.faqs && (
-                        <div className="space-y-6 max-w-5xl">
+                        <div className="space-y-6 max-w-7xl">
 
                             {/* TAB HEADING */}
                             <div className='flex flex-col justify-center items-center'>
@@ -476,7 +592,7 @@ export default function Model() {
                             </div>
 
                             {/* FAQ LIST */}
-                            <div className="space-y-4">
+                            <div className="space-y-4 max-w-5xl">
                                 {product.faqs.map((faq, index) => (
                                     <details
                                         key={index}
@@ -500,8 +616,6 @@ export default function Model() {
                                     </details>
                                 ))}
                             </div>
-
-
                         </div>
                     )}
 
@@ -640,7 +754,6 @@ export default function Model() {
                 }}
             />
 
-
             {/* {subCategory?.models?.length > 1 && (
                 <PopupModal
                     models={subCategory.models}
@@ -654,14 +767,13 @@ export default function Model() {
                     }}
                 />
             )} */}
-            {subCategory?.models?.length > 1 && (
+            {categoryData?.subcategories?.length > 1 && (
                 <RelatedModels
-                    models={subCategory.models}
+                    subcategories={categoryData.subcategories}
                     categorySlug={categorySlug}
-                    subSlug={subSlug}
+                    currentSubSlug={subSlug}
                 />
             )}
-
         </section>
     );
 }
