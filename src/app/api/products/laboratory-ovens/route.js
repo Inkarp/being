@@ -86,58 +86,68 @@ export async function GET() {
               ]
             },
 
-            faqs: [
+            "faqs": [
               {
-                question: "What is the maximum operating temperature of the BPG-9040A hot air oven?",
-                answer:
-                  "The BPG-9040A Precision Hot Air Oven supports a maximum operating temperature of 250 °C. This wide temperature range makes it suitable for most laboratory drying, heating, and thermal treatment applications."
+                "question": "What is a laboratory drying oven used for? ",
+                "answer": "A laboratory drying oven is used to remove moisture from samples, dry laboratory glassware, and perform controlled heating or heat treatment under uniform temperature conditions. It is widely used in pharmaceutical, chemical, biotechnology, research, and food testing laboratories to ensure accurate, repeatable, and compliant results."
               },
               {
-                question: "Is the temperature distribution uniform inside the chamber?",
-                answer:
-                  "Yes. The oven uses forced air circulation technology to ensure uniform temperature distribution throughout the chamber, with a uniformity of ±2.5%, ensuring consistent results across all samples."
+                "question": "How does the BPG-9040A laboratory drying oven work?",
+                "answer": "The BPG-9040A operates using a forced hot air circulation system that distributes heat evenly throughout the chamber. A digital temperature controller regulates heating cycles to maintain stable temperature conditions, preventing localized overheating and ensuring consistent sample processing."
               },
               {
-                question: "Can this oven be used for sterilization purposes?",
-                answer:
-                  "The BPG-9040A can be used for dry heat sterilisation of glassware, metal tools, and laboratory accessories, making it suitable for pharmaceutical, biotechnology, and research laboratories."
+                "question": "Which laboratories commonly use the BPG-9040A drying oven?",
+                "answer": "The BPG-9040A is commonly used in pharmaceutical quality control laboratories, academic and industrial research facilities, biotechnology labs, chemical industries, and food and agriculture testing laboratories across India."
               },
               {
-                question: "Does the oven support data logging or external communication?",
-                answer:
-                  "Yes. The oven supports optional RS-485 or RS-232 communication interfaces, allowing users to connect external devices for monitoring, data logging, or system integration."
+                "question": "Is the BPG-9040A suitable for pharmaceutical applications?",
+                "answer": "Yes. The BPG-9040A is well suited for pharmaceutical applications such as drying powders, glassware, packaging materials, and conditioning samples prior to analysis. Its temperature accuracy and uniformity support reproducible and compliant results."
               },
               {
-                question: "What safety features are included in the BPG-9040A oven?",
-                answer:
-                  "The oven includes over-temperature protection, alarm systems, and a robust controller to prevent overheating and ensure safe operation during extended heating cycles."
+                "question": "What temperature range does the BPG-9040A support?",
+                "answer": "The BPG-9040A supports a temperature range of ambient +10 °C to 250 °C, covering most routine laboratory drying and heating requirements."
+              },
+              {
+                "question": "Does the BPG-9040A provide uniform temperature distribution?",
+                "answer": "Yes. The forced air circulation system ensures uniform temperature distribution throughout the chamber, minimizing temperature gradients and supporting repeatable laboratory outcomes."
+              },
+              {
+                "question": "Can the BPG-9040A be used for long-duration heating cycles?",
+                "answer": "Yes. The oven is designed for continuous and long-duration operation and includes a digital timer of up to 5999 minutes, along with over-temperature protection for safe extended use."
+              },
+              {
+                "question": "Is data monitoring or recording supported?",
+                "answer": "Yes. Optional RS-485 and RS-232 communication interfaces allow integration with external data logging and monitoring systems for validation and traceability."
+              },
+              {
+                "question": "Are you the OEM for this product in India?",
+                "answer": "Yes. We are the OEM for the BPG-9040A Laboratory Drying Oven in India, providing direct manufacturing assurance, factory-authorized service, and genuine spare parts support."
+              },
+              {
+                "question": "What should be considered when selecting a laboratory drying oven?",
+                "answer": "Key considerations include temperature range, accuracy, uniformity, chamber capacity, safety features, and availability of OEM-authorized service support. The BPG-9040A offers a balanced combination of performance, safety, and long-term support for Indian laboratories."
               }
             ],
+
             feedback: [
-              "/contact.png",
-              "/ovens.png",
-              "/incubators.png",
-              "/ovens.png",
-              "/contact.png",
-              "/incubators.png",
-              "/ovens.png",
-              "/incubators.png",
-              "/contact.png",
+              "/service1.webp",
+              "/service2.webp",
+              "/service3.webp",
+              "/service4.webp",
+              "/service5.webp",
+              "/service6.webp",
             ],
             services: {
-              title: "Our Services",
               description:
-                "We support our customers with complete lifecycle services, from installation to preventive maintenance and expert technical support.",
+                "As the OEM for the BPG-9040A Laboratory Drying Oven in India, we provide factory-authorized pan-India installation, commissioning, operator training, preventive maintenance, calibration assistance, and after-sales service. Our trained service engineers and genuine spare parts ensure long-term reliability, minimal downtime, and consistent performance for laboratories across India.",
               photos: [
-                "/contact.png",
-                "/ovens.png",
-                "/incubators.png",
-                "/ovens.png",
-                "/contact.png",
-                "/incubators.png",
-                "/ovens.png",
-                "/incubators.png",
-                "/contact.png",
+                "/service1.webp",
+                "/service2.webp",
+                "/service3.webp",
+                "/service4.webp",
+                "/service5.webp",
+                "/service6.webp",
+
               ]
             }
 

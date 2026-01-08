@@ -23,6 +23,7 @@ import RelatedModels from '../../../components/RelatedModels';
 
 // ✅ ADD CONTEXT IMPORT
 import { useProductContext } from '../../../app/context/ProductContext';
+import ServiceForm from '../../../components/ServiceForm';
 
 export default function Model() {
 
@@ -65,6 +66,8 @@ export default function Model() {
     const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
     const [isPriceOpen, setIsPriceOpen] = useState(false);
     const [showPricePopup, setShowPricePopup] = useState(false);
+
+    const [isServiceOpen, setIsSeriveOpen] = useState(false);
 
     const [isExclusivePatnership, setIsExclusivePatnership] = useState(false);
 
@@ -166,7 +169,7 @@ export default function Model() {
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr_1fr] gap-10 items-start">
 
                     {/* ================= LEFT: AVAILABLE MODELS ================= */}
-                    <div className="bg-gray-300 rounded-2xl p-4">
+                    <div className="bg-gray-200 rounded-2xl p-4">
                         <div className='flex justify-center items-center'>
                             <h3 className="text-lg font-semibold text-gray-900 mb-4">
                                 Available Models
@@ -397,8 +400,7 @@ export default function Model() {
                         {product.applications && (
                             <button
                                 onClick={() => setActiveTab('applications')}
-                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
-          ${activeTab === 'applications'
+                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === 'applications'
                                         ? 'bg-white text-gray-900 shadow-md'
                                         : 'text-gray-600 hover:text-gray-900'
                                     }`}
@@ -411,8 +413,7 @@ export default function Model() {
                         {product.faqs && product.faqs.length > 0 && (
                             <button
                                 onClick={() => setActiveTab('faqs')}
-                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
-          ${activeTab === 'faqs'
+                                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === 'faqs'
                                         ? 'bg-white text-gray-900 shadow-md'
                                         : 'text-gray-600 hover:text-gray-900'
                                     }`}
@@ -430,7 +431,7 @@ export default function Model() {
                                         : 'text-gray-600 hover:text-gray-900'
                                     }`}
                             >
-                                Service
+                                Service & Support
                             </button>
                         )}
 
@@ -578,14 +579,14 @@ export default function Model() {
 
                     {/* ================= FAQ TAB ================= */}
                     {activeTab === 'faqs' && product.faqs && (
-                        <div className="space-y-6 max-w-7xl">
+                        <div className="space-y-8 max-w-5xl mx-auto">
 
                             {/* TAB HEADING */}
-                            <div className='flex flex-col justify-center items-center'>
+                            <div className="flex flex-col items-center text-center">
                                 <h2 className="text-2xl font-semibold text-gray-900 mb-2">
                                     Frequently Asked Questions
                                 </h2>
-                                <p className="text-sm text-gray-700 leading-relaxed">
+                                <p className="text-sm text-gray-700 leading-relaxed max-w-3xl">
                                     Common questions about {product.meta.title} to help you understand
                                     features, usage, and safety.
                                 </p>
@@ -596,39 +597,53 @@ export default function Model() {
                                 {product.faqs.map((faq, index) => (
                                     <details
                                         key={index}
-                                        className="group border border-gray-200 rounded-xl p-4 bg-white"
+                                        className="group mx-auto max-w-5xl
+                                                        rounded-xl border border-gray-200 bg-white
+                                                        transition-all duration-300
+                                                        open:shadow-md open:border-[#2F4191]/30
+                                                    "
                                     >
-                                        <summary className="flex cursor-pointer items-center justify-between font-medium text-gray-900 list-none">
-                                            <span>{faq.question}</span>
+                                        {/* QUESTION */}
+                                        <summary
+                                            className="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-medium text-gray-900 min-w-5xl"
+                                        >
+                                            <span className="text-sm sm:text-base leading-relaxed ">
+                                                {faq.question}
+                                            </span>
 
-                                            {/* FIXED ARROW */}
-                                            <span className='border border-gray-300 bg-gray-100 rounded-full p-1'>
+                                            {/* ARROW */}
+                                            <span className="shrink-0 rounded-full border border-gray-300 bg-gray-100 p-1">
                                                 <FaChevronDown
-                                                    className="text-black transition-transform duration-300 group-open:rotate-180"
                                                     size={16}
+                                                    className="text-gray-700 transition-transform duration-300 group-open:rotate-180"
                                                 />
                                             </span>
                                         </summary>
 
-                                        <p className="mt-3 text-sm text-gray-700 leading-relaxed">
-                                            {faq.answer}
-                                        </p>
+                                        {/* ANSWER */}
+                                        <div className="px-5 pb-4">
+                                            <p className="text-sm text-gray-700 leading-relaxed">
+                                                {faq.answer}
+                                            </p>
+                                        </div>
                                     </details>
                                 ))}
                             </div>
+
                         </div>
                     )}
 
+
                     {/* ================= CUSTOMER FEEDBACK TAB ================= */}
                     {activeTab === 'feedback' && product.feedback && (
-                        <div className="space-y-6 w-full max-w-6xl">
+                        <div className="space-y-6 w-full max-w-5xl">
 
                             {/* TAB HEADING */}
                             <div className="flex flex-col justify-center items-center text-center">
                                 <h2 className="text-2xl font-semibold text-gray-900 mb-2">
                                     Customer Feedback
                                 </h2>
-                                <p className="text-sm text-gray-700 leading-relaxed max-w-3xl">
+                                <p className="text-sm text-gray-700 leading-relaxed max-w-5xl">
                                     Real feedback and experiences shared by customers using {product.meta.title}.
                                 </p>
                             </div>
@@ -639,12 +654,12 @@ export default function Model() {
                                     {product.feedback.map((img, index) => (
                                         <div
                                             key={index}
-                                            className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
+                                            className="rounded-xl overflow-hidden  transition"
                                         >
                                             <img
                                                 src={img}
                                                 alt={`Customer feedback ${index + 1} for ${product.meta.title}`}
-                                                className="w-full h-[220px] object-contain bg-gray-50 p-3"
+                                                className="w-full h-auto object-contain bg-gray-50 p-3"
                                                 loading="lazy"
                                             />
                                         </div>
@@ -656,47 +671,52 @@ export default function Model() {
                     )}
 
                     {activeTab === 'services' && product.services && (
-                        <div className="space-y-6 w-full ">
-
+                        <div className="space-y-6 max-w-5xl ">
                             {/* TAB HEADING */}
-                            <div className="flex justify-center items-center text-center gap-5">
-                                <div className='flex flex-col'>
-                                    <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                                        {product.services.title || "Service Provides"}
-                                    </h2>
-                                    <p className="text-sm text-gray-700 leading-relaxed max-w-3xl">
-                                        {product.services.description ||
-                                            `Comprehensive service and support for ${product.meta.title}, covering installation, maintenance, and technical assistance.`}
-                                    </p>
+                            <div className="flex justify-start items-center text-center gap-5 bg-white">
+                                <div className='flex flex-col gap-5'>
+                                    <div className='flex justify-between'>
+                                        <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                                            Service & Support in India
+                                        </h2>
+                                        <div className=''>
+                                            <button
+                                                onClick={() => setIsSeriveOpen(true)}
+                                                className="bg-[#2F4191] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2B7EC2] cursor-pointer"
+                                            >
+                                                Need a service??
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p className="text-sm text-gray-700 leading-relaxed text-left ">
+                                            {product.services.description}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <button
-                                        onClick={() => setIsEnquiryOpen(true)}
-                                        className="bg-[#2F4191] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2B7EC2] cursor-pointer"
-                                    >
-                                        Need a service??
-                                    </button>
-                                </div>
+
                             </div>
 
                             {/* SCROLLABLE IMAGE GRID */}
-                            <div className="max-h-[420px] overflow-y-auto pr-2">
+                            <div className=" p-2 border border-gray-300 p-10 bg-gray-300 rounded-xl">
+                                <div className='bg-white p-10 max-h-[420px] overflow-y-auto rounded-xl'>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
                                     {product.services.photos?.map((img, index) => (
                                         <div
                                             key={index}
-                                            className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
+                                            className="rounded-xl overflow-hidden transition"
                                         >
                                             <img
                                                 src={img}
                                                 alt={`Service ${index + 1} for ${product.meta.title}`}
-                                                className="w-full h-[220px] object-contain bg-gray-50 p-4"
+                                                className="w-full h-[220px] object-contain"
                                                 loading="lazy"
                                             />
                                         </div>
                                     ))}
 
+                                </div>
                                 </div>
                             </div>
 
@@ -707,6 +727,7 @@ export default function Model() {
                 </div>
 
             </div>
+            <div className='text-center py-2'>Disclaimer: Specifications are indicative. Performance may vary depending on load, usage, and ambient conditions.</div>
 
             <EnquiryModal
                 isOpen={isEnquiryOpen}
@@ -747,6 +768,16 @@ export default function Model() {
             <ExclusivePartner
                 isOpen={isExclusivePatnership}
                 onClose={() => setIsExclusivePatnership(false)}
+                productData={{
+                    model: product.meta.title,
+                    category: categorySlug,
+                    subcategory: subSlug,
+                }}
+            />
+
+             <ServiceForm
+                isOpen={isServiceOpen}
+                onClose={() => setIsSeriveOpen(false)}
                 productData={{
                     model: product.meta.title,
                     category: categorySlug,

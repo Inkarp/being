@@ -14,9 +14,9 @@ export default function Home() {
   return (
     <div className="">
       <Hero />
-      <About />
       <Offerings />
-      <Blogs />   
+      <About />
+      <Blogs />
     </div>
   );
 }
