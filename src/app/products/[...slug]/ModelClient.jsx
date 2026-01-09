@@ -3,7 +3,6 @@
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Head from 'next/head';
 
 import EnquiryModal from '../../../components/EnquiryModal';
 import {
@@ -149,22 +148,6 @@ export default function Model() {
 
     return (
         <section className="w-full mx-auto p-5">
-            {/* ================= SEO META ================= */}
-            <Head>
-                <title>
-                    {product?.meta?.title
-                        ? `${product.meta.title} | Inkarp Instruments`
-                        : 'Product | Inkarp Instruments'}
-                </title>
-
-                {product?.meta?.description && (
-                    <meta
-                        name="description"
-                        content={product.meta.description}
-                    />
-                )}
-            </Head>
-
             <div className="space-y-8">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr_1fr] gap-10 items-start">
 
@@ -279,15 +262,11 @@ export default function Model() {
             </div>
 
 
-            {/* ================= TAB PILLS ================= */}
+            {/* ================= Buttons and Tab pills inside  ================= */}
             <div className="mt-5 border border-gray-200 rounded-2xl">
-                {/* ================= CTA ROW (RESPONSIVE) ================= */}
+                {/* =================Buttons ================= */}
                 <div
-                    className="
-    flex flex-col gap-6
-    lg:flex-row lg:justify-between lg:items-center
-    bg-gray-200 py-4
-  "
+                    className="flex flex-col gap-6 lg:flex-row lg:justify-between lg:items-center bg-gray-200 py-4"
                 >
                     {/* LEFT GROUP */}
                     <div className="flex flex-wrap justify-center items-center gap-4 px-4 sm:px-6 lg:px-10">
@@ -398,7 +377,7 @@ export default function Model() {
                 </div>
 
                 {/* ================= TAB PILLS (RESPONSIVE) ================= */}
-                <div className="px-3 sm:px-6 pt-6 w-fit mx-auto">
+                <div className="px-3 sm:px-6 pt-6  flex flex-wrap">
                     <div
                         className="
       bg-gray-100 rounded-full p-1
@@ -497,14 +476,9 @@ export default function Model() {
                         {product.services && (
                             <button
                                 onClick={() => setActiveTab('services')}
-                                className={`
-          px-4 sm:px-6 py-2
+                                className={`px-4 sm:px-6 py-2
           rounded-full
-          text-xs sm:text-sm
-          font-medium
-          whitespace-nowrap
-          transition-all duration-300
-          ${activeTab === 'services'
+          text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-300 ${activeTab === 'services'
                                         ? 'bg-white text-gray-900 shadow-md'
                                         : 'text-gray-600 hover:text-gray-900'
                                     }

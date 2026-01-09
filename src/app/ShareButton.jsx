@@ -30,7 +30,7 @@ export default function SocialContactBar() {
       <div className="flex flex-col items-center gap-4 bg-white/50 border border-[#2F4191] backdrop-blur p-2 rounded-2xl shadow-xl">
 
         {/* Chat with Us */}
-        {/* <button
+        <button
           onClick={handleChat}
           className="w-10 h-10 rounded-full bg-blue-600 text-white
                      flex items-center justify-center shadow-md
@@ -39,13 +39,13 @@ export default function SocialContactBar() {
           title="Chat with us"
         >
           <HiChatBubbleLeftRight size={20} />
-        </button> */}
+        </button>
         {/* LinkedIn */}
         <button
           onClick={handleLinkedIn}
           className="w-9 h-9 rounded-full bg-[#0A66C2] text-white
                      flex items-center justify-center shadow
-                     hover:scale-110 transition"
+                     hover:scale-110 transition "
           aria-label="LinkedIn"
         >
           <FaLinkedinIn size={16} />

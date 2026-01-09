@@ -2,20 +2,21 @@
 import Model from './Model';
 
 export async function generateMetadata({ params }) {
-  const slug = params?.slug || [];
+  const { slug = [] } = await params;
+
+  let keywords = [];
 
   /* ---------- DEFAULT ---------- */
   if (slug.length === 0) {
     return {
-      title: 'Products | Inkarp Instruments',
-      description: 'Browse laboratory instruments and product categories.',
+      title: 'Products | Being',
+      description: 'Browse laboratory instruments and product categories by Being.',
     };
   }
 
   const categorySlug = slug[0];
 
   try {
-    /* ---------- IMPORTANT: ABSOLUTE URL ---------- */
     const baseUrl =
       process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
@@ -31,8 +32,8 @@ export async function generateMetadata({ params }) {
     const subSlug = slug[1];
     const modelSlug = slug[2];
 
-    let title = `${categorySlug.replace(/-/g, ' ')} | Inkarp Instruments`;
-    let description = `Explore ${categorySlug.replace(/-/g, ' ')} laboratory instruments from Inkarp Instruments.`;
+    let title = `${categorySlug.replace(/-/g, ' ')} | Being`;
+    let description = `Explore ${categorySlug.replace(/-/g, ' ')} laboratory instruments from Being.`;
 
     /* ---------- SUBCATEGORY ---------- */
     if (subSlug) {
@@ -41,8 +42,8 @@ export async function generateMetadata({ params }) {
       );
 
       if (subCategory) {
-        title = `${subCategory.name} | Inkarp Instruments`;
-        description = `Discover ${subCategory.name} with specifications, applications, and OEM service support in India.`;
+        title = `${subCategory.name} | Being`;
+        description = `Discover ${subCategory.name} instruments with specifications, applications, and service support.`;
       }
 
       /* ---------- MODEL ---------- */
@@ -52,11 +53,18 @@ export async function generateMetadata({ params }) {
         );
 
         if (model) {
-          title = `${model.meta.title} | Inkarp Instruments`;
+          title = `${model.meta.title} | Being`;
+
           description =
             model.meta.description ||
             model.overview?.[0] ||
             `Technical details and applications of ${model.meta.title}.`;
+
+          if (model.meta.keywords) {
+            keywords = Array.isArray(model.meta.keywords)
+              ? model.meta.keywords
+              : model.meta.keywords.split(',').map(k => k.trim());
+          }
         }
       }
     }
@@ -64,6 +72,7 @@ export async function generateMetadata({ params }) {
     return {
       title,
       description,
+      keywords,
       alternates: {
         canonical: `/products/${slug.join('/')}`,
       },
@@ -78,8 +87,8 @@ export async function generateMetadata({ params }) {
     console.error('Metadata error:', error);
 
     return {
-      title: 'Product | Inkarp Instruments',
-      description: 'Explore laboratory instruments from Inkarp Instruments.',
+      title: 'Product | Being',
+      description: 'Explore laboratory instruments and solutions by Being.',
     };
   }
 }

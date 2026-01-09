@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: {
     default: "Being Instruments",
-    template: "%s | Inkarp Instruments",
+    template: "",
   },
   description: "Scientific & Analytical Instrument Solutions",
   icons: {
