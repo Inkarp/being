@@ -27,7 +27,7 @@ export default function SocialContactBar() {
 
   return (
     <div className="fixed right-2 top-1/2 -translate-y-1/2 z-50 animate-bounce hover:animate-none">
-      <div className="flex flex-col items-center gap-4 bg-white/50 backdrop-blur p-3 rounded-2xl shadow-xl">
+      <div className="flex flex-col items-center gap-4 bg-white/50 border border-[#2F4191] backdrop-blur p-2 rounded-2xl shadow-xl">
 
         {/* Chat with Us */}
         {/* <button

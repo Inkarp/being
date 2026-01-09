@@ -14,8 +14,9 @@ export async function GET() {
             model: "Laboratory Drying Oven – BPG-9040A",
             gem: true,
             meta: {
-              slug: "BPG-9040A",
+              slug: "bpg-9040a",
               title: "Laboratory Drying Oven – BPG-9040A",
+                description:"BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
               thumbnail: "/testImg.webp",
               price: "15000"
             },

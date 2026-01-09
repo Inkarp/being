@@ -148,7 +148,7 @@ export default function Model() {
 
 
     return (
-        <section className="w-full mx-auto px-6 py-10 ">
+        <section className="w-full mx-auto p-5">
             {/* ================= SEO META ================= */}
             <Head>
                 <title>
@@ -398,7 +398,7 @@ export default function Model() {
                 </div>
 
                 {/* ================= TAB PILLS (RESPONSIVE) ================= */}
-                <div className="px-3 sm:px-6 pt-6">
+                <div className="px-3 sm:px-6 pt-6 w-fit mx-auto">
                     <div
                         className="
       bg-gray-100 rounded-full p-1

@@ -12,16 +12,16 @@ const profiles = [
     name: "Ovens",
     description: "Hot air ovens for drying, sterilization and thermal testing.",
     link: "/products/laboratory-ovens",
-    image: "/about.jpg",
-    icon: "/icon1.svg",
+    image: '/ovens.png',
+    icon: '/ovens.png',
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
     name: "Incubators",
     description: "Controlled temperature chambers for cell culture and microbiology.",
     link: "/products/incubators",
-    image: "/about.jpg",
-    icon: "/icon1.svg",
+    image: '/ovens.png',
+    icon: '/ovens.png',
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
 
@@ -29,7 +29,7 @@ const profiles = [
     name: "Chillers",
     description: "Precision temperature-controlled baths for lab workflows.",
     link: "/products/chillers",
-    image: "/about.jpg",
+    image:'/incubators.png',
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
@@ -37,7 +37,7 @@ const profiles = [
     name: "Water Baths",
     description: "Precision temperature-controlled baths for lab workflows.",
     link: "/products/water-baths",
-    image: "/about.jpg",
+    image: '/incubators.png',
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
@@ -45,7 +45,7 @@ const profiles = [
     name: "Rotary Evaporators",
     description: "Efficient solvent evaporation systems for chemistry labs.",
     link: "/products/rotary-evaporators",
-    image: "/about.jpg",
+    image:'/incubators.png',
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
@@ -53,7 +53,7 @@ const profiles = [
     name: "Pumps",
     description: "Vacuum and peristaltic pumps for lab applications.",
     link: "/products/pumps",
-    image: "/about.jpg",
+    image: '/incubators.png',
     icon: "/icon1.svg",
     socials: { whatsapp: "https://wa.me/918019828999" },
   },
@@ -126,7 +126,7 @@ function ProfileCard({ profile, isOpen, index, setOpenIndex }) {
             src={profile.image}
             alt={profile.name}
             fill
-            className="object-cover"
+            className="object-contain"
           />
         </div>
       </Link>
