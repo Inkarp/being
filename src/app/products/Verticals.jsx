@@ -172,7 +172,7 @@ export default function Verticals() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="relative w-full py-5">
+    <section className="relative w-full ">
       <div className="text-center">
         <h1 className="text-3xl font-bold font-[MaxOT]">
           Explore Our <span className="text-[#E63946]">Scientific products</span>
