@@ -168,8 +168,8 @@ export default function CategoryClient() {
                   >
                     <div className="relative h-40 sm:h-44 lg:h-48 bg-gray-50">
                       <Image
-                        src={model.meta.thumbnail}
-                        alt={model.meta.title}
+                        src={model.thumbnail}
+                        alt={model.title}
                         fill
                         className="object-contain p-4 group-hover:scale-[1.03] transition"
                       />
@@ -177,7 +177,7 @@ export default function CategoryClient() {
 
                     <div className="flex flex-col px-4 pt-3 pb-4 flex-1">
                       <h3 className="text-sm font-semibold line-clamp-2">
-                        {model.meta.title}
+                        {model.title}
                       </h3>
 
                       <p className="mt-2 text-xs text-gray-500 line-clamp-3">

@@ -176,7 +176,7 @@ export default function Model() {
                                             }`}
                                     >
                                         <span className="text-sm font-medium">
-                                            {m.meta.title}
+                                            {m.title}
                                         </span>
                                         <div className="relative text-[#2F4191]">
                                             {/* Only SVG spins */}
@@ -205,7 +205,7 @@ export default function Model() {
                     {/* ================= CENTER: PRODUCT INFO ================= */}
                     <div className="space-y-6">
                         <h1 className="text-2xl font-semibold text-gray-900">
-                            {product.meta.title}
+                            {product.title}
                         </h1>
 
                         {product.overview && (
@@ -249,8 +249,8 @@ export default function Model() {
                             )}
 
                             <Image
-                                src={product.meta.thumbnail}
-                                alt={product.meta.title}
+                                src={product.thumbnail}
+                                alt={product.title}
                                 width={420}
                                 height={420}
                                 className="object-contain mx-auto"
@@ -357,7 +357,7 @@ export default function Model() {
                             Enquiry
                         </button>
 
-                        {product.meta.price && (
+                        {product.price && (
                             <button
                                 onClick={() => {
                                     if (!priceUnlocked) setIsPriceOpen(true);
@@ -370,7 +370,7 @@ export default function Model() {
           transition-all
         "
                             >
-                                {priceUnlocked ? `₹ ${product.meta.price}` : 'Request Price'}
+                                {priceUnlocked ? `₹ ${product.price}` : 'Request Price'}
                             </button>
                         )}
                     </div>
@@ -397,7 +397,7 @@ export default function Model() {
           rounded-full
           text-xs sm:text-sm
           font-medium
-          whitespace-nowrap
+       
           transition-all duration-300
           ${activeTab === 'features'
                                         ? 'bg-white text-gray-900 shadow-md'
@@ -418,7 +418,7 @@ export default function Model() {
           rounded-full
           text-xs sm:text-sm
           font-medium
-          whitespace-nowrap
+       
           transition-all duration-300
           ${activeTab === 'specs'
                                         ? 'bg-white text-gray-900 shadow-md'
@@ -439,7 +439,7 @@ export default function Model() {
           rounded-full
           text-xs sm:text-sm
           font-medium
-          whitespace-nowrap
+      
           transition-all duration-300
           ${activeTab === 'applications'
                                         ? 'bg-white text-gray-900 shadow-md'
@@ -642,60 +642,68 @@ export default function Model() {
 
                     {/* ================= FAQ TAB ================= */}
                     {activeTab === 'faqs' && product.faqs && (
-                        <div className="space-y-8 max-w-5xl mx-auto">
+                        <section className="w-full px-3 sm:px-4 md:px-0">
+                            <div className="space-y-8 max-w-5xl mx-auto">
 
-                            {/* TAB HEADING */}
-                            <div className="flex flex-col items-center text-center">
-                                <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                                    Frequently Asked Questions
-                                </h2>
-                                <p className="text-sm text-gray-700 leading-relaxed max-w-3xl">
-                                    Common questions about {product.meta.title} to help you understand
-                                    features, usage, and safety.
-                                </p>
-                            </div>
+                                {/* TAB HEADING */}
+                                <div className="flex flex-col items-center text-center px-2">
+                                    <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">
+                                        Frequently Asked Questions
+                                    </h2>
 
-                            {/* FAQ LIST */}
-                            <div className="space-y-4 max-w-5xl">
-                                {product.faqs.map((faq, index) => (
-                                    <details
-                                        key={index}
-                                        className="group mx-auto max-w-5xl
-                                                        rounded-xl border border-gray-200 bg-white
-                                                        transition-all duration-300
-                                                        open:shadow-md open:border-[#2F4191]/30
-                                                    "
-                                    >
-                                        {/* QUESTION */}
-                                        <summary
-                                            className="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-medium text-gray-900 min-w-5xl"
+                                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-3xl">
+                                        Common questions about {product.meta.title} to help you understand
+                                        features, usage, and safety.
+                                    </p>
+                                </div>
+
+                                {/* FAQ LIST */}
+                                <div className="space-y-4">
+                                    {product.faqs.map((faq, index) => (
+                                        <details
+                                            key={index}
+                                            className="
+              group w-full
+              rounded-xl border border-gray-200 bg-white
+              transition-all duration-300
+              open:shadow-md open:border-[#2F4191]/30
+            "
                                         >
-                                            <span className="text-sm sm:text-base leading-relaxed ">
-                                                {faq.question}
-                                            </span>
+                                            {/* QUESTION */}
+                                            <summary
+                                                className="
+                flex items-start justify-between gap-4
+                cursor-pointer list-none
+                px-4 sm:px-5 py-4
+                font-medium text-gray-900
+              "
+                                            >
+                                                <span className="text-sm sm:text-base leading-relaxed flex-1">
+                                                    {faq.question}
+                                                </span>
 
-                                            {/* ARROW */}
-                                            <span className="shrink-0 rounded-full border border-gray-300 bg-gray-100 p-1">
-                                                <FaChevronDown
-                                                    size={16}
-                                                    className="text-gray-700 transition-transform duration-300 group-open:rotate-180"
-                                                />
-                                            </span>
-                                        </summary>
+                                                {/* ARROW */}
+                                                <span className="shrink-0 rounded-full border border-gray-300 bg-gray-100 p-1 mt-0.5">
+                                                    <FaChevronDown
+                                                        size={16}
+                                                        className="text-gray-700 transition-transform duration-300 group-open:rotate-180"
+                                                    />
+                                                </span>
+                                            </summary>
 
-                                        {/* ANSWER */}
-                                        <div className="px-5 pb-4">
-                                            <p className="text-sm text-gray-700 leading-relaxed">
-                                                {faq.answer}
-                                            </p>
-                                        </div>
-                                    </details>
-                                ))}
+                                            {/* ANSWER */}
+                                            <div className="px-4 sm:px-5 pb-4">
+                                                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                                                    {faq.answer}
+                                                </p>
+                                            </div>
+                                        </details>
+                                    ))}
+                                </div>
+
                             </div>
-
-                        </div>
+                        </section>
                     )}
-
 
                     {/* ================= CUSTOMER FEEDBACK TAB ================= */}
                     {activeTab === 'feedback' && product.feedback && (
