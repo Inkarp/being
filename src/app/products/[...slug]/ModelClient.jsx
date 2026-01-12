@@ -520,7 +520,7 @@ export default function Model() {
                             {/* TAB HEADING */}
                             <div className="flex flex-col items-center text-center">
                                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">
-                                    Key Features of {product.meta.title}
+                                    Key Features of {product.title}
                                 </h2>
 
                                 {/* FEATURES OVERVIEW (PARAGRAPHS) */}
@@ -563,7 +563,7 @@ export default function Model() {
                             {/* TAB HEADING + OVERVIEW */}
                             <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
                                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">
-                                    Technical Specifications of {product.meta.title}
+                                    Technical Specifications of {product.title}
                                 </h2>
 
                                 {Array.isArray(product.specifications.overview) &&
@@ -606,7 +606,7 @@ export default function Model() {
                             {/* TAB HEADING + OVERVIEW */}
                             <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
                                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">
-                                    Applications of {product.meta.title}
+                                    Applications of {product.title}
                                 </h2>
 
                                 {Array.isArray(product.applications.overview) &&
@@ -652,7 +652,7 @@ export default function Model() {
                                     </h2>
 
                                     <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-3xl">
-                                        Common questions about {product.meta.title} to help you understand
+                                        Common questions about {product.title} to help you understand
                                         features, usage, and safety.
                                     </p>
                                 </div>
