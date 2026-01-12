@@ -1,105 +1,81 @@
 'use client';
 
 import Image from 'next/image';
-import { FaArrowCircleRight, FaArrowRight, FaHeadphones } from 'react-icons/fa';
+import { FaArrowRight, FaHeadphones } from 'react-icons/fa';
 import { RiTestTubeFill } from "react-icons/ri";
-import { BsShieldCheck, BsPeople } from 'react-icons/bs';
+import { BsPeople, BsShieldCheck } from 'react-icons/bs';
+import Link from 'next/link';
 
 export default function About() {
   return (
-    <section className="py-20 px-4 text-black">
-      <div className="w-full mx-auto grid md:grid-cols-2 gap-12 items-center">
-
-        {/* Left side: images */}
-        <div className="relative space-y-6">
-          <div className="rounded-2xl overflow-hidden">
-            <Image
-              src="/about.jpg"
-              alt="Professional"
-              width={600}
-              height={700}
-              className="w-full h-auto object-cover"
-            />
-          </div>
-
-          <div className="mt-10 space-y-8">
-            {/* First Row (placeholder - you can add other stats later here) */}
-            <div className="flex flex-wrap md:flex-nowrap gap-20">
-              {/* Empty for now or add content here */}
-              <div className="text-center">
-                <span className="text-3xl font-bold text-[#2B7EC2] block">200+</span>
-                <span className="text-lg font-semibold text-gray-800">Happy Customers</span>
-              </div>
-              <div className="w-[1px] h-15 bg-[#2B7EC2]"></div>
-              <div className="text-center">
-                <span className="text-3xl font-bold text-[#2B7EC2] block">200+</span>
-                <span className="text-lg font-semibold text-gray-800">Happy Customers</span>
-              </div>
-            </div>
-
-            {/* Divider */}
-            <hr className="border-t border-[#2B7EC2] w-auto" />
-            {/* Stats Row */}
-            <div className="flex flex-wrap md:flex-nowrap gap-20">
-              <div className="text-center">
-                <span className="text-3xl font-bold text-[#2B7EC2] block">200+</span>
-                <span className="text-lg font-semibold text-gray-800">Happy Customers</span>
-
-              </div>
-              <div className="w-[1px] h-15 bg-[#2B7EC2]"></div>
-              <div className="text-center">
-                <span className="text-3xl font-bold text-[#2B7EC2] block">200+</span>
-                <span className="text-lg font-semibold text-gray-800">Happy Customers</span>
-              </div>
+    <section className="py-5 px-4 min-h-screen flex flex-col items-center">
+      <div className=" grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="space-y-12 order-2 lg:order-1">
+          <div className="relative group">
+            <div className="overflow-hidden rounded-3xl shadow-2xl ring-1 ring-black/5">
+              <Image
+                src="/about.jpg"
+                alt="Inkarp Instruments Laboratory Solutions"
+                width={650}
+                height={500}
+                className="w-full h-auto aspect-[4/4] object-cover transition-transform duration-700 group-hover:scale-105"
+              />
             </div>
           </div>
         </div>
-        <div>
-          <div className="text-blue-700 font-semibold mb-2 flex items-center gap-2">
-            <span className=" text-white bg-[#2B7EC2] p-2 uppercase font-bold text-sm tracking-wider inline-block border-2 border-[#2F3F8D] rounded-full mb-2">
-              About Us
+        {/* Right: Content + Stats */}
+        <div className="space-y-5 lg:order-2">
+          {/* Badge */}
+          <div className="inline-flex items-center">
+            <span className="px-5 py-2.5 bg-white text-xs font-bold uppercase tracking-widest border-2 border-gray-200 rounded-full shadow-sm">
+              About Inkarp
             </span>
           </div>
-          <h2 className="text-4xl font-bold leading-snug mb-4">
-            A Lab Partner
-            With<span className="text-blue-700"> Best Provided Instruments</span>
-          </h2>
-          <p className="text-gray-600 mb-8 leading-relaxed">
-            At techin, we are dedicated to delivering innovative IT solutions and services that empower businesses to thrive in the digital age. With a team of experienced professionals, we provide customized technology strategies, robust support, and cutting-edge solutions tailored to your unique needs. Our mission is to help you achieve your goals by making technology work for you efficiently, securely, and reliably.
-          </p>
 
-          <div className="grid grid-cols-2 gap-6 mb-10">
-            <div className="flex items-start gap-3">
-              <div className="bg-cyan-200 text-cyan-800 p-3 rounded-full text-2xl">
-                <BsShieldCheck />
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold">Providing Laboratory Services</h4>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <div className="bg-cyan-200 text-cyan-800 p-3 rounded-full text-2xl">
-                <BsPeople />
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold">24/7 Support For Clients</h4>
-              </div>
+          {/* Headline + Description */}
+          <div className="space-y-3">
+            <h2 className="text-3xl font-black leading-[0.88] bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent drop-shadow-sm">
+              Your Trusted Lab Partner
+            </h2>
+            <div className="text-xl md:text-2xl text-gray-600 leading-relaxed  ">
+              Delivering precision laboratory instruments with unmatched reliability. Serving research, industry, and education with{' '}
+              <span className="font-bold text-gray-900">10+ years</span> of excellence.
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-4 items-center justify-around">
-            <div className="flex items-center gap-3 animate-bounce">
-              <div className="bg-blue-100 text-blue-700 p-3 rounded-full text-xl">
-                <FaHeadphones />
+          {/* Feature Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <div className="group flex items-start gap-4 p-8 rounded-2xl border border-gray-100 hover:shadow-2xl hover:border-gray-200 transition-all duration-400 bg-gray-50/50">
+              <div className="w-14 h-14 mt-1 bg-white rounded-2xl flex items-center justify-center shadow-lg border flex-shrink-0 group-hover:scale-105 transition-transform">
+                <BsShieldCheck className="w-7 h-7 text-gray-700" />
               </div>
-              <div className=''>
-                <p className="font-semibold text-sm">Call Us Any Time</p>
-                <p className="text-lg font-bold">(+91) 9030357676</p>
+              <div className="min-w-0 flex-1">
+                <h4 className="font-bold text-xl text-gray-900 mb-3 group-hover:text-gray-950">ISO Certified</h4>
+                <p className="text-base text-gray-600 leading-relaxed">Every instrument meets </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 bg-[#2F3F8D] px-6 py-3 rounded-full w-fit">
+            <div className="group flex items-start gap-4 p-8 rounded-2xl border border-gray-100 hover:shadow-2xl hover:border-gray-200 transition-all duration-400 bg-gray-50/50">
+              <div className="w-14 h-14 mt-1 bg-white rounded-2xl flex items-center justify-center shadow-lg border flex-shrink-0 group-hover:scale-105 transition-transform">
+                <BsPeople className="w-7 h-7 text-gray-700" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h4 className="font-bold text-xl text-gray-900 mb-3 group-hover:text-gray-950">Expert Support</h4>
+                <p className="text-base text-gray-600 leading-relaxed">24/7 technical assistance</p>
+              </div>
+            </div>
+            <div className="group flex items-start gap-4 p-8 rounded-2xl border border-gray-100 hover:shadow-2xl hover:border-gray-200 transition-all duration-400 bg-gray-50/50">
+              <div className="w-14 h-14 mt-1 bg-white rounded-2xl flex items-center justify-center shadow-lg border flex-shrink-0 group-hover:scale-105 transition-transform">
+                <BsShieldCheck className="w-7 h-7 text-gray-700" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h4 className="font-bold text-xl text-gray-900 mb-3 group-hover:text-gray-950">ISO Certified</h4>
+                <p className="text-base text-gray-600 leading-relaxed">Every instrument meets </p>
+              </div>
+            </div>
+
+            <Link href="/about-us" >
+            <div className="flex items-center justify-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-max hover:bg-[#1c2a5f] cursor-pointer transition-colors">
               <span className="text-white font-medium text-[16px]">Know More</span>
               {/* Gear SVG with arrow inside */}
               <div className="relative w-[30px] h-[30px] text-white">
@@ -121,10 +97,41 @@ export default function About() {
                 />
               </div>
             </div>
-
+            </Link>
           </div>
         </div>
       </div>
-    </section >
+      {/* Compact Stats Grid - Below Image */}
+      <div className="flex w-full gap-6 py-5 border-t border-gray-100">
+        <div className="text-center p-6 rounded-2xl hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-gray-200">
+          <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center shadow-sm border">
+            <BsShieldCheck className="w-8 h-8 text-gray-700" />
+          </div>
+          <div className="text-2xl font-bold text-gray-900 mb-2">Lab Certified</div>
+          <div className="text-sm text-gray-600 font-medium">Quality assured</div>
+        </div>
+        <div className="text-center p-6 rounded-2xl hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-gray-200">
+          <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center shadow-sm border">
+            <RiTestTubeFill className="w-8 h-8 text-gray-700" />
+          </div>
+          <div className="text-2xl font-bold text-gray-900 mb-2">500+</div>
+          <div className="text-sm text-gray-600 font-medium">Instruments</div>
+        </div>
+        <div className="text-center p-6 rounded-2xl hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-gray-200">
+          <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center shadow-sm border">
+            <BsShieldCheck className="w-8 h-8 text-gray-700" />
+          </div>
+          <div className="text-2xl font-bold text-gray-900 mb-2">Lab Certified</div>
+          <div className="text-sm text-gray-600 font-medium">Quality assured</div>
+        </div>
+        <div className="text-center p-6 rounded-2xl hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-gray-200">
+          <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center shadow-sm border">
+            <RiTestTubeFill className="w-8 h-8 text-gray-700" />
+          </div>
+          <div className="text-2xl font-bold text-gray-900 mb-2">500+</div>
+          <div className="text-sm text-gray-600 font-medium">Instruments</div>
+        </div>
+      </div>
+    </section>
   );
 }

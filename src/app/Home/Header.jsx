@@ -34,7 +34,7 @@ export default function Header() {
       {/* ================= HEADER ================= */}
       <header className="w-[90%] mx-auto px-4 lg:px-8 py-2 flex items-center justify-between font-[Roboto]">
         {/* LOGO */}
-        <Link href="/" className="flex items-center bg-white rounded-r-xl">
+        <Link href="/" className="flex items-center bg-white rounded-r-xl border-r-5 border-[#2F4191]">
           <Image
             src="/logo.webp"
             alt="Being Logo"

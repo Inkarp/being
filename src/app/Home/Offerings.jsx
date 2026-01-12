@@ -131,13 +131,13 @@ export default function Offerings() {
         // style={{ height: 'auto', overflow: 'hidden' }}
         >
             <div ref={sectionRef} className="w-full mx-auto px-4 text-center">
-                <h2 className="text-3xl font-bold py-3">
-                    Our <span className="text-[#2B7EC2] ">Products</span>
+                <h2 className="text-3xl font-bold py-3 border border-black/30 w-fit mx-auto p-3 rounded-xl bg-gray-100">
+                    Our <span className="text-[#2B7EC2]">Products</span>
                 </h2>
                 <p className="text-gray-600 ">
                     Our <span className="text-black font-medium">charity helps</span> those people who have no hope
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 transition-all duration-500 rounded-2xl py-3">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 transition-all duration-500 rounded-2xl py-3">
                     {causes.slice(0, visibleCards).map((cause, index) => (
                         <div key={index} className="border border-gray-100 shadow-xl  overflow-hidden rounded-[30px] hover:border border-[#2B7EC2] hover:scale-[1.05] transition-all duration-500">
                             <div className="relative ">
@@ -158,7 +158,8 @@ export default function Offerings() {
                                 <h3 className="text-lg font-semibold">{cause.title}</h3>
                                 <p className="text-gray-500 text-sm">{cause.description}</p>
 
-                                <Link href={cause.link} ><div className="flex items-center justify-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-fit">
+                                <Link href={cause.link} >
+                                <div className="flex items-center justify-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-fit">
                                     <span className="text-white font-medium text-[16px]">Know More</span>
                                     {/* Gear SVG with arrow inside */}
                                     <div className="relative w-[30px] h-[30px] text-white">
@@ -179,7 +180,8 @@ export default function Offerings() {
                                             className="absolute top-1/2 left-1/2 text-black transform -translate-x-1/2 -translate-y-1/2 "
                                         />
                                     </div>
-                                </div></Link>
+                                </div>
+                                </Link>
                             </div>
                         </div>
                     ))}
