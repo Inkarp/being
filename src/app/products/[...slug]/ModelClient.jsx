@@ -492,14 +492,7 @@ export default function Model() {
                         {product.feedback && (
                             <button
                                 onClick={() => setActiveTab('feedback')}
-                                className={`
-          px-4 sm:px-6 py-2
-          rounded-full
-          text-xs sm:text-sm
-          font-medium
-          whitespace-nowrap
-          transition-all duration-300
-          ${activeTab === 'feedback'
+                                className={`px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowraptransition-all duration-300 ${activeTab === 'feedback'
                                         ? 'bg-white text-gray-900 shadow-md'
                                         : 'text-gray-600 hover:text-gray-900'
                                     }
@@ -510,8 +503,6 @@ export default function Model() {
                         )}
                     </div>
                 </div>
-
-
 
                 {/* TAB CONTENT */}
                 <div className="p-6 text-sm text-gray-700 flex justify-center items-center">
@@ -540,9 +531,7 @@ export default function Model() {
                                 {product.features.items.map((feature, index) => (
                                     <div
                                         key={index}
-                                        className="bg-white border border-gray-200 rounded-xl p-5
-                     hover:shadow-lg transition flex gap-5"
-                                    >
+                                        className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-lg transition flex gap-5">
                                         <div className="text-blue-500 text-xl mt-1">
                                             <MdOutlineSettingsApplications />
                                         </div>
@@ -553,7 +542,6 @@ export default function Model() {
                                     </div>
                                 ))}
                             </div>
-
                         </div>
                     )}
 
