@@ -328,7 +328,7 @@ export default function Model() {
 
             <ServiceForm
                 isOpen={isServiceOpen}
-                onClose={() => setIsSeriveOpen(false)}
+                onClose={() => setIsServiceOpen(false)}
                 productData={{
                     model: product.meta.title,
                     category: categorySlug,

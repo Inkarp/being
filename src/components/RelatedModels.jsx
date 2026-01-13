@@ -51,7 +51,7 @@ export default function RelatedModels({
   if (!relatedModels.length) return null;
 
   return (
-    <section className="max-w-7xl mx-auto py-14 mt-5 border-t border-gray-200">
+    <section className="max-w-7xl mx-auto py-10 mt-5 border-t border-gray-200">
       {/* HEADER */}
       <div className=" text-center py-3">
         <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900">
@@ -86,7 +86,7 @@ export default function RelatedModels({
                 )
               }
               className="
-                group shrink-0 w-[280px] h-[380px]
+                group shrink-0 w-[280px] h-[450px]
                 rounded-2xl cursor-pointer
                 bg-white border border-gray-200
                 shadow-sm hover:shadow-xl
@@ -97,8 +97,8 @@ export default function RelatedModels({
               {/* IMAGE */}
               <div className="relative h-auto rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4 overflow-hidden">
                 <img
-                  src={model.meta.thumbnail}
-                  alt={model.meta.title}
+                  src={model.thumbnail}
+                  alt={model.title}
                   className="
                     max-h-full object-contain
                     transition-transform duration-300
@@ -110,7 +110,7 @@ export default function RelatedModels({
 
                 <div className="flex flex-col gap-5 items-center justify-between">
                   <h4 className="text-sm py-1 font-semibold text-gray-900 line-clamp-2">
-                    {model.meta.title}
+                    {model.title}
 
                   </h4>
                   <button
