@@ -154,7 +154,6 @@ export default function Model() {
         <section className="w-full mx-auto p-5">
             <div className="space-y-8">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr_1fr] gap-10 items-start">
-
                     {/* ================= LEFT: AVAILABLE MODELS ================= */}
                     <div className="bg-gray-200 rounded-2xl p-4">
                         <div className='flex justify-center items-center'>
@@ -265,8 +264,6 @@ export default function Model() {
                 </div>
             </div>
 
-          
-
              <ProductActionSection
                     product={product}
                     activeTab={activeTab}
@@ -304,7 +301,6 @@ export default function Model() {
                     setShowPricePopup(true);     // open success popup
                 }}
             />
-
 
             <PricePopup
                 isOpen={showPricePopup}
