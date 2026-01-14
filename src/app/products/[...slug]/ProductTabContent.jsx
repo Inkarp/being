@@ -161,7 +161,6 @@ export default function ProductTabContent({
       )}
 
       {/* ================= service ================= */}
-
       {activeTab === 'services' && product.services && (
         <div className="space-y-6 max-w-5xl w-full">
 
@@ -178,38 +177,21 @@ export default function ProductTabContent({
               Need a service?
             </button>
           </div>
-
           {/* DESCRIPTION */}
           <p className="text-sm text-gray-700 leading-relaxed">
             {product.services.description}
           </p>
-
           {/* ================= OUTER CONTAINER ================= */}
           <div className="bg-gray-300 rounded-2xl p-4">
-
             {/* ================= INNER SCROLL CONTAINER ================= */}
             <div
-              className="
-          bg-white
-          rounded-xl
-          p-4
-          max-h-[420px]
-          overflow-y-auto
-          pr-2
-        "
+              className="bg-white rounded-xl p-4 max-h-[420px] overflow-y-auto pr-2"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {product.services.photos?.map((img, index) => (
                   <div
                     key={index}
-                    className="
-                border border-gray-200
-                rounded-xl
-                p-3
-                bg-white
-                hover:shadow-md
-                transition
-              "
+                    className="border border-gray-200 rounded-xl p-3 bg-white hover:shadow-md transition"
                   >
                     <Image
                       src={img}

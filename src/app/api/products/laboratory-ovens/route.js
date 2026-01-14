@@ -175,7 +175,7 @@ export async function GET() {
             title: "Laboratory Drying Oven - BPG-9070A",
             thumbnail: "/testImg.webp",
             imgAltText: "Laboratory Drying Oven_BPG-9070A_ Being India",
-            price: "15000",
+            // price: "15000",
             "overview": [
               "The BPG-9070A Laboratory Drying Oven is a high-capacity, forced-air hot air oven designed for controlled drying, heating, and thermal processing of laboratory samples under uniform temperature conditions. Featuring an 80-litre stainless steel chamber and efficient airflow design, the oven ensures consistent heat distribution and repeatable results across routine and application-specific workflows. It supports temperatures up to 250 °C with precise digital control, making it suitable for laboratories that require stable thermal performance and higher sample throughput.",
 

@@ -8,6 +8,7 @@ import About from './Home/About';
 import Offerings from './Home/Offerings';
 import Blogs from './Home/Blogs';
 import Footer from './Home/Footer';
+import BlogsNew from './Home/BlogsNew';
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Offerings />
       <About />
       <Blogs />
+      <BlogsNew />
     </div>
   );
 }

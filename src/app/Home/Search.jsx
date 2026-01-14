@@ -60,14 +60,14 @@ export default function Search() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="
-            w-full rounded-full border border-gray-300
+            w-full rounded-full border border-gray-300 placeholder-white
             py-2.5 pl-10 pr-4 text-sm
             focus:outline-none focus:ring-2 focus:ring-[#2B7EC2]/40
           "
         />
 
         <FaSearch
-          className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+          className="absolute left-4 top-1/2 -translate-y-1/2 text-white"
           size={14}
         />
       </div>
