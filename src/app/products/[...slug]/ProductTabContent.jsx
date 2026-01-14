@@ -2,6 +2,7 @@
 
 import { MdOutlineSettingsApplications } from 'react-icons/md';
 import { FaChevronDown } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function ProductTabContent({
   product,
@@ -112,45 +113,119 @@ export default function ProductTabContent({
           </div>
         </div>
       )}
+      {/* =================faqs ================= */}
 
-      {/* ================= FAQs ================= */}
-      {activeTab === 'faqs' && product.faqs && (
-        <section className="w-full max-w-5xl">
+      {activeTab === 'faqs' && product?.faqs && (
+        <section className="w-full max-w-5xl mx-auto space-y-8">
+
+          {/* ================= OVERVIEW ================= */}
+          {Array.isArray(product.faqs.overview) && (
+            <div className="text-center">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                FAQs of {product.title}
+              </h2>
+
+              {product.faqs.overview.map((text, i) => (
+                <p
+                  key={i}
+                  className="text-sm text-gray-700 leading-relaxed w-full mx-auto mb-3"
+                >
+                  {text}
+                </p>
+              ))}
+            </div>
+          )}
+
+          {/* ================= FAQ ITEMS ================= */}
           <div className="space-y-4">
-            {product.faqs.map((faq, index) => (
-              <details
-                key={index}
-                className="group rounded-xl border border-gray-200 bg-white open:shadow-md"
-              >
-                <summary className="flex justify-between gap-4 px-5 py-4 cursor-pointer font-medium">
-                  <span>{faq.question}</span>
-                  <FaChevronDown className="transition group-open:rotate-180" />
-                </summary>
-                <div className="px-5 pb-4 text-gray-700">
-                  {faq.answer}
-                </div>
-              </details>
-            ))}
+            {Array.isArray(product.faqs?.items) &&
+              product.faqs.items.map((faq, index) => (
+                <details
+                  key={index}
+                  className="group rounded-xl border border-gray-200 bg-white open:shadow-md"
+                >
+                  <summary className="flex justify-between items-start gap-4 px-5 py-4 cursor-pointer font-medium list-none">
+                    <span className="text-sm sm:text-base text-gray-900 leading-relaxed">
+                      {faq.question}
+                    </span>
+                    <FaChevronDown className="transition-transform group-open:rotate-180" />
+                  </summary>
+
+                  <div className="px-5 pb-4 text-sm text-gray-700 leading-relaxed">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
           </div>
+
         </section>
       )}
 
-      {/* ================= SERVICES ================= */}
+      {/* ================= service ================= */}
+
       {activeTab === 'services' && product.services && (
         <div className="space-y-6 max-w-5xl w-full">
-          <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-semibold">Service & Support in India</h2>
+
+          {/* HEADER */}
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+            <h2 className="text-2xl font-semibold text-gray-900">
+              Service & Support in India
+            </h2>
+
             <button
               onClick={() => setIsServiceOpen(true)}
-              className="bg-[#2F4191] text-white px-6 py-3 rounded-full text-sm hover:bg-[#2B7EC2]"
+              className="bg-[#2F4191] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2B7EC2] transition"
             >
               Need a service?
             </button>
           </div>
 
-          <p className="text-sm text-gray-700">
+          {/* DESCRIPTION */}
+          <p className="text-sm text-gray-700 leading-relaxed">
             {product.services.description}
           </p>
+
+          {/* ================= OUTER CONTAINER ================= */}
+          <div className="bg-gray-300 rounded-2xl p-4">
+
+            {/* ================= INNER SCROLL CONTAINER ================= */}
+            <div
+              className="
+          bg-white
+          rounded-xl
+          p-4
+          max-h-[420px]
+          overflow-y-auto
+          pr-2
+        "
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {product.services.photos?.map((img, index) => (
+                  <div
+                    key={index}
+                    className="
+                border border-gray-200
+                rounded-xl
+                p-3
+                bg-white
+                hover:shadow-md
+                transition
+              "
+                  >
+                    <Image
+                      src={img}
+                      alt={`Service support ${index + 1} for ${product.title}`}
+                      width={300}
+                      height={200}
+                      className="w-full h-[250px] object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
         </div>
       )}
 

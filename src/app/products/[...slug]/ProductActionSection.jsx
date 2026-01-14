@@ -22,13 +22,7 @@ export default function ProductActionSection({
 
             {/* ================= ACTION BAR ================= */}
             <div
-                className="
-    bg-gray-200
-    rounded-t-2xl
-    px-4 py-4
-    flex flex-col gap-4
-    lg:flex-row lg:justify-between lg:items-center
-  "
+                className="bg-gray-200 rounded-t-2xl px-4 py-4 flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-center"
             >
 
                 {/* ===== ROW 1 : BRAND / PARTNER (MOBILE) ===== */}
@@ -45,14 +39,7 @@ export default function ProductActionSection({
 
                     <button
                         onClick={() => setIsExclusivePatnership(true)}
-                        className="
-        group flex items-center gap-3
-        bg-[#2B7EC2] text-white
-        px-4 py-2.5
-        rounded-full text-xs sm:text-sm font-semibold
-        hover:bg-[#2F4191]
-        transition
-      "
+                        className="group flex items-center gap-3 bg-[#2B7EC2] text-white px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:bg-[#2F4191] transition"
                     >
                         <span className="flex items-center justify-center w-8 h-8 bg-white rounded-full">
                             <FcCollaboration size={18} />
@@ -66,11 +53,23 @@ export default function ProductActionSection({
 
                 {/* ===== ROW 2 : ACTION BUTTONS ===== */}
                 <div
-                    className="
-      flex flex-wrap justify-center gap-3
-      lg:justify-end
-    "
+                    className="flex flex-wrap justify-center gap-3 lg:justify-end"
                 >
+                    <button
+                        onClick={() => setIsEnquiryOpen(true)}
+                        className="flex items-center justify-center gap-2 bg-white text-[#2F4191] border border-[#2F4191] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2F4191] hover:text-white transition w-full sm:w-auto"
+                    >
+                        <FaFileDownload size={14} />
+                        Brochure
+                    </button>
+
+                    <button
+                        onClick={handleShare}
+                        className="flex items-center justify-center gap-2 bg-white text-[#2F4191] border border-[#2F4191] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2F4191] hover:text-white transition w-full sm:w-auto"
+                    >
+                        <FaShare size={14} />
+                        Share
+                    </button>
                     {product.price && (
                         <button
                             onClick={() => !priceUnlocked && setIsPriceOpen(true)}
@@ -99,42 +98,6 @@ export default function ProductActionSection({
                     >
                         Enquiry
                     </button>
-
-
-
-                    <button
-                        onClick={() => setIsEnquiryOpen(true)}
-                        className="
-        flex items-center justify-center gap-2
-        bg-white text-[#2F4191]
-        border border-[#2F4191]
-        px-5 py-2.5
-        rounded-full text-sm font-medium
-        hover:bg-[#2F4191] hover:text-white
-        transition
-        w-full sm:w-auto
-      "
-                    >
-                        <FaFileDownload size={14} />
-                        Brochure
-                    </button>
-
-                    <button
-                        onClick={handleShare}
-                        className="
-        flex items-center justify-center gap-2
-        bg-white text-[#2F4191]
-        border border-[#2F4191]
-        px-5 py-2.5
-        rounded-full text-sm font-medium
-        hover:bg-[#2F4191] hover:text-white
-        transition
-        w-full sm:w-auto
-      "
-                    >
-                        <FaShare size={14} />
-                        Share
-                    </button>
                 </div>
             </div>
 
@@ -146,7 +109,7 @@ export default function ProductActionSection({
                 hasFeatures={product.features?.items?.length > 0}
                 hasSpecs={product.specifications?.items?.length > 0}
                 hasApplications={product.applications?.items?.length > 0}
-                hasFaqs={product.faqs?.length > 0}
+                hasFaqs={Array.isArray(product.faqs?.items) && product.faqs.items.length > 0}
                 hasServices={!!product.services}
                 hasFeedback={!!product.feedback}
             />

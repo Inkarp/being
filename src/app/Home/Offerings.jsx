@@ -131,9 +131,11 @@ export default function Offerings() {
         // style={{ height: 'auto', overflow: 'hidden' }}
         >
             <div ref={sectionRef} className="w-full mx-auto px-4 text-center">
-                <h2 className="text-3xl font-bold py-3 border border-black/30 w-fit mx-auto p-3 rounded-xl bg-gray-100">
-                    Our <span className="text-[#2B7EC2]">Products</span>
-                </h2>
+                <div className="inline-flex items-center">
+            <span className="px-5 py-2.5 bg-gradient-to-br from-[#2F4191]/50 to-[#2B7EC2]/50 text-xs font-bold uppercase tracking-widest border-2 border-gray-200 rounded-full shadow-sm">
+              Our Products
+            </span>
+          </div>
                 <p className="text-gray-600 ">
                     Our <span className="text-black font-medium">charity helps</span> those people who have no hope
                 </p>
