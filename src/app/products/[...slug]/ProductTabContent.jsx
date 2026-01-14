@@ -117,7 +117,6 @@ export default function ProductTabContent({
 
       {activeTab === 'faqs' && product?.faqs && (
         <section className="w-full max-w-5xl mx-auto space-y-8">
-
           {/* ================= OVERVIEW ================= */}
           {Array.isArray(product.faqs.overview) && (
             <div className="text-center">

@@ -238,7 +238,7 @@ export default function Model() {
 
                     {/* ================= RIGHT: PRODUCT IMAGE ================= */}
                     <div className="flex flex-col justify-center">
-                        <div className="relative border border-gray-200 rounded-2xl p-6 bg-white">
+                        <div className="relative border border-gray-200 rounded-2xl p-6 bg-[#2F4191]/10 hover:bg-[#2F4191]/30 transition-colors duration-300">
                             {/* GEM BADGE ON IMAGE */}
                             {product.gem && (
                                 <Image
@@ -256,7 +256,7 @@ export default function Model() {
                                 alt={product.title}
                                 width={420}
                                 height={420}
-                                className="object-contain mx-auto"
+                                className="object-contain mx-auto "
                                 priority
                             />
                         </div>

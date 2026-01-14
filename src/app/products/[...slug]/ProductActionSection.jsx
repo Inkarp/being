@@ -39,7 +39,7 @@ export default function ProductActionSection({
 
                     <button
                         onClick={() => setIsExclusivePatnership(true)}
-                        className="group flex items-center gap-3 bg-[#2B7EC2] text-white px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:bg-[#2F4191] transition"
+                        className="group flex items-center gap-3 bg-[#2B7EC2] text-white px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:bg-[#2F4191] transition duration-300 hover:scale-105 cursor-pointer"
                     >
                         <span className="flex items-center justify-center w-8 h-8 bg-white rounded-full">
                             <FcCollaboration size={18} />
@@ -57,7 +57,7 @@ export default function ProductActionSection({
                 >
                     <button
                         onClick={() => setIsEnquiryOpen(true)}
-                        className="flex items-center justify-center gap-2 bg-white text-[#2F4191] border border-[#2F4191] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2F4191] hover:text-white transition w-full sm:w-auto"
+                        className="flex items-center justify-center gap-2 bg-white text-[#2F4191] border border-[#2F4191] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2F4191] hover:text-white transition duration-300 w-full sm:w-auto cursor-pointer hover:scale-105"
                     >
                         <FaFileDownload size={14} />
                         Brochure
@@ -65,7 +65,7 @@ export default function ProductActionSection({
 
                     <button
                         onClick={handleShare}
-                        className="flex items-center justify-center gap-2 bg-white text-[#2F4191] border border-[#2F4191] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2F4191] hover:text-white transition w-full sm:w-auto"
+                        className="flex items-center justify-center gap-2 bg-white text-[#2F4191] border border-[#2F4191] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2F4191] hover:text-white transition duration-300 w-full sm:w-auto cursor-pointer hover:scale-105"
                     >
                         <FaShare size={14} />
                         Share
@@ -73,28 +73,15 @@ export default function ProductActionSection({
                     {product.price && (
                         <button
                             onClick={() => !priceUnlocked && setIsPriceOpen(true)}
-                            className="
-          bg-[#2F4191] text-white
-          px-5 py-2.5
-          rounded-full text-sm font-medium
-          hover:bg-[#2B7EC2]
-          transition
-          w-full sm:w-auto
-        "
+                            className="bg-[#2F4191] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2B7EC2] transition duration-300 w-full sm:w-auto cursor-pointer hover:scale-105"
+       
                         >
                             {priceUnlocked ? `₹ ${product.price}` : 'Request Price'}
                         </button>
                     )}
                     <button
                         onClick={() => setIsEnquiryOpen(true)}
-                        className="
-        bg-[#2F4191] text-white
-        px-5 py-2.5
-        rounded-full text-sm font-medium
-        hover:bg-[#2B7EC2]
-        transition
-        w-full sm:w-auto
-      "
+                        className="bg-[#2F4191] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2B7EC2] transition duration-300 w-full sm:w-auto cursor-pointer hover:scale-105"
                     >
                         Enquiry
                     </button>
