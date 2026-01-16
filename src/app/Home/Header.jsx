@@ -15,6 +15,7 @@ import {
 } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Search from "./Search";
+import SearchOverlay from "./SearchOverlay";
 
 export default function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -58,14 +59,20 @@ export default function Header() {
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-3">
-          {/* DESKTOP SEARCH */}
-          <div className="hidden md:block w-[300px]">
-            <Search />
+          {/* SEARCH TRIGGER (ALL SCREENS) */}
+          <div
+            onClick={() => setIsSearchOpen(true)}
+            className="hidden md:flex items-center gap-2 bg-white rounded-full px-4 h-12 cursor-pointer text-[#2B7EC2]"
+          >
+            <FaSearch size={16} />
+            <span className="text-sm text-gray-500">
+              Search for products…
+            </span>
           </div>
 
           {/* MOBILE SEARCH ICON */}
           <button
-            onClick={() => setIsSearchOpen(!isSearchOpen)}
+            onClick={() => setIsSearchOpen(true)}
             className="md:hidden bg-white w-12 h-12 rounded-full flex items-center justify-center text-[#2B7EC2]"
           >
             <FaSearch size={18} />
@@ -79,24 +86,28 @@ export default function Header() {
             <RxHamburgerMenu size={26} />
           </button>
         </div>
-      </header>
+      </header >
 
       {/* ================= MOBILE SEARCH ================= */}
-      {isSearchOpen && (
-        <div className="md:hidden bg-[#2B7EC2] px-4 pb-4">
-          <div className="bg-white rounded-full px-4 py-3 shadow-md">
-            <Search />
+      {
+        isSearchOpen && (
+          <div className="md:hidden bg-[#2B7EC2] px-4 pb-4">
+            <div className="bg-white rounded-full px-4 py-3 shadow-md">
+              <Search />
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
 
       {/* ================= OVERLAY ================= */}
-      {isSidebarOpen && (
-        <div
-          onClick={() => setIsSidebarOpen(false)}
-          className="fixed inset-0 bg-black/30 z-40"
-        />
-      )}
+      {
+        isSidebarOpen && (
+          <div
+            onClick={() => setIsSidebarOpen(false)}
+            className="fixed inset-0 bg-black/30 z-40"
+          />
+        )
+      }
 
       {/* ================= SIDEBAR ================= */}
       <aside
@@ -172,6 +183,12 @@ export default function Header() {
           </div>
         </div>
       </aside>
-    </div>
+      {/* FULL SCREEN SEARCH OVERLAY */}
+      <SearchOverlay
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+      />
+
+    </div >
   );
 }

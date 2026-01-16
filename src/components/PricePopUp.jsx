@@ -11,6 +11,9 @@ export default function PricePopup({
 }) {
     if (!isOpen) return null;
 
+    // console.log('PricePopup product:', product);
+    // console.log('PricePopup price:', price);
+
     return (
         <div className="fixed inset-0 z-[1100] bg-black/60 flex items-center justify-center p-4">
             <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full relative overflow-hidden">
@@ -57,7 +60,7 @@ export default function PricePopup({
 
                     {/* PRICE */}
                     <div className="text-3xl font-bold text-[#2F4191] tracking-wide">
-                        ₹ {price}
+                        ₹ {product.price}
                     </div>
 
                     <p className="text-xs text-gray-500">

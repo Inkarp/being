@@ -25,7 +25,7 @@ export default function Search() {
       try {
         const res = await fetch(`/api/products?q=${encodeURIComponent(query)}`);
         const data = await res.json();
-        setResults(data.slice(0, 8)); // limit results
+        setResults(data.slice(0, 8));
       } catch (err) {
         console.error('Search error:', err);
         setResults([]);
@@ -60,14 +60,14 @@ export default function Search() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="
-            w-full rounded-full border border-gray-300 placeholder-white
+            w-full rounded-full border border-gray-300
             py-2.5 pl-10 pr-4 text-sm
             focus:outline-none focus:ring-2 focus:ring-[#2B7EC2]/40
           "
         />
 
         <FaSearch
-          className="absolute left-4 top-1/2 -translate-y-1/2 text-white"
+          className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"
           size={14}
         />
       </div>
@@ -85,13 +85,9 @@ export default function Search() {
         >
           {results.map((item, index) => (
             <button
-              key={`${item.slug}-${index}`}
+              key={`${item.id}-${index}`}
               onClick={() => {
-                router.push(
-                  `/products/${item.category.toLowerCase().replace(/\s+/g, '-')}/${item.subcategory
-                    .toLowerCase()
-                    .replace(/\s+/g, '-')}/${item.slug}`
-                );
+                router.push(item.url);   // ✅ SINGLE SOURCE OF TRUTH
                 setQuery('');
                 setResults([]);
               }}
@@ -101,11 +97,12 @@ export default function Search() {
                 hover:bg-gray-50 transition
               "
             >
+              {/* IMAGE */}
               <div className="relative w-14 h-14 shrink-0 bg-gray-50 rounded-xl overflow-hidden border">
-                {item.thumbnail ? (
+                {item.image ? (
                   <Image
-                    src={item.thumbnail}
-                    alt={ item.title}
+                    src={item.image}
+                    alt={item.title}
                     fill
                     className="object-contain p-1"
                   />
@@ -119,10 +116,10 @@ export default function Search() {
               {/* TEXT */}
               <div className="flex flex-col min-w-0">
                 <span className="text-sm font-semibold text-gray-900 truncate">
-                  {item.name}
+                  {item.title}
                 </span>
                 <span className="text-xs text-gray-500 capitalize">
-                  {item.subcategory}
+                  {item.category.replace('-', ' ')} / {item.subcategory}
                 </span>
               </div>
             </button>

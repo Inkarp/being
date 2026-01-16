@@ -27,16 +27,6 @@ export default function ProductActionSection({
 
                 {/* ===== ROW 1 : BRAND / PARTNER (MOBILE) ===== */}
                 <div className="flex justify-center lg:justify-start items-center gap-4 flex-wrap">
-                    {product.gem && (
-                        <Image
-                            src="/Gem.png"
-                            alt="Gem Product"
-                            width={90}
-                            height={90}
-                            className="shrink-0"
-                        />
-                    )}
-
                     <button
                         onClick={() => setIsExclusivePatnership(true)}
                         className="group flex items-center gap-3 bg-[#2B7EC2] text-white px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:bg-[#2F4191] transition duration-300 hover:scale-105 cursor-pointer"
@@ -49,6 +39,15 @@ export default function ProductActionSection({
                             <span className="block font-bold">Exclusive Partner</span>
                         </span>
                     </button>
+                    {product.gem && (
+                        <Image
+                            src="/Gem.png"
+                            alt="Gem Product"
+                            width={90}
+                            height={90}
+                            className="shrink-0"
+                        />
+                    )}
                 </div>
 
                 {/* ===== ROW 2 : ACTION BUTTONS ===== */}
@@ -74,7 +73,7 @@ export default function ProductActionSection({
                         <button
                             onClick={() => !priceUnlocked && setIsPriceOpen(true)}
                             className="bg-[#2F4191] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2B7EC2] transition duration-300 w-full sm:w-auto cursor-pointer hover:scale-105"
-       
+
                         >
                             {priceUnlocked ? `₹ ${product.price}` : 'Request Price'}
                         </button>

@@ -38,21 +38,23 @@ export async function GET(request) {
 
       data.subcategories?.forEach((sub) => {
         sub.models?.forEach((model) => {
-          const title = model.meta.title.toLowerCase();
+          const title = model.meta.title?.toLowerCase() || "";
           const keywords = model.meta.keywords?.toLowerCase() || "";
 
           if (title.includes(q) || keywords.includes(q)) {
             results.push({
-              id: `${categorySlug}/${sub.slug}/${model.meta.slug}`,
+              id: model.meta.slug,
               title: model.title,
               image: model.thumbnail,
+              category: categorySlug,
+              subcategory: sub.slug,
               url: `/products/${categorySlug}/${sub.slug}/${model.meta.slug}`,
             });
           }
         });
       });
     } catch (err) {
-      console.warn(`Search skip: ${categorySlug}`);
+      console.warn(`Search skipped: ${categorySlug}`);
     }
   }
 

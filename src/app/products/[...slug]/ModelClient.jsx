@@ -264,17 +264,17 @@ export default function Model() {
                 </div>
             </div>
 
-             <ProductActionSection
-                    product={product}
-                    activeTab={activeTab}
-                    setActiveTab={setActiveTab}
-                    handleShare={handleShare}
-                    priceUnlocked={priceUnlocked}
-                    setIsPriceOpen={setIsPriceOpen}
-                    setIsEnquiryOpen={setIsEnquiryOpen}
-                    setIsExclusivePatnership={setIsExclusivePatnership}
-                    setIsServiceOpen={setIsServiceOpen}
-                />
+            <ProductActionSection
+                product={product}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+                handleShare={handleShare}
+                priceUnlocked={priceUnlocked}
+                setIsPriceOpen={setIsPriceOpen}
+                setIsEnquiryOpen={setIsEnquiryOpen}
+                setIsExclusivePatnership={setIsExclusivePatnership}
+                setIsServiceOpen={setIsServiceOpen}
+            />
             <div className='text-center py-2'>Disclaimer: Specifications are indicative. Performance may vary depending on load, usage, and ambient conditions.</div>
 
             <EnquiryModal
@@ -306,11 +306,12 @@ export default function Model() {
                 isOpen={showPricePopup}
                 onClose={() => setShowPricePopup(false)}
                 product={{
-                    title: product.meta.title,
+                    title: product.title,
                     thumbnail: product.meta.thumbnail,
+                    price: product.price,   // ✅ ADD THIS
                 }}
-                price={product.meta.price}
             />
+
 
             <ExclusivePartner
                 isOpen={isExclusivePatnership}

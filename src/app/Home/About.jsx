@@ -28,7 +28,7 @@ export default function About() {
           {/* Badge */}
           <div className="inline-flex items-center">
             <span className="px-5 py-2.5 bg-gradient-to-br from-[#2F4191]/50 to-[#2B7EC2]/50 text-xs font-bold uppercase tracking-widest border-2 border-gray-200 rounded-full shadow-sm">
-              About Inkarp
+              About Us
             </span>
           </div>
 
