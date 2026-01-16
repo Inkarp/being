@@ -1,7 +1,7 @@
 'use client';
 export default function ContactHeader() {
   return (
-    <section className="relative h-[300px] w-[95%] mx-auto rounded-[20px] overflow-hidden">
+    <section className="relative h-[300px] w-full overflow-hidden">
       {/* Background image with dark overlay */}
       <div className="absolute inset-0">
         <img

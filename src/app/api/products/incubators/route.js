@@ -5,8 +5,8 @@ export async function GET() {
     category: "Incubators",
     subcategories: [
       {
-        name: "Laboratory Drying Oven",
-        slug: "laboratory-drying-oven",
+        name: "Heating Incubators",
+        slug: "heating-incubators",
         models: [
 
           /* ================== BPG-9040A ================== */

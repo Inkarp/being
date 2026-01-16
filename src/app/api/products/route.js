@@ -58,5 +58,5 @@ export async function GET(request) {
     }
   }
 
-  return NextResponse.json(results.slice(0, 10));
+  return NextResponse.json(results.slice(0, 20));
 }

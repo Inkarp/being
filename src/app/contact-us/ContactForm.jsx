@@ -1,7 +1,6 @@
 'use client';
-import { useState } from 'react';
-import { FaUser, FaEnvelope } from 'react-icons/fa';
-import { FaClock, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { useState, useEffect, useRef } from 'react';
+import { FaUser, FaEnvelope, FaClock, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function ContactFormSection() {
   const [form, setForm] = useState({
@@ -23,6 +22,8 @@ export default function ContactFormSection() {
 
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,22 +39,7 @@ export default function ContactFormSection() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          company: form.company,
-          industry: form.industry,
-          designation: form.designation,
-          department: form.department,
-          email: form.email,
-          phone: form.phone,
-          enquiredProduct: form.enquiredProduct,
-          typeOfCustomer: form.typeOfCustomer,
-          purchasePlan: form.purchasePlan,
-          country: form.country,
-          state: form.state,
-          city: form.city,
-          message: form.message,
-        }),
+        body: JSON.stringify(form),
       });
 
       if (!res.ok) throw new Error('Failed');
@@ -82,293 +68,295 @@ export default function ContactFormSection() {
     }
   };
 
+  // Sync heights between left and right panels
+  useEffect(() => {
+    const syncHeights = () => {
+      if (leftRef.current && rightRef.current) {
+        const rightHeight = rightRef.current.scrollHeight;
+        leftRef.current.style.height = `${rightHeight}px`;
+      }
+    };
+
+    syncHeights();
+    window.addEventListener('resize', syncHeights);
+    return () => window.removeEventListener('resize', syncHeights);
+  }, [form, status]);
+
   return (
-    <section className="w-[95%] mx-auto py-3">
-      <div className="flex flex-col justify-center items-center md:flex-row overflow-hidden space-x-3 p-5">
-        {/* Left: Form */}
-     
-        <div className="relative w-full md:w-1/2 h-full md:h-auto">
-          {/* <video
-            src="/bg-video.mov"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover rounded-2xl"
-          /> */}
+    <section className="w-full py-5 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch ">
+        {/* Left: Contact Info - Glassmorphism Effect */}
+        <div 
+          ref={leftRef}
+          className="relative h-full min-h-[600px] group"
+        >
+          {/* Animated Background Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-indigo-600/20 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl transform group-hover:scale-[1.02] transition-all duration-500" />
+          
+          {/* Content */}
+          <div className="relative z-10 flex items-center justify-center h-full px-8 py-12">
+            <div className="w-full max-w-md space-y-8 text-white">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl lg:text-5xl font-black text-black bg-gradient-to-r from-white to-blue-100 bg-clip-text mb-4">
+                  Let’s Connect!
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full" />
+              </div>
 
-          <div className="absolute inset-0 flex items-center justify-center px-4 ">
-            <div className="w-full max-w-md px-4 py-5 shadow-2xl rounded-3xl bg-black/10 text-black ">
-              <h2 className="text-3xl font-bold mb-8">Let’s Get In Touch!</h2>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-black p-3 rounded-lg">
-                  
+              <div className="space-y-3">
+                {[
+                  { icon: FaClock, title: "Office Hours", info: "Mon–Fri: 10:00AM–09:00PM", color: "from-yellow-400 to-orange-500" },
+                  { icon: FaPhoneAlt, title: "Call Anytime", info: "+(009) 1888 000 2222", color: "from-green-400 to-emerald-500" },
+                  { icon: FaEnvelope, title: "Email Us", info: "info@techin.com", color: "from-blue-400 to-cyan-500" },
+                  { icon: FaMapMarkerAlt, title: "Our Location", info: "12th Street, New York, USA", color: "from-purple-400 to-violet-500" },
+                  { icon: FaClock, title: "Office Hours", info: "Mon–Fri: 10:00AM–09:00PM", color: "from-yellow-400 to-orange-500" },
+                  { icon: FaPhoneAlt, title: "Call Anytime", info: "+(009) 1888 000 2222", color: "from-green-400 to-emerald-500" },
+                  { icon: FaEnvelope, title: "Email Us", info: "info@techin.com", color: "from-blue-400 to-cyan-500" },
+                  { icon: FaMapMarkerAlt, title: "Our Location", info: "12th Street, New York, USA", color: "from-purple-400 to-violet-500" }
+                ].map(({ icon: Icon, title, info, color }, idx) => (
+                  <div key={idx} className="group/contact flex items-start gap-4 p-4 hover:bg-white/10 rounded-2xl transition-all duration-300 hover:backdrop-blur-sm hover:scale-[1.02]">
+                    <div className={`w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-r ${color} shadow-lg group-hover/contact:rotate-12 transition-transform duration-300 flex-shrink-0`}>
+                      <Icon className="w-7 h-7 text-white shadow-md" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-[#2F4191] text-lg mb-1">{title}</h4>
+                      <p className="text-black font-medium text-lg">{info}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-black">Office Time</h4>
-                    <p className="text-sm text-white">Mon–Fri: 10:00Am–09:00Pm</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-black p-3 rounded-lg">
-                
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-black">Call Us Any Time</h4>
-                    <p className="text-sm text-blue-100">+(009) 1888 000 2222</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-black p-3 rounded-lg">
-              
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-black">Email Address</h4>
-                    <p className="text-sm text-blue-100">info@techin.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-black p-3 rounded-lg">
-                   
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-black">Office Address</h4>
-                    <p className="text-sm text-blue-100">12th Street, New York, USA</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
-           {/* Right: Form */}
-        <div className="w-full h-auto md:w-1/2 bg-[#f7f6ff] p-5 space-y-3 rounded-2xl">
-          <div className=''>
-            <h2 className="text-3xl font-extrabold mt-2">Contact Information Here</h2>
+
+        {/* Right: Form */}
+        <div 
+          ref={rightRef}
+          className="bg-gradient-to-b from-white to-slate-50 rounded-3xl shadow-2xl p-8 lg:p-12 border border-slate-200/50 backdrop-blur-sm h-full flex flex-col justify-center"
+        >
+          <div className="text-center">
+            <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent mb-4">
+              Get In Touch
+            </h2>
+            <p className="text-slate-600 font-medium text-lg max-w-md mx-auto">
+              Fill out the form below and our team will get back to you within 24 hours
+            </p>
           </div>
 
-          <form className="space-y-4" onSubmit={handleSubmit}>
-            {/* Row 1: Name, Company */}
-            <div className="flex gap-4">
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                />
-               
-              </div>
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  name="company"
-                  placeholder="Company Name"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                  value={form.company}
-                  onChange={handleChange}
-                  required
-                />
-            
-              </div>
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            {/* 2-Column Grid Rows */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <InputField 
+                name="name" 
+                placeholder="Full Name *" 
+                value={form.name} 
+                onChange={handleChange}
+                icon={FaUser}
+                required
+              />
+              <InputField 
+                name="company" 
+                placeholder="Company Name *" 
+                value={form.company} 
+                onChange={handleChange}
+                required
+              />
             </div>
 
-            {/* Row 2: Industry, Designation */}
-            <div className="flex gap-4">
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  name="industry"
-                  placeholder="Industry"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                  value={form.industry}
-                  onChange={handleChange}
-                  required
-                />
-               
-              </div>
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  name="designation"
-                  placeholder="Designation"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                  value={form.designation}
-                  onChange={handleChange}
-                  required
-                />
-               
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <InputField 
+                name="industry" 
+                placeholder="Industry *" 
+                value={form.industry} 
+                onChange={handleChange}
+                required
+              />
+              <InputField 
+                name="designation" 
+                placeholder="Designation *" 
+                value={form.designation} 
+                onChange={handleChange}
+                required
+              />
             </div>
 
-            {/* Row 3: Department, Email */}
-            <div className="flex gap-4">
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  name="department"
-                  placeholder="Department"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                  value={form.department}
-                  onChange={handleChange}
-                  required
-                />
-               
-              </div>
-              <div className="flex-1 relative">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                />
-             
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <InputField 
+                name="department" 
+                placeholder="Department *" 
+                value={form.department} 
+                onChange={handleChange}
+                required
+              />
+              <InputField 
+                name="email" 
+                type="email"
+                placeholder="Email Address *" 
+                value={form.email} 
+                onChange={handleChange}
+                icon={FaEnvelope}
+                required
+              />
             </div>
 
-            {/* Row 4: Phone, Enquired Product */}
-            <div className="flex gap-4">
-              <div className="flex-1 relative">
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Contact Number"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                  value={form.phone}
-                  onChange={handleChange}
-                  required
-                />
-               
-              </div>
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  name="enquiredProduct"
-                  placeholder="Enquired Product"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                  value={form.enquiredProduct}
-                  onChange={handleChange}
-                  required
-                />
-               
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <InputField 
+                name="phone" 
+                type="tel"
+                placeholder="Phone Number *" 
+                value={form.phone} 
+                onChange={handleChange}
+                required
+              />
+              <InputField 
+                name="enquiredProduct" 
+                placeholder="Product Interested *" 
+                value={form.enquiredProduct} 
+                onChange={handleChange}
+                required
+              />
             </div>
 
-            {/* Row 5: Type Of Customer, Purchase Plan */}
-            <div className="flex gap-4">
-              <div className="flex-1 relative">
-                <select
-                  name="typeOfCustomer"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10 bg-white"
-                  value={form.typeOfCustomer}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="" disabled>
-                    Type Of Customer
-                  </option>
-                  <option value="existing">Existing</option>
-                  <option value="new">New</option>
-                </select>
-              </div>
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  name="purchasePlan"
-                  placeholder="Purchase Plan"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                  value={form.purchasePlan}
-                  onChange={handleChange}
-                  required
-                />
-             
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <SelectField
+                name="typeOfCustomer"
+                value={form.typeOfCustomer}
+                onChange={handleChange}
+                options={[
+                  { value: "existing", label: "Existing Customer" },
+                  { value: "new", label: "New Customer" }
+                ]}
+                placeholder="Customer Type *"
+                required
+              />
+              <InputField 
+                name="purchasePlan" 
+                placeholder="Purchase Plan *" 
+                value={form.purchasePlan} 
+                onChange={handleChange}
+                required
+              />
             </div>
 
-            {/* Row 6: Country, State */}
-            <div className="flex gap-4">
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  name="country"
-                  placeholder="Country"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                  value={form.country}
-                  onChange={handleChange}
-                  required
-                />
-               
-              </div>
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  name="state"
-                  placeholder="State"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                  value={form.state}
-                  onChange={handleChange}
-                  required
-                />
-              
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <InputField 
+                name="country" 
+                placeholder="Country *" 
+                value={form.country} 
+                onChange={handleChange}
+                required
+              />
+              <InputField 
+                name="state" 
+                placeholder="State *" 
+                value={form.state} 
+                onChange={handleChange}
+                required
+              />
             </div>
 
-            {/* Row 7: City */}
-            <div className="flex gap-4">
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  name="city"
-                  placeholder="City"
-                  className="w-full px-4 py-2 rounded-md shadow-sm pr-10"
-                  value={form.city}
-                  onChange={handleChange}
-                  required
-                />
-              
-              </div>
-            </div>
-
-            {/* Message (optional) */}
-            <textarea
-              rows={5}
-              name="message"
-              placeholder="Message Here..."
-              className="w-full px-4 py-3 rounded-md shadow-sm resize-none"
-              value={form.message}
+            <InputField 
+              name="city" 
+              placeholder="City *" 
+              value={form.city} 
               onChange={handleChange}
+              className="md:col-span-2"
+              required
             />
 
-            {/* Submit Button + Status */}
+            <div className="md:col-span-2">
+              <label className="block text-sm font-semibold text-slate-700 mb-3">
+                Message (Optional)
+              </label>
+              <textarea
+                rows={5}
+                name="message"
+                placeholder="Tell us more about your requirements..."
+                className="w-full px-5 py-4 rounded-2xl border border-slate-200 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-vertical bg-slate-50/50 backdrop-blur-sm"
+                value={form.message}
+                onChange={handleChange}
+              />
+            </div>
+
             <button
               type="submit"
-              className="bg-blue-600 text-white font-bold py-2 px-6 rounded-md shadow hover:bg-blue-700 transition disabled:opacity-60"
+              className="md:col-span-2 w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-black py-5 px-8 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-[1.02] hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden group/btn"
               disabled={loading}
             >
-              {loading ? 'Sending...' : 'Send Message'}
+              {loading ? (
+                <span className="flex items-center justify-center gap-3">
+                  <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  Sending...
+                </span>
+              ) : (
+                'Send Enquiry Now'
+              )}
+              <div className="absolute inset-0 bg-white/20 scale-0 group-hover/btn:scale-100 rounded-2xl transition-transform duration-300" />
             </button>
 
             {status === 'success' && (
-              <p className="text-sm text-green-600 mt-2">Enquiry sent successfully!</p>
+              <div className="md:col-span-2 bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
+                <div className="text-green-600 font-semibold text-lg mb-2">✅ Enquiry Sent Successfully!</div>
+                <p className="text-green-700">Our team will contact you within 24 hours.</p>
+              </div>
             )}
+            
             {status === 'error' && (
-              <p className="text-sm text-red-600 mt-2">
-                Failed to send enquiry. Please try again.
-              </p>
+              <div className="md:col-span-2 bg-red-50 border border-red-200 rounded-2xl p-6 text-center">
+                <div className="text-red-600 font-semibold text-lg mb-2">❌ Failed to Send</div>
+                <p className="text-red-700">Please try again or contact us directly.</p>
+              </div>
             )}
           </form>
         </div>
       </div>
     </section>
+  );
+}
+
+// Reusable Input Component
+function InputField({ name, placeholder, value, onChange, type = "text", icon: Icon, className = "", required, ...props }) {
+  return (
+    <div className={`relative group ${className}`}>
+      {Icon && (
+        <Icon className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-500 transition-colors w-5 h-5" />
+      )}
+      <input
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        className={`w-full pl-12 pr-5 py-4 rounded-2xl border border-slate-200 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-slate-50/50 backdrop-blur-sm hover:shadow-md min-h-[56px] ${
+          required ? 'required' : ''
+        }`}
+        value={value}
+        onChange={onChange}
+        {...props}
+      />
+    </div>
+  );
+}
+
+// Reusable Select Component
+function SelectField({ name, value, onChange, options, placeholder, required, className = "" }) {
+  return (
+    <div className={`relative group ${className}`}>
+      <select
+        name={name}
+        className="w-full pl-12 pr-5 py-4 rounded-2xl border border-slate-200 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-slate-50/50 backdrop-blur-sm hover:shadow-md appearance-none min-h-[56px] cursor-pointer"
+        value={value}
+        onChange={onChange}
+        required={required}
+      >
+        <option value="" disabled>{placeholder}</option>
+        {options.map(({ value: optValue, label }) => (
+          <option key={optValue} value={optValue}>{label}</option>
+        ))}
+      </select>
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+        <svg className="w-5 h-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </div>
   );
 }
