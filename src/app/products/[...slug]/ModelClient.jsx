@@ -28,7 +28,6 @@ import ProductTabContent from './ProductTabContent';
 import ProductActionSection from './ProductActionSection';
 
 export default function Model() {
-
     /* ---------------- SHARE BUTTON ---------------- */
     const handleShare = async () => {
         const url = window.location.href;
@@ -147,8 +146,6 @@ export default function Model() {
             </p>
         );
     }
-
-
 
     return (
         <section className="w-full mx-auto p-5">
@@ -333,7 +330,7 @@ export default function Model() {
                 }}
             />
 
-            {/* {subCategory?.models?.length > 1 && (
+            {subCategory?.models?.length > 1 && (
                 <PopupModal
                     models={subCategory.models}
                     categorySlug={categorySlug}
@@ -345,7 +342,7 @@ export default function Model() {
                         setIsModalOpen(false);
                     }}
                 />
-            )} */}
+            )}
             {categoryData?.subcategories?.length > 1 && (
                 <RelatedModels
                     subcategories={categoryData.subcategories}

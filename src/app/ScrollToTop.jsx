@@ -25,7 +25,7 @@ export default function ScrollToTop() {
   return (
     <>
       {isVisible && (
-        <div className="fixed bottom-30 right-2 z-50 flex flex-col items-center gap-4">
+        <div className="fixed bottom-30 right-0 z-50 flex flex-col items-center gap-4">
           {/* Scroll to Top Button */}
           <button
             onClick={scrollToTop}

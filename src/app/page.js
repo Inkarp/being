@@ -9,6 +9,7 @@ import Offerings from './Home/Offerings';
 import Blogs from './Home/Blogs';
 import Footer from './Home/Footer';
 import BlogsNew from './Home/BlogsNew';
+import Chatbot from './Home/Chatbot';
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <About />
       <Blogs />
       <BlogsNew />
+      {/* <Chatbot /> */}
     </div>
   );
 }

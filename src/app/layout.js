@@ -6,6 +6,7 @@ import ScrollToTop from "./ScrollToTop";
 import Header from "./Home/Header";
 import Footer from "./Home/Footer";
 import ShareButton from "./ShareButton";
+import ChatModal from "./Home/ChatModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,8 +32,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <head>
-        {/* ✅ Collect Chat Script */}
+      {/* <head>
+     
         <Script
           id="collect-chat"
           strategy="afterInteractive"
@@ -51,7 +52,7 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-      </head>
+      </head> */}
 
       <body className="bg-white">
         <ScrollToTop />
@@ -61,7 +62,7 @@ export default function RootLayout({ children }) {
         <main className="w-[90%] mx-auto pt-20">
           {children}
         </main>
-
+        <ChatModal />
         <Footer />
       </body>
     </html>

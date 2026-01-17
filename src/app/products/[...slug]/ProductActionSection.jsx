@@ -59,7 +59,7 @@ export default function ProductActionSection({
                         className="flex items-center justify-center gap-2 bg-white text-[#2F4191] border border-[#2F4191] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2F4191] hover:text-white transition duration-300 w-full sm:w-auto cursor-pointer hover:scale-105"
                     >
                         <FaFileDownload size={14} />
-                        Brochure
+                        Download Brochure
                     </button>
 
                     <button

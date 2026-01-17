@@ -29,20 +29,11 @@ export default function PopupModel({ models, categorySlug, subSlug }) {
     const activeModel = models[activeIndex];
 
     return (
-        <div className="fixed top-1/3 left-2 z-[60] w-[300px] max-w-[90vw]">
+        <div className="fixed right-2 bottom-2 z-[60] w-[300px] max-w-[90vw]">
             {/* Enhanced glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/20 to-cyan-500/30 rounded-3xl blur-xl -z-10 animate-pulse" />
-
             {/* Main glass card - DARKER for text elevation */}
-            <div className="
-        relative overflow-hidden
-        rounded-3xl border-2 border-white/20
-        bg-gradient-to-b from-slate-900/95 to-slate-800/90
-        backdrop-blur-3xl
-        shadow-2xl shadow-slate-900/50
-        before:absolute before:inset-0 before:bg-gradient-to-r 
-        before:from-blue-500/5 before:to-purple-500/5 before:blur-xl
-      ">
+            <div className="relative overflow-hidden rounded-3xl border-2 border-white/20 bg-gradient-to-b from-slate-900/95 to-slate-800/90 backdrop-blur-3xl shadow-2xl shadow-slate-900/50 before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-500/5 before:to-purple-500/5 before:blur-xl">
                 {/* Top accent glow */}
                 <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-blue-400/80 via-cyan-400/80 to-purple-500/80 shadow-lg" />
 
