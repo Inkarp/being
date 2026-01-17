@@ -11,7 +11,7 @@ export default function SocialContactBar() {
       {/* <Chatbot open={chatOpen} onClose={() => setChatOpen(false)} /> */}
 
       <div className="fixed right-2 top-1/2 -translate-y-1/2 z-40">
-        <div className="flex flex-col items-center gap-4 bg-white/70 border backdrop-blur p-2 rounded-2xl shadow-xl">
+        <div className="flex flex-col items-center gap-4 bg-white/70 border border-black/20 backdrop-blur p-2 rounded-2xl shadow-xl">
           {/* <button
             onClick={() => setChatOpen(true)}
             className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition"

@@ -27,7 +27,7 @@ export default function Chatbot({ open, onClose }) {
   if (!open) return null;
 
   const current = questions[step];
-  const isLastStep = step === questions.length - 1;
+  const isLastStep = step === questions.length - 1 ;
 
   const saveAnswer = (value) => {
     setAnswers((prev) => ({ ...prev, [current.key]: value }));

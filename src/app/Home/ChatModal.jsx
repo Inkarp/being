@@ -8,11 +8,7 @@ export default function ChatModal() {
 
   return (
     <>
-      {/* Chatbot Popup */}
       <Chatbot open={open} onClose={() => setOpen(false)} />
-
-      {/* Floating Message Icon */}
-     
       <button
         onClick={() => setOpen(true)}
         className="fixed bottom-6 right-2 z-40 w-16 h-16 rounded-full
