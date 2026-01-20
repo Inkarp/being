@@ -25,7 +25,7 @@ export const metadata = {
   },
   description: "Scientific & Analytical Instrument Solutions",
   icons: {
-    icon: "/inkarpCircle.png", 
+    icon: "/favicon.png", 
   },
 };
 

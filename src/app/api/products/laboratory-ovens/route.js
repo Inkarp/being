@@ -158,6 +158,23 @@ export async function GET() {
                 "/service6.webp",
 
               ]
+            },
+            installtions: {
+              description:
+                "As the OEM for the BPG-9070A Laboratory Drying Oven in India, we provide factory-authorized pan-India installation, commissioning, operator training, preventive maintenance, calibration support, and after-sales service. Trained service engineers and genuine spare parts ensure reliable performance, minimal downtime, and long-term operational confidence for laboratories across India.",
+              items: [
+                "IIT Bombay",
+                "IIT Madras",
+                "IIT Delhi",
+                "IIT Kanpur",
+                "NABL Accredited Labs",
+                "DRDO Laboratories",
+                "CSIR Labs",
+                "Pharmaceutical QC Labs",
+                "Biotech Research Labs",
+                "Food Testing Labs",
+                "Chemical Testing Labs",
+              ]
             }
 
           },
@@ -250,48 +267,48 @@ export async function GET() {
                 "This FAQ section provides clear responses to commonly raised questions about the BPG-9070A Laboratory Drying Oven, covering its intended laboratory use, airflow design, suitability for regulated environments, operational safety, data documentation options, and long-term service support. The information below is intended to help users evaluate day-to-day usability and performance considerations specific to this model.",
               ],
               items: [
-              {
-                "question": "What is a laboratory drying oven used for? ",
-                "answer": "A laboratory drying oven is used to remove moisture from samples, dry laboratory glassware, and perform controlled heating or heat treatment under uniform temperature conditions. It is widely used in pharmaceutical, chemical, biotechnology, research, and food testing laboratories to ensure accurate, repeatable, and compliant results."
-              },
-              {
-                "question": "How does the BPG-9040A laboratory drying oven work?",
-                "answer": "The BPG-9040A operates using a forced hot air circulation system that distributes heat evenly throughout the chamber. A digital temperature controller regulates heating cycles to maintain stable temperature conditions, preventing localized overheating and ensuring consistent sample processing."
-              },
-              {
-                "question": "Which laboratories commonly use the BPG-9040A drying oven?",
-                "answer": "The BPG-9040A is commonly used in pharmaceutical quality control laboratories, academic and industrial research facilities, biotechnology labs, chemical industries, and food and agriculture testing laboratories across India."
-              },
-              {
-                "question": "Is the BPG-9040A suitable for pharmaceutical applications?",
-                "answer": "Yes. The BPG-9040A is well suited for pharmaceutical applications such as drying powders, glassware, packaging materials, and conditioning samples prior to analysis. Its temperature accuracy and uniformity support reproducible and compliant results."
-              },
-              {
-                "question": "What temperature range does the BPG-9040A support?",
-                "answer": "The BPG-9040A supports a temperature range of ambient +10 °C to 250 °C, covering most routine laboratory drying and heating requirements."
-              },
-              {
-                "question": "Does the BPG-9040A provide uniform temperature distribution?",
-                "answer": "Yes. The forced air circulation system ensures uniform temperature distribution throughout the chamber, minimizing temperature gradients and supporting repeatable laboratory outcomes."
-              },
-              {
-                "question": "Can the BPG-9040A be used for long-duration heating cycles?",
-                "answer": "Yes. The oven is designed for continuous and long-duration operation and includes a digital timer of up to 5999 minutes, along with over-temperature protection for safe extended use."
-              },
-              {
-                "question": "Is data monitoring or recording supported?",
-                "answer": "Yes. Optional RS-485 and RS-232 communication interfaces allow integration with external data logging and monitoring systems for validation and traceability."
-              },
-              {
-                "question": "Are you the OEM for this product in India?",
-                "answer": "Yes. We are the OEM for the BPG-9040A Laboratory Drying Oven in India, providing direct manufacturing assurance, factory-authorized service, and genuine spare parts support."
-              },
-              {
-                "question": "What should be considered when selecting a laboratory drying oven?",
-                "answer": "Key considerations include temperature range, accuracy, uniformity, chamber capacity, safety features, and availability of OEM-authorized service support. The BPG-9040A offers a balanced combination of performance, safety, and long-term support for Indian laboratories."
-              }
-            ]
-          },
+                {
+                  "question": "What is a laboratory drying oven used for? ",
+                  "answer": "A laboratory drying oven is used to remove moisture from samples, dry laboratory glassware, and perform controlled heating or heat treatment under uniform temperature conditions. It is widely used in pharmaceutical, chemical, biotechnology, research, and food testing laboratories to ensure accurate, repeatable, and compliant results."
+                },
+                {
+                  "question": "How does the BPG-9040A laboratory drying oven work?",
+                  "answer": "The BPG-9040A operates using a forced hot air circulation system that distributes heat evenly throughout the chamber. A digital temperature controller regulates heating cycles to maintain stable temperature conditions, preventing localized overheating and ensuring consistent sample processing."
+                },
+                {
+                  "question": "Which laboratories commonly use the BPG-9040A drying oven?",
+                  "answer": "The BPG-9040A is commonly used in pharmaceutical quality control laboratories, academic and industrial research facilities, biotechnology labs, chemical industries, and food and agriculture testing laboratories across India."
+                },
+                {
+                  "question": "Is the BPG-9040A suitable for pharmaceutical applications?",
+                  "answer": "Yes. The BPG-9040A is well suited for pharmaceutical applications such as drying powders, glassware, packaging materials, and conditioning samples prior to analysis. Its temperature accuracy and uniformity support reproducible and compliant results."
+                },
+                {
+                  "question": "What temperature range does the BPG-9040A support?",
+                  "answer": "The BPG-9040A supports a temperature range of ambient +10 °C to 250 °C, covering most routine laboratory drying and heating requirements."
+                },
+                {
+                  "question": "Does the BPG-9040A provide uniform temperature distribution?",
+                  "answer": "Yes. The forced air circulation system ensures uniform temperature distribution throughout the chamber, minimizing temperature gradients and supporting repeatable laboratory outcomes."
+                },
+                {
+                  "question": "Can the BPG-9040A be used for long-duration heating cycles?",
+                  "answer": "Yes. The oven is designed for continuous and long-duration operation and includes a digital timer of up to 5999 minutes, along with over-temperature protection for safe extended use."
+                },
+                {
+                  "question": "Is data monitoring or recording supported?",
+                  "answer": "Yes. Optional RS-485 and RS-232 communication interfaces allow integration with external data logging and monitoring systems for validation and traceability."
+                },
+                {
+                  "question": "Are you the OEM for this product in India?",
+                  "answer": "Yes. We are the OEM for the BPG-9040A Laboratory Drying Oven in India, providing direct manufacturing assurance, factory-authorized service, and genuine spare parts support."
+                },
+                {
+                  "question": "What should be considered when selecting a laboratory drying oven?",
+                  "answer": "Key considerations include temperature range, accuracy, uniformity, chamber capacity, safety features, and availability of OEM-authorized service support. The BPG-9040A offers a balanced combination of performance, safety, and long-term support for Indian laboratories."
+                }
+              ]
+            },
 
             feedback: [
               "/service1.webp",
@@ -414,47 +431,47 @@ export async function GET() {
                 "This section addresses practical questions commonly raised by laboratories using or evaluating the BPG-9140A Laboratory Drying Oven, with a focus on large-capacity operation, airflow performance, application suitability, safety considerations, documentation options, and service support relevant to high-throughput laboratory environments.",
               ],
               items: [
-              {
-                "question": "What is the BPG-9140A laboratory drying oven used for?",
-                "answer": "The BPG-9140A laboratory drying oven is used for controlled drying, heating, and thermal processing of large sample volumes under uniform temperature conditions. It supports applications such as moisture removal, glassware drying, solvent evaporation, polymer curing, and stability studies. The stable thermal environment helps laboratories achieve repeatable results while maintaining sample integrity during extended operating cycles."
-              },
-              {
-                "question": "How does forced-air circulation benefit large-capacity drying ovens?",
-                "answer": "Forced-air circulation ensures uniform heat distribution throughout the large 150-litre chamber of the BPG-9140A. This minimizes temperature gradients and prevents uneven heating, allowing all samples to experience consistent thermal conditions. As a result, laboratories can achieve accurate and repeatable drying or heating outcomes even when processing high sample loads."
-              },
-              {
-                "question": "Is the BPG-9140A suitable for pharmaceutical laboratories?",
-                "answer": "Yes. The BPG-9140A is well suited for pharmaceutical laboratories for drying glassware, sterilising materials, reagent preparation, and sample conditioning. Its temperature accuracy, uniform airflow, and built-in safety alarms support reproducible results and help laboratories maintain compliance with quality and regulatory requirements."
-              },
-              {
-                "question": "Can the BPG-9140A support continuous and long-duration heating cycles?",
-                "answer": "Yes. The BPG-9140A is designed for continuous and long-duration operation. It includes a programmable digital timer of up to 5999 minutes and built-in safety alarms for over-temperature and system faults. These features allow safe, unattended operation during extended drying or heating processes."
-              },
-              {
-                "question": "What industries commonly use the BPG-9140A laboratory drying oven?",
-                "answer": "The BPG-9140A is commonly used in pharmaceutical, research, material science, chemical, industrial, and food testing laboratories across India. Its large chamber capacity and stable thermal performance make it suitable for laboratories that require higher throughput and consistent temperature control."
-              },
-              {
-                "question": "Does the BPG-9140A provide uniform temperature control across all shelves?",
-                "answer": "Yes. The forced-air circulation system ensures even airflow across all three adjustable shelves, maintaining uniform temperature distribution throughout the chamber. This helps ensure consistent processing results regardless of sample placement or chamber loading."
-              },
-              {
-                "question": "Can the BPG-9140A be used for material science applications?",
-                "answer": "Yes. The BPG-9140A is suitable for material science applications such as polymer curing, composite testing, and accelerated aging studies. Its precise temperature control and uniform heating support accurate evaluation of material properties under controlled thermal conditions."
-              },
-              {
-                "question": "Is data monitoring or documentation supported on the BPG-9140A?",
-                "answer": "Yes. The BPG-9140A supports optional RS-485 communication or printer connectivity, enabling temperature data monitoring and recording. This is beneficial for laboratories that require documentation, validation, or traceability of thermal processes."
-              },
-              {
-                "question": "Are you the OEM for the BPG-9140A laboratory drying oven in India?",
-                "answer": "Yes. We are the OEM for the BPG-9140A Laboratory Drying Oven in India, providing direct manufacturing assurance along with factory-authorized installation, service support, and access to genuine spare parts for long-term reliability."
-              },
-              {
-                "question": "What factors should be considered when selecting a large-capacity laboratory drying oven?",
-                "answer": "When selecting a large-capacity laboratory drying oven, laboratories should consider chamber size, temperature range, accuracy, uniformity, safety features, and availability of OEM-authorized service support. The BPG-9140A offers a balanced combination of capacity, performance, safety, and long-term support for Indian laboratories."
-              }
-            ]
+                {
+                  "question": "What is the BPG-9140A laboratory drying oven used for?",
+                  "answer": "The BPG-9140A laboratory drying oven is used for controlled drying, heating, and thermal processing of large sample volumes under uniform temperature conditions. It supports applications such as moisture removal, glassware drying, solvent evaporation, polymer curing, and stability studies. The stable thermal environment helps laboratories achieve repeatable results while maintaining sample integrity during extended operating cycles."
+                },
+                {
+                  "question": "How does forced-air circulation benefit large-capacity drying ovens?",
+                  "answer": "Forced-air circulation ensures uniform heat distribution throughout the large 150-litre chamber of the BPG-9140A. This minimizes temperature gradients and prevents uneven heating, allowing all samples to experience consistent thermal conditions. As a result, laboratories can achieve accurate and repeatable drying or heating outcomes even when processing high sample loads."
+                },
+                {
+                  "question": "Is the BPG-9140A suitable for pharmaceutical laboratories?",
+                  "answer": "Yes. The BPG-9140A is well suited for pharmaceutical laboratories for drying glassware, sterilising materials, reagent preparation, and sample conditioning. Its temperature accuracy, uniform airflow, and built-in safety alarms support reproducible results and help laboratories maintain compliance with quality and regulatory requirements."
+                },
+                {
+                  "question": "Can the BPG-9140A support continuous and long-duration heating cycles?",
+                  "answer": "Yes. The BPG-9140A is designed for continuous and long-duration operation. It includes a programmable digital timer of up to 5999 minutes and built-in safety alarms for over-temperature and system faults. These features allow safe, unattended operation during extended drying or heating processes."
+                },
+                {
+                  "question": "What industries commonly use the BPG-9140A laboratory drying oven?",
+                  "answer": "The BPG-9140A is commonly used in pharmaceutical, research, material science, chemical, industrial, and food testing laboratories across India. Its large chamber capacity and stable thermal performance make it suitable for laboratories that require higher throughput and consistent temperature control."
+                },
+                {
+                  "question": "Does the BPG-9140A provide uniform temperature control across all shelves?",
+                  "answer": "Yes. The forced-air circulation system ensures even airflow across all three adjustable shelves, maintaining uniform temperature distribution throughout the chamber. This helps ensure consistent processing results regardless of sample placement or chamber loading."
+                },
+                {
+                  "question": "Can the BPG-9140A be used for material science applications?",
+                  "answer": "Yes. The BPG-9140A is suitable for material science applications such as polymer curing, composite testing, and accelerated aging studies. Its precise temperature control and uniform heating support accurate evaluation of material properties under controlled thermal conditions."
+                },
+                {
+                  "question": "Is data monitoring or documentation supported on the BPG-9140A?",
+                  "answer": "Yes. The BPG-9140A supports optional RS-485 communication or printer connectivity, enabling temperature data monitoring and recording. This is beneficial for laboratories that require documentation, validation, or traceability of thermal processes."
+                },
+                {
+                  "question": "Are you the OEM for the BPG-9140A laboratory drying oven in India?",
+                  "answer": "Yes. We are the OEM for the BPG-9140A Laboratory Drying Oven in India, providing direct manufacturing assurance along with factory-authorized installation, service support, and access to genuine spare parts for long-term reliability."
+                },
+                {
+                  "question": "What factors should be considered when selecting a large-capacity laboratory drying oven?",
+                  "answer": "When selecting a large-capacity laboratory drying oven, laboratories should consider chamber size, temperature range, accuracy, uniformity, safety features, and availability of OEM-authorized service support. The BPG-9140A offers a balanced combination of capacity, performance, safety, and long-term support for Indian laboratories."
+                }
+              ]
             },
 
             feedback: [
@@ -567,47 +584,47 @@ export async function GET() {
                 "This FAQ section outlines key operational and application-related aspects of the BPG-9240A Laboratory Drying Oven, with emphasis on high-capacity sample handling, airflow consistency, long-cycle operation, safety controls, documentation options, and service considerations relevant to large-scale laboratory workflows.",
               ],
               items: [
-              {
-                "question": "What is the BPG-9240A laboratory drying oven used for?",
-                "answer": "The BPG-9240A laboratory drying oven is used for controlled drying, heating, and thermal processing of large sample volumes under uniform temperature conditions. It supports applications such as bulk moisture removal, glassware drying, solvent evaporation, polymer curing, and stability testing. The stable thermal environment helps laboratories achieve repeatable results while maintaining sample integrity during extended operating cycles."
-              },
-              {
-                "question": "How does forced-air circulation benefit large-capacity drying ovens?",
-                "answer": "Forced-air circulation ensures uniform heat distribution throughout the large 250-litre chamber of the BPG-9240A. This minimizes temperature gradients across shelves and sample loads, preventing uneven drying or overheating. As a result, laboratories can process high sample volumes while maintaining consistent thermal exposure and reliable, repeatable outcomes."
-              },
-              {
-                "question": "Is the BPG-9240A suitable for pharmaceutical laboratories?",
-                "answer": "Yes. The BPG-9240A is well suited for pharmaceutical laboratories for bulk drying of powders, sterilising large batches of glassware, reagent preparation, and sample conditioning. Its temperature accuracy, airflow uniformity, and built-in safety alarms support reproducible results and help laboratories meet quality and regulatory requirements."
-              },
-              {
-                "question": "Can the BPG-9240A support continuous and long-duration heating cycles?",
-                "answer": "Yes. The BPG-9240A is designed for continuous and long-duration operation. It includes a programmable digital timer of up to 5999 minutes and built-in safety alarms for over-temperature and system errors, allowing safe and reliable unattended operation during extended drying or heating processes."
-              },
-              {
-                "question": "Which industries commonly use the BPG-9240A laboratory drying oven?",
-                "answer": "The BPG-9240A is commonly used in pharmaceutical, research, material science, chemical, industrial, and food testing laboratories across India. Its large chamber capacity and stable thermal performance make it suitable for facilities that require high throughput and consistent temperature control."
-              },
-              {
-                "question": "Does the BPG-9240A ensure uniform temperature across all shelves?",
-                "answer": "Yes. The forced-air circulation system distributes heat evenly across all shelves, ensuring consistent temperature conditions throughout the chamber. This helps maintain uniform processing results regardless of sample placement or load size."
-              },
-              {
-                "question": "Can the BPG-9240A be used for material science applications?",
-                "answer": "Yes. The BPG-9240A is suitable for material science applications such as polymer curing, composite testing, and accelerated aging studies. Its precise temperature control and uniform heating support accurate evaluation of material behavior under controlled thermal conditions."
-              },
-              {
-                "question": "Is data monitoring or documentation supported on the BPG-9240A?",
-                "answer": "Yes. The BPG-9240A supports optional RS-485 communication or printer connectivity, enabling temperature data monitoring and recording. This is useful for laboratories that require documentation, validation, or traceability of thermal processes."
-              },
-              {
-                "question": "Are you the OEM for the BPG-9240A laboratory drying oven in India?",
-                "answer": "Yes. We are the OEM for the BPG-9240A Laboratory Drying Oven in India, providing direct manufacturing assurance along with factory-authorized installation, service support, and access to genuine spare parts for long-term reliability."
-              },
-              {
-                "question": "What should be considered when selecting a high-capacity laboratory drying oven?",
-                "answer": "When selecting a high-capacity drying oven, laboratories should consider chamber size, temperature range, accuracy, airflow uniformity, safety features, and availability of OEM-authorized service support. The BPG-9240A offers a balanced combination of capacity, performance, safety, and long-term support for Indian laboratories."
-              }
-            ]
+                {
+                  "question": "What is the BPG-9240A laboratory drying oven used for?",
+                  "answer": "The BPG-9240A laboratory drying oven is used for controlled drying, heating, and thermal processing of large sample volumes under uniform temperature conditions. It supports applications such as bulk moisture removal, glassware drying, solvent evaporation, polymer curing, and stability testing. The stable thermal environment helps laboratories achieve repeatable results while maintaining sample integrity during extended operating cycles."
+                },
+                {
+                  "question": "How does forced-air circulation benefit large-capacity drying ovens?",
+                  "answer": "Forced-air circulation ensures uniform heat distribution throughout the large 250-litre chamber of the BPG-9240A. This minimizes temperature gradients across shelves and sample loads, preventing uneven drying or overheating. As a result, laboratories can process high sample volumes while maintaining consistent thermal exposure and reliable, repeatable outcomes."
+                },
+                {
+                  "question": "Is the BPG-9240A suitable for pharmaceutical laboratories?",
+                  "answer": "Yes. The BPG-9240A is well suited for pharmaceutical laboratories for bulk drying of powders, sterilising large batches of glassware, reagent preparation, and sample conditioning. Its temperature accuracy, airflow uniformity, and built-in safety alarms support reproducible results and help laboratories meet quality and regulatory requirements."
+                },
+                {
+                  "question": "Can the BPG-9240A support continuous and long-duration heating cycles?",
+                  "answer": "Yes. The BPG-9240A is designed for continuous and long-duration operation. It includes a programmable digital timer of up to 5999 minutes and built-in safety alarms for over-temperature and system errors, allowing safe and reliable unattended operation during extended drying or heating processes."
+                },
+                {
+                  "question": "Which industries commonly use the BPG-9240A laboratory drying oven?",
+                  "answer": "The BPG-9240A is commonly used in pharmaceutical, research, material science, chemical, industrial, and food testing laboratories across India. Its large chamber capacity and stable thermal performance make it suitable for facilities that require high throughput and consistent temperature control."
+                },
+                {
+                  "question": "Does the BPG-9240A ensure uniform temperature across all shelves?",
+                  "answer": "Yes. The forced-air circulation system distributes heat evenly across all shelves, ensuring consistent temperature conditions throughout the chamber. This helps maintain uniform processing results regardless of sample placement or load size."
+                },
+                {
+                  "question": "Can the BPG-9240A be used for material science applications?",
+                  "answer": "Yes. The BPG-9240A is suitable for material science applications such as polymer curing, composite testing, and accelerated aging studies. Its precise temperature control and uniform heating support accurate evaluation of material behavior under controlled thermal conditions."
+                },
+                {
+                  "question": "Is data monitoring or documentation supported on the BPG-9240A?",
+                  "answer": "Yes. The BPG-9240A supports optional RS-485 communication or printer connectivity, enabling temperature data monitoring and recording. This is useful for laboratories that require documentation, validation, or traceability of thermal processes."
+                },
+                {
+                  "question": "Are you the OEM for the BPG-9240A laboratory drying oven in India?",
+                  "answer": "Yes. We are the OEM for the BPG-9240A Laboratory Drying Oven in India, providing direct manufacturing assurance along with factory-authorized installation, service support, and access to genuine spare parts for long-term reliability."
+                },
+                {
+                  "question": "What should be considered when selecting a high-capacity laboratory drying oven?",
+                  "answer": "When selecting a high-capacity drying oven, laboratories should consider chamber size, temperature range, accuracy, airflow uniformity, safety features, and availability of OEM-authorized service support. The BPG-9240A offers a balanced combination of capacity, performance, safety, and long-term support for Indian laboratories."
+                }
+              ]
             },
 
             feedback: [
@@ -718,48 +735,48 @@ export async function GET() {
                 "This FAQ section addresses common operational and application-related queries associated with the BPG-9420A Laboratory Drying Oven, with particular attention to very large-capacity processing, airflow performance, extended operation, safety controls, documentation needs, and service considerations relevant to high-volume laboratory environments.",
               ],
               items: [
-              {
-                "question": "What is the BPG-9420A laboratory drying oven used for?",
-                "answer": "The BPG-9420A laboratory drying oven is used for controlled drying, heating, and thermal processing of large sample volumes under uniform temperature conditions. It supports applications such as bulk moisture removal, glassware drying, solvent evaporation, polymer curing, and stability studies. Its stable thermal environment helps laboratories achieve repeatable results while protecting sample integrity during long-duration and high-throughput operations."
-              },
-              {
-                "question": "How does forced-air circulation benefit large-capacity drying ovens?",
-                "answer": "Forced-air circulation ensures uniform heat distribution throughout the large 420-litre chamber of the BPG-9420A. This minimizes temperature gradients across shelves and sample loads, preventing uneven heating or drying. As a result, laboratories can process high sample volumes efficiently while maintaining consistent thermal exposure and reliable results across all operating cycles."
-              },
-              {
-                "question": "Is the BPG-9420A suitable for pharmaceutical laboratories?",
-                "answer": "Yes. The BPG-9420A is well suited for pharmaceutical laboratories for sterilising glassware, drying reagents, bulk material preparation, and sample conditioning. Its temperature accuracy, airflow uniformity, and built-in safety alarms support reproducible results and help laboratories meet quality and regulatory requirements during large-scale thermal processing."
-              },
-              {
-                "question": "Can the BPG-9420A support continuous and long-duration operation?",
-                "answer": "Yes. The BPG-9420A is designed for continuous and long-duration operation. It includes a programmable digital timer of up to 9,999 minutes and built-in safety alarms for over-temperature and deviations. These features allow safe, unattended operation during extended drying or heating processes in high-throughput laboratory environments."
-              },
-              {
-                "question": "Which industries commonly use the BPG-9420A laboratory drying oven?",
-                "answer": "The BPG-9420A is commonly used in pharmaceutical manufacturing, research laboratories, material science facilities, chemical industries, industrial testing labs, and food and agriculture laboratories across India. Its large chamber capacity and stable thermal performance make it suitable for environments that require high throughput and consistent heating."
-              },
-              {
-                "question": "Does the BPG-9420A ensure uniform temperature across all shelves?",
-                "answer": "Yes. The powerful forced-air circulation system distributes heat evenly across all shelves, ensuring uniform temperature conditions throughout the chamber. This helps maintain consistent processing results regardless of sample placement or load size, which is critical for large-batch laboratory workflows."
-              },
-              {
-                "question": "Can the BPG-9420A be used for material science applications?",
-                "answer": "Yes. The BPG-9420A is suitable for material science applications such as polymer curing, composite testing, and accelerated aging studies. Its precise temperature control, fine resolution, and uniform heating support accurate evaluation of material properties under controlled thermal conditions."
-              },
-              {
-                "question": "Is data monitoring or documentation supported on the BPG-9420A?",
-                "answer": "Yes. The BPG-9420A supports optional RS-485 communication or printer connectivity, enabling temperature data monitoring and recording. This is beneficial for laboratories that require documentation, validation, or traceability of thermal processes for audits or quality control purposes."
-              },
-              {
-                "question": "Are you the OEM for the BPG-9420A laboratory drying oven in India?",
-                "answer": "Yes. We are the OEM for the BPG-9420A Laboratory Drying Oven in India, providing direct manufacturing assurance along with factory-authorized installation, service support, and access to genuine spare parts to ensure long-term reliability and performance."
-              },
-              {
-                "question": "What should be considered when selecting a very large-capacity laboratory drying oven?",
-                "answer": "When selecting a very large-capacity drying oven, laboratories should consider chamber size, airflow uniformity, temperature accuracy, safety features, power requirements, and availability of OEM-authorized service support. The BPG-9420A offers a balanced combination of capacity, performance, safety, and long-term support for Indian laboratories."
-              }
-            ]
-          },
+                {
+                  "question": "What is the BPG-9420A laboratory drying oven used for?",
+                  "answer": "The BPG-9420A laboratory drying oven is used for controlled drying, heating, and thermal processing of large sample volumes under uniform temperature conditions. It supports applications such as bulk moisture removal, glassware drying, solvent evaporation, polymer curing, and stability studies. Its stable thermal environment helps laboratories achieve repeatable results while protecting sample integrity during long-duration and high-throughput operations."
+                },
+                {
+                  "question": "How does forced-air circulation benefit large-capacity drying ovens?",
+                  "answer": "Forced-air circulation ensures uniform heat distribution throughout the large 420-litre chamber of the BPG-9420A. This minimizes temperature gradients across shelves and sample loads, preventing uneven heating or drying. As a result, laboratories can process high sample volumes efficiently while maintaining consistent thermal exposure and reliable results across all operating cycles."
+                },
+                {
+                  "question": "Is the BPG-9420A suitable for pharmaceutical laboratories?",
+                  "answer": "Yes. The BPG-9420A is well suited for pharmaceutical laboratories for sterilising glassware, drying reagents, bulk material preparation, and sample conditioning. Its temperature accuracy, airflow uniformity, and built-in safety alarms support reproducible results and help laboratories meet quality and regulatory requirements during large-scale thermal processing."
+                },
+                {
+                  "question": "Can the BPG-9420A support continuous and long-duration operation?",
+                  "answer": "Yes. The BPG-9420A is designed for continuous and long-duration operation. It includes a programmable digital timer of up to 9,999 minutes and built-in safety alarms for over-temperature and deviations. These features allow safe, unattended operation during extended drying or heating processes in high-throughput laboratory environments."
+                },
+                {
+                  "question": "Which industries commonly use the BPG-9420A laboratory drying oven?",
+                  "answer": "The BPG-9420A is commonly used in pharmaceutical manufacturing, research laboratories, material science facilities, chemical industries, industrial testing labs, and food and agriculture laboratories across India. Its large chamber capacity and stable thermal performance make it suitable for environments that require high throughput and consistent heating."
+                },
+                {
+                  "question": "Does the BPG-9420A ensure uniform temperature across all shelves?",
+                  "answer": "Yes. The powerful forced-air circulation system distributes heat evenly across all shelves, ensuring uniform temperature conditions throughout the chamber. This helps maintain consistent processing results regardless of sample placement or load size, which is critical for large-batch laboratory workflows."
+                },
+                {
+                  "question": "Can the BPG-9420A be used for material science applications?",
+                  "answer": "Yes. The BPG-9420A is suitable for material science applications such as polymer curing, composite testing, and accelerated aging studies. Its precise temperature control, fine resolution, and uniform heating support accurate evaluation of material properties under controlled thermal conditions."
+                },
+                {
+                  "question": "Is data monitoring or documentation supported on the BPG-9420A?",
+                  "answer": "Yes. The BPG-9420A supports optional RS-485 communication or printer connectivity, enabling temperature data monitoring and recording. This is beneficial for laboratories that require documentation, validation, or traceability of thermal processes for audits or quality control purposes."
+                },
+                {
+                  "question": "Are you the OEM for the BPG-9420A laboratory drying oven in India?",
+                  "answer": "Yes. We are the OEM for the BPG-9420A Laboratory Drying Oven in India, providing direct manufacturing assurance along with factory-authorized installation, service support, and access to genuine spare parts to ensure long-term reliability and performance."
+                },
+                {
+                  "question": "What should be considered when selecting a very large-capacity laboratory drying oven?",
+                  "answer": "When selecting a very large-capacity drying oven, laboratories should consider chamber size, airflow uniformity, temperature accuracy, safety features, power requirements, and availability of OEM-authorized service support. The BPG-9420A offers a balanced combination of capacity, performance, safety, and long-term support for Indian laboratories."
+                }
+              ]
+            },
 
             feedback: [
               "/service1.webp",

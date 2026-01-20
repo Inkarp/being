@@ -12,7 +12,7 @@ export default function ChatModal() {
       <button
         onClick={() => setOpen(true)}
         className="fixed bottom-6 right-2 z-40 w-16 h-16 rounded-full
-                   bg-blue-600 text-white flex items-center justify-center
+                   bg-[#2F4191] text-white flex items-center justify-center
                    shadow-xl hover:scale-110 transition"
         aria-label="Chat with us"
         title="Chat with us"

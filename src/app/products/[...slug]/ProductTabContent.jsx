@@ -35,7 +35,7 @@ export default function ProductTabContent({
                 className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-lg transition flex gap-5"
               >
                 <div className="text-blue-500 text-xl mt-1">
-                  <MdOutlineSettingsApplications />
+                  <MdOutlineSettingsApplications size={48} />
                 </div>
                 <p className="text-sm text-gray-700 leading-relaxed">
                   {feature}
@@ -61,22 +61,23 @@ export default function ProductTabContent({
                 </p>
               ))}
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 ">
             {product.specifications.items.map((spec, index) => (
-              <div
-                key={index}
-                className="flex justify-between bg-gray-50 border border-gray-200 rounded-lg p-4 gap-4"
-              >
-                <span className="text-sm font-medium text-gray-900">
-                  {spec.label}
-                </span>
-                <span className="text-sm text-gray-600 text-right">
-                  {spec.value}
-                </span>
+              <div key={index} className="flex justify-between border bg-gray-100 border-gray-200 rounded-lg gap-4"> {/* bg-transparent to avoid parent bg conflict */}
+                <div className=" px-3 py-2 rounded-md flex-1 text-left"> {/* Left: label bg */}
+                  <span className="text-sm font-medium text-black block">
+                    {spec.label}
+                  </span>
+                </div>
+                <div className="bg-gray-300 text-black p-2 flex-1 text-left"> {/* Right: value bg */}
+                  <span className="text-sm  block">
+                    {spec.value}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
+
         </div>
       )}
 
@@ -84,7 +85,7 @@ export default function ProductTabContent({
       {activeTab === 'applications' && product.applications && (
         <div className="space-y-8 max-w-5xl">
           <div className="flex flex-col items-center text-center">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-3">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-3 font-['Arial','Helvetica Neue','Helvetica',sans-serif]">
               Applications of {product.title}
             </h2>
 
@@ -177,14 +178,13 @@ export default function ProductTabContent({
               Need a service?
             </button>
           </div>
-          {/* DESCRIPTION */}
+
           <p className="text-sm text-gray-700 leading-relaxed">
             {product.services.description}
           </p>
-          {/* ================= OUTER CONTAINER ================= */}
           <div className="bg-gray-300 rounded-2xl p-4">
-            {/* ================= INNER SCROLL CONTAINER ================= */}
-            <div
+
+            {/* <div
               className="bg-white rounded-xl p-4 max-h-[420px] overflow-y-auto pr-2"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -204,26 +204,42 @@ export default function ProductTabContent({
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>
       )}
 
-      {/* ================= FEEDBACK ================= */}
-      {activeTab === 'feedback' && product.feedback && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl">
-          {product.feedback.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`Customer feedback ${index + 1}`}
-              className="rounded-xl bg-gray-50 p-3"
-              loading="lazy"
-            />
-          ))}
+      {/* ================= INSTALLATIONS ================= */}
+      {activeTab === 'feedback' && product.installations && (
+        <div className="space-y-8 max-w-5xl">
+          {/* Heading + Description */}
+          <div className="flex flex-col items-center text-center">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-3 font-['Arial','Helvetica Neue','Helvetica',sans-serif]">
+              Installations of {product.title}
+            </h2>
+
+            <p className="text-gray-700 max-w-3xl">
+              {product.installations.description}
+            </p>
+          </div>
+
+          {/* Installation List */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {product.installations.items.map((app, index) => (
+              <div
+                key={index}
+                className="border border-gray-200 rounded-xl p-5 bg-white hover:shadow-sm transition"
+              >
+                <h4 className="text-sm font-semibold text-gray-900">
+                  {app}
+                </h4>
+              </div>
+            ))}
+          </div>
         </div>
       )}
+
 
     </div>
   );

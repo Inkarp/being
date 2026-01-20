@@ -662,21 +662,11 @@ export default function Model() {
                                     {product.faqs.map((faq, index) => (
                                         <details
                                             key={index}
-                                            className="
-              group w-full
-              rounded-xl border border-gray-200 bg-white
-              transition-all duration-300
-              open:shadow-md open:border-[#2F4191]/30
-            "
+                                            className="group w-full rounded-xl border border-gray-200 bg-white transition-all duration-300 open:shadow-md open:border-[#2F4191]/30"
                                         >
                                             {/* QUESTION */}
                                             <summary
-                                                className="
-                flex items-start justify-between gap-4
-                cursor-pointer list-none
-                px-4 sm:px-5 py-4
-                font-medium text-gray-900
-              "
+                                                className="flex items-start justify-between gap-4 cursor-pointer list-none px-4 sm:px-5 py-4 font-medium text-gray-900"
                                             >
                                                 <span className="text-sm sm:text-base leading-relaxed flex-1">
                                                     {faq.question}

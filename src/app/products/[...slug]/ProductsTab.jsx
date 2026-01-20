@@ -102,7 +102,7 @@ export default function ProductTabs({
                 : 'text-gray-600 hover:text-gray-900'
               }`}
           >
-            Customer Feedback
+            Installations
           </button>
         )}
       </div>
