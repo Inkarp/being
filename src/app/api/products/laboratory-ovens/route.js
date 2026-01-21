@@ -159,7 +159,7 @@ export async function GET() {
 
               ]
             },
-            installtions: {
+            installations: {
               description:
                 "As the OEM for the BPG-9070A Laboratory Drying Oven in India, we provide factory-authorized pan-India installation, commissioning, operator training, preventive maintenance, calibration support, and after-sales service. Trained service engineers and genuine spare parts ensure reliable performance, minimal downtime, and long-term operational confidence for laboratories across India.",
               items: [

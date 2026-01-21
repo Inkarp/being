@@ -183,9 +183,9 @@ export default function ProductTabContent({
             
             <button
               onClick={() => setIsServiceRenewalOpen(true)}
-              className="bg-[#2F4191] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2B7EC2] transition"
+              className="animate-pulse bg-[#2F4191] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2B7EC2] transition"
             >
-              Request for One Year Warranty?
+             Click here for One Year Warranty?
             </button>
           </div>
 

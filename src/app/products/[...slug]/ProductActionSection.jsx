@@ -98,7 +98,7 @@ export default function ProductActionSection({
                 hasApplications={product.applications?.items?.length > 0}
                 hasFaqs={Array.isArray(product.faqs?.items) && product.faqs.items.length > 0}
                 hasServices={!!product.services}
-                hasFeedback={!!product.feedback}
+                hasFeedback={!!product.installations}
             />
 
             {/* ================= TAB CONTENT ================= */}
