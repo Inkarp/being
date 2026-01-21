@@ -4,10 +4,12 @@ import { MdOutlineSettingsApplications } from 'react-icons/md';
 import { FaChevronDown } from 'react-icons/fa';
 import Image from 'next/image';
 
+
 export default function ProductTabContent({
   product,
   activeTab,
   setIsServiceOpen,
+  setIsServiceRenewalOpen
 }) {
   return (
     <div className="p-6 text-sm text-gray-700 flex justify-center items-center w-full">
@@ -28,14 +30,14 @@ export default function ProductTabContent({
               ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             {product.features.items.map((feature, index) => (
               <div
                 key={index}
                 className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-lg transition flex gap-5"
               >
-                <div className="text-blue-500 text-xl mt-1">
-                  <MdOutlineSettingsApplications size={48} />
+                <div className="text-white bg-[#2F4191] text-xl mt-1 p-2 rounded-lg flex items-center justify-center">
+                  <MdOutlineSettingsApplications size={36} />
                 </div>
                 <p className="text-sm text-gray-700 leading-relaxed">
                   {feature}
@@ -97,7 +99,7 @@ export default function ProductTabContent({
               ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             {product.applications.items.map((app, index) => (
               <div
                 key={index}
@@ -176,6 +178,14 @@ export default function ProductTabContent({
               className="bg-[#2F4191] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2B7EC2] transition"
             >
               Need a service?
+            </button>
+
+            
+            <button
+              onClick={() => setIsServiceRenewalOpen(true)}
+              className="bg-[#2F4191] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2B7EC2] transition"
+            >
+              Request for One Year Warranty?
             </button>
           </div>
 

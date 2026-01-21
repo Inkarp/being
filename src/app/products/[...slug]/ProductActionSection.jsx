@@ -16,6 +16,7 @@ export default function ProductActionSection({
     setIsEnquiryOpen,
     setIsExclusivePatnership,
     setIsServiceOpen,
+    setIsServiceRenewalOpen
 }) {
     return (
         <div className="mt-5 border border-gray-200 rounded-2xl">
@@ -105,6 +106,7 @@ export default function ProductActionSection({
                 product={product}
                 activeTab={activeTab}
                 setIsServiceOpen={setIsServiceOpen}
+                setIsServiceRenewalOpen={setIsServiceRenewalOpen}
             />
         </div>
     );

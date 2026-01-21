@@ -58,7 +58,7 @@ const INDIAN_STATES = [
 ];
 
 
-export default function EnquiryModal({ isOpen, onClose, productData }) {
+export default function ServiceRenewalForm({ isOpen, onClose, productData }) {
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -94,7 +94,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
     setError('');
 
     try {
-      const res = await fetch('/api/enquiry', {
+      const res = await fetch('/api/serviceRenewal', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -124,7 +124,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
         {/* HEADER */}
         <div className="flex items-center justify-between p-5 border-b border-gray-200">
           <h2 className="text-lg font-semibold text-[#2F4191]">
-            Product Enquiry
+          Service Renewal Request Form
           </h2>
           <button
             onClick={handleClose}

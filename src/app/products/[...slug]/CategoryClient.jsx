@@ -48,11 +48,22 @@ export default function CategoryClient() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="w-10 h-10 border-4 border-gray-200 border-t-[#2F4191] rounded-full animate-spin" />
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="section-center">
+          <div className="section-path">
+            <div className="globe">
+              <div className="wrapper">
+                {Array.from({ length: 16 }).map((_, i) => (
+                  <span key={i}></span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
+
 
   if (!data) {
     return (

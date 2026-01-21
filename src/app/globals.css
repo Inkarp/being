@@ -82,3 +82,109 @@
 }
 
 
+.section-center {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.section-path {
+  position: relative;
+  width: 238px;
+  height: 76px;
+  border-radius: 35px;
+  margin: 0 auto;
+  background-color: #e6e6e6;
+  box-shadow: inset -2px 20px 10px rgba(0,0,0,.06),
+              inset -2px 30px 10px rgba(0,0,0,.04);
+  border: 3px groove rgba(225,225,225,0.07);
+  overflow: hidden;
+}
+
+.globe {
+  position: relative;
+  width: 66px;
+  height: 66px;
+  margin: 2px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.65);
+  animation: rotateBall 4s ease infinite;
+}
+
+@keyframes rotateBall {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(162px); }
+  100% { transform: translateX(0); }
+}
+
+.globe::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 15px #1a252f;
+  opacity: 0.4;
+  z-index: 2;
+}
+
+.globe::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 12px;
+  left: 40px;
+  top: 15px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 14px 7px rgba(255,255,255,0.1);
+  z-index: 3;
+}
+
+.globe .wrapper {
+  position: absolute;
+  width: 528px;
+  height: 528px;
+  top: 0;
+  left: -462px;
+  animation: moveBall 4s ease infinite;
+}
+
+@keyframes moveBall {
+  0% { left: -462px; }
+  50% { left: 0; }
+  100% { left: -462px; }
+}
+
+.globe .wrapper span {
+  position: absolute;
+  width: 33px;
+  height: 528px;
+  top: 0;
+  background-color: #5c477d;
+  box-shadow: inset 0 0 25px #5c487c;
+}
+
+.globe .wrapper span:nth-child(even) {
+  background-color: #503e6d;
+}
+
+.globe .wrapper span:nth-child(1) { left: 0; }
+.globe .wrapper span:nth-child(2) { left: 33px; }
+.globe .wrapper span:nth-child(3) { left: 66px; }
+.globe .wrapper span:nth-child(4) { left: 99px; }
+.globe .wrapper span:nth-child(5) { left: 132px; }
+.globe .wrapper span:nth-child(6) { left: 165px; }
+.globe .wrapper span:nth-child(7) { left: 198px; }
+.globe .wrapper span:nth-child(8) { left: 231px; }
+.globe .wrapper span:nth-child(9) { left: 264px; }
+.globe .wrapper span:nth-child(10) { left: 297px; }
+.globe .wrapper span:nth-child(11) { left: 330px; }
+.globe .wrapper span:nth-child(12) { left: 363px; }
+.globe .wrapper span:nth-child(13) { left: 396px; }
+.globe .wrapper span:nth-child(14) { left: 429px; }
+.globe .wrapper span:nth-child(15) { left: 462px; }
+.globe .wrapper span:nth-child(16) { left: 495px; }
+
+
+

@@ -11,11 +11,12 @@ import {
     FaFileDownload,
     FaShare
 } from 'react-icons/fa';
-import { MdOutlineSettingsApplications } from 'react-icons/md';
+import { MdOutlineSettingsApplications, MdZoomOutMap } from 'react-icons/md';
 import PriceEnquiryForm from '../../../components/PriceEnquiryForm';
 import PricePopup from '../../../components/PricePopUp';
 import PopupModal from '../../../components/PopupModal';
 import ExclusivePartner from '../../../components/ExclusivePatnership';
+import ServiceRenewalForm from '../../../components/ServiceRenewalForm';
 import { FaChevronDown } from 'react-icons/fa';
 import { FcCollaboration } from 'react-icons/fc';
 import RelatedModels from '../../../components/RelatedModels';
@@ -26,6 +27,7 @@ import ServiceForm from '../../../components/ServiceForm';
 import ProductTabs from './ProductsTab';
 import ProductTabContent from './ProductTabContent';
 import ProductActionSection from './ProductActionSection';
+
 
 export default function Model() {
     /* ---------------- SHARE BUTTON ---------------- */
@@ -71,7 +73,7 @@ export default function Model() {
     const [isServiceOpen, setIsServiceOpen] = useState(false);
 
     const [isExclusivePatnership, setIsExclusivePatnership] = useState(false);
-
+ const [isServiceRenewalOpen, setIsServiceRenewalOpen] = useState(false);
 
     /* ---------------- DATA LOADING ---------------- */
     useEffect(() => {
@@ -235,7 +237,7 @@ export default function Model() {
 
                     {/* ================= RIGHT: PRODUCT IMAGE ================= */}
                     <div className="flex flex-col justify-center">
-                        <div className="relative border border-gray-200 rounded-2xl p-6 bg-[#2F4191]/10 hover:bg-[#2F4191]/30 transition-colors duration-300">
+                        <div className="relative border border-gray-200 rounded-2xl p-6 bg-[#2F4191]/10 transition-colors duration-300">
                             {/* GEM BADGE ON IMAGE */}
                             {product.gem && (
                                 <Image
@@ -247,13 +249,19 @@ export default function Model() {
                                     priority
                                 />
                             )}
+                            <div className='p-2 bg-[#2F4191]/20 absolute bottom-3 right-3 rounded-full hover:bg-[#2F4191]/40 cursor-pointer'>
+                                <MdZoomOutMap
+                                    size={24}
+
+                                />
+                            </div>
 
                             <Image
                                 src={product.thumbnail}
                                 alt={product.title}
                                 width={420}
                                 height={420}
-                                className="object-contain mx-auto "
+                                className="object-contain mx-auto"
                                 priority
                             />
                         </div>
@@ -271,6 +279,7 @@ export default function Model() {
                 setIsEnquiryOpen={setIsEnquiryOpen}
                 setIsExclusivePatnership={setIsExclusivePatnership}
                 setIsServiceOpen={setIsServiceOpen}
+                setIsServiceRenewalOpen={setIsServiceRenewalOpen}
             />
             <div className='text-center py-2'>Disclaimer: Specifications are indicative. Performance may vary depending on load, usage, and ambient conditions.</div>
 
@@ -283,6 +292,8 @@ export default function Model() {
                     subcategory: subSlug,
                 }}
             />
+
+
 
             <PriceEnquiryForm
                 isOpen={isPriceOpen}
@@ -329,7 +340,7 @@ export default function Model() {
                     subcategory: subSlug,
                 }}
             />
-{/* 
+            {/* 
             {subCategory?.models?.length > 1 && (
                 <PopupModal
                     models={subCategory.models}
@@ -350,7 +361,15 @@ export default function Model() {
                     currentSubSlug={subSlug}
                 />
             )}
+
+            <ServiceRenewalForm isOpen={isServiceRenewalOpen}
+                onClose={() => setIsServiceRenewalOpen(false)}
+                productData={{
+                    model: product.meta.title,
+                    category: categorySlug,
+                    subcategory: subSlug,
+                }} />
         </section>
     );
-    
+
 }
