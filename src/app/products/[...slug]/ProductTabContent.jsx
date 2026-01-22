@@ -222,7 +222,7 @@ export default function ProductTabContent({
 
       {/* ================= INSTALLATIONS ================= */}
       {activeTab === 'feedback' && product.installations && (
-        <div className="space-y-8 max-w-7xl">
+        <div className="space-y-8 max-w-5xl mx-auto w-full">
           {/* Heading + Description */}
           <div className="flex flex-col items-center text-center">
             <h2 className="text-2xl font-semibold text-gray-900 mb-3 font-['Arial','Helvetica Neue','Helvetica',sans-serif]">
@@ -235,7 +235,7 @@ export default function ProductTabContent({
           </div>
 
           {/* Installation List */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
             {product.installations.items.map((app, index) => (
               <div
                 key={index}

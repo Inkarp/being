@@ -45,7 +45,7 @@ export default function Header() {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-[#2B7EC2] shadow-lg">
       {/* ================= HEADER ================= */}
-      <header className="w-[90%] mx-auto py-2 flex items-center justify-between font-[Roboto]">
+      <header className="w-[90%] mx-auto py-2 flex items-center justify-between ">
         {/* LOGO */}
         <Link href="/" className="flex items-center bg-white rounded-r-xl border-r-5 border-[#2F4191]">
           <Image
@@ -59,7 +59,7 @@ export default function Header() {
         </Link>
 
         {/* DESKTOP MENU */}
-        <nav className="hidden lg:flex flex-1 justify-center items-center gap-6 font-semibold text-white text-[15px]">
+        <nav className="hidden lg:flex flex-1 justify-center items-center gap-6 font-semibold font-raleway text-white text-[15px]">
            {menuItems.map((item) => (
             <Link key={item.name} href={item.href}>
               <span className="px-4 py-2 hover:text-black hover:bg-white rounded transition">              

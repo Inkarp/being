@@ -1,6 +1,10 @@
 module.exports = {
   theme: {
     extend: {
+      fontFamily: {
+      raleway: ['var(--font-raleway)'],
+      'dmsans': ['var(--font-dm-sans)'],
+    },
       animation: {
         slowspin: 'slowspin 10s linear infinite',
         'slide-in-right': 'slideInRight 0.25s ease-out',

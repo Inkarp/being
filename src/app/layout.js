@@ -1,7 +1,6 @@
 // app/layout.js
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Raleway,DM_Sans } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
 import ScrollToTop from "./ScrollToTop";
 import Header from "./Home/Header";
 import Footer from "./Home/Footer";
@@ -18,6 +17,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-raleway",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-dm-sans",
+});
+
 export const metadata = {
   title: {
     default: "Being Instruments",
@@ -25,35 +36,16 @@ export const metadata = {
   },
   description: "Scientific & Analytical Instrument Solutions",
   icons: {
-    icon: "/favicon.png", 
+    icon: "/favicon.png",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      {/* <head>
-     
-        <Script
-          id="collect-chat"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function (w, d) {
-                w.CollectId = "672db8abf4bc76248fc52c81";
-                w.CollectAutoOpen = false;
-                const h = d.head || d.getElementsByTagName("head")[0];
-                const s = d.createElement("script");
-                s.type = "text/javascript";
-                s.async = true;
-                s.src = "https://collectcdn.com/launcher.js";
-                h.appendChild(s);
-              })(window, document);
-            `,
-          }}
-        />
-      </head> */}
-
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${dmSans.variable}`}
+    >
       <body className="bg-white">
         <ScrollToTop />
         <Header />
@@ -62,6 +54,7 @@ export default function RootLayout({ children }) {
         <main className="w-[90%] mx-auto pt-20">
           {children}
         </main>
+
         <ChatModal />
         <Footer />
       </body>
