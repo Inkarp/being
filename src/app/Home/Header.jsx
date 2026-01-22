@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   FaSearch,
   FaFacebookF,
@@ -20,6 +20,17 @@ import SearchOverlay from "./SearchOverlay";
 export default function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => (document.body.style.overflow = "");
+  }, [isOpen]);
+
 
   const menuItems = [
     { name: "Home", href: "/" },
@@ -28,12 +39,13 @@ export default function Header() {
     { name: "Blogs", href: "/blog" },
     { name: "About Us", href: "/about-us" },
     { name: "Contact Us", href: "/contact-us" },
+    { name: "Product Profile", href: "/product-profile" }
   ];
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-[#2B7EC2] shadow-lg">
       {/* ================= HEADER ================= */}
-      <header className="w-[90%] mx-auto  py-2 flex items-center justify-between font-[Roboto]">
+      <header className="w-[90%] mx-auto py-2 flex items-center justify-between font-[Roboto]">
         {/* LOGO */}
         <Link href="/" className="flex items-center bg-white rounded-r-xl border-r-5 border-[#2F4191]">
           <Image
@@ -48,48 +60,41 @@ export default function Header() {
 
         {/* DESKTOP MENU */}
         <nav className="hidden lg:flex flex-1 justify-center items-center gap-6 font-semibold text-white text-[15px]">
-          {menuItems.map((item) => (
+           {menuItems.map((item) => (
             <Link key={item.name} href={item.href}>
-              <span className="px-4 py-2 hover:text-black hover:bg-white rounded transition">
+              <span className="px-4 py-2 hover:text-black hover:bg-white rounded transition">              
                 {item.name}
               </span>
             </Link>
           ))}
         </nav>
-
-        {/* RIGHT SIDE */}
-        <div className="flex items-center gap-3">
-          {/* SEARCH TRIGGER (ALL SCREENS) */}
-          <div
-            onClick={() => setIsSearchOpen(true)}
-            className="hidden md:flex items-center gap-2 bg-white rounded-full px-4 h-12 cursor-pointer text-[#2B7EC2]"
-          >
-            <FaSearch size={16} />
-            <span className="text-sm text-gray-500">
-              Search for products…
-            </span>
-          </div>
-
-          {/* MOBILE SEARCH ICON */}
+        <div className="flex gap-3">
+          {/* SEARCH TRIGGER */}
           <button
             onClick={() => setIsSearchOpen(true)}
-            className="md:hidden bg-white w-12 h-12 rounded-full flex items-center justify-center text-[#2B7EC2]"
+            className="flex items-center gap-2 bg-white rounded-full px-3 md:px-4 h-12 text-[#2B7EC2] hover:bg-gray-100 transition"
+            aria-label="Search products"
           >
-            <FaSearch size={18} />
+            <FaSearch size={16} />
+            <span className="hidden lg:inline text-sm text-gray-500">
+              Search for products…
+            </span>
           </button>
 
           {/* HAMBURGER */}
           <button
             onClick={() => setIsSidebarOpen(true)}
-            className="bg-white w-12 h-12 rounded-full flex items-center justify-center text-[#2B7EC2]"
+            className="bg-white w-12 h-12 rounded-full flex items-center justify-center text-[#2B7EC2] hover:bg-gray-100 transition"
+            aria-label="Open menu"
           >
             <RxHamburgerMenu size={26} />
           </button>
         </div>
+
       </header >
 
       {/* ================= MOBILE SEARCH ================= */}
-      {
+      {/* {
         isSearchOpen && (
           <div className="md:hidden bg-[#2B7EC2] px-4 pb-4">
             <div className="bg-white rounded-full px-4 py-3 shadow-md">
@@ -97,7 +102,7 @@ export default function Header() {
             </div>
           </div>
         )
-      }
+      } */}
 
       {/* ================= OVERLAY ================= */}
       {

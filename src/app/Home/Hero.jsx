@@ -22,7 +22,7 @@ export default function Hero() {
     return (
         <section className="w-full mx-auto rounded-[30px] h-[80vh] flex overflow-hidden">
             {/* Left: Video + text */}
-            <div className="relative w-3/5 h-full">
+            <div className="relative w-1/2 h-full">
                 {/* Video */}
                 <video
                     autoPlay
@@ -71,7 +71,7 @@ export default function Hero() {
             </div>
 
             {/* Right: Auto-sliding image */}
-            <div className="w-2/5 h-full relative bg-white">
+            <div className="w-1/2 h-full relative bg-white">
                 <div className="absolute top-50 right-0 z-20 bg-white flex flex-col gap-5 rounded-l-xl flex justify-center items-center px-2 py-5 shadow-lg">
                     <div className='rounded-full p-1 bg-[#2B7EC2] text-white shadow-2xl'>
                         <MdNavigateNext className='h-5 w-5' />

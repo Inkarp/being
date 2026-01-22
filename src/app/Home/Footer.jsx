@@ -83,9 +83,9 @@ export default function Footer() {
 
                         </div>
 
-                        <button className="animate-bounce mt-4 bg-white text-[#2B7EC2] px-6 py-2 rounded-md font-bold hover:bg-gray-800 transition">
+                        {/* <button className="animate-bounce mt-4 bg-white text-[#2B7EC2] px-6 py-2 rounded-md font-bold hover:bg-gray-800 transition">
                             <FaDownload className="inline mr-2" /> Download Product Profile
-                        </button>
+                        </button> */}
                     </div>
                  
                 </div>

@@ -10,14 +10,16 @@ import Blogs from './Home/Blogs';
 import Footer from './Home/Footer';
 import BlogsNew from './Home/BlogsNew';
 import Chatbot from './Home/Chatbot';
+import Customers from './Home/Customers';
 
 
 export default function Home() {
   return (
     <div className="">
       <Hero />
-      <Offerings />
+      <Offerings />     
       <About />
+      <Customers  />
       <Blogs />
       <BlogsNew />
       {/* <Chatbot /> */}

@@ -222,14 +222,14 @@ export default function ProductTabContent({
 
       {/* ================= INSTALLATIONS ================= */}
       {activeTab === 'feedback' && product.installations && (
-        <div className="space-y-8 max-w-5xl">
+        <div className="space-y-8 max-w-7xl">
           {/* Heading + Description */}
           <div className="flex flex-col items-center text-center">
             <h2 className="text-2xl font-semibold text-gray-900 mb-3 font-['Arial','Helvetica Neue','Helvetica',sans-serif]">
               Installations of {product.title}
             </h2>
 
-            <p className="text-gray-700 max-w-3xl">
+            <p className="text-gray-700 ">
               {product.installations.description}
             </p>
           </div>
