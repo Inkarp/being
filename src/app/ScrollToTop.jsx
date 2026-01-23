@@ -43,7 +43,7 @@ export default function ScrollToTop() {
             </svg>
 
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <span className="text-white font-bold text-[8px] sm:text-[9px] md:text-[10px] mb-1">
+              <span className="text-white font-bold text-[8px] sm:text-[8px] md:text-[10px] mb-1">
                 Go To Top
               </span>
               <FaArrowUp className="text-white animate-bounce" size={14} />

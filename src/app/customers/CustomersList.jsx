@@ -174,7 +174,7 @@ const CUSTOMERS = [
     { name: 'Biocon Limited - SEZ Unit', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
 ];
 
-export default function CustomersOne() {
+export default function CustomersList() {
     const [activeCategory, setActiveCategory] = useState('Private');
 
     const filteredCustomers = CUSTOMERS.filter(
@@ -182,7 +182,7 @@ export default function CustomersOne() {
     );
 
     return (
-        <section className="h-screen w-full flex flex-col bg-gradient-to-br from-slate-50 to-blue-50/50">
+        <section className="h- w-full flex flex-col bg-gradient-to-br from-slate-50 to-blue-50/50">
             {/* HEADER */}
             <div className="text-center flex-shrink-0">
                 <span className="inline-block px-6 py-2 text-xs font-bold uppercase tracking-widest

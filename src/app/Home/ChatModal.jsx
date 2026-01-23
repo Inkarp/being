@@ -14,8 +14,8 @@ export default function ChatModal() {
         onClick={() => setOpen(true)}
         className="
           fixed 
-          bottom-6 sm:bottom-8 md:bottom-10 
-          right-3 
+          bottom-6 sm:bottom-8 md:bottom-5 
+          right-2 
           z-40 
           w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16
           rounded-full

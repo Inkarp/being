@@ -39,7 +39,8 @@ export default function Header() {
     { name: "Blogs", href: "/blog" },
     { name: "About Us", href: "/about-us" },
     { name: "Contact Us", href: "/contact-us" },
-    { name: "Product Profile", href: "/product-profile" }
+    { name: "Product Profile", href: "/product-profile" },
+    {name:"Customers", href:"/customers" }
   ];
 
   return (

@@ -6,9 +6,9 @@ import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa';
 
 export default function Footer() {
     return (
-        <footer className="text-white space-y-3 w-full bg-[#2B7EC2] font-dmsans shadow-2xl">
+        <footer className="text-white space-y-3 w-full bg-[#2B7EC2] font-raleway shadow-2xl">
             {/* Top Grid Section */}
-            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div className="w-[90%] mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
                 {/* Column 1 - Logo and Description */}
                 <div className='text-white p-2'>
                     <div className="flex items-center gap-2 mb-4 ">
@@ -93,7 +93,7 @@ export default function Footer() {
 
             {/* Contact Strip */}
             <div className="py-3">
-                <div className="max-w-7xl bg-white text-white mx-auto py-3 px-5 flex flex-col lg:flex-row justify-between items-center gap-6 text-black font-bold text-sm md:text-base rounded-xl">
+                <div className="w-[90%] mx-auto bg-white text-white mx-auto py-3 px-5 flex flex-col lg:flex-row justify-between items-center gap-6 text-black font-bold text-sm md:text-base rounded-xl">
                     <div className="flex items-center gap-5 group">                      
                         <img src="/map.svg" className='h-10 w-10 group-hover:rotate-360 transition duration-300'/>
                         <div className=''>
@@ -106,7 +106,7 @@ export default function Footer() {
                         <div className='h-20 bg-black w-px'></div>
                         <div className='flex items-center justify-center group'>
                             <div>
-                                <img src="/email.svg" className='h-10 w-10 group-hover:rotate-360 transition duration-300' />
+                                <img src="/email.svg" className='h-10 w-10 group-hover:rotate-360 transition duration-500' />
                             </div>
                             <div className='flex flex-col gap-1 p-5'>
                                 <p className="text-xl font-semibold text-[#2B7EC2]">Email Address</p>

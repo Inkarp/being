@@ -137,7 +137,7 @@ export default function Offerings() {
             </span>
           </div>
                 <p className="text-gray-600 ">
-                    Our <span className="text-black font-medium">charity helps</span> those people who have no hope
+                    Our <span className="text-black font-medium">Customers</span> love our products
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-8 transition-all duration-500 rounded-2xl py-3">
                     {causes.slice(0, visibleCards).map((cause, index) => (
@@ -148,7 +148,7 @@ export default function Offerings() {
                                     alt={cause.title}
                                     width={600}
                                     height={400}
-                                    className="w-full h-48 object-contain border-b-2 border-[#2B7EC2] bg-gradient-to-r from-blue-50 via-white to-blue-50 p-6"
+                                    className="w-full h-48  border-b-2 border-[#2B7EC2] bg-gradient-to-r from-blue-50 via-white to-blue-50 p-6"
                                 />
 
                                 <div className="absolute bottom-[-16px] left-1/3 bg-white border-2 border-[#2B7EC2] text-[#2B7EC2] font-semibold text-sm px-3 py-1 rounded-full shadow-sm">
