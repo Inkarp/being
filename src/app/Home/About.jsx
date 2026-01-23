@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 export default function About() {
   return (
-    <section className="py-5 px-4 min-h-screen flex flex-col items-center">
+    <section className="py-5 px-4 min-h-screen flex flex-col items-center font-raleway">
       <div className=" grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div className="space-y-12 order-2 lg:order-1">
           <div className="relative group">
@@ -102,7 +102,7 @@ export default function About() {
         </div>
       </div>
       {/* Compact Stats Grid - Below Image */}
-      <div className="flex w-full gap-6 py-5 border-t border-gray-100">
+      {/* <div className="flex w-full gap-6 py-5 border-t border-gray-100">
         <div className="text-center p-6 rounded-2xl hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-gray-200">
           <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center shadow-sm border">
             <BsShieldCheck className="w-8 h-8 text-gray-700" />
@@ -131,7 +131,7 @@ export default function About() {
           <div className="text-2xl font-bold text-gray-900 mb-2">500+</div>
           <div className="text-sm text-gray-600 font-medium">Instruments</div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

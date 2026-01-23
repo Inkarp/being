@@ -29,7 +29,9 @@ export default function ScrollToTop() {
           {/* Scroll to Top Button */}
           <button
             onClick={scrollToTop}
-            className="relative w-20 h-20 rounded-full text-white transition group"
+           className="relative 
+             w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 
+             rounded-full text-white transition group"
             aria-label="Scroll to top"
           >
             <svg
@@ -41,7 +43,7 @@ export default function ScrollToTop() {
             </svg>
 
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <span className="text-white font-bold text-[10px] mb-1">
+              <span className="text-white font-bold text-[8px] sm:text-[9px] md:text-[10px] mb-1">
                 Go To Top
               </span>
               <FaArrowUp className="text-white animate-bounce" size={14} />

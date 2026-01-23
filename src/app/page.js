@@ -4,6 +4,7 @@ import Offerings from './Home/Offerings';
 import Blogs from './Home/Blogs';
 import BlogsNew from './Home/BlogsNew';
 import Customers from './Home/Customers';
+import CustomersOne from './Home/CustomersOne';
 
 export default function Home() {
   return (
@@ -12,8 +13,9 @@ export default function Home() {
       <Offerings />     
       <About />
       <Customers />
+      <CustomersOne />
       <Blogs />
-      <BlogsNew />
+      {/* <BlogsNew /> */}
     </div>
   );
 }

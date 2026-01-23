@@ -20,9 +20,11 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="w-full mx-auto rounded-[30px] h-[80vh] flex overflow-hidden">
+        <section className="w-full mx-auto rounded-[30px] h-[86vh] flex flex-col md:flex-row  overflow-hidden">
+
             {/* Left: Video + text */}
-            <div className="relative w-1/2 h-full">
+            <div className="relative w-full md:w-1/2 h-full">
+
                 {/* Video */}
                 <video
                     autoPlay
@@ -71,8 +73,8 @@ export default function Hero() {
             </div>
 
             {/* Right: Auto-sliding image */}
-            <div className="w-1/2 h-full relative bg-white">
-                <div className="absolute top-50 right-0 z-20 bg-white flex flex-col gap-5 rounded-l-xl flex justify-center items-center px-2 py-5 shadow-lg">
+            <div className="md:w-1/2 w-full h-full relative bg-white">
+                <div className="absolute top-50 left-0 z-20 bg-white flex flex-col gap-5 rounded-r-xl flex justify-center items-center px-2 py-5 shadow-lg">
                     <div className='rounded-full p-1 bg-[#2B7EC2] text-white shadow-2xl'>
                         <MdNavigateNext className='h-5 w-5' />
 

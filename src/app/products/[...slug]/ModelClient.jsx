@@ -301,9 +301,7 @@ export default function Model() {
                     subcategory: subSlug,
                 }}
             />
-
-
-
+            
             <PriceEnquiryForm
                 isOpen={isPriceOpen}
                 onClose={() => setIsPriceOpen(false)}

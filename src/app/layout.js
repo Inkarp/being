@@ -1,11 +1,16 @@
 // app/layout.js
-import { Geist, Geist_Mono, Raleway,DM_Sans } from "next/font/google";
+import { Geist, Geist_Mono, Raleway, DM_Sans } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "./ScrollToTop";
 import Header from "./Home/Header";
 import Footer from "./Home/Footer";
 import ShareButton from "./ShareButton";
 import ChatModal from "./Home/ChatModal";
+
+import ProductsSidebar from "./ProductsSidebar";
+import SocialContactBar from "./SocialContactBar";
+import SidebarNav from "./Home/SidebarNav";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,12 +54,13 @@ export default function RootLayout({ children }) {
       <body className="bg-white">
         <ScrollToTop />
         <Header />
-        <ShareButton />
-
-        <main className="w-[90%] mx-auto pt-20">
+         {/* <SidebarNav /> */}
+        {/* <ShareButton /> */}
+        <SocialContactBar />
+        <ProductsSidebar />
+        <main className="w-[90%] mx-auto pt-20 ">
           {children}
         </main>
-
         <ChatModal />
         <Footer />
       </body>

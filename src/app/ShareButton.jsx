@@ -1,54 +1,53 @@
 "use client";
-import { useState } from "react";
 import { FaWhatsapp, FaInstagram, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
-import { HiChatBubbleLeftRight } from "react-icons/hi2";
 
-export default function SocialContactBar() {
-  const [chatOpen, setChatOpen] = useState(false);
+export default function ShareButton() {
+  const socialLinks = [
+    {
+      icon: <FaLinkedinIn size={28} />,
+      url: "https://www.linkedin.com/company/yourcompany",
+      bg: "bg-white",
+      textColor:"text-blue-600"
+    },
+    {
+      icon: <FaInstagram size={28} />,
+      url: "https://www.instagram.com/yourpage",
+      bg: "bg-white",
+      textColor:"text-pink-500"
+    },
+    {
+      icon: <FaFacebookF size={28} />,
+      url: "https://www.facebook.com/yourpage",
+      bg: "bg-white",
+      textColor:"text-blue-700"
+    },
+    {
+      icon: <FaWhatsapp size={28} />,
+      url: "https://wa.me/919030357676",
+      bg: "bg-white",
+      textColor:"text-green-500"
+    },
+  ];
 
   return (
-    <>
-      {/* <Chatbot open={chatOpen} onClose={() => setChatOpen(false)} /> */}
-
-      <div className="fixed right-2 top-1/2 -translate-y-1/2 z-40">
-        <div className="flex flex-col items-center gap-4 bg-white/70 border border-black/20 backdrop-blur p-2 rounded-2xl shadow-xl">
-          {/* <button
-            onClick={() => setChatOpen(true)}
-            className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition"
-            title="Chat with us"
-          >
-            <HiChatBubbleLeftRight size={20} />
-          </button> */}
-
+    <div className="fixed right-2 top-1/2 -translate-y-1/2 z-40">
+      <div className="flex flex-col items-center bg-white/70 border border-black backdrop-blur rounded-full shadow-xl overflow-hidden">
+        
+        {socialLinks.map((item, index) => (
           <button
-            onClick={() => window.open("https://www.linkedin.com/company/yourcompany", "_blank")}
-            className="w-9 h-9 rounded-full bg-[#0A66C2] text-white flex items-center justify-center"
+            key={index}
+            onClick={() => window.open(item.url, "_blank")}
+            className={`
+              w-12 h-12 flex items-center text-black justify-center hover:border-r-2 border-[#2F4191] transition-all duration-200
+              ${item.bg} ${item.textColor} 
+              ${index !== socialLinks.length - 1 ? "border-b border-black/20" : ""}
+            `}
           >
-            <FaLinkedinIn size={16} />
+            {item.icon}
           </button>
+        ))}
 
-          <button
-            onClick={() => window.open("https://www.instagram.com/yourpage", "_blank")}
-            className="w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center"
-          >
-            <FaInstagram size={16} />
-          </button>
-
-          <button
-            onClick={() => window.open("https://www.facebook.com/yourpage", "_blank")}
-            className="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center"
-          >
-            <FaFacebookF size={16} />
-          </button>
-
-          <button
-            onClick={() => window.open("https://wa.me/919030357676", "_blank")}
-            className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center"
-          >
-            <FaWhatsapp size={20} />
-          </button>
-        </div>
       </div>
-    </>
+    </div>
   );
 }
