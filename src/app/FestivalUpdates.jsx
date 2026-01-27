@@ -35,7 +35,7 @@ export default function FestivalUpdates({ link = "/" }) {  // Default link if no
 
         {/* Festival Image */}
         <Image
-          src="https://images.unsplash.com/photo-1701203651310-1a6ce5c040f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=320&h=180&q=90"  // Vibrant Pongal harvest festival (public, optimized)
+          src="/theme.webp"  // Vibrant Pongal harvest festival (public, optimized)
           alt="Pongal Festival Special Updates - Celebrate with us!"
           width={340}
           height={200}
@@ -44,7 +44,7 @@ export default function FestivalUpdates({ link = "/" }) {  // Default link if no
         />
 
         {/* CTA Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
+        {/* <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
           <h3 className="text-xl font-bold text-white mb-2 drop-shadow-lg">Pongal Special!</h3>
           <p className="text-orange-100 text-sm mb-4 opacity-90">Get latest festival updates & offers</p>
           <a
@@ -55,7 +55,7 @@ export default function FestivalUpdates({ link = "/" }) {  // Default link if no
           >
             View Updates →
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );
