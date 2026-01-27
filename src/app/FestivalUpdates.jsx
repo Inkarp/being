@@ -20,7 +20,7 @@ export default function FestivalUpdates({ link = "/" }) {  // Default link if no
 
   return (
     <div className="fixed left-0 top-1/2 -translate-y-1/2 z-[999] transition-all duration-700 animate-slideInRight">
-      <div className="relative bg-gradient-to-br from-black/95 via-slate-900/90 to-black/80 backdrop-blur-xl shadow-2xl shadow-[#FF6B35]/40 rounded-2xl rounded-r-none overflow-hidden w-[340px] border border-orange-500/30 hover:shadow-3xl hover:shadow-[#FF6B35]/60 group">
+      <div className="relative bg-white backdrop-blur-xl shadow-2xl shadow-[#FF6B35]/40 rounded-2xl rounded-r-none overflow-hidden w-[300px] border border-orange-500/30 hover:shadow-3xl hover:shadow-[#FF6B35]/60 group">
         {/* Close Button */}
         <button
           onClick={() => {
