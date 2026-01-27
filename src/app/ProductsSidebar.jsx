@@ -39,19 +39,19 @@ export default function ProductsSidebar() {
 
   return (
     <div
-      className="fixed left-0 top-1/2 -translate-y-1/2 z-50 group"
+      className="fixed right-0 top-1/2 -translate-y-1/2 z-50 group"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
       {/* COLLAPSED PILL */}
-      <div className="w-6 h-28 bg-[#2F4191] shadow-xl rounded-r-full border border-gray-200 flex items-center justify-center cursor-pointer">
+      <div className="w-6 h-28 bg-[#2F4191] shadow-xl rounded-l-full border border-gray-200 flex items-center justify-center cursor-pointer">
         <div className="w-1 h-10 bg-gray-300 rounded-full" />
       </div>
 
       {/* EXPANDABLE PANEL */}
       <div
         className={`
-          absolute left-6 top-1/2 -translate-y-1/2
+          absolute right-6 top-1/2 -translate-y-1/2
           bg-white rounded-3xl shadow-2xl border border-gray-200
           transition-all duration-500 overflow-hidden
           ${open ? "w-60 opacity-100 p-4" : "w-0 opacity-0 p-0"}

@@ -189,3 +189,15 @@
 
 
 
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.7s ease forwards;
+}

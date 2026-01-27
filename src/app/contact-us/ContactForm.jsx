@@ -83,21 +83,21 @@ export default function ContactFormSection() {
   }, [form, status]);
 
   return (
-    <section className="w-full py-5 ">
+    <section className="w-full">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch ">
         {/* Left: Contact Info - Glassmorphism Effect */}
         <div 
           ref={leftRef}
-          className="relative h-full min-h-[600px] group"
+          className="relative h-full min-h-[500px] group"
         >
           {/* Animated Background Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-indigo-600/20 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl transform group-hover:scale-[1.02] transition-all duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-indigo-600/20 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl transform  transition-all duration-500" />
           
           {/* Content */}
-          <div className="relative z-10 flex items-center justify-center h-full px-8 py-12">
+          <div className="relative z-10 flex items-center justify-center h-full p-x-3 py-5">
             <div className="w-full max-w-md space-y-8 text-white">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl lg:text-5xl font-black text-black bg-gradient-to-r from-white to-blue-100 bg-clip-text mb-4">
+              <div className="text-center">
+                <h2 className="text-4xl font-raleway font-black text-black bg-gradient-to-r from-white to-blue-100 bg-clip-text mb-4">
                   Let’s Connect!
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full" />
@@ -135,7 +135,7 @@ export default function ContactFormSection() {
           className="bg-gradient-to-b from-white to-slate-50 rounded-3xl shadow-2xl p-8 lg:p-12 border border-slate-200/50 backdrop-blur-sm h-full flex flex-col justify-center"
         >
           <div className="text-center">
-            <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl lg:text-5xl  font-black bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent mb-4">
               Get In Touch
             </h2>
             <p className="text-slate-600 font-medium text-lg max-w-md mx-auto">
