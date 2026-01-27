@@ -2,165 +2,120 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
 const causes = [
-    {
-        title: 'Ovens',
-        percentage: 10,
-        image: '/ovens.png',
-        link: "/products/ovens",
-        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
-    },
-    {
-        title: 'Incubators',
-        percentage: 12,
-        image: '/incubators.png',
-        link: "/products/incubators",
-        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
-    },
-    {
-        title: 'Chillers',
-        percentage: 9,
-        image: '/incubators.png',
-        link: "/products/chillers",
-        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
-    },
-
-    {
-        title: 'Water Baths',
-        percentage: 7,
-        image: '/incubators.png',
-        link: "/products/water-baths",
-        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
-    },
-    {
-        title: 'Rotary Evaporators',
-        percentage: 20,
-        image: '/water-baths.png',
-        link: "/products/rotary-evaporators",
-        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
-    },
-    {
-        title: 'Pumps',
-        percentage: 15,
-        image: '/incubators.png',
-        link: "/products/pumps",
-        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
-    },
-    {
-        title: 'Cabinet',
-        percentage: 5,
-        image: '/incubators.png',
-        link: "/products/cabinet",
-        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
-    },
-    {
-        title: 'Freezers',
-        percentage: 6,
-        image: '/incubators.png',
-        link: "/products/freezers",
-        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
-    },
-    {
-        title: 'Digital Viscometers',
-        percentage: 6,
-        image: '/incubators.png',
-        link: "/products/digital-viscometer",
-        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
-    },
-    {
-        title: 'Muffle furnance',
-        percentage: 6,
-        image: '/incubators.png',
-        link: "/products/muffle-furnance",
-        description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
-    },
+  {
+    title: 'Ovens',
+    percentage: 10,
+    image: '/ovens.png',
+    link: "/products/ovens",
+    description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+  },
+  {
+    title: 'Incubators',
+    percentage: 12,
+    image: '/incubators.png',
+    link: "/products/incubators",
+    description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+  },
+  {
+    title: 'Chillers',
+    percentage: 9,
+    image: '/incubators.png',
+    link: "/products/chillers",
+    description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+  },
+  {
+    title: 'Water Baths',
+    percentage: 7,
+    image: '/incubators.png',
+    link: "/products/water-baths",
+    description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+  },
+  {
+    title: 'Rotary Evaporators',
+    percentage: 20,
+    image: '/water-baths.png',
+    link: "/products/rotary-evaporators",
+    description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+  },
+  {
+    title: 'Pumps',
+    percentage: 15,
+    image: '/incubators.png',
+    link: "/products/pumps",
+    description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+  },
+  {
+    title: 'Cabinet',
+    percentage: 5,
+    image: '/incubators.png',
+    link: "/products/cabinet",
+    description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+  },
+  {
+    title: 'Freezers',
+    percentage: 6,
+    image: '/incubators.png',
+    link: "/products/freezers",
+    description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+  },
+  {
+    title: 'Digital Viscometers',
+    percentage: 6,
+    image: '/incubators.png',
+    link: "/products/digital-viscometer",
+    description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+  },
+  {
+    title: 'Muffle furnance',
+    percentage: 6,
+    image: '/incubators.png',
+    link: "/products/muffle-furnance",
+    description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
+  },
 ];
 
 export default function Offerings() {
-    const sectionRef = useRef(null);
-    const [visibleCards, setVisibleCards] = useState(3);
-    const [scrollEnabled, setScrollEnabled] = useState(true);
+  return (
+    <section className="py-5 relative">
+      <div className="w-full mx-auto  text-center">
+        <div className="inline-flex items-center">
+          <span className="px-5 py-2.5 bg-gradient-to-br from-[#2F4191]/50 to-[#2B7EC2]/50 text-xs font-bold uppercase tracking-widest border-2 border-gray-200 rounded-full shadow-sm">
+            Our Products
+          </span>
+        </div>
 
-    // Handle scroll inside section
-    useEffect(() => {
-        const section = sectionRef.current;
-        if (!section) return;
+        <p className="text-gray-600">
+          Our <span className="text-black font-medium">Customers</span> love our products
+        </p>
 
-        const handleWheel = (e) => {
-            const atBottom = visibleCards >= causes.length;
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 transition-all duration-500 rounded-2xl py-3">
+          {causes.map((cause, index) => (
+            <div
+              key={index}
+              className="border border-gray-100 shadow-xl overflow-hidden rounded-[30px] hover:border-[#2B7EC2] hover:scale-[1.05] transition-all duration-500"
+            >
+              <div className="relative">
+                <Image
+                  src={cause.image}
+                  alt={cause.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-48 border-b-2 border-[#2B7EC2] bg-gradient-to-r from-blue-50 via-white to-blue-50 p-6"
+                />
 
-            // If scrolling down inside section, reveal more cards
-            if (e.deltaY > 0 && visibleCards < causes.length) {
-                e.preventDefault(); // Stop main scroll
-                setScrollEnabled(false);
-                setVisibleCards((prev) => Math.min(prev + 1, causes.length));
-            }
+                <div className="absolute bottom-[-16px] left-1/3 bg-white border-2 border-[#2B7EC2] text-[#2B7EC2] font-semibold text-sm px-3 py-1 rounded-full shadow-sm">
+                  <span className='text-[#2F3F8D]'>{cause.percentage}+</span> Products
+                </div>
+              </div>
 
-            // Once all cards are visible, allow scroll again after a buffer
-            if (atBottom) {
-                setScrollEnabled(true);
-            }
-        };
+              <div className="p-5 flex flex-col justify-center items-center text-center space-y-3">
+                <h3 className="text-lg font-semibold">{cause.title}</h3>
+                <p className="text-gray-500 text-sm">{cause.description}</p>
 
-        // Lock scroll outside this section when not finished
-        const lockScroll = () => {
-            if (!scrollEnabled) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        };
-
-        section.addEventListener('wheel', handleWheel, { passive: false });
-        window.addEventListener('scroll', lockScroll);
-
-        return () => {
-            section.removeEventListener('wheel', handleWheel);
-            window.removeEventListener('scroll', lockScroll);
-            document.body.style.overflow = '';
-        };
-    }, [visibleCards, scrollEnabled]);
-
-    return (
-        <section
-            ref={sectionRef}
-            className="py-5 relative"
-        // style={{ height: 'auto', overflow: 'hidden' }}
-        >
-            <div ref={sectionRef} className="w-full mx-auto px-4 text-center">
-                <div className="inline-flex items-center">
-            <span className="px-5 py-2.5 bg-gradient-to-br from-[#2F4191]/50 to-[#2B7EC2]/50 text-xs font-bold uppercase tracking-widest border-2 border-gray-200 rounded-full shadow-sm">
-              Our Products
-            </span>
-          </div>
-                <p className="text-gray-600 ">
-                    Our <span className="text-black font-medium">Customers</span> love our products
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 transition-all duration-500 rounded-2xl py-3">
-                    {causes.slice(0, visibleCards).map((cause, index) => (
-                        <div key={index} className="border border-gray-100 shadow-xl  overflow-hidden rounded-[30px] hover:border border-[#2B7EC2] hover:scale-[1.05] transition-all duration-500">
-                            <div className="relative ">
-                                <Image
-                                    src={cause.image}
-                                    alt={cause.title}
-                                    width={600}
-                                    height={400}
-                                    className="w-full h-48  border-b-2 border-[#2B7EC2] bg-gradient-to-r from-blue-50 via-white to-blue-50 p-6"
-                                />
-
-                                <div className="absolute bottom-[-16px] left-1/3 bg-white border-2 border-[#2B7EC2] text-[#2B7EC2] font-semibold text-sm px-3 py-1 rounded-full shadow-sm">
-                                    <span className='text-[#2F3F8D]'> {cause.percentage}+</span> Products
-                                </div>
-                            </div>
-
-                            <div className="p-5 flex flex-col justify-center items-center text-center space-y-3">
-                                <h3 className="text-lg font-semibold">{cause.title}</h3>
-                                <p className="text-gray-500 text-sm">{cause.description}</p>
-
-                                <Link href={cause.link} >
+               <Link href={cause.link} >
                                 <div className="flex items-center justify-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-fit">
                                     <span className="text-white font-medium text-[16px]">Know More</span>
                                     {/* Gear SVG with arrow inside */}
@@ -184,11 +139,11 @@ export default function Offerings() {
                                     </div>
                                 </div>
                                 </Link>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+              </div>
             </div>
-        </section >
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

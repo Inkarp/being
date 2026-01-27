@@ -36,9 +36,9 @@ export default function Header() {
   const menuItems = [
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
-    // { name: "Insights & Updates", href: "/insights-updates" },
-    { name: "Events", href: "/events" },
-    { name: "Blogs", href: "/blog" },
+    { name: "Insights & Updates", href: "/insights-updates" },
+    // { name: "Events", href: "/events" },
+    // { name: "Blogs", href: "/blog" },
     { name: "About Us", href: "/about-us" },
     { name: "Contact Us", href: "/contact-us" },
     { name: "Product Profile", href: "/product-profile" },
