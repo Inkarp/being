@@ -96,7 +96,7 @@ export default function Header() {
           />
         </Link>
         {/* DESKTOP MENU */}
-        <nav className="hidden lg:flex flex-1 justify-center items-center gap-3 font-semibold font-raleway text-white text-[15px]">
+        <nav className="hidden lg:flex flex-1 justify-center items-center lg:gap-3 gap-1 font-semibold font-raleway text-white text-[15px]">
           {menuItems.map((item) => (
             <div key={item.name} className="relative group">
               {/* Parent */}
