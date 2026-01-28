@@ -32,18 +32,28 @@ export default function Header() {
     return () => (document.body.style.overflow = "");
   }, [isOpen]);
 
-
   const menuItems = [
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
-    { name: "Insights & Updates", href: "" },
-    // { name: "Events", href: "/events" },
-    // { name: "Blogs", href: "/blog" },
-    { name: "About Us", href: "/about-us" },
+    {
+      name: "Insights & Updates",
+      children: [
+        { name: "Events", href: "/events" },
+        { name: "Blogs", href: "/blog" },
+      ],
+    },
+    // { name: "About Us", href: "/about-us" },
+    {
+      name: "About Us",
+      children: [
+        { name: "About Us", href: "/about-us" },
+        { name: "Customers", href: "/customers" },
+      ],
+    },
     { name: "Contact Us", href: "/contact-us" },
     { name: "Product Profile", href: "/product-profile" },
-    // { name: "Customers", href: "/customers" }
   ];
+
 
   const socialLinks = [
     {
@@ -88,13 +98,36 @@ export default function Header() {
         {/* DESKTOP MENU */}
         <nav className="hidden lg:flex flex-1 justify-center items-center gap-3 font-semibold font-raleway text-white text-[15px]">
           {menuItems.map((item) => (
-            <Link key={item.name} href={item.href}>
-              <span className="px-4 py-2 hover:text-black hover:bg-white rounded transition">
-                {item.name}
-              </span>
-            </Link>
+            <div key={item.name} className="relative group">
+              {/* Parent */}
+              {item.children ? (
+                <span className="px-4 py-2 cursor-pointer hover:text-black hover:bg-white rounded transition block">
+                  {item.name}
+                </span>
+              ) : (
+                <Link href={item.href}>
+                  <span className="px-4 py-2 hover:text-black hover:bg-white rounded transition block">
+                    {item.name}
+                  </span>
+                </Link>
+              )}
+
+              {/* Dropdown */}
+              {item.children && (
+                <div className="absolute left-0 top-full mt-1 hidden group-hover:block bg-white text-black rounded-md shadow-lg w-44 z-50 overflow-hidden">
+                  {item.children.map((child) => (
+                    <Link key={child.name} href={child.href}>
+                      <span className="block px-4 py-2 text-sm hover:bg-[#2B7EC2] hover:text-white transition">
+                        {child.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
+
         <div className="flex gap-3">
           {/* SEARCH TRIGGER */}
           <button
@@ -163,18 +196,36 @@ export default function Header() {
         {/* SIDEBAR CONTENT */}
         <div className="h-[calc(100vh-72px)] overflow-y-auto px-6 py-6 space-y-8">
           {/* MENU */}
-          <nav className="space-y-4 font-semibold text-gray-700">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setIsSidebarOpen(false)}
-                className="block border-b pb-2 hover:text-[#2B7EC2]"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+          {menuItems.map((item) => (
+            <div key={item.name} className="border-b pb-2">
+              {item.children ? (
+                <>
+                  <p className="font-semibold text-[#2B7EC2]">{item.name}</p>
+                  <div className="pl-4 mt-2 space-y-2">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.name}
+                        href={child.href}
+                        onClick={() => setIsSidebarOpen(false)}
+                        className="block text-gray-700 hover:text-[#2B7EC2]"
+                      >
+                        {child.name}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <Link
+                  href={item.href}
+                  onClick={() => setIsSidebarOpen(false)}
+                  className="block hover:text-[#2B7EC2]"
+                >
+                  {item.name}
+                </Link>
+              )}
+            </div>
+          ))}
+
           {/* SOCIAL */}
           <div>
             <h3 className="font-bold mb-3 text-gray-700">Follow Us</h3>
