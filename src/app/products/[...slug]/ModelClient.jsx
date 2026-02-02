@@ -323,7 +323,7 @@ export default function Model() {
                 product={{
                     title: product.title,
                     thumbnail: product.meta.thumbnail,
-                    price: product.price,   // ✅ ADD THIS
+                    price: product.price,  
                 }}
             />
 
@@ -347,8 +347,8 @@ export default function Model() {
                     subcategory: subSlug,
                 }}
             />
-            {/* 
-            {subCategory?.models?.length > 1 && (
+            
+            {/* {subCategory?.models?.length > 1 && (
                 <PopupModal
                     models={subCategory.models}
                     categorySlug={categorySlug}
@@ -361,6 +361,8 @@ export default function Model() {
                     }}
                 />
             )} */}
+
+
             {categoryData?.subcategories?.length > 1 && (
                 <RelatedModels
                     subcategories={categoryData.subcategories}

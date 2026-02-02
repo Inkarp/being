@@ -84,7 +84,7 @@ export default function Header() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-[#2B7EC2] shadow-lg">
-      <header className="w-[90%] mx-auto py-2 flex items-center justify-between">
+      <header className="w-[90%] mx-auto py-2 flex items-center justify-center gap-4 lg:gap-0">
         <Link href="/" className="flex items-center bg-white rounded-r-xl border-r-5 border-[#2F4191]">
           <Image
             src="/logo.webp"
