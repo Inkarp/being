@@ -2,9 +2,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-      raleway: ['var(--font-raleway)'],
-      'dmsans': ['var(--font-dm-sans)'],
-    },
+        raleway: ['var(--font-raleway)'],
+        dmsans: ['var(--font-dm-sans)'],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
+      },
       animation: {
         slowspin: 'slowspin 10s linear infinite',
         'slide-in-right': 'slideInRight 0.25s ease-out',

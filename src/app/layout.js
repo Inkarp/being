@@ -1,5 +1,5 @@
 // app/layout.js
-import { Geist, Geist_Mono, Raleway, DM_Sans } from "next/font/google";
+import { Geist, Geist_Mono, Raleway, DM_Sans, Montserrat  } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "./ScrollToTop";
 import Header from "./Home/Header";
@@ -24,8 +24,8 @@ const geistMono = Geist_Mono({
 });
 
 const raleway = Raleway({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  // subsets: ["latin"],
+  weight: ["800"],
   variable: "--font-raleway",
 });
 
@@ -33,6 +33,13 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-dm-sans",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-montserrat",
+  display: "swap",
 });
 
 export const metadata = {
@@ -50,7 +57,8 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${dmSans.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${dmSans.variable} ${montserrat.variable}`}
+      // className={`${montserrat.variable}`}
     >
       <body className="bg-white">
         <ScrollToTop />

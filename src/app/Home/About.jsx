@@ -27,14 +27,14 @@ export default function About() {
         <div className="space-y-5 lg:order-2">
           {/* Badge */}
           <div className="inline-flex items-center">
-            <span className="px-5 py-2.5 bg-gradient-to-br from-[#2F4191]/50 to-[#2B7EC2]/50 text-xs font-bold uppercase tracking-widest border-2 border-gray-200 rounded-full shadow-sm">
+            <span className="px-5 py-2.5   bg-gradient-to-br from-[#2F4191]/50 to-[#2B7EC2]/50 text-xs font-bold uppercase tracking-widest border-2 border-gray-200 rounded-full shadow-sm">
               About Us
             </span>
           </div>
 
           {/* Headline + Description */}
           <div className="space-y-3">
-            <h2 className="text-3xl font-black leading-[0.88] bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent drop-shadow-sm">
+            <h2 className="text-3xl font-raleway">
               Your Trusted Lab Partner
             </h2>
             <div className="text-xl md:text-2xl text-gray-600 leading-relaxed  ">
