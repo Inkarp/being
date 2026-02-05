@@ -18,7 +18,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import Search from "./Search";
 import SearchOverlay from "./SearchOverlay";
 
-export default function Header() {
+export default function HeaderOne() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -83,9 +83,9 @@ export default function Header() {
   ];
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-[#2B7EC2] shadow-lg">
-      <header className="w-[90%] mx-auto py-2 flex items-center lg:justify-center justify-between gap-4 lg:gap-0">
-        <Link href="/" className="flex items-center  bg-white ">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-2xl">
+      <header className="w-[90%] mx-auto py-2 flex items-center justify-center gap-4 lg:gap-0">
+        <Link href="/" className="flex items-center">
           <Image
             src="/logo.webp"
             alt="Being Logo"
@@ -96,7 +96,7 @@ export default function Header() {
           />
         </Link>
         {/* DESKTOP MENU */}
-        <nav className="hidden lg:flex flex-1 flex-wrap-none justify-center items-center lg:gap-3 gap-1 font-semibold font-raleway text-white text-[15px]">
+        <nav className="hidden lg:flex flex-1 justify-center items-center lg:gap-3 gap-1 font-semibold font-raleway text-[#2B7EC2] text-[15px]">
           {menuItems.map((item) => (
             <div key={item.name} className="relative group">
               {/* Parent */}

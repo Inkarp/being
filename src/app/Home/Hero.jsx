@@ -5,6 +5,7 @@ import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 import { FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
 
+
 const sliderImages = ['/incubators.png', '/water-baths.png', '/ovens.png'];
 
 const names = ['Incubators', 'Water Baths', 'Ovens'];
@@ -20,11 +21,9 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="w-full mx-auto rounded-[30px] h-[86vh] flex flex-col md:flex-row  overflow-hidden">
-
+        <section className="w-full mx-auto rounded-[30px] h-[86vh] flex flex-col md:flex-row overflow-hidden">
             {/* Left: Video + text */}
             <div className="relative w-full md:w-1/2 h-full">
-
                 {/* Video */}
                 <video
                     autoPlay
@@ -79,15 +78,17 @@ export default function Hero() {
                         <MdNavigateNext className='h-5 w-5' />
 
                     </div>
-                    <div className='rounded-full p-1 bg-[#2B7EC2] text-white shadow-2xl '>
+                    <div className='rounded-full p-1 bg-[#2B7EC2] text-white shadow-2xl'>
                         <MdNavigateBefore className='h-5 w-5' />
                     </div>
                 </div>
                 <Image
                     src={sliderImages[currentSlide]}
+                    // width={500}
+                    // height={500}
                     alt="Auto slider"
                     fill
-                    className="object-contain bg-gray-200 transition-all duration-700"
+                    className="w-auto h-auto max-w-full transition-all duration-700"
                 />
 
                 <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 duration-300 flex items-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-fit">
