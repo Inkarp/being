@@ -56,7 +56,7 @@ export default function SearchOverlay({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-md">
+    <div className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-md">
       {/* CLOSE */}
       <button
         onClick={onClose}
@@ -106,7 +106,7 @@ export default function SearchOverlay({ isOpen, onClose }) {
                 p-4 rounded-xl hover:bg-white/10 transition
               "
             >
-              <div className="relative w-16 h-16 bg-white rounded-xl overflow-hidden">
+              <div className="relative w-24 h-24 bg-white rounded-xl overflow-hidden">
                 {item.image && (
                   <Image
                     src={item.image}
