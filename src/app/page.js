@@ -6,12 +6,16 @@ import BlogsNew from './Home/BlogsNew';
 import Customers from './Home/Customers';
 import CustomersOne from './Home/CustomersOne';
 import HeaderOne from './Home/HeaderOne';
+import ProductsList from './Home/ProductsList';
+import Products from './Home/Products';
 
 export default function Home() {
   return (
     <div className="">
       {/* <HeaderOne /> */}
       <Hero />
+      <Products />
+      <ProductsList />
       <Offerings />     
       <About />
       {/* <Customers /> */}

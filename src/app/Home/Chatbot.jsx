@@ -60,7 +60,7 @@ export default function Chatbot({ open, onClose }) {
     <div className="fixed bottom-20 right-4 z-50 w-[360px] rounded-2xl bg-white shadow-2xl border overflow-hidden">
       
       {/* Header */}
-      <div className="flex items-center justify-between bg-blue-600 px-4 py-3 text-white">
+      <div className="flex items-center justify-between bg-[#2F4191] px-4 py-3 text-white">
         <span className="font-semibold">Chat with us</span>
         <button onClick={onClose}>
           <HiX size={18} />
@@ -98,7 +98,7 @@ export default function Chatbot({ open, onClose }) {
               <button
                 onClick={() => saveAnswer(input)}
                 disabled={!input}
-                className="rounded-lg bg-blue-600 px-4 py-2 text-sm text-white disabled:opacity-50"
+                className="rounded-lg bg-[#2F4191] px-4 py-2 text-sm text-white disabled:opacity-50"
               >
                 Next
               </button>
@@ -111,7 +111,7 @@ export default function Chatbot({ open, onClose }) {
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className="w-full rounded-lg bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700 disabled:opacity-50"
+            className="w-full rounded-lg bg-[#2F4191] px-4 py-2 text-sm font-medium text-white hover:bg-[#2B7EC2] disabled:opacity-50"
           >
             {loading ? 'Submitting…' : 'Submit & Send'}
           </button>

@@ -135,7 +135,7 @@ export default function ContactFormSection() {
           className="bg-gradient-to-b from-white to-slate-50 rounded-3xl shadow-2xl p-8 lg:p-12 border border-slate-200/50 backdrop-blur-sm h-full flex flex-col justify-center"
         >
           <div className="text-center">
-            <h2 className="text-4xl lg:text-5xl  font-black bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent mb-4">
+            <h2 className="text-2xl lg:text-3xl  font-black bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent mb-4">
               Get In Touch
             </h2>
             <p className="text-slate-600 font-medium text-lg max-w-md mx-auto">

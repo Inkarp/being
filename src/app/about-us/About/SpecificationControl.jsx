@@ -22,7 +22,7 @@ export default function SpecificationControl() {
         <ul className="space-y-4">
           {points.map((p, i) => (
             <li key={i} className="flex items-start gap-3">
-              <span className="text-red-500">✔</span>
+              <span className="text-[#2F4191]">✔</span>
               <span>{p}</span>
             </li>
           ))}

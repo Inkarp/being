@@ -3,11 +3,11 @@
 import { useState } from 'react';
 
 const CATEGORIES = [
+    'Government',
     'Academia-Government',
     'Academia-Private',
-    'Dealer',
-    'Government',
-    'Private', 
+    'Dealer',  
+    'Private',
 ];
 
 
@@ -175,7 +175,7 @@ const CUSTOMERS = [
 ];
 
 export default function CustomersOne() {
-    const [activeCategory, setActiveCategory] = useState('Private');
+    const [activeCategory, setActiveCategory] = useState('Government');
 
     const filteredCustomers = CUSTOMERS.filter(
         (c) => c.category === activeCategory
@@ -234,9 +234,9 @@ export default function CustomersOne() {
                     </div>
                 </div>
 
-                {/* ================= RIGHT CUSTOMER GRID ================= */}
+               
                 <div className="lg:col-span-3 flex flex-col overflow-hidden">
-                    <div className="flex-1 border border-gray-200 rounded-xl p-3 overflow-hidden bg-[#F5F5F5] shadow-sm">
+                    <div className="flex-1 border border-gray-200 rounded-xl p-8 overflow-hidden bg-[#F5F5F5] shadow-sm">
                         <div className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
                             {filteredCustomers.length === 0 ? (
                                 <div className="flex items-center justify-center h-64 text-gray-500">
@@ -254,11 +254,11 @@ export default function CustomersOne() {
                                             </p>
 
                                             {/* HOVER TOOLTIP — desktop only */}
-                                            <div className="hidden lg:block absolute top-1/2 right-0 -translate-x-1/2 mb-3 w-72 bg-white border border-gray-200 rounded-xl shadow-xl p-5 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-10 max-w-xs">
+                                            <div className="hidden lg:block absolute bottom-0 left-1/2 -translate-x-1/2 mb-3 w-72 bg-white border border-gray-200 rounded-xl shadow-xl p-5 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-100 max-w-xs">
                                                 <p className="text-lg font-semibold text-[#2B7EC2] tracking-wide">
                                                     Products Purchased
                                                 </p>
-                                               <ul className="text-sm text-gray-700 z-100 space-y-1 max-h-32 overflow-y-auto">
+                                                <ul className="text-sm text-gray-700 z-100 space-y-1 max-h-32 overflow-y-auto">
                                                     {cust.products.map((p, i) => (
                                                         <li key={i} className="flex items-center ">
                                                             <span className="w-1.5 h-1.5 bg-[#2B7EC2] rounded-full mr-2"></span>
