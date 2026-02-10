@@ -4,16 +4,16 @@ import RoleCards from "./RoleCards";
 
 export default function AboutHero() {
   return (
-    <section className="relative min-h-[50vh] overflow-hidden py-20 px-6 bg-[#2F4191]">
+    <section className="relative min-h-[50vh] overflow-hidden py-5 px-6 bg-[#2F4191]">
       {/* Animated Background Particles */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-500/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-0"></div>
         <div className="absolute top-40 left-40 w-80 h-80 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
         <div className="absolute -bottom-40 left-20 w-80 h-80 bg-slate-400/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
-      </div>
+      </div> */}
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center relative z-10">
-        <div className="order-2 md:order-1 transform md:-rotate-1 md:translate-x-8 md:translate-y-12 hover:rotate-0 hover:translate-x-0 hover:translate-y-0 transition-all duration-700 group">
+      <div className="w-full mx-auto grid md:grid-cols-2 gap-10 p-5 items-center relative z-10">
+        <div className="order-2 md:order-1 transform md:-rotate-0 md:translate-x-0 md:translate-y-0 hover:rotate-0 hover:translate-x-8 hover:translate-y-12 transition-all duration-700 group">
           <h1 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-white via-slate-100 to-slate-200 bg-clip-text text-transparent leading-tight drop-shadow-2xl">
             Engineering Precision.<br />
             Delivered for India.
@@ -28,7 +28,7 @@ export default function AboutHero() {
           {/* Orbital Ring Effect */}
           <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-transparent to-purple-500/20 rounded-3xl -rotate-3 animate-spin-slow opacity-50"></div>
           <div className="relative z-10">
-            <p className="text-xs md:text-sm uppercase tracking-widest text-[#2B7EC2] font-medium mb-4 bg-gradient-to-r from-cyan-400/50 to-transparent bg-clip-text">
+            <p className="text-md md:text-sm font-raleway uppercase tracking-widest text-white font-medium mb-4 bg-gradient-to-r from-cyan-400/50 to-transparent bg-clip-text">
               Our Philosophy
             </p>
             <p className="text-xl md:text-2xl font-light text-white/95 leading-tight drop-shadow-lg">
