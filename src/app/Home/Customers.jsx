@@ -3,22 +3,13 @@
 import { useState } from 'react';
 
 const CATEGORIES = [
+    'Government',
     'Academia-Government',
     'Academia-Private',
-    'Government',
     'Private',
     'Dealer',
 ];
 
-// Sample product list (can be dynamic later)
-const SAMPLE_PRODUCTS = [
-    'FT-IR Spectrometer',
-    'HPLC System',
-    'AFM Microscope',
-    'Rotary Evaporator',
-    'Freeze Dryer',
-    'UV-Vis Spectrophotometer',
-];
 
 const CUSTOMERS = [
     { name: 'Asian Paints Limited (Mahape)', category: 'Private', products: ["FT-IR Spectrometer", "HPLC System"] },
@@ -106,16 +97,6 @@ const CUSTOMERS = [
     { name: 'Aurobindo Pharma Limited - Unit 3', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
     { name: 'AVIRAL POWER SOLUTIONS PVT LTD', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
     { name: 'Indian Institute of Science (IISc) - Bengaluru', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
-    { name: 'Hindustan Petroleum Corporation Limited', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"]    },
-    { name: 'Birla Institute of Technology & Science (BITS) Pilani - Hyderabad', category: 'Academia-Private', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'ICAR - Indian Veterinary Research Institute (IVRI)', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
-    { name: 'INDIAN SCIENTIFIC COMPANY', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'Biocon Limited - SEZ Unit', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
-    { name: 'Asian Paints Limited (Mahape)', category: 'Private', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
-    { name: 'Aurobindo Pharma Limited - Unit 3', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
-    { name: 'AVIRAL POWER SOLUTIONS PVT LTD', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'Indian Institute of Science (IISc) - Bengaluru', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
     { name: 'Hindustan Petroleum Corporation Limited', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
     { name: 'Birla Institute of Technology & Science (BITS) Pilani - Hyderabad', category: 'Academia-Private', products: ["FT-IR Spectrometer", "HPLC System"] },
     { name: 'ICAR - Indian Veterinary Research Institute (IVRI)', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
@@ -141,12 +122,22 @@ const CUSTOMERS = [
     { name: 'ICAR - Indian Veterinary Research Institute (IVRI)', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
     { name: 'INDIAN SCIENTIFIC COMPANY', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
     { name: 'Biocon Limited - SEZ Unit', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
-      { name: 'Asian Paints Limited (Mahape)', category: 'Private', products: ["FT-IR Spectrometer", "HPLC System"] },
+    { name: 'Asian Paints Limited (Mahape)', category: 'Private', products: ["FT-IR Spectrometer", "HPLC System"] },
     { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
     { name: 'Aurobindo Pharma Limited - Unit 3', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
     { name: 'AVIRAL POWER SOLUTIONS PVT LTD', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
     { name: 'Indian Institute of Science (IISc) - Bengaluru', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
-    { name: 'Hindustan Petroleum Corporation Limited', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"]    },
+    { name: 'Hindustan Petroleum Corporation Limited', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
+    { name: 'Birla Institute of Technology & Science (BITS) Pilani - Hyderabad', category: 'Academia-Private', products: ["FT-IR Spectrometer", "HPLC System"] },
+    { name: 'ICAR - Indian Veterinary Research Institute (IVRI)', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
+    { name: 'INDIAN SCIENTIFIC COMPANY', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
+    { name: 'Biocon Limited - SEZ Unit', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
+    { name: 'Asian Paints Limited (Mahape)', category: 'Private', products: ["FT-IR Spectrometer", "HPLC System"] },
+    { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
+    { name: 'Aurobindo Pharma Limited - Unit 3', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
+    { name: 'AVIRAL POWER SOLUTIONS PVT LTD', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
+    { name: 'Indian Institute of Science (IISc) - Bengaluru', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
+    { name: 'Hindustan Petroleum Corporation Limited', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
     { name: 'Birla Institute of Technology & Science (BITS) Pilani - Hyderabad', category: 'Academia-Private', products: ["FT-IR Spectrometer", "HPLC System"] },
     { name: 'ICAR - Indian Veterinary Research Institute (IVRI)', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
     { name: 'INDIAN SCIENTIFIC COMPANY', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
@@ -184,7 +175,7 @@ const CUSTOMERS = [
 ];
 
 export default function Customers() {
-    const [activeCategory, setActiveCategory] = useState('Private');
+    const [activeCategory, setActiveCategory] = useState('Government');
 
     const filteredCustomers = CUSTOMERS.filter(
         (c) => c.category === activeCategory

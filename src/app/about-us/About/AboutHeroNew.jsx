@@ -4,7 +4,7 @@ import RoleCards from "./RoleCards";
 
 export default function AboutHeroNew() {
   return (
-    <section className="relative min-h-[50vh] overflow-hidden py-20 px-6 ">
+    <section className="relative min-h-[50vh] overflow-hidden py-20 px-6 bg-black/50 ">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center relative z-10">
         <div className="order-2 md:order-1 transform md:-rotate-1 md:translate-x-8 md:translate-y-12 hover:rotate-0 hover:translate-x-0 hover:translate-y-0 transition-all duration-700 group">
           <h1 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-white via-slate-100 to-slate-200 bg-clip-text text-transparent leading-tight drop-shadow-2xl">

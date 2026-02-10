@@ -84,13 +84,13 @@ const profiles = [
 
 export default function VerticalsNewOne() {
     return (
-        <section className="w-full py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50/50 relative overflow-hidden">
+        <section className="w-full py-5  relative overflow-hidden">
             {/* Animated Background Particles */}
-            <div className="absolute inset-0">
+            {/* <div className="absolute inset-0">
                 <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-[#2B7EC2]/20 to-blue-300/20 rounded-full blur-3xl animate-pulse" />
                 <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-emerald-300/20 to-green-400/20 rounded-full blur-3xl animate-pulse delay-1000" />
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-purple-300/10 to-pink-300/10 rounded-full blur-3xl animate-ping" />
-            </div>
+            </div> */}
 
             {/* Heading */}
             <div className="text-center max-w-3xl mx-auto relative z-10">
@@ -111,7 +111,7 @@ export default function VerticalsNewOne() {
                         className="group bg-[#2F4191] backdrop-blur-xl border-2 border-[#2F4191]/50 rounded-3xl p-8 flex items-start gap-6 hover:border-[#2B7EC2]/70 hover:shadow-2xl hover:shadow-[#2B7EC2]/20 hover:-translate-y-3 hover:rotate-x-1 transition-all duration-500 origin-bottom relative overflow-hidden"
                     >
                         {/* Category Badge */}
-                        <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-white/90 to-gray-100/80 backdrop-blur-sm border-2 border-white/70 rounded-2xl flex items-center justify-center shadow-2xl rotate-12 group-hover:rotate-0 group-hover:scale-110 transition-all duration-700">
+                       <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-white to-gray-100/80 backdrop-blur-sm border-3 border-black/50 rounded-2xl flex items-center justify-center shadow-2xl rotate-15 group-hover:rotate-0 group-hover:scale-110 transition-all duration-700">
                             <span className="text-lg font-bold text-gray-800 uppercase tracking-wider drop-shadow-md">{index + 1}</span>
                         </div>
 

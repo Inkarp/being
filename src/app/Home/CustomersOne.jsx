@@ -254,7 +254,7 @@ export default function CustomersOne() {
                                             </p>
 
                                             {/* HOVER TOOLTIP — desktop only */}
-                                            <div className="hidden lg:block absolute bottom-0 left-1/2 -translate-x-1/2 mb-3 w-72 bg-white border border-gray-200 rounded-xl shadow-xl p-5 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-100 max-w-xs">
+                                            <div className="hidden lg:block absolute bottom-1/2 left-1/2 -translate-x-1/2 mb-3 w-72 bg-white border border-gray-200 rounded-xl shadow-xl p-5 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-100 max-w-xs">
                                                 <p className="text-lg font-semibold text-[#2B7EC2] tracking-wide">
                                                     Products Purchased
                                                 </p>
