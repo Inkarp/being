@@ -29,29 +29,23 @@ export default function Form() {
 
   const fieldsByStep = {
     1: ['name', 'company', 'industry', 'designation', 'department',],
-    2: [ 'email','phone', 'enquiredProduct', 'purchasePlan', 'country'],
+    2: ['email', 'phone', 'enquiredProduct', 'purchasePlan', 'country'],
     3: ['state', 'city', 'message']
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#2F4191] via-black to-[#2B7EC2] flex items-center justify-center px-4 py-20">
-      {/* Background Elements */}
-      {/* <div className="absolute inset-0">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
-      </div> */}
-
+    <section className="min-h-screen bg-black flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-12 items-start relative z-10">
         {/* Right Side - Hero Content (unchanged positioning) */}
         <div className="lg:order-2 text-center lg:text-left space-y-8">
           <div className="inline-block bg-white/10 backdrop-blur-xl rounded-3xl px-8 py-4 border border-white/20">
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200 leading-tight">
-              Ready to Transform
-              <span className="block text-2xl lg:text-3xl text-blue-300 font-light mt-4">Your Business?</span>
+              Reach Us At
+              {/* <span className="block text-2xl lg:text-3xl text-blue-300 font-light mt-4">We are here</span> */}
             </h1>
           </div>
-          <p className="text-xl text-slate-300 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-            Join 10,000+ teams accelerating their growth with our AI-powered solutions.
+          <p className="text-xl text-white max-w-lg mx-auto lg:mx-0 leading-relaxed">
+            Whether you have a question about our products, need assistance with an order, or just want to say hello, our team is ready to answer all your questions.  Don't hesitate to reach out – we're here to help!
           </p>
           <div className="grid md:grid-cols-3 gap-4">
             <ContactCard icon={FaMapMarkerAlt} title="HQ Address" detail="Hyderabad, Telangana, India" />
@@ -68,7 +62,7 @@ export default function Form() {
                 {/* Compact Stepper */}
                 <div className="flex items-center gap-2 mb-6">
                   {[1, 2, 3].map(s => (
-                    <div key={s} className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold transition-all ${step >= s ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg' : 'bg-white/20 text-white/50'}`}>
+                    <div key={s} className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold transition-all ${step >= s ? 'bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] text-white shadow-lg' : 'bg-white/20 text-white/50'}`}>
                       {s}
                     </div>
                   ))}
@@ -140,7 +134,7 @@ export default function Form() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="flex-1 bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all text-sm flex items-center justify-center gap-2 disabled:opacity-50"
+                      className="flex-1 bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all text-sm flex items-center justify-center gap-2 disabled:opacity-50"
                     >
                       {loading ? (
                         <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -167,7 +161,7 @@ export default function Form() {
                     setStep(1);
                     setSubmitted(false);
                   }}
-                  className="w-full bg-white text-indigo-900 font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all text-sm"
+                  className="w-full bg-white text-[#2F4191] font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all text-sm"
                 >
                   New Enquiry
                 </button>

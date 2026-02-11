@@ -7,10 +7,10 @@ export default function ContactDetails() {
                 {/* Left Section: Original Cards */}
                 <div className="w-full space-y-8 text-white flex flex-col items-center justify-center ">
                     <div className="text-center">
-                        <h2 className="text-4xl font-raleway font-black text-black bg-gradient-to-r from-white to-blue-100 bg-clip-text mb-4">
+                        <h2 className="text-4xl font-raleway font-black text-black bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] bg-clip-text mb-4">
                             Let’s Connect!
                         </h2>
-                        <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full" />
+                        <div className="w-24 h-1 bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] mx-auto rounded-full" />
                     </div>
 
                     <div className="space-y-3">
@@ -36,24 +36,24 @@ export default function ContactDetails() {
                 {/* Right Section: New Specialized Cards */}
                 <div className="w-full  space-y-8 text-white flex flex-col items-center justify-center">
                     <div className="text-center">
-                        <h2 className="text-4xl font-raleway font-black text-black bg-gradient-to-r from-white to-blue-100 bg-clip-text mb-4">
+                        <h2 className="text-4xl font-raleway font-black text-black bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] bg-clip-text mb-4">
                             Reach Us
                         </h2>
-                        <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full" />
+                        <div className="w-24 h-1 bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] mx-auto rounded-full" />
                     </div>
 
                     <div className="space-y-3 grid grid-cols-2 gap-5">
                         {[
-                            { icon: FaHeadset, title: "Service Queries", info: "+(009) 1888 000 3333", color: "from-green-500 to-blue-500" },
+                            { icon: FaHeadset, title: "Service Queries", info: "+91 9030357676", color: "from-green-500 to-blue-500" },
                             { icon: FaEnvelope, title: "Service Email", info: "service@techin.com", color: "from-green-500 to-blue-500" },
-                            { icon: FaPhoneAlt, title: "Support Phone", info: "+(009) 1888 000 4444", color: "from-orange-500 to-red-500" },
+                            { icon: FaPhoneAlt, title: "Support Phone", info: "+91 9030357676", color: "from-orange-500 to-red-500" },
                             { icon: FaEnvelope, title: "Support Mail", info: "support@techin.com", color: "from-orange-500 to-red-500" },
-                            { icon: FaUserCog, title: "Account Queries", info: "+(009) 1888 000 5555", color: "from-purple-500 to-pink-500" },
+                            { icon: FaUserCog, title: "Account Queries", info: "+91 9030357676", color: "from-purple-500 to-pink-500" },
                             { icon: FaEnvelope, title: "Account Email", info: "accounts@techin.com", color: "from-purple-500 to-pink-500" },
                         ].map(({ icon: Icon, title, info, color }, idx) => (                         
                             <div key={idx} className="group/contact bg-[#2F4191] flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 hover:backdrop-blur-sm hover:scale-[1.02]">
                                 <div className={`w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-r ${color} shadow-lg group-hover/contact:rotate-360 transition-transform duration-500 flex-shrink-0`}>
-                                    <Icon className="w-7 h-7 text-white shadow-md " />
+                                    <Icon className="w-7 h-7 text-white  " />
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-white text-lg mb-1">{title}</h4>

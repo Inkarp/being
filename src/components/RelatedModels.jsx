@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaArrowRight } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function RelatedModels({
   subcategories = [],
@@ -96,9 +97,11 @@ export default function RelatedModels({
             >
               {/* IMAGE */}
               <div className="relative h-auto rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4 overflow-hidden">
-                <img
+                <Image
                   src={model.thumbnail}
                   alt={model.title}
+                  width={400}
+                  height={300}
                   className="
                     max-h-full object-contain
                     transition-transform duration-300
