@@ -182,7 +182,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
               placeholder="Designation *"
               value={formData.designation}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+              className="w-full rounded-full border border-gray-300 px-3 py-2 text-sm
                          focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
             />
             <input
@@ -191,7 +191,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
               placeholder="Department *"
               value={formData.department}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm
+              className="w-full rounded-full border border-gray-300 px-3 py-2 text-sm
                          focus:border-[#2F4191] focus:ring-2 focus:ring-[#2B7EC2]/30 outline-none"
             />
           </div>
@@ -245,7 +245,6 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
                 </option>
               ))}
             </select>
-
           </div>
 
           <input
