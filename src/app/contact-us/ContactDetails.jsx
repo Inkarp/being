@@ -3,7 +3,7 @@ import { FaUser, FaEnvelope, FaClock, FaPhoneAlt, FaMapMarkerAlt, FaHeadset, FaU
 export default function ContactDetails() {
     return (
         <div className="relative h-full group">
-            <div className="relative z-10 lg:flex sm:flex-col items-center justify-center h-full px-3 py-5">
+            <div className="relative z-10 lg:flex items-center justify-center h-full px-3 py-5">
                 {/* Left Section: Original Cards */}
                 <div className="w-full space-y-8 text-white flex flex-col items-center justify-center ">
                     <div className="text-center">
@@ -50,7 +50,7 @@ export default function ContactDetails() {
                             { icon: FaEnvelope, title: "Support Mail", info: "support@techin.com", color: "from-orange-500 to-red-500" },
                             { icon: FaUserCog, title: "Account Queries", info: "+91 9030357676", color: "from-purple-500 to-pink-500" },
                             { icon: FaEnvelope, title: "Account Email", info: "accounts@techin.com", color: "from-purple-500 to-pink-500" },
-                        ].map(({ icon: Icon, title, info, color }, idx) => (                         
+                        ].map(({ icon: Icon, title, info, color }, idx) => (
                             <div key={idx} className="group/contact bg-[#2F4191] flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 hover:backdrop-blur-sm hover:scale-[1.02]">
                                 <div className={`w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-r ${color} shadow-lg group-hover/contact:rotate-360 transition-transform duration-500 flex-shrink-0`}>
                                     <Icon className="w-7 h-7 text-white  " />
@@ -59,7 +59,7 @@ export default function ContactDetails() {
                                     <h4 className="font-bold text-white text-lg mb-1">{title}</h4>
                                     <p className="text-white font-medium text-lg">{info}</p>
                                 </div>
-                            </div>                        
+                            </div>
                         ))}
                     </div>
                 </div>
