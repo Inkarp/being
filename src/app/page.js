@@ -8,6 +8,7 @@ import CustomersOne from './Home/CustomersOne';
 import HeaderOne from './Home/HeaderOne';
 import ProductsList from './Home/ProductsList';
 import Products from './Home/Products';
+import Testimonials from './Home/Testimonials';
 
 export default function Home() {
   return (
@@ -15,12 +16,13 @@ export default function Home() {
       {/* <HeaderOne /> */}
       <Hero />
       <Products />
-      <ProductsList />
+      {/* <ProductsList /> */}
       <Offerings />
       <About />
       <CustomersOne />
-      <Customers />
+      {/* <Customers /> */}
       <Blogs />
+      <Testimonials />
       {/* <BlogsNew /> */}
     </div>
   );

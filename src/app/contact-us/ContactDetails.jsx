@@ -3,7 +3,7 @@ import { FaUser, FaEnvelope, FaClock, FaPhoneAlt, FaMapMarkerAlt, FaHeadset, FaU
 export default function ContactDetails() {
     return (
         <div className="relative h-full group">
-            <div className="relative z-10 flex items-center justify-center h-full px-3 py-5">
+            <div className="relative z-10 lg:flex sm:flex-col items-center justify-center h-full px-3 py-5">
                 {/* Left Section: Original Cards */}
                 <div className="w-full space-y-8 text-white flex flex-col items-center justify-center ">
                     <div className="text-center">

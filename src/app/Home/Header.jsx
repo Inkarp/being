@@ -42,14 +42,7 @@ export default function Header() {
         { name: "Blogs", href: "/blog" },
       ],
     },
-    // { name: "About Us", href: "/about-us" },
-    {
-      name: "About Us",
-      children: [
-        { name: "About Us", href: "/about-us" },
-        { name: "Customers", href: "/customers" },
-      ],
-    },
+    { name: "About Us", href: "/about-us" },
     { name: "Contact Us", href: "/contact-us" },
     { name: "Product Profile", href: "/product-profile" },
   ];
@@ -74,29 +67,25 @@ export default function Header() {
       bg: "bg-white",
       textColor: "text-blue-700"
     },
-    {
-      icon: <FaWhatsapp size={28} />,
-      url: "https://wa.me/919030357676",
-      bg: "bg-white",
-      textColor: "text-green-500"
-    },
   ];
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-[#2B7EC2] shadow-lg">
-      <header className="w-[90%] mx-auto py-2 flex items-center lg:justify-center justify-between gap-4 lg:gap-0">
-        <Link href="/" className="flex items-center  bg-white ">
-          <Image
-            src="/logo.webp"
-            alt="Being Logo"
-            width={100}
-            height={100}
-            className="rounded-xl object-cover"
-            priority
-          />
-        </Link>
+    <div className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[92%] lg:w-[100%] flex items-center justify-between lg:px-0 sm:px-0 lg:py-0 sm:py-0  border-b-2 border-[#2F4191]/30 shadow-2xl backdrop-blur-lg bg-white/80">
+      <Link href="/" className="flex items-center hidden lg:block justify-center w-auto lg:w-[10%] overflow-hidden">
+        <Image
+          src="/logo.webp"
+          alt="Being Logo"
+          width={130}
+          height={100}
+          // className="rounded-xl object-contain w-[70px] sm:w-[80px] lg:w-[100px] h-auto"
+          priority
+        />
+      </Link>
+      <header className="flex-1 rounded-full py-2 px-3 sm:px-4 lg:px-5 flex lg:bg-[#2B7EC2] sm:bg-white items-center justify-between lg:justify-center gap-2 sm:gap-4 lg:gap-0">
+
         {/* DESKTOP MENU */}
-        <nav className="hidden lg:flex flex-1 flex-wrap-none justify-center items-center lg:gap-3 gap-1 font-semibold font-raleway text-white text-[15px]">
+        <nav className="hidden lg:flex flex-1 justify-center items-center gap-2 xl:gap-3 font-semibold font-raleway text-white text-[14px] xl:text-[15px]">
+
           {menuItems.map((item) => (
             <div key={item.name} className="relative group">
               {/* Parent */}
@@ -128,14 +117,25 @@ export default function Header() {
           ))}
         </nav>
 
+        <Link href="/" className="flex items-center lg:hidden  justify-center w-auto lg:w-[10%] overflow-hidden">
+
+          <Image
+            src="/logo.webp"
+            alt="Being Logo"
+            width={100}
+            height={100}
+            className="rounded-xl object-contain w-[80px] h-auto"
+            priority
+          />
+        </Link>
         <div className="flex gap-3">
           {/* SEARCH TRIGGER */}
           <button
             onClick={() => setIsSearchOpen(true)}
-            className="flex items-center gap-2 bg-white rounded-full px-2 py-2 lg:h-9 h-12 text-[#2B7EC2] hover:bg-gray-100 transition"
+            className="flex items-center gap-2 lg:bg-white bg-black/20 rounded-full px-4 sm:px-4 py-2 h-12 sm:h-11 lg:h-9 text-[#2B7EC2] hover:bg-gray-100 transition"
             aria-label="Search products"
           >
-            <FaSearch size={20} />
+            <FaSearch size={24} />
             <span className="hidden lg:inline text-sm text-gray-500">
               Search for products…
             </span>
@@ -144,21 +144,17 @@ export default function Header() {
           {/* HAMBURGER */}
           <button
             onClick={() => setIsSidebarOpen(true)}
-            className="bg-white w-12 h-12 lg:hidden block rounded-full flex items-center justify-center text-[#2B7EC2] hover:bg-gray-100 transition"
+            className="lg:bg-white bg-black/20 w-12 h-12 lg:hidden block rounded-full flex items-center justify-center text-[#2B7EC2] hover:bg-gray-100 transition"
             aria-label="Open menu"
           >
             <RxHamburgerMenu size={26} />
           </button>
-          <div className="lg:flex hidden items-center  overflow-hidden relative group">
-            {/* Orbiting Shine Effect */}
-            {/* <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -skew-x-12 animate-shimmer [animation-duration:20s]" /> */}
+          <div className="lg:flex hidden items-center overflow-hidden relative group ">
             {socialLinks.map((item, index) => (
               <button
                 key={index}
                 onClick={() => window.open(item.url, "_blank")}
-                className={`relative w-10 h-10 mx-1 p-2 rounded-full flex items-center justify-center text-lg transition-all duration-300 ease-out bg-white/80 backdrop-blur-lg border-2 border-white/40 shadow-xl hover:shadow-2xl hover:shadow-[#2F4191]/50 hover:scale-110 hover:-rotate-12 hover:border-[#2F4191]/80 hover:before:absolute hover:before:inset-0 hover:before:bg-gradient-to-r hover:before:from-[#2F4191]/20 hover:before:to-transparent hover:before:rounded-full hover:before:animate-ping${item.bg} ${item.textColor} hover:${item.bg} hover:${item.textColor}/90 group-hover:animate-pulse-slow
-        active:scale-95 active:shadow-inner
-      `}
+                className={`relative w-10 h-10 mx-1 p-2 rounded-full flex items-center justify-center text-lg transition-all duration-300 ease-out bg-white/80 backdrop-blur-lg border-2 border-white/40  hover:scale-110 hover:rotate-15 hover:border-[#2F4191]/80 hover:before:absolute hover:before:inset-0 hover:before:bg-gradient-to-r hover:before:from-[#2F4191]/20 hover:before:to-transparent hover:before:rounded-full hover:before:animate-ping${item.bg} ${item.textColor} hover:${item.bg} hover:${item.textColor}/90 group-hover:animate-pulse-slow active:scale-95 active:shadow-inner`}
                 title={item.name || `Open ${item.platform}`}
               >
                 {item.icon}
@@ -169,20 +165,19 @@ export default function Header() {
         </div>
       </header >
       {/* ================= OVERLAY ================= */}
-      {
-        isSidebarOpen && (
-          <div
-            onClick={() => setIsSidebarOpen(false)}
-            className="fixed inset-0 bg-black/30 z-40"
-          />
-        )
-      }
+      {isSidebarOpen && (
+        <div
+          onClick={() => setIsSidebarOpen(false)}
+          className="fixed inset-0 bg-black/30 z-40 lg:hidden"
+        />
+      )}
+
       {/* ================= SIDEBAR ================= */}
       <aside
-        className={`fixed top-0 right-0 h-screen w-[340px] bg-white shadow-xl z-50
-        transform transition-transform duration-300
-        ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 h-screen w-[85%] sm:w-[340px] max-w-[360px] bg-white shadow-xl z-50  transform transition-transform duration-300 lg:hidden
+  ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
       >
+
         {/* SIDEBAR HEADER */}
         <div className="flex items-center justify-between p-4 border-b sticky top-0 bg-white">
           <Image src="/logo.webp" alt="Logo" width={140} height={40} />

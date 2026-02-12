@@ -717,7 +717,9 @@ export default function Model() {
                                             key={index}
                                             className="rounded-xl overflow-hidden  transition"
                                         >
-                                            <img
+                                            <Image
+                                                width={500}
+                                                height={500}
                                                 src={img}
                                                 alt={`Customer feedback ${index + 1} for ${product.meta.title}`}
                                                 className="w-full h-auto object-contain bg-gray-50 p-3"

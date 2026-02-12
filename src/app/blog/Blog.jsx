@@ -6,7 +6,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 export default function Blog() {
   return (
-    <section className="p-5 w-full mx-auto">
+    <section className="py-3 w-full mx-auto">
       <div className="flex flex-col lg:flex-row gap-10 ">
         {/* Left Section (Main Blog Grid) */}
         <div className=" space-y-5 ">

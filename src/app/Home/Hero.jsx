@@ -72,7 +72,8 @@ export default function Hero() {
             </div>
 
             {/* Right: Auto-sliding image */}
-            <div className="md:w-1/2 w-full h-full relative bg-gray-300">
+            <div className="md:w-1/2 w-full relative bg-gray-300 min-h-[400px] md:min-h-[600px]">
+
                 <div className="absolute top-50 left-0 z-20 bg-white flex flex-col gap-5 rounded-r-xl flex justify-center items-center px-2 py-5 shadow-lg">
                     <div className='rounded-full p-1 bg-[#2B7EC2] text-white shadow-2xl'>
                         <MdNavigateNext className='h-5 w-5' />
@@ -84,11 +85,9 @@ export default function Hero() {
                 </div>
                 <Image
                     src={sliderImages[currentSlide]}
-                    // width={500}
-                    // height={500}
                     alt="Auto slider"
                     fill
-                    className="w-auto h-auto max-w-full transition-all duration-700"
+                    className="object-cover transition-all duration-700"
                 />
 
                 <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 duration-300 flex items-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-fit">

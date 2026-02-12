@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { FaArrowRight, FaClock, FaMapMarkerAlt, FaSearch } from 'react-icons/fa';
 
 const events = [
@@ -22,64 +23,23 @@ const events = [
     image: '/event.jpg',
     extraImage: '/eventImg2.webp',
   },
-  
 
 ];
 
-const categories = [
-  { name: 'All', count: 52 },
-  { name: 'Conferences', count: 11 },
-  { name: 'Events', count: 10 },
-  { name: 'Pages', count: 52 },
-];
 
-const archives = [
-  { name: 'March 2015', count: 4 },
-  { name: 'January 2015', count: 5 },
-  { name: 'December 2014', count: 6 },
-  { name: 'October 2014', count: 8 },
-];
 
 export default function Events() {
   return (
-    <section className="w-full mx-auto p-5">
+    <section className="w-full mx-auto ">
       <div className=" mx-auto flex flex-col lg:flex-row gap-10">
         <div className="flex-1">
-          <div className="bg-white px-6 py-6 shadow-xl rounded-xl mb-8 space-y-6 text-sm font-medium text-gray-700">
-
-            {/* Top Filter Row */}
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <span className="font-semibold text-base">EVENTS FILTER:</span>
-
-              <div className="flex flex-wrap gap-4">
-                <select className="border border-gray-300 rounded px-3 py-1 bg-white text-sm">
-                  <option>All Events</option>
-                </select>
-                <select className="border border-gray-300 rounded px-3 py-1 bg-white text-sm">
-                  <option>Place</option>
-                </select>
-              </div>
-            </div>
-
-            {/* Categories Section */}
-            <div>
-              <h4 className="font-bold text-sm mb-2">CATEGORIES</h4>
-              <ul className="space-y-2 text-sm text-gray-700 flex justify-between">
-                {categories.map((cat, i) => (
-                  <li key={i} className="flex justify-between border-b border-black/10 pb-1">
-                    <span>{cat.name}</span>
-                    <span>({cat.count})</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
           {events.map((event, index) => (
             <div key={index} className="w-full flex flex-col md:flex-row py-2 gap-6">
               {/* LEFT: Event Card */}
-              <div className="w-full md:w-3/5 bg-white flex flex-col md:flex-row shadow-md rounded-xl overflow-hidden">
-                <img
+              <div className="w-full md:w-3/5 bg-white border border-[#2F4191]/50 flex flex-col md:flex-row shadow-md rounded-xl overflow-hidden">
+                <Image
+                  width={600}
+                  height={400}
                   src={event.image}
                   alt={event.title}
                   className="w-full md:w-1/2 h-auto object-cover"
@@ -120,7 +80,9 @@ export default function Events() {
 
               {/* RIGHT: Extra Image */}
               <div className="w-full md:w-2/5 flex justify-center items-center">
-                <img
+                <Image
+                  width={500}
+                  height={300}
                   src={event.extraImage} // Replace with your right-side image
                   alt="Extra Visual"
                   className="rounded-lg shadow-md w-full h-full object-cover"

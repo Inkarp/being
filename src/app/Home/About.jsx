@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 export default function About() {
   return (
-    <section className="py-5 px-4 min-h-screen flex flex-col items-center font-raleway">
+    <section className="py-5 min-h-screen flex flex-col items-center font-raleway">
       <div className=" grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div className="space-y-12 order-2 lg:order-1">
           <div className="relative group">

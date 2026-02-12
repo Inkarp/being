@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
         <Header />
          {/* <SidebarNav /> */}
         {/* <ShareButton /> */}
-        {/* <SocialContactBar /> */}
+        <SocialContactBar />
         <FestivalUpdates  />
         <ProductsSidebar />
         <main className="w-[90%] mx-auto pt-20">

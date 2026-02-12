@@ -71,7 +71,7 @@ export default function ProductTabContent({
                     {spec.label}
                   </span>
                 </div>
-                <div className="bg-gray-300 text-black p-2 flex-1 text-left"> {/* Right: value bg */}
+                <div className="bg-[#2B7EC2]/50 text-black p-2 flex-1 text-left"> {/* Right: value bg */}
                   <span className="text-sm  block">
                     {spec.value}
                   </span>
@@ -105,7 +105,7 @@ export default function ProductTabContent({
                 key={index}
                 className="border border-gray-200 rounded-xl p-5 bg-white hover:shadow-sm"
               >
-                <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                <h4 className="text-lg font-bold text-[#2B7EC2] mb-2">
                   {app.label}
                 </h4>
                 <p className="text-sm text-gray-700 leading-relaxed">

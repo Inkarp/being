@@ -197,13 +197,13 @@ export default function CustomersOne() {
             </div>
 
             {/* MAIN LAYOUT */}
-            <div className="flex-1 flex flex-col gap-0 overflow-hidden p-2 space-y-3">
+            <div className="flex-1 flex flex-col gap-0 overflow-hidden py-2 space-y-3">
                 {/* ================= MOBILE DROPDOWN ================= */}
                 <div className="lg:hidden bg-white ">
                     <select
                         value={activeCategory}
                         onChange={(e) => setActiveCategory(e.target.value)}
-                        className="w-full border border-gray-300 rounded-lg px-2 py-2 text-gray-700 focus:ring-2 focus:ring-[#2B7EC2] focus:border-transparent"
+                        className="w-full border bg-[#2F4191] border-gray-300 rounded-lg px-2 py-2 text-gray-700 focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200"
                     >
                         {CATEGORIES.map((cat) => (
                             <option key={cat} value={cat}>
@@ -222,9 +222,9 @@ export default function CustomersOne() {
                             <button
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
-                                className={`w-full text-center px-4 py-3 rounded-lg bg-[#2F4191] border transition-all duration-200 text-sm font-medium
+                                className={`w-full text-center px-4 py-3 rounded-lg  border transition-all duration-200 text-sm font-medium
                                     ${activeCategory === cat
-                                        ? 'bg-[#2B7EC2] text-white border-white/50 shadow-md'
+                                        ? 'bg-[#2B7EC2] text-white border-white/50 text-lg'
                                         : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm cursor-pointer'
                                     }`}
                             >

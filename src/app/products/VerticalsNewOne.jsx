@@ -84,14 +84,7 @@ const profiles = [
 
 export default function VerticalsNewOne() {
     return (
-        <section className="w-full py-5  relative overflow-hidden">
-            {/* Animated Background Particles */}
-            {/* <div className="absolute inset-0">
-                <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-[#2B7EC2]/20 to-blue-300/20 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-emerald-300/20 to-green-400/20 rounded-full blur-3xl animate-pulse delay-1000" />
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-purple-300/10 to-pink-300/10 rounded-full blur-3xl animate-ping" />
-            </div> */}
-
+        <section className="w-full py-5 relative overflow-hidden">
             {/* Heading */}
             <div className="text-center max-w-3xl mx-auto relative z-10">
                 <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-slate-800 bg-clip-text text-transparent drop-shadow-lg">

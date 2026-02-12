@@ -95,7 +95,7 @@ export default function Footer() {
             <div className="py-3">
                 <div className="w-[90%] mx-auto bg-white text-white mx-auto py-3 px-5 flex flex-col lg:flex-row justify-between items-center gap-6 text-black font-bold text-sm md:text-base rounded-xl">
                     <div className="flex items-center gap-5 group">                      
-                        <img src="/map.svg" className='h-10 w-10 group-hover:rotate-360 transition duration-300'/>
+                        <Image alt='' width={500} height={500} src="/map.svg" className='h-10 w-10 group-hover:rotate-360 transition duration-300'/>
                         <div className=''>
                             <p className="text-xl font-semibold text-[#2B7EC2]">Office Address</p>
                             <p className="text-md font-bold text-black">Nacharam, Habsiguda , Hyderabad, Telangana</p>
@@ -106,7 +106,7 @@ export default function Footer() {
                         <div className='h-20 bg-black w-px'></div>
                         <div className='flex items-center justify-center group'>
                             <div>
-                                <img src="/email.svg" className='h-10 w-10 group-hover:rotate-360 transition duration-500' />
+                                <Image alt='' width={500} height={500} src="/email.svg" className='h-10 w-10 group-hover:rotate-360 transition duration-500' />
                             </div>
                             <div className='flex flex-col gap-1 p-5'>
                                 <p className="text-xl font-semibold text-[#2B7EC2]">Email Address</p>
@@ -120,7 +120,7 @@ export default function Footer() {
                         <div className='h-20 bg-black w-px'></div>
                         <div className='flex items-center justify-center group'>
                             <div>
-                                <img src="/contact.svg" className='h-10 w-10 group-hover:rotate-360 transition duration-300' />
+                                <Image alt='' width={500} height={500} src="/contact.svg" className='h-10 w-10 group-hover:rotate-360 transition duration-300' />
                             </div>
                             <div className='flex flex-col gap-1 p-5 animate-bounce'>
                                 <p className="text-xl font-semibold text-[#2B7EC2]">Call Us For Support</p>
@@ -141,8 +141,6 @@ export default function Footer() {
                     <p>Terms and Conditions</p>
                 </div>
             </div>
-
-            {/* Footer Bottom */}
         </footer>
     );
 }
