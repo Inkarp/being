@@ -9,6 +9,10 @@ import HeaderOne from './Home/HeaderOne';
 import ProductsList from './Home/ProductsList';
 import Products from './Home/Products';
 import Testimonials from './Home/Testimonials';
+import TestimonialOne from './Home/TestimonialsOne';
+import TestimonialsTwo from './Home/TestinomialsTwo';
+import TestimonialsThree from './Home/TestimonialsThree';
+import TestimonialsFour from './Home/TestinomialsFour';
 
 export default function Home() {
   return (
@@ -23,6 +27,10 @@ export default function Home() {
       {/* <Customers /> */}
       <Blogs />
       <Testimonials />
+      <TestimonialOne />
+      <TestimonialsTwo />
+      <TestimonialsThree />
+      <TestimonialsFour />
       {/* <BlogsNew /> */}
     </div>
   );

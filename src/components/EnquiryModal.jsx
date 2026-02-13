@@ -197,7 +197,6 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
           </div>
           {/* DESIGNATION & PHONE */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
             <input
               name="phone"
               required
