@@ -1,5 +1,5 @@
 // app/layout.js
-import { Geist, Geist_Mono, Raleway, DM_Sans, Montserrat  } from "next/font/google";
+import { Geist, Geist_Mono, Raleway, DM_Sans, Montserrat } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "./ScrollToTop";
 import Header from "./Home/Header";
@@ -11,6 +11,7 @@ import ProductsSidebar from "./ProductsSidebar";
 import SocialContactBar from "./SocialContactBar";
 import SidebarNav from "./Home/SidebarNav";
 import FestivalUpdates from "./FestivalUpdates";
+import FooterNew from "./Home/FooterNew";
 
 
 const geistSans = Geist({
@@ -57,21 +58,21 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${dmSans.variable} ${montserrat.variable}`}
-      // className={`${montserrat.variable}`}
-    >
+      className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${dmSans.variable} ${montserrat.variable}`} >
+      {/* // className={`${montserrat.variable}`} */}
       <body className="bg-white">
         <ScrollToTop />
         <Header />
-         {/* <SidebarNav /> */}
+        {/* <SidebarNav /> */}
         {/* <ShareButton /> */}
         <SocialContactBar />
-        <FestivalUpdates  />
+        <FestivalUpdates />
         <ProductsSidebar />
         <main className="w-[90%] mx-auto pt-20">
           {children}
         </main>
         <ChatModal />
+        <FooterNew />
         <Footer />
       </body>
     </html>

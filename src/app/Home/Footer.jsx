@@ -136,7 +136,6 @@ export default function Footer() {
                     <p>Privacy Policy</p>
                     <p>
                         Copyright © <span className=" font-semibold">Inkarp</span>. All rights reserved by{' '}
-
                     </p>
                     <p>Terms and Conditions</p>
                 </div>
