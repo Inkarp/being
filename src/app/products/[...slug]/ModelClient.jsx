@@ -27,7 +27,7 @@ import ServiceForm from '../../../components/ServiceForm';
 import ProductTabs from './ProductsTab';
 import ProductTabContent from './ProductTabContent';
 import ProductActionSection from './ProductActionSection';
-import Loading from '../../../app/Home/Loading';
+import Loading from '../../../app/loading';
 
 
 export default function Model() {

@@ -60,6 +60,9 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${dmSans.variable} ${montserrat.variable}`} >
       {/* // className={`${montserrat.variable}`} */}
+      <head>
+        <link rel="preload" href="/favicon.png" as="image" />
+      </head>
       <body className="bg-white">
         <ScrollToTop />
         <Header />

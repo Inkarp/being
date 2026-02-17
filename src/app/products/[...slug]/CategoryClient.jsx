@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaArrowRight } from 'react-icons/fa';
 import { useProductContext } from '../../../app/context/ProductContext'; // ✅ ADD
-import Loading from '../../../app/Home/Loading';
+import Loading from '../../../app/loading';
 
 
 

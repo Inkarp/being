@@ -19,14 +19,10 @@ export default function Loading() {
             alt="Loading"
             width={30}
             height={30}
-            className="animate-[spin_4s_linear_infinite] object-contain"
+            priority
+            className="animate-x-rotate infinite object-contain"
           />
         </div>
-
-        {/* Text */}
-        {/* <p className="text-lg font-medium text-gray-700 tracking-wide">
-          Loading...
-        </p> */}
       </div>
     </div>
   );
