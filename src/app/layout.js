@@ -76,7 +76,7 @@ export default function RootLayout({ children }) {
         </main>
         <ChatModal />
         <FooterNew />
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

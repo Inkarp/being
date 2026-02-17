@@ -70,8 +70,8 @@ export default function Header() {
   ];
 
   return (
-    <div className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[92%] lg:w-[100%] flex items-center justify-between lg:px-0 sm:px-0 lg:py-0 sm:py-0  border-b-2 border-[#2F4191]/30 shadow-2xl backdrop-blur-lg bg-white/80">
-      <Link href="/" className="flex items-center hidden lg:block justify-center w-auto lg:w-[10%] overflow-hidden">
+    <div className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[92%] lg:w-[100%] flex items-center justify-between lg:px-5 sm:px-0 lg:py-0 sm:py-0 px-0  border-b-2 border-[#2F4191]/30 shadow-2xl backdrop-blur-lg bg-white/80 font-raleway">
+      <Link href="/" className="flex items-center lg:px-10 hidden lg:block justify-center w-auto lg:w-[15%] mx-auto overflow-hidden">
         <Image
           src="/logo.webp"
           alt="Being Logo"
@@ -132,7 +132,7 @@ export default function Header() {
           {/* SEARCH TRIGGER */}
           <button
             onClick={() => setIsSearchOpen(true)}
-            className="flex items-center gap-2 lg:bg-white bg-black/20 rounded-full px-4 sm:px-4 py-2 h-12 sm:h-11 lg:h-9 text-[#2B7EC2] hover:bg-gray-100 transition"
+            className="flex items-center gap-2 lg:bg-white bg-black/40 rounded-full px-4 sm:px-4 py-2 h-12 sm:h-11 lg:h-9 text-[#2B7EC2] hover:bg-gray-100 transition"
             aria-label="Search products"
           >
             <FaSearch size={24} />
@@ -144,7 +144,7 @@ export default function Header() {
           {/* HAMBURGER */}
           <button
             onClick={() => setIsSidebarOpen(true)}
-            className="lg:bg-white bg-black/20 w-12 h-12 lg:hidden block rounded-full flex items-center justify-center text-[#2B7EC2] hover:bg-gray-100 transition"
+            className="lg:bg-white bg-black/40 w-12 h-12 lg:hidden block rounded-full flex items-center justify-center text-[#2B7EC2] hover:bg-gray-100 transition"
             aria-label="Open menu"
           >
             <RxHamburgerMenu size={26} />
@@ -174,10 +174,8 @@ export default function Header() {
 
       {/* ================= SIDEBAR ================= */}
       <aside
-        className={`fixed top-0 right-0 h-screen w-[85%] sm:w-[340px] max-w-[360px] bg-white shadow-xl z-50  transform transition-transform duration-300 lg:hidden
-  ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 h-screen w-[85%] sm:w-[340px] max-w-[360px] bg-white shadow-xl z-50  transform transition-transform duration-300 lg:hidden ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
       >
-
         {/* SIDEBAR HEADER */}
         <div className="flex items-center justify-between p-4 border-b sticky top-0 bg-white">
           <Image src="/logo.webp" alt="Logo" width={140} height={40} />
