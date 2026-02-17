@@ -27,6 +27,7 @@ import ServiceForm from '../../../components/ServiceForm';
 import ProductTabs from './ProductsTab';
 import ProductTabContent from './ProductTabContent';
 import ProductActionSection from './ProductActionSection';
+import Loading from '../../../app/Home/Loading';
 
 
 export default function Model() {
@@ -132,21 +133,22 @@ export default function Model() {
     ]);
 
     if (loading) {
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-white">
-                <div className="section-center">
-                    <div className="section-path">
-                        <div className="globe">
-                            <div className="wrapper">
-                                {Array.from({ length: 16 }).map((_, i) => (
-                                    <span key={i}></span>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
+        return <Loading />;
+        // return (
+        //     <div className="min-h-screen flex items-center justify-center bg-white">
+        //         <div className="section-center">
+        //             <div className="section-path">
+        //                 <div className="globe">
+        //                     <div className="wrapper">
+        //                         {Array.from({ length: 16 }).map((_, i) => (
+        //                             <span key={i}></span>
+        //                         ))}
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     </div>
+        // );
     }
 
     /* ---------------- ERROR ---------------- */

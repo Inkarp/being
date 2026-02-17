@@ -6,6 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaArrowRight } from 'react-icons/fa';
 import { useProductContext } from '../../../app/context/ProductContext'; // ✅ ADD
+import Loading from '../../../app/Home/Loading';
+
+
 
 export default function CategoryClient() {
   const { slug } = useParams();
@@ -47,21 +50,22 @@ export default function CategoryClient() {
   }, [slug, setCategoryData]);
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
-        <div className="section-center">
-          <div className="section-path">
-            <div className="globe">
-              <div className="wrapper">
-                {Array.from({ length: 16 }).map((_, i) => (
-                  <span key={i}></span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+    return <Loading />;
+    // return (
+    //   <div className="min-h-screen flex items-center justify-center bg-white">
+    //     <div className="section-center">
+    //       <div className="section-path">
+    //         <div className="globe">
+    //           <div className="wrapper">
+    //             {Array.from({ length: 16 }).map((_, i) => (
+    //               <span key={i}></span>
+    //             ))}
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // );
   }
 
 
