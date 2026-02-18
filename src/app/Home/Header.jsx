@@ -39,7 +39,7 @@ export default function Header() {
       name: "Insights & Updates",
       children: [
         { name: "Events", href: "/events" },
-        { name: "Blogs", href: "/blog" },
+        { name: "Blogs", href: "/blogs" },
       ],
     },
     { name: "About Us", href: "/about-us" },
@@ -70,7 +70,7 @@ export default function Header() {
   ];
 
   return (
-    <div className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[92%] lg:w-[100%] flex items-center justify-between lg:px-5 sm:px-0 lg:py-0 sm:py-0 px-0  border-b-2 border-[#2F4191]/30 shadow-2xl backdrop-blur-lg bg-white/80 font-raleway">
+    <div className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[92%] lg:w-[100%] flex items-center justify-between lg:px-0 sm:px-0 lg:py-0 sm:py-0 px-0 border-b-2 border-[#2F4191]/30 shadow-2xl backdrop-blur-lg bg-white/80 font-raleway">
       <Link href="/" className="flex items-center lg:px-10 hidden lg:block justify-center w-auto lg:w-[15%] mx-auto overflow-hidden">
         <Image
           src="/logo.webp"
@@ -84,18 +84,18 @@ export default function Header() {
       <header className="flex-1 rounded-full py-2 px-3 sm:px-4 lg:px-5 flex lg:bg-[#2B7EC2] sm:bg-white items-center justify-between lg:justify-center gap-2 sm:gap-4 lg:gap-0">
 
         {/* DESKTOP MENU */}
-        <nav className="hidden lg:flex flex-1 justify-center items-center gap-2 xl:gap-3 font-semibold font-raleway text-white text-[14px] xl:text-[15px]">
+        <nav className="hidden lg:flex flex-1 justify-start items-center gap-2 xl:gap-3 font-bold font-raleway text-white text-[14px] xl:text-[15px]">
 
           {menuItems.map((item) => (
             <div key={item.name} className="relative group">
               {/* Parent */}
               {item.children ? (
-                <span className="px-4 py-2 cursor-pointer hover:text-black hover:bg-white rounded transition block">
+                <span className="px-2 py-2 cursor-pointer hover:text-black hover:bg-white rounded transition block">
                   {item.name}
                 </span>
               ) : (
                 <Link href={item.href}>
-                  <span className="px-4 py-2 hover:text-black hover:bg-white rounded transition block">
+                  <span className="px-2 py-2 hover:text-black hover:bg-white rounded transition block">
                     {item.name}
                   </span>
                 </Link>
@@ -118,7 +118,6 @@ export default function Header() {
         </nav>
 
         <Link href="/" className="flex items-center lg:hidden  justify-center w-auto lg:w-[10%] overflow-hidden">
-
           <Image
             src="/logo.webp"
             alt="Being Logo"
@@ -136,7 +135,7 @@ export default function Header() {
             aria-label="Search products"
           >
             <FaSearch size={24} />
-            <span className="hidden lg:inline text-sm text-gray-500">
+            <span className="hidden lg:inline text-sm text-gray-800">
               Search for products…
             </span>
           </button>
@@ -149,12 +148,12 @@ export default function Header() {
           >
             <RxHamburgerMenu size={26} />
           </button>
-          <div className="lg:flex hidden items-center overflow-hidden relative group ">
+          <div className="lg:flex hidden items-center overflow-hidden relative group">
             {socialLinks.map((item, index) => (
               <button
                 key={index}
                 onClick={() => window.open(item.url, "_blank")}
-                className={`relative w-10 h-10 mx-1 p-2 rounded-full flex items-center justify-center text-lg transition-all duration-300 ease-out bg-white/80 backdrop-blur-lg border-2 border-white/40  hover:scale-110 hover:rotate-15 hover:border-[#2F4191]/80 hover:before:absolute hover:before:inset-0 hover:before:bg-gradient-to-r hover:before:from-[#2F4191]/20 hover:before:to-transparent hover:before:rounded-full hover:before:animate-ping${item.bg} ${item.textColor} hover:${item.bg} hover:${item.textColor}/90 group-hover:animate-pulse-slow active:scale-95 active:shadow-inner`}
+                className={`relative w-8 h-8 mx-1 p-1.5 rounded-full flex items-center justify-center text-lg transition-all duration-300 ease-out bg-white/80 backdrop-blur-lg border-2 border-white/40  hover:scale-110 hover:rotate-15 hover:border-[#2F4191]/80 hover:before:absolute hover:before:inset-0 hover:before:bg-gradient-to-r hover:before:from-[#2F4191]/20 hover:before:to-transparent hover:before:rounded-full hover:before:animate-ping${item.bg} ${item.textColor} hover:${item.bg} hover:${item.textColor}/90 group-hover:animate-pulse-slow active:scale-95 active:shadow-inner`}
                 title={item.name || `Open ${item.platform}`}
               >
                 {item.icon}

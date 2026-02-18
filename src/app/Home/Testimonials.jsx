@@ -1,72 +1,94 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useState } from 'react';
+import Image from "next/image";
+import { FaQuoteRight, FaUser } from "react-icons/fa";
 
 const testimonials = [
   {
-    name: 'Leslie Alexander',
-    handle: '@lesliealexander',
-    quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus et, et laborum. Voluptas vel tempora facilis.',
-    image: '/dp.jpg',
+    id: 1,
+    name: "Timothy Quano",
+    role: "Symph, Designer",
+    image:
+      "/dp.jpg",
+    text: "This product really helped my brand expand in a very manageable way. Would really use this for any future expansion.",
   },
   {
-    name: 'Lindsey Walton',
-    handle: '@lindseywalton',
-    quote: 'Excepteur consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    image: '/dp.jpg',
+    id: 2,
+    name: "Jane Doe",
+    role: "ANI, CEO",
+    image:
+      "/dp.jpg",
+    text: "Scalability will never be an issue now for my brand!",
   },
   {
-    name: 'Whitney Francis',
-    handle: '@whitneyfrancis',
-    quote: 'Voluptas quisquaerat voluptatem quisquam voluptatem. Ipsum ipsum, sit repellat natus error sit voluptatem accusantium dolorem.',
-    image: '/dp.jpg',
-  },
-  {
-    name: 'Leslie Alexander',
-    handle: '@lesliealexander',
-    quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus et, et laborum. Voluptas vel tempora facilis.',
-    image: '/dp.jpg',
+    id: 3,
+    name: "Rowen Smith",
+    role: "Golden Bowl, CEO",
+    image:
+      "/dp.jpg",
+    text: "The product is really easy to use that I didn't have to set training for my employees.",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="py-6 bg-gradient-to-br from-purple-50 via-purple-50/50 to-purple-100">
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
-        <div className="text-center">
-          <div className="inline-flex items-center">
-            <span className="px-5 py-2.5 bg-gradient-to-br from-[#2F4191]/50 to-[#2B7EC2]/50 text-xs font-bold uppercase tracking-widest border-2 border-gray-200 rounded-full shadow-sm">
-              Testimonials
-            </span>
-          </div>
-          <p className="text-xl sm:text-2xl lg:text-2xl font-bold text-slate-900 mx-auto leading-tight">
-            A word from our customers <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2F4191] to-[#2B7EC2]">hundreds of amazing people</span>          
-          </p>
-        </div>
+    <section className="overflow-hidden relative min-h-screen grid grid-cols-1 lg:grid-cols-12 place-content-center lg:place-items-center lg:gap-10 mx-auto px-6 py-10 border border-gray-200 rounded-2xl shadow-3xl">
+      {/* LEFT CONTENT */}
+      <div className="relative z-10 mb-10 lg:mb-0 col-span-6">
+        <div className="hidden xl:block absolute top-[-6rem] left-[-5rem] w-64 h-64 bg-[#2F4191]/50 hover:scale-110 transition-transform duration-300 rounded-full"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="group relative bg-white/80 backdrop-blur-sm border border-white/50 hover:border-purple-200/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:bg-white">
-              <p className="text-slate-700 text-lg leading-relaxed mb-6 font-medium italic">“{testimonial.quote}”</p>
-              <div className="flex items-center gap-4">
-                <div className="relative">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    width={48}
-                    height={48}
-                    className="rounded-full border-4 border-white shadow-lg ring-2 ring-purple-200/50 group-hover:ring-purple-300/75 transition-all duration-300"
-                  />
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900 text-lg">{testimonial.name}</p>
-                  {/* <p className="text-purple-600 font-medium text-sm">@{testimonial.handle}</p> */}
-                </div>
-              </div>
+        <h1 className="relative z-10 text-3xl sm:text-5xl 2xl:text-6xl font-bold sm:leading-snug 2xl:leading-tight">
+          What our customers <br/> say about us.
+        </h1>
+
+        <p className="mt-4 mb-7 text-gray-500 max-w-sm 2xl:text-lg">
+         Customers know what we are {" "}
+          <span className="text-[#2F4191] hover:underline cursor-pointer">
+            Being
+          </span>{" "}
+          to understand their business and customers better.
+        </p>
+
+        <button className="inline-block rounded-full bg-[#2F4191] py-2.5 px-10 font-bold text-white hover:shadow-lg transition">
+          Read success stories
+        </button>
+      </div>
+
+      {/* RIGHT TESTIMONIAL CARDS */}
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-5 col-span-6">
+        {testimonials.map((item) => (
+          <div
+            key={item.id}
+            className="relative bg-[#2F4191]/10 shadow-[0_5px_30px_-15px_rgba(0,0,0,0.3)] rounded-xl flex flex-col lg:flex-row lg:items-center justify-between gap-10 p-7 hover:shadow-xl transition duration-300"
+          >
+            {/* TEXT */}
+            <div >
+              <FaQuoteRight className="text-[#2F4191] mb-3" />
+              <p className="my-3 text-gray-700 2xl:text-lg">
+                {item.text}
+              </p>
+
+              <p className="text-gray-400">
+                <span className="text-gray-900 capitalize font-bold">
+                  {item.name}
+                </span>{" "}
+                — {item.role}
+              </p>
             </div>
-          ))}
-        </div>
+
+            {/* IMAGE */}
+            <div className="relative shrink-0">
+              <Image
+                src={item.image}
+                alt={item.name}
+                width={112}
+                height={112}
+                className="rounded-full object-cover w-24 h-24 2xl:w-28 2xl:h-28"
+              />
+              {/* <FaUser size={40} className="text-gray-700" /> */}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

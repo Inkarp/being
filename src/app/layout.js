@@ -11,7 +11,6 @@ import ProductsSidebar from "./ProductsSidebar";
 import SocialContactBar from "./SocialContactBar";
 import SidebarNav from "./Home/SidebarNav";
 import FestivalUpdates from "./FestivalUpdates";
-import FooterNew from "./Home/FooterNew";
 
 
 const geistSans = Geist({
@@ -75,8 +74,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <ChatModal />
-        <FooterNew />
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

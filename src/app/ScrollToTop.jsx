@@ -25,12 +25,12 @@ export default function ScrollToTop() {
   return (
     <>
       {isVisible && (
-        <div className="fixed bottom-30 right-0 z-50 flex flex-col items-center gap-4">
+        <div className="fixed bottom-30 right-2 z-50 flex flex-col items-center gap-4">
           {/* Scroll to Top Button */}
           <button
             onClick={scrollToTop}
             className="relative 
-             w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 
+             w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 
              rounded-full text-white transition group"
             aria-label="Scroll to top"
           >

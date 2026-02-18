@@ -86,8 +86,12 @@ export default function Hero() {
                 <Image
                     src={sliderImages[currentSlide]}
                     alt="Auto slider"
-                    fill
-                    className="object-cover transition-all duration-700"
+                    width={600}
+                    height={750}
+                    objectFit='cover'
+                    // onLoadingComplete={img => done(img)}
+                    sizes="(max-width: 100px)"
+                 
                 />
 
                 <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 duration-300 flex items-center gap-3 bg-[#2F3F8D] px-3 py-2 rounded-full w-fit">

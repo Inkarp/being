@@ -26,7 +26,7 @@ export default function SocialContactBar() {
   ];
 
   return (
-    <div className="fixed left-3 bottom-0 -translate-y-1/2 z-40">
+    <div className="fixed left-3 bottom-2 z-40">
       {/* <div className="flex flex-col items-center gap-4 bg-white/70 border-b-2 border border-black/20 backdrop-blur px-2 py-3 rounded-full shadow-xl"> */}
         {buttons.map((btn, index) => (
           <button

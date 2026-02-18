@@ -104,7 +104,6 @@ export default function Offerings() {
                   width={600}
                   height={400}
                   className="w-full h-48 border-b-2 border-[#2B7EC2] bg-gradient-to-r from-blue-50 via-white to-blue-50 p-6" />
-
                 <div className="absolute bottom-[-16px] left-1/3 bg-white border-2 border-[#2B7EC2] text-[#2B7EC2] font-semibold text-sm px-3 py-1 rounded-full shadow-sm">
                   <span className='text-[#2F3F8D]'>{cause.percentage}+</span> Products
                 </div>
