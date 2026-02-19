@@ -350,7 +350,7 @@ export default function Model() {
                 }}
             />
             
-            {/* {subCategory?.models?.length > 1 && (
+            {subCategory?.models?.length > 1 && (
                 <PopupModal
                     models={subCategory.models}
                     categorySlug={categorySlug}
@@ -362,7 +362,7 @@ export default function Model() {
                         setIsModalOpen(false);
                     }}
                 />
-            )} */}
+            )}
 
 
             {categoryData?.subcategories?.length > 1 && (

@@ -56,7 +56,7 @@ export default function SearchOverlay({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-md">
+    <div className="fixed inset-0 z-[9999] bg-black/80 h-screen backdrop-blur-md">
       {/* CLOSE */}
       <button
         onClick={onClose}

@@ -15,56 +15,56 @@ export default function Footer() {
         <footer className="bg-[#2B7EC2] text-white font-raleway">
             <div className="w-full mx-auto py-3 px-10 flex flex-col md:flex-row ">
 
-                <div className="md:w-1/4 flex flex-col justify-center ">
-                    <div className="p-3 flex items-start gap-4 group border-b border-white">
+                <div className="md:w-1/4 flex flex-col justify-center gap-2">
+                    <div className="p-3 flex items-start gap-4 group bg-white rounded-3xl">
                         <Image
                             src="/location.svg"
                             alt="Location"
                             width={40}
                             height={40}
-                            className="h-10 w-10 transition duration-300 group-hover:rotate-360"
+                            className="h-10 w-10 transition duration-300 group-hover:rotate-360 bg-[#2B7EC2] rounded-full p-1"
                         />
                         <div>
                             <h4 className="text-black font-bold text-lg mb-1">
                                 Office Address
                             </h4>
-                            <p className="text-sm font-semibold text-white animate-bounce">
-                                Nacharam, Habsiguda, Hyderabad, Telangana
+                            <p className="text-base font-semibold text-[#2F4191]">
+                                Nacharam, Habsiguda, Hyderabad, Telangana,500076
                             </p>
                         </div>
                     </div>
                     {/* Email */}
-                    <div className="p-3 flex items-start gap-4 group border-b border-white">
+                    <div className="p-3 flex items-start gap-4 group bg-white rounded-3xl ">
                         <Image
                             src="/mail.svg"
                             alt="Email"
                             width={40}
                             height={40}
-                            className="h-10 w-10 group-hover:rotate-360 transition duration-300"
+                            className="h-10 w-10 group-hover:rotate-360 transition duration-300 bg-[#2B7EC2] rounded-full p-1"
                         />
                         <div>
                             <h4 className="text-black font-bold text-lg mb-1">
                                 Email Address
                             </h4>
-                            <p className="text-sm font-semibold text-white animate-bounce">
+                            <p className="text-base font-semibold text-[#2F4191] animate-bounce">
                                 support.india@beinglab-usa.com
                             </p>
                         </div>
                     </div>
                     {/* Phone */}
-                    <div className="p-3 flex items-start gap-4 group">
+                    <div className="p-3 flex items-start gap-4 group bg-white rounded-3xl ">
                         <Image
                             src="/phone.svg"
                             alt="Phone"
                             width={40}
                             height={40}
-                            className="h-10 w-10 group-hover:rotate-360 transition duration-300"
+                            className="h-10 w-10 group-hover:rotate-360 transition duration-300 bg-[#2B7EC2] rounded-full p-1"
                         />
                         <div className=''>
                             <h4 className="text-black font-bold text-lg mb-1">
                                 Call Us For Support
                             </h4>
-                            <p className="text-sm font-semibold text-white animate-bounce">
+                            <p className="text-base font-semibold text-[#2F4191] animate-bounce">
                                 +91 9030357676
                             </p>
                         </div>

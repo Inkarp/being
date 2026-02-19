@@ -59,7 +59,7 @@ export default function ContactNew() {
 
     return (
         <section className="min-h-screen flex md:flex-row flex-col items-center justify-center py-5">
-            <div className="w-full grid lg:grid-cols-4 gap-3 items-start relative px-4 bg-[#2F4191]/10 rounded-l-3xl shadow-3xl py-8">
+            <div className="w-full grid lg:grid-cols-4 gap-3 items-start relative px-4 bg-[#2F4191]/10 rounded-l-3xl py-8">
                 {/* Left Side - Info Content (2/5) */}
                 <div ref={leftRef} className="lg:col-span-2 w-full space-y-8 text-white flex flex-col items-center justify-start lg:items-start">
                     <div className="text-center lg:text-left">
@@ -76,7 +76,7 @@ export default function ContactNew() {
                             ].map(({ icon: Icon, title, info, color }, idx) => (
                                 <div key={idx} className="group/contact flex items-start gap-4 p-4 hover:bg-white/10 rounded-2xl transition-all duration-300 hover:backdrop-blur-sm hover:scale-[1.02] w-full">
                                     <div className={`w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-r ${color} shadow-lg group-hover/contact:rotate-12 transition-transform duration-300 flex-shrink-0`}>
-                                        <Icon className="w-7 h-7 text-white shadow-md" />
+                                        <Icon className="w-7 h-7 text-white" />
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-[#2F4191] text-lg mb-1">{title}</h4>
@@ -191,7 +191,7 @@ export default function ContactNew() {
                                 <CompactInput name="city" placeholder="City" value={form.city} onChange={handleChange} required />
                             </div>
 
-                            <select name="typeOfCustomer" className="CompactInput w-full" value={form.typeOfCustomer} onChange={handleChange} required>
+                            <select name="typeOfCustomer" className="CompactInput w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#2F4191]" value={form.typeOfCustomer} onChange={handleChange} required>
                                 <option value="">Type of Customer *</option>
                                 <option value="new">New Customer</option>
                                 <option value="existing">Existing Customer</option>
