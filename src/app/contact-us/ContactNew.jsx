@@ -1,5 +1,5 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FaPaperPlane, FaCheckCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaHeadset, FaUserCog } from 'react-icons/fa';
 
 export default function ContactNew() {
@@ -18,12 +18,101 @@ export default function ContactNew() {
         state: '',
         city: '',
         message: '',
+        // New fields
+        ipAddress: '',
+        referrer: '',
+        source: '',
+        deviceType: '',
+        keyword: '',
+        timestamp: '',
     });
 
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState(null);
     const leftRef = useRef(null);
     const rightRef = useRef(null);
+
+    // Collect tracking data on component mount
+    useEffect(() => {
+        const collectTrackingData = async () => {
+            try {
+                // Get IP address
+                let ipAddress = 'Unknown';
+                try {
+                    const ipRes = await fetch('https://api.ipify.org?format=json');
+                    const ipData = await ipRes.json();
+                    ipAddress = ipData.ip;
+                } catch (err) {
+                    console.log('IP fetch failed:', err);
+                }
+
+                // Get referrer
+                const referrer = document.referrer || 'Direct Visit';
+
+                // Determine source
+                let source = 'Direct';
+                let keyword = '';
+
+                if (referrer.includes('google.com')) {
+                    source = 'Google Search';
+                    // Extract keyword from Google referrer if available
+                    const urlParams = new URLSearchParams(new URL(referrer, window.location.origin).search);
+                    keyword = urlParams.get('q') || '';
+                } else if (referrer.includes('facebook.com')) {
+                    source = 'Facebook';
+                } else if (referrer.includes('instagram.com')) {
+                    source = 'Instagram';
+                } else if (referrer.includes('linkedin.com')) {
+                    source = 'LinkedIn';
+                } else if (referrer.includes('twitter.com')) {
+                    source = 'Twitter';
+                } else if (referrer.includes('bing.com')) {
+                    source = 'Bing Search';
+                } else if (referrer) {
+                    source = 'Referral';
+                }
+
+                // Check URL params for utm_source or utm_medium
+                const params = new URLSearchParams(window.location.search);
+                const utmSource = params.get('utm_source');
+                const utmMedium = params.get('utm_medium');
+                const utmKeyword = params.get('keyword');
+
+                if (utmSource) {
+                    source = utmSource;
+                }
+                if (utmKeyword) {
+                    keyword = utmKeyword;
+                }
+
+                // Detect device type
+                const ua = navigator.userAgent.toLowerCase();
+                let deviceType = 'Desktop';
+                if (/iphone|ipad|ipod|android|mobile|phone|tablet|webos|blackberry|windows phone|opera mini/i.test(ua)) {
+                    if (/ipad|android.*tablet|windows.*touch/i.test(ua)) {
+                        deviceType = 'Tablet';
+                    } else {
+                        deviceType = 'Mobile';
+                    }
+                }
+
+                // Set the collected data
+                setForm(prev => ({
+                    ...prev,
+                    ipAddress,
+                    referrer,
+                    source,
+                    deviceType,
+                    keyword,
+                    timestamp: new Date().toISOString(),
+                }));
+            } catch (err) {
+                console.error('Error collecting tracking data:', err);
+            }
+        };
+
+        collectTrackingData();
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -45,11 +134,12 @@ export default function ContactNew() {
             if (!res.ok) throw new Error('Failed');
 
             setStatus('success');
-            setForm({
+            setForm(prev => ({
+                ...prev,
                 name: '', company: '', industry: '', designation: '', department: '',
                 email: '', phone: '', enquiredProduct: '', typeOfCustomer: '',
                 purchasePlan: '', country: '', state: '', city: '', message: ''
-            });
+            }));
         } catch (err) {
             setStatus('error');
         } finally {
@@ -225,11 +315,12 @@ export default function ContactNew() {
                             </div>
                             <button
                                 onClick={() => {
-                                    setForm({
+                                    setForm(prev => ({
+                                        ...prev,
                                         name: '', company: '', industry: '', designation: '', department: '',
                                         email: '', phone: '', enquiredProduct: '', typeOfCustomer: '',
                                         purchasePlan: '', country: '', state: '', city: '', message: ''
-                                    });
+                                    }));
                                     setStatus(null);
                                 }}
                                 className="w-full bg-white text-[#2F4191] font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all text-sm"

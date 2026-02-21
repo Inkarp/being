@@ -35,6 +35,13 @@ export async function POST(request) {
       state,
       city,
       message,
+      // Tracking fields
+      ipAddress,
+      referrer,
+      source,
+      deviceType,
+      keyword,
+      timestamp,
     } = formData;
 
     // Basic validation (all required except message)
@@ -145,6 +152,32 @@ export async function POST(request) {
             <p style="color:#cbd5e1; line-height:1.6;">
               ${(message || 'No message').replace(/\n/g, '<br />')}
             </p>
+          </div>
+
+          <div style="margin-top:24px; background:#1e293b; padding:16px; border-radius:10px; border-top: 2px solid #f97316;">
+            <h4 style="color:#f97316; margin-bottom:12px; font-size:14px;">📊 Traffic & Device Information</h4>
+            <table style="width:100%; font-size:13px;">
+              <tr>
+                <td style="padding:6px; color:#94a3b8;">Source</td>
+                <td style="padding:6px; color:#f8fafc;"><strong>${source || 'Unknown'}</strong></td>
+              </tr>
+              <tr>
+                <td style="padding:6px; color:#94a3b8;">Device Type</td>
+                <td style="padding:6px; color:#f8fafc;"><strong>${deviceType || 'Unknown'}</strong></td>
+              </tr>
+              <tr>
+                <td style="padding:6px; color:#94a3b8;">Keyword</td>
+                <td style="padding:6px; color:#f8fafc;"><strong>${keyword || 'N/A'}</strong></td>
+              </tr>
+              <tr>
+                <td style="padding:6px; color:#94a3b8;">Referrer</td>
+                <td style="padding:6px; color:#cbd5e1; word-break:break-all; font-size:12px;">${referrer || 'Direct Visit'}</td>
+              </tr>
+              <tr>
+                <td style="padding:6px; color:#94a3b8;">IP Address</td>
+                <td style="padding:6px; color:#f8fafc;"><strong>${ipAddress || 'Unknown'}</strong></td>
+              </tr>
+            </table>
           </div>
 
           <p style="margin-top:28px; color:#64748b; font-size:13px; text-align:center;">
