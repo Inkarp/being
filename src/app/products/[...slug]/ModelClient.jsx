@@ -298,7 +298,7 @@ export default function Model() {
                 isOpen={isEnquiryOpen}
                 onClose={() => setIsEnquiryOpen(false)}
                 productData={{
-                    model: product.meta.title,
+                    model: product.title,
                     category: categorySlug,
                     subcategory: subSlug,
                 }}
@@ -308,7 +308,7 @@ export default function Model() {
                 isOpen={isPriceOpen}
                 onClose={() => setIsPriceOpen(false)}
                 productData={{
-                    model: product.meta.title,
+                    model: product.title,
                     category: categorySlug,
                     subcategory: subSlug,
                 }}
@@ -334,7 +334,7 @@ export default function Model() {
                 isOpen={isExclusivePatnership}
                 onClose={() => setIsExclusivePatnership(false)}
                 productData={{
-                    model: product.meta.title,
+                    model: product.title,
                     category: categorySlug,
                     subcategory: subSlug,
                 }}
@@ -344,7 +344,7 @@ export default function Model() {
                 isOpen={isServiceOpen}
                 onClose={() => setIsServiceOpen(false)}
                 productData={{
-                    model: product.meta.title,
+                    model: product.title,
                     category: categorySlug,
                     subcategory: subSlug,
                 }}
@@ -376,7 +376,7 @@ export default function Model() {
             <ServiceRenewalForm isOpen={isServiceRenewalOpen}
                 onClose={() => setIsServiceRenewalOpen(false)}
                 productData={{
-                    model: product.meta.title,
+                    model: product.title,
                     category: categorySlug,
                     subcategory: subSlug,
                 }} />

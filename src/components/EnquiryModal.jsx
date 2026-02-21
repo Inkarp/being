@@ -135,21 +135,21 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
         </div>
 
         {/* PRODUCT INFO */}
-        {/* {productData && (
+        {productData && (
           <div className="px-5 pt-4">
             <div className="rounded-lg border border-[#2B7EC2]/30 bg-[#2B7EC2]/10 px-4 py-3">
               <p className="text-sm text-gray-700">
-                Product:{' '}
+                Product Name:{' '}
                 <span className="font-medium text-[#2F4191]">
                   {productData.model}
                 </span>
               </p>
-              <p className="text-xs text-gray-500 mt-1">
+              {/* <p className="text-xs text-gray-500 mt-1">
                 {productData.category} → {productData.subcategory}
-              </p>
+              </p> */}
             </div>
           </div>
-        )} */}
+        )}
 
         {/* FORM */}
         <form onSubmit={handleSubmit} className="p-5 space-y-4">

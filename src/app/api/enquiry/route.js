@@ -42,7 +42,7 @@ export async function POST(request) {
 
           <div style="background:#1e293b; padding:16px; border-radius:10px; margin-bottom:20px;">
             <p style="color:#e5e7eb;"><strong>Product:</strong> ${formData.product}</p>
-            <p style="color:#e5e7eb;"><strong>Category:</strong> ${formData.category || 'N/A'}</p>
+           <p style="color:#e5e7eb;"><strong>Category:</strong> ${formData.category || 'N/A'}</p>
           </div>
 
           <table style="width:100%; border-collapse:collapse; background:#020617; border-radius:10px;">
