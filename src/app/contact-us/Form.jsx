@@ -30,6 +30,7 @@ export default function Form() {
 
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState(null);
+    const [error, setError] = useState(null);
 
     /* ================= TRACKING ================= */
     useEffect(() => {
@@ -60,6 +61,17 @@ export default function Form() {
 
         collectTrackingData();
     }, []);
+
+    /* ================= RESET FORM AFTER SUCCESS ================= */
+    useEffect(() => {
+        if (status === 'success') {
+            const timer = setTimeout(() => {
+                setStatus(null);
+            }, 2000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [status]);
 
     /* ================= VALIDATION ================= */
 
@@ -112,10 +124,11 @@ export default function Form() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError(null);
 
-        const error = validateForm();
-        if (error) {
-            alert(error);
+        const validationError = validateForm();
+        if (validationError) {
+            setError(validationError);
             return;
         }
 
@@ -142,6 +155,7 @@ export default function Form() {
 
         } catch {
             setStatus('error');
+            setError('Something went wrong. Please try again later.');
         } finally {
             setLoading(false);
         }
@@ -165,12 +179,18 @@ export default function Form() {
     /* ================= UI ================= */
 
     return (
-        <section className="min-h-screen flex items-center justify-center rounded-l-3xl py-12 px-4 bg-[#2F4191]/10">
+        <section className="min-h-screen flex items-center justify-center rounded-3xl bg-[#2F4191]/10">
 
-            <div className="p-8 w-full max-w-4xl">
+            <div className="p-5 w-full max-w-4xl">
 
                 {!status ? (
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form onSubmit={handleSubmit} className="space-y-3">
+
+                        {error && (
+                            <div className="bg-red-500 text-white p-4 rounded-xl mb-4">
+                                <p className="font-semibold">{error}</p>
+                            </div>
+                        )}
 
                         <div className="grid md:grid-cols-2 gap-4">
 
@@ -256,7 +276,7 @@ export default function Form() {
                             placeholder="Message (Optional)"
                             value={form.message}
                             onChange={handleChange}
-                            className="w-full px-4 py-2.5 rounded-xl bg-white/20 border border-white/30 text-black text-sm placeholder-gray-700 h-auto resize-none"
+                            className="w-full px-4 py-2.5 border rounded-xl bg-white/20 border border-white/30 text-black text-sm placeholder-gray-700 h-auto resize-none"
                         />
 
                         <button
@@ -269,11 +289,6 @@ export default function Form() {
                                 Submit Enquiry
                             </>}
                         </button>
-                        {status === 'error' && (
-                            <p className="text-red-500 text-center">
-                                Something went wrong. Please try again later.
-                            </p>
-                        )}
                     </form>
                 ) : (
                     <div className="text-center text-white space-y-4 bg-green-200 rounded-xl p-8">
