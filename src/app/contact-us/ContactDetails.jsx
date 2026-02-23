@@ -1,5 +1,4 @@
 'use client';
-import { useState, useRef, useEffect } from 'react';
 import { FaPaperPlane, FaCheckCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaHeadset, FaUserCog } from 'react-icons/fa';
 import Form from './Form';
 
@@ -11,8 +10,8 @@ export default function ContactDetails() {
             <div className="w-full grid lg:grid-cols-4 gap-3 items-start relative px-4 bg-[#2F4191]/10 rounded-l-3xl py-8">
                 {/* Left Side - Info Content (2/5) */}
                 <div  className="lg:col-span-2 w-full space-y-8 text-white flex flex-col items-center justify-start lg:items-start">
-                    <div className="text-center lg:text-left">
-                        <h2 className="text-4xl font-raleway font-black text-black bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] bg-clip-text mb-4">
+                    <div className="text-left lg:text-left">
+                        <h2 className="text-4xl font-raleway font-black text-black bg-gradient-to-r from-[#2F4191] to-[#2B7EC2]  mb-4">
                             Let's Connect!
                         </h2>
                         <div className="w-24 h-1 bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] mx-auto lg:mx-0 rounded-full" />
@@ -40,7 +39,7 @@ export default function ContactDetails() {
                 {/* Middle Section - 3 Contact Cards in ONE ROW on LG */}
                 <div className="lg:col-span-2 w-full space-y-4">
                     {/* Service Queries */}
-                    <h2 className="text-4xl font-raleway font-black text-black bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] bg-clip-text mb-4">
+                    <h2 className="text-4xl font-raleway font-black text-black bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] bg-clip-text mb-4 text-center lg:text-left">
                         Reach Us
                     </h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] mx-auto lg:mx-0 rounded-full" />
