@@ -1,8 +1,9 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import { FaPaperPlane, FaCheckCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaHeadset, FaUserCog } from 'react-icons/fa';
+import Form from './Form';
 
-export default function ContactNew() {
+export default function ContactDetails() {
     const [form, setForm] = useState({
         name: '',
         company: '',
@@ -253,7 +254,7 @@ export default function ContactNew() {
 
             </div>
             {/* Right Side - Form (2/5) */}
-            <div ref={rightRef} className="lg:col-span-4 mx-auto lg:mx-0">
+            {/* <div ref={rightRef} className="lg:col-span-4 mx-auto lg:mx-0">
                 <div className="bg-[#2F4191]/10 backdrop-blur-2xl  rounded-r-3xl p-8 shadow-2xl">
                     {!status ? (
                         <form onSubmit={handleSubmit} className="space-y-4">
@@ -310,8 +311,8 @@ export default function ContactNew() {
                                 <FaCheckCircle className="text-3xl text-white" />
                             </div>
                             <div>
-                                <h2 className="text-2xl font-black text-white mb-2">Success!</h2>
-                                <p className="text-slate-300 text-sm">We will contact you within 24 hours.</p>
+                                <h2 className="text-2xl font-black text-[#2F4191] mb-2">Success!</h2>
+                                <p className="text-black text-sm">We will contact you within 24 hours.</p>
                             </div>
                             <button
                                 onClick={() => {
@@ -334,7 +335,7 @@ export default function ContactNew() {
                                 <FaCheckCircle className="text-3xl text-white rotate-180" />
                             </div>
                             <div>
-                                <h2 className="text-2xl font-black text-white mb-2">Error!</h2>
+                                <h2 className="text-2xl font-black text-[#2F4191] mb-2">Error!</h2>
                                 <p className="text-slate-300 text-sm">Please try again.</p>
                             </div>
                             <button
@@ -346,7 +347,8 @@ export default function ContactNew() {
                         </div>
                     )}
                 </div>
-            </div>
+            </div> */}
+            <Form />
         </section>
     );
 }

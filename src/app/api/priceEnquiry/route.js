@@ -1,124 +1,87 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-// Ensure this runs only on Node (not Edge)
 export const runtime = 'nodejs';
 
-// Company email (receiver)
-const COMPANY_EMAIL = process.env.COMPANY_EMAIL ;
+const COMPANY_EMAIL = process.env.COMPANY_EMAIL;
 
-// Create transporter (✅ correct method)
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // your gmail
-    pass: process.env.EMAIL_PASS, // gmail app password
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
+
+const GST_REGEX = /^[0-3][0-9][A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request) {
   try {
     const formData = await request.json();
 
-    // Basic validation
-    if (!formData.email || !formData.name || !formData.product) {
-      return NextResponse.json(
-        { error: 'Required fields missing' },
-        { status: 400 }
-      );
-    }
+    const ip =
+      request.headers.get('x-forwarded-for') ||
+      request.headers.get('x-real-ip') ||
+      'Unknown';
 
-    const mailOptions = {
-      from: `"Being Instruments India" <${process.env.EMAIL_USER}>`,
+    if (formData.website)
+      return NextResponse.json({ error: 'Spam detected' }, { status: 400 });
+
+    if (!GST_REGEX.test(formData.gstNumber))
+      return NextResponse.json({ error: 'Invalid GST' }, { status: 400 });
+
+    if (!/^\d{10}$/.test(formData.phone))
+      return NextResponse.json({ error: 'Invalid phone' }, { status: 400 });
+
+    if (!EMAIL_REGEX.test(formData.email) ||
+        !EMAIL_REGEX.test(formData.officialEmail))
+      return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
+
+    await transporter.sendMail({
+      from: `"Inkarp Instruments" <${process.env.EMAIL_USER}>`,
       to: COMPANY_EMAIL,
       replyTo: formData.email,
-      subject: `New price Enquiry | ${formData.product}`,
+      subject: `New Price Enquiry | ${formData.product}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 620px; margin: auto; background:#0f172a; padding:32px; border-radius:16px;">       
-          <h2 style="color:#f97316; margin-bottom:24px;">
-            Price Enquiry
-          </h2>
+        <h2>Price Enquiry</h2>
 
-          <div style="background:#1e293b; padding:16px; border-radius:10px; margin-bottom:20px;">
-            <p style="color:#e5e7eb;"><strong>Product:</strong> ${formData.product}</p>
-            <p style="color:#e5e7eb;"><strong>Category:</strong> ${formData.category || 'N/A'}</p>
-          </div>
+        <p><strong>Product:</strong> ${formData.product}</p>
+        <p><strong>Price:</strong> ₹ ${formData.price || 'N/A'}</p>
 
-          <table style="width:100%; border-collapse:collapse; background:#020617; border-radius:10px;">
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Name</td>
-              <td style="padding:10px; color:#f8fafc;">${formData.name}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Company</td>
-              <td style="padding:10px; color:#f8fafc;">${formData.company || 'N/A'}</td>
-            </tr>
-             <tr>
-              <td style="padding:10px; color:#94a3b8;">GST Number</td>
-              <td style="padding:10px; color:#f8fafc;">${formData.gstNumber|| 'N/A'}</td>
-            </tr>
-             <tr>
-              <td style="padding:10px; color:#94a3b8;">Industry</td>
-              <td style="padding:10px; color:#f8fafc;">${formData.industry || 'N/A'}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Designation</td>
-              <td style="padding:10px; color:#f8fafc;">${formData.designation || 'N/A'}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Department</td>
-              <td style="padding:10px; color:#f8fafc;">${formData.department || 'N/A'}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Email</td>
-              <td style="padding:10px; color:#f8fafc;">${formData.email}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Phone</td>
-              <td style="padding:10px; color:#f8fafc;">${formData.phone || 'N/A'}</td>
-            </tr>
-            
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Country</td>
-              <td style="padding:10px; color:#f8fafc;">
-                ${ formData.country || 'N/A'}
-              </td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">State</td>
-              <td style="padding:10px; color:#f8fafc;">
-                ${formData.state || 'N/A'}
-              </td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">City</td>
-              <td style="padding:10px; color:#f8fafc;">
-                ${formData.city|| 'N/A'}
-              </td>
-            </tr>
-             <tr>
-              <td style="padding:10px; color:#94a3b8;">Application/Message</td>
-              <td style="padding:10px; color:#f8fafc;">${formData.message}</td>
-            </tr>
-          </table>
+        <hr/>
 
-          <p style="margin-top:28px; color:#64748b; font-size:13px; text-align:center;">
-            Submitted on ${new Date().toLocaleString('en-IN')}
-          </p>
+        <p><strong>Name:</strong> ${formData.name}</p>
+        <p><strong>Company:</strong> ${formData.company}</p>
+        <p><strong>GST:</strong> ${formData.gstNumber}</p>
+        <p><strong>Industry:</strong> ${formData.industry}</p>
+        <p><strong>Designation:</strong> ${formData.designation}</p>
+        <p><strong>Department:</strong> ${formData.department}</p>
+        <p><strong>Phone:</strong> +91 ${formData.phone}</p>
+        <p><strong>Personal Email:</strong> ${formData.email}</p>
+        <p><strong>Official Email:</strong> ${formData.officialEmail}</p>
+        <p><strong>State:</strong> ${formData.state}</p>
+        <p><strong>City:</strong> ${formData.city}</p>
+        <p><strong>Message:</strong> ${formData.message || 'N/A'}</p>
 
-        </div>
+        <hr/>
+
+        <h3>Tracking Info</h3>
+        <p><strong>IP:</strong> ${ip}</p>
+        <p><strong>Device:</strong> ${formData.deviceType}</p>
+        <p><strong>Referrer:</strong> ${formData.referrer}</p>
+        <p><strong>Landing URL:</strong> ${formData.landingUrl}</p>
+        <p><strong>UTM Source:</strong> ${formData.utm_source}</p>
+        <p><strong>UTM Medium:</strong> ${formData.utm_medium}</p>
+        <p><strong>UTM Campaign:</strong> ${formData.utm_campaign}</p>
+        <p><strong>GCLID:</strong> ${formData.gclid}</p>
+        <p><strong>FBCLID:</strong> ${formData.fbclid}</p>
       `,
-    };
-
-    // Send mail
-    await transporter.sendMail(mailOptions);
+    });
 
     return NextResponse.json({ success: true });
+
   } catch (error) {
-    console.error('Mail Error:', error);
-    return NextResponse.json(
-      { error: 'Email sending failed' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Email sending failed' }, { status: 500 });
   }
 }

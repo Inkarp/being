@@ -1,20 +1,33 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-// Ensure this runs only on Node (not Edge)
 export const runtime = 'nodejs';
 
-// Company email (receiver)
 const COMPANY_EMAIL = process.env.COMPANY_EMAIL;
 
-// Create transporter
+/* ================= EMAIL TRANSPORT ================= */
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // your gmail
-    pass: process.env.EMAIL_PASS, // gmail apppassword
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
+
+/* ================= HELPERS ================= */
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function escapeHtml(str = '') {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/* ================= POST ================= */
 
 export async function POST(request) {
   try {
@@ -27,15 +40,13 @@ export async function POST(request) {
       designation,
       department,
       email,
+      officialEmail,
       phone,
-      enquiredProduct,
       typeOfCustomer,
       purchasePlan,
-      country,
       state,
       city,
       message,
-      // Tracking fields
       ipAddress,
       referrer,
       source,
@@ -44,7 +55,8 @@ export async function POST(request) {
       timestamp,
     } = formData;
 
-    // Basic validation (all required except message)
+    /* ================= VALIDATION ================= */
+
     if (
       !name ||
       !company ||
@@ -52,16 +64,29 @@ export async function POST(request) {
       !designation ||
       !department ||
       !email ||
+      !officialEmail ||
       !phone ||
-      !enquiredProduct ||
       !typeOfCustomer ||
       !purchasePlan ||
-      !country ||
       !state ||
       !city
     ) {
       return NextResponse.json(
         { error: 'Required fields missing' },
+        { status: 400 }
+      );
+    }
+
+    if (!emailRegex.test(email) || !emailRegex.test(officialEmail)) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
+        { status: 400 }
+      );
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+      return NextResponse.json(
+        { error: 'Phone must be 10 digits' },
         { status: 400 }
       );
     }
@@ -73,116 +98,62 @@ export async function POST(request) {
       );
     }
 
+    /* ================= MAIL TEMPLATE ================= */
+
     const mailOptions = {
-      from: `"Conatct Enquiry" <${process.env.EMAIL_USER}>`,
+      from: `"Website Enquiry" <${process.env.EMAIL_USER}>`,
       to: COMPANY_EMAIL,
-      replyTo: email,
-      subject: `Contact Us | ${enquiredProduct}`,
+      replyTo: officialEmail,
+      subject: `New Enquiry | ${name} | ${company}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 620px; margin: auto; background:#0f172a; padding:32px; border-radius:16px;">
-          <h2 style="color:#f97316; margin-bottom:24px;">
-           Contact Enquiry 
+        <div style="font-family:Arial;max-width:650px;margin:auto;background:#0f172a;padding:30px;border-radius:16px;">
+          
+          <h2 style="color:#f97316;margin-bottom:20px;">
+            New Website Enquiry
           </h2>
 
-          <table style="width:100%; border-collapse:collapse; background:#020617; border-radius:10px;">
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Name</td>
-              <td style="padding:10px; color:#f8fafc;">${name}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Company</td>
-              <td style="padding:10px; color:#f8fafc;">${company}</td>
-            </tr>
-             <tr>
-              <td style="padding:10px; color:#94a3b8;">Industry</td>
-              <td style="padding:10px; color:#f8fafc;">${industry}</td>
-            </tr>
-             <tr>
-              <td style="padding:10px; color:#94a3b8;">Designation</td>
-              <td style="padding:10px; color:#f8fafc;">${designation}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Department</td>
-              <td style="padding:10px; color:#f8fafc;">${department}</td>
-            </tr>          
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Email</td>
-              <td style="padding:10px; color:#f8fafc;">${email}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Phone</td>
-              <td style="padding:10px; color:#f8fafc;">${phone}</td>
-            </tr>
-            <tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Enquired Product</td>
-              <td style="padding:10px; color:#f8fafc;">${enquiredProduct}</td>
-            </tr>
-              <tr>
-              <td style="padding:10px; color:#94a3b8;">Type of customer</td>
-              <td style="padding:10px; color:#f8fafc;">${typeOfCustomer}</td>
-            </tr>
-              </tr>
-              <tr>
-              <td style="padding:10px; color:#94a3b8;">Purchase Plan</td>
-              <td style="padding:10px; color:#f8fafc;">${purchasePlan}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">Country</td>
-              <td style="padding:10px; color:#f8fafc;">
-                ${ country}
-              </td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">State</td>
-              <td style="padding:10px; color:#f8fafc;">
-                ${state}
-              </td>
-            </tr>
-            <tr>
-              <td style="padding:10px; color:#94a3b8;">City</td>
-              <td style="padding:10px; color:#f8fafc;">
-                ${city}
-              </td>
-            </tr>
+          <table style="width:100%;background:#020617;border-radius:10px;border-collapse:collapse;">
+            ${row("Name", name)}
+            ${row("Company", company)}
+            ${row("Industry", industry)}
+            ${row("Designation", designation)}
+            ${row("Department", department)}
+            ${row("Personal Email", email)}
+            ${row("Official Email", officialEmail)}
+            ${row("Phone", `+91 ${phone}`)}
+            ${row("Type of Customer", typeOfCustomer)}
+            ${row("Purchase Plan", purchasePlan)}
+            ${row("Country", "India")}
+            ${row("State", state)}
+            ${row("City", city)}
           </table>
 
-          <div style="margin-top:24px; background:#1e293b; padding:16px; border-radius:10px;">
-            <h4 style="color:#f8fafc; margin-bottom:8px;">Message</h4>
-            <p style="color:#cbd5e1; line-height:1.6;">
-              ${(message || 'No message').replace(/\n/g, '<br />')}
+          <div style="margin-top:20px;background:#1e293b;padding:15px;border-radius:10px;">
+            <h4 style="color:#ffffff;margin-bottom:8px;">Message</h4>
+            <p style="color:#cbd5e1;line-height:1.6;">
+              ${(escapeHtml(message || 'No message')).replace(/\n/g, '<br/>')}
             </p>
           </div>
 
-          <div style="margin-top:24px; background:#1e293b; padding:16px; border-radius:10px; border-top: 2px solid #f97316;">
-            <h4 style="color:#f97316; margin-bottom:12px; font-size:14px;">📊 Traffic & Device Information</h4>
-            <table style="width:100%; font-size:13px;">
-              <tr>
-                <td style="padding:6px; color:#94a3b8;">Source</td>
-                <td style="padding:6px; color:#f8fafc;"><strong>${source || 'Unknown'}</strong></td>
-              </tr>
-              <tr>
-                <td style="padding:6px; color:#94a3b8;">Device Type</td>
-                <td style="padding:6px; color:#f8fafc;"><strong>${deviceType || 'Unknown'}</strong></td>
-              </tr>
-              <tr>
-                <td style="padding:6px; color:#94a3b8;">Keyword</td>
-                <td style="padding:6px; color:#f8fafc;"><strong>${keyword || 'N/A'}</strong></td>
-              </tr>
-              <tr>
-                <td style="padding:6px; color:#94a3b8;">Referrer</td>
-                <td style="padding:6px; color:#cbd5e1; word-break:break-all; font-size:12px;">${referrer || 'Direct Visit'}</td>
-              </tr>
-              <tr>
-                <td style="padding:6px; color:#94a3b8;">IP Address</td>
-                <td style="padding:6px; color:#f8fafc;"><strong>${ipAddress || 'Unknown'}</strong></td>
-              </tr>
+          <div style="margin-top:20px;background:#1e293b;padding:15px;border-radius:10px;border-top:2px solid #f97316;">
+            <h4 style="color:#f97316;margin-bottom:10px;font-size:14px;">
+              📊 Traffic & Device Info
+            </h4>
+
+            <table style="width:100%;font-size:13px;">
+              ${row("Source", source || 'Unknown')}
+              ${row("Device Type", deviceType || 'Unknown')}
+              ${row("Keyword", keyword || 'N/A')}
+              ${row("IP Address", ipAddress || 'Unknown')}
+              ${row("Referrer", referrer || 'Direct Visit')}
+              ${row("Submitted At", timestamp || new Date().toLocaleString('en-IN'))}
             </table>
           </div>
 
-          <p style="margin-top:28px; color:#64748b; font-size:13px; text-align:center;">
-            Submitted on ${new Date().toLocaleString('en-IN')}
+          <p style="margin-top:25px;color:#64748b;font-size:12px;text-align:center;">
+            This email was generated automatically from your website contact form.
           </p>
+
         </div>
       `,
     };
@@ -190,6 +161,7 @@ export async function POST(request) {
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true }, { status: 200 });
+
   } catch (error) {
     console.error('Mail Error:', error);
     return NextResponse.json(
@@ -197,4 +169,15 @@ export async function POST(request) {
       { status: 500 }
     );
   }
+}
+
+/* ================= ROW HELPER ================= */
+
+function row(label, value) {
+  return `
+    <tr>
+      <td style="padding:8px;color:#94a3b8;width:40%;">${escapeHtml(label)}</td>
+      <td style="padding:8px;color:#f8fafc;">${escapeHtml(value)}</td>
+    </tr>
+  `;
 }
