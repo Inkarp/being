@@ -1,14 +1,15 @@
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import clientPromise from "../../library/mongodb";
 
-export const runtime = 'nodejs';
+export const runtime = "nodejs";
 
 const COMPANY_EMAIL = process.env.COMPANY_EMAIL;
 
 /* ================= EMAIL TRANSPORT ================= */
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
@@ -19,12 +20,21 @@ const transporter = nodemailer.createTransport({
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function escapeHtml(str = '') {
+function escapeHtml(str = "") {
   return str
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function row(label, value) {
+  return `
+    <tr>
+      <td style="padding:8px;color:#94a3b8;width:40%;">${escapeHtml(label)}</td>
+      <td style="padding:8px;color:#f8fafc;">${escapeHtml(value)}</td>
+    </tr>
+  `;
 }
 
 /* ================= POST ================= */
@@ -72,31 +82,60 @@ export async function POST(request) {
       !city
     ) {
       return NextResponse.json(
-        { error: 'Required fields missing' },
+        { error: "Required fields missing" },
         { status: 400 }
       );
     }
 
     if (!emailRegex.test(email) || !emailRegex.test(officialEmail)) {
       return NextResponse.json(
-        { error: 'Invalid email format' },
+        { error: "Invalid email format" },
         { status: 400 }
       );
     }
 
     if (!/^\d{10}$/.test(phone)) {
       return NextResponse.json(
-        { error: 'Phone must be 10 digits' },
+        { error: "Phone must be 10 digits" },
         { status: 400 }
       );
     }
 
     if (!COMPANY_EMAIL || !process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
       return NextResponse.json(
-        { error: 'Email environment variables not configured' },
+        { error: "Email environment variables not configured" },
         { status: 500 }
       );
     }
+
+    /* ================= SAVE TO DATABASE ================= */
+
+    const client = await clientPromise;
+    const db = client.db("BeingDB");
+
+    const dbResult = await db.collection("contactEnquiries").insertOne({
+      name,
+      company,
+      industry,
+      designation,
+      department,
+      email,
+      officialEmail,
+      phone,
+      typeOfCustomer,
+      purchasePlan,
+      state,
+      city,
+      message,
+      ipAddress,
+      referrer,
+      source,
+      deviceType,
+      keyword,
+      timestamp: timestamp || new Date(),
+      createdAt: new Date(),
+      status: "New",
+    });
 
     /* ================= MAIL TEMPLATE ================= */
 
@@ -126,33 +165,23 @@ export async function POST(request) {
             ${row("Country", "India")}
             ${row("State", state)}
             ${row("City", city)}
+
+           ${row("IP Address", ipAddress || "N/A")}
+           ${row("Referrer", referrer || "N/A")}
+           ${row("Source", source || "N/A")}
+           ${row("Device Type", deviceType || "N/A")}
+           ${row("Keyword", keyword || "N/A")}
+            ${row("Timestamp", new Date(timestamp).toLocaleString("en-US", { timeZone: "Asia/Kolkata" }))}  
+          
+      })}
           </table>
 
           <div style="margin-top:20px;background:#1e293b;padding:15px;border-radius:10px;">
             <h4 style="color:#ffffff;margin-bottom:8px;">Message</h4>
             <p style="color:#cbd5e1;line-height:1.6;">
-              ${(escapeHtml(message || 'No message')).replace(/\n/g, '<br/>')}
+              ${(escapeHtml(message || "No message")).replace(/\n/g, "<br/>")}
             </p>
           </div>
-
-          <div style="margin-top:20px;background:#1e293b;padding:15px;border-radius:10px;border-top:2px solid #f97316;">
-            <h4 style="color:#f97316;margin-bottom:10px;font-size:14px;">
-              📊 Traffic & Device Info
-            </h4>
-
-            <table style="width:100%;font-size:13px;">
-              ${row("Source", source || 'Unknown')}
-              ${row("Device Type", deviceType || 'Unknown')}
-              ${row("Keyword", keyword || 'N/A')}
-              ${row("IP Address", ipAddress || 'Unknown')}
-              ${row("Referrer", referrer || 'Direct Visit')}
-              ${row("Submitted At", timestamp || new Date().toLocaleString('en-IN'))}
-            </table>
-          </div>
-
-          <p style="margin-top:25px;color:#64748b;font-size:12px;text-align:center;">
-            This email was generated automatically from your website contact form.
-          </p>
 
         </div>
       `,
@@ -160,24 +189,16 @@ export async function POST(request) {
 
     await transporter.sendMail(mailOptions);
 
-    return NextResponse.json({ success: true }, { status: 200 });
+    return NextResponse.json(
+      { success: true, id: dbResult.insertedId },
+      { status: 200 }
+    );
 
   } catch (error) {
-    console.error('Mail Error:', error);
+    console.error("Server Error:", error);
     return NextResponse.json(
-      { error: 'Email sending failed' },
+      { error: "Something went wrong" },
       { status: 500 }
     );
   }
-}
-
-/* ================= ROW HELPER ================= */
-
-function row(label, value) {
-  return `
-    <tr>
-      <td style="padding:8px;color:#94a3b8;width:40%;">${escapeHtml(label)}</td>
-      <td style="padding:8px;color:#f8fafc;">${escapeHtml(value)}</td>
-    </tr>
-  `;
 }

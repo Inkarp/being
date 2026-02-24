@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import clientPromise from "../../library/mongodb";
 
 export const runtime = 'nodejs';
 
@@ -37,6 +38,56 @@ export async function POST(request) {
     if (!EMAIL_REGEX.test(formData.email) ||
         !EMAIL_REGEX.test(formData.officialEmail))
       return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
+
+    /* ================= SAVE TO DATABASE ================= */
+
+    const client = await clientPromise;
+    const db = client.db("BeingDB"); // replace if different
+
+    const dbResult = await db.collection("productPriceEnquiries").insertOne({
+      leadType: "Price Enquiry",
+      product: formData.product,
+      price: formData.price || null,
+
+      name: formData.name,
+      company: formData.company,
+      gstNumber: formData.gstNumber,
+      industry: formData.industry,
+      designation: formData.designation,
+      department: formData.department,
+      phone: formData.phone,
+      email: formData.email,
+      officialEmail: formData.officialEmail,
+      state: formData.state,
+      city: formData.city,
+      message: formData.message || null,
+
+      tracking: {
+        ip,
+        deviceType: formData.deviceType,
+        referrer: formData.referrer,
+        landingUrl: formData.landingUrl,
+        utm_source: formData.utm_source,
+        utm_medium: formData.utm_medium,
+        utm_campaign: formData.utm_campaign,
+        gclid: formData.gclid,
+        fbclid: formData.fbclid,
+      },
+
+      /* EXTRA CRM FIELDS */
+      status: "New",
+      assignedTo: null,
+      followUpDate: null,
+      leadSource: "Website",
+      priority: "Normal",
+      isContacted: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    });
+
+    console.log("Price Enquiry Saved:", dbResult.insertedId);
+
+    /* ================= EMAIL (UNCHANGED) ================= */
 
     await transporter.sendMail({
       from: `"Inkarp Instruments" <${process.env.EMAIL_USER}>`,
@@ -82,6 +133,7 @@ export async function POST(request) {
     return NextResponse.json({ success: true });
 
   } catch (error) {
+    console.error("Price Enquiry Error:", error);
     return NextResponse.json({ error: 'Email sending failed' }, { status: 500 });
   }
 }
