@@ -20,8 +20,10 @@ export async function GET(request) {
 
   if (!q) return NextResponse.json([]);
 
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  // Get the base URL from request headers for proper origin on Vercel
+  const protocol = request.headers.get("x-forwarded-proto") || "https";
+  const host = request.headers.get("x-forwarded-host") || request.headers.get("host");
+  const baseUrl = `${protocol}://${host}`;
 
   const results = [];
 
