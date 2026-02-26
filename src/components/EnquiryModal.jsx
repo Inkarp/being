@@ -57,6 +57,14 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
+  // OTP / verification states
+  const [otp, setOtp] = useState('');
+  const [otpSent, setOtpSent] = useState(false);
+  const [otpVerified, setOtpVerified] = useState(false);
+  const [otpError, setOtpError] = useState('');
+  const [sendOtpLoading, setSendOtpLoading] = useState(false);
+  const [verifyOtpLoading, setVerifyOtpLoading] = useState(false);
+
   /* ---------------- PRODUCT AUTO PICK ---------------- */
   useEffect(() => {
     if (isOpen && productData) {
@@ -151,6 +159,14 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
       value = value.replace(/\s/g, '');
     }
 
+    // if user changes their personal email after OTP flow started, reset verification
+    if (name === 'email') {
+      setOtp('');
+      setOtpSent(false);
+      setOtpVerified(false);
+      setOtpError('');
+    }
+
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
@@ -160,6 +176,12 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
     e.preventDefault();
     setLoading(true);
     setError('');
+
+    if (!otpVerified) {
+      setError('Please verify your email using OTP');
+      setLoading(false);
+      return;
+    }
 
     if (formData.phone.length !== 10) {
       setError('Phone must be 10 digits');
@@ -186,16 +208,22 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
+      const data = await res.json();
+      console.log('Enquiry response', res.status, data);
 
-      if (!res.ok) throw new Error('Failed');
+      if (!res.ok) {
+        setError(data.error || data.message || 'Submission failed');
+        throw new Error(data.error || data.message || 'Failed');
+      }
 
       setSubmitted(true);
       setTimeout(() => {
         handleClose();
       }, 2000);
 
-    } catch {
-      setError('Submission failed');
+    } catch (err) {
+      console.error('Submit error', err);
+      if (!error) setError('Submission failed');
     } finally {
       setLoading(false);
     }
@@ -205,7 +233,75 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
     setFormData(INITIAL_STATE);
     setSubmitted(false);
     setError('');
+
+    // reset otp states
+    setOtp('');
+    setOtpSent(false);
+    setOtpVerified(false);
+    setOtpError('');
+    setSendOtpLoading(false);
+    setVerifyOtpLoading(false);
+
     onClose();
+  };
+
+  /* ------------- OTP / EMAIL VERIFICATION ------------- */
+  const handleSendOtp = async () => {
+    if (!formData.email) {
+      setOtpError('Please enter your email first');
+      return;
+    }
+    setSendOtpLoading(true);
+    setOtpError('');
+    try {
+      const res = await fetch('/api/send-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: formData.email }),
+      });
+      const data = await res.json();
+  
+      console.log("Send OTP Response:", data);
+
+      if (!res.ok) {
+        console.error("Status Error:", res.status);
+      }
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || 'Unable to send');
+      }
+      setOtpSent(true);
+    } catch (err) {
+      console.error(err);
+      setOtpError('Failed to send OTP');
+    } finally {
+      setSendOtpLoading(false);
+    }
+  };
+
+  const handleVerifyOtp = async () => {
+    if (!otp) return;
+    setVerifyOtpLoading(true);
+    setOtpError('');
+    try {
+      const res = await fetch('/api/verify-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ otp }),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setOtpVerified(true);
+      } else {
+        setOtpVerified(false);
+        setOtpError(data.message || 'Invalid OTP');
+      }
+    } catch (err) {
+      console.error(err);
+      setOtpError('Verification failed');
+    } finally {
+      setVerifyOtpLoading(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -250,7 +346,54 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
             />
           </div>
 
-          <Input name="email" type="email" placeholder="Personal Email *" value={formData.email} onChange={handleChange} required />
+          {/* personal email with OTP flow */}
+          <div className="flex gap-2 items-center">
+            <Input
+              name="email"
+              type="email"
+              placeholder="Personal Email *"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <button
+              type="button"
+              onClick={handleSendOtp}
+              disabled={sendOtpLoading || otpSent || !formData.email}
+              className="py-2 px-3 bg-[#2F4191] text-white rounded-md text-sm"
+            >
+              {sendOtpLoading
+                ? 'Sending...'
+                : otpSent
+                  ? 'OTP Sent'
+                  : 'Send OTP'}
+            </button>
+          </div>
+          {otpSent && (
+            <div className="flex gap-2 items-center">
+              <input
+                name="otp"
+                placeholder="Enter OTP"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                className="w-full border border-gray-300 focus:border-[#2F4191] px-3 py-2 rounded-full"
+              />
+              <button
+                type="button"
+                onClick={handleVerifyOtp}
+                disabled={verifyOtpLoading || otpVerified}
+                className="py-2 px-3 bg-[#2F4191] text-white rounded-md text-sm"
+              >
+                {verifyOtpLoading
+                  ? 'Verifying...'
+                  : otpVerified
+                    ? <FaCheckCircle className="text-green-300" />
+                    : 'Verify'}
+              </button>
+            </div>
+          )}
+          {otpError && <p className="text-red-500 text-sm">{otpError}</p>}
+
           <Input name="officialEmail" type="email" placeholder="Official Email *" value={formData.officialEmail} onChange={handleChange} required />
           <Input name="city" placeholder="City *" value={formData.city} onChange={handleChange} required />
 
