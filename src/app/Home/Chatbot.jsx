@@ -1,47 +1,222 @@
-'use client';
-import { useState } from 'react';
-import { HiX } from 'react-icons/hi';
 
-const questions = [
-  { key: 'name', question: 'What is your name?', type: 'text' },
-  { key: 'email', question: 'Your email address?', type: 'email' },
-  { key: 'phone', question: 'Your phone number?', type: 'tel' },
-  {
-    key: 'service',
-    question: 'What Prodduct are you interested in?',
-    options: ['Ovens', 'Incubators', 'Water Baths'],
-  },
-  {
-    key: 'budget',
-    question: 'What is your budget range?',
-    options: ['< 1,0000', '20,000 - 30,000', '> 40,000'],
-  },
+'use client';
+import { useState, useMemo } from 'react';
+import { HiX } from 'react-icons/hi';
+import { FiSend } from 'react-icons/fi';
+
+
+const MAIN_OPTIONS = [
+  'Product',
+  'Service',
+  'Quote',
+  'Talk to expert',
 ];
 
+const PRODUCTS = [
+  'Laboratory Drying Oven',
+  'Incubators',
+  'Chillers',
+  'Water Baths',
+  'Rotary Evaporators',
+  'Pumps',
+  'Cabinet',
+  'Freezers',
+  'Digital Viscometer',
+  'Muffle Furnace',
+];
+
+// MASTER PRODUCT LIST (Future link ready)
+
+// MASTER PRODUCT LIST (Future link ready)
+
+export const PRODUCT_MASTER = [
+  { name: 'Laboratory Drying Oven', slug: 'laboratory-drying-oven', link: '#' },
+  { name: 'Vacuum Oven (LED Display)', slug: 'vacuum-oven-led', link: '#' },
+  { name: 'Vacuum Oven (Touch Control)', slug: 'vacuum-oven-touch', link: '#' },
+  { name: 'High-Temperature Muffle Furnace', slug: 'muffle-furnace', link: '#' },
+  { name: 'Water Bath', slug: 'water-bath', link: '#' },
+  { name: 'Heating Incubator', slug: 'heating-incubator', link: '#' },
+  { name: 'Vacuum Pump (Oil-Sealed)', slug: 'vacuum-pump-oil', link: '#' },
+  { name: 'Diaphragm Pump', slug: 'diaphragm-pump', link: '#' },
+  { name: 'Rotary Evaporator', slug: 'rotary-evaporator', link: '#' },
+  { name: 'Rotary Evaporator Controller', slug: 'rotary-controller', link: '#' },
+  { name: 'Recirculating Chiller (–20 °C to +20 °C)', slug: 'chiller-20', link: '#' },
+  { name: 'Recirculating Chiller (–10 °C to +100 °C)', slug: 'chiller-100', link: '#' },
+  { name: 'High-Temperature Chiller', slug: 'high-temp-chiller', link: '#' },
+  { name: 'Digital Viscometer', slug: 'digital-viscometer', link: '#' },
+  { name: 'Cooling Incubator', slug: 'cooling-incubator', link: '#' },
+  { name: 'Deep Freezer (–40 °C)', slug: 'deep-freezer-40', link: '#' },
+  { name: 'Deep Freezer (–25 °C)', slug: 'deep-freezer-25', link: '#' },
+  { name: 'Ultra-Low Temperature Freezer (–86 °C)', slug: 'ult-freezer', link: '#' },
+  { name: 'Laboratory Refrigerator (2–8 °C)', slug: 'lab-refrigerator', link: '#' },
+  { name: 'CO₂ Incubator', slug: 'co2-incubator', link: '#' },
+  { name: 'Biosafety Cabinet', slug: 'biosafety-cabinet', link: '#' },
+  { name: 'Vertical Laminar Airflow Cabinet', slug: 'laminar-airflow', link: '#' },
+  { name: 'Combined Refrigerator & Deep Freezer', slug: 'combo-fridge', link: '#' },
+  { name: 'Cell Culture Lab Setup', slug: 'cell-culture-setup', link: '#' },
+];
+
+export const CROSS_SELL_MAP = {
+  'Laboratory Drying Oven': [
+    'Vacuum Oven (LED Display)',
+    'Vacuum Oven (Touch Control)',
+    'High-Temperature Muffle Furnace',
+    'Water Bath',
+    'Heating Incubator',
+  ],
+
+  'Vacuum Oven (LED Display)': [
+    'Vacuum Pump (Oil-Sealed)',
+    'Diaphragm Pump',
+    'Laboratory Drying Oven',
+    'Recirculating Chiller (–20 °C to +20 °C)',
+  ],
+
+  'Vacuum Oven (Touch Control)': [
+    'Vacuum Pump (Oil-Sealed)',
+    'Diaphragm Pump',
+    'Rotary Evaporator',
+    'Recirculating Chiller (–20 °C to +20 °C)',
+  ],
+
+  'Vacuum Pump (Oil-Sealed)': [
+    'Vacuum Oven (LED Display)',
+    'Vacuum Oven (Touch Control)',
+    'Rotary Evaporator',
+    'Diaphragm Pump',
+  ],
+
+  'Diaphragm Pump': [
+    'Vacuum Oven (LED Display)',
+    'Rotary Evaporator',
+    'Vacuum Pump (Oil-Sealed)',
+  ],
+
+  'Rotary Evaporator': [
+    'Rotary Evaporator Controller',
+    'Vacuum Pump (Oil-Sealed)',
+    'Diaphragm Pump',
+    'Recirculating Chiller (–20 °C to +20 °C)',
+    'High-Temperature Chiller',
+    'Water Bath',
+  ],
+
+  'Water Bath': [
+    'Rotary Evaporator',
+    'Heating Incubator',
+    'Digital Viscometer',
+  ],
+
+  'Digital Viscometer': [
+    'Water Bath',
+    'Heating Incubator',
+    'Laboratory Refrigerator (2–8 °C)',
+  ],
+
+  'CO₂ Incubator': [
+    'Biosafety Cabinet',
+    'Vertical Laminar Airflow Cabinet',
+    'Ultra-Low Temperature Freezer (–86 °C)',
+    'Laboratory Refrigerator (2–8 °C)',
+  ],
+};
+
 export default function Chatbot({ open, onClose }) {
+
   const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState({});
-  const [input, setInput] = useState('');
+  const [category, setCategory] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(false);
 
+  const [showCrossSell, setShowCrossSell] = useState(false);
+  const [recommendedProducts, setRecommendedProducts] = useState([]);
+
+  // ✅ Hooks must always execute
+  const dynamicFields = useMemo(() => {
+    if (!category) return [];
+
+    if (category === 'Product') {
+      return [
+        'Name',
+        'Company Name',
+        'Industry',
+        'Email',
+        'Official Email',
+        'Contact Number',
+        'Designation',
+        'Department',
+        'Country',
+        'State',
+        'City',
+        'GST Number',
+      ];
+    }
+
+    if (category === 'Service') {
+      return [
+        'Product Name',
+        'Model Number',
+        'Customer Name',
+        'Company Name',
+        'Email',
+        'Official Email',
+        'Contact Number',
+        'Designation',
+        'Department',
+        'State',
+        'City',
+        'Type Of Service',
+        'Under warranty',
+        'Message',
+      ];
+    }
+
+    if (category === 'Quote') {
+      return [
+        'Company Name',
+        'GST Number',
+        'State',
+        'Customer Name',
+        'Email',
+        'Official Email',
+        'Contact Number',
+        'Billing Address',
+        'Shipping Address',
+      ];
+    }
+
+    if (category === 'Talk to expert') {
+      return [
+        'Customer Name',
+        'Company Name',
+        'Industry',
+        'Email',
+        'Official Email',
+        'Contact',
+        'Designation',
+        'Department',
+        'Enquired Product',
+        'City',
+        'Message',
+      ];
+    }
+
+    return [];
+  }, [category]);
+
+  // ✅ AFTER ALL HOOKS
   if (!open) return null;
 
-  const current = questions[step];
-  const isLastStep = step === questions.length - 1 ;
-
-  const saveAnswer = (value) => {
-    setAnswers((prev) => ({ ...prev, [current.key]: value }));
-    setInput('');
-    if (!isLastStep) setStep(step + 1);
-  };
 
   const handleSubmit = async () => {
     setLoading(true);
 
-    const payload = questions.map((q) => ({
-      question: q.question,
-      answer: answers[q.key],
-    }));
+    const payload = {
+      Category: category,
+      Product: selectedProduct,
+      ...formData,
+    };
 
     await fetch('/api/chat', {
       method: 'POST',
@@ -50,73 +225,131 @@ export default function Chatbot({ open, onClose }) {
     });
 
     setLoading(false);
-    setStep(0);
-    setAnswers({});
-    setInput('');
-    onClose();
+
+    // 🔥 CROSS SELL TRIGGER
+    if (category === 'Product' && CROSS_SELL_MAP[selectedProduct]) {
+      const names = CROSS_SELL_MAP[selectedProduct];
+
+      const matched = PRODUCT_MASTER.filter((p) =>
+        names.includes(p.name)
+      );
+
+      setRecommendedProducts(matched);
+      setShowCrossSell(true);
+    } else {
+      onClose();
+    }
   };
 
+  const renderMainSelection = () => (
+    <div className="space-y-3">
+      {MAIN_OPTIONS.map((opt) => (
+        <button
+          key={opt}
+          onClick={() => {
+            setCategory(opt);
+            setStep(1);
+          }}
+          className="w-full rounded-xl bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] text-white py-2 text-sm font-medium hover:scale-[1.02] transition"
+        >
+          {opt}
+        </button>
+      ))}
+    </div>
+  );
+
+  const renderProductSelection = () => (
+    <select
+      onChange={(e) => {
+        setSelectedProduct(e.target.value);
+        setStep(2);
+      }}
+      className="w-full border rounded-lg px-3 py-2 text-sm"
+      defaultValue=""
+    >
+      <option value="" disabled>
+        Select Product
+      </option>
+      {PRODUCTS.map((p) => (
+        <option key={p}>{p}</option>
+      ))}
+    </select>
+  );
+
+  const renderDynamicForm = () => (
+    <div className="space-y-3">
+      {dynamicFields.map((field) => (
+        <input
+          key={field}
+          placeholder={field}
+          onChange={(e) =>
+            setFormData({ ...formData, [field]: e.target.value })
+          }
+          className="w-full border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#2F4191]"
+        />
+      ))}
+
+      <button
+        onClick={handleSubmit}
+        disabled={loading}
+        className="w-full mt-2 rounded-xl bg-[#2F4191] text-white py-2 text-sm font-semibold flex items-center justify-center gap-2 hover:bg-[#2B7EC2]"
+      >
+        {loading ? 'Submitting...' : 'Submit & Send'}
+        <FiSend size={14} />
+      </button>
+    </div>
+  );
+
   return (
-    <div className="fixed bottom-20 right-4 z-50 w-[360px] rounded-2xl bg-white shadow-2xl border overflow-hidden">
-      
+    <div className="fixed bottom-24 right-6 z-50 w-[380px] backdrop-blur-lg bg-white/90 rounded-2xl shadow-2xl border overflow-hidden">
+
       {/* Header */}
-      <div className="flex items-center justify-between bg-[#2F4191] px-4 py-3 text-white">
-        <span className="font-semibold">Chat with us</span>
+      <div className="flex justify-between items-center bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] text-white px-4 py-3">
+        <span className="font-semibold text-sm">
+          Welcome to Being India
+        </span>
         <button onClick={onClose}>
           <HiX size={18} />
         </button>
       </div>
 
       {/* Body */}
-      <div className="p-4 space-y-4">
-        <p className="text-sm text-gray-700">{current.question}</p>
+      <div className="p-5 space-y-4 max-h-[500px] overflow-y-auto">
 
-        {/* OPTIONS */}
-        {current.options ? (
-          <div className="flex flex-col gap-2">
-            {current.options.map((opt) => (
-              <button
-                key={opt}
-                onClick={() => saveAnswer(opt)}
-                className="rounded-lg border px-3 py-2 text-sm hover:bg-gray-100"
+        {step === 0 && renderMainSelection()}
+
+        {step === 1 && renderProductSelection()}
+
+        {step === 2 && renderDynamicForm()}
+
+      </div>
+
+      {showCrossSell && (
+        <div className="mt-4 border-t pt-4">
+          <h4 className="font-semibold text-sm mb-3 text-[#2F4191]">
+            You may also be interested in:
+          </h4>
+
+          <div className="space-y-2">
+            {recommendedProducts.map((product) => (
+              <a
+                key={product.slug}
+                href={product.link}
+                className="block px-3 py-2 text-sm rounded-lg border hover:bg-[#2F4191] hover:text-white transition"
               >
-                {opt}
-              </button>
+                {product.name}
+              </a>
             ))}
           </div>
-        ) : (
-          <div className="flex gap-2">
-            <input
-              type={current.type}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Type here..."
-              className="flex-1 rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
-            />
 
-            {!isLastStep && (
-              <button
-                onClick={() => saveAnswer(input)}
-                disabled={!input}
-                className="rounded-lg bg-[#2F4191] px-4 py-2 text-sm text-white disabled:opacity-50"
-              >
-                Next
-              </button>
-            )}
-          </div>
-        )}
-
-        {/* FINAL SUBMIT */}
-        {isLastStep && (
           <button
-            onClick={handleSubmit}
-            disabled={loading}
-            className="w-full rounded-lg bg-[#2F4191] px-4 py-2 text-sm font-medium text-white hover:bg-[#2B7EC2] disabled:opacity-50"
+            onClick={onClose}
+            className="mt-4 w-full bg-[#2F4191] text-white py-2 rounded-lg"
           >
-            {loading ? 'Submitting…' : 'Submit & Send'}
+            Close
           </button>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
