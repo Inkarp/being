@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import { HiX } from 'react-icons/hi';
 import { FiSend } from 'react-icons/fi';
+import { IoArrowBack } from 'react-icons/io5';
 
 
 const MAIN_OPTIONS = [
@@ -208,6 +209,20 @@ export default function Chatbot({ open, onClose }) {
   // ✅ AFTER ALL HOOKS
   if (!open) return null;
 
+  const handleBack = () => {
+    if (step === 1) {
+      setStep(0);
+      setCategory(null);
+    } else if (step === 2) {
+      setStep(1);
+      setSelectedProduct(null);
+      setFormData({});
+    } else if (step === 3) {
+      setStep(2);
+    } else if (step === 4) {
+      setStep(3);
+    }
+  };
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -226,7 +241,7 @@ export default function Chatbot({ open, onClose }) {
 
     setLoading(false);
 
-    // 🔥 CROSS SELL TRIGGER
+    // 🔥 CROSS SELL TRIGGER - prepare for step 4
     if (category === 'Product' && CROSS_SELL_MAP[selectedProduct]) {
       const names = CROSS_SELL_MAP[selectedProduct];
 
@@ -236,9 +251,10 @@ export default function Chatbot({ open, onClose }) {
 
       setRecommendedProducts(matched);
       setShowCrossSell(true);
-    } else {
-      onClose();
     }
+
+    // Move to success message step
+    setStep(3);
   };
 
   const renderMainSelection = () => (
@@ -300,15 +316,85 @@ export default function Chatbot({ open, onClose }) {
     </div>
   );
 
+  const renderSuccessMessage = () => (
+    <div className="space-y-4 text-center py-4">
+      <div className="text-5xl">✅</div>
+      <div>
+        <h3 className="font-semibold text-lg text-[#2F4191] mb-2">
+          Thank You!
+        </h3>
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Your submission has been received successfully. Our team will get back to you shortly.
+        </p>
+      </div>
+
+      {showCrossSell && (
+        <button
+          onClick={() => setStep(4)}
+          className="w-full mt-4 rounded-xl bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] text-white py-2 px-3 text-sm font-medium hover:scale-[1.02] transition"
+        >
+          View Recommended Products
+        </button>
+      )}
+
+      <button
+        onClick={onClose}
+        className="w-full mt-2 rounded-xl bg-gray-300 text-gray-700 py-2 px-3 text-sm font-medium hover:bg-gray-400 transition"
+      >
+        Close
+      </button>
+    </div>
+  );
+
+  const renderCrossSell = () => (
+    <div className="space-y-4">
+      <h4 className="font-semibold text-base text-[#2F4191] mb-4">
+        You may also be interested in:
+      </h4>
+
+      <div className="space-y-2 max-h-[280px] overflow-y-auto">
+        {recommendedProducts.map((product) => (
+          <a
+            key={product.slug}
+            href={product.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block px-4 py-3 text-sm rounded-lg border-2 border-[#2F4191] hover:bg-[#2F4191] hover:text-white transition text-center font-medium"
+          >
+            {product.name}
+          </a>
+        ))}
+      </div>
+
+      <button
+        onClick={onClose}
+        className="w-full mt-4 bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] text-white py-2 rounded-lg hover:scale-[1.02] transition font-semibold"
+      >
+        Done
+      </button>
+    </div>
+  );
+
   return (
-    <div className="fixed bottom-24 right-6 z-50 w-[380px] backdrop-blur-lg bg-white/90 rounded-2xl shadow-2xl border overflow-hidden">
+    <div className="fixed bottom-24 right-6 z-50 w-[300px] backdrop-blur-lg bg-white/90 rounded-2xl shadow-2xl border overflow-hidden">
 
       {/* Header */}
       <div className="flex justify-between items-center bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] text-white px-4 py-3">
-        <span className="font-semibold text-sm">
-          Welcome to Being India
-        </span>
-        <button onClick={onClose}>
+        <div className="flex items-center gap-3 flex-1">
+          {step > 0 && (
+            <button 
+              onClick={handleBack}
+              className="hover:scale-110 transition p-1"
+              title="Go back"
+            >
+              <IoArrowBack size={18} />
+            </button>
+          )}
+          <span className="font-semibold text-sm">
+            Welcome to Being India
+          </span>
+        </div>
+        <button onClick={onClose} className="hover:scale-110 transition p-1">
           <HiX size={18} />
         </button>
       </div>
@@ -322,34 +408,11 @@ export default function Chatbot({ open, onClose }) {
 
         {step === 2 && renderDynamicForm()}
 
+        {step === 3 && renderSuccessMessage()}
+
+        {step === 4 && renderCrossSell()}
+
       </div>
-
-      {showCrossSell && (
-        <div className="mt-4 border-t pt-4">
-          <h4 className="font-semibold text-sm mb-3 text-[#2F4191]">
-            You may also be interested in:
-          </h4>
-
-          <div className="space-y-2">
-            {recommendedProducts.map((product) => (
-              <a
-                key={product.slug}
-                href={product.link}
-                className="block px-3 py-2 text-sm rounded-lg border hover:bg-[#2F4191] hover:text-white transition"
-              >
-                {product.name}
-              </a>
-            ))}
-          </div>
-
-          <button
-            onClick={onClose}
-            className="mt-4 w-full bg-[#2F4191] text-white py-2 rounded-lg"
-          >
-            Close
-          </button>
-        </div>
-      )}
     </div>
   );
 }
