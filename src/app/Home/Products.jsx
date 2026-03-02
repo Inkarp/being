@@ -9,7 +9,7 @@ const causes = [
     title: 'Ovens',
     percentage: 10,
     image: '/ovens.png',
-    link: "/products/ovens",
+    link: "products/laboratory-ovens",
     description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
   },
   {
