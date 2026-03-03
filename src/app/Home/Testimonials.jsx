@@ -54,7 +54,7 @@ export default function Testimonials() {
   return (
     <section
       style={{ perspective: '1200px' }}
-      className="overflow-hidden relative min-h-[500px]  grid grid-cols-1 lg:grid-cols-12 place-content-center lg:place-items-center lg:gap-10 mx-auto px-6 py-10 border border-gray-200 rounded-2xl shadow-3xl"
+      className="overflow-hidden relative min-h-[500px] grid grid-cols-1 lg:grid-cols-12 place-content-center lg:place-items-center lg:gap-10 mx-auto px-6 py-10 border border-gray-200 rounded-2xl shadow-3xl"
     >
       {/* LEFT CONTENT */}
       <div className="relative z-10 mb-10 lg:mb-0 col-span-6">
