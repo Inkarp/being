@@ -10,6 +10,16 @@ const MAIN_OPTIONS = [
   { id: 'Talk to expert', label: '💬 Talk to Expert', desc: 'Speak with our technical team' },
 ];
 
+// dropdown of indian states reused across forms
+const INDIAN_STATES = [
+  "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+  "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand",
+  "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
+  "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab",
+  "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
+  "Uttar Pradesh", "Uttarakhand", "West Bengal", "Delhi"
+];
+
 const PRODUCTS = [
   'Laboratory Drying Oven', 'Incubators', 'Chillers', 'Water Baths',
   'Rotary Evaporators', 'Pumps', 'Cabinet', 'Freezers',
@@ -163,10 +173,10 @@ const FIELD_CONFIG = {
     { key: 'company',     label: 'Company Name',    type: 'text',  required: true },
     { key: 'email',       label: 'Email',           type: 'email', required: true },
     { key: 'contact',     label: 'Contact Number',  type: 'tel',   required: true },
-    { key: 'industry',    label: 'Industry',        type: 'text',  required: false },
+    { key: 'industry',    label: 'Industry',        type: 'text',  required: true },
     { key: 'designation', label: 'Designation',     type: 'text',  required: false },
-    { key: 'country',     label: 'Country',         type: 'text',  required: false },
-    { key: 'state',       label: 'State',           type: 'text',  required: false },
+    { key: 'country',     label: 'Country',         type: 'text',  required: false, readOnly: true },
+    { key: 'state',       label: 'State',           type: 'select', options: INDIAN_STATES, required: false },
     { key: 'city',        label: 'City',            type: 'text',  required: false },
     { key: 'gst',         label: 'GST Number',      type: 'text',  required: false },
   ],
@@ -176,10 +186,11 @@ const FIELD_CONFIG = {
     { key: 'contact',      label: 'Contact Number',   type: 'tel',    required: true },
     { key: 'company',      label: 'Company Name',     type: 'text',   required: false },
     { key: 'productName',  label: 'Product Name',     type: 'text',   required: true },
-    { key: 'modelNumber',  label: 'Model Number',     type: 'text',   required: false },
+    { key: 'serialNumber',  label: 'Serial Number',     type: 'text',   required: false },
     { key: 'serviceType',  label: 'Type of Service',  type: 'text',   required: true },
     { key: 'underWarranty',label: 'Under Warranty?',  type: 'select', options: ['Yes', 'No', 'Not Sure'], required: true, fullWidth: false },
-    { key: 'state',        label: 'State',            type: 'text',   required: false },
+    { key: 'country',      label: 'Country',          type: 'text',   required: false, readOnly: true },
+    { key: 'state',        label: 'State',            type: 'select', options: INDIAN_STATES, required: false },
     { key: 'city',         label: 'City',             type: 'text',   required: false },
     { key: 'message',      label: 'Message',          type: 'textarea', required: false, fullWidth: true },
   ],
@@ -189,7 +200,8 @@ const FIELD_CONFIG = {
     { key: 'email',           label: 'Email',             type: 'email',    required: true },
     { key: 'contact',         label: 'Contact Number',    type: 'tel',      required: true },
     { key: 'gst',             label: 'GST Number',        type: 'text',     required: false },
-    { key: 'state',           label: 'State',             type: 'text',     required: false },
+    { key: 'country',         label: 'Country',          type: 'text',     required: false, readOnly: true },
+    { key: 'state',           label: 'State',             type: 'select',   options: INDIAN_STATES, required: false },
     { key: 'billingAddress',  label: 'Billing Address',   type: 'textarea', required: false, fullWidth: true },
     { key: 'shippingAddress', label: 'Shipping Address',  type: 'textarea', required: false, fullWidth: true },
   ],
@@ -199,6 +211,8 @@ const FIELD_CONFIG = {
     { key: 'contact',         label: 'Contact Number',     type: 'tel',      required: true },
     { key: 'company',         label: 'Company Name',       type: 'text',     required: true },
     { key: 'enquiredProduct', label: 'Product of Interest',type: 'text',     required: false },
+    { key: 'country',         label: 'Country',          type: 'text',     required: false, readOnly: true },
+    { key: 'state',            label: 'State',             type: 'select',   options: INDIAN_STATES, required: false },
     { key: 'city',            label: 'City',               type: 'text',     required: false },
     { key: 'message',         label: 'Message / Query',    type: 'textarea', required: false, fullWidth: true },
   ],
@@ -255,8 +269,14 @@ function FormField({ field, value, error, onChange }) {
           {field.options.map((o) => <option key={o}>{o}</option>)}
         </select>
       ) : (
-        <input type={field.type} placeholder={field.label} value={value}
-          onChange={(e) => onChange(field.key, e.target.value)} className={base} />
+        <input
+          type={field.type}
+          placeholder={field.label}
+          value={value}
+          onChange={field.readOnly ? undefined : (e) => onChange(field.key, e.target.value)}
+          readOnly={field.readOnly}
+          className={base}
+        />
       )}
       {error && <p className="text-xs text-red-500 mt-1">{error}</p>}
     </div>
@@ -293,7 +313,10 @@ export default function Chatbot({ open, onClose }) {
   // ─── Handlers ──────────────────────────────────────────────────────────────
 
   const handleCategorySelect = (opt) => {
-    setCategory(opt); setFormData({}); setErrors({}); setApiError('');
+    setCategory(opt);
+    // ensure every new form pre-fills country as India
+    setFormData({ country: 'India' });
+    setErrors({}); setApiError('');
     setStep(opt === 'Product' ? 1 : 2);
   };
 
@@ -357,7 +380,7 @@ export default function Chatbot({ open, onClose }) {
 
   const handleReset = () => {
     setStep(0); setCategory(null); setSelectedProduct(''); setProductSearch('');
-    setFormData({}); setErrors({}); setApiError(''); setShowCrossSell(false); setRecommendedProducts([]);
+    setFormData({ country: 'India' }); setErrors({}); setApiError(''); setShowCrossSell(false); setRecommendedProducts([]);
   };
 
   // ─── Renders ───────────────────────────────────────────────────────────────
@@ -410,8 +433,12 @@ export default function Chatbot({ open, onClose }) {
       )}
       <div className="grid grid-cols-2 gap-2.5">
         {fields.map((field) => (
-          <FormField key={field.key} field={field} value={formData[field.key] || ''}
-            error={errors[field.key]} onChange={handleFieldChange} />
+          <FormField key={field.key}
+            field={field}
+            value={field.key === 'country' ? 'India' : (formData[field.key] || '')}
+            error={errors[field.key]}
+            onChange={handleFieldChange}
+          />
         ))}
       </div>
       <button onClick={handleSubmit} disabled={loading}
