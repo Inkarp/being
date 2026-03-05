@@ -9,7 +9,6 @@ import ChatModal from "./Home/ChatModal";
 
 import ProductsSidebar from "./ProductsSidebar";
 import SocialContactBar from "./SocialContactBar";
-import SidebarNav from "./Home/SidebarNav";
 import FestivalUpdates from "./FestivalUpdates";
 
 
@@ -44,7 +43,7 @@ const montserrat = Montserrat({
 
 export const metadata = {
   title: {
-    default: "Being Instruments",
+    default: "Being India",
     template: "",
   },
   description: "Scientific & Analytical Instrument Solutions",
@@ -65,7 +64,6 @@ export default function RootLayout({ children }) {
       <body className="bg-white">
         <ScrollToTop />
         <Header />
-        {/* <SidebarNav /> */}
         {/* <ShareButton /> */}
         <SocialContactBar />
         <FestivalUpdates />

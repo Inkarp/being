@@ -5,6 +5,7 @@ import { FaFileDownload, FaShare } from 'react-icons/fa';
 import { FcCollaboration } from 'react-icons/fc';
 import ProductTabs from './ProductsTab';
 import ProductTabContent from './ProductTabContent';
+import ParadotForm from '../../../components/PardotForm';
 
 export default function ProductActionSection({
     product,
@@ -16,7 +17,8 @@ export default function ProductActionSection({
     setIsEnquiryOpen,
     setIsExclusivePatnership,
     setIsServiceOpen,
-    setIsServiceRenewalOpen
+    setIsServiceRenewalOpen,
+    setIsPardotOpen
 }) {
     return (
         <div className="mt-5 border border-gray-200 rounded-2xl">
@@ -71,7 +73,7 @@ export default function ProductActionSection({
                         Share
                     </button>
                      <button
-                        onClick={() => setIsEnquiryOpen(true)}
+                        onClick={() => setIsPardotOpen(true)}
                         className="bg-[#2F4191] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2B7EC2] transition duration-300 w-full sm:w-auto cursor-pointer hover:scale-105"
                     >
                         Get a Quote

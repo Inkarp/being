@@ -28,6 +28,7 @@ import ProductTabs from './ProductsTab';
 import ProductTabContent from './ProductTabContent';
 import ProductActionSection from './ProductActionSection';
 import Loading from '../../../app/loading';
+import ParadotForm from '../../../components/PardotForm';
 
 
 export default function Model() {
@@ -75,6 +76,7 @@ export default function Model() {
 
     const [isExclusivePatnership, setIsExclusivePatnership] = useState(false);
     const [isServiceRenewalOpen, setIsServiceRenewalOpen] = useState(false);
+    const [isPardotOpen, setIsPardotOpen] = useState(false);
 
     /* ---------------- DATA LOADING ---------------- */
     useEffect(() => {
@@ -291,6 +293,7 @@ export default function Model() {
                 setIsExclusivePatnership={setIsExclusivePatnership}
                 setIsServiceOpen={setIsServiceOpen}
                 setIsServiceRenewalOpen={setIsServiceRenewalOpen}
+                setIsPardotOpen={setIsPardotOpen}
             />
             <div className='text-center py-2'>Disclaimer: Specifications are indicative. Performance may vary depending on load, usage, and ambient conditions.</div>
 
@@ -381,6 +384,20 @@ export default function Model() {
                     category: categorySlug,
                     subcategory: subSlug,
                 }} />
+
+            {isPardotOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-lg p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                        <button
+                            onClick={() => setIsPardotOpen(false)}
+                            className="float-right text-gray-500 hover:text-gray-700"
+                        >
+                            ✕
+                        </button>
+                        <ParadotForm />
+                    </div>
+                </div>
+            )}
         </section>
     );
 
