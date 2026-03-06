@@ -18,11 +18,10 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import Search from "./Search";
 import SearchOverlay from "./SearchOverlay";
 
-export default function Header() {
+export default function HeaderOne() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -32,14 +31,6 @@ export default function Header() {
     }
     return () => (document.body.style.overflow = "");
   }, [isOpen]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsVisible(window.scrollY > 100);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const menuItems = [
     { name: "Home", href: "/" },
@@ -79,7 +70,7 @@ export default function Header() {
   ];
 
   return (
-    <div className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[92%] lg:w-[100%] flex items-center justify-between lg:px-0 sm:px-0 lg:py-0 sm:py-0 px-0 border-b-2 border-[#2F4191]/30 shadow-2xl backdrop-blur-lg bg-white/80 font-raleway transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <div className=" flex items-center justify-between lg:px-0 sm:px-0 lg:py-0 sm:py-0 px-0 border-b-2 border-[#2F4191]/30 shadow-2xl backdrop-blur-lg bg-white/80 font-raleway">
       <Link href="/" className="flex items-center lg:px-10 hidden lg:block justify-center w-auto lg:w-[15%] mx-auto overflow-hidden">
         <Image
           src="/logo.webp"

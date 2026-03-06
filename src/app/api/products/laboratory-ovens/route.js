@@ -13,6 +13,7 @@ export async function GET() {
           {
             model: "Laboratory Drying Oven – BPG-9040A",
             gem: true,
+            catergory:"new",
             meta: {
               slug: "bpg-9040a",
               title: "Laboratory Drying Oven BPG-9040A | OEM & Service Provider in India | Being India",
@@ -183,6 +184,7 @@ export async function GET() {
           {
             model: "Laboratory Drying Oven - BPG-9070A",
             // gem: true,
+            catergory:"best-seller",
             meta: {
               slug: "bpg-9070a",
               title: "Laboratory Drying Oven BPG-9070A | OEM & Service Provider in India | Being India",
@@ -338,6 +340,7 @@ export async function GET() {
           {
             model: "Laboratory Drying Oven - BPG-9140A",
             gem: true,
+             catergory:"popular",
             meta: {
               slug: "bpg-9140a",
               title: "Laboratory Drying Oven BPG-9140A | OEM & Service Provider in India | Being India",

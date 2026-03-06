@@ -6,6 +6,7 @@ import Header from "./Home/Header";
 import Footer from "./Home/Footer";
 import ShareButton from "./ShareButton";
 import ChatModal from "./Home/ChatModal";
+import { ProductProvider } from "./context/ProductContext";
 
 import ProductsSidebar from "./ProductsSidebar";
 import SocialContactBar from "./SocialContactBar";
@@ -68,9 +69,11 @@ export default function RootLayout({ children }) {
         <SocialContactBar />
         <FestivalUpdates />
         <ProductsSidebar />
-        <main className="w-[90%] mx-auto pt-20">
-          {children}
-        </main>
+        <ProductProvider>
+          <main className="">
+            {children}
+          </main>
+        </ProductProvider>
         <ChatModal />
         <Footer />
       </body>
