@@ -26,7 +26,6 @@ export default function CategoryTabs() {
       <div className="w-[20%] flex items-center px-8">
         <h2 className="text-2xl font-bold text-black">Products to Explore</h2>
       </div>
-
       {/* Right Section - 70% */}
       <div className="w-[80%] flex items-center px-8">
         {/* Tabs */}

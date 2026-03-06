@@ -12,7 +12,7 @@ const links = [
         title: "All Promotions",
     },
     {
-        image: "/Offers.webp",
+        image: "/offers.webp",
         title: "Best Offers",
     },
     {
