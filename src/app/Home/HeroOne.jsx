@@ -281,13 +281,18 @@ export default function HeroOne() {
 
             <section
                 ref={sectionRef}
-                className="w-full relative mx-auto h-screen flex flex-col md:flex-row overflow-hidden"
-            >
+                className="w-full relative mx-auto h-screen flex flex-col md:flex-row overflow-hidden">
                 <div className="relative w-full h-full">
                     {/* Background Image */}
-                    <div className="absolute inset-0 z-10" style={{ backgroundImage: 'url(/HeroImage2.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
-                    {/* Dark overlay */}
-                    {/* <div className="absolute inset-0 bg-black bg-opacity-50 z-10" /> */}
+                    <div className="absolute inset-0 z-10">
+                        <Image
+                            src="/HeroImage.webp"
+                            alt="Hero background"
+                            fill
+                            priority
+                            className="object-fit"
+                        />
+                    </div>
                     {/* Main Content */}
                     <div className="relative z-20 h-full pt-10 flex items-start justify-start px-6 md:px-16 text-white">
                         <div className="space-y-5">
@@ -301,11 +306,9 @@ export default function HeroOne() {
                                     </div>
                                 </span>
                             </div>
-
                             {/* Typing headline */}
                             <h1 className="hero-h1 text-4xl md:text-6xl font-bold leading-tight">
                                 {renderLine1()}
-
                                 {line1 === FULL_LINE1 && (
                                     <>
                                         <br />
@@ -316,7 +319,6 @@ export default function HeroOne() {
                                     </>
                                 )}
                             </h1>
-
                             {/* Search Box below heading */}
                             {subtitle && (
                                 <div className={`search-box-wrapper ${subtitle ? 'visible' : ''}`} onClick={() => setIsSearchOpen(true)}>
@@ -328,7 +330,6 @@ export default function HeroOne() {
                                     />
                                 </div>
                             )}
-
                             {/* Subtitle appears after heading finishes */}
                             {subtitle && (
                                 <p className="text-lg md:text-xl text-gray-200 max-w-xl">

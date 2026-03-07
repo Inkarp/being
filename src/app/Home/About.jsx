@@ -8,36 +8,36 @@ import Link from 'next/link';
 
 export default function About() {
   return (
-    <section className="py-5 min-h-screen flex flex-col items-center font-raleway">
-      <div className=" grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+    <section className="min-h-screen flex flex-col items-center ">
+      <div className=" grid lg:grid-cols-2 ">
         <div className="space-y-12 order-2 lg:order-1">
-          <div className="relative group">
-            <div className="overflow-hidden rounded-3xl shadow-2xl ring-1 ring-black/5">
+          <div className="relative group ">
+            <div className="overflow-hidden ring-1 ring-black/5 ">
               <Image
-                src="/about.jpg"
+                src="/contact.png"
                 alt="Inkarp Instruments Laboratory Solutions"
                 width={650}
                 height={500}
-                className="w-full h-auto aspect-[4/4] object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-auto aspect-[4/4] object-fit"
               />
             </div>
           </div>
         </div>
         {/* Right: Content + Stats */}
-        <div className="space-y-5 lg:order-2">
+        <div className="space-y-5 lg:order-2 bg-[#2B7EC2] p-5">
           {/* Badge */}
           <div className="inline-flex items-center">
-            <span className="px-5 py-2.5   bg-gradient-to-br from-[#2F4191]/50 to-[#2B7EC2]/50 text-xs font-bold uppercase tracking-widest border-2 border-gray-200 rounded-full shadow-sm">
+            <span className="px-5 py-2.5 bg-gradient-to-br from-[#2F4191]/50 to-[#2B7EC2]/50 text-xs font-bold uppercase tracking-widest border-2 border-gray-200 rounded-full shadow-sm">
               About Us
             </span>
           </div>
 
           {/* Headline + Description */}
           <div className="space-y-3">
-            <h2 className="text-3xl font-raleway">
+            <h2 className="text-3xl text-white font-raleway">
               Your Trusted Lab Partner
             </h2>
-            <div className="text-xl md:text-2xl text-gray-600 leading-relaxed  ">
+            <div className="text-xl border border-white/50 bg-white rounded-xl md:text-2xl text-gray-600 leading-relaxed p-2">
               Delivering precision laboratory instruments with unmatched reliability. Serving research, industry, and education with{' '}
               <span className="font-bold text-gray-900">10+ years</span> of excellence.
             </div>

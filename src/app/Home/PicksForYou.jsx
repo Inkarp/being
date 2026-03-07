@@ -9,7 +9,6 @@ const products = [
     title: "LG 139 cm (55) 4K UHD AI UA8200 Smart TV with a7...",
     rating: "4.7",
     reviews: "143",
-    options: ["65", "55", "50", "43"],
   },
   {
     badge: "CASHBACK | 2026 Model",
@@ -17,7 +16,6 @@ const products = [
     title: "LG 3 Star (1.5) Split AC, AI Convertible 6-in-1 Cooling,...",
     rating: "3.3",
     reviews: "3",
-    options: [],
   },
   {
     badge: "CASHBACK | BEST SELLER",
@@ -25,7 +23,6 @@ const products = [
     title: "LG 9Kg Front Load Washing Machine, AI Direct Drive™,...",
     rating: "4.4",
     reviews: "45",
-    options: ["8.0", "9.0"],
   },
   {
     badge: "LIMITED QUANTITY | BEST SELLER",
@@ -33,7 +30,6 @@ const products = [
     title: "LG 242L Double Door Refrigerator with Door...",
     rating: "4.6",
     reviews: "31",
-    options: [],
   },
 ];
 
@@ -58,18 +54,30 @@ export default function PicksForYou() {
 
         {/* Tabs */}
         <div className="flex gap-10 mb-10 text-lg">
-          <button className="border-b-2 border-white pb-1 font-medium">
-            Best Deal
+          <button className="border-b-2 border-white pb-1 font-medium text-white backdrop-blur-md bg-white/20 px-4 py-2 rounded-full transition">
+            All 
           </button>
-
-          <button className="text-gray-600">Most Popular</button>
-
-          <button className="text-gray-600">Newest</button>
+          <button className="text-gray-300 backdrop-blur-md bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition hover:text-white">Popular</button>
+          <button className="text-gray-300 backdrop-blur-md bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition hover:text-white">Newest</button>
         </div>
+
+         {/* <div className="flex gap-4 mb-10 text-lg pb-2">
+          <button className="border-b-2 border-white pb-1 font-medium text-white backdrop-blur-md bg-white/20 px-4 py-2 rounded-full transition flex-shrink-0">
+            Ovens
+          </button>
+          <button className="text-gray-300 backdrop-blur-md bg-white/20 px-4 py-2 rounded-full transition hover:text-white hover:bg-white/30 flex-shrink-0">Incubators</button>
+          <button className="text-gray-300 backdrop-blur-md bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition hover:text-white flex-shrink-0">Water baths</button>
+          <button className="text-gray-300 backdrop-blur-md bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition hover:text-white flex-shrink-0">Chillers</button>
+          <button className="text-gray-300 backdrop-blur-md bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition hover:text-white flex-shrink-0">Rotary Evaporators</button>
+          <button className="text-gray-300 backdrop-blur-md bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition hover:text-white flex-shrink-0">Pumps</button>
+          <button className="text-gray-300 backdrop-blur-md bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition hover:text-white flex-shrink-0">Cabinet</button>
+          <button className="text-gray-300 backdrop-blur-md bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition hover:text-white flex-shrink-0">Freezers</button>
+           <button className="text-gray-300 backdrop-blur-md bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition hover:text-white flex-shrink-0">Digital Viscometers</button>
+            <button className="text-gray-300 backdrop-blur-md bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition hover:text-white flex-shrink-0">Muffle Furnance</button>
+        </div> */}
 
         {/* Products Grid */}
         <div className="grid grid-cols-4 gap-8">
-
           {products.map((product, i) => (
             <div
               key={i}
@@ -98,24 +106,6 @@ export default function PicksForYou() {
                     {product.rating} ({product.reviews})
                   </span>
                 </div>
-
-                {/* Options */}
-                {product.options.length > 0 && (
-                  <div className="flex gap-2 mb-6">
-                    {product.options.map((opt, idx) => (
-                      <button
-                        key={idx}
-                        className={`px-3 py-1 text-sm border rounded-md ${
-                          idx === 1
-                            ? "border-black font-semibold"
-                            : "border-gray-300"
-                        }`}
-                      >
-                        {opt}
-                      </button>
-                    ))}
-                  </div>
-                )}
               </div>
 
               {/* Image */}

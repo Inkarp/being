@@ -21,13 +21,13 @@ export default function CategoryTabs() {
   const [active, setActive] = useState("Ovens");
 
   return (
-    <div className="w-full flex bg-[#e6e1da] border-t border-b border-gray-200">
+    <div className="w-full flex">
       {/* Left Section - 30% */}
-      <div className="w-[20%] flex items-center px-8">
+      <div className="w-[20%] bg-[#F0ECE4] flex items-center px-8">
         <h2 className="text-2xl font-bold text-black">Products to Explore</h2>
       </div>
       {/* Right Section - 70% */}
-      <div className="w-[80%] flex items-center px-8">
+      <div className="w-[80%]  flex items-center px-8">
         {/* Tabs */}
         <div className="flex gap-8 overflow-x-auto whitespace-nowrap flex-1 py-4">
 

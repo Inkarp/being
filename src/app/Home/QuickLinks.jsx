@@ -24,7 +24,7 @@ const links = [
 
 export default function QuickLinks() {
     return (
-        <section className="w-full bg-[#e7e2dc] py-6">
+        <section className="w-full  py-6">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="flex items-center justify-between gap-6">
 
@@ -33,7 +33,7 @@ export default function QuickLinks() {
                             key={index}
                             className="flex flex-col items-center min-w-[110px] cursor-pointer group"
                         >
-                            <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center">
+                            <div className="w-16 h-16 rounded-full bg-[#F0ECE4] shadow-sm flex items-center justify-center">
 
                                 <Image
                                     src={item.image}

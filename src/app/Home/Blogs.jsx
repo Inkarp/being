@@ -51,7 +51,7 @@ const events = [
 
 export default function Blogs() {
   return (
-    <section className="py-5">
+    <section className="py-3">
       {/* Section heading */}
       <div className="w-full mx-auto text-center ">
         <div className="inline-flex items-center">
@@ -63,7 +63,6 @@ export default function Blogs() {
           Our Latest Events and News
         </h2>
       </div>
-
       {/* 2/3 – 1/3 layout */}
       <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5 py-6 items-stretch">
         <div className="lg:col-span-2 h-full flex flex-col">

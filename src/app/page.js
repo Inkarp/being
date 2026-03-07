@@ -13,18 +13,18 @@ import CategoryTabs from './Home/Categories';
 
 export default function Home() {
   return (
-    <div className="space-y-2">
-      <HeroOne />  
-      <QuickLinks />
+    <div className="">
+      <HeroOne />
+      {/* <CategoryTabs /> */}
       <PicksForYou />
-      <CategoryTabs />
-        {/* <HeroNew />
+      {/* <HeroNew />
       <Hero />     */}
-      <Products />
+      {/* <Products /> */}
+      <QuickLinks />
       <About />
       <Customers />
-      <Blogs />
-      <Testimonials />  
+      <Testimonials />
+      <Blogs /> 
     </div>
   );
 }

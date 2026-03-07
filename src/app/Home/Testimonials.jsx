@@ -54,19 +54,19 @@ export default function Testimonials() {
   return (
     <section
       style={{ perspective: '1200px' }}
-      className="overflow-hidden relative min-h-[500px] grid grid-cols-1 lg:grid-cols-12 place-content-center lg:place-items-center lg:gap-10 mx-auto px-6 py-10 border border-gray-200 rounded-2xl shadow-3xl"
+      className="overflow-hidden relative min-h-[500px] grid grid-cols-1 lg:grid-cols-12 place-content-center lg:place-items-center lg:gap-10 mx-auto  bg-[#2B7EC2] border-b border-white"
     >
       {/* LEFT CONTENT */}
       <div className="relative z-10 mb-10 lg:mb-0 col-span-6">
         <div className="hidden xl:block absolute top-[-6rem] left-[-5rem] w-64 h-64 bg-[#2F4191]/50 hover:scale-110 transition-transform duration-300 rounded-full"></div>
 
-        <h1 className="relative z-10 text-3xl sm:text-5xl 2xl:text-6xl font-bold sm:leading-snug 2xl:leading-tight">
+        <h1 className="relative z-10 text-3xl text-white sm:text-5xl 2xl:text-6xl font-bold sm:leading-snug 2xl:leading-tight">
           What our customers <br/> say about us.
         </h1>
 
-        <p className="mt-4 mb-7 text-gray-500 max-w-sm 2xl:text-lg">
+        <p className="mt-4 mb-7 text-white max-w-sm 2xl:text-lg">
          Customers know what we are {" "}
-          <span className="text-[#2F4191] hover:underline cursor-pointer">
+          <span className="text-black  hover:underline cursor-pointer">
             Being
           </span>{" "}
           to understand their business and customers better.
@@ -78,11 +78,11 @@ export default function Testimonials() {
       </div>
 
       {/* RIGHT TESTIMONIAL CARDS */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5 col-span-6">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5 col-span-6 p-5">
         {visible.map((item, idx) => (
           <div
             key={`${item.id}-${startIndex}-${idx}`}
-            className="relative bg-[#2F4191]/10 shadow-[0_5px_30px_-15px_rgba(0,0,0,0.3)] rounded-xl flex flex-col lg:flex-row lg:items-center justify-between gap-10 p-7 hover:shadow-xl transition duration-300 animate-flip-cube"
+            className="relative bg-white shadow-[0_5px_30px_-15px_rgba(0,0,0,0.3)] rounded-xl flex flex-col lg:flex-row lg:items-center justify-between gap-10 p-7 hover:shadow-xl transition duration-300 animate-flip-cube"
             style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' }}
           >
             {/* TEXT */}
