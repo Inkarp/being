@@ -1,6 +1,5 @@
 import About from "./About/AboutPage";
 import AboutHero from "./About/AboutHero";
-import AboutHeroNew from "./About/AboutHeroNew";
 import ManufacturingFlow from "./About/ManufacturingFlow";
 import NewTeam from "./About/NewTeam";
 import ProcessTimeline from "./About/ProcessTimeline";
@@ -31,11 +30,10 @@ export default function Page() {
             <div className="relative z-10">
                 <AboutHero />
                 <AboutPage />
-                {/* <AboutHeroNew /> */}
-                <NewTeam />
+                {/* <NewTeam />
                 <Team />
                 <TeamOne />
-                {/* <RoleCards />
+                <RoleCards />
                 <ManufacturingFlow />
                 <SpecificationControl />
                 <ProcessTimeline />

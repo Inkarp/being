@@ -53,8 +53,8 @@ export default function Testimonials() {
 
   return (
     <section
-      style={{ perspective: '1200px' }}
-      className="overflow-hidden relative min-h-[500px] grid grid-cols-1 lg:grid-cols-12 place-content-center lg:place-items-center lg:gap-10 mx-auto  bg-[#2B7EC2] border-b border-white"
+      style={{ perspective: '1200px' ,background: 'linear-gradient(160deg, #275c9c 0%, #6cacdf 50%, #f0f7ff 100%)'}}
+      className="overflow-hidden relative min-h-[500px] grid grid-cols-1 lg:grid-cols-12 place-content-center lg:place-items-center lg:gap-10 mx-auto  border-b border-white"
     >
       {/* LEFT CONTENT */}
       <div className="relative z-10 mb-10 lg:mb-0 col-span-6">

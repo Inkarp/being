@@ -1,350 +1,354 @@
 'use client';
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { FaArrowRight, FaSearch } from 'react-icons/fa';
+import { FaSearch, FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
-import Header from './Header';
-import HeaderOne from './HeaderOne';
 import SearchOverlay from './SearchOverlay';
 import Image from 'next/image';
 
+
+
 const FULL_LINE1 = 'Welcome to Being India';
 const FULL_LINE2 = 'Scientific Solutions';
-const SUBTITLE = 'Discover our cutting-edge solutions to accelerate scientific excellence.';
+const SUBTITLE =
+  'Discover our cutting-edge solutions to accelerate scientific excellence.';
 const TYPING_SPEED = 80;
 
+const TRUST_PILLS = ['ISO Certified', '10+ Years', '5,000+ Instruments'];
+
 export default function HeroOne() {
-    const [animKey, setAnimKey] = useState(0);
-    const [line1, setLine1] = useState('');
-    const [line2, setLine2] = useState('');
-    const [subtitle, setSubtitle] = useState('');
-    const [showCursor1, setShowCursor1] = useState(false);
-    const [showCursor2, setShowCursor2] = useState(false);
-    const [showCursorSub, setShowCursorSub] = useState(false);
-    const [badgeVisible, setBadgeVisible] = useState(false);
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
+  const [line1, setLine1] = useState('');
+  const [line2, setLine2] = useState('');
+  const [subtitle, setSubtitle] = useState('');
+  const [showCursor1, setShowCursor1] = useState(false);
+  const [showCursor2, setShowCursor2] = useState(false);
+  const [showCursorSub, setShowCursorSub] = useState(false);
+  const [badgeVisible, setBadgeVisible] = useState(false);
+  const [indiaFullyTyped, setIndiaFullyTyped] = useState(false);
+  const [ctaVisible, setCtaVisible] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-    const sectionRef = useRef(null);
-    const timeoutsRef = useRef([]);
+  const sectionRef = useRef(null);
+  const timeoutsRef = useRef([]);
 
-    const clearAll = () => {
-        timeoutsRef.current.forEach(clearTimeout);
-        timeoutsRef.current = [];
-    };
+  const clearAll = () => {
+    timeoutsRef.current.forEach(clearTimeout);
+    timeoutsRef.current = [];
+  };
 
-    const typeText = useCallback((fullText, setter, setCursor, onDone, startDelay = 0) => {
-        let i = 0;
-        setter('');
-        setCursor(true);
+  const typeText = useCallback((fullText, setter, setCursor, onDone, startDelay = 0) => {
+    let i = 0;
+    setter('');
+    setCursor(true);
 
-        const start = setTimeout(() => {
-            const tick = () => {
-                i++;
-                setter(fullText.slice(0, i));
-                if (i < fullText.length) {
-                    const t = setTimeout(tick, TYPING_SPEED);
-                    timeoutsRef.current.push(t);
-                } else {
-                    setCursor(false);
-                    if (onDone) {
-                        const t = setTimeout(onDone, 200);
-                        timeoutsRef.current.push(t);
-                    }
-                }
-            };
-            tick();
-        }, startDelay);
-        timeoutsRef.current.push(start);
-    }, []);
-
-    const startAnimation = useCallback(() => {
-        clearAll();
-        setLine1('');
-        setLine2('');
-        setSubtitle('');
-        setShowCursor1(false);
-        setShowCursor2(false);
-        setShowCursorSub(false);
-        setBadgeVisible(false);
-
-        const t = setTimeout(() => setBadgeVisible(true), 200);
-        timeoutsRef.current.push(t);
-
-        typeText(FULL_LINE1, setLine1, setShowCursor1, () => {
-            typeText(FULL_LINE2, setLine2, setShowCursor2, () => {
-                typeText(SUBTITLE, setSubtitle, setShowCursorSub, null, 300);
-            });
-        }, 500);
-    }, [typeText]);
-
-    // IntersectionObserver — fires every time section enters viewport
-    useEffect(() => {
-        const el = sectionRef.current;
-        if (!el) return;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setAnimKey(k => k + 1);
-                }
-            },
-            { threshold: 0.3 }
-        );
-        observer.observe(el);
-        return () => observer.disconnect();
-    }, []);
-
-    useEffect(() => {
-        if (animKey === 0) return;
-        startAnimation();
-        return clearAll;
-    }, [animKey, startAnimation]);
-
-    // Render line1 with "India" highlighted once it appears
-    const renderLine1 = () => {
-        const highlightWord = 'India';
-        const idx = line1.indexOf('Being');
-        if (idx === -1) {
-            return (
-                <>
-                    {line1}
-                    {showCursor1 && <span className="typing-cursor" />}
-                </>
-            );
+    const start = setTimeout(() => {
+      const tick = () => {
+        i++;
+        setter(fullText.slice(0, i));
+        if (i < fullText.length) {
+          const t = setTimeout(tick, TYPING_SPEED);
+          timeoutsRef.current.push(t);
+        } else {
+          setCursor(false);
+          if (onDone) {
+            const t = setTimeout(onDone, 200);
+            timeoutsRef.current.push(t);
+          }
         }
-        const before = line1.slice(0, idx);
-        const highlighted = line1.slice(idx); // "Being" or "Being India" as it types
-        return (
-            <>
-                {before}
-                <span className="india-wrapper">
-                    <span className="india-text">{highlighted}</span>
-                    {line1 === FULL_LINE1 && <span className="india-underline" />}
-                </span>
-                {showCursor1 && <span className="typing-cursor" />}
-            </>
+      };
+      tick();
+    }, startDelay);
+
+    timeoutsRef.current.push(start);
+  }, []);
+
+  const startAnimation = useCallback(() => {
+    clearAll();
+    setLine1('');
+    setLine2('');
+    setSubtitle('');
+    setShowCursor1(false);
+    setShowCursor2(false);
+    setShowCursorSub(false);
+    setBadgeVisible(false);
+    setIndiaFullyTyped(false);
+    setCtaVisible(false);
+
+    const t = setTimeout(() => setBadgeVisible(true), 200);
+    timeoutsRef.current.push(t);
+
+    typeText(FULL_LINE1, setLine1, setShowCursor1, () => {
+      setIndiaFullyTyped(true);
+
+      typeText(FULL_LINE2, setLine2, setShowCursor2, () => {
+        typeText(
+          SUBTITLE,
+          setSubtitle,
+          setShowCursorSub,
+          () => {
+            const t2 = setTimeout(() => setCtaVisible(true), 150);
+            timeoutsRef.current.push(t2);
+          },
+          300
         );
-    };
+      });
+    }, 500);
+  }, [typeText]);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) setAnimKey((k) => k + 1);
+      },
+      { threshold: 0.25 }
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (animKey === 0) return;
+    startAnimation();
+    return clearAll;
+  }, [animKey, startAnimation]);
+
+  const renderLine1 = () => {
+    const beingIdx = line1.indexOf('Being');
+    if (beingIdx === -1)
+      return (
+        <>
+          {line1}
+          {showCursor1 && <span className="typing-cursor" />}
+        </>
+      );
+
+    const before = line1.slice(0, beingIdx);
+    const beingPart = line1.slice(beingIdx);
+    const indiaIdx = beingPart.indexOf('India');
+    const hasIndia = indiaIdx !== -1;
 
     return (
-        <>
-            <style>{`
-                @keyframes shimmer {
-                    0%   { background-position: -200% center; }
-                    100% { background-position:  200% center; }
-                }
-                @keyframes underlineExpand {
-                    0%   { width: 0%;   opacity: 0; }
-                    100% { width: 100%; opacity: 1; }
-                }
-                @keyframes badgeFadeUp {
-                    0%   { opacity: 0; transform: translateY(12px); }
-                    100% { opacity: 1; transform: translateY(0);    }
-                }
-                @keyframes searchFadeIn {
-                    0%   { opacity: 0; transform: translateY(12px); }
-                    100% { opacity: 1; transform: translateY(0);    }
-                }
-                @keyframes blink {
-                    0%, 100% { opacity: 1; }
-                    50%       { opacity: 0; }
-                }
-                @keyframes flagWave {
-                    0%, 100% { transform: rotate(0deg);  }
-                    25%      { transform: rotate(-8deg); }
-                    75%      { transform: rotate( 8deg); }
-                }
-                @keyframes spin-slow {
-                    from { transform: rotate(0deg);   }
-                    to   { transform: rotate(360deg); }
-                }
+      <>
+        {before}
+        {hasIndia ? beingPart.slice(0, indiaIdx) : beingPart}
 
-                .india-text {
-                    background: linear-gradient(
-                        120deg,
-                        #FF9933 0%,
-                        #FF9933 22%,
-                        #ffffff 45%,
-                        #ffffff 68%,
-                        #00ff08 85%,
-                        #33ff4e 100%
-                    );
-                    background-size: 250% auto;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    background-clip: text;
-                    animation: shimmer 2.5s linear infinite;
-                    display: inline-block;
-                    font-weight: 900;
-                }
+        {hasIndia && (
+          <span
+            className={`relative inline-block ${
+              indiaFullyTyped ? 'india-revealed' : ''
+            }`}
+          >
+            <span className="india-text">{beingPart.slice(indiaIdx)}</span>
 
-                .india-wrapper {
-                    position: relative;
-                    display: inline-block;
-                }
+            {indiaFullyTyped && (
+              <span className="india-underline absolute left-0 -bottom-[5px] h-[3px] rounded" />
+            )}
+          </span>
+        )}
 
-                .india-underline {
-                    position: absolute;
-                    bottom: -4px;
-                    left: 0;
-                    height: 3px;
-                    border-radius: 2px;
-                    background: linear-gradient(90deg, #FF9933, #FFD700, #138808);
-                    animation: underlineExpand 0.9s ease-out forwards;
-                    width: 0%;
-                    opacity: 0;
-                    box-shadow: 0 0 10px rgba(255,180,0,0.7);
-                }
-
-                .typing-cursor {
-                    display: inline-block;
-                    width: 3px;
-                    height: 0.85em;
-                    background: #FFD700;
-                    margin-left: 3px;
-                    vertical-align: middle;
-                    border-radius: 1px;
-                    animation: blink 0.75s step-end infinite;
-                }
-
-                .made-in-badge {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 6px;
-                    background: white;
-                    border: 1px solid black;
-                    backdrop-filter: blur(8px);
-                    padding: 5px 14px 5px 10px;
-                    border-radius: 100px;
-                    font-size: 12px;
-                    font-weight: 700;
-                    letter-spacing: 0.1em;
-                    color: white;
-                    text-transform: uppercase;
-                    margin-bottom: 12px;
-                    opacity: 0;
-                }
-                .badge-visible {
-                    animation: badgeFadeUp 0.6s ease forwards;
-                }
-
-                .search-box-wrapper {
-                    display: inline-flex;
-                    align-items: center;
-                    background: white;
-                    border-radius: 50px;
-                    padding: 8px 16px;
-                    margin: 16px 0;
-                    gap: 10px;
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-                    opacity: 0;
-                }
-                
-                .search-box-wrapper.visible {
-                    animation: searchFadeIn 0.6s ease forwards;
-                    animation-delay: 0.3s;
-                }
-
-                .search-input {
-                    border: none;
-                    outline: none;
-                    background: transparent;
-                    color: #333;
-                    font-size: 14px;
-                    width: 280px;
-                    font-weight: 500;
-                }
-
-                .search-input::placeholder {
-                    color: #999;
-                }
-
-                .search-icon {
-                    color: #2F4191;
-                    cursor: pointer;
-                }
-
-                .flag-emoji {
-                    font-size: 18px;
-                    display: inline-block;
-                    animation: flagWave 1.8s ease-in-out infinite;
-                    transform-origin: bottom center;
-                }
-
-                .spin-slow {
-                    animation: spin-slow 6s linear infinite;
-                }
-
-                .hero-h1 {
-                    /* reserve space so layout doesn't jump */
-                    min-height: 7.5rem;
-                }
-            `}</style>
-
-            <section
-                ref={sectionRef}
-                className="w-full relative mx-auto h-screen flex flex-col md:flex-row overflow-hidden">
-                <div className="relative w-full h-full">
-                    {/* Background Image */}
-                    <div className="absolute inset-0 z-10">
-                        <Image
-                            src="/HeroImage.webp"
-                            alt="Hero background"
-                            fill
-                            priority
-                            className="object-fit"
-                        />
-                    </div>
-                    {/* Main Content */}
-                    <div className="relative z-20 h-full pt-10 flex items-start justify-start px-6 md:px-16 text-white">
-                        <div className="space-y-5">
-                            {/* Badge */}
-                            <div className=''>
-                                <span className={`made-in-badge ${badgeVisible ? 'badge-visible' : ''}`}>
-                                    {/* <span className="flag-emoji">🇮🇳</span> */}
-                                    {/* Proudly Now in India */}
-                                    <div className=''>
-                                        <Image src="/logo.webp" alt='' height={100} width={200} />
-                                    </div>
-                                </span>
-                            </div>
-                            {/* Typing headline */}
-                            <h1 className="hero-h1 text-4xl md:text-6xl font-bold leading-tight">
-                                {renderLine1()}
-                                {line1 === FULL_LINE1 && (
-                                    <>
-                                        <br />
-                                        <span>
-                                            {line2}
-                                            {showCursor2 && <span className="typing-cursor" />}
-                                        </span>
-                                    </>
-                                )}
-                            </h1>
-                            {/* Search Box below heading */}
-                            {subtitle && (
-                                <div className={`search-box-wrapper ${subtitle ? 'visible' : ''}`} onClick={() => setIsSearchOpen(true)}>
-                                    <FaSearch className="search-icon" size={18} />
-                                    <input
-                                        type="text"
-                                        placeholder="Search for products..."
-                                        className="search-input"
-                                    />
-                                </div>
-                            )}
-                            {/* Subtitle appears after heading finishes */}
-                            {subtitle && (
-                                <p className="text-lg md:text-xl text-gray-200 max-w-xl">
-                                    {subtitle}
-                                    {showCursorSub && <span className="typing-cursor" />}
-                                </p>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <SearchOverlay
-                isOpen={isSearchOpen}
-                onClose={() => setIsSearchOpen(false)}
-            />
-        </>
+        {showCursor1 && <span className="typing-cursor" />}
+      </>
     );
+  };
+
+  return (
+    <>
+      <style>{`
+
+@keyframes indiaSlideIn {
+0%{clip-path:inset(0 100% 0 0);opacity:.3;transform:translateX(-10px)}
+65%{clip-path:inset(0 0 0 0);opacity:1;transform:translateX(3px)}
+100%{clip-path:inset(0 0 0 0);opacity:1;transform:translateX(0)}
+}
+
+@keyframes underlineExpand{
+0%{width:0;opacity:0}
+100%{width:100%;opacity:1}
+}
+
+@keyframes badgeFadeUp{
+0%{opacity:0;transform:translateY(14px)}
+100%{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeUpIn{
+0%{opacity:0;transform:translateY(18px)}
+100%{opacity:1;transform:translateY(0)}
+}
+
+@keyframes searchFadeIn{
+0%{opacity:0;transform:translateY(12px)}
+100%{opacity:1;transform:translateY(0)}
+}
+
+@keyframes blink{
+0%,100%{opacity:1}
+50%{opacity:0}
+}
+
+.india-text{
+display:inline-block;
+background:linear-gradient(90deg,#FF9933 0%,#FF9933 24%,#fff 44%,#fff 56%,#138808 76%,#138808 100%);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+clip-path:inset(0 100% 0 0);
+opacity:0;
+transform:translateX(-10px);
+font-weight:900;
+}
+
+.india-revealed .india-text{
+animation:indiaSlideIn .8s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+.india-underline{
+background:linear-gradient(90deg,#FF9933,#FFD700,#138808);
+animation:underlineExpand .7s .6s ease-out forwards;
+box-shadow:0 0 10px rgba(255,180,0,.6);
+}
+
+.typing-cursor{
+display:inline-block;
+width:3px;
+height:.85em;
+background:#FFD700;
+margin-left:3px;
+border-radius:1px;
+animation:blink .75s step-end infinite;
+}
+
+.badge-visible{
+animation:badgeFadeUp .6s ease forwards;
+}
+
+.cta-visible{
+animation:fadeUpIn .5s ease forwards;
+}
+
+.search-visible{
+animation:searchFadeIn .55s .2s ease forwards;
+}
+
+`}</style>
+
+      <section
+        ref={sectionRef}
+        className="relative w-full h-screen overflow-hidden"
+      >
+        <Image
+          src="/HeroImage.webp"
+          alt="Hero"
+          fill
+          priority
+          quality={90}
+          sizes="100vw"
+          className="absolute inset-0 object-cover object-center"
+        />
+
+        <div className="relative z-20 h-full flex items-center px-6 md:px-14 lg:px-24">
+          <div className="w-full max-w-2xl space-y-5">
+            <span
+              className={`inline-flex items-center bg-white border border-white/30 backdrop-blur-xl px-[14px] py-[5px] pl-[8px] rounded-full opacity-0 ${
+                badgeVisible ? 'badge-visible' : ''
+              }`}
+            >
+              <Image
+                src="/logo.webp"
+                alt="Being India"
+                width={105}
+                height={32}
+              />
+            </span>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight text-white">
+              {renderLine1()}
+
+              {line1 === FULL_LINE1 && (
+                <>
+                  <br />
+                  <span>
+                    {line2}
+                    {showCursor2 && <span className="typing-cursor" />}
+                  </span>
+                </>
+              )}
+            </h1>
+
+            {subtitle && (
+              <div
+                onClick={() => setIsSearchOpen(true)}
+                className={`inline-flex items-center bg-white/95 rounded-full px-5 py-2 gap-3 shadow-xl cursor-pointer opacity-0 ${
+                  subtitle ? 'search-visible' : ''
+                }`}
+              >
+                <FaSearch className="text-[#2F4191]" />
+
+                <input
+                  type="text"
+                  placeholder="Search for products..."
+                  readOnly
+                  className="bg-transparent outline-none text-sm w-[200px]"
+                />
+
+                <span className="bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] text-white text-xs font-bold px-3 py-1 rounded-full">
+                  Search
+                </span>
+              </div>
+            )}
+
+            {subtitle && (
+              <p className="text-sm md:text-base text-gray-300 max-w-lg">
+                {subtitle}
+                {showCursorSub && <span className="typing-cursor" />}
+              </p>
+            )}
+
+            {/* {ctaVisible && (
+              <div className="space-y-4">
+                <Link href="/products">
+                  <button
+                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-[#0f1c3f] bg-gradient-to-r from-[#FFD700] to-[#FF9933] shadow-lg opacity-0 ${
+                      ctaVisible ? 'cta-visible' : ''
+                    }`}
+                  >
+                    Explore Products <FaArrowRight size={13} />
+                  </button>
+                </Link>
+
+                <div className="flex flex-wrap gap-2">
+                  {TRUST_PILLS.map((label, i) => (
+                    <span
+                      key={label}
+                      className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider bg-white/10 border border-white/30 px-3 py-1 rounded-full text-white"
+                    >
+                      <span className="w-[5px] h-[5px] rounded-full bg-yellow-400" />
+                      {label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )} */}
+          </div>
+        </div>
+
+        {/* <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white opacity-100 animate-bounce">
+          <div className="w-[20px] h-[32px] border-2 border-black rounded-xl relative">
+            <div className="absolute top-[5px] left-1/2 -translate-x-1/2 w-[4px] h-[7px] bg-yellow-400 rounded"></div>
+          </div>
+          <span className="text-[9px] font-bold tracking-widest uppercase">
+            Scroll
+          </span>
+        </div> */}
+      </section>
+
+      <SearchOverlay
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+      />
+    </>
+  );
 }

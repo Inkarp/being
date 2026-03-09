@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaFlask } from 'react-icons/fa';
 import Link from 'next/link';
 
 const FULL_LINE1 = 'Welcome to Being India';
@@ -8,307 +8,445 @@ const FULL_LINE2 = 'Scientific Solutions';
 const SUBTITLE = 'Discover our cutting-edge solutions to accelerate scientific excellence.';
 const TYPING_SPEED = 80;
 
+const TRUST_PILLS = [
+  { label: 'ISO Certified' },
+  { label: '10+ Years' },
+  { label: '5,000+ Instruments' },
+];
+
 export default function HeroNew() {
-    const [animKey, setAnimKey] = useState(0);
-    const [line1, setLine1] = useState('');
-    const [line2, setLine2] = useState('');
-    const [subtitle, setSubtitle] = useState('');
-    const [showCursor1, setShowCursor1] = useState(false);
-    const [showCursor2, setShowCursor2] = useState(false);
-    const [showCursorSub, setShowCursorSub] = useState(false);
-    const [badgeVisible, setBadgeVisible] = useState(false);
+  const [animKey, setAnimKey]         = useState(0);
+  const [line1, setLine1]             = useState('');
+  const [line2, setLine2]             = useState('');
+  const [subtitle, setSubtitle]       = useState('');
+  const [showCursor1, setShowCursor1] = useState(false);
+  const [showCursor2, setShowCursor2] = useState(false);
+  const [showCursorSub, setShowCursorSub] = useState(false);
+  const [badgeVisible, setBadgeVisible]   = useState(false);
+  const [indiaFullyTyped, setIndiaFullyTyped] = useState(false);
+  const [ctaVisible, setCtaVisible]   = useState(false);
 
-    const sectionRef = useRef(null);
-    const timeoutsRef = useRef([]);
+  const sectionRef   = useRef(null);
+  const timeoutsRef  = useRef([]);
 
-    const clearAll = () => {
-        timeoutsRef.current.forEach(clearTimeout);
-        timeoutsRef.current = [];
-    };
+  const clearAll = () => {
+    timeoutsRef.current.forEach(clearTimeout);
+    timeoutsRef.current = [];
+  };
 
-    const typeText = useCallback((fullText, setter, setCursor, onDone, startDelay = 0) => {
-        let i = 0;
-        setter('');
-        setCursor(true);
-
-        const start = setTimeout(() => {
-            const tick = () => {
-                i++;
-                setter(fullText.slice(0, i));
-                if (i < fullText.length) {
-                    const t = setTimeout(tick, TYPING_SPEED);
-                    timeoutsRef.current.push(t);
-                } else {
-                    setCursor(false);
-                    if (onDone) {
-                        const t = setTimeout(onDone, 200);
-                        timeoutsRef.current.push(t);
-                    }
-                }
-            };
-            tick();
-        }, startDelay);
-        timeoutsRef.current.push(start);
-    }, []);
-
-    const startAnimation = useCallback(() => {
-        clearAll();
-        setLine1('');
-        setLine2('');
-        setSubtitle('');
-        setShowCursor1(false);
-        setShowCursor2(false);
-        setShowCursorSub(false);
-        setBadgeVisible(false);
-
-        const t = setTimeout(() => setBadgeVisible(true), 200);
-        timeoutsRef.current.push(t);
-
-        typeText(FULL_LINE1, setLine1, setShowCursor1, () => {
-            typeText(FULL_LINE2, setLine2, setShowCursor2, () => {
-                typeText(SUBTITLE, setSubtitle, setShowCursorSub, null, 300);
-            });
-        }, 500);
-    }, [typeText]);
-
-    // IntersectionObserver — fires every time section enters viewport
-    useEffect(() => {
-        const el = sectionRef.current;
-        if (!el) return;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setAnimKey(k => k + 1);
-                }
-            },
-            { threshold: 0.3 }
-        );
-        observer.observe(el);
-        return () => observer.disconnect();
-    }, []);
-
-    useEffect(() => {
-        if (animKey === 0) return;
-        startAnimation();
-        return clearAll;
-    }, [animKey, startAnimation]);
-
-    const renderLine1 = () => {
-        const highlightWord = 'Being India';
-        const idx = line1.indexOf('Being');
-        if (idx === -1) {
-            return (
-                <>
-                    {line1}
-                    {showCursor1 && <span className="typing-cursor" />}
-                </>
-            );
+  const typeText = useCallback((fullText, setter, setCursor, onDone, startDelay = 0) => {
+    let i = 0;
+    setter('');
+    setCursor(true);
+    const start = setTimeout(() => {
+      const tick = () => {
+        i++;
+        setter(fullText.slice(0, i));
+        if (i < fullText.length) {
+          const t = setTimeout(tick, TYPING_SPEED);
+          timeoutsRef.current.push(t);
+        } else {
+          setCursor(false);
+          if (onDone) {
+            const t = setTimeout(onDone, 200);
+            timeoutsRef.current.push(t);
+          }
         }
-        const before = line1.slice(0, idx);
-        const highlighted = line1.slice(idx); // "Being" or "Being India" as it types
-        return (
-            <>
-                {before}
-                <span className="india-wrapper">
-                    <span className="india-text">{highlighted}</span>
-                    {line1 === FULL_LINE1 && <span className="india-underline" />}
-                </span>
-                {showCursor1 && <span className="typing-cursor" />}
-            </>
-        );
-    };
+      };
+      tick();
+    }, startDelay);
+    timeoutsRef.current.push(start);
+  }, []);
+
+  const startAnimation = useCallback(() => {
+    clearAll();
+    setLine1(''); setLine2(''); setSubtitle('');
+    setShowCursor1(false); setShowCursor2(false); setShowCursorSub(false);
+    setBadgeVisible(false); setIndiaFullyTyped(false); setCtaVisible(false);
+
+    const t = setTimeout(() => setBadgeVisible(true), 200);
+    timeoutsRef.current.push(t);
+
+    typeText(FULL_LINE1, setLine1, setShowCursor1, () => {
+      setIndiaFullyTyped(true);
+      typeText(FULL_LINE2, setLine2, setShowCursor2, () => {
+        typeText(SUBTITLE, setSubtitle, setShowCursorSub, () => {
+          const t2 = setTimeout(() => setCtaVisible(true), 150);
+          timeoutsRef.current.push(t2);
+        }, 300);
+      });
+    }, 500);
+  }, [typeText]);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setAnimKey(k => k + 1); },
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (animKey === 0) return;
+    startAnimation();
+    return clearAll;
+  }, [animKey, startAnimation]);
+
+  /* ── Render headline with India slide-in ── */
+  const renderLine1 = () => {
+    const beingIdx = line1.indexOf('Being');
+    if (beingIdx === -1) return (
+      <>{line1}{showCursor1 && <span className="typing-cursor" />}</>
+    );
+
+    const before    = line1.slice(0, beingIdx);
+    const beingPart = line1.slice(beingIdx);
+    const indiaIdx  = beingPart.indexOf('India');
+    const isIndiaVisible = indiaIdx !== -1;
 
     return (
-        <>
-            <style>{`
-                @keyframes shimmer {
-                    0%   { background-position: -200% center; }
-                    100% { background-position:  200% center; }
-                }
-                @keyframes underlineExpand {
-                    0%   { width: 0%;   opacity: 0; }
-                    100% { width: 100%; opacity: 1; }
-                }
-                @keyframes badgeFadeUp {
-                    0%   { opacity: 0; transform: translateY(12px); }
-                    100% { opacity: 1; transform: translateY(0);    }
-                }
-                @keyframes blink {
-                    0%, 100% { opacity: 1; }
-                    50%       { opacity: 0; }
-                }
-                @keyframes flagWave {
-                    0%, 100% { transform: rotate(0deg);  }
-                    25%      { transform: rotate(-8deg); }
-                    75%      { transform: rotate( 8deg); }
-                }
-                @keyframes spin-slow {
-                    from { transform: rotate(0deg);   }
-                    to   { transform: rotate(360deg); }
-                }
-
-                .india-text {
-                    background: linear-gradient(
-                        120deg,
-                        #FF9933 0%,
-                        #FFD700 22%,
-                        #ffffff 45%,
-                        #138808 68%,
-                        #FFD700 85%,
-                        #FF9933 100%
-                    );
-                    background-size: 250% auto;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    background-clip: text;
-                    animation: shimmer 2.5s linear infinite;
-                    display: inline-block;
-                    font-weight: 900;
-                }
-
-                .india-wrapper {
-                    position: relative;
-                    display: inline-block;
-                }
-
-                .india-underline {
-                    position: absolute;
-                    bottom: -4px;
-                    left: 0;
-                    height: 3px;
-                    border-radius: 2px;
-                    background: linear-gradient(90deg, #FF9933, #FFD700, #138808);
-                    animation: underlineExpand 0.9s ease-out forwards;
-                    width: 0%;
-                    opacity: 0;
-                    box-shadow: 0 0 10px rgba(255,180,0,0.7);
-                }
-
-                .typing-cursor {
-                    display: inline-block;
-                    width: 3px;
-                    height: 0.85em;
-                    background: #FFD700;
-                    margin-left: 3px;
-                    vertical-align: middle;
-                    border-radius: 1px;
-                    animation: blink 0.75s step-end infinite;
-                }
-
-                .made-in-badge {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 6px;
-                    background: rgba(255,255,255,0.08);
-                    border: 1px solid rgba(255,200,0,0.45);
-                    backdrop-filter: blur(8px);
-                    padding: 5px 14px 5px 10px;
-                    border-radius: 100px;
-                    font-size: 12px;
-                    font-weight: 700;
-                    letter-spacing: 0.1em;
-                    color: #FFD700;
-                    text-transform: uppercase;
-                    margin-bottom: 12px;
-                    opacity: 0;
-                }
-                .badge-visible {
-                    animation: badgeFadeUp 0.6s ease forwards;
-                }
-
-                .flag-emoji {
-                    font-size: 18px;
-                    display: inline-block;
-                    animation: flagWave 1.8s ease-in-out infinite;
-                    transform-origin: bottom center;
-                }
-
-                .spin-slow {
-                    animation: spin-slow 6s linear infinite;
-                }
-
-                .hero-h1 {
-                    /* reserve space so layout doesn't jump */
-                    min-height: 7.5rem;
-                }
-            `}</style>
-
-            <section
-                ref={sectionRef}
-                className="w-full mx-auto rounded-[30px] h-[86vh] flex flex-col md:flex-row overflow-hidden"
-            >
-                <div className="relative w-full h-full">
-                    <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover z-0"
-                    >
-                        <source src="/bg-video.mov" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-
-                    {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-black/30 z-10" />
-                    {/* Main Content */}
-                    <div className="relative z-20 h-full flex items-center justify-center px-6 md:px-16 text-white">
-                        <div className="space-y-5">
-                            {/* Badge */}
-                            <div>
-                                <span className={`made-in-badge ${badgeVisible ? 'badge-visible' : ''}`}>
-                                    {/* <span className="flag-emoji">🇮🇳</span> */}
-                                    Proudly Now in India
-                                </span>
-                            </div>
-
-                            {/* Typing headline */}
-                            <h1 className="hero-h1 text-4xl md:text-6xl font-bold leading-tight">
-                                {renderLine1()}
-                                {line1 === FULL_LINE1 && (
-                                    <>
-                                        <br />
-                                        <span>
-                                            {line2}
-                                            {showCursor2 && <span className="typing-cursor" />}
-                                        </span>
-                                    </>
-                                )}
-                            </h1>
-
-                            {/* Subtitle appears after heading finishes */}
-                            {subtitle && (
-                                <p className="text-lg md:text-xl text-gray-200 max-w-xl">
-                                    {subtitle}
-                                    {showCursorSub && <span className="typing-cursor" />}
-                                </p>
-                            )}
-
-                            {/* <Link href='/products' className="inline-block mt-6">
-                                <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex items-center justify-center gap-3 bg-white px-3 py-2 rounded-full w-fit">
-                                    <span className="text-black font-medium text-[16px]">Our Products</span>
-                                    <div className="relative w-[30px] h-[30px] text-black">
-                                        <svg
-                                            width="30"
-                                            height="30"
-                                            viewBox="0 0 30 30"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="spin-slow"
-                                        >
-                                            <path d="M14.2257 0.947522C14.6258 0.457905 15.3742 0.457905 15.7743 0.947522L16.8781 2.29817C17.181 2.66879 17.704 2.77283 18.1256 2.54633L19.6623 1.72088C20.2193 1.42165 20.9107 1.70806 21.093 2.31352L21.5959 3.98376C21.7339 4.44207 22.1773 4.73834 22.6535 4.69044L24.3891 4.51587C25.0182 4.45258 25.5474 4.98179 25.4841 5.61093L25.3096 7.34647C25.2617 7.8227 25.5579 8.2661 26.0162 8.40409L27.6865 8.90697C28.2919 9.08926 28.5783 9.7807 28.2791 10.3377L27.4537 11.8744C27.2272 12.296 27.3312 12.819 27.7018 13.1219L29.0525 14.2257C29.5421 14.6258 29.5421 15.3742 29.0525 15.7743L27.7018 16.8781C27.3312 17.181 27.2272 17.704 27.4537 18.1256L28.2791 19.6623C28.5783 20.2193 28.2919 20.9107 27.6865 21.093L26.0162 21.5959C25.5579 21.7339 25.2617 22.1773 25.3096 22.6535L25.4841 24.3891C25.5474 25.0182 25.0182 25.5474 24.3891 25.4841L22.6535 25.3096C22.1773 25.2617 21.7339 25.5579 21.5959 26.0162L21.093 27.6865C20.9107 28.2919 20.2193 28.5783 19.6623 28.2791L18.1256 27.4537C17.704 27.2272 17.181 27.3312 16.8781 27.7018L15.7743 29.0525C15.3742 29.5421 14.6258 29.5421 14.2257 29.0525L13.1219 27.7018C12.819 27.3312 12.296 27.2272 11.8744 27.4537L10.3377 28.2791C9.7807 28.5783 9.08926 28.2919 8.90697 27.6865L8.40409 26.0162C8.2661 25.5579 7.8227 25.2617 7.34647 25.3096L5.61093 25.4841C4.98179 25.5474 4.45258 25.0182 4.51587 24.3891L4.69044 22.6535C4.73834 22.1773 4.44207 21.7339 3.98376 21.5959L2.31352 21.093C1.70806 20.9107 1.42165 20.2193 1.72088 19.6623L2.54633 18.1256C2.77283 17.704 2.66879 17.181 2.29817 16.8781L0.947522 15.7743C0.457905 15.3742 0.457905 14.6258 0.947522 14.2257L2.29817 13.1219C2.66879 12.819 2.77283 12.296 2.54633 11.8744L1.72088 10.3377C1.42165 9.7807 1.70806 9.08926 2.31352 8.90697L3.98376 8.40409C4.44207 8.2661 4.73834 7.8227 4.69044 7.34647L4.51587 5.61093C4.45258 4.98179 4.98179 4.45258 5.61093 4.51587L7.34647 4.69044C7.8227 4.73834 8.2661 4.44207 8.40409 3.98376L8.90697 2.31352C9.08926 1.70806 9.7807 1.42165 10.3377 1.72088L11.8744 2.54633C12.296 2.77283 12.819 2.66879 13.1219 2.29817L14.2257 0.947522Z" />
-                                        </svg>
-                                        <FaArrowRight
-                                            size={12}
-                                            className="absolute top-1/2 left-1/2 text-white transform -translate-x-1/2 -translate-y-1/2"
-                                        />
-                                    </div>
-                                </div>
-                            </Link> */}
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>
+      <>
+        {before}
+        {isIndiaVisible ? beingPart.slice(0, indiaIdx) : beingPart}
+        {isIndiaVisible && (
+          <span className={`india-wrapper ${indiaFullyTyped ? 'india-revealed' : ''}`}>
+            <span className="india-text">{beingPart.slice(indiaIdx)}</span>
+            {indiaFullyTyped && <span className="india-underline" />}
+          </span>
+        )}
+        {showCursor1 && <span className="typing-cursor" />}
+      </>
     );
+  };
+
+  return (
+    <>
+      <style>{`
+        /* ── Keyframes ── */
+        @keyframes indiaSlideIn {
+          0%   { clip-path: inset(0 100% 0 0); opacity: 0.3; transform: translateX(-10px); }
+          65%  { clip-path: inset(0 0%   0 0); opacity: 1;   transform: translateX(3px);  }
+          100% { clip-path: inset(0 0%   0 0); opacity: 1;   transform: translateX(0);    }
+        }
+        @keyframes underlineExpand {
+          0%   { width: 0%;   opacity: 0; }
+          100% { width: 100%; opacity: 1; }
+        }
+        @keyframes badgeFadeUp {
+          0%   { opacity: 0; transform: translateY(14px); }
+          100% { opacity: 1; transform: translateY(0);    }
+        }
+        @keyframes fadeUpIn {
+          0%   { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0);    }
+        }
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50%       { opacity: 0; }
+        }
+        @keyframes pillFadeIn {
+          from { opacity: 0; transform: translateY(10px) scale(0.96); }
+          to   { opacity: 1; transform: translateY(0)    scale(1);    }
+        }
+        @keyframes glowPulse {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(255,215,0,0); }
+          50%       { box-shadow: 0 0 20px 4px rgba(255,215,0,0.18); }
+        }
+        @keyframes scrollBounce {
+          0%, 100% { transform: translateX(-50%) translateY(0); }
+          50%       { transform: translateX(-50%) translateY(6px); }
+        }
+
+        /* ── India text ── */
+        .india-wrapper { position: relative; display: inline-block; }
+        .india-text {
+          display: inline-block;
+          background: linear-gradient(90deg,
+            #FF9933 0%, #FF9933 22%,
+            #fff    42%, #fff    58%,
+            #138808 78%, #138808 100%
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          font-weight: 900;
+          clip-path: inset(0 100% 0 0);
+          opacity: 0;
+          transform: translateX(-10px);
+        }
+        .india-wrapper.india-revealed .india-text {
+          animation: indiaSlideIn 0.8s cubic-bezier(0.22,1,0.36,1) forwards;
+        }
+        .india-underline {
+          position: absolute;
+          bottom: -5px; left: 0;
+          height: 3px; border-radius: 2px;
+          background: linear-gradient(90deg, #FF9933, #FFD700, #138808);
+          animation: underlineExpand 0.7s 0.6s ease-out forwards;
+          width: 0%; opacity: 0;
+          box-shadow: 0 0 10px rgba(255,180,0,0.6);
+        }
+
+        /* ── Typing cursor ── */
+        .typing-cursor {
+          display: inline-block;
+          width: 3px; height: 0.85em;
+          background: #FFD700;
+          margin-left: 3px;
+          vertical-align: middle;
+          border-radius: 1px;
+          animation: blink 0.75s step-end infinite;
+        }
+
+        /* ── Badge ── */
+        .made-in-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: rgba(255,255,255,0.07);
+          border: 1px solid rgba(255,215,0,0.5);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          padding: 6px 16px 6px 10px;
+          border-radius: 100px;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 0.12em;
+          color: #FFD700;
+          text-transform: uppercase;
+          opacity: 0;
+          animation: glowPulse 3s 1.5s ease-in-out infinite;
+        }
+        .badge-visible { animation: badgeFadeUp 0.6s ease forwards, glowPulse 3s 1.5s ease-in-out infinite; }
+
+        /* ── Headline ── */
+        .hero-h1 { min-height: 8rem; }
+
+        /* ── Subtitle fade ── */
+        .hero-subtitle {
+          opacity: 0;
+          animation: fadeUpIn 0.6s 0.1s ease forwards;
+        }
+
+        /* ── Trust pills ── */
+        .trust-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 5px 14px;
+          border-radius: 100px;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          background: rgba(255,255,255,0.10);
+          border: 1px solid rgba(255,255,255,0.22);
+          color: rgba(255,255,255,0.9);
+          backdrop-filter: blur(8px);
+          opacity: 0;
+        }
+        .trust-pill.visible { animation: pillFadeIn 0.45s ease forwards; }
+
+        /* ── CTA button ── */
+        .hero-cta {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 14px 28px;
+          border-radius: 100px;
+          font-size: 15px;
+          font-weight: 700;
+          color: #0f1c3f;
+          background: linear-gradient(135deg, #FFD700 0%, #FF9933 100%);
+          border: none;
+          cursor: pointer;
+          opacity: 0;
+          box-shadow: 0 8px 32px rgba(255,180,0,0.35);
+          transition: transform 0.2s, box-shadow 0.2s;
+          letter-spacing: 0.01em;
+        }
+        .hero-cta.visible { animation: fadeUpIn 0.5s ease forwards; }
+        .hero-cta:hover   { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(255,180,0,0.45); }
+
+        .hero-cta-outline {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 13px 26px;
+          border-radius: 100px;
+          font-size: 15px;
+          font-weight: 700;
+          color: #fff;
+          background: transparent;
+          border: 1.5px solid rgba(255,255,255,0.4);
+          cursor: pointer;
+          opacity: 0;
+          transition: background 0.2s, border-color 0.2s, transform 0.2s;
+          letter-spacing: 0.01em;
+          backdrop-filter: blur(8px);
+        }
+        .hero-cta-outline.visible { animation: fadeUpIn 0.5s 0.1s ease forwards; }
+        .hero-cta-outline:hover   { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.65); transform: translateY(-2px); }
+
+        /* ── Scroll indicator ── */
+        .scroll-indicator {
+          position: absolute;
+          bottom: 28px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 6px;
+          opacity: 0.55;
+          animation: scrollBounce 2s ease-in-out infinite;
+          z-index: 30;
+        }
+        .scroll-indicator span {
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: #fff;
+        }
+        .scroll-dot {
+          width: 20px; height: 32px;
+          border: 2px solid rgba(255,255,255,0.6);
+          border-radius: 12px;
+          position: relative;
+        }
+        .scroll-dot::after {
+          content: '';
+          position: absolute;
+          top: 5px; left: 50%;
+          transform: translateX(-50%);
+          width: 4px; height: 7px;
+          background: #FFD700;
+          border-radius: 3px;
+          animation: scrollBounce 2s ease-in-out infinite;
+        }
+
+        /* ── Video gradient overlays ── */
+        .hero-overlay-left {
+          background: linear-gradient(to right,
+            rgba(15,28,63,0.85) 0%,
+            rgba(15,28,63,0.5)  45%,
+            transparent         100%
+          );
+        }
+        .hero-overlay-bottom {
+          background: linear-gradient(to top,
+            rgba(15,28,63,0.7) 0%,
+            transparent        40%
+          );
+        }
+      `}</style>
+
+      <section
+        ref={sectionRef}
+        className="w-full relative overflow-hidden"
+        style={{ height: '88vh', minHeight: 520 }}
+      >
+        {/* ── Video Background ── */}
+        <video
+          autoPlay muted loop playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{ objectPosition: 'center' }}
+        >
+          <source src="/bg-video.mov" type="video/mp4" />
+          <source src="/bg-video.webm" type="video/webm" />
+        </video>
+
+        {/* ── Overlays for depth ── */}
+        <div className="absolute inset-0 z-10 hero-overlay-left" />
+        <div className="absolute inset-0 z-10 hero-overlay-bottom" />
+
+        {/* ── Main Content ── */}
+        <div className="relative z-20 h-full flex items-center px-6 md:px-16 lg:px-24">
+          <div className="w-full max-w-2xl space-y-6">
+
+            {/* Badge */}
+            <div>
+              <span className={`made-in-badge ${badgeVisible ? 'badge-visible' : ''}`}>
+                <span style={{
+                  width: 7, height: 7, borderRadius: '50%',
+                  background: '#FFD700', display: 'inline-block', flexShrink: 0,
+                  boxShadow: '0 0 8px #FFD700',
+                }} />
+                Proudly Now in India
+              </span>
+            </div>
+
+            {/* Typing headline */}
+            <h1 className="hero-h1 text-4xl sm:text-5xl md:text-6xl font-black leading-tight text-white"
+              style={{ letterSpacing: '-0.5px' }}>
+              {renderLine1()}
+              {line1 === FULL_LINE1 && (
+                <>
+                  <br />
+                  <span className="text-white">
+                    {line2}
+                    {showCursor2 && <span className="typing-cursor" />}
+                  </span>
+                </>
+              )}
+            </h1>
+
+            {/* Subtitle */}
+            {subtitle && (
+              <p className="hero-subtitle text-base md:text-lg text-gray-300 max-w-xl leading-relaxed">
+                {subtitle}
+                {showCursorSub && <span className="typing-cursor" />}
+              </p>
+            )}
+
+            {/* CTA buttons */}
+            {ctaVisible && (
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                <Link href="/products">
+                  <button className={`hero-cta ${ctaVisible ? 'visible' : ''}`}>
+                    Explore Products
+                    <FaArrowRight size={14} />
+                  </button>
+                </Link>
+                <Link href="/about-us">
+                  <button className={`hero-cta-outline ${ctaVisible ? 'visible' : ''}`}>
+                    Learn More
+                  </button>
+                </Link>
+              </div>
+            )}
+
+            {/* Trust pills */}
+            {ctaVisible && (
+              <div className="flex flex-wrap gap-2 pt-1">
+                {TRUST_PILLS.map((pill, i) => (
+                  <span
+                    key={pill.label}
+                    className={`trust-pill ${ctaVisible ? 'visible' : ''}`}
+                    style={{ animationDelay: `${i * 0.1}s` }}
+                  >
+                    <span style={{
+                      width: 5, height: 5, borderRadius: '50%',
+                      background: '#FFD700', display: 'inline-block',
+                    }} />
+                    {pill.label}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* ── Scroll indicator ── */}
+        <div className="scroll-indicator">
+          <div className="scroll-dot" />
+          <span>Scroll</span>
+        </div>
+      </section>
+    </>
+  );
 }

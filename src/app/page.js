@@ -13,12 +13,12 @@ import CategoryTabs from './Home/Categories';
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="-z-20" style={{ background: 'linear-gradient(160deg, #275c9c 0%, #6cacdf 50%, #224164 100%)' }}>
       <HeroOne />
       {/* <CategoryTabs /> */}
       <PicksForYou />
-      {/* <HeroNew />
-      <Hero />     */}
+      {/* <HeroNew /> */}
+      {/* <Hero />     */}
       {/* <Products /> */}
       <QuickLinks />
       <About />

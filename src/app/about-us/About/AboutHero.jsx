@@ -4,7 +4,7 @@ import RoleCards from "./RoleCards";
 
 export default function AboutHero() {
   return (
-    <section className="relative min-h-[50vh] overflow-hidden py-5 px-6 bg-[#2F4191]">
+    <section className="relative min-h-[50vh] overflow-hidden py-5 px-6 bg-[#2B7EC2]">
       {/* Animated Background Particles */}
       {/* <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-500/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-0"></div>
@@ -24,14 +24,14 @@ export default function AboutHero() {
           </p>
         </div>
 
-        <div className="order-1 md:order-2 row-span-1 md:col-span-1 bg-white/5 backdrop-blur-3xl rounded-3xl p-8 md:p-10 border border-white/20 shadow-2xl shadow-cyan-500/10 hover:shadow-cyan-500/20 transition-all duration-500 hover:scale-[1.02] group hover:border-white/40 relative overflow-hidden">
+        <div className="order-1 md:order-2 row-span-1 md:col-span-1 bg-white/5 backdrop-blur-3xl rounded-3xl p-8 md:p-10 border border-white/20 shadow-2xl shadow-[#2F4191] hover:shadow-cyan-500/20 transition-all duration-500 hover:scale-[1.02] group hover:border-white/40 relative overflow-hidden">
           {/* Orbital Ring Effect */}
           <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-transparent to-purple-500/20 rounded-3xl -rotate-3 animate-spin-slow opacity-50"></div>
           <div className="relative z-10">
             <p className="text-md md:text-sm font-raleway uppercase tracking-widest text-white font-medium mb-4 bg-gradient-to-r from-cyan-400/50 to-transparent bg-clip-text">
               Our Philosophy
             </p>
-            <p className="text-xl md:text-2xl font-light text-white/95 leading-tight drop-shadow-lg">
+            <p className="text-xl md:text-2xl text-white/95 leading-tight drop-shadow-lg">
               Global manufacturing, Indian expertise, uncompromised control.
             </p>
           </div>

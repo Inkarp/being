@@ -10,7 +10,7 @@ const profiles = [
         description: "Hot air ovens for drying, sterilization and thermal testing.",
         link: "/products/laboratory-ovens",
         icon: "/ovens.png",
-        color: "from-orange-400 to-red-500", // Unique gradient per category
+        color: "from-orange-400 to-red-500",
     },
     {
         name: "Incubators",
@@ -102,14 +102,14 @@ export default function Verticals() {
                     <Link
                         key={index}
                         href={profile.link}
-                        className="group bg-[#2F4191]  border-2 border-[#2F4191]/50 rounded-3xl p-8 flex items-start gap-6 hover:border-[#2B7EC2]/70 hover:shadow-2xl hover:shadow-[#2B7EC2]/20 hover:-translate-y-3 hover:rotate-x-1 transition-all duration-500 origin-bottom relative overflow-hidden"
-                    >
+                        className="group bg-[#2B7EC2]  border-2 border-[#2F4191]/50 rounded-3xl p-8 flex items-start gap-6 hover:border-[#2B7EC2]/70 hover:shadow-2xl hover:shadow-[#2B7EC2]/20 hover:-translate-y-3 hover:rotate-x-1 transition-all duration-500 origin-bottom relative overflow-hidden">
                         {/* Category Badge */}
                         <div className="absolute -top-4 -right-4 w-20 h-20 bg-white backdrop-blur-sm border-3 border-black/50 rounded-2xl flex items-center justify-center shadow-2xl rotate-15 group-hover:rotate-0 group-hover:scale-110 transition-all duration-700">
                             <span className="text-lg font-bold text-gray-800 uppercase tracking-wider drop-shadow-md">{index + 1}</span>
                         </div>
 
-                         <div className="w-[30px] h-[30px] text-white absolute bottom-4 right-4 ">
+                        <div className="w-[30px] h-[30px] text-white absolute bottom-4 right-4 ">
+
                             <svg
                                 width="30"
                                 height="30"
@@ -146,7 +146,7 @@ export default function Verticals() {
                             <p className="mt-3 text-sm md:text-base text-white leading-relaxed line-clamp-3 group-hover:text-white transition-colors">
                                 {profile.description}
                             </p>
-                        </div>                    
+                        </div>
                     </Link>
                 ))}
             </div>
