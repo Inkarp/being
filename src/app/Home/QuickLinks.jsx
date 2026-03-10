@@ -5,9 +5,9 @@ import Link from "next/link";
 
 const links = [
   { image: "/Amc.svg",      title: "Buy AMC",         href: "/amc",        color: "#2B7EC2" },
-  { image: "/Amc.svg",      title: "All Promotions",  href: "/promotions",  color: "#2F4191" },
-  { image: "/offers.webp",  title: "Best Offers",     href: "/offers",      color: "#2B7EC2" },
-  { image: "/Amc.svg",      title: "Shop the Latest", href: "/products",    color: "#2F4191" },
+  { image: "/Amc.svg",      title: "Warranty Claim",  href: "/promotions",  color: "#2F4191" },
+  { image: "/offers.webp",  title: "Offers",     href: "/offers",      color: "#2B7EC2" },
+  { image: "/Amc.svg",      title: "Service", href: "/products",    color: "#2F4191" },
 ];
 
 export default function QuickLinks() {

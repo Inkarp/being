@@ -12,7 +12,7 @@ import {
 
 export default function Footer() {
     return (
-        <footer className="bg-[#2B7EC2] text-white font-raleway">
+        <footer className=" text-white font-raleway">
             <div className="w-full mx-auto py-3 px-10 flex flex-col md:flex-row ">
 
                 <div className="md:w-1/4 flex flex-col justify-center gap-2">

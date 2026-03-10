@@ -13,9 +13,9 @@ import CategoryTabs from './Home/Categories';
 
 export default function Home() {
   return (
-    <div className="-z-20" style={{ background: 'linear-gradient(160deg, #275c9c 0%, #6cacdf 50%, #224164 100%)' }}>
+    <div className="" style={{   background: 'linear-gradient(160deg, #275c9c 0%, #6cacdf 50%, #f0f7ff 100%)' }}>
       <HeroOne />
-      {/* <CategoryTabs /> */}
+      <CategoryTabs />
       <PicksForYou />
       {/* <HeroNew /> */}
       {/* <Hero />     */}

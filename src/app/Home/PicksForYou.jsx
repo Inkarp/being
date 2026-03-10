@@ -14,7 +14,7 @@ const TABS = ["All", "Popular", "Newest"];
 
 const products = [
   {
-    badge: "BEST SELLER",
+    badge: "Popular",
     badgeColor: "#FFD700",
     model: "55UA82006LA",
     title: "LG 139 cm (55) 4K UHD AI UA8200 Smart TV with a7 AI Processor",
@@ -22,7 +22,7 @@ const products = [
     reviews: 143,
   },
   {
-    badge: "2026 MODEL",
+    badge: "Newest",
     badgeColor: "#4FA8E0",
     model: "AS-Q18JNXE",
     title: "LG 3 Star 1.5T Split AC, AI Convertible 6-in-1 Cooling",
@@ -30,7 +30,7 @@ const products = [
     reviews: 3,
   },
   {
-    badge: "CASHBACK",
+    badge: "Newest",
     badgeColor: "#34d399",
     model: "FHP1209Z5M",
     title: "LG 9Kg Front Load Washing Machine, AI Direct Drive™ Motor",
@@ -38,7 +38,7 @@ const products = [
     reviews: 45,
   },
   {
-    badge: "LIMITED STOCK",
+    badge: "Newest",
     badgeColor: "#f87171",
     model: "GL-I292RPZX",
     title: "LG 242L Double Door Refrigerator with Door Cooling+",
@@ -46,7 +46,7 @@ const products = [
     reviews: 31,
   },
   {
-    badge: "NEW ARRIVAL",
+    badge: "Newest",
     badgeColor: "#a78bfa",
     model: "WM-X9000",
     title: "LG 12Kg Front Load Washing Machine with TurboWash 360°",
@@ -117,7 +117,7 @@ export default function PicksForYou() {
             </p> */}
 
             <h2 className="text-[clamp(28px,4vw,48px)] font-black text-white leading-tight">
-             Curated Picks For You
+              Curated Picks For You
             </h2>
           </div>
 
@@ -150,11 +150,10 @@ export default function PicksForYou() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-[18px] py-[6px] rounded-full text-[13px] font-bold tracking-[0.04em] transition ${
-                activeTab === tab
+              className={`px-[18px] py-[6px] rounded-full text-[13px] font-bold tracking-[0.04em] transition ${activeTab === tab
                   ? "bg-white text-[#2F4191]"
                   : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
-              }`}
+                }`}
             >
               {tab}
             </button>
@@ -230,11 +229,10 @@ export default function PicksForYou() {
             <button
               key={i}
               onClick={() => setPage(i)}
-              className={`h-[6px] transition-all ${
-                i === page
+              className={`h-[6px] transition-all ${i === page
                   ? "w-[20px] bg-white rounded-[3px]"
                   : "w-[6px] bg-white/30 rounded-full"
-              }`}
+                }`}
             />
           ))}
         </div>

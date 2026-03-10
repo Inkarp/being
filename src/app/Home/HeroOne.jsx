@@ -7,7 +7,8 @@ import Image from 'next/image';
 
 
 
-const FULL_LINE1 = 'Welcome to Being India';
+// Line1 now just types "India" — the logo is rendered separately
+const FULL_LINE1 = 'India';
 const FULL_LINE2 = 'Scientific Solutions';
 const SUBTITLE =
   'Discover our cutting-edge solutions to accelerate scientific excellence.';
@@ -27,6 +28,8 @@ export default function HeroOne() {
   const [indiaFullyTyped, setIndiaFullyTyped] = useState(false);
   const [ctaVisible, setCtaVisible] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  // Controls when the logo fades in during line1 typing
+  const [logoVisible, setLogoVisible] = useState(false);
 
   const sectionRef = useRef(null);
   const timeoutsRef = useRef([]);
@@ -73,9 +76,14 @@ export default function HeroOne() {
     setBadgeVisible(false);
     setIndiaFullyTyped(false);
     setCtaVisible(false);
+    setLogoVisible(false);
 
     const t = setTimeout(() => setBadgeVisible(true), 200);
     timeoutsRef.current.push(t);
+
+    // Show the logo slightly before "India" starts typing
+    const tLogo = setTimeout(() => setLogoVisible(true), 400);
+    timeoutsRef.current.push(tLogo);
 
     typeText(FULL_LINE1, setLine1, setShowCursor1, () => {
       setIndiaFullyTyped(true);
@@ -117,41 +125,45 @@ export default function HeroOne() {
   }, [animKey, startAnimation]);
 
   const renderLine1 = () => {
-    const beingIdx = line1.indexOf('Being');
-    if (beingIdx === -1)
-      return (
-        <>
-          {line1}
-          {showCursor1 && <span className="typing-cursor" />}
-        </>
-      );
-
-    const before = line1.slice(0, beingIdx);
-    const beingPart = line1.slice(beingIdx);
-    const indiaIdx = beingPart.indexOf('India');
-    const hasIndia = indiaIdx !== -1;
+    const indiaText = line1; // line1 is purely "India" (partial or full)
+    const hasIndia = indiaText.length > 0;
 
     return (
-      <>
-        {before}
-        {hasIndia ? beingPart.slice(0, indiaIdx) : beingPart}
+      /* Flex row keeps "Welcome to" + logo + "India" on one line, wrapping gracefully */
+      <span className="inline-flex flex-wrap items-center gap-x-3 leading-tight">
+        {/* "Welcome to" static text */}
+        <span className={`opacity-0 ${logoVisible ? 'logo-fade-in' : ''}`}>Welcome to</span>
 
+        {/* Being logo — fades in with "Welcome to", same baseline as text */}
+        <span
+          className={`inline-flex items-center opacity-0 ${logoVisible ? 'logo-fade-in' : ''}`}
+          style={{ verticalAlign: 'middle' }}
+        >
+          <Image
+            src="/logo.webp"
+            alt="Being India"
+            width={220}
+            height={64}
+            className="inline-block"
+            style={{ filter: 'brightness(0) invert(1)' }}
+          />
+        </span>
+
+        {/* "India" typed with tricolour gradient + underline */}
         {hasIndia && (
           <span
-            className={`relative inline-block ${
-              indiaFullyTyped ? 'india-revealed' : ''
-            }`}
+            className={`relative inline-block ${indiaFullyTyped ? 'india-revealed' : ''}`}
           >
-            <span className="india-text">{beingPart.slice(indiaIdx)}</span>
+            <span className="">{indiaText}</span>
 
-            {indiaFullyTyped && (
+            {/* {indiaFullyTyped && (
               <span className="india-underline absolute left-0 -bottom-[5px] h-[3px] rounded" />
-            )}
+            )} */}
           </span>
         )}
 
         {showCursor1 && <span className="typing-cursor" />}
-      </>
+      </span>
     );
   };
 
@@ -159,112 +171,109 @@ export default function HeroOne() {
     <>
       <style>{`
 
-@keyframes indiaSlideIn {
-0%{clip-path:inset(0 100% 0 0);opacity:.3;transform:translateX(-10px)}
-65%{clip-path:inset(0 0 0 0);opacity:1;transform:translateX(3px)}
-100%{clip-path:inset(0 0 0 0);opacity:1;transform:translateX(0)}
-}
+        @keyframes indiaSlideIn {
+        0%{clip-path:inset(0 100% 0 0);opacity:.3;transform:translateX(-10px)}
+        65%{clip-path:inset(0 0 0 0);opacity:1;transform:translateX(3px)}
+        100%{clip-path:inset(0 0 0 0);opacity:1;transform:translateX(0)}
+        }
 
-@keyframes underlineExpand{
-0%{width:0;opacity:0}
-100%{width:100%;opacity:1}
-}
+        @keyframes underlineExpand{
+        0%{width:0;opacity:0}
+        100%{width:100%;opacity:1}
+        }
 
-@keyframes badgeFadeUp{
-0%{opacity:0;transform:translateY(14px)}
-100%{opacity:1;transform:translateY(0)}
-}
+        @keyframes badgeFadeUp{
+        0%{opacity:0;transform:translateY(14px)}
+        100%{opacity:1;transform:translateY(0)}
+        }
 
-@keyframes fadeUpIn{
-0%{opacity:0;transform:translateY(18px)}
-100%{opacity:1;transform:translateY(0)}
-}
+        @keyframes logoFadeIn{
+        0%{opacity:0;transform:translateY(10px)}
+        100%{opacity:1;transform:translateY(0)}
+        }
 
-@keyframes searchFadeIn{
-0%{opacity:0;transform:translateY(12px)}
-100%{opacity:1;transform:translateY(0)}
-}
+        @keyframes fadeUpIn{
+        0%{opacity:0;transform:translateY(18px)}
+        100%{opacity:1;transform:translateY(0)}
+        }
 
-@keyframes blink{
-0%,100%{opacity:1}
-50%{opacity:0}
-}
+        @keyframes searchFadeIn{
+        0%{opacity:0;transform:translateY(12px)}
+        100%{opacity:1;transform:translateY(0)}
+        }
 
-.india-text{
-display:inline-block;
-background:linear-gradient(90deg,#FF9933 0%,#FF9933 24%,#fff 44%,#fff 56%,#138808 76%,#138808 100%);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-clip-path:inset(0 100% 0 0);
-opacity:0;
-transform:translateX(-10px);
-font-weight:900;
-}
+        @keyframes blink{
+        0%,100%{opacity:1}
+        50%{opacity:0}
+        }
 
-.india-revealed .india-text{
-animation:indiaSlideIn .8s cubic-bezier(.22,1,.36,1) forwards;
-}
+        .logo-fade-in{
+        animation:logoFadeIn .5s ease forwards;
+        }
 
-.india-underline{
-background:linear-gradient(90deg,#FF9933,#FFD700,#138808);
-animation:underlineExpand .7s .6s ease-out forwards;
-box-shadow:0 0 10px rgba(255,180,0,.6);
-}
+        .india-text{
+        display:inline-block;
+        background:linear-gradient(90deg,#FF9933 0%,#FF9933 24%,#fff 44%,#fff 56%,#138808 76%,#138808 100%);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+        clip-path:inset(0 100% 0 0);
+        opacity:0;
+        transform:translateX(-10px);
+        font-weight:900;
+        }
 
-.typing-cursor{
-display:inline-block;
-width:3px;
-height:.85em;
-background:#FFD700;
-margin-left:3px;
-border-radius:1px;
-animation:blink .75s step-end infinite;
-}
+        .india-revealed .india-text{
+        animation:indiaSlideIn .8s cubic-bezier(.22,1,.36,1) forwards;
+        }
 
-.badge-visible{
-animation:badgeFadeUp .6s ease forwards;
-}
+        .india-underline{
+        background:linear-gradient(90deg,#FF9933,#FFD700,#138808);
+        animation:underlineExpand .7s .6s ease-out forwards;
+        box-shadow:0 0 10px rgba(255,180,0,.6);
+        }
 
-.cta-visible{
-animation:fadeUpIn .5s ease forwards;
-}
+        .typing-cursor{
+        display:inline-block;
+        width:3px;
+        height:.85em;
+        background:#FFD700;
+        margin-left:3px;
+        border-radius:1px;
+        animation:blink .75s step-end infinite;
+        }
 
-.search-visible{
-animation:searchFadeIn .55s .2s ease forwards;
-}
+        .badge-visible{
+        animation:badgeFadeUp .6s ease forwards;
+        }
 
-`}</style>
+        .cta-visible{
+        animation:fadeUpIn .5s ease forwards;
+        }
+
+        .search-visible{
+        animation:searchFadeIn .55s .2s ease forwards;
+        }
+
+        `}</style>
 
       <section
         ref={sectionRef}
         className="relative w-full h-screen overflow-hidden"
       >
+        {/* Background image */}
         <Image
-          src="/HeroImage.webp"
+          src="/HeroImage2.webp"
           alt="Hero"
           fill
           priority
           quality={90}
           sizes="100vw"
-          className="absolute inset-0 object-cover object-center"
+          className="absolute inset-0 object-cover object-center z-0"
         />
 
         <div className="relative z-20 h-full flex items-center px-6 md:px-14 lg:px-24">
-          <div className="w-full max-w-2xl space-y-5">
-            <span
-              className={`inline-flex items-center bg-white border border-white/30 backdrop-blur-xl px-[14px] py-[5px] pl-[8px] rounded-full opacity-0 ${
-                badgeVisible ? 'badge-visible' : ''
-              }`}
-            >
-              <Image
-                src="/logo.webp"
-                alt="Being India"
-                width={105}
-                height={32}
-              />
-            </span>
-
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight text-white">
+          <div className="w-full max-w-3xl space-y-5">
+            <h1 className="text-6xl font-black text-white">
               {renderLine1()}
 
               {line1 === FULL_LINE1 && (
@@ -281,9 +290,8 @@ animation:searchFadeIn .55s .2s ease forwards;
             {subtitle && (
               <div
                 onClick={() => setIsSearchOpen(true)}
-                className={`inline-flex items-center bg-white/95 rounded-full px-5 py-2 gap-3 shadow-xl cursor-pointer opacity-0 ${
-                  subtitle ? 'search-visible' : ''
-                }`}
+                className={`inline-flex items-center bg-white/95 rounded-full px-5 py-2 gap-3 shadow-xl cursor-pointer opacity-0 ${subtitle ? 'search-visible' : ''
+                  }`}
               >
                 <FaSearch className="text-[#2F4191]" />
 
@@ -323,7 +331,7 @@ animation:searchFadeIn .55s .2s ease forwards;
                   {TRUST_PILLS.map((label, i) => (
                     <span
                       key={label}
-                      className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider bg-white/10 border border-white/30 px-3 py-1 rounded-full text-white"
+                      className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest bg-white/10 border border-white/30 px-3 py-1 rounded-full text-white"
                     >
                       <span className="w-[5px] h-[5px] rounded-full bg-yellow-400" />
                       {label}
