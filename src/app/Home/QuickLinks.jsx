@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-  { image: "/Amc.svg",      title: "Buy AMC",         href: "/amc",        color: "#2B7EC2" },
-  { image: "/Amc.svg",      title: "Warranty Claim",  href: "/promotions",  color: "#2F4191" },
-  { image: "/offers.webp",  title: "Offers",     href: "/offers",      color: "#2B7EC2" },
-  { image: "/Amc.svg",      title: "Service", href: "/products",    color: "#2F4191" },
+  { image: "/service-tools.gif",      title: "Buy AMC",         href: "/amc",        color: "#2B7EC2" },
+  { image: "/warranty.gif",      title: "Extend Your Service",  href: "/promotions",  color: "#2F4191" },
+  { image: "/sale.gif",  title: "Offers",     href: "/offers",      color: "#2B7EC2" },
+  { image: "/services.gif",      title: "Service", href: "/products",    color: "#2F4191" },
 ];
 
 export default function QuickLinks() {
@@ -116,8 +116,8 @@ export default function QuickLinks() {
                       src={item.image}
                       alt={item.title}
                       unoptimized
-                      width={34}
-                      height={34}
+                      width={40}
+                      height={40}
                       style={{ objectFit: 'contain' }}
                     />
                   </div>

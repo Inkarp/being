@@ -262,13 +262,14 @@ export default function HeroOne() {
       >
         {/* Background image */}
         <Image
-          src="/HeroImage2.webp"
+          src="/HeroImage.webp"
           alt="Hero"
           fill
           priority
           quality={90}
           sizes="100vw"
-          className="absolute inset-0 object-cover object-center z-0"
+          objectFit='fill'
+          className="absolute inset-0 "
         />
 
         <div className="relative z-20 h-full flex items-center px-6 md:px-14 lg:px-24">

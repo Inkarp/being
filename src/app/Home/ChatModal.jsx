@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { HiChatBubbleLeftRight } from 'react-icons/hi2';
 import Chatbot from "./Chatbot";
+import Image from 'next/image';
 
 export default function ChatModal() {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,8 @@ export default function ChatModal() {
         aria-label="Chat with us"
         title="Chat with us"
       >
-        <HiChatBubbleLeftRight className="w-6 h-6 sm:w-6 sm:h-6 md:w-8 md:h-8" />
+        {/* <HiChatBubbleLeftRight className="w-6 h-6 sm:w-6 sm:h-6 md:w-8 md:h-8" /> */}
+        <Image src="/assistance.gif" alt='chatbot' width={30} height={30} />
       </button>
     </>
   );
