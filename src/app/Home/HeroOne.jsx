@@ -258,7 +258,7 @@ export default function HeroOne() {
 
       <section
         ref={sectionRef}
-        className="relative w-full h-screen overflow-hidden"
+        className="relative w-full lg:h-[800px] h-[500px] overflow-hidden"
       >
         {/* Background image */}
         <Image
@@ -266,14 +266,14 @@ export default function HeroOne() {
           alt="Hero"
           fill
           priority
-          quality={90}
+          quality={100}     
           sizes="100vw"
           objectFit='fill'
-          className="absolute inset-0 "
+          className="absolute inset-0 lg:block hidden"
         />
 
-        <div className="relative z-20 h-full flex items-center px-6 md:px-14 lg:px-24">
-          <div className="w-full max-w-3xl space-y-5">
+        <div className="relative z-20 h-full flex items-start lg:mt-20 mt-0 px-6 md:px-14 lg:px-24">
+          <div className="w-full lg:max-w-3xl max-w-2xl space-y-5">
             <h1 className="text-6xl font-black text-white">
               {renderLine1()}
 
@@ -344,14 +344,14 @@ export default function HeroOne() {
           </div>
         </div>
 
-        {/* <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white opacity-100 animate-bounce">
-          <div className="w-[20px] h-[32px] border-2 border-black rounded-xl relative">
-            <div className="absolute top-[5px] left-1/2 -translate-x-1/2 w-[4px] h-[7px] bg-yellow-400 rounded"></div>
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white opacity-100 animate-bounce">
+          <div className="w-[20px] h-[32px] border-2 border-white rounded-xl relative">
+            <div className="absolute top-[5px] left-1/2 -translate-x-1/2 w-[4px] h-[7px] bg-[#2F4191] rounded"></div>
           </div>
           <span className="text-[9px] font-bold tracking-widest uppercase">
             Scroll
           </span>
-        </div> */}
+        </div>
       </section>
 
       <SearchOverlay

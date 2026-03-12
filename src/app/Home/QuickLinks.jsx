@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Fragment } from "react";
 
 const links = [
   { image: "/service-tools.gif",      title: "Buy AMC",         href: "/amc",        color: "#2B7EC2" },
@@ -104,9 +105,8 @@ export default function QuickLinks() {
             gap: 0,
           }}>
             {links.map((item, i) => (
-              <>
+              <Fragment key={item.title}>
                 <Link
-                  key={item.title}
                   href={item.href}
                   className="ql-item"
                   style={{ '--accent': item.color, animationDelay: `${i * 0.08}s` }}
@@ -128,7 +128,7 @@ export default function QuickLinks() {
                 {i < links.length - 1 && (
                   <div key={`div-${i}`} className="ql-divider" />
                 )}
-              </>
+              </Fragment>
             ))}
           </div>
         </div>

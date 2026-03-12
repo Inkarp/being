@@ -183,7 +183,7 @@ export default function Customers() {
 
     return (
         // <section className="h-screen w-full flex flex-col bg-gradient-to-br from-slate-50 to-blue-50/50">
-        <section className="h-screen w-full flex flex-col">
+        <section className="h-screen w-full flex flex-col bg-white py-2">
             {/* HEADER */}
             <div className="text-center flex-shrink-0">
                 <span className="inline-block px-6 py-2 text-xs font-bold uppercase tracking-widest

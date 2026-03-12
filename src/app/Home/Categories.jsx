@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Fragment } from "react";
 import Link from "next/link";
 
 const categories = [
@@ -231,9 +231,8 @@ export default function Categories() {
 
             <div className="cat-scroll" ref={scrollRef}>
               {categories.map((item, idx) => (
-                <>
+                <Fragment key={item.name}>
                   <Link
-                    key={item.name}
                     href={item.link}
                     onClick={() => setActive(item.name)}
                     className={`cat-tab${active === item.name ? " active" : ""}`}
@@ -244,7 +243,7 @@ export default function Categories() {
                   {idx < categories.length - 1 && (
                     <span key={`div-${idx}`} className="cat-divider" />
                   )}
-                </>
+                </Fragment>
               ))}
             </div>
           </div>
