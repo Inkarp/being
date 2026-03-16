@@ -7,7 +7,7 @@ export default function ContactDetails() {
 
     return (
         <section className="min-h-screen flex md:flex-row flex-col items-center justify-center py-5">
-            <div className="w-full grid lg:grid-cols-4 gap-3 items-start relative px-4 bg-[#2F4191]/10 rounded-l-3xl py-8">
+            <div className="w-full grid lg:grid-cols-4 gap-3 items-start relative px-4 bg-[#2F4191]/10  py-8">
                 {/* Left Side - Info Content (2/5) */}
                 <div  className="lg:col-span-2 w-full space-y-8 text-white flex flex-col items-center justify-start lg:items-start">
                     <div className="text-left lg:text-left">

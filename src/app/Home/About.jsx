@@ -154,7 +154,7 @@ export default function About() {
         className="w-full py-5 px-4"
         // style={{ background: 'linear-gradient(160deg, #275c9c 0%, #6cacdf 50%, #f0f7ff 100%)' }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="px-10 mx-auto">
           {/* ── Main Two-Column Grid ── */}
           <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-center">
             {/* Left — Image */}
@@ -164,12 +164,10 @@ export default function About() {
               <div className="img-accent" style={{ width: 200, height: 200, bottom: -20, right: -20, background: 'linear-gradient(135deg,#2F4191,#2B7EC2)' }} />
 
               {/* Image frame */}
-              <div
-                className="relative overflow-hidden rounded-3xl"
+              <div className="relative overflow-hidden rounded-3xl"
                 style={{
                   boxShadow: '0 24px 64px rgba(43,126,194,0.22), 0 0 0 1px rgba(43,126,194,0.08)',
-                }}
-              >
+                }}>
                 <Image
                   src="/contact.png"
                   alt="Inkarp Instruments Laboratory Solutions"
@@ -245,8 +243,8 @@ export default function About() {
                   className="text-3xl md:text-4xl font-black leading-tight"
                   style={{ color: '#0f1c3f', letterSpacing: '-0.5px' }}
                 >
-                  Your Trusted<br />
-                  <span style={{ color: 'white' }}>Lab Partner</span>
+                  Your Trusted
+                  <span style={{ color: 'white' }}>  Lab Partner</span>
                 </h2>
                 <div className="divider-line mt-4" />
               </div>

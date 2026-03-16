@@ -22,14 +22,14 @@ function GearCTA({ dark = false }) {
       <div className="relative w-6 h-6 flex items-center justify-center ">
         <svg
           viewBox="0 0 30 30"
-          className={`absolute w-6 h-6 animate-spin ${
-            dark ? "fill-white/30" : "fill-white/20"
+          className={`absolute w-6 h-6 spin-slow ${
+            dark ? "fill-white" : "fill-white"
           }`}
         >
           <path d={GEAR_PATH} />
         </svg>
 
-        <FaArrowRight className="text-white text-[10px] relative z-10" />
+        <FaArrowRight className="text-black text-[10px] relative z-10" />
       </div>
     </div>
   );
@@ -49,12 +49,9 @@ const blogs = [
 export default function Blogs() {
   return (
     <section className="py-5 px-6 bg-gradient-to-br from-[#f8faff] via-[#eef4fd] to-[#f8faff]">
-
       <div className="w-full mx-auto">
-
         {/* Header */}
         <div className="text-center ">
-
           <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#2F4191]/10 border border-[#2F4191]/20 text-[#2F4191]">
             <span className="w-[5px] h-[5px] rounded-full bg-[#2B7EC2]" />
             Events & Blogs
@@ -150,22 +147,14 @@ export default function Blogs() {
                       <FaUser size={9}/>
                       {blog.author}
                     </div>
-
                     <GearCTA dark/>
-
                   </div>
-
                 </div>
               ))}
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }
