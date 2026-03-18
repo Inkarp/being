@@ -1,19 +1,40 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 const CATEGORIES = [
     'Government',
     'Academia-Government',
     'Academia-Private',
-    'Dealer',  
+    'Dealer',
     'Private',
 ];
 
 
 const CUSTOMERS = [
+    { name: 'Asian Paints Limited (Mahape)', category: 'Private', products: ["FT-IR Spectrometer", "HPLC System"], logo: "/asian-paints-logo.avif" },
+    { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"], logo: "/BangloreUniversity.jpg" },
+    { name: 'Aurobindo Pharma Limited - Unit 3', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
+    { name: 'AVIRAL POWER SOLUTIONS PVT LTD', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
+    { name: 'Indian Institute of Science (IISc) - Bengaluru', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"], logo: "/BangloreUniversity.jpg" },
+    { name: 'Hindustan Petroleum Corporation Limited', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
+    { name: 'Birla Institute of Technology & Science (BITS) Pilani - Hyderabad', category: 'Academia-Private', products: ["FT-IR Spectrometer", "HPLC System"] },
+    { name: 'ICAR - Indian Veterinary Research Institute (IVRI)', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
+    { name: 'INDIAN SCIENTIFIC COMPANY', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
+    { name: 'Biocon Limited - SEZ Unit', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
+    { name: 'Asian Paints Limited (Mahape)', category: 'Private', products: ["FT-IR Spectrometer", "HPLC System"], logo: "/asian-paints-logo.avif" },
+    { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"], logo: "/BangloreUniversity.jpg" },
+    { name: 'Aurobindo Pharma Limited - Unit 3', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"], logo: "/aurobindo.webp" },
+    { name: 'AVIRAL POWER SOLUTIONS PVT LTD', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
+    { name: 'Indian Institute of Science (IISc) - Bengaluru', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"], logo: "/logo-iisc.png" },
+    { name: 'Hindustan Petroleum Corporation Limited', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
+    { name: 'Birla Institute of Technology & Science (BITS) Pilani - Hyderabad', category: 'Academia-Private', products: ["FT-IR Spectrometer", "HPLC System"] },
+    { name: 'ICAR - Indian Veterinary Research Institute (IVRI)', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
+    { name: 'INDIAN SCIENTIFIC COMPANY', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
+    { name: 'Biocon Limited - SEZ Unit', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
     { name: 'Asian Paints Limited (Mahape)', category: 'Private', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
+    { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] , logo: "/BangloreUniversity.jpg"},
     { name: 'Aurobindo Pharma Limited - Unit 3', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
     { name: 'AVIRAL POWER SOLUTIONS PVT LTD', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
     { name: 'Indian Institute of Science (IISc) - Bengaluru', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
@@ -23,7 +44,7 @@ const CUSTOMERS = [
     { name: 'INDIAN SCIENTIFIC COMPANY', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
     { name: 'Biocon Limited - SEZ Unit', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
     { name: 'Asian Paints Limited (Mahape)', category: 'Private', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
+    { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"], logo: "/BangloreUniversity.jpg" },
     { name: 'Aurobindo Pharma Limited - Unit 3', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
     { name: 'AVIRAL POWER SOLUTIONS PVT LTD', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
     { name: 'Indian Institute of Science (IISc) - Bengaluru', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
@@ -33,27 +54,7 @@ const CUSTOMERS = [
     { name: 'INDIAN SCIENTIFIC COMPANY', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
     { name: 'Biocon Limited - SEZ Unit', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
     { name: 'Asian Paints Limited (Mahape)', category: 'Private', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
-    { name: 'Aurobindo Pharma Limited - Unit 3', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
-    { name: 'AVIRAL POWER SOLUTIONS PVT LTD', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'Indian Institute of Science (IISc) - Bengaluru', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
-    { name: 'Hindustan Petroleum Corporation Limited', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
-    { name: 'Birla Institute of Technology & Science (BITS) Pilani - Hyderabad', category: 'Academia-Private', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'ICAR - Indian Veterinary Research Institute (IVRI)', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
-    { name: 'INDIAN SCIENTIFIC COMPANY', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'Biocon Limited - SEZ Unit', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
-    { name: 'Asian Paints Limited (Mahape)', category: 'Private', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
-    { name: 'Aurobindo Pharma Limited - Unit 3', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
-    { name: 'AVIRAL POWER SOLUTIONS PVT LTD', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'Indian Institute of Science (IISc) - Bengaluru', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
-    { name: 'Hindustan Petroleum Corporation Limited', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
-    { name: 'Birla Institute of Technology & Science (BITS) Pilani - Hyderabad', category: 'Academia-Private', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'ICAR - Indian Veterinary Research Institute (IVRI)', category: 'Government', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
-    { name: 'INDIAN SCIENTIFIC COMPANY', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'Biocon Limited - SEZ Unit', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
-    { name: 'Asian Paints Limited (Mahape)', category: 'Private', products: ["FT-IR Spectrometer", "HPLC System"] },
-    { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
+    { name: 'Bangalore University', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] , logo: "/BangloreUniversity.jpg"},
     { name: 'Aurobindo Pharma Limited - Unit 3', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
     { name: 'AVIRAL POWER SOLUTIONS PVT LTD', category: 'Dealer', products: ["FT-IR Spectrometer", "HPLC System"] },
     { name: 'Indian Institute of Science (IISc) - Bengaluru', category: 'Academia-Government', products: ["AFM Microscope", "Rotary Evaporator"] },
@@ -174,7 +175,9 @@ const CUSTOMERS = [
     { name: 'Biocon Limited - SEZ Unit', category: 'Private', products: ["Freeze Dryer", "UV-Vis Spectrophotometer"] },
 ];
 
-export default function Customers() {
+
+
+export default function CustomersImages() {
     const [activeCategory, setActiveCategory] = useState('Government');
 
     const filteredCustomers = CUSTOMERS.filter(
@@ -233,7 +236,7 @@ export default function Customers() {
                     </div>
                 </div>
 
-               
+
                 <div className="lg:col-span-3 flex flex-col overflow-hidden">
                     <div className="flex-1 border border-gray-200 rounded-xl p-8 overflow-hidden bg-[#F5F5F5] shadow-sm">
                         <div className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
@@ -246,11 +249,24 @@ export default function Customers() {
                                     {filteredCustomers.map((cust, index) => (
                                         <div
                                             key={index}
-                                            className="relative group border border-gray-200 rounded-lg px-2 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 bg-white text-center h-20 flex items-center justify-center hover:bg-[#2F4191] hover:text-white"
+                                            className="relative group rounded-lg p-3 
+                                            hover:shadow-lg hover:-translate-y-1 transition-all duration-200 
+                                            text-center h-20 flex items-center justify-center 
+                                            "
                                         >
-                                            <p className="font-medium text-xs md:text-sm leading-tight">
-                                                {cust.name}
-                                            </p>
+                                            {cust.logo ? (
+                                                <Image
+                                                    src={cust.logo}
+                                                    alt={cust.name}
+                                                    width={160}
+                                                    height={60}
+                                                    className="object-contain max-h-16 w-auto mx-auto "
+                                                />
+                                            ) : (
+                                                <p className="font-medium text-xs md:text-sm leading-tight">
+                                                    {cust.name}
+                                                </p>
+                                            )}
 
                                             {/* HOVER TOOLTIP — desktop only */}
                                             <div className="hidden lg:block absolute bottom-1/2 left-1/2 -translate-x-1/2 mb-3 w-72 bg-white border border-gray-200 rounded-xl shadow-xl p-5 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-100 max-w-xs">

@@ -9,6 +9,7 @@ import HeroOne from './Home/HeroOne';
 import QuickLinks from './Home/QuickLinks';
 import PicksForYou from './Home/PicksForYou';
 import CategoryTabs from './Home/Categories';
+import CustomersImages from './Home/CustomersImages';
 
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       {/* <Products /> */}
       <QuickLinks />
       <About />
+      <CustomersImages />
       <Customers />
       <Testimonials />
       <Blogs /> 

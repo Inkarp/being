@@ -18,7 +18,7 @@ const products = [
     badge: "Popular",
     badgeColor: "#FFD700",
     model: "55UA82006LA",
-    title: "LG 139 cm (55) 4K UHD AI UA8200 Smart TV with a7 AI Processor",
+    title: "Laboratory Drying Oven – BPG-9040A",
     rating: 4.7,
     reviews: 143,
   },
@@ -26,7 +26,15 @@ const products = [
     badge: "Newest",
     badgeColor: "#4FA8E0",
     model: "AS-Q18JNXE",
-    title: "LG 3 Star 1.5T Split AC, AI Convertible 6-in-1 Cooling",
+    title: "Laboratory Drying Oven – BPG-9040A",
+    rating: 3.3,
+    reviews: 3,
+  },
+  {
+    badge: "Newest",
+    badgeColor: "#4FA8E0",
+    model: "AS-QJNXE",
+    title: "Laboratory Drying Oven – BPG-9040A",
     rating: 3.3,
     reviews: 3,
   },
@@ -34,7 +42,7 @@ const products = [
     badge: "Newest",
     badgeColor: "#34d399",
     model: "FHP1209Z5M",
-    title: "LG 9Kg Front Load Washing Machine, AI Direct Drive™ Motor",
+    title: "Laboratory Drying Oven – BPG-9040A",
     rating: 4.4,
     reviews: 45,
   },
@@ -42,7 +50,7 @@ const products = [
     badge: "Newest",
     badgeColor: "#f87171",
     model: "GL-I292RPZX",
-    title: "LG 242L Double Door Refrigerator with Door Cooling+",
+    title: "Laboratory Drying Oven – BPG-9040A",
     rating: 4.6,
     reviews: 31,
   },
@@ -50,7 +58,7 @@ const products = [
     badge: "Newest",
     badgeColor: "#a78bfa",
     model: "WM-X9000",
-    title: "LG 12Kg Front Load Washing Machine with TurboWash 360°",
+    title: "Laboratory Drying Oven – BPG-9040A",
     rating: 4.8,
     reviews: 12,
   },
@@ -58,7 +66,7 @@ const products = [
     badge: "BEST SELLER",
     badgeColor: "#FFD700",
     model: "OLED65C3",
-    title: "LG 65 inch OLED evo C3 4K Smart TV with Dolby Vision",
+    title: "Laboratory Drying Oven – BPG-9040A",
     rating: 4.9,
     reviews: 210,
   },
@@ -66,7 +74,7 @@ const products = [
     badge: "TOP RATED",
     badgeColor: "#fb923c",
     model: "GL-T322RPZX",
-    title: "LG 308L Frost-Free Double Door Refrigerator, Smart Inverter",
+    title: "Laboratory Drying Oven – BPG-9040A",
     rating: 4.5,
     reviews: 88,
   },
@@ -102,8 +110,8 @@ export default function PicksForYou() {
     activeTab === "All"
       ? products
       : activeTab === "Popular"
-      ? products.filter((p) => popularBadges.has(p.badge))
-      : products.filter((p) => p.badge === "Newest");
+        ? products.filter((p) => popularBadges.has(p.badge))
+        : products.filter((p) => p.badge === "Newest");
 
   const totalPages = Math.max(1, Math.ceil(filteredProducts.length / CARDS_PER_PAGE));
 
@@ -121,7 +129,7 @@ export default function PicksForYou() {
 
   return (
     <section className="py-5" >
-      <div className="max-w-[1360px] mx-auto px-6">
+      <div className="px-10 mx-auto">
 
         {/* Header */}
         <div className="flex flex-wrap items-start justify-between gap-4 mb-8">
@@ -165,8 +173,8 @@ export default function PicksForYou() {
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`px-[18px] py-[6px] rounded-full text-[13px] font-bold tracking-[0.04em] transition ${activeTab === tab
-                  ? "bg-white text-[#2F4191]"
-                  : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
+                ? "bg-white text-[#2F4191]"
+                : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
                 }`}
             >
               {tab}
@@ -175,7 +183,7 @@ export default function PicksForYou() {
         </div>
 
         {/* Products */}
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-5 md:grid-cols-2 sm:grid-cols-1">
           {visible.map((product, i) => (
             <div
               key={i}
@@ -225,7 +233,7 @@ export default function PicksForYou() {
                 />
               </div>
 
-               <Link href="/about-us">
+              <Link href="/about-us">
                 <div
                   className="know-btn inline-flex items-center gap-3 px-6 py-2 rounded-full cursor-pointer mt-2"
                   style={{
@@ -269,8 +277,8 @@ export default function PicksForYou() {
               key={i}
               onClick={() => setPage(i)}
               className={`h-[6px] transition-all ${i === page
-                  ? "w-[20px] bg-white rounded-[3px]"
-                  : "w-[6px] bg-white/30 rounded-full"
+                ? "w-[20px] bg-white rounded-[3px]"
+                : "w-[6px] bg-white/30 rounded-full"
                 }`}
             />
           ))}

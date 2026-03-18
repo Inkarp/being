@@ -5,8 +5,6 @@ import Link from 'next/link';
 import SearchOverlay from './SearchOverlay';
 import Image from 'next/image';
 
-
-
 // Line1 now just types "India" — the logo is rendered separately
 const FULL_LINE1 = 'India';
 const FULL_LINE2 = 'Scientific Solutions';
@@ -344,7 +342,7 @@ export default function HeroOne() {
           </div>
         </div>
 
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white opacity-100 animate-bounce">
+        <div className="absolute bottom-20 hidden lg:block left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white opacity-100 animate-bounce">
           <div className="w-[20px] h-[32px] border-2 border-white rounded-xl relative">
             <div className="absolute top-[5px] left-1/2 -translate-x-1/2 w-[4px] h-[7px] bg-[#2F4191] rounded"></div>
           </div>
