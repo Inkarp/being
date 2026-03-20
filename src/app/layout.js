@@ -11,6 +11,7 @@ import { ProductProvider } from "./context/ProductContext";
 import ProductsSidebar from "./ProductsSidebar";
 import SocialContactBar from "./SocialContactBar";
 import FestivalUpdates from "./FestivalUpdates";
+import LastViewedProduct from "./LastViewedProduct";
 
 
 const geistSans = Geist({
@@ -76,6 +77,7 @@ export default function RootLayout({ children }) {
         </ProductProvider>
         <ChatModal />
         <Footer />
+        <LastViewedProduct />
       </body>
     </html>
   );

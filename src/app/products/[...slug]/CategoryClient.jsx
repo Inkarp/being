@@ -49,6 +49,8 @@ export default function CategoryClient() {
     fetchCategory();
   }, [slug, setCategoryData]);
 
+
+
   if (loading) {
     return <Loading />;
     // return (
@@ -67,6 +69,7 @@ export default function CategoryClient() {
     //   </div>
     // );
   }
+
 
 
   if (!data) {
@@ -94,6 +97,8 @@ export default function CategoryClient() {
     setActiveSub(sub.name);
     setActiveSubSlug(sub.slug);
   };
+
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -179,6 +184,15 @@ export default function CategoryClient() {
                   <Link
                     key={model.meta.slug}
                     href={`/products/${slug}/${activeSubSlug}/${model.meta.slug}`}
+                    onClick={() => {
+                      localStorage.setItem(
+                        'lastProduct',
+                        JSON.stringify({
+                          name: model.title,
+                          url: `/products/${slug}/${activeSubSlug}/${model.meta.slug}`,
+                        })
+                      );
+                    }}
                     className="group relative flex flex-col rounded-xl border border-gray-300 bg-white shadow-sm hover:shadow-md transition overflow-hidden"
 
                   >
@@ -200,7 +214,7 @@ export default function CategoryClient() {
                         {model.overview}
                       </p>
 
-                      <div className="absolute inset-0 flex items-end justify-between px-6 py-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                      {/* <div className="absolute inset-0 flex items-end justify-between px-6 py-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
                         <div className="flex items-center justify-center gap-5 border border-white/30 rounded-full px-3 py-2 bg-white">
                           <span className="text-black font-medium text-sm">
                             View Details
@@ -224,9 +238,9 @@ export default function CategoryClient() {
                             />
                           </div>
                         </div>
-                      </div>
+                      </div> */}
 
-                      {/* <button
+                       <button
                         type="button"
                         className="mt-3 inline-flex items-center justify-between gap-3 px-3 py-1.5 border border-[#2F4191]/20 rounded-full hover:bg-[#2F4191]/5 transition"
                       >
@@ -253,7 +267,7 @@ export default function CategoryClient() {
                             className="absolute top-1/2 left-1/2 text-white transform -translate-x-1/2 -translate-y-1/2"
                           />
                         </div>
-                      </button> */}
+                      </button> 
                     </div>
                   </Link>
                 ))}

@@ -78,6 +78,8 @@ export default function Model() {
     const [isServiceRenewalOpen, setIsServiceRenewalOpen] = useState(false);
     const [isPardotOpen, setIsPardotOpen] = useState(false);
 
+    const [showImage, setShowImage] = useState(false);
+
     /* ---------------- DATA LOADING ---------------- */
     useEffect(() => {
         if (!categorySlug || !subSlug || !modelSlug) return;
@@ -180,11 +182,14 @@ export default function Model() {
                                 return (
                                     <button
                                         key={m.meta.slug}
-                                        onClick={() =>
-                                            router.push(
-                                                `/products/${categorySlug}/${subSlug}/${m.meta.slug}`
-                                            )
-                                        }
+                                        onClick={() => {
+                                            const product = {
+                                                name: m.title,
+                                                url: `/products/${categorySlug}/${subSlug}/${m.meta.slug}`,
+                                            };
+                                            localStorage.setItem('lastProduct', JSON.stringify(product));
+                                            router.push(product.url);
+                                        }}
                                         className={`w-full flex items-center justify-between rounded-xl p-3 transition-all duration-300 ${isActive
                                             ? 'bg-[#2F4191] text-white shadow-md'
                                             : 'bg-gray-50 hover:bg-gray-100 text-gray-800'
@@ -262,11 +267,11 @@ export default function Model() {
                                     priority
                                 />
                             )}
-                            <div className='p-2 bg-[#2F4191]/20 absolute bottom-3 right-3 rounded-full hover:bg-[#2F4191]/40 cursor-pointer'>
-                                <MdZoomOutMap
-                                    size={24}
-
-                                />
+                            <div
+                                onClick={() => setShowImage(true)}
+                                className="p-2 bg-[#2F4191]/20 absolute bottom-3 right-3 rounded-full hover:bg-[#2F4191]/40 cursor-pointer"
+                            >
+                                <MdZoomOutMap size={24} />
                             </div>
 
                             <Image
@@ -306,7 +311,7 @@ export default function Model() {
                     subcategory: subSlug,
                 }}
             />
-            
+
             <PriceEnquiryForm
                 isOpen={isPriceOpen}
                 onClose={() => setIsPriceOpen(false)}
@@ -329,7 +334,7 @@ export default function Model() {
                 product={{
                     title: product.title,
                     thumbnail: product.meta.thumbnail,
-                    price: product.price,  
+                    price: product.price,
                 }}
             />
 
@@ -353,7 +358,7 @@ export default function Model() {
                     subcategory: subSlug,
                 }}
             />
-            
+
             {/* {subCategory?.models?.length > 1 && (
                 <PopupModal
                     models={subCategory.models}
@@ -396,6 +401,41 @@ export default function Model() {
                         </button>
                         <ParadotForm />
                     </div>
+                </div>
+            )}
+
+            {showImage && (
+                <div
+                    className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-6"
+                    onClick={() => setShowImage(false)}
+                >
+                    {/* Close button */}
+                    <button
+                        className="absolute top-6 right-6 text-white text-2xl"
+                        onClick={() => setShowImage(false)}
+                    >
+                        ✕
+                    </button>
+
+                    {product.gem && (
+                        <Image
+                            src="/Gem.png"
+                            alt="Featured Product"
+                            width={160}
+                            height={160}
+                            className="absolute top-10 sm:w-50 sm:h-50 right-1/5 z-10 bg-white"
+                            priority
+                        />
+                    )}
+
+                    {/* Image */}
+                    <Image
+                        src={product.thumbnail}
+                        alt={product.title}
+                        width={800}
+                        height={800}
+                        className="object-contain max-h-[90vh] max-w-[90vw]"
+                    />
                 </div>
             )}
         </section>

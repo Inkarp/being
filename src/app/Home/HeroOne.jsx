@@ -12,7 +12,7 @@ const SUBTITLE =
   'Discover our cutting-edge solutions to accelerate scientific excellence.';
 const TYPING_SPEED = 80;
 
-const TRUST_PILLS = ['ISO Certified', '10+ Years', '5,000+ Instruments'];
+const TRUST_PILLS = ['Your Trusted Lab Patners', 'Available Service', '100+ Instruments'];
 
 export default function HeroOne() {
   const [animKey, setAnimKey] = useState(0);
@@ -314,7 +314,7 @@ export default function HeroOne() {
               </p>
             )}
 
-            {/* {ctaVisible && (
+            {ctaVisible && (
               <div className="space-y-4">
                 <Link href="/products">
                   <button
@@ -322,7 +322,7 @@ export default function HeroOne() {
                       ctaVisible ? 'cta-visible' : ''
                     }`}
                   >
-                    Explore Products <FaArrowRight size={13} />
+                    Request a Quote <FaArrowRight size={13} />
                   </button>
                 </Link>
 
@@ -338,7 +338,7 @@ export default function HeroOne() {
                   ))}
                 </div>
               </div>
-            )} */}
+            )}
           </div>
         </div>
 
