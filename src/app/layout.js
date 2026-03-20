@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preload" href="/favicon.png" as="image" />
       </head>
-      <body className="bg-white">
+      <body className="bg-white ">
         <ScrollToTop />
         <Header />
         {/* <ShareButton /> */}
@@ -71,7 +71,7 @@ export default function RootLayout({ children }) {
         <FestivalUpdates />
         <ProductsSidebar />
         <ProductProvider>
-          <main className="">
+          <main className="w-[90%] mx-auto">
             {children}
           </main>
         </ProductProvider>

@@ -30,7 +30,7 @@ export default function ShareButton() {
   ];
 
   return (
-    <div className="fixed right-2 top-1/2 -translate-y-1/2 z-40">
+    <div className="fixed left-2 top-1/2 -translate-y-1/2 z-40">
       <div className="flex flex-col items-center bg-white/70 border border-black backdrop-blur rounded-full shadow-xl overflow-hidden">
         
         {socialLinks.map((item, index) => (

@@ -300,7 +300,7 @@ export default function Model() {
                 setIsServiceRenewalOpen={setIsServiceRenewalOpen}
                 setIsPardotOpen={setIsPardotOpen}
             />
-            <div className='text-center py-2'>Disclaimer: Specifications are indicative. Performance may vary depending on load, usage, and ambient conditions.</div>
+            <div className='text-center py-2 italic'>Disclaimer: Specifications are indicative. Performance may vary depending on load, usage, and ambient conditions.</div>
 
             <EnquiryModal
                 isOpen={isEnquiryOpen}
@@ -423,7 +423,7 @@ export default function Model() {
                             alt="Featured Product"
                             width={160}
                             height={160}
-                            className="absolute top-10 sm:w-50 sm:h-50 right-1/5 z-10 bg-white"
+                            className="absolute top-10 lg:w-50 lg:w-10 right-1/5 z-10 bg-white"
                             priority
                         />
                     )}
