@@ -1,10 +1,14 @@
 "use client"
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
 // Animated checkmark SVG
 function CheckmarkCircle({ color }) {
+ 
   const [drawn, setDrawn] = useState(false);
+
+
   useEffect(() => {
     const t = setTimeout(() => setDrawn(true), 200);
     return () => clearTimeout(t);
@@ -76,6 +80,7 @@ function InfoPill({ icon, label, value, color }) {
 }
 
 export default function Thanks() {
+   const router = useRouter();
   const [visible, setVisible] = useState(false);
   const [countDown, setCountDown] = useState(10);
 
@@ -86,18 +91,22 @@ export default function Thanks() {
 
   // countdown timer (UI only — wire up router.push('/') in real Next.js)
   useEffect(() => {
-    if (countDown <= 0) return;
+    if (countDown <= 0) {
+      router.push('/'); // ✅ redirect to home
+      return;
+    }
+
     const t = setTimeout(() => setCountDown((c) => c - 1), 1000);
     return () => clearTimeout(t);
-  }, [countDown]);
+  }, [countDown,router]);
 
   const particles = [
-    { width: 6,  height: 6,  top: "12%", left: "8%",  background: "#2F419133", animation: "floatA 6s ease-in-out infinite" },
+    { width: 6, height: 6, top: "12%", left: "8%", background: "#2F419133", animation: "floatA 6s ease-in-out infinite" },
     { width: 10, height: 10, top: "20%", right: "10%", background: "#2B7EC233", animation: "floatB 8s ease-in-out infinite" },
-    { width: 5,  height: 5,  top: "70%", left: "5%",  background: "#FF993344", animation: "floatA 7s 1s ease-in-out infinite" },
-    { width: 8,  height: 8,  bottom: "15%", right: "7%", background: "#13880833", animation: "floatB 9s 2s ease-in-out infinite" },
-    { width: 4,  height: 4,  top: "45%", left: "3%",  background: "#2F419122", animation: "floatA 5s 0.5s ease-in-out infinite" },
-    { width: 7,  height: 7,  top: "80%", right: "15%", background: "#FF993322", animation: "floatB 6.5s 1.5s ease-in-out infinite" },
+    { width: 5, height: 5, top: "70%", left: "5%", background: "#FF993344", animation: "floatA 7s 1s ease-in-out infinite" },
+    { width: 8, height: 8, bottom: "15%", right: "7%", background: "#13880833", animation: "floatB 9s 2s ease-in-out infinite" },
+    { width: 4, height: 4, top: "45%", left: "3%", background: "#2F419122", animation: "floatA 5s 0.5s ease-in-out infinite" },
+    { width: 7, height: 7, top: "80%", right: "15%", background: "#FF993322", animation: "floatB 6.5s 1.5s ease-in-out infinite" },
   ];
 
   const ringProgress = ((10 - countDown) / 10) * 100;
@@ -176,12 +185,12 @@ export default function Thanks() {
         className="ty-root"
         style={{
           fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
-          background: "#F0ECE4",
+          background: "black",
           minHeight: "100vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "40px 20px",
+          padding: "20px 20px",
           position: "relative",
           overflow: "hidden",
         }}
@@ -209,7 +218,7 @@ export default function Thanks() {
           background: "#fff",
           border: "1px solid rgba(0,0,0,0.07)",
           borderRadius: 24,
-          padding: "52px 48px",
+          padding: "30px 30px",
           maxWidth: 580, width: "100%",
           boxShadow: "0 24px 80px rgba(0,0,0,0.1)",
           opacity: visible ? 1 : 0,
@@ -258,13 +267,13 @@ export default function Thanks() {
           {/* Heading */}
           <h1 style={{
             fontFamily: "Georgia, 'Times New Roman', serif",
-            fontSize: "clamp(1.7rem, 4vw, 2.3rem)",
+            fontSize: "clamp(1.5rem, 2vw, 2.3rem)",
             fontWeight: 700, color: "#1a1a1a",
             textAlign: "center", lineHeight: 1.2,
             letterSpacing: "-0.02em", marginBottom: 14,
             animation: visible ? "fadeUp 0.6s 0.45s both ease" : "none",
           }}>
-            Thank You for<br />Reaching Out!
+            Thank You for Reaching Out!
           </h1>
 
           {/* Subtitle */}
@@ -287,10 +296,10 @@ export default function Thanks() {
               animation: visible ? "fadeUp 0.6s 0.65s both ease" : "none",
             }}
           >
-            <InfoPill icon="📬" label="Response time"  value="Within 24 hours"    color="#2F4191" />
-            <InfoPill icon="📞" label="Support line"   value="+91 40 2784 5678"   color="#2B7EC2" />
-            <InfoPill icon="✉️" label="Email"          value="info@beingindia.com" color="#0e7490" />
-            <InfoPill icon="🏢" label="Location"       value="Hyderabad, India"   color="#065f46" />
+            <InfoPill icon="📬" label="Response time" value="Within 24 hours" color="#2F4191" />
+            <InfoPill icon="📞" label="Support line" value="+91 40 2784 5678" color="#2B7EC2" />
+            <InfoPill icon="✉️" label="Email" value="info@beingindia.com" color="#0e7490" />
+            <InfoPill icon="🏢" label="Location" value="Hyderabad, India" color="#065f46" />
           </div>
 
           {/* Divider */}

@@ -77,7 +77,7 @@ export default function ParadotForm() {
             <style jsx global>{`
 
             body{
-            font-family:Roboto,sans-serif;
+            font-family:DM Sans;
             background:linear-gradient(135deg,#eef2ff,#f8fafc,#eef2ff);
             background-size:200% 200%;
             animation:bgmove 8s infinite alternate;

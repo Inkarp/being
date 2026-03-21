@@ -58,14 +58,7 @@ export default function PopupModel({ models, categorySlug, subSlug }) {
 
                     <button
                         onClick={() => setIsOpen(false)}
-                        className="
-              group relative h-9 w-9 rounded-2xl 
-              bg-white/10 hover:bg-white/20 
-              backdrop-blur-sm border border-white/20
-              text-white/90 hover:text-white
-              shadow-lg hover:shadow-xl
-              transition-all duration-200 hover:scale-110
-            "
+                        className="group relative h-9 w-9 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white/90 hover:text-whiteshadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110"
                     >
                         ×
                         <span className="absolute inset-0 rounded-2xl bg-white/20 scale-0 group-hover:scale-100 transition-transform origin-center duration-200" />

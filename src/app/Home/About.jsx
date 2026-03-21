@@ -152,7 +152,6 @@ export default function About() {
       <section
         ref={sectionRef}
         className="w-full py-5 px-4"
-        // style={{ background: 'linear-gradient(160deg, #275c9c 0%, #6cacdf 50%, #f0f7ff 100%)' }}
       >
         <div className="px-10 mx-auto">
           {/* ── Main Two-Column Grid ── */}

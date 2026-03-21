@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, Fragment } from "react";
 import Link from "next/link";
 
 const categories = [
-  { name: "Ovens",               link: "/products/ovens" },
+  { name: "Ovens",               link: "/products/laboratory-ovens" },
   { name: "Incubators",          link: "/products/incubators" },
   { name: "Chillers",            link: "/products/chillers" },
   { name: "Water Baths",         link: "/products/water-baths" },

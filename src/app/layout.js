@@ -71,7 +71,9 @@ export default function RootLayout({ children }) {
         <FestivalUpdates />
         <ProductsSidebar />
         <ProductProvider>
-          <main className="w-[90%] mx-auto">
+          <main 
+          // className="w-[90%] mx-auto"
+          >
             {children}
           </main>
         </ProductProvider>

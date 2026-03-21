@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import Image from 'next/image';
 
-// ─── Regex & Constants ─────────────────────────────────────────────────────────
+// ─── Regex & Constants ────────────────────────────────────────────────────────
 
 const GST_REGEX   = /^[0-3][0-9][A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -100,246 +100,349 @@ function sanitizeField(name, value) {
 
 function validateAll(f) {
   const errs = {};
-  if (!f.name.trim())                         errs.name        = 'Full name is required';
-  if (!f.company.trim())                      errs.company     = 'Company name is required';
-  if (f.gstNumber && !GST_REGEX.test(f.gstNumber))
-                                              errs.gstNumber   = 'Enter a valid 15-digit GSTIN';
-  if (!f.industry.trim())                     errs.industry    = 'Industry is required';
-  if (!f.designation.trim())                  errs.designation = 'Designation is required';
-  if (!f.department.trim())                   errs.department  = 'Department is required';
-  if (!PHONE_REGEX.test(f.phone))             errs.phone       = 'Enter a valid 10-digit number';
-  if (!EMAIL_REGEX.test(f.email))             errs.email       = 'Enter a valid email address';
-  if (!f.state)                               errs.state       = 'Please select your state';
-  if (!f.city.trim())                         errs.city        = 'City is required';
+  if (!f.name.trim())                                    errs.name        = 'Full name is required';
+  if (!f.company.trim())                                 errs.company     = 'Company name is required';
+  if (f.gstNumber && !GST_REGEX.test(f.gstNumber))      errs.gstNumber   = 'Enter a valid 15-digit GSTIN';
+  if (!f.industry.trim())                                errs.industry    = 'Industry is required';
+  if (!f.designation.trim())                             errs.designation = 'Designation is required';
+  if (!f.department.trim())                              errs.department  = 'Department is required';
+  if (!PHONE_REGEX.test(f.phone))                        errs.phone       = 'Enter a valid 10-digit number';
+  if (!EMAIL_REGEX.test(f.email))                        errs.email       = 'Enter a valid email address';
+  if (!f.state)                                          errs.state       = 'Please select your state';
+  if (!f.city.trim())                                    errs.city        = 'City is required';
   return errs;
 }
 
-// ─── Design tokens ────────────────────────────────────────────────────────────
+// ─── Inline SVG Icons ─────────────────────────────────────────────────────────
 
-const INPUT_BASE = [
-  'w-full h-13 px-4 py-3',
-  'text-[15px] text-[#0f172a] font-medium',
-  'border-2 border-[#94a3b8]',
-  'rounded-xl bg-white outline-none',
-  'transition-all duration-150',
-  'placeholder:text-[#94a3b8] placeholder:font-normal',
-  'focus:border-[#2F4191] focus:ring-4 focus:ring-[#2F4191]/15',
-  'hover:border-[#64748b]',
-].join(' ');
+const IconClose = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
+);
+const IconSend = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+  </svg>
+);
+const IconAlert = () => (
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
+  </svg>
+);
+const IconChevron = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </svg>
+);
+const IconLock = () => (
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+    <path d="M7 11V7a5 5 0 0110 0v4"/>
+  </svg>
+);
+const IconUser = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+  </svg>
+);
+const IconBuilding = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+  </svg>
+);
+const IconPin = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+  </svg>
+);
+const IconMsg = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+  </svg>
+);
+const IconSpinner = () => (
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+    <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.3)" strokeWidth="3"/>
+    <path d="M4 12a8 8 0 018-8" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+  </svg>
+);
 
-const INPUT_ERROR    = 'border-2 border-red-400 bg-red-50 focus:ring-red-200 focus:border-red-500';
-const INPUT_READONLY = 'border-2 border-[#cbd5e1] bg-slate-50 text-[#64748b] cursor-not-allowed';
+// ─── Small sub-components ─────────────────────────────────────────────────────
 
-// ─── Field Components ─────────────────────────────────────────────────────────
-
-function Label({ children, required, htmlFor }) {
+function SectionHeader({ icon, label }) {
   return (
-    <label htmlFor={htmlFor} className="block text-sm font-bold text-[#1e293b] mb-2 tracking-wide">
-      {children}
-      {required && <span className="text-red-500 ml-1 text-base leading-none">*</span>}
-    </label>
-  );
-}
-
-function ErrorMsg({ msg }) {
-  if (!msg) return null;
-  return (
-    <p className="flex items-center gap-1.5 text-[13px] font-semibold text-red-600 mt-1.5">
-      <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
-      </svg>
-      {msg}
-    </p>
-  );
-}
-
-function TextInput({ label, name, value, onChange, errors, type = 'text', placeholder, required, readOnly, id }) {
-  const err     = errors?.[name];
-  const inputId = id || name;
-  return (
-    <div>
-      <Label required={required} htmlFor={inputId}>{label}</Label>
-      <input
-        id={inputId} name={name} type={type} value={value}
-        onChange={onChange} placeholder={placeholder}
-        required={required} readOnly={readOnly}
-        className={readOnly ? INPUT_READONLY + ' w-full h-13 px-4 py-3 text-[15px] font-medium rounded-xl border-2 outline-none' : err ? `${INPUT_BASE} ${INPUT_ERROR}` : INPUT_BASE}
-      />
-      <ErrorMsg msg={err} />
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10, margin: '4px 0 2px' }}>
+      <span style={{
+        width: 30, height: 30, borderRadius: 8,
+        background: '#EFF6FF', color: '#1E3A8A',
+        display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+      }}>
+        {icon}
+      </span>
+      <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#1E3A8A' }}>
+        {label}
+      </span>
+      <span style={{ flex: 1, height: 1, background: '#DBEAFE', borderRadius: 1 }} />
     </div>
   );
 }
 
-// ─── Email Input with personal / official toggle ──────────────────────────────
-function EmailInput({ value, onChange, errors }) {
-  const [type, setType] = useState('personal'); // 'personal' | 'official'
-  const err = errors?.email;
+function FieldLabel({ children, htmlFor, optional }) {
+  return (
+    <label htmlFor={htmlFor} style={{ display: 'block', fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#475569', marginBottom: 6 }}>
+      {children}
+      {optional && <span style={{ fontSize: 10, fontWeight: 400, color: '#94A3B8', marginLeft: 5, textTransform: 'none', letterSpacing: 0 }}>— optional</span>}
+    </label>
+  );
+}
 
-  const placeholder = type === 'personal' ? 'yourname@gmail.com' : 'name@company.com';
-  const hint        = type === 'personal'
-    ? 'Personal email (Gmail, Outlook, etc.)'
-    : 'Official / work email address';
+function FieldError({ msg }) {
+  if (!msg) return null;
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginTop: 5, color: '#DC2626', fontSize: 12, fontWeight: 500 }}>
+      <IconAlert />{msg}
+    </div>
+  );
+}
 
+// Base input style factory
+function inputStyle(hasError, readonly = false) {
+  return {
+    width: '100%', boxSizing: 'border-box',
+    border: `1.5px solid ${hasError ? '#F87171' : readonly ? '#E2E8F0' : '#CBD5E1'}`,
+    borderRadius: 10,
+    padding: '10px 14px',
+    fontSize: 14, fontFamily: 'inherit',
+    color: readonly ? '#64748B' : '#0F172A',
+    background: hasError ? '#FEF2F2' : readonly ? '#F8FAFC' : '#FFFFFF',
+    outline: 'none',
+    cursor: readonly ? 'not-allowed' : 'auto',
+    borderStyle: readonly ? 'dashed' : 'solid',
+    transition: 'border-color 0.18s, box-shadow 0.18s',
+  };
+}
+
+// ─── Field components ─────────────────────────────────────────────────────────
+
+function TextInput({ label, id, name, value, onChange, placeholder, required, errors, optional }) {
+  const err = errors?.[name];
+  const [focused, setFocused] = useState(false);
   return (
     <div>
-      <Label required htmlFor="email">Email Address</Label>
-
-      {/* Toggle pill */}
-      <div className="inline-flex mb-2.5 p-1 rounded-xl bg-slate-100 border border-[#cbd5e1] gap-1">
-        {['personal', 'official'].map((t) => (
-          <button
-            key={t}
-            type="button"
-            onClick={() => setType(t)}
-            className={[
-              'px-4 py-1.5 rounded-lg text-[13px] font-bold capitalize transition-all duration-150',
-              type === t
-                ? 'bg-[#2F4191] text-white shadow-sm'
-                : 'text-[#64748b] hover:text-[#1e293b]',
-            ].join(' ')}
-          >
-            {t === 'personal' ? '👤 Personal' : '🏢 Official'}
-          </button>
-        ))}
-      </div>
-
+      <FieldLabel htmlFor={id || name} optional={optional}>{label}{required && <span style={{ color: '#EF4444', marginLeft: 3 }}>*</span>}</FieldLabel>
       <input
-        id="email" name="email" type="email"
-        value={value} onChange={onChange}
-        placeholder={placeholder} required
-        className={err ? `${INPUT_BASE} ${INPUT_ERROR}` : INPUT_BASE}
+        id={id || name} name={name} value={value} onChange={onChange}
+        placeholder={placeholder} required={required}
+        onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
+        style={{
+          ...inputStyle(!!err),
+          borderColor: err ? '#F87171' : focused ? '#2563EB' : '#CBD5E1',
+          boxShadow: focused && !err ? '0 0 0 3px rgba(59,130,246,0.1)' : 'none',
+        }}
       />
-      <p className="text-[11px] text-[#64748b] font-medium mt-1.5">{hint}</p>
-      <ErrorMsg msg={err} />
+      <FieldError msg={err} />
+    </div>
+  );
+}
+
+function GSTInput({ value, onChange, errors }) {
+  const err = errors?.gstNumber;
+  const hasValue = value.length > 0;
+  const isValid  = hasValue && GST_REGEX.test(value);
+  const [focused, setFocused] = useState(false);
+  return (
+    <div>
+      <FieldLabel htmlFor="gstNumber" optional>GST Number</FieldLabel>
+      <div style={{ position: 'relative' }}>
+        <input
+          id="gstNumber" name="gstNumber" value={value} onChange={onChange}
+          placeholder="22AAAAA0000A1Z5" maxLength={15}
+          onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
+          style={{
+            ...inputStyle(!!err || (hasValue && !isValid)),
+            fontFamily: 'monospace', letterSpacing: '0.1em', textTransform: 'uppercase',
+            paddingRight: 40,
+            borderColor: (err || (hasValue && !isValid)) ? '#F87171' : focused ? '#2563EB' : '#CBD5E1',
+            boxShadow: focused ? '0 0 0 3px rgba(59,130,246,0.1)' : 'none',
+          }}
+        />
+        {hasValue && (
+          <span style={{
+            position: 'absolute', right: 13, top: '50%', transform: 'translateY(-50%)',
+            fontSize: 15, fontWeight: 700, color: isValid ? '#059669' : '#DC2626',
+          }}>
+            {isValid ? '✓' : '✗'}
+          </span>
+        )}
+      </div>
+      <p style={{ fontSize: 11, color: '#94A3B8', marginTop: 5 }}>Format: 22AAAAA0000A1Z5 · 15 characters</p>
+      <FieldError msg={err} />
     </div>
   );
 }
 
 function PhoneInput({ value, onChange, errors }) {
   const err = errors?.phone;
+  const [focused, setFocused] = useState(false);
   return (
     <div>
-      <Label required htmlFor="phone">Phone Number</Label>
-      <div className={[
-        'flex rounded-xl overflow-hidden border-2 transition-all duration-150 focus-within:ring-4',
-        err
-          ? 'border-red-400 bg-red-50 focus-within:ring-red-200 focus-within:border-red-500'
-          : 'border-[#94a3b8] hover:border-[#64748b] focus-within:border-[#2F4191] focus-within:ring-[#2F4191]/15',
-      ].join(' ')}>
-        <span className="flex items-center gap-1.5 px-3.5 bg-slate-100 border-r-2 border-[#94a3b8] text-[#334155] text-sm font-bold shrink-0 select-none">
+      <FieldLabel htmlFor="phone">Phone Number<span style={{ color: '#EF4444', marginLeft: 3 }}>*</span></FieldLabel>
+      <div style={{
+        display: 'flex', borderRadius: 10, overflow: 'hidden',
+        border: `1.5px solid ${err ? '#F87171' : focused ? '#2563EB' : '#CBD5E1'}`,
+        boxShadow: focused && !err ? '0 0 0 3px rgba(59,130,246,0.1)' : 'none',
+        transition: 'border-color 0.18s, box-shadow 0.18s',
+        background: err ? '#FEF2F2' : '#fff',
+      }}>
+        <span style={{
+          display: 'flex', alignItems: 'center', gap: 6, padding: '0 12px',
+          background: '#F8FAFC', borderRight: '1.5px solid #E2E8F0',
+          fontSize: 13, fontWeight: 600, color: '#334155', whiteSpace: 'nowrap', userSelect: 'none',
+        }}>
           🇮🇳 +91
         </span>
         <input
-          id="phone" name="phone" value={value} onChange={onChange} required
-          placeholder="Enter 10-digit number" maxLength={10} inputMode="numeric"
-          className="flex-1 px-4 py-3 text-[15px] font-medium text-[#0f172a] bg-white outline-none placeholder:text-[#94a3b8] placeholder:font-normal"
+          id="phone" name="phone" value={value} onChange={onChange}
+          placeholder="10-digit number" maxLength={10} inputMode="numeric" required
+          onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
+          style={{
+            flex: 1, border: 'none', outline: 'none', padding: '10px 14px',
+            fontSize: 14, fontFamily: 'inherit', color: '#0F172A',
+            background: 'transparent',
+          }}
         />
       </div>
-      <ErrorMsg msg={err} />
+      <FieldError msg={err} />
+    </div>
+  );
+}
+
+function EmailInput({ value, onChange, errors }) {
+  const [emailType, setEmailType] = useState('personal');
+  const err = errors?.email;
+  const [focused, setFocused] = useState(false);
+  return (
+    <div>
+      <FieldLabel htmlFor="email">Email Address<span style={{ color: '#EF4444', marginLeft: 3 }}>*</span></FieldLabel>
+
+      {/* Toggle */}
+      <div style={{
+        display: 'inline-flex', background: '#F1F5F9', borderRadius: 8,
+        padding: 3, gap: 3, marginBottom: 8,
+        border: '1px solid #E2E8F0',
+      }}>
+        {[['personal', 'Personal'], ['official', 'Official']].map(([t, label]) => (
+          <button
+            key={t} type="button" onClick={() => setEmailType(t)}
+            style={{
+              padding: '5px 14px', borderRadius: 6, fontSize: 12, fontWeight: 600,
+              border: 'none', cursor: 'pointer', transition: 'all 0.15s',
+              background: emailType === t ? '#1E3A8A' : 'transparent',
+              color: emailType === t ? '#fff' : '#64748B',
+            }}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
+      <input
+        id="email" name="email" type="email" value={value} onChange={onChange} required
+        placeholder={emailType === 'personal' ? 'yourname@gmail.com' : 'name@company.com'}
+        onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
+        style={{
+          ...inputStyle(!!err),
+          borderColor: err ? '#F87171' : focused ? '#2563EB' : '#CBD5E1',
+          boxShadow: focused && !err ? '0 0 0 3px rgba(59,130,246,0.1)' : 'none',
+        }}
+      />
+      <p style={{ fontSize: 11, color: '#94A3B8', marginTop: 5 }}>
+        {emailType === 'personal' ? 'Personal email (Gmail, Outlook, etc.)' : 'Official / work email address'}
+      </p>
+      <FieldError msg={err} />
     </div>
   );
 }
 
 function StateSelect({ value, onChange, errors }) {
   const err = errors?.state;
+  const [focused, setFocused] = useState(false);
   return (
     <div>
-      <Label required htmlFor="state">State</Label>
-      <div className="relative">
+      <FieldLabel htmlFor="state">State<span style={{ color: '#EF4444', marginLeft: 3 }}>*</span></FieldLabel>
+      <div style={{ position: 'relative' }}>
         <select
           id="state" name="state" value={value} onChange={onChange} required
-          className={[INPUT_BASE, 'pr-10 appearance-none cursor-pointer', err ? INPUT_ERROR : '', !value ? 'text-[#94a3b8]' : 'text-[#0f172a]'].join(' ')}
+          onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
+          style={{
+            ...inputStyle(!!err),
+            paddingRight: 36, appearance: 'none', cursor: 'pointer',
+            color: value ? '#0F172A' : '#94A3B8',
+            borderColor: err ? '#F87171' : focused ? '#2563EB' : '#CBD5E1',
+            boxShadow: focused && !err ? '0 0 0 3px rgba(59,130,246,0.1)' : 'none',
+          }}
         >
-          <option value="" disabled>Select your state</option>
-          {INDIAN_STATES.map((s) => (
-            <option key={s} value={s} className="text-[#0f172a]">{s}</option>
-          ))}
+          <option value="" disabled>Select state</option>
+          {INDIAN_STATES.map(s => <option key={s} value={s}>{s}</option>)}
         </select>
-        <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[#64748b]">
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
+        <span style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: '#94A3B8' }}>
+          <IconChevron />
         </span>
       </div>
-      <ErrorMsg msg={err} />
+      <FieldError msg={err} />
     </div>
   );
 }
 
-function GSTInput({ value, onChange, errors }) {
-  const err      = errors?.gstNumber;
-  const hasValue = value.length > 0;
-  const isValid  = hasValue && GST_REGEX.test(value);
-  const isWrong  = hasValue && !isValid;
-  return (
-    <div>
-      <label htmlFor="gstNumber" className="block text-sm font-bold text-[#1e293b] mb-2 tracking-wide">
-        GST Number{' '}
-        <span className="text-[11px] text-[#94a3b8] font-normal normal-case tracking-normal">— optional</span>
-      </label>
-      <div className="relative">
-        <input
-          id="gstNumber" name="gstNumber" value={value} onChange={onChange}
-          placeholder="Leave blank if not available" maxLength={15}
-          className={[INPUT_BASE, 'pr-10 font-mono tracking-widest uppercase', err || isWrong ? INPUT_ERROR : ''].join(' ')}
-        />
-        {hasValue && (
-          <span className={`absolute right-3.5 top-1/2 -translate-y-1/2 font-bold text-base ${isValid ? 'text-green-600' : 'text-red-500'}`}>
-            {isValid ? '✓' : '✗'}
-          </span>
-        )}
-      </div>
-      <p className="text-[11px] text-[#64748b] font-medium mt-1.5">
-        Format: <span className="font-mono tracking-wider">22AAAAA0000A1Z5</span> (15 chars)
-      </p>
-      <ErrorMsg msg={err} />
-    </div>
-  );
-}
-
-function SectionTitle({ icon, title }) {
-  return (
-    <div className="flex items-center gap-3 pt-2 pb-1">
-      <div className="w-7 h-7 rounded-lg bg-[#2F4191]/10 flex items-center justify-center shrink-0 text-sm">
-        {icon}
-      </div>
-      <span className="text-xs font-black uppercase tracking-[3px] text-[#2F4191]">{title}</span>
-      <div className="flex-1 h-[2px] bg-[#2F4191]/12 rounded-full" />
-    </div>
-  );
-}
-
-// ─── Main Component ───────────────────────────────────────────────────────────
+// ─── Main component ───────────────────────────────────────────────────────────
 
 export default function PriceEnquiryForm({ isOpen, onClose, productData, onSuccess }) {
   const [formData, setFormData] = useState(INITIAL_FORM);
   const [errors,   setErrors]   = useState({});
   const [loading,  setLoading]  = useState(false);
   const [apiError, setApiError] = useState('');
+  const [visible,  setVisible]  = useState(false);
+  const overlayRef = useRef(null);
 
+  /* Animate in/out */
   useEffect(() => {
     if (isOpen) {
-      setFormData(prev => ({
-        ...prev,
-        product: productData?.model || '',
-        price:   productData?.price || '',
-      }));
+      requestAnimationFrame(() => setVisible(true));
+      document.body.style.overflow = 'hidden';
+    } else {
+      setVisible(false);
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
+
+  /* Sync product */
+  useEffect(() => {
+    if (isOpen && productData) {
+      setFormData(prev => ({ ...prev, product: productData.model || '', price: productData.price || '' }));
       setErrors({});
       setApiError('');
     }
   }, [isOpen, productData]);
 
+  /* Escape key */
   useEffect(() => {
     if (!isOpen) return;
-    const fn = (e) => { if (e.key === 'Escape') onClose(); };
+    const fn = (e) => { if (e.key === 'Escape') handleClose(); };
     window.addEventListener('keydown', fn);
     return () => window.removeEventListener('keydown', fn);
-  }, [isOpen, onClose]);
-
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
+
+  const handleClose = () => {
+    setVisible(false);
+    setTimeout(() => {
+      setFormData(INITIAL_FORM);
+      setErrors({});
+      setApiError('');
+      onClose();
+    }, 280);
+  };
 
   const handleChange = useCallback((e) => {
     const { name, value } = e.target;
@@ -359,10 +462,8 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
       }, 50);
       return;
     }
-
     setLoading(true);
     setApiError('');
-
     const payload = {
       ...formData,
       product:     productData?.model || '',
@@ -370,20 +471,18 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
       submittedAt: new Date().toISOString(),
       ...collectTracking(),
     };
-
     try {
       const res = await fetch('/api/priceEnquiry', {
-        method:  'POST',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(payload),
+        body: JSON.stringify(payload),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
         throw new Error(body?.error || `Server error ${res.status}`);
       }
       onSuccess?.({ product: productData, price: productData?.price });
-      onClose();
-      setFormData(INITIAL_FORM);
+      handleClose();
     } catch (err) {
       console.error('[PriceEnquiry]', err);
       setApiError(err.message || 'Submission failed. Please try again.');
@@ -394,187 +493,336 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
 
   if (!isOpen) return null;
 
+  const errorCount = Object.keys(errors).length;
+
   return (
-    <div
-      className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50"
-      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
-    >
+    <>
+      <style>{css}</style>
+
+      {/* Overlay */}
       <div
-        className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[92vh] flex flex-col border border-[#cbd5e1]"
-        style={{ boxShadow: '0 25px 60px rgba(0,0,0,0.18), 0 0 0 1px rgba(148,163,184,0.3)' }}
+        ref={overlayRef}
+        className={`peq-overlay ${visible ? 'peq-overlay--in' : ''}`}
+        onClick={(e) => { if (e.target === overlayRef.current) handleClose(); }}
+        role="dialog" aria-modal="true" aria-label="Price Enquiry Form"
       >
+        {/* Modal */}
+        <div className={`peq-card ${visible ? 'peq-card--in' : ''}`}>
 
-        {/* ── HEADER ── */}
-        <div className="shrink-0 flex justify-between items-center px-6 py-4 border-b-2 border-[#e2e8f0] bg-gradient-to-r from-[#2F4191]/5 to-[#2B7EC2]/5 rounded-t-2xl">
-          <div>
-            <h2 className="text-2xl font-black text-[#2F4191] tracking-tight">Price Enquiry</h2>
-            <p className="text-sm text-[#64748b] font-medium mt-0.5">Fill in your details to unlock an exclusive quote</p>
+          {/* Accent bar */}
+          <div className="peq-accent-bar" />
+
+          {/* ── HEADER ── */}
+          <div className="peq-header">
+            <div className="peq-header-left">
+              <span className="peq-icon-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>
+                </svg>
+              </span>
+              <div>
+                <p className="peq-eyebrow">Price Enquiry</p>
+                <h2 className="peq-title">Unlock Your Exclusive Quote</h2>
+              </div>
+            </div>
+            <button onClick={handleClose} className="peq-close" aria-label="Close">
+              <IconClose />
+            </button>
           </div>
-          <button
-            onClick={onClose} aria-label="Close"
-            className="w-9 h-9 flex items-center justify-center rounded-xl border-2 border-[#e2e8f0] hover:border-[#94a3b8] hover:bg-slate-50 transition text-[#64748b] hover:text-[#1e293b]"
-          >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-          </button>
-        </div>
-
-        {/* ── SCROLLABLE BODY ── */}
-        <div className="overflow-y-auto flex-1" style={{ scrollbarWidth: 'thin', scrollbarColor: '#94a3b8 transparent' }}>
 
           {/* ── PRODUCT CARD ── */}
           {productData && (
-            <div className="px-6 pt-5 pb-5 border-b-2 border-[#e2e8f0]">
-              <div className="flex items-center gap-4 p-4 bg-gradient-to-r from-[#2F4191]/8 to-[#2B7EC2]/8 rounded-xl border-2 border-[#2F4191]/20">
+            <div className="peq-product">
+              <div className="peq-product-inner">
                 {productData.thumbnail && (
-                  <div className="w-16 h-16 rounded-xl bg-white border-2 border-[#cbd5e1] flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
-                    <Image src={productData.thumbnail} alt={productData.model} width={56} height={56} className="object-contain" />
+                  <div className="peq-product-img">
+                    <Image src={productData.thumbnail} alt={productData.model} width={52} height={52} style={{ objectFit: 'contain' }} />
                   </div>
                 )}
-                <div className="flex-1 min-w-0">
-                  <p className="text-[11px] uppercase tracking-[2px] font-bold text-[#2B7EC2] mb-0.5">Selected Product</p>
-                  <p className="text-base font-black text-[#2F4191] truncate">{productData.model}</p>
+                <div className="peq-product-info">
+                  <p className="peq-product-eyebrow">Selected Product</p>
+                  <p className="peq-product-name">{productData.model}</p>
                 </div>
-                <div className="shrink-0 flex items-center gap-1.5 bg-[#2F4191] text-white px-3.5 py-2 rounded-full text-[11px] font-black uppercase tracking-wider shadow-sm">
-                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/>
-                  </svg>
-                  Exclusive
-                </div>
+                <span className="peq-product-badge">
+                  <IconLock /> Exclusive
+                </span>
               </div>
             </div>
           )}
 
-          {/* ── FORM ── */}
-          <form onSubmit={handleSubmit} noValidate className="px-6 py-6 space-y-6">
+          <div className="peq-divider" />
 
-            {/* ── PERSONAL INFO ── */}
-            <SectionTitle icon="👤" title="Personal Information" />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <TextInput label="Full Name" name="name" value={formData.name}
-                onChange={handleChange} errors={errors} placeholder="e.g. Ravi Kumar" required />
-              <TextInput label="Designation" name="designation" value={formData.designation}
-                onChange={handleChange} errors={errors} placeholder="e.g. Manager, Director" required />
-              <EmailInput value={formData.email} onChange={handleChange} errors={errors} />
-              <PhoneInput value={formData.phone} onChange={handleChange} errors={errors} />
-            </div>
+          {/* ── FORM BODY ── */}
+          <div className="peq-scroll">
+            <form onSubmit={handleSubmit} noValidate className="peq-form">
 
-            {/* ── ORGANISATION ── */}
-            <SectionTitle icon="🏢" title="Organisation Details" />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <TextInput label="Company Name" name="company" value={formData.company}
-                onChange={handleChange} errors={errors} placeholder="Your company name" required />
-              <GSTInput value={formData.gstNumber} onChange={handleChange} errors={errors} />
-              <TextInput label="Industry" name="industry" value={formData.industry}
-                onChange={handleChange} errors={errors} placeholder="e.g. Pharma, Research" required />
-              <TextInput label="Department" name="department" value={formData.department}
-                onChange={handleChange} errors={errors} placeholder="e.g. Procurement, R&D" required />
-            </div>
+              {/* Personal Info */}
+              {/* <SectionHeader icon={<IconUser />} label="Personal Information" /> */}
+              <div className="peq-grid-2">
+                <TextInput label="Full Name" name="name" value={formData.name}
+                  onChange={handleChange} errors={errors} placeholder="e.g. Ravi Kumar" required />
+                <TextInput label="Designation" name="designation" value={formData.designation}
+                  onChange={handleChange} errors={errors} placeholder="e.g. Manager, Director" required />
+                <EmailInput value={formData.email} onChange={handleChange} errors={errors} />
+                <PhoneInput value={formData.phone} onChange={handleChange} errors={errors} />
+              </div>
 
-            {/* ── LOCATION ── */}
-            <SectionTitle icon="📍" title="Location" />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <TextInput label="City" name="city" value={formData.city}
-                onChange={handleChange} errors={errors} placeholder="e.g. Hyderabad" required />
-              <StateSelect value={formData.state} onChange={handleChange} errors={errors} />
+              {/* Organisation */}
+              {/* <SectionHeader icon={<IconBuilding />} label="Organisation Details" /> */}
+              <div className="peq-grid-2">
+                <TextInput label="Company Name" name="company" value={formData.company}
+                  onChange={handleChange} errors={errors} placeholder="Your company name" required />
+                <GSTInput value={formData.gstNumber} onChange={handleChange} errors={errors} />
+                <TextInput label="Industry" name="industry" value={formData.industry}
+                  onChange={handleChange} errors={errors} placeholder="e.g. Pharma, Research" required />
+                <TextInput label="Department" name="department" value={formData.department}
+                  onChange={handleChange} errors={errors} placeholder="e.g. Procurement, R&D" required />
+              </div>
+
+              {/* Location */}
+              {/* <SectionHeader icon={<IconPin />} label="Location" /> */}
+              <div className="peq-grid-3">
+                <TextInput label="City" name="city" value={formData.city}
+                  onChange={handleChange} errors={errors} placeholder="e.g. Hyderabad" required />
+                <StateSelect value={formData.state} onChange={handleChange} errors={errors} />
+                <div>
+                  <FieldLabel htmlFor="country">Country</FieldLabel>
+                  <input
+                    id="country" value="India" readOnly
+                    style={inputStyle(false, true)}
+                  />
+                </div>
+              </div>
+
+              {/* Requirements */}
+              {/* <SectionHeader icon={<IconMsg />} label="Requirements" /> */}
               <div>
-                <Label htmlFor="country">Country</Label>
-                <input
-                  id="country" value="India" readOnly
-                  className={INPUT_READONLY + ' w-full h-13 px-4 py-3 text-[15px] font-medium rounded-xl border-2 outline-none'}
-                />
+                <FieldLabel htmlFor="message">Message / Requirements</FieldLabel>
+                <TextareaField name="message" value={formData.message} onChange={handleChange}
+                  placeholder="Describe your requirements — quantity, delivery timeline, application, special configurations…" />
+                <p style={{ fontSize: 11, color: '#94A3B8', marginTop: 5 }}>More detail → more accurate quote</p>
               </div>
-            </div>
 
-            {/* ── REQUIREMENTS ── */}
-            <SectionTitle icon="💬" title="Requirements" />
-            <div>
-              <Label htmlFor="message">Requirements / Message</Label>
-              <textarea
-                id="message" name="message" rows={4}
-                value={formData.message} onChange={handleChange}
-                placeholder="Describe your requirements — quantity, delivery timeline, application, special configurations..."
-                className={[
-                  'w-full px-4 py-3 resize-none rounded-xl outline-none',
-                  'text-[15px] font-medium text-[#0f172a]',
-                  'border-2 border-[#94a3b8]',
-                  'placeholder:text-[#94a3b8] placeholder:font-normal',
-                  'focus:border-[#2F4191] focus:ring-4 focus:ring-[#2F4191]/15',
-                  'hover:border-[#64748b] transition-all duration-150',
-                ].join(' ')}
-              />
-              <p className="text-[12px] text-[#64748b] font-medium mt-1.5">
-                💡 More detail = more accurate quote
-              </p>
-            </div>
-
-            {/* ── API ERROR ── */}
-            {apiError && (
-              <div data-form-error className="flex items-start gap-3 p-4 bg-red-50 border-2 border-red-300 rounded-xl">
-                <span className="text-xl mt-0.5">⚠️</span>
-                <div>
-                  <p className="text-sm font-black text-red-700">Submission Failed</p>
-                  <p className="text-xs font-medium text-red-600 mt-0.5">{apiError}</p>
-                </div>
-              </div>
-            )}
-
-            {/* ── VALIDATION SUMMARY ── */}
-            {Object.keys(errors).length > 2 && (
-              <div data-form-error className="flex items-start gap-3 p-4 bg-amber-50 border-2 border-amber-300 rounded-xl">
-                <span className="text-xl mt-0.5">📋</span>
-                <div>
-                  <p className="text-sm font-black text-amber-800">
-                    Please fix {Object.keys(errors).length} fields before submitting
-                  </p>
-                  <p className="text-xs font-medium text-amber-700 mt-0.5">
-                    Each field with an error is highlighted in red below it.
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {/* ── SUBMIT ── */}
-            <button
-              type="submit" disabled={loading}
-              className={[
-                'w-full py-4 px-6 rounded-xl text-base font-black text-white',
-                'flex items-center justify-center gap-3',
-                'bg-gradient-to-r from-[#2F4191] to-[#2B7EC2]',
-                'hover:from-[#2B7EC2] hover:to-[#1a5fa8]',
-                'disabled:opacity-60 disabled:cursor-not-allowed',
-                'transition-all duration-200 group',
-                'shadow-[0_4px_24px_rgba(47,65,145,0.35)] hover:shadow-[0_6px_32px_rgba(47,65,145,0.45)]',
-                'hover:-translate-y-0.5 active:translate-y-0',
-                'border-2 border-[#2F4191]/20',
-              ].join(' ')}
-            >
-              {loading ? (
-                <>
-                  <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+              {/* Validation summary */}
+              {errorCount > 0 && (
+                <div data-form-error className="peq-warn">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
                   </svg>
-                  Sending Your Enquiry…
-                </>
-              ) : (
-                <>
-                  <svg className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                  </svg>
-                  Unlock My Exclusive Price
-                </>
+                  <div>
+                    <strong>Please fix {errorCount} field{errorCount > 1 ? 's' : ''} before submitting</strong>
+                    <p>Fields with errors are highlighted above.</p>
+                  </div>
+                </div>
               )}
-            </button>
 
-            <p className="text-center text-[12px] text-[#94a3b8] font-medium">
-              🔒 Your information is confidential and will never be shared with third parties.
-            </p>
+              {/* API Error */}
+              {apiError && (
+                <div data-form-error className="peq-error">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                  </svg>
+                  <div>
+                    <strong>Submission Failed</strong>
+                    <p>{apiError}</p>
+                  </div>
+                </div>
+              )}
 
-          </form>
+              {/* Submit */}
+              <button type="submit" disabled={loading} className="peq-submit">
+                {loading ? (
+                  <><span className="peq-spinner" /> Sending Enquiry…</>
+                ) : (
+                  <><IconSend /> Unlock My Exclusive Price</>
+                )}
+              </button>
+
+              {/* Trust note */}
+              <p className="peq-trust">
+                <IconLock />
+                Your information is confidential and will never be shared with third parties.
+              </p>
+
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
+
+// Textarea as a separate function (needs focus state)
+function TextareaField({ name, value, onChange, placeholder }) {
+  const [focused, setFocused] = useState(false);
+  return (
+    <textarea
+      id={name} name={name} rows={4} value={value} onChange={onChange}
+      placeholder={placeholder}
+      onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
+      style={{
+        width: '100%', boxSizing: 'border-box',
+        border: `1.5px solid ${focused ? '#2563EB' : '#CBD5E1'}`,
+        borderRadius: 10, padding: '10px 14px',
+        fontSize: 14, fontFamily: 'inherit', lineHeight: 1.6,
+        color: '#0F172A', background: '#fff',
+        outline: 'none', resize: 'vertical', minHeight: 96,
+        boxShadow: focused ? '0 0 0 3px rgba(59,130,246,0.1)' : 'none',
+        transition: 'border-color 0.18s, box-shadow 0.18s',
+      }}
+    />
+  );
+}
+
+// ─── Styles ───────────────────────────────────────────────────────────────────
+const css = `
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap');
+
+  .peq-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(15,23,42,0.55);
+    backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: center; padding: 16px;
+    opacity: 0; transition: opacity 0.22s cubic-bezier(0.4,0,0.2,1);
+  }
+  .peq-overlay--in { opacity: 1; }
+
+  .peq-card {
+    background: #fff; border-radius: 16px;
+    box-shadow: 0 24px 64px rgba(15,23,42,0.14), 0 4px 16px rgba(15,23,42,0.06);
+    max-width: 640px; width: 100%; max-height: 92vh;
+    display: flex; flex-direction: column; position: relative; overflow: hidden;
+    font-family: 'DM Sans', sans-serif;
+    transform: translateY(20px) scale(0.98); opacity: 0;
+    transition: transform 0.32s cubic-bezier(0.34,1.56,0.64,1), opacity 0.28s ease;
+  }
+  .peq-card--in { transform: translateY(0) scale(1); opacity: 1; }
+
+  .peq-accent-bar {
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #1E3A8A, #3B82F6); border-radius: 16px 16px 0 0;
+  }
+
+  /* Header */
+  .peq-header {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    padding: 28px 28px 18px; gap: 12px; flex-shrink: 0;
+  }
+  .peq-header-left { display: flex; align-items: center; gap: 14px; }
+  .peq-icon-badge {
+    width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+    background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.15);
+  }
+  .peq-eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #2563EB; margin: 0 0 3px;
+  }
+  .peq-title {
+    font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400;
+    color: #0F172A; margin: 0; line-height: 1.2;
+  }
+  .peq-close {
+    background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px;
+    color: #64748B; width: 36px; height: 36px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: background 0.18s, color 0.18s, border-color 0.18s;
+  }
+  .peq-close:hover { background: #FEE2E2; color: #DC2626; border-color: #FECACA; }
+
+  /* Product card */
+  .peq-product { padding: 0 28px 16px; flex-shrink: 0; }
+  .peq-product-inner {
+    display: flex; align-items: center; gap: 14px;
+    background: #EFF6FF; border: 1px solid #BFDBFE;
+    border-radius: 12px; padding: 14px 16px;
+  }
+  .peq-product-img {
+    width: 52px; height: 52px; border-radius: 10px;
+    background: #fff; border: 1px solid #E2E8F0;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; overflow: hidden;
+  }
+  .peq-product-info { flex: 1; min-width: 0; }
+  .peq-product-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #2563EB; margin: 0 0 3px; }
+  .peq-product-name { font-size: 15px; font-weight: 600; color: #1E3A8A; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .peq-product-badge {
+    display: flex; align-items: center; gap: 5px; flex-shrink: 0;
+    background: #1E3A8A; color: #fff;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 6px 12px; border-radius: 20px;
+  }
+
+  .peq-divider { height: 1px; background: #E2E8F0; margin: 0 28px; flex-shrink: 0; }
+
+  /* Scroll body */
+  .peq-scroll {
+    overflow-y: auto; flex: 1;
+    scrollbar-width: thin; scrollbar-color: #CBD5E1 transparent;
+  }
+  .peq-scroll::-webkit-scrollbar { width: 4px; }
+  .peq-scroll::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+
+  /* Form */
+  .peq-form { padding: 22px 28px 28px; display: flex; flex-direction: column; gap: 18px; }
+  .peq-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .peq-grid-3 { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 16px; }
+
+  /* Feedback banners */
+  .peq-warn {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: #FFFBEB; border: 1px solid #FDE68A;
+    color: #92400E; border-radius: 10px; padding: 12px 14px; font-size: 13px;
+  }
+  .peq-warn strong { display: block; font-weight: 700; margin-bottom: 2px; }
+  .peq-warn p { margin: 0; font-size: 12px; opacity: 0.8; }
+  .peq-error {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: #FEF2F2; border: 1px solid #FECACA;
+    color: #991B1B; border-radius: 10px; padding: 12px 14px; font-size: 13px;
+  }
+  .peq-error strong { display: block; font-weight: 700; margin-bottom: 2px; }
+  .peq-error p { margin: 0; font-size: 12px; opacity: 0.8; }
+
+  /* Submit */
+  .peq-submit {
+    display: flex; align-items: center; justify-content: center; gap: 9px;
+    width: 100%; padding: 13px 24px;
+    background: linear-gradient(135deg, #1E3A8A, #2563EB);
+    color: #fff; border: none; border-radius: 10px;
+    font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.01em;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.3), 0 1px 4px rgba(37,99,235,0.18);
+    transition: transform 0.18s, box-shadow 0.18s, opacity 0.18s;
+    margin-top: 2px;
+  }
+  .peq-submit:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(37,99,235,0.38), 0 2px 6px rgba(37,99,235,0.2);
+  }
+  .peq-submit:active:not(:disabled) { transform: translateY(0); }
+  .peq-submit:disabled { opacity: 0.75; cursor: not-allowed; }
+
+  .peq-spinner {
+    width: 17px; height: 17px; border-radius: 50%;
+    border: 2.5px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    animation: peq-spin 0.7s linear infinite; flex-shrink: 0;
+  }
+  @keyframes peq-spin { to { transform: rotate(360deg); } }
+
+  .peq-trust {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    font-size: 11.5px; color: #94A3B8; text-align: center; margin: 0;
+  }
+
+  @media (max-width: 560px) {
+    .peq-grid-2, .peq-grid-3 { grid-template-columns: 1fr; }
+    .peq-header, .peq-form { padding-left: 20px; padding-right: 20px; }
+    .peq-product { padding-left: 20px; padding-right: 20px; }
+    .peq-divider { margin: 0 20px; }
+    .peq-title { font-size: 17px; }
+  }
+`;

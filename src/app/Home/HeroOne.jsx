@@ -318,7 +318,7 @@ export default function HeroOne() {
               <div className="space-y-4">
                 <Link href="/products">
                   <button
-                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-[#0f1c3f] bg-gradient-to-r from-[#FFD700] to-[#FF9933] shadow-lg opacity-0 ${
+                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] shadow-lg opacity-0 ${
                       ctaVisible ? 'cta-visible' : ''
                     }`}
                   >
@@ -326,7 +326,7 @@ export default function HeroOne() {
                   </button>
                 </Link>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-5">
                   {TRUST_PILLS.map((label, i) => (
                     <span
                       key={label}

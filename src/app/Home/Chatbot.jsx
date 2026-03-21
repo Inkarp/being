@@ -417,7 +417,7 @@ export default function Chatbot({ open, onClose }) {
     <div className="space-y-4">
       {category === 'Product' && selectedProduct && (
         <div className="flex items-center gap-2 px-3 py-2 bg-blue-50 rounded-xl border border-blue-100">
-          <span className="text-blue-400 text-base">🔬</span>
+          {/* <span className="text-blue-400 text-base">🔬</span> */}
           <span className="text-xs font-medium text-[#2F4191] truncate">{selectedProduct}</span>
         </div>
       )}
@@ -425,9 +425,9 @@ export default function Chatbot({ open, onClose }) {
       {apiError && (
         <div className="bg-red-50 border border-red-200 text-red-600 text-xs rounded-xl px-3 py-2">{apiError}</div>
       )}
-      <div className="grid grid-cols-2 gap-2.5">
+      <div className="grid grid-cols-2 gap-2">
         {fields.map((field) => (
-          <FormField key={field.key} field={field} value={formData[field.key] || ''}
+          <FormField key={field.key} field={field} value={formData[field.key] || '' }
             error={errors[field.key]} onChange={handleFieldChange} />
         ))}
       </div>

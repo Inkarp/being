@@ -255,7 +255,7 @@ export default function Model() {
 
                     {/* ================= RIGHT: PRODUCT IMAGE ================= */}
                     <div className="flex flex-col justify-center">
-                        <div className="relative border border-gray-200 rounded-2xl p-6 bg-[#2F4191]/10 transition-colors duration-300">
+                        <div className="relative  transition-colors duration-300">
                             {/* GEM BADGE ON IMAGE */}
                             {product.gem && (
                                 <Image
