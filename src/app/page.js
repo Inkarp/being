@@ -25,7 +25,7 @@ export default function Home() {
       {/* <Products /> */}
       <QuickLinks />
       <About />
-      <CustomersImages />
+      {/* <CustomersImages /> */}
       <Customers />
       <Testimonials />
       <Blogs /> 

@@ -11,7 +11,6 @@ export default function Form() {
         designation: '',
         department: '',
         email: '',
-        // officialEmail: '',
         phone: '',
         typeOfCustomer: '',
         purchasePlan: '',
