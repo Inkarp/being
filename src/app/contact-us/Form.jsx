@@ -135,7 +135,7 @@ export default function Form() {
         setLoading(true);
 
         try {
-            const res = await fetch('https://go.inkarp.co.in/l/1089472/2026-03-23/bllh32', {
+            const res = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(form),
