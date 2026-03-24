@@ -187,7 +187,7 @@ export default function ProductsSidebar() {
           {items.map((item, i) => (
             <button
               key={i}
-              onClick={() => window.open(item.link)}
+              // onClick={() => window.open(item.link)}
               className="flex items-center gap-3 group/item"
             >
               <div
@@ -225,7 +225,7 @@ export default function ProductsSidebar() {
                       textTransform: "uppercase",
                     }}
                   >
-                    Limited Offer!
+                    Offers for this Festival Season
                   </span>
                   <span style={{ fontSize: 13 }}>🎊</span>
                 </div>
@@ -262,8 +262,8 @@ export default function ProductsSidebar() {
                 </div>
 
                 {/* CTA button */}
-                <Link href="/">
-                  <div className="flex items-center justify-center gap-3 bg-[#2F3F8D] px-3 py-1 rounded-full w-fit">
+                <Link href={item.link}>
+                  <div className="flex items-center justify-center gap-3 bg-[#2F3F8D] px-3 py-1 rounded-full">
                     <span className="text-white font-medium text-[16px]">{item.label}</span>
                     <div className="relative w-[30px] h-[30px] text-white">
                       <svg

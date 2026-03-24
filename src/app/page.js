@@ -10,6 +10,10 @@ import QuickLinks from './Home/QuickLinks';
 import PicksForYou from './Home/PicksForYou';
 import CategoryTabs from './Home/Categories';
 import CustomersImages from './Home/CustomersImages';
+import Test from './Home/Test';
+import CustomersPage from './Home/CustomersPage';
+import TestTwo from './Home/TestTwo';
+import ProductCarousel from './Home/ProductCarousel';
 
 
 export default function Home() {
@@ -25,7 +29,11 @@ export default function Home() {
       {/* <Products /> */}
       <QuickLinks />
       <About />
-      {/* <CustomersImages /> */}
+      {/* <Test /> */}
+      <ProductCarousel />
+      <TestTwo />
+      <CustomersPage />
+      <CustomersImages />
       <Customers />
       <Testimonials />
       <Blogs /> 

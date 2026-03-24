@@ -91,8 +91,16 @@ export default function NewForm() {
           <input name="industry" placeholder="Industry" required className="input" />
           <input name="designation" placeholder="Designation" required className="input" />
         </div>
-
-        <input name="department" placeholder="Department" required className="input" />
+        <div className="row">
+          <input name="department" placeholder="Department" required className="input" />
+          <input
+            type="text"
+            name="country"
+            value="India"
+            readOnly
+            className="input"
+          />
+        </div>
 
         <div className="row">
           <input type="email" name="email" placeholder="Email" required className="input" />
@@ -118,17 +126,7 @@ export default function NewForm() {
             <option value="After 6 Months">After 6 Months</option>
           </select>
         </div>
-
         <textarea name="message" placeholder="Message" className="input"></textarea>
-
-        {/* Hidden Fields */}
-        <input type="hidden" name="source" value="website" />
-        <input
-          type="hidden"
-          name="redirect_url"
-          value="https://inkarp.co.in/thank-you"
-        />
-
         <button type="submit" className="btn">
           Submit
         </button>

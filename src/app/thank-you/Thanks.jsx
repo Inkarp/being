@@ -190,7 +190,7 @@ export default function Thanks() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "20px 20px",
+          // padding: "20px 20px",
           position: "relative",
           overflow: "hidden",
         }}
@@ -217,9 +217,9 @@ export default function Thanks() {
           position: "relative", zIndex: 1,
           background: "#fff",
           border: "1px solid rgba(0,0,0,0.07)",
-          borderRadius: 24,
-          padding: "30px 30px",
-          maxWidth: 580, width: "100%",
+          borderRadius: 0,
+          padding: "10px",
+          maxWidth: 520, width: "100%",
           boxShadow: "0 24px 80px rgba(0,0,0,0.1)",
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(32px)",
@@ -283,7 +283,7 @@ export default function Thanks() {
             maxWidth: 420, margin: "0 auto 32px",
             animation: visible ? "fadeUp 0.6s 0.55s both ease" : "none",
           }}>
-            We've received your enquiry and our scientific solutions team will
+            We&apos;ve received your enquiry and our scientific solutions team will
             get back to you within <strong style={{ color: "#2F4191" }}>24 hours</strong>.
           </p>
 

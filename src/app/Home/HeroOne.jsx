@@ -12,7 +12,7 @@ const SUBTITLE =
   'Discover our cutting-edge solutions to accelerate scientific excellence.';
 const TYPING_SPEED = 80;
 
-const TRUST_PILLS = ['Your Trusted Lab Patners', 'Available Service', '100+ Instruments'];
+const TRUST_PILLS = ['Your Trusted Lab Patners', '24/7 Service', '100+ Instruments'];
 
 export default function HeroOne() {
   const [animKey, setAnimKey] = useState(0);
@@ -264,7 +264,7 @@ export default function HeroOne() {
           alt="Hero"
           fill
           priority
-          quality={100}     
+          quality={75}     
           sizes="100vw"
           objectFit='fill'
           className="absolute inset-0 lg:block hidden"
