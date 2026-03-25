@@ -130,20 +130,21 @@ export default function PicksForYou() {
   return (
     <section className="py-5" >
       <div className="px-10 mx-auto">
-
         {/* Header */}
-        <div className="flex flex-wrap items-start justify-between gap-4 mb-8">
-          <div>
-            {/* <p className="text-[11px] font-extrabold tracking-[0.14em] uppercase text-[#FFD700] mb-1">
-              Curated for you
-            </p> */}
-
-            <h2 className="text-[clamp(28px,4vw,48px)] font-black text-white leading-tight">
+        <div className="flex flex-wrap items-start justify-center gap-4">
+            <div className="relative text-center px-6 ">
+              <div className="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-full border border-[rgba(47,65,145,0.2)] bg-white">
+                <span className="w-2 h-2 rounded-full bg-[#2B7EC2] animate-pulse"></span>
+                <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#2F4191]">
+                  Picks for You
+                </span>
+              </div>
+            {/* <h2 className="text-[clamp(28px,4vw,48px)] font-black text-white leading-tight">
               Curated Picks For You
-            </h2>
+            </h2> */}
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 absolute right-10">
             <span className="text-[13px] text-white/60 font-semibold">
               {page + 1} <span className="text-white/30">/ {totalPages}</span>
             </span>
@@ -167,7 +168,8 @@ export default function PicksForYou() {
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-8 flex-wrap">
+        <div className="flex items-center justify-center gap-2 py-5
+         flex-wrap">
           {TABS.map((tab) => (
             <button
               key={tab}
@@ -192,7 +194,7 @@ export default function PicksForYou() {
               <div className="flex-1">
 
                 <span
-                  className="text-[10px] font-extrabold tracking-[0.1em] px-[10px] py-[3px] rounded-full inline-block mb-[10px]"
+                  className="text-[10px] font-extrabold tracking-[0.1em] px-[10px] py-[3px] rounded-full inline-block "
                   style={{
                     background: `${product.badgeColor}22`,
                     color:
@@ -204,9 +206,9 @@ export default function PicksForYou() {
                   {product.badge}
                 </span>
 
-                <p className="text-[11px] text-gray-400 font-semibold tracking-[0.06em] mb-1">
+                {/* <p className="text-[11px] text-gray-400 font-semibold tracking-[0.06em] mb-1">
                   {product.model}
-                </p>
+                </p> */}
 
                 <h3 className="text-[14px] font-bold text-gray-900 leading-[1.45] mb-2 line-clamp-3">
                   {product.title}

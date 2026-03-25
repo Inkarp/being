@@ -14,6 +14,7 @@ import Test from './Home/Test';
 import CustomersPage from './Home/CustomersPage';
 import TestTwo from './Home/TestTwo';
 import ProductCarousel from './Home/ProductCarousel';
+import ProductQueries from './Home/ProductQueries';
 
 
 export default function Home() {
@@ -29,10 +30,11 @@ export default function Home() {
       {/* <Products /> */}
       <QuickLinks />
       <About />
+      {/* <ProductQueries /> */}
       {/* <Test /> */}
       <ProductCarousel />
       <TestTwo />
-      <CustomersPage />
+      {/* <CustomersPage /> */}
       <CustomersImages />
       <Customers />
       <Testimonials />

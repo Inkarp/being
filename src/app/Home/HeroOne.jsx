@@ -256,8 +256,7 @@ export default function HeroOne() {
 
       <section
         ref={sectionRef}
-        className="relative w-full lg:h-[800px] h-[500px] overflow-hidden"
-      >
+        className="relative w-full lg:h-[750px] h-[600px] overflow-hidden">
         {/* Background image */}
         <Image
           src="/HeroImage.webp"
@@ -266,11 +265,11 @@ export default function HeroOne() {
           priority
           quality={75}     
           sizes="100vw"
-          objectFit='fill'
+          objectFit='fit'
           className="absolute inset-0 lg:block hidden"
         />
 
-        <div className="relative z-20 h-full flex items-start lg:mt-20 mt-0 px-6 md:px-14 lg:px-24">
+        <div className="relative z-20 h-full flex items-start lg:mt-20 mt-5 px-6 md:px-14 lg:px-24">
           <div className="w-full lg:max-w-3xl max-w-2xl space-y-5">
             <h1 className="text-6xl font-black text-white">
               {renderLine1()}
@@ -315,7 +314,7 @@ export default function HeroOne() {
             )}
 
             {ctaVisible && (
-              <div className="space-y-4">
+              <div className="space-y-4 lg:block hidden">
                 <Link href="/products">
                   <button
                     className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] shadow-lg opacity-0 ${

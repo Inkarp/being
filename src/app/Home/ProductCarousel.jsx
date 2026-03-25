@@ -65,7 +65,7 @@ export default function ProductCarousel() {
   return (
     <div className="bg-gradient-to-b from-[#eef2f7] to-white py-16 px-6">
       {/* HEADER */}
-      <div className="text-center mb-12">
+      <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
           Trusted by 2000+ Customers
         </h1>
@@ -75,7 +75,7 @@ export default function ProductCarousel() {
       </div>
 
       {/* CAROUSEL */}
-      <div className="relative max-w-6xl mx-auto flex items-center justify-center">
+      <div className="relative max-w-7xl mx-auto flex items-center justify-center">
         <button
           onClick={prev}
           className="absolute left-0 z-10 bg-white shadow rounded-full w-10 h-10 flex items-center justify-center hover:scale-110 transition"
@@ -100,7 +100,7 @@ export default function ProductCarousel() {
                     src={product.image}
                     alt={product.name}
                     width={250}
-                    height={200}
+                    height={250}
                     className="w-full object-cover"
                   />
 

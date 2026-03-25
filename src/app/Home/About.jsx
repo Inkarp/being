@@ -225,16 +225,17 @@ export default function About() {
             {/* Right — Copy */}
             <div className={`about-copy-col ${visible ? 'visible' : ''} space-y-7`}>
 
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest"
-                style={{
-                  background: 'white',
-                  border: '1.5px solid rgba(47,65,145,0.2)',
-                  color: 'var(--blue-deep)',
-                }}
-              >              
-                About Us
+              <div className="relative text-center px-6 ">
+              <div className="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-full border border-[rgba(47,65,145,0.2)] bg-white">
+                <span className="w-2 h-2 rounded-full bg-[#2B7EC2] animate-pulse"></span>
+                <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#2F4191]">
+                  About Us
+                </span>
               </div>
+            {/* <h2 className="text-[clamp(28px,4vw,48px)] font-black text-white leading-tight">
+              Curated Picks For You
+            </h2> */}
+          </div>
 
               {/* Headline */}
               <div>
