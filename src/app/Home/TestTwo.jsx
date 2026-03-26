@@ -140,7 +140,7 @@ function CustomerCard({ customer, rowIndex, cardIndex }) {
       <div
         style={{
           position: 'absolute',
-          bottom: 'calc(100% + 14px)',
+          bottom: 'calc( -14px)',
           left: '50%',
           transform: `translateX(-50%) translateY(${showTooltip ? '0px' : '8px'})`,
           opacity: showTooltip ? 1 : 0,

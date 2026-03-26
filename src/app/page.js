@@ -30,7 +30,7 @@ export default function Home() {
       {/* <Products /> */}
       <QuickLinks />
       <About />
-      {/* <ProductQueries /> */}
+      <ProductQueries />
       {/* <Test /> */}
       <ProductCarousel />
       <TestTwo />
