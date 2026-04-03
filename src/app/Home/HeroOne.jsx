@@ -12,7 +12,7 @@ const SUBTITLE =
   'Discover our cutting-edge solutions to accelerate scientific excellence.';
 const TYPING_SPEED = 80;
 
-const TRUST_PILLS = ['Your Trusted Lab Patners', '24/7 Service', '100+ Instruments'];
+const TRUST_PILLS = ['Your Trusted Lab Patner', '24/7 Service', '100+ Instruments'];
 
 export default function HeroOne() {
   const [animKey, setAnimKey] = useState(0);
@@ -149,10 +149,8 @@ export default function HeroOne() {
         {/* "India" typed with tricolour gradient + underline */}
         {hasIndia && (
           <span
-            className={`relative inline-block ${indiaFullyTyped ? 'india-revealed' : ''}`}
-          >
+            className={`relative inline-block ${indiaFullyTyped ? 'india-revealed' : ''}`}>
             <span className="">{indiaText}</span>
-
             {/* {indiaFullyTyped && (
               <span className="india-underline absolute left-0 -bottom-[5px] h-[3px] rounded" />
             )} */}
@@ -256,7 +254,6 @@ export default function HeroOne() {
       <section
         ref={sectionRef}
         className="relative w-full lg:h-[750px] h-[600px] overflow-hidden">
-        {/* Background image */}
         <Image
           src="/HeroImage.webp"
           alt="Hero"
@@ -268,7 +265,7 @@ export default function HeroOne() {
           className="absolute inset-0 lg:block hidden"
         />
 
-        <div className="relative z-20 h-full flex items-start lg:mt-20 mt-5 px-6 md:px-14 lg:px-24">
+        <div className="relative z-20 h-full flex items-start lg:mt-20 mt-5 px-6 md:px-7 lg:px-24">
           <div className="w-full lg:max-w-3xl max-w-2xl space-y-5">
             <h1 className="text-6xl font-black text-white">
               {renderLine1()}
@@ -344,7 +341,7 @@ export default function HeroOne() {
           <div className="w-[20px] h-[32px] border-2 border-black rounded-xl relative">
             <div className="absolute top-[5px] left-1/2 -translate-x-1/2 w-[4px] h-[7px] bg-[#2F4191] rounded"></div>
           </div>
-          <span className="text-[9px] text-black font-bold tracking-widest uppercase">
+          <span className="text-[9px] text-red-800 font-bold tracking-widest uppercase">
             Scroll
           </span>
         </div>
