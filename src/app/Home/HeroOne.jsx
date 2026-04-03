@@ -131,7 +131,6 @@ export default function HeroOne() {
       <span className="inline-flex flex-wrap items-center gap-x-3 leading-tight">
         {/* "Welcome to" static text */}
         <span className={`opacity-0 ${logoVisible ? 'logo-fade-in' : ''}`}>Welcome to</span>
-
         {/* Being logo — fades in with "Welcome to", same baseline as text */}
         <span
           className={`inline-flex items-center opacity-0 ${logoVisible ? 'logo-fade-in' : ''}`}
@@ -329,7 +328,7 @@ export default function HeroOne() {
                   {TRUST_PILLS.map((label, i) => (
                     <span
                       key={label}
-                      className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest bg-white/10 border border-white/30 px-3 py-1 rounded-full text-white"
+                      className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest bg-[#2F4191] border border-white/30 px-3 py-1 rounded-full text-white"
                     >
                       <span className="w-[5px] h-[5px] rounded-full bg-yellow-400" />
                       {label}
@@ -341,11 +340,11 @@ export default function HeroOne() {
           </div>
         </div>
 
-        <div className="absolute bottom-20 hidden lg:block left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white opacity-100 animate-bounce">
-          <div className="w-[20px] h-[32px] border-2 border-white rounded-xl relative">
+        <div className="absolute bottom-20 hidden lg:block left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[#2F4191] opacity-100 animate-bounce">
+          <div className="w-[20px] h-[32px] border-2 border-black rounded-xl relative">
             <div className="absolute top-[5px] left-1/2 -translate-x-1/2 w-[4px] h-[7px] bg-[#2F4191] rounded"></div>
           </div>
-          <span className="text-[9px] font-bold tracking-widest uppercase">
+          <span className="text-[9px] text-black font-bold tracking-widest uppercase">
             Scroll
           </span>
         </div>

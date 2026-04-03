@@ -14,7 +14,6 @@ export default function Footer() {
     return (
         <footer className=" bg-[#2B7EC2] text-white font-raleway">
             <div className="w-full mx-auto py-3 px-10 flex flex-col md:flex-row ">
-
                 <div className="md:w-1/4 flex flex-col justify-center gap-2">
                     <div className="p-3 flex items-start gap-4 group bg-white rounded-3xl">
                         <Image
@@ -260,20 +259,7 @@ export default function Footer() {
                                 <div className="bg-white p-3 rounded-full hover:text-white hover:bg-black transition-all duration-300 text-[#2B7EC2] cursor-pointer hover:scale-110 transition">
                                     <FaLinkedin />
                                 </div>
-                            </div>
-
-                            {/* Subscription */}
-                            <div className="flex w-full max-w-md bg-gray-300 rounded-full overflow-hidden">
-                                <input
-                                    type="email"
-                                    placeholder="Your Email Address"
-                                    className="py-3 px-4 rounded-l-md bg-white text-black w-full outline-none"
-                                />
-                                <button className="bg-black px-6 rounded-r-md flex items-center gap-2 font-bold group">
-                                    Subscribe
-                                    <FaPaperPlane className="transition-transform duration-300 group-hover:rotate-45" />
-                                </button>
-                            </div>
+                            </div>                  
                         </div>
                     </div>
                 </div>
