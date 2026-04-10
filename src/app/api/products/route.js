@@ -11,7 +11,7 @@ const CATEGORY_SLUGS = [
   // "pumps",
   // "muffle-furnace",
   // "digital-viscometer",
-  // "cabinet",
+  "cabinet",
 ];
 
 export async function GET(request) {
