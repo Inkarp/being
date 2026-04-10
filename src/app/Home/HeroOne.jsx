@@ -259,7 +259,7 @@ export default function HeroOne() {
           alt="Hero"
           fill
           priority
-          quality={75}     
+          quality={75}
           sizes="100vw"
           objectFit='fit'
           className="absolute inset-0 lg:block hidden"
@@ -313,9 +313,8 @@ export default function HeroOne() {
               <div className="space-y-4 lg:block hidden">
                 <Link href="/products">
                   <button
-                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] shadow-lg opacity-0 ${
-                      ctaVisible ? 'cta-visible' : ''
-                    }`}
+                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] shadow-lg opacity-0 ${ctaVisible ? 'cta-visible' : ''
+                      }`}
                   >
                     Request a Quote <FaArrowRight size={13} />
                   </button>

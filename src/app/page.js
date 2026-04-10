@@ -16,12 +16,10 @@ import TestTwo from './Home/TestTwo';
 import ProductCarousel from './Home/ProductCarousel';
 import ProductQueries from './Home/ProductQueries';
 
-
 export default function Home() {
   return (
-    <div className="" 
-    style={{   background: 'linear-gradient(160deg, #275c9c 0%, #6cacdf 50%, #f0f7ff 100%)' }}
-    >
+    <div className=""
+      style={{ background: 'linear-gradient(160deg, #275c9c 0%, #6cacdf 50%, #f0f7ff 100%)' }}>
       <HeroOne />
       <CategoryTabs />
       <PicksForYou />
@@ -32,13 +30,13 @@ export default function Home() {
       <About />
       <ProductQueries />
       {/* <Test /> */}
-      <ProductCarousel />
+      {/* <ProductCarousel /> */}
       <TestTwo />
       {/* <CustomersPage /> */}
       <CustomersImages />
       <Customers />
       <Testimonials />
-      <Blogs /> 
+      <Blogs />
     </div>
   );
 }

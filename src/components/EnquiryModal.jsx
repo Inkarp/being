@@ -201,7 +201,24 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
       if (!res.ok) throw new Error(data.error || data.message || 'Submission failed');
 
       setSubmitted(true);
-      setTimeout(() => { handleClose(); router.push('/thank-you'); }, 1500);
+
+      // console.log(productData)
+      // ✅ Safe tracking
+      if (!submitted) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "enquiry_success",
+          product_id: productData?.productId || '',
+          product_name: productData?.model || ''
+        });
+      }
+
+      // console.log(window.dataLayer)
+
+      setTimeout(() => {
+        handleClose();
+        router.push('/thank-you');
+      }, 1500);
     } catch (err) {
       setSubmitError(err.message || 'Something went wrong. Please try again.');
     } finally {
@@ -486,10 +503,9 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
               🔖 Enquiring about: <span>{productData.model}</span>
             </div>
           )}
-
           {/* ── Form ── */}
           <div className="enq-body">
-            <form onSubmit={handleSubmit} noValidate>
+            <form onSubmit={handleSubmit} id={`enquiry-form-${productData?.productId}`} noValidate>
               {/* Honeypot */}
               <input type="text" name="website" style={{ display: 'none' }} onChange={handleChange} tabIndex={-1} autoComplete="off" />
 
@@ -526,11 +542,6 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
                   </div>
                 </Field>
               </div>
-
-              {/* Contact details */}
-              {/* <div className="enq-section-label" style={{ marginTop: 20 }}>Contact Details</div> */}
-
-              {/* Phone */}
 
 
               {/* Email + OTP */}
@@ -597,8 +608,8 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
               </div>
 
               {/* Location */}
-              <div className="enq-section-label" style={{ marginTop: 20 }}>Location</div>
-              <div className="enq-grid">
+              {/* <div className="enq-section-label" style={{ marginTop: 20 }}>Location</div> */}
+              <div className="enq-grid mt-2">
                 <Field error={errors.city}>
                   <TextInput name="city" placeholder="City *" value={formData.city} onChange={handleChange} required className={errors.city ? 'error' : ''} />
                 </Field>
@@ -641,6 +652,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
               {/* Submit */}
               <button
                 type="submit"
+                id={`enquiry-btn-${productData?.productId}`}
                 disabled={loading || submitted}
                 className={`enq-submit ${submitted ? 'success' : ''}`}
               >

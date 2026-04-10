@@ -59,7 +59,7 @@ export default function Testimonials() {
       className="overflow-hidden relative min-h-[500px] grid grid-cols-1 lg:grid-cols-12 place-content-center lg:place-items-center lg:gap-10 mx-auto  border-b border-white"
     >
       {/* LEFT CONTENT */}
-      <div className="relative z-10 mb-10 lg:mb-0 col-span-6">
+      <div className="relative z-10 p-5 lg:mb-0 col-span-6">
         <div className="hidden xl:block absolute top-[-6rem] left-[-5rem] w-64 h-64 bg-[#2F4191]/50 hover:scale-110 transition-transform duration-300 rounded-full"></div>
 
         <h1 className="relative z-10 text-3xl text-white sm:text-5xl 2xl:text-6xl font-bold sm:leading-snug 2xl:leading-tight">

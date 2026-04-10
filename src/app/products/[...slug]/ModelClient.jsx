@@ -309,6 +309,7 @@ export default function Model() {
                     model: product.title,
                     category: categorySlug,
                     subcategory: subSlug,
+                    productId:product.meta.slug
                 }}
             />
 
@@ -320,6 +321,7 @@ export default function Model() {
                     price: product.price,
                     category: categorySlug,
                     subcategory: subSlug,
+                    productId:product.meta.slug
                 }}
                 onSuccess={() => {
                     setPriceUnlocked(true);      // show price on button

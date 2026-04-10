@@ -5,19 +5,19 @@ import Image from 'next/image';
 
 // ─── Regex & Constants ────────────────────────────────────────────────────────
 
-const GST_REGEX   = /^[0-3][0-9][A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
+const GST_REGEX = /^[0-3][0-9][A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^\d{10}$/;
 
 const INDIAN_STATES = [
-  'Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh',
-  'Goa','Gujarat','Haryana','Himachal Pradesh','Jharkhand',
-  'Karnataka','Kerala','Madhya Pradesh','Maharashtra','Manipur',
-  'Meghalaya','Mizoram','Nagaland','Odisha','Punjab',
-  'Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura',
-  'Uttar Pradesh','Uttarakhand','West Bengal',
-  'Delhi','Chandigarh','Puducherry','Jammu & Kashmir','Ladakh',
-  'Andaman & Nicobar Islands','Lakshadweep','Dadra & Nagar Haveli','Daman & Diu',
+  'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh',
+  'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand',
+  'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur',
+  'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab',
+  'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura',
+  'Uttar Pradesh', 'Uttarakhand', 'West Bengal',
+  'Delhi', 'Chandigarh', 'Puducherry', 'Jammu & Kashmir', 'Ladakh',
+  'Andaman & Nicobar Islands', 'Lakshadweep', 'Dadra & Nagar Haveli', 'Daman & Diu',
 ];
 
 const INITIAL_FORM = {
@@ -37,22 +37,22 @@ function detectDevice(ua = '') {
 function parseReferrer(ref = '') {
   if (!ref) return { source: 'Direct / None', keyword: '' };
   try {
-    const url  = new URL(ref);
+    const url = new URL(ref);
     const host = url.hostname.toLowerCase();
     const engines = [
-      { p: /google\./,     n: 'Google',     q: 'q'    },
-      { p: /bing\./,       n: 'Bing',       q: 'q'    },
-      { p: /yahoo\./,      n: 'Yahoo',      q: 'p'    },
-      { p: /duckduckgo\./, n: 'DuckDuckGo', q: 'q'    },
-      { p: /yandex\./,     n: 'Yandex',     q: 'text' },
+      { p: /google\./, n: 'Google', q: 'q' },
+      { p: /bing\./, n: 'Bing', q: 'q' },
+      { p: /yahoo\./, n: 'Yahoo', q: 'p' },
+      { p: /duckduckgo\./, n: 'DuckDuckGo', q: 'q' },
+      { p: /yandex\./, n: 'Yandex', q: 'text' },
     ];
     for (const e of engines) {
       if (e.p.test(host)) return { source: e.n, keyword: url.searchParams.get(e.q) || '(not provided)' };
     }
     const social = [
       [/facebook\.|fb\.com/, 'Facebook'], [/instagram\./, 'Instagram'],
-      [/linkedin\./, 'LinkedIn'],         [/twitter\.|x\.com/, 'Twitter / X'],
-      [/youtube\./, 'YouTube'],           [/whatsapp\./, 'WhatsApp'],
+      [/linkedin\./, 'LinkedIn'], [/twitter\.|x\.com/, 'Twitter / X'],
+      [/youtube\./, 'YouTube'], [/whatsapp\./, 'WhatsApp'],
     ];
     for (const [p, n] of social) if (p.test(host)) return { source: n, keyword: '' };
     return { source: `Referral: ${url.hostname}`, keyword: '' };
@@ -61,34 +61,34 @@ function parseReferrer(ref = '') {
 
 function collectTracking() {
   if (typeof window === 'undefined') return {};
-  const ua  = navigator.userAgent || '';
-  const ref = document.referrer   || '';
-  const p   = new URLSearchParams(window.location.search);
+  const ua = navigator.userAgent || '';
+  const ref = document.referrer || '';
+  const p = new URLSearchParams(window.location.search);
   const { source, keyword } = parseReferrer(ref);
   return {
-    _pageUrl:       window.location.href,
-    _referrerUrl:   ref || 'Direct / None',
-    _trafficSource: p.get('utm_source')   || source,
+    _pageUrl: window.location.href,
+    _referrerUrl: ref || 'Direct / None',
+    _trafficSource: p.get('utm_source') || source,
     _searchKeyword: p.get('utm_term') || p.get('utm_keyword') || keyword,
-    _utmMedium:     p.get('utm_medium')   || '',
-    _utmCampaign:   p.get('utm_campaign') || '',
-    _deviceType:    detectDevice(ua),
-    _userAgent:     ua,
+    _utmMedium: p.get('utm_medium') || '',
+    _utmCampaign: p.get('utm_campaign') || '',
+    _deviceType: detectDevice(ua),
+    _userAgent: ua,
   };
 }
 
 // ─── Sanitizers ───────────────────────────────────────────────────────────────
 
 const SANITIZERS = {
-  name:        (v) => v.replace(/[^a-zA-Z\s]/g, '').replace(/\b\w/g, c => c.toUpperCase()),
-  company:     (v) => v.replace(/[^a-zA-Z0-9\s&.,()-]/g, ''),
-  gstNumber:   (v) => v.toUpperCase().slice(0, 15),
-  phone:       (v) => v.replace(/\D/g, '').slice(0, 10),
-  email:       (v) => v.replace(/\s/g, ''),
-  city:        (v) => v.replace(/[^a-zA-Z\s]/g, ''),
-  industry:    (v) => v.replace(/[^a-zA-Z\s&/]/g, ''),
+  name: (v) => v.replace(/[^a-zA-Z\s]/g, '').replace(/\b\w/g, c => c.toUpperCase()),
+  company: (v) => v.replace(/[^a-zA-Z0-9\s&.,()-]/g, ''),
+  gstNumber: (v) => v.toUpperCase().slice(0, 15),
+  phone: (v) => v.replace(/\D/g, '').slice(0, 10),
+  email: (v) => v.replace(/\s/g, ''),
+  city: (v) => v.replace(/[^a-zA-Z\s]/g, ''),
+  industry: (v) => v.replace(/[^a-zA-Z\s&/]/g, ''),
   designation: (v) => v.replace(/[^a-zA-Z\s.]/g, ''),
-  department:  (v) => v.replace(/[^a-zA-Z\s&/]/g, ''),
+  department: (v) => v.replace(/[^a-zA-Z\s&/]/g, ''),
 };
 
 function sanitizeField(name, value) {
@@ -100,16 +100,16 @@ function sanitizeField(name, value) {
 
 function validateAll(f) {
   const errs = {};
-  if (!f.name.trim())                                    errs.name        = 'Full name is required';
-  if (!f.company.trim())                                 errs.company     = 'Company name is required';
-  if (f.gstNumber && !GST_REGEX.test(f.gstNumber))      errs.gstNumber   = 'Enter a valid 15-digit GSTIN';
-  if (!f.industry.trim())                                errs.industry    = 'Industry is required';
-  if (!f.designation.trim())                             errs.designation = 'Designation is required';
-  if (!f.department.trim())                              errs.department  = 'Department is required';
-  if (!PHONE_REGEX.test(f.phone))                        errs.phone       = 'Enter a valid 10-digit number';
-  if (!EMAIL_REGEX.test(f.email))                        errs.email       = 'Enter a valid email address';
-  if (!f.state)                                          errs.state       = 'Please select your state';
-  if (!f.city.trim())                                    errs.city        = 'City is required';
+  if (!f.name.trim()) errs.name = 'Full name is required';
+  if (!f.company.trim()) errs.company = 'Company name is required';
+  if (f.gstNumber && !GST_REGEX.test(f.gstNumber)) errs.gstNumber = 'Enter a valid 15-digit GSTIN';
+  if (!f.industry.trim()) errs.industry = 'Industry is required';
+  if (!f.designation.trim()) errs.designation = 'Designation is required';
+  if (!f.department.trim()) errs.department = 'Department is required';
+  if (!PHONE_REGEX.test(f.phone)) errs.phone = 'Enter a valid 10-digit number';
+  if (!EMAIL_REGEX.test(f.email)) errs.email = 'Enter a valid email address';
+  if (!f.state) errs.state = 'Please select your state';
+  if (!f.city.trim()) errs.city = 'City is required';
   return errs;
 }
 
@@ -117,54 +117,54 @@ function validateAll(f) {
 
 const IconClose = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
   </svg>
 );
 const IconSend = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+    <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
   </svg>
 );
 const IconAlert = () => (
   <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
-    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
+    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
   </svg>
 );
 const IconChevron = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-    <polyline points="6 9 12 15 18 9"/>
+    <polyline points="6 9 12 15 18 9" />
   </svg>
 );
 const IconLock = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-    <path d="M7 11V7a5 5 0 0110 0v4"/>
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+    <path d="M7 11V7a5 5 0 0110 0v4" />
   </svg>
 );
 const IconUser = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
   </svg>
 );
 const IconBuilding = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />
   </svg>
 );
 const IconPin = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
   </svg>
 );
 const IconMsg = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
   </svg>
 );
 const IconSpinner = () => (
   <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
-    <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.3)" strokeWidth="3"/>
-    <path d="M4 12a8 8 0 018-8" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+    <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.3)" strokeWidth="3" />
+    <path d="M4 12a8 8 0 018-8" stroke="white" strokeWidth="3" strokeLinecap="round" />
   </svg>
 );
 
@@ -249,7 +249,7 @@ function TextInput({ label, id, name, value, onChange, placeholder, required, er
 function GSTInput({ value, onChange, errors }) {
   const err = errors?.gstNumber;
   const hasValue = value.length > 0;
-  const isValid  = hasValue && GST_REGEX.test(value);
+  const isValid = hasValue && GST_REGEX.test(value);
   const [focused, setFocused] = useState(false);
   return (
     <div>
@@ -327,7 +327,7 @@ function EmailInput({ value, onChange, errors }) {
       <FieldLabel htmlFor="email">Email Address<span style={{ color: '#EF4444', marginLeft: 3 }}>*</span></FieldLabel>
 
       {/* Toggle */}
-      <div style={{
+      {/* <div style={{
         display: 'inline-flex', background: '#F1F5F9', borderRadius: 8,
         padding: 3, gap: 3, marginBottom: 8,
         border: '1px solid #E2E8F0',
@@ -345,7 +345,7 @@ function EmailInput({ value, onChange, errors }) {
             {label}
           </button>
         ))}
-      </div>
+      </div> */}
 
       <input
         id="email" name="email" type="email" value={value} onChange={onChange} required
@@ -357,9 +357,9 @@ function EmailInput({ value, onChange, errors }) {
           boxShadow: focused && !err ? '0 0 0 3px rgba(59,130,246,0.1)' : 'none',
         }}
       />
-      <p style={{ fontSize: 11, color: '#94A3B8', marginTop: 5 }}>
-        {emailType === 'personal' ? 'Personal email (Gmail, Outlook, etc.)' : 'Official / work email address'}
-      </p>
+      {/* <p style={{ fontSize: 11, color: '#94A3B8', marginTop: 5 }}>
+        {'Personal email (Gmail, Outlook, etc.) Official / work email address'}
+      </p> */}
       <FieldError msg={err} />
     </div>
   );
@@ -399,10 +399,10 @@ function StateSelect({ value, onChange, errors }) {
 
 export default function PriceEnquiryForm({ isOpen, onClose, productData, onSuccess }) {
   const [formData, setFormData] = useState(INITIAL_FORM);
-  const [errors,   setErrors]   = useState({});
-  const [loading,  setLoading]  = useState(false);
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState('');
-  const [visible,  setVisible]  = useState(false);
+  const [visible, setVisible] = useState(false);
   const overlayRef = useRef(null);
 
   /* Animate in/out */
@@ -462,12 +462,22 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
       }, 50);
       return;
     }
+
+    // ✅ ADD TRACKING HERE
+    // window.dataLayer = window.dataLayer || [];
+    // window.dataLayer.push({
+    //   event: "price_enquiry_submit",
+    //   product_name: productData?.model || '',
+    //   product_slug: productData?.meta?.slug || '',
+    //   price: productData?.price || '',
+    //   page_url: window.location.href
+    // });
     setLoading(true);
     setApiError('');
     const payload = {
       ...formData,
-      product:     productData?.model || '',
-      price:       productData?.price || '',
+      product: productData?.model || '',
+      price: productData?.price || '',
       submittedAt: new Date().toISOString(),
       ...collectTracking(),
     };
@@ -481,11 +491,27 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
         const body = await res.json().catch(() => ({}));
         throw new Error(body?.error || `Server error ${res.status}`);
       }
+
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "price_enquiry_success",
+        product_id: productData?.productId || '',
+        product_name: productData?.model || ''
+      });
+
+      console.log(dataLayer)
+
       onSuccess?.({ product: productData, price: productData?.price });
       handleClose();
     } catch (err) {
       console.error('[PriceEnquiry]', err);
       setApiError(err.message || 'Submission failed. Please try again.');
+      // ❗ Optional: failure tracking
+      window.dataLayer.push({
+        event: "price_enquiry_failed",
+        product_slug: productData?.meta?.slug || ''
+      });
     } finally {
       setLoading(false);
     }
@@ -498,7 +524,6 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
   return (
     <>
       <style>{css}</style>
-
       {/* Overlay */}
       <div
         ref={overlayRef}
@@ -508,7 +533,6 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
       >
         {/* Modal */}
         <div className={`peq-card ${visible ? 'peq-card--in' : ''}`}>
-
           {/* Accent bar */}
           <div className="peq-accent-bar" />
 
@@ -517,7 +541,7 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
             <div className="peq-header-left">
               <span className="peq-icon-badge">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>
+                  <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" /><line x1="7" y1="7" x2="7.01" y2="7" />
                 </svg>
               </span>
               <div>
@@ -554,8 +578,7 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
 
           {/* ── FORM BODY ── */}
           <div className="peq-scroll">
-            <form onSubmit={handleSubmit} noValidate className="peq-form">
-
+            <form onSubmit={handleSubmit} id={`price-enquiry-${productData?.productId}`} noValidate className="peq-form">
               {/* Personal Info */}
               {/* <SectionHeader icon={<IconUser />} label="Personal Information" /> */}
               <div className="peq-grid-2">
@@ -607,8 +630,8 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
               {errorCount > 0 && (
                 <div data-form-error className="peq-warn">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                    <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-                    <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                    <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+                    <line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" />
                   </svg>
                   <div>
                     <strong>Please fix {errorCount} field{errorCount > 1 ? 's' : ''} before submitting</strong>
@@ -621,7 +644,7 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
               {apiError && (
                 <div data-form-error className="peq-error">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                    <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
                   </svg>
                   <div>
                     <strong>Submission Failed</strong>
@@ -631,7 +654,7 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
               )}
 
               {/* Submit */}
-              <button type="submit" disabled={loading} className="peq-submit">
+              <button type="submit" id={`price-enquiry-btn-${productData?.productId}`} disabled={loading} className="peq-submit">
                 {loading ? (
                   <><span className="peq-spinner" /> Sending Enquiry…</>
                 ) : (
