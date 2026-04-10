@@ -12,7 +12,23 @@ const SUBTITLE =
   'Discover our cutting-edge solutions to accelerate scientific excellence.';
 const TYPING_SPEED = 80;
 
-const TRUST_PILLS = ['Your Trusted Lab Patner', '24/7 Service', '100+ Instruments'];
+const TRUST_PILLS = [
+  {
+    text: "Your Trusted Lab Partner",
+    bg: "bg-red-100",
+    textColor: "text-red-700",
+  },
+  {
+    text: "24/7 Service",
+    bg: "bg-blue-100",
+    textColor: "text-blue-700",
+  },
+  {
+    text: "100+ Instruments",
+    bg: "bg-green-100",
+    textColor: "text-green-700",
+  },
+];
 
 export default function HeroOne() {
   const [animKey, setAnimKey] = useState(0);
@@ -321,13 +337,13 @@ export default function HeroOne() {
                 </Link>
 
                 <div className="flex flex-wrap gap-2 mt-5">
-                  {TRUST_PILLS.map((label, i) => (
+                  {TRUST_PILLS.map((pill, i) => (
                     <span
-                      key={label}
-                      className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest bg-[#2F4191] border border-white/30 px-3 py-1 rounded-full text-white"
+                      key={pill.text}
+                      className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/30 ${pill.bg} ${pill.textColor}`}
                     >
-                      <span className="w-[5px] h-[5px] rounded-full bg-yellow-400" />
-                      {label}
+                      <span className={`w-[5px] h-[5px] rounded-full ${pill.dot}`} />
+                      {pill.text}
                     </span>
                   ))}
                 </div>

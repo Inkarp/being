@@ -495,9 +495,11 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-        event: "price_enquiry_success",
+        event: `price_enquiry_success`,
+        form_name: "price enquiry",
         product_id: productData?.productId || '',
-        product_name: productData?.model || ''
+        product_name: productData?.model || '',
+        page_url: window.location.href
       });
 
       console.log(dataLayer)

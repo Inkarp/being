@@ -208,8 +208,10 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: "enquiry_success",
+          form_name: "enquiry",
           product_id: productData?.productId || '',
-          product_name: productData?.model || ''
+          product_name: productData?.model || '',
+          page_url: window.location.href
         });
       }
 
@@ -217,7 +219,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
 
       setTimeout(() => {
         handleClose();
-        router.push('/thank-you');
+        router.push(`/thank-you?product=${productData?.productId}`);
       }, 1500);
     } catch (err) {
       setSubmitError(err.message || 'Something went wrong. Please try again.');

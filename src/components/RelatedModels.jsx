@@ -112,7 +112,7 @@ export default function RelatedModels({
               </div>
 
                 <div className="flex flex-col gap-5 items-center justify-between">
-                  <h4 className="text-sm py-1 font-semibold text-gray-900 line-clamp-2">
+                  <h4 className="text-sm p-3 font-semibold text-gray-900 line-clamp-2">
                     {model.title}
 
                   </h4>
