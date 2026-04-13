@@ -4,22 +4,23 @@ import { useState, useRef, useEffect, Fragment } from "react";
 import Link from "next/link";
 
 const categories = [
-  { name: "Ovens",               link: "/products/laboratory-ovens" },
-  { name: "Incubators",          link: "/products/incubators" },
-  { name: "Chillers",            link: "/products/chillers" },
-  { name: "Water Baths",         link: "/products/water-baths" },
-  { name: "Rotary Evaporators",  link: "/products/rotary-evaporators" },
-  { name: "Pumps",               link: "/products/pumps" },
-  { name: "Cabinet",             link: "/products/cabinet" },
-  { name: "Freezers",            link: "/products/freezers" },
+  { name: "Ovens", link: "/products/laboratory-ovens" },
+  { name: "Cabinets", link: "/products/cabinet" },
+  { name: "Incubators", link: "/products/incubators" },
+  { name: "Chillers", link: "/products/chillers" },
+  { name: "Water Baths", link: "/products/water-baths" },
+  { name: "Rotary Evaporators", link: "/products/rotary-evaporators" },
+  { name: "Pumps", link: "/products/pumps" },
+  { name: "Cabinet", link: "/products/cabinet" },
+  { name: "Freezers", link: "/products/freezers" },
   { name: "Digital Viscometers", link: "/products/digital-viscometers" },
-  { name: "Muffle Furnace",      link: "/products/muffle-furnace" },
+  { name: "Muffle Furnace", link: "/products/muffle-furnace" },
 ];
 
 export default function Categories() {
   const [active, setActive] = useState("Ovens");
   const scrollRef = useRef(null);
-  const [canScrollLeft,  setCanScrollLeft]  = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   /* ── shadow fade indicators ── */
@@ -226,7 +227,7 @@ export default function Categories() {
           {/* ── Scrollable tabs ── */}
           <div className="cat-scroll-wrap">
             {/* fade-out edges */}
-            <div className="cat-scroll-fade-left"  style={{ opacity: canScrollLeft  ? 1 : 0 }} />
+            <div className="cat-scroll-fade-left" style={{ opacity: canScrollLeft ? 1 : 0 }} />
             <div className="cat-scroll-fade-right" style={{ opacity: canScrollRight ? 1 : 0 }} />
 
             <div className="cat-scroll" ref={scrollRef}>

@@ -3,6 +3,9 @@
 import { MdOutlineSettingsApplications } from 'react-icons/md';
 import { FaChevronDown } from 'react-icons/fa';
 import Image from 'next/image';
+import { CiCircleCheck } from 'react-icons/ci';
+import { FaVialCircleCheck } from 'react-icons/fa6';
+import { LuBadgeCheck } from 'react-icons/lu';
 
 
 export default function ProductTabContent({
@@ -34,14 +37,18 @@ export default function ProductTabContent({
             {product.features.items.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-lg transition flex gap-5"
-              >
-                <div className="text-white bg-[#2F4191] text-xl mt-1 p-2 rounded-lg flex items-center justify-center">
-                  <MdOutlineSettingsApplications size={36} />
+                className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-lg transition flex gap-5">
+                <div className='flex justify-center items-center gap-5'>
+                  <div className="text-white bg-[#2F4191] text-xl mt-1 p-2 rounded-lg ">
+                    {/* <MdOutlineSettingsApplications size={24}/> */}
+                    {/* <CiCircleCheck size={28} /> */}
+
+                    <FaVialCircleCheck size={24} />
+                  </div>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    {feature}
+                  </p>
                 </div>
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  {feature}
-                </p>
               </div>
             ))}
           </div>
@@ -65,7 +72,8 @@ export default function ProductTabContent({
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 ">
             {product.specifications.items.map((spec, index) => (
-              <div key={index} className="flex justify-between border bg-gray-100 border-gray-200 rounded-lg gap-4"> {/* bg-transparent to avoid parent bg conflict */}
+              <div key={index} className="flex justify-between border bg-gray-100 border-gray-200 rounded-lg gap-4">
+                {/* bg-transparent to avoid parent bg conflict */}
                 <div className=" px-3 py-2 rounded-md flex-1 text-left"> {/* Left: label bg */}
                   <span className="text-sm font-medium text-black block">
                     {spec.label}
@@ -79,7 +87,6 @@ export default function ProductTabContent({
               </div>
             ))}
           </div>
-
         </div>
       )}
 
@@ -103,21 +110,24 @@ export default function ProductTabContent({
             {product.applications.items.map((app, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-xl p-5 bg-white hover:shadow-sm"
+                className="border border-gray-200 rounded-xl p-5 bg-white hover:shadow-sm flex justify-start items-center gap-3"
               >
-                <h4 className="text-lg font-bold text-[#2B7EC2] mb-2">
-                  {app.label}
-                </h4>
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  {app.value}
-                </p>
+                {/* <LuBadgeCheck size={36}  color='#2B7EC2'/> */}
+                <div>
+                  <h4 className="text-lg font-bold text-[#2B7EC2] mb-2">
+                    {app.label}
+                  </h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    {app.value}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       )}
-      {/* =================faqs ================= */}
 
+      {/* =================faqs ================= */}
       {activeTab === 'faqs' && product?.faqs && (
         <section className="w-full max-w-5xl mx-auto space-y-8">
           {/* ================= OVERVIEW ================= */}
@@ -166,7 +176,6 @@ export default function ProductTabContent({
       {/* ================= service ================= */}
       {activeTab === 'services' && product.services && (
         <div className="space-y-6 max-w-5xl w-full">
-
           {/* HEADER */}
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
             <h2 className="text-2xl font-semibold text-gray-900">
@@ -180,21 +189,20 @@ export default function ProductTabContent({
               Need a service?
             </button>
 
-            
+
             <button
               onClick={() => setIsServiceRenewalOpen(true)}
               className="animate-pulse bg-[#2F4191] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2B7EC2] transition"
             >
-             Click here for One Year Warranty?
+              Click here for One Year Warranty?
             </button>
           </div>
 
           <p className="text-sm text-gray-700 leading-relaxed">
             {product.services.description}
           </p>
-          <div className="bg-gray-300 rounded-2xl p-4">
-
-            {/* <div
+          {/* <div className="bg-gray-300 rounded-2xl p-4">
+            <div
               className="bg-white rounded-xl p-4 max-h-[420px] overflow-y-auto pr-2"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -214,9 +222,8 @@ export default function ProductTabContent({
                   </div>
                 ))}
               </div>
-            </div> */}
-
-          </div>
+            </div>
+          </div> */}
         </div>
       )}
 
@@ -249,7 +256,6 @@ export default function ProductTabContent({
           </div>
         </div>
       )}
-
 
     </div>
   );

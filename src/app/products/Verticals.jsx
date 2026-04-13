@@ -12,6 +12,16 @@ const profiles = [
         icon: "/ovens.png",
         color: "from-orange-400 to-red-500",
     },
+
+    {
+        name: "Cabinets",
+        description: "Vacuum and peristaltic pumps for lab applications.",
+        link: "/products/cabinet",
+        image: "/about.jpg",
+        icon: "/incubators.png",
+        socials: { whatsapp: "https://wa.me/918019828999" },
+    },
+
     {
         name: "Incubators",
         description: "Controlled temperature chambers for cell culture and microbiology.",
@@ -102,7 +112,7 @@ export default function Verticals() {
                     <Link
                         key={index}
                         href={profile.link}
-                        className="group bg-[#2F4191] p-4 flex items-start gap-3 border-2 border-[#2F4191]/70 hover:shadow-2xl hover:shadow-[#2B7EC2]/20 hover:-translate-y-3 hover:rotate-x-1 transition-all duration-500 origin-bottom relative overflow-hidden">
+                        className="group bg-[#2F4191] p-4 flex items-start gap-3 border-2 border-[#2F4191]/70 hover:shadow-2xl hover:shadow-[#2B7EC2]/20 hover:-translate-y-3 hover:rotate-x-1 transition-all duration-500 origin-bottom relative overflow-hidden rounded-xl">
                         {/* Category Badge */}
                         <div className="absolute -bottom-4 -right-4 w-20 h-15 bg-white backdrop-blur-sm border-2 border-white rounded-2xl flex items-center justify-center shadow-2xl rotate-0 group-hover:scale-110 transition-all duration-700">
                             {/* <span className="text-lg font-bold text-gray-800 uppercase tracking-wider drop-shadow-md">{index + 1}</span> */}
