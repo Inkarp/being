@@ -106,6 +106,7 @@ export default function ProductActionSection({
                 hasFaqs={Array.isArray(product.faqs?.items) && product.faqs.items.length > 0}
                 hasServices={!!product.services}
                 hasFeedback={!!product.installations}
+                hasProductImages={Array.isArray(product.productImages) && product.productImages.length > 0}
             />
 
             {/* ================= TAB CONTENT ================= */}

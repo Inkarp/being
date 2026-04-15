@@ -257,6 +257,41 @@ export default function ProductTabContent({
         </div>
       )}
 
+      {activeTab === 'productImages' && product.productImages?.length > 0 && (
+        <div className="space-y-8 max-w-5xl mx-auto w-full">
+
+          {/* Heading */}
+          <div className="flex flex-col items-center text-center">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-3 font-['Arial','Helvetica Neue','Helvetica',sans-serif]">
+              Product Images of {product.title}
+            </h2>
+          </div>
+
+          {/* Images Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            {product.productImages.map((img, index) => (
+              <div
+                key={index}
+                className="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-md transition"
+              >
+                <div className="relative w-full h-[250px] flex items-center justify-center p-4">
+                  <Image
+                    src={img}
+                    alt={`${product.title} installation ${index + 1}`}
+                    width={400}
+                    height={250}
+                    className="object-contain max-h-full max-w-full"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+      )}
     </div>
   );
 }

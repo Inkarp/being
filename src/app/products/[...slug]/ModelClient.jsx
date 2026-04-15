@@ -260,7 +260,7 @@ export default function Model() {
                             {product.gem && (
                                 <Image
                                     src="/Gem.png"
-                                    alt="Featured Product"
+                                    alt="GEM Image"
                                     width={60}
                                     height={60}
                                     className="absolute top-3 right-3 z-10"
@@ -276,9 +276,9 @@ export default function Model() {
 
                             <Image
                                 src={product.thumbnail}
-                                alt={product.title}
-                                width={420}
-                                height={420}
+                                alt={product.imgAltText}
+                                width={400}
+                                height={400}
                                 className="object-contain mx-auto"
                                 priority
                             />

@@ -277,8 +277,7 @@ export default function HeroOne() {
           priority
           quality={75}
           sizes="100vw"
-          objectFit='fit'
-          className="absolute inset-0 lg:block hidden"
+          className="absolute inset-0 w-full h-full object-cover"
         />
 
         <div className="relative z-20 h-full flex items-start lg:mt-20 mt-5 px-6 md:px-7 lg:px-24">

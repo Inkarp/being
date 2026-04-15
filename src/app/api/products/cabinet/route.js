@@ -156,7 +156,7 @@ export async function GET() {
                         },
 
                         title: "Biological Safety Cabinet Class II A2 - BBC-4S1",
-                        thumbnail: "/testImg.webp",
+                        thumbnail: "/assets/cabinets/BCV-4S1.webp",
                         imgAltText: "Biological Safety Cabinet Class II A2_BBC-4S1_Being India",
 
                         overview: [
@@ -270,7 +270,8 @@ export async function GET() {
                                     answer: "When selecting a biological safety cabinet, factors such as class type, airflow design, filtration efficiency, working space, ergonomics, and service support should be considered. The BBC-4S1 offers a balanced combination of performance, usability, and OEM-backed support."
                                 }
                             ]
-                        }
+                        },
+                        productImages:["/assets/cabinets/BCV-4S1-1.webp","/assets/cabinets/BCV-4S1.webp"]
                     },
 
                     {
@@ -696,7 +697,7 @@ export async function GET() {
                         },
 
                         title: "Laminar Air Flow (Vertical Clean Bench) - BCV-4S1",
-                        thumbnail: "/testImg.webp",
+                        thumbnail: "/assets/cabinets/BCV-4S1.webp",
                         imgAltText: "Laminar Air Flow (Vertical Clean Bench)_BCV-4S1_Being India",
 
                         overview: [

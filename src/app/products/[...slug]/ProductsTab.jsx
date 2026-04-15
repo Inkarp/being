@@ -7,6 +7,7 @@ const TABS = [
   { key: 'faqs', label: 'FAQs', flag: 'hasFaqs' },
   { key: 'services', label: 'Service & Support', flag: 'hasServices' },
   { key: 'feedback', label: 'Installations', flag: 'hasFeedback' },
+  { key: 'productImages', label: 'Product Images', flag: 'hasProductImages' }
 ]
 
 export default function ProductTabs(props) {
