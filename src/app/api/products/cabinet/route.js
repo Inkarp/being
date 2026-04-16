@@ -16,9 +16,13 @@ export async function GET() {
 
                     {
                         model: "Biological Safety Cabinet Class II A2 - BBC-3S1",
+                        title: "Biological Safety Cabinet Class II A2 - BBC-3S1",
+                        thumbnail: "/testImg.webp",
+                        imgAltText: "Biological Safety Cabinet Class II A2_BBC-3S1_Being India",
+                        price: "50000",
                         gem: true,
-                        category: "new",
 
+                        tags: ["new"],
                         meta: {
                             slug: "bbc-3s1",
                             title: "Biological Safety Cabinet Class II A2 BBC-3S1 | OEM & Service Provider in India | Being India",
@@ -26,9 +30,7 @@ export async function GET() {
                             keywords: "Biological Safety Cabinet Class II A2, BBC-3S1 Biological Safety Cabinet, Biological Safety Cabinet OEM India, Class II A2 biosafety cabinet specifications, HEPA filtered biological safety cabinet, Laminar airflow biological safety cabinet, Biological safety cabinet airflow system, Biological safety cabinet manufacturer in India, Biological safety cabinet OEM in India, Buy biological safety cabinet India, Biological safety cabinet installation and validation India, Biological safety cabinet for microbiology labs, Biosafety cabinet for pharmaceutical laboratories, Biological safety cabinet for cell culture, Biological safety cabinet for diagnostics and hospitals, BBC-3S1 biosafety cabinet, BBC biological safety cabinet, BBC-3S1 specifications"
                         },
 
-                        title: "Biological Safety Cabinet Class II A2 - BBC-3S1",
-                        thumbnail: "/testImg.webp",
-                        imgAltText: "Biological Safety Cabinet Class II A2_BBC-3S1_Being India",
+
 
                         overview: [
                             "The BBC-3S1 Biological Safety Cabinet (Class II A2) is designed to provide reliable protection for the operator, product, and environment during microbiological and contamination-sensitive work. Equipped with HEPA filtration (99.99% efficiency at 0.3 µm) and a controlled airflow system, it maintains a sterile working environment by combining downward laminar airflow with filtered exhaust. The cabinet ensures safe handling of biological samples while minimizing exposure to contaminants.",
@@ -150,9 +152,13 @@ export async function GET() {
 
                     {
                         model: "Biological Safety Cabinet Class II A2 - BBC-4S1",
+                        title: "Biological Safety Cabinet Class II A2 - BBC-4S1",
+                        thumbnail: "/assets/cabinets/BCV-4S1.webp",
+                        imgAltText: "Biological Safety Cabinet Class II A2_BBC-4S1_Being India",
+                        price: "70000",
                         gem: true,
-                        category: "new",
 
+                        tags: ["new"],
                         meta: {
                             slug: "bbc-4s1",
                             title: "Biological Safety Cabinet Class II A2 BBC-4S1| OEM & Service Provider in India | Being India",
@@ -160,9 +166,7 @@ export async function GET() {
                             keywords: "Biological Safety Cabinet Class II A2, BBC-4S1 Biological Safety Cabinet, Biological Safety Cabinet OEM India, Class II A2 biosafety cabinet specifications, HEPA filtered biological safety cabinet Mid-size biological safety cabinet, Biological safety cabinet airflow system, Biological safety cabinet manufacturer in India, Biological safety cabinet OEM in India, Buy biological safety cabinet India Biological safety cabinet installation and validation India, Biological safety cabinet for microbiology labs Biosafety cabinet for pharmaceutical laboratories, Biological safety cabinet for cell culture, Biological safety cabinet for clinical and research labs, BBC-4S1 biosafety cabinet, BBC biological safety cabinet, BBC-4S1 specifications"
                         },
 
-                        title: "Biological Safety Cabinet Class II A2 - BBC-4S1",
-                        thumbnail: "/assets/cabinets/BCV-4S1.webp",
-                        imgAltText: "Biological Safety Cabinet Class II A2_BBC-4S1_Being India",
+
 
                         overview: [
                             "The BBC-4S1 Biological Safety Cabinet Class II A2 is a mid-size biosafety cabinet designed for laboratories that require a larger working area while maintaining high levels of protection, airflow stability, and contamination control. Equipped with HEPA filtration (99.99% efficiency at 0.3 µm) and a controlled airflow system, it ensures operator, product, and environmental protection during microbiological work. The cabinet provides a sterile workspace through uniform downflow and filtered exhaust airflow.",
@@ -281,9 +285,13 @@ export async function GET() {
 
                     {
                         model: "Biological Safety Cabinet Class II A2 - BBC-5S1",
+                        title: "Biological Safety Cabinet Class II A2 - BBC-5S1",
+                        thumbnail: "/testImg.webp",
+                        imgAltText: "Biological Safety Cabinet Class II A2_BBC-5S1_Being India",
+                        price: "25000",
                         gem: true,
-                        category: "new",
 
+                        tags: ["new"],
                         meta: {
                             slug: "bbc-5s1",
                             title: "Biological Safety Cabinet Class II A2 BBC-5S1 | OEM & Service Provider in India | Being India",
@@ -291,9 +299,7 @@ export async function GET() {
                             keywords: "Biological Safety Cabinet Class II A2, BBC-5S1 Biological Safety Cabinet, Biological Safety Cabinet OEM India, Large workspace biological safety cabinet, Class II A2 biosafety cabinet specifications, HEPA filtered biological safety cabinet, Biological safety cabinet airflow system, Biological safety cabinet manufacturer in India, Biological safety cabinet OEM in India, Buy biological safety cabinet India, Biological safety cabinet installation and validation India, Biological safety cabinet for microbiology labs, Biosafety cabinet for pharmaceutical R&D, Biological safety cabinet for vaccine laboratories, Biological safety cabinet for cell culture applications, BBC-5S1 biosafety cabinet, BBC biological safety cabinet, BBC-5S1 specifications"
                         },
 
-                        title: "Biological Safety Cabinet Class II A2 - BBC-5S1",
-                        thumbnail: "/testImg.webp",
-                        imgAltText: "Biological Safety Cabinet Class II A2_BBC-5S1_Being India",
+
 
                         overview: [
                             "The BBC-5S1 Biological Safety Cabinet Class II A2 is a large-format biosafety cabinet designed for high-throughput laboratories that require extended workspace along with reliable contamination control. Equipped with HEPA filtration (99.99% efficiency at 0.3 µm) and a controlled airflow system, it provides protection for the operator, product, and environment during microbiological and cell-based work. The cabinet maintains a sterile working zone through uniform downflow and filtered exhaust airflow.",
@@ -411,9 +417,12 @@ export async function GET() {
 
                     {
                         model: "Biological Safety Cabinet Class II A2 - BBC-6S1",
+                        title: "Biological Safety Cabinet Class II A2 - BBC-6S1",
+                        thumbnail: "/testImg.webp",
+                        imgAltText: "Biological Safety Cabinet Class II A2_BBC-6S1_Being India",
+                        price: "30000",
                         gem: true,
-                        category: "new",
-
+                        tags: ["new"],
                         meta: {
                             slug: "bbc-6s1",
                             title: "Biological Safety Cabinet Class II A2 BBC-6S1 | OEM & Service Provider in India | Being India",
@@ -421,9 +430,7 @@ export async function GET() {
                             keywords: "Biological Safety Cabinet Class II A2, BBC-6S1 Biological Safety Cabinet, Biological Safety Cabinet OEM India, Large workspace biological safety cabinet, Multi-user biosafety cabinet, Class II A2 biosafety cabinet specifications, HEPA filtered biological safety cabinet, Biological safety cabinet manufacturer in India, Biological safety cabinet OEM in India, Buy biological safety cabinet India, Biological safety cabinet installation and validation India, Biological safety cabinet for pharmaceutical laboratories, Biosafety cabinet for biotechnology labs, Biological safety cabinet for research institutes, Biological safety cabinet for government labs, BBC-6S1 biosafety cabinet, BBC biological safety cabinet, BBC-6S1 specifications"
                         },
 
-                        title: "Biological Safety Cabinet Class II A2 - BBC-6S1",
-                        thumbnail: "/testImg.webp",
-                        imgAltText: "Biological Safety Cabinet Class II A2_BBC-6S1_Being India",
+
 
                         overview: [
                             "The BBC-6S1 Biological Safety Cabinet Class II A2 is a large-capacity biosafety cabinet designed for multi-user and high-throughput laboratory environments that require extended workspace with reliable contamination control. Equipped with HEPA filtration (99.99% efficiency at 0.3 µm) and a controlled airflow system, it ensures protection for the operator, product, and environment during microbiological and cell-based work. The cabinet maintains a sterile working zone through uniform downflow and filtered exhaust airflow.",
@@ -548,9 +555,12 @@ export async function GET() {
 
                     {
                         model: "Laminar Air Flow (Vertical Clean Bench) - BCV-3S1",
+                        title: "Laminar Air Flow (Vertical Clean Bench) - BCV-3S1",
+                        thumbnail: "/testImg.webp",
+                        imgAltText: "Laminar Air Flow (Vertical Clean Bench)_BCV-3S1_Being India",
+                        price: "40000",
                         gem: true,
-                        category: "new",
-
+                        tags: ["new"],
                         meta: {
                             slug: "bcv-3s1",
                             title: "Vertical Laminar Air Flow BCV-3S1 | OEM & Service Provider in India | Being India",
@@ -558,9 +568,7 @@ export async function GET() {
                             keywords: "Vertical Laminar Air Flow, Laminar Air Flow Clean Bench, BCV-3S1 Laminar Air Flow, Vertical laminar air flow specifications, HEPA laminar air flow clean bench, ISO Class 5 clean bench, Laminar airflow system laboratory, Vertical laminar air flow specifications, HEPA laminar air flow clean bench, ISO Class 5 clean bench, Laminar airflow system laboratory, Laminar air flow for microbiology labs, Clean bench for pharmaceutical laboratories, Laminar air flow for cell culture, Clean bench for electronics and precision work, BCV-3S1 clean bench, BCV laminar air flow, BCV-3S1 specifications"
                         },
 
-                        title: "Laminar Air Flow (Vertical Clean Bench) - BCV-3S1",
-                        thumbnail: "/testImg.webp",
-                        imgAltText: "Laminar Air Flow (Vertical Clean Bench)_BCV-3S1_Being India",
+
 
                         overview: [
                             "The BCV-3S1 Vertical Laminar Air Flow Clean Bench is designed to provide a clean, particle-free working environment for sensitive laboratory applications. It draws ambient air, passes it through a HEPA filtration system, and delivers uniform vertical laminar airflow across the work surface to maintain ISO Class 5 cleanliness conditions. This ensures protection of samples from airborne contamination during critical processes.",
@@ -691,9 +699,11 @@ export async function GET() {
 
                     {
                         model: "Laminar Air Flow (Vertical Clean Bench) - BCV-4S1",
+                        title: "Laminar Air Flow (Vertical Clean Bench) - BCV-4S1",
+                        thumbnail: "/assets/cabinets/BCV-4S1.webp",
+                        imgAltText: "Laminar Air Flow (Vertical Clean Bench)_BCV-4S1_Being India",
                         gem: true,
-                        category: "new",
-
+                        tags: ["best-seller"],
                         meta: {
                             slug: "bcv-4s1",
                             title: "Vertical Laminar Air Flow BCV-4S1 | OEM & Service Provider in India | Being India",
@@ -701,9 +711,7 @@ export async function GET() {
                             keywords: "Vertical Laminar Air Flow, Laminar Air Flow Clean Bench, BCV-4S1 Laminar Air Flow, Laminar air flow clean bench specifications, HEPA laminar air flow system, ISO Class 5 clean bench, Laboratory clean bench airflow system, Laminar air flow manufacturer in India, Laminar air flow OEM in India, Buy laminar air flow clean bench India, Laminar air flow installation and validation India, Laminar air flow for pharmaceutical labs, Clean bench for microbiology labs, Laminar air flow for cell culture, Clean bench for research laboratories, BCV-4S1 clean bench, BCV laminar air flow, BCV-4S1 specifications"
                         },
 
-                        title: "Laminar Air Flow (Vertical Clean Bench) - BCV-4S1",
-                        thumbnail: "/assets/cabinets/BCV-4S1.webp",
-                        imgAltText: "Laminar Air Flow (Vertical Clean Bench)_BCV-4S1_Being India",
+
 
                         overview: [
                             "The BCV-4S1 Vertical Laminar Air Flow Clean Bench is designed to provide a larger working area while maintaining a clean, particle-free environment for sensitive laboratory applications. It draws ambient air, passes it through a HEPA filtration system, and delivers uniform vertical airflow across the work surface to achieve ISO Class 5 cleanliness. This ensures reliable protection of samples from airborne contamination during critical operations.",
@@ -824,9 +832,11 @@ export async function GET() {
 
                     {
                         model: "Laminar Air Flow (Vertical Clean Bench) - BCV-5S1",
+                        title: "Laminar Air Flow (Vertical Clean Bench) - BCV-5S1",
+                        thumbnail: "/testImg.webp",
+                        imgAltText: "Laminar Air Flow (Vertical Clean Bench)_BCV-5S1_Being India",
                         gem: true,
-                        category: "new",
-
+                        tags: ["new"],
                         meta: {
                             slug: "bcv-5s1",
                             title: "Laminar Air Flow (Vertical Clean Bench) - BCV-5S1 | OEM & Service Provider in India | Being India",
@@ -834,9 +844,7 @@ export async function GET() {
                             keywords: "Vertical Laminar Air Flow, Laminar Air Flow Clean Bench, BCV-5S1 Laminar Air Flow, Dual operator laminar air flow clean bench, HEPA laminar airflow system, ISO Class 5 clean bench specifications, Vertical airflow clean bench laboratory, Laminar air flow manufacturer in India, Laminar air flow OEM in India, Buy laminar air flow clean bench India, Laminar air flow installation and validation India, Laminar air flow for microbiology labs, Clean bench for pharmaceutical R&D, Laminar air flow for biotechnology labs, Clean bench for aseptic sample preparation, BCV-5S1 clean bench, BCV laminar air flow, BCV-5S1 specifications"
                         },
 
-                        title: "Laminar Air Flow (Vertical Clean Bench) - BCV-5S1",
-                        thumbnail: "/testImg.webp",
-                        imgAltText: "Laminar Air Flow (Vertical Clean Bench)_BCV-5S1_Being India",
+
 
                         overview: [
                             "The BCV-5S1 Vertical Laminar Air Flow Clean Bench is engineered for high-throughput laboratories that require a larger working area while maintaining clean, particle-free conditions. It draws ambient air through a high-efficiency HEPA filtration system and delivers uniform vertical airflow across the entire work surface, ensuring ISO Class 5 cleanliness for contamination-sensitive operations. Designed for two-operator usage, it enhances productivity without compromising airflow stability.",
@@ -954,12 +962,14 @@ export async function GET() {
                         }
                     },
 
-
                     {
                         model: "Laminar Air Flow (Vertical Clean Bench) - BCV-6S1",
+                        title: "Laminar Air Flow (Vertical Clean Bench) - BCV-6S1",
+                        thumbnail: "/testImg.webp",
+                        imgAltText: "Laminar Air Flow (Vertical Clean Bench)_BCV-6S1_ Being India",
                         gem: true,
                         category: "new",
-
+                        tags: ["new"],
                         meta: {
                             slug: "bcv-6s1",
                             title: "Laminar Air Flow (Vertical Clean Bench) - BCV-6S1 | OEM & Service Provider in India | Being India",
@@ -967,9 +977,7 @@ export async function GET() {
                             keywords: "Vertical Laminar Air Flow, Laminar Air Flow Clean Bench, BCV-6S1 Laminar Air Flow, Large workspace laminar air flow clean bench, Multi-user laminar air flow system, ISO Class 5 clean bench specifications, HEPA laminar airflow system laboratory, Laminar air flow manufacturer in India, Laminar air flow OEM in India, Buy laminar air flow clean bench India, Laminar air flow installation and validation India, Laminar air flow for pharmaceutical labs, Clean bench for biotechnology laboratories, Laminar air flow for research institutes, Clean bench for contamination-free sample preparation, BCV-6S1 clean bench, BCV laminar air flow, BCV-6S1 specifications"
                         },
 
-                        title: "Laminar Air Flow (Vertical Clean Bench) - BCV-6S1",
-                        thumbnail: "/testImg.webp",
-                        imgAltText: "Laminar Air Flow (Vertical Clean Bench)_BCV-6S1_ Being India",
+
 
                         overview: [
                             "The BCV-6S1 Vertical Laminar Air Flow Clean Bench is designed for multi-user laboratory environments requiring a large working space with consistent clean air conditions. It draws ambient air through a high-efficiency HEPA filtration system and delivers uniform vertical airflow across the entire work surface, ensuring ISO Class 5 cleanliness for contamination-sensitive applications. Built for three-operator usage, it improves productivity while maintaining stable airflow performance.",

@@ -4,7 +4,7 @@ export async function GET() {
   return NextResponse.json({
     category: "Laboratory Ovens",
     meta: {
-      title: "Laboratory Drying Oven (LCD, up to 250 °C) | OEM & Service Provider in India | Being India",
+      title: "Laboratory Drying Ovens | OEM & Service Provider in India | Being India",
       description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
       keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
     },
@@ -18,18 +18,19 @@ export async function GET() {
           /* ================== BPG-9040A ================== */
           {
             model: "Laboratory Drying Oven – BPG-9040A",
+            title: "Laboratory Drying Oven – BPG-9040A",
+            thumbnail: "/testImg.webp",
+            imgAltText: "Laboratory Drying Oven_BPG-9040A_ Being India",
+            price: "15000",
             gem: true,
-            catergory: "new",
+            tags: ["new"],
             meta: {
               slug: "bpg-9040a",
               title: "Laboratory Drying Oven BPG-9040A | OEM & Service Provider in India | Being India",
               description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
               keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
             },
-            title: "Laboratory Drying Oven – BPG-9040A",
-            thumbnail: "/testImg.webp",
-            imgAltText: "Laboratory Drying Oven_BPG-9040A_ Being India",
-            price: "15000",
+
             "overview": [
               "The BPG-9040A Laboratory Drying Oven is a precision hot air oven engineered for reliable drying, heating, and thermal processing of laboratory samples under stable and uniform temperature conditions. It features a 40-liter stainless steel chamber and an advanced forced air circulation system, ensuring even heat distribution and minimizing temperature variations that can affect sample integrity and reproducibility.",
 
@@ -189,18 +190,21 @@ export async function GET() {
           /* ================== BPG-9070A ================== */
           {
             model: "Laboratory Drying Oven - BPG-9070A",
+
+            title: "Laboratory Drying Oven - BPG-9070A",
+            thumbnail: "/assets/BPG-9070A.webp",
+            imgAltText: "Laboratory Drying Oven_BPG-9070A_ Being India",
+            // price: "15000",
             // gem: true,
-            catergory: "best-seller",
+            category: "best-seller",
+            tags: ["new", "featured"],
             meta: {
               slug: "bpg-9070a",
               title: "Laboratory Drying Oven BPG-9070A | OEM & Service Provider in India | Being India",
               description: " BPG-9070A 80-litre laboratory drying oven with precise temperature control, uniform airflow, and OEM-authorized installation & service support across India.",
               keywords: " Laboratory Drying Oven, BPG-9070A Laboratory Drying Oven, Laboratory Drying Oven OEM India, 80 litre laboratory drying oven, Precision hot air oven, Laboratory drying oven specifications, Forced air laboratory oven, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven India, Laboratory drying oven service support India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for material science applications, Laboratory oven for food testing laboratoriesBPG-9070A hot air oven, BPG laboratory drying oven, BPG-9070A specifications",
             },
-            title: "Laboratory Drying Oven - BPG-9070A",
-            thumbnail: "/assets/BPG-9070A.webp",
-            imgAltText: "Laboratory Drying Oven_BPG-9070A_ Being India",
-            // price: "15000",
+
             "overview": [
               "The BPG-9070A Laboratory Drying Oven is a high-capacity, forced-air hot air oven designed for controlled drying, heating, and thermal processing of laboratory samples under uniform temperature conditions. Featuring an 80-litre stainless steel chamber and efficient airflow design, the oven ensures consistent heat distribution and repeatable results across routine and application-specific workflows. It supports temperatures up to 250 °C with precise digital control, making it suitable for laboratories that require stable thermal performance and higher sample throughput.",
 
@@ -347,18 +351,20 @@ export async function GET() {
           /* ==================  BPG-9140A ================== */
           {
             model: "Laboratory Drying Oven - BPG-9140A",
+            title: "Laboratory Drying Oven - BPG-9140A",
+            thumbnail: "/assets/BPG-9140A.webp",
+            imgAltText: "Laboratory Drying Oven_BPG-9140A_ Being India",
+            price: "15000",
             gem: true,
-            catergory: "popular",
+            category: "popular",
+            tags: ["new", "featured"],
             meta: {
               slug: "bpg-9140a",
               title: "Laboratory Drying Oven BPG-9140A | OEM & Service Provider in India | Being India",
               description: "BPG-9140A 150-litre laboratory drying oven with uniform airflow, precise temperature control up to 250 °C, and OEM-authorized service across India.",
               keywords: " Laboratory Drying Oven, BPG-9140A Laboratory Drying Oven, Laboratory Drying Oven OEM India, 150 litre laboratory drying oven, Large capacity hot air oven, Laboratory drying oven specifications, Forced air laboratory oven, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven India, Laboratory drying oven installation and service India, Laboratory drying oven for pharmaceutical labs, Drying oven for material science applications, Laboratory oven for food testing laboratories, Hot air oven for chemical laboratories, BPG-9140A hot air oven, BPG laboratory drying oven, BPG-9140A specifications",
             },
-            title: "Laboratory Drying Oven - BPG-9140A",
-            thumbnail: "/assets/BPG-9140A.webp",
-            imgAltText: "Laboratory Drying Oven_BPG-9140A_ Being India",
-            price: "15000",
+
             "overview": [
               "The BPG-9140A Laboratory Drying Oven is a high-capacity forced-air hot air oven designed for controlled drying, heating, and thermal processing of large sample loads under uniform temperature conditions. Featuring a 150-litre stainless steel chamber and optimized airflow design, the oven ensures consistent heat distribution and repeatable results across demanding laboratory and industrial applications. It supports precise temperature control up to 250 °C, making it suitable for continuous and long-duration thermal processes.",
 
@@ -498,17 +504,19 @@ export async function GET() {
           /* ==================  BPG-9240A ================== */
           {
             model: "Laboratory Drying Oven – BPG-9240A",
+            title: "Laboratory Drying Oven - BPG-9240A",
+            thumbnail: "/assets/BPG-9240A.webp",
+            imgAltText: "Laboratory Drying Oven_BPG-9240A_ Being India",
+            price: "15000",
             gem: true,
+            tags: ["new", "featured"],
             meta: {
               slug: "bpg-9240a",
               title: "Laboratory Drying Oven BPG-9240A | OEM & Service Provider in India | Being India",
               description: "BPG-9240A 250-litre laboratory drying oven with uniform airflow, precise temperature control up to 250 °C, and OEM-authorized service across India.",
               keywords: " Laboratory Drying Oven, BPG-9240A Laboratory Drying Oven, Laboratory Drying Oven OEM India, 250 litre laboratory drying oven, Large capacity hot air oven, Forced air laboratory drying oven, Laboratory drying oven specifications, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven India, Laboratory drying oven installation and service India, Laboratory drying oven for pharmaceutical laboratories, Drying oven for material science applications, Laboratory oven for food and agriculture testing, Hot air oven for chemical laboratories, BPG-9240A hot air oven, BPG laboratory drying oven, BPG-9240A specifications",
             },
-            title: "Laboratory Drying Oven - BPG-9240A",
-            thumbnail: "/assets/BPG-9240A.webp",
-            imgAltText: "Laboratory Drying Oven_BPG-9240A_ Being India",
-            price: "15000",
+
             "overview": [
               "The BPG-9240A Laboratory Drying Oven is a large-capacity forced-air hot air oven designed for laboratories and industrial environments that handle high sample volumes and require stable, repeatable thermal processing. Featuring a 250-litre stainless steel chamber, powerful air circulation, and precise programmable temperature control up to 250 °C, the oven delivers uniform heating across all shelves, ensuring consistent drying and heating results even during continuous operation.",
 
@@ -651,17 +659,19 @@ export async function GET() {
           /* ==================  BPG-9420A ================== */
           {
             model: "Laboratory Drying Oven – BPG-9420A",
+             title: "Laboratory Drying Oven - BPG-9420A",
+            thumbnail: "/testImg.webp",
+            imgAltText: "Laboratory Drying Oven_BPG-9420A_ Being India",
+            price: "15000",
             gem: true,
+            tags:["new"],
             meta: {
               slug: "bpg-9420a",
               title: "Laboratory Drying Oven BPG-9420A | OEM & Service Provider in India | Being India",
               description: "BPG-9420A 420-litre laboratory drying oven with uniform airflow, precise temperature control up to 250 °C, and OEM-authorized service across India.",
               keywords: "Laboratory Drying Oven, BPG-9420A Laboratory Drying Oven, Laboratory Drying Oven OEM India, 420 litre laboratory drying oven, Large capacity hot air oven, Forced air laboratory drying oven, Laboratory drying oven specifications, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven India, Laboratory drying oven installation and service India, Laboratory drying oven for pharmaceutical laboratories, Drying oven for material science applications, Laboratory oven for food and agriculture testing, Hot air oven for chemical laboratories, BPG-9420A hot air oven, BPG laboratory drying oven, BPG-9420A specifications",
             },
-            title: "Laboratory Drying Oven - BPG-9420A",
-            thumbnail: "/testImg.webp",
-            imgAltText: "Laboratory Drying Oven_BPG-9420A_ Being India",
-            price: "15000",
+           
             "overview": [
               "The BPG-9420A Laboratory Drying Oven is a high-volume forced-air hot air oven engineered for laboratories and industrial facilities that process large sample loads under controlled thermal conditions. Featuring a 420-litre stainless steel chamber, powerful air circulation, and precise programmable temperature control up to 250 °C, the oven ensures uniform heating and repeatable results across extended operating cycles. Its robust construction and intelligent controls make it suitable for continuous, high-throughput laboratory workflows.",
 
@@ -810,7 +820,7 @@ export async function GET() {
           {
             model: "Laboratory Drying Oven – BO-30F",
             gem: true,
-            catergory: "new",
+            category: "new",
             meta: {
               slug: "bpg-9040a",
               title: "Laboratory Drying Oven BPG-9040A | OEM & Service Provider in India | Being India",
@@ -981,7 +991,7 @@ export async function GET() {
           {
             model: "Laboratory Drying Oven - BO-50F",
             // gem: true,
-            catergory: "best-seller",
+            category: "best-seller",
             meta: {
               slug: "bpg-9070a",
               title: "Laboratory Drying Oven BPG-9070A | OEM & Service Provider in India | Being India",
@@ -1139,7 +1149,7 @@ export async function GET() {
           {
             model: "Laboratory Drying Oven - BO-120F",
             gem: true,
-            catergory: "popular",
+            category: "popular",
             meta: {
               slug: "bpg-9140a",
               title: "Laboratory Drying Oven BPG-9140A | OEM & Service Provider in India | Being India",
