@@ -112,7 +112,7 @@ export default function Verticals() {
                     <Link
                         key={index}
                         href={profile.link}
-                        className="group bg-[#2F4191] p-4 flex items-start gap-3 border-2 border-[#2F4191]/70 hover:shadow-2xl hover:shadow-[#2B7EC2]/20 hover:-translate-y-3 hover:rotate-x-1 transition-all duration-500 origin-bottom relative overflow-hidden rounded-xl">
+                        className="group bg-gradient-to-r from-[#1E2A78] via-[#2F4191] to-[#2B7EC2] p-4 flex items-start gap-3 border-2 border-[#2F4191]/70 hover:shadow-2xl hover:shadow-[#2B7EC2]/20 hover:-translate-y-3 hover:rotate-x-1 transition-all duration-500 origin-bottom relative overflow-hidden rounded-xl">
                         {/* Category Badge */}
                         <div className="absolute -bottom-4 -right-4 w-20 h-15 bg-white backdrop-blur-sm border-2 border-white rounded-2xl flex items-center justify-center shadow-2xl rotate-0 group-hover:scale-110 transition-all duration-700">
                             {/* <span className="text-lg font-bold text-gray-800 uppercase tracking-wider drop-shadow-md">{index + 1}</span> */}

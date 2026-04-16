@@ -1097,8 +1097,6 @@ export async function GET() {
 
                 ]
             },
-
-
         ]
     });
 }
