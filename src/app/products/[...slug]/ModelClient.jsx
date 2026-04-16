@@ -300,7 +300,7 @@ export default function Model() {
                 setIsServiceRenewalOpen={setIsServiceRenewalOpen}
                 setIsPardotOpen={setIsPardotOpen}
             />
-            <div className='text-center py-2 italic'>Disclaimer: Specifications are indicative. Performance may vary depending on load, usage, and ambient conditions.</div>
+            <div className='text-center py-2 italic'><span className='text-red-500 font-bold'>Disclaimer:</span> Specifications are indicative. Performance may vary depending on load, usage, and ambient conditions.</div>
 
             <EnquiryModal
                 isOpen={isEnquiryOpen}
