@@ -32,8 +32,19 @@ export async function generateMetadata({ params }) {
     const subSlug = slug[1];
     const modelSlug = slug[2];
 
-    let title = `${categorySlug.replace(/-/g, ' ')} | Being`;
-    let description = `Explore ${categorySlug.replace(/-/g, ' ')} laboratory instruments from Being.`;
+    let title;
+    let description;
+
+    /* ---------- CATEGORY ---------- */
+    if (!subSlug) {
+      title = categoryData.meta.title;
+      description = categoryData.meta.description;
+      if (categoryData.meta.keywords) {
+        keywords = Array.isArray(categoryData.meta.keywords)
+          ? categoryData.meta.keywords
+          : categoryData.meta.keywords.split(',').map(k => k.trim());
+      }
+    }
 
     /* ---------- SUBCATEGORY ---------- */
     if (subSlug) {
