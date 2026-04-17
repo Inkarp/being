@@ -1,17 +1,30 @@
 import { NextResponse } from "next/server";
 import { PRODUCT_CATEGORY_SLUGS } from "../../../lib/productCategories";
 
+function asArray(value) {
+  if (Array.isArray(value)) return value;
+  if (!value) return [];
+  return [value];
+}
+
+function getProductText(model) {
+  return [
+    model.title,
+    model.model,
+    model.meta?.title,
+    model.meta?.keywords,
+    model.meta?.description,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+}
+
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const q = (searchParams.get("q") || "").toLowerCase();
 
-  if (!q) return NextResponse.json([]);
-
-  // Get the base URL from request headers for proper origin on Vercel.
-  const protocol = request.headers.get("x-forwarded-proto") || "https";
-  const host =
-    request.headers.get("x-forwarded-host") || request.headers.get("host");
-  const baseUrl = `${protocol}://${host}`;
+  const baseUrl = new URL(request.url).origin;
 
   const results = [];
 
@@ -27,19 +40,21 @@ export async function GET(request) {
 
       data.subcategories?.forEach((sub) => {
         sub.models?.forEach((model) => {
-          const title = model.meta.title?.toLowerCase() || "";
-          const keywords = model.meta.keywords?.toLowerCase() || "";
+          if (q && !getProductText(model).includes(q)) return;
 
-          if (title.includes(q) || keywords.includes(q)) {
-            results.push({
-              id: model.meta.slug,
-              title: model.title,
-              image: model.thumbnail,
-              category: categorySlug,
-              subcategory: sub.slug,
-              url: `/products/${categorySlug}/${sub.slug}/${model.meta.slug}`,
-            });
-          }
+          results.push({
+            id: model.meta?.slug || model.model,
+            title: model.title || model.model || model.meta?.title,
+            image: model.thumbnail || model.meta?.thumbnail || "/testImg.webp",
+            imageAlt: model.imgAltText || model.title || model.model || "Product image",
+            model: model.model || model.meta?.id || model.meta?.slug,
+            category: categorySlug,
+            categoryName: data.category,
+            subcategory: sub.slug,
+            subcategoryName: sub.name,
+            tags: asArray(model.tags || model.category),
+            url: `/products/${categorySlug}/${sub.slug}/${model.meta?.slug}`,
+          });
         });
       });
     } catch (err) {
@@ -47,5 +62,5 @@ export async function GET(request) {
     }
   }
 
-  return NextResponse.json(results.slice(0, 20));
+  return NextResponse.json(q ? results.slice(0, 20) : results);
 }

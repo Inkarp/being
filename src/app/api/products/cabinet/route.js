@@ -422,7 +422,7 @@ export async function GET() {
                         imgAltText: "Biological Safety Cabinet Class II A2_BBC-6S1_Being India",
                         price: "30000",
                         gem: true,
-                        tags: ["new"],
+                        tags: ["popular"],
                         meta: {
                             slug: "bbc-6s1",
                             title: "Biological Safety Cabinet Class II A2 BBC-6S1 | OEM & Service Provider in India | Being India",
@@ -703,7 +703,7 @@ export async function GET() {
                         thumbnail: "/assets/cabinets/BCV-4S1.webp",
                         imgAltText: "Laminar Air Flow (Vertical Clean Bench)_BCV-4S1_Being India",
                         gem: true,
-                        tags: ["best-seller"],
+                        tags: ["popular"],
                         meta: {
                             slug: "bcv-4s1",
                             title: "Vertical Laminar Air Flow BCV-4S1 | OEM & Service Provider in India | Being India",
@@ -836,7 +836,7 @@ export async function GET() {
                         thumbnail: "/testImg.webp",
                         imgAltText: "Laminar Air Flow (Vertical Clean Bench)_BCV-5S1_Being India",
                         gem: true,
-                        tags: ["new"],
+                        tags: ["featured"],
                         meta: {
                             slug: "bcv-5s1",
                             title: "Laminar Air Flow (Vertical Clean Bench) - BCV-5S1 | OEM & Service Provider in India | Being India",
