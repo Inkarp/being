@@ -15,6 +15,7 @@ import CustomersPage from './Home/CustomersPage';
 import TestTwo from './Home/TestTwo';
 import ProductCarousel from './Home/ProductCarousel';
 import ProductQueries from './Home/ProductQueries';
+import CategoriesNew from './Home/CategoriesNew';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       style={{ background: 'linear-gradient(160deg, #275c9c 0%, #6cacdf 50%, #f0f7ff 100%)' }}>
       <HeroOne />
       <CategoryTabs />
+      {/* <CategoriesNew /> */}
       <ProductQueries />
       <PicksForYou />
       {/* <HeroNew /> */}

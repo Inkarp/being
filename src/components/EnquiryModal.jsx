@@ -265,7 +265,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
       const res = await fetch('/api/verify-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ otp }),
+        body: JSON.stringify({ email: formData.email, otp }),
       });
       const data = await res.json();
       if (res.ok && data.success) {
@@ -492,7 +492,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
           <div className="enq-header">
             <div>
               <div className="enq-title">Product Enquiry</div>
-              <div className="enq-subtitle">Fill in the details and we'll get back to you</div>
+              <div className="enq-subtitle">Fill in the details and we&apos;ll get back to you</div>
             </div>
             <button className="enq-close-btn" onClick={handleClose} aria-label="Close">
               <FaTimes size={12} />
