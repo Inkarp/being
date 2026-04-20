@@ -222,6 +222,23 @@ export default function HeroNew() {
         }
         .badge-visible { animation: badgeFadeUp 0.6s ease forwards, glowPulse 3s 1.5s ease-in-out infinite; }
 
+        /* ── Hero sizing ── */
+        .hero-new-section {
+          height: 88svh;
+          min-height: 560px;
+          max-height: 900px;
+        }
+        .hero-bg-media {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center center;
+        }
+        .hero-content-wrap {
+          padding-top: clamp(72px, 10svh, 112px);
+          padding-bottom: 96px;
+        }
+
         /* ── Headline ── */
         .hero-h1 { min-height: 8rem; }
 
@@ -343,18 +360,52 @@ export default function HeroNew() {
             transparent        40%
           );
         }
+
+        @media (max-width: 767px) {
+          .hero-new-section {
+            height: 100svh;
+            min-height: 620px;
+            max-height: none;
+          }
+          .hero-bg-media {
+            object-position: center top;
+          }
+          .hero-content-wrap {
+            align-items: flex-start;
+            padding-top: 120px;
+            padding-bottom: 108px;
+          }
+          .hero-h1 {
+            min-height: 7.25rem;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .hero-new-section {
+            min-height: 660px;
+          }
+        }
+
+        @media (max-height: 620px) and (orientation: landscape) {
+          .hero-new-section {
+            height: auto;
+            min-height: 620px;
+          }
+          .hero-content-wrap {
+            padding-top: 88px;
+          }
+        }
       `}</style>
 
       <section
         ref={sectionRef}
-        className="w-full relative overflow-hidden"
-        style={{ height: '88vh', minHeight: 520 }}
+        className="hero-new-section w-full relative overflow-hidden"
       >
         {/* ── Video Background ── */}
         <video
           autoPlay muted loop playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          style={{ objectPosition: 'center' }}
+          poster="/HeroImage.webp"
+          className="hero-bg-media absolute inset-0 z-0"
         >
           <source src="/bg-video.mov" type="video/mp4" />
           <source src="/bg-video.webm" type="video/webm" />
@@ -365,7 +416,7 @@ export default function HeroNew() {
         <div className="absolute inset-0 z-10 hero-overlay-bottom" />
 
         {/* ── Main Content ── */}
-        <div className="relative z-20 h-full flex items-center px-6 md:px-16 lg:px-24">
+        <div className="hero-content-wrap relative z-20 h-full flex items-center px-6 md:px-16 lg:px-24">
           <div className="w-full max-w-2xl space-y-6">
 
             {/* Badge */}

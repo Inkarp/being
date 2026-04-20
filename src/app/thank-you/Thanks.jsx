@@ -288,6 +288,47 @@ export default function Thanks() {
           transition: all 0.2s; text-decoration: none;
         }
 
+        .ty-shell {
+          display: grid;
+          grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+          min-height: 100vh;
+        }
+        .ty-shell-no-aside {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .ty-related-aside {
+          border-right: 1px solid rgba(0,0,0,0.07);
+          background: #fbfbfd;
+          padding: clamp(20px, 3vw, 36px);
+          overflow-y: auto;
+        }
+        .ty-recommendations {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+        .ty-main {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 0;
+          padding: clamp(24px, 4vw, 56px);
+        }
+        .ty-main-inner {
+          width: min(100%, 760px);
+        }
+
+        @media (max-width: 900px) {
+          .ty-shell { grid-template-columns: 1fr !important; min-height: auto !important; }
+          .ty-related-aside {
+            border-right: 0 !important;
+            border-bottom: 1px solid rgba(0,0,0,0.07) !important;
+            padding: 24px 18px !important;
+          }
+          .ty-recommendations { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+          .ty-main { padding: 28px 18px 36px !important; }
+        }
+
         @media (max-width: 600px) {
           .ty-cards { grid-template-columns: 1fr !important; }
           .ty-actions { flex-direction: column !important; align-items: stretch !important; }
@@ -302,23 +343,22 @@ export default function Thanks() {
           background: "black",
           minHeight: "100vh",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          alignItems: "stretch",
+          justifyContent: "stretch",
           position: "relative",
-          overflow: "hidden",
-          padding: "20px",
+          overflow: "auto",
+          padding: 0,
         }}
       >
         {particles.map((p, i) => <Particle key={i} style={p} />)}
 
         <div
+          className={`ty-shell ${recommendedProducts.length > 0 ? "" : "ty-shell-no-aside"}`}
           style={{
             position: "relative",
             zIndex: 1,
             background: "#fff",
             border: "1px solid rgba(0,0,0,0.07)",
-            padding: "20px",
-            maxWidth: 760,
             width: "100%",
             boxShadow: "0 24px 80px rgba(0,0,0,0.1)",
             opacity: visible ? 1 : 0,
@@ -326,6 +366,33 @@ export default function Thanks() {
             transition: "opacity 0.7s ease, transform 0.7s ease",
           }}
         >
+          {recommendedProducts.length > 0 && (
+            <aside className="ty-related-aside">
+              <h2
+                style={{
+                  fontSize: "1.15rem",
+                  fontWeight: 700,
+                  color: "#1a1a1a",
+                  marginBottom: 14,
+                }}
+              >
+                You may also be interested in
+              </h2>
+
+              <div className="ty-recommendations">
+                {recommendedProducts.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    onClick={() => handleRecommendationClick(product)}
+                  />
+                ))}
+              </div>
+            </aside>
+          )}
+
+          <main className="ty-main">
+            <div className="ty-main-inner">
           <div
             style={{
               display: "flex",
@@ -382,39 +449,6 @@ export default function Thanks() {
             <InfoPill icon="🏢" label="Location" value="Hyderabad, India" color="#065f46" />
           </div>
 
-          {recommendedProducts.length > 0 && (
-            <div style={{ marginTop: 24 }}>
-              <h2
-                style={{
-                  fontSize: "1.15rem",
-                  fontWeight: 700,
-                  color: "#1a1a1a",
-                  marginBottom: 14,
-                  textAlign: "center",
-                }}
-              >
-                You may also be interested in
-              </h2>
-
-              <div
-                className="ty-recommendations"
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: 14,
-                }}
-              >
-                {recommendedProducts.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    product={product}
-                    onClick={() => handleRecommendationClick(product)}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
-
           <div
             className="ty-actions"
             style={{
@@ -467,6 +501,8 @@ export default function Thanks() {
               in <strong style={{ color: "#2F4191" }}>{countDown}s</strong>
             </p>
           </div>
+            </div>
+          </main>
         </div>
       </div>
     </>

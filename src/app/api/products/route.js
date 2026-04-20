@@ -47,6 +47,8 @@ export async function GET(request) {
             title: model.title || model.model || model.meta?.title,
             image: model.thumbnail || model.meta?.thumbnail || "/testImg.webp",
             imageAlt: model.imgAltText || model.title || model.model || "Product image",
+            price: model.price ?? null,
+            discount: model.discount ?? null,
             model: model.model || model.meta?.id || model.meta?.slug,
             category: categorySlug,
             categoryName: data.category,

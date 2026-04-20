@@ -271,7 +271,7 @@ export default function HeroOne() {
         ref={sectionRef}
         className="relative w-full lg:h-[750px] h-[600px] overflow-hidden">
         <Image
-          src="/HeroImage.webp"
+          src="/HeroImage2.webp"
           alt="Hero"
           fill
           priority
