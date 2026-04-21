@@ -160,16 +160,16 @@ export default function PicksForYou() {
           <button
             onClick={() => navigate(-1)}
             disabled={page === 0}
-            className="w-10 h-10 flex items-center justify-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-105 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="w-10 h-10 flex items-center justify-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-105 disabled:opacity-80 disabled:cursor-not-allowed"
           >
             <FaArrowLeft size={13} />
           </button>
           <button
             onClick={() => navigate(1)}
             disabled={page === totalPages - 1}
-            className="w-10 h-10 flex items-center justify-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-105 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="w-10 h-10 flex items-center justify-center rounded-full border border-white/25 bg-white text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-105 disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            <FaArrowRight size={13} />
+            <FaArrowRight size={13}  color="black"/>
           </button>
         </div>
       </div>

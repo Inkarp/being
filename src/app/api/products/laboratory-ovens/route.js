@@ -25,7 +25,7 @@ export async function GET() {
             gem: true,
             tags: ["new"],
             related: [""],
-            crossSelling: [],
+            crossSelling: [""],
             meta: {
               slug: "bpg-9040a",
               title: "Laboratory Drying Oven BPG-9040A | OEM & Service Provider in India | Being India",

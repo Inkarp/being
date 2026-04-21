@@ -5,7 +5,7 @@ import { FaArrowRightArrowLeft } from "react-icons/fa6"
 
 export default function Banner() {
     return (
-        <section className="relative h-[300px] w-full mx-auto rounded-[20px] overflow-hidden">
+        <section className="relative h-[300px] w-full mx-auto overflow-hidden">
             {/* Background image with dark overlay */}
             <div className="absolute inset-0">
                 <Image

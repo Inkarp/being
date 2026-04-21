@@ -30,7 +30,7 @@ const events = [
 
 export default function Events() {
   return (
-    <section className="w-full mx-auto ">
+    <section className="w-full mx-auto p-5">
       <div className=" mx-auto flex flex-col lg:flex-row gap-10">
         <div className="flex-1">
           {events.map((event, index) => (

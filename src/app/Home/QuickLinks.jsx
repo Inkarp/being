@@ -2,16 +2,64 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
+import ServiceForm from "../../components/ServiceForm";
 
 const links = [
-  { image: "/service-tools.gif",      title: "Buy AMC",         href: "/amc",        color: "#2B7EC2" },
-  { image: "/warranty.gif",      title: "Extend Your Service",  href: "/promotions",  color: "#2F4191" },
+  { image: "/service-tools.gif",      title: "Exclusive Partner",         href: "/amc",        color: "#2B7EC2" },
+  { image: "/warranty.gif",      title: "Buy AMC",  href: "/promotions",  color: "#2F4191" },
   { image: "/sale.gif",  title: "Offers",     href: "/offers",      color: "#2B7EC2" },
-  { image: "/services.gif",      title: "Service", href: "/products",    color: "#2F4191" },
+  { image: "/services.gif",      title: "Service", action: "service",    color: "#2F4191" },
 ];
 
 export default function QuickLinks() {
+  const [isServiceOpen, setIsServiceOpen] = useState(false);
+  const serviceProductData = {
+    model: "General Service Request",
+    category: "Service",
+  };
+
+  const renderQuickLink = (item, i) => {
+    const content = (
+      <>
+        <div className="ql-icon-ring">
+          <Image
+            src={item.image}
+            alt={item.title}
+            unoptimized
+            width={40}
+            height={40}
+            sizes="40px"
+            style={{ objectFit: 'contain' }}
+          />
+        </div>
+        <span className="ql-label">{item.title}</span>
+      </>
+    );
+
+    const itemStyle = { '--accent': item.color, animationDelay: `${i * 0.08}s` };
+
+    if (item.action === "service") {
+      return (
+        <button
+          type="button"
+          className="ql-item ql-button"
+          style={itemStyle}
+          onClick={() => setIsServiceOpen(true)}
+          aria-label="Open service enquiry form"
+        >
+          {content}
+        </button>
+      );
+    }
+
+    return (
+      <Link href={item.href} className="ql-item" style={itemStyle}>
+        {content}
+      </Link>
+    );
+  };
+
   return (
     <>
       <style>{`
@@ -30,6 +78,14 @@ export default function QuickLinks() {
           flex: 1;
           min-width: 80px;
           animation: fadeUpLink 0.4s ease both;
+        }
+
+        .ql-button {
+          appearance: none;
+          border: 0;
+          background: transparent;
+          padding: 0;
+          font: inherit;
         }
 
         .ql-icon-ring {
@@ -106,23 +162,7 @@ export default function QuickLinks() {
           }}>
             {links.map((item, i) => (
               <Fragment key={item.title}>
-                <Link
-                  href={item.href}
-                  className="ql-item"
-                  style={{ '--accent': item.color, animationDelay: `${i * 0.08}s` }}
-                >
-                  <div className="ql-icon-ring">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      unoptimized
-                      width={40}
-                      height={40}
-                      style={{ objectFit: 'contain' }}
-                    />
-                  </div>
-                  <span className="ql-label">{item.title}</span>
-                </Link>
+                {renderQuickLink(item, i)}
 
                 {/* Divider between items, not after last */}
                 {i < links.length - 1 && (
@@ -133,6 +173,12 @@ export default function QuickLinks() {
           </div>
         </div>
       </section>
+
+      <ServiceForm
+        isOpen={isServiceOpen}
+        onClose={() => setIsServiceOpen(false)}
+        productData={serviceProductData}
+      />
     </>
   );
 }
