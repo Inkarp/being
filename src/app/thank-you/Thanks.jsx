@@ -2,42 +2,7 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
-
-// Product catalog with full URLs
-const PRODUCT_CATALOG = {
-  "bpg-9040a": {
-    id: "bpg-9040a",
-    name: "Laboratory Drying Oven - BPG-9040A",
-    shortDescription: "Compact 40 L laboratory drying oven for routine drying and heating applications.",
-    href: "/products/laboratory-ovens/laboratory-drying-oven/bpg-9040a",
-  },
-  "bpg-9070a": {
-    id: "bpg-9070a",
-    name: "Laboratory Drying Oven - BPG-9070A",
-    shortDescription: "80 L forced-air drying oven for higher throughput laboratory workflows.",
-    href: "/products/laboratory-ovens/laboratory-drying-oven/bpg-9070a",
-  },
-  "bpg-9140a": {
-    id: "bpg-9140a",
-    name: "Laboratory Drying Oven - BPG-9140A",
-    shortDescription: "High-capacity drying oven for consistent thermal performance in research labs.",
-    href: "/products/laboratory-ovens/laboratory-drying-oven/bpg-9140a",
-  },
-  "bpg-9240a": {
-    id: "bpg-9240a",
-    name: "Laboratory Drying Oven - BPG-9240A",
-    shortDescription: "Larger chamber model for batch processing and demanding heating applications.",
-    href: "/products/laboratory-ovens/laboratory-drying-oven/bpg-9240a",
-  },
-};
-
-const RECOMMENDATIONS_MAP = {
-  "bpg-9040a": ["bpg-9070a", "bpg-9140a"],
-  "bpg-9070a": ["bpg-9040a", "bpg-9240a"],
-  "bpg-9140a": ["bpg-9070a", "bpg-9240a"],
-  "bpg-9240a": ["bpg-9070a", "bpg-9140a"],
-};
+import { useEffect, useState } from "react";
 
 function CheckmarkCircle({ color }) {
   const [drawn, setDrawn] = useState(false);
@@ -184,18 +149,45 @@ export default function Thanks() {
 
   const [visible, setVisible] = useState(false);
   const [countDown, setCountDown] = useState(15);
+  const [recommendedProducts, setRecommendedProducts] = useState([]);
+  const [recommendationsLoading, setRecommendationsLoading] = useState(false);
 
   const productId = searchParams.get("product") || "";
-
-  const recommendedProducts = useMemo(() => {
-    const ids = RECOMMENDATIONS_MAP[productId] || [];
-    return ids.map((id) => PRODUCT_CATALOG[id]).filter(Boolean);
-  }, [productId]);
+  const showRelatedAside = recommendationsLoading || recommendedProducts.length > 0;
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 60);
     return () => clearTimeout(t);
   }, []);
+
+  useEffect(() => {
+    if (!productId) {
+      setRecommendedProducts([]);
+      return;
+    }
+
+    let cancelled = false;
+    setRecommendationsLoading(true);
+
+    fetch(`/api/products/related?product=${encodeURIComponent(productId)}`, {
+      cache: "no-store",
+    })
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error("Unable to load related products"))))
+      .then((data) => {
+        if (cancelled) return;
+        setRecommendedProducts(Array.isArray(data.relatedProducts) ? data.relatedProducts : []);
+      })
+      .catch(() => {
+        if (!cancelled) setRecommendedProducts([]);
+      })
+      .finally(() => {
+        if (!cancelled) setRecommendationsLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [productId]);
 
   useEffect(() => {
     if (countDown <= 0) {
@@ -352,8 +344,8 @@ export default function Thanks() {
       >
         {particles.map((p, i) => <Particle key={i} style={p} />)}
 
-        <div
-          className={`ty-shell ${recommendedProducts.length > 0 ? "" : "ty-shell-no-aside"}`}
+          <div
+          className={`ty-shell ${showRelatedAside ? "" : "ty-shell-no-aside"}`}
           style={{
             position: "relative",
             zIndex: 1,
@@ -366,28 +358,34 @@ export default function Thanks() {
             transition: "opacity 0.7s ease, transform 0.7s ease",
           }}
         >
-          {recommendedProducts.length > 0 && (
+          {showRelatedAside && (
             <aside className="ty-related-aside">
               <h2
                 style={{
-                  fontSize: "1.15rem",
+                  fontSize: "28px",
                   fontWeight: 700,
                   color: "#1a1a1a",
                   marginBottom: 14,
                 }}
               >
-                You may also be interested in
+                You may also Need these
               </h2>
 
-              <div className="ty-recommendations">
-                {recommendedProducts.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    product={product}
-                    onClick={() => handleRecommendationClick(product)}
-                  />
-                ))}
-              </div>
+              {recommendationsLoading ? (
+                <p style={{ fontSize: "0.88rem", lineHeight: 1.6, color: "#6b6456" }}>
+                  Loading related products...
+                </p>
+              ) : (
+                <div className="ty-recommendations">
+                  {recommendedProducts.map((product) => (
+                    <ProductCard
+                      key={product.id}
+                      product={product}
+                      onClick={() => handleRecommendationClick(product)}
+                    />
+                  ))}
+                </div>
+              )}
             </aside>
           )}
 

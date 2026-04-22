@@ -24,7 +24,7 @@ export async function GET() {
             discount: 50,
             gem: true,
             tags: ["new"],
-            related: [""],
+            related: ["bbc-3s1"],
             crossSelling: [""],
             meta: {
               slug: "bpg-9040a",
