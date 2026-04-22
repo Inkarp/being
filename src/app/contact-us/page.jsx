@@ -9,7 +9,7 @@ export default function ContactUs() {
         <div className="">
             <ContactHeader />   
             <ContactDetails />       
-            <NewForm />
+            {/* <NewForm /> */}
         </div>
     );
 }

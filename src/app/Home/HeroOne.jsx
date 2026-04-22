@@ -42,6 +42,7 @@ export default function HeroOne() {
   const [indiaFullyTyped, setIndiaFullyTyped] = useState(false);
   const [ctaVisible, setCtaVisible] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  
   // Controls when the logo fades in during line1 typing
   const [logoVisible, setLogoVisible] = useState(false);
 

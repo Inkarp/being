@@ -3,16 +3,16 @@ import { FaPaperPlane, FaCheckCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, Fa
 import Form from './Form';
 
 export default function ContactDetails() {
-  
+
 
     return (
         <section className="min-h-screen flex md:flex-row flex-col items-center justify-center py-5">
             <div className="w-full grid lg:grid-cols-4 gap-3 items-start relative px-4 bg-[#2F4191]/10  py-8">
                 {/* Left Side - Info Content (2/5) */}
-                <div  className="lg:col-span-2 w-full space-y-8 text-white flex flex-col items-center justify-start lg:items-start">
+                <div className="lg:col-span-2 w-full space-y-8 text-white flex flex-col items-center justify-start lg:items-start">
                     <div className="text-left lg:text-left">
                         <h2 className="text-4xl font-raleway font-black text-black  mb-4">
-                            Let's Connect!
+                            Lets Connect!
                         </h2>
                         <div className="w-24 h-1 bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] mx-auto lg:mx-0 rounded-full" />
                         <div className="space-y-3 w-full">

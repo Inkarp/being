@@ -178,10 +178,8 @@ export default function Form() {
     /* ================= UI ================= */
 
     return (
-        <section className="min-h-screen flex items-center justify-center rounded-3xl bg-[#2F4191]/10">
-
+        <section className="h-[620px] flex items-center justify-center rounded-3xl bg-[#2F4191]/10">
             <div className="p-5 w-full max-w-4xl">
-
                 {!status ? (
                     <form onSubmit={handleSubmit} className="space-y-3">
 
