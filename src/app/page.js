@@ -24,20 +24,18 @@ export default function Home() {
       <HeroOne />
       <CategoryTabs />
       {/* <CategoriesNew /> */}
-      {/* <ProductQueries /> */}
+
       <PicksForYou />
       {/* <HeroNew /> */}
       {/* <Hero />     */}
       {/* <Products /> */}
       {/* <QuickLinks /> */}
+      <ProductQueries />
       <About />
-      {/* <ProductQueries /> */}
-      {/* <Test /> */}
-      {/* <ProductCarousel /> */}
       <TestTwo />
       {/* <CustomersPage /> */}
-      <CustomersImages />
-      <Customers />
+      {/* <CustomersImages />
+      <Customers /> */}
       <Testimonials />
       <Blogs />
     </div>

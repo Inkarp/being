@@ -61,7 +61,7 @@ export default function Blogs() {
             Our Latest <span className="text-[#2B7EC2]">Events</span> & News
           </h2>
 
-          <p className="text-sm text-gray-500 max-w-md mx-auto mt-2">
+          <p className="text-sm  m-2">
             Stay updated with our upcoming events, workshops, and industry insights.
           </p>
 

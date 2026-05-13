@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <div>
       <Verticals />
-      <Products />
+      {/* <Products /> */}
     </div>
   )
 }

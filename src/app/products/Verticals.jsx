@@ -57,14 +57,7 @@ const profiles = [
         icon: "/incubators.png",
         color: "from-teal-400 to-sky-500",
     },
-    {
-        name: "Cabinet",
-        description: "Vacuum and peristaltic pumps for lab applications.",
-        link: "/products/cabinet",
-        image: "/about.jpg",
-        icon: "/incubators.png",
-        socials: { whatsapp: "https://wa.me/918019828999" },
-    },
+ 
 
     {
         name: "Freezers",

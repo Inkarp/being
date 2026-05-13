@@ -42,7 +42,7 @@ export default function HeroOne() {
   const [indiaFullyTyped, setIndiaFullyTyped] = useState(false);
   const [ctaVisible, setCtaVisible] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  
+
   // Controls when the logo fades in during line1 typing
   const [logoVisible, setLogoVisible] = useState(false);
 
@@ -352,12 +352,33 @@ export default function HeroOne() {
           </div>
         </div>
 
-        <div className="absolute bottom-20 hidden lg:block left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[#2F4191] opacity-100 animate-bounce">
-          <div className="w-[20px] h-[32px] border-2 border-black rounded-xl relative">
-            <div className="absolute top-[5px] left-1/2 -translate-x-1/2 w-[4px] h-[7px] bg-[#2F4191] rounded"></div>
+        <div className="animate-bounce absolute bottom-15 left-1/2 hidden lg:flex -translate-x-1/2 flex-col items-center z-20 cursor-pointer">
+
+          {/* Arrow */}
+          <div className=" mb-3">
+            <svg
+              width="34"
+              height="18"
+              viewBox="0 0 34 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="drop-shadow-[0_0_10px_rgba(255,255,255,0.45)]"
+            >
+              <path
+                d="M2 2L17 16L32 2"
+                stroke="rgba(255,255,255,0.92)"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </div>
-          <span className="text-[9px] text-red-800 font-bold tracking-widest uppercase">
-            Scroll
+
+          {/* Text */}
+          <span
+            className="text-white/75 uppercase tracking-[0.38em] text-[11px] font-medium select-none drop-shadow-md"
+          >
+            Scroll To Explore
           </span>
         </div>
       </section>
