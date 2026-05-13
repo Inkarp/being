@@ -113,10 +113,8 @@ export default function Blogs() {
 
             </div>
           </div>
-
           {/* Blogs */}
           <div>
-
             <div className="flex items-center gap-3 text-[10px] font-extrabold uppercase tracking-widest text-[#2F4191] mb-4">
               <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#2F4191]/20 to-transparent"/>
               Latest Blogs

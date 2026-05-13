@@ -68,11 +68,11 @@ export default function RootLayout({ children }) {
         <Header />
         {/* <ShareButton /> */}
         <SocialContactBar />
-        <FestivalUpdates />
+        {/* <FestivalUpdates /> */}
         <ProductsSidebar />
         <ProductProvider>
           <main 
-          // className="w-[90%] mx-auto"
+          // className="w-[95%] mx-auto"
           >
             {children}
           </main>

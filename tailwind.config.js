@@ -11,6 +11,9 @@ module.exports = {
         'slide-in-right': 'slideInRight 0.25s ease-out',
         'slide-in-left': 'slideInLeft 0.25s ease-out',
         'flip-cube': 'flipCube 0.6s ease-in-out',
+        'lvp-slide-up': 'lvpSlideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) both',
+        'lvp-pulse': 'lvpPulse 2s ease-in-out infinite',
+        'lvp-shrink': 'lvpShrink 7s linear forwards',
       },
       keyframes: {
         slowspin: {
@@ -29,6 +32,18 @@ module.exports = {
           '0%': { transform: 'rotateX(90deg)', opacity: 0 },
           '50%': { transform: 'rotateX(-10deg)', opacity: 0.5 },
           '100%': { transform: 'rotateX(0deg)', opacity: 1 },
+        },
+        lvpSlideUp: {
+          from: { opacity: '0', transform: 'translateY(20px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        lvpPulse: {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.5', transform: 'scale(0.7)' },
+        },
+        lvpShrink: {
+          from: { width: '100%' },
+          to: { width: '0%' },
         },
       },
     },
