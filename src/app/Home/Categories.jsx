@@ -11,7 +11,6 @@ const categories = [
   { name: "Water Baths", link: "/products/water-baths" },
   { name: "Rotary Evaporators", link: "/products/rotary-evaporators" },
   { name: "Pumps", link: "/products/pumps" },
-  { name: "Cabinet", link: "/products/cabinet" },
   { name: "Freezers", link: "/products/freezers" },
   { name: "Digital Viscometers", link: "/products/digital-viscometers" },
   { name: "Muffle Furnace", link: "/products/muffle-furnace" },

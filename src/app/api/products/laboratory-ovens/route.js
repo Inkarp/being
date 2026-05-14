@@ -166,7 +166,6 @@ export async function GET() {
                 "/service4.webp",
                 "/service5.webp",
                 "/service6.webp",
-
               ]
             },
             installations: {
