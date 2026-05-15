@@ -1,11 +1,12 @@
 'use client';
 
-import { MdOutlineSettingsApplications } from 'react-icons/md';
+import { MdHealthAndSafety } from 'react-icons/md';
 import { FaChevronDown } from 'react-icons/fa';
 import Image from 'next/image';
-import { CiCircleCheck } from 'react-icons/ci';
 import { FaVialCircleCheck } from 'react-icons/fa6';
 import { LuBadgeCheck } from 'react-icons/lu';
+import { FiMinus, FiPlus } from 'react-icons/fi';
+import { useState } from 'react';
 
 
 export default function ProductTabContent({
@@ -14,43 +15,177 @@ export default function ProductTabContent({
   setIsServiceOpen,
   setIsServiceRenewalOpen
 }) {
+
+  const [openFeature, setOpenFeature] = useState(null);
+  const [openSafety, setOpenSafety] = useState(null);
+  const [openApplication, setOpenApplication] = useState(null);
+  const [openInstallation, setOpenInstallation] = useState(null);
+  const keyFeatures = product.features?.keyFeatures ||
+    product.features?.items?.map((item) => (
+      typeof item === 'string'
+        ? { title: item }
+        : item
+    )) ||
+    [];
+  const safetyFeatureOverview = Array.isArray(product.features?.safetyFeatures?.overview)
+    ? product.features.safetyFeatures.overview
+    : [];
+  const safetyFeatures = Array.isArray(product.features?.safetyFeatures)
+    ? product.features.safetyFeatures
+    : product.features?.safetyFeatures?.items || [];
+
   return (
     <div className="p-6 text-sm text-gray-700 flex justify-center items-center w-full">
 
       {/* ================= FEATURES ================= */}
-      {activeTab === 'features' && product.features && (
-        <div className="space-y-8 max-w-5xl">
-          <div className="flex flex-col items-center text-center">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-3">
+      {activeTab === "features" && product.features && (
+        <div className=" mx-auto space-y-4">
+
+          {/* Heading */}
+          <div className="text-center max-w-5xl mx-auto">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4">
               Key Features of {product.title}
             </h2>
 
             {Array.isArray(product.features.overview) &&
               product.features.overview.map((para, index) => (
-                <p key={index} className="text-sm text-gray-700 leading-relaxed">
+                <p
+                  key={index}
+                  className="text-gray-600 leading-relaxed text-base"
+                >
                   {para}
                 </p>
               ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-            {product.features.items.map((feature, index) => (
+          {/* FEATURES */}
+         
+          <div className="space-y-5 max-w-5xl mx-auto">
+            {keyFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-lg transition flex gap-5">
-                <div className='flex justify-center items-center gap-5'>
-                  <div className="text-white bg-[#2F4191] text-xl mt-1 p-2 rounded-lg ">
-                    {/* <MdOutlineSettingsApplications size={24}/> */}
-                    {/* <CiCircleCheck size={28} /> */}
+                className="bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                {/* Top Row */}
+                <button
+                  onClick={() =>
+                    setOpenFeature(openFeature === index ? null : index)
+                  }
+                  className="w-full px-6 py-5 flex items-center justify-between text-left"
+                >
+                  <div className="flex items-center gap-5">
 
-                    <FaVialCircleCheck size={24} />
+                    {/* Icon */}
+                    <div className="min-w-[52px] h-[52px] rounded-xl bg-[#243B8F] flex items-center justify-center text-white">
+                      <FaVialCircleCheck size={24} />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-[17px] font-semibold text-gray-900 leading-snug">
+                      {feature.title}
+                    </h3>
                   </div>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {feature}
-                  </p>
+
+                  {/* Plus / Minus */}
+                  <div className="min-w-[38px] h-[38px] rounded-full border border-gray-300 flex items-center justify-center text-gray-500">
+                    {openFeature === index ? (
+                      <FiMinus size={18} />
+                    ) : (
+                      <FiPlus size={18} />
+                    )}
+                  </div>
+                </button>
+
+                {/* Expand Content */}
+                <div
+                  className={`transition-all duration-300 overflow-hidden ${openFeature === index
+                    ? "max-h-[500px] opacity-100"
+                    : "max-h-0 opacity-0"
+                    }`}
+                >
+                  <div className="px-6 pb-6 pl-[95px]">
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {feature.description || feature.value}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
+        
+
+          {/* ================= SAFETY FEATURES ================= */}
+          {safetyFeatures.length > 0 && (
+            <div className="pt-10">
+
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-semibold text-gray-900 mb-3">
+                  Safety Features
+                </h2>
+
+                {safetyFeatureOverview.length > 0 ? (
+                  safetyFeatureOverview.map((para, index) => (
+                    <p key={index} className="text-gray-600 leading-relaxed">
+                      {para}
+                    </p>
+                  ))
+                ) : (
+                  <p className="text-gray-600">
+                    Advanced protection systems designed for safe and reliable laboratory operation.
+                  </p>
+                )}
+              </div>
+
+              <div className="space-y-5">
+                {safetyFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className="bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-md"
+                  >
+                    {/* Top Row */}
+                    <button
+                      onClick={() =>
+                        setOpenSafety(openSafety === index ? null : index)
+                      }
+                      className="w-full px-6 py-5 flex items-center justify-between text-left"
+                    >
+                      <div className="flex items-center gap-5">
+
+                        <div className="min-w-[52px] h-[52px] rounded-xl bg-[#2F4191] flex items-center justify-center text-white">
+                          <MdHealthAndSafety size={24} />
+                        </div>
+
+                        <h3 className="text-[17px] font-semibold text-gray-900 leading-snug">
+                          {feature.title}
+                        </h3>
+                      </div>
+
+                      <div className="min-w-[38px] h-[38px] rounded-full border border-gray-300 flex items-center justify-center text-gray-500">
+                        {openSafety === index ? (
+                          <FiMinus size={18} />
+                        ) : (
+                          <FiPlus size={18} />
+                        )}
+                      </div>
+                    </button>
+
+                    {/* Expand */}
+                    <div
+                      className={`transition-all duration-300 overflow-hidden ${openSafety === index
+                        ? "max-h-[500px] opacity-100"
+                        : "max-h-0 opacity-0"
+                        }`}
+                    >
+                      <div className="px-6 pb-6 pl-[95px]">
+                        <p className="text-sm text-gray-600 leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
           </div>
         </div>
       )}
@@ -106,20 +241,53 @@ export default function ProductTabContent({
               ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <div className="space-y-5">
             {product.applications.items.map((app, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-xl p-5 bg-white hover:shadow-sm flex justify-start items-center gap-3"
+                className="bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-md"
               >
-                {/* <LuBadgeCheck size={36}  color='#2B7EC2'/> */}
-                <div>
-                  <h4 className="text-lg font-bold text-[#2B7EC2] mb-2">
-                    {app.label}
-                  </h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {app.value}
-                  </p>
+                {/* Top Row */}
+                <button
+                  onClick={() =>
+                    setOpenApplication(openApplication === index ? null : index)
+                  }
+                  className="w-full px-6 py-5 flex items-center justify-between text-left"
+                >
+                  <div className="flex items-center gap-5">
+                    {/* Icon */}
+                    <div className="min-w-[52px] h-[52px] rounded-xl bg-[#2B7EC2] flex items-center justify-center text-white">
+                      <LuBadgeCheck size={24} />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-[17px] font-semibold text-gray-900 leading-snug">
+                      {app.label}
+                    </h3>
+                  </div>
+
+                  {/* Plus / Minus */}
+                  <div className="min-w-[38px] h-[38px] rounded-full border border-gray-300 flex items-center justify-center text-gray-500">
+                    {openApplication === index ? (
+                      <FiMinus size={18} />
+                    ) : (
+                      <FiPlus size={18} />
+                    )}
+                  </div>
+                </button>
+
+                {/* Expand Content */}
+                <div
+                  className={`transition-all duration-300 overflow-hidden ${openApplication === index
+                    ? "max-h-[300px] opacity-100"
+                    : "max-h-0 opacity-0"
+                    }`}
+                >
+                  <div className="px-6 pb-6 pl-[95px]">
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {app.value}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -227,6 +395,77 @@ export default function ProductTabContent({
         </div>
       )}
 
+      {/* ================= BLOG ================= */}
+      {activeTab === 'blog' && product.blog && (
+        <article className="max-w-5xl mx-auto w-full space-y-8">
+          <header className="text-center max-w-4xl mx-auto">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-['Arial','Helvetica Neue','Helvetica',sans-serif]">
+              {product.blog.heading || product.blog.title || `Blog of ${product.title}`}
+            </h2>
+
+            {product.blog.description && (
+              <p className="text-sm text-gray-700 leading-relaxed mb-3">
+                {product.blog.description}
+              </p>
+            )}
+
+            {Array.isArray(product.blog.overview) &&
+              product.blog.overview.map((para, index) => (
+                <p key={index} className="text-sm text-gray-700 leading-relaxed mb-3">
+                  {para}
+                </p>
+              ))}
+          </header>
+
+          {Array.isArray(product.blog.content) && (
+            <div className="space-y-5">
+              {product.blog.content.map((block, index) => {
+                if (block.type === 'heading') {
+                  const HeadingTag = block.level === 'h3' ? 'h3' : 'h2';
+
+                  return (
+                    <HeadingTag key={index} className="text-xl font-semibold text-gray-900 pt-4">
+                      {block.value}
+                    </HeadingTag>
+                  );
+                }
+
+                if (block.type === 'list') {
+                  return (
+                    <ul key={index} className="list-disc pl-6 space-y-2 text-sm text-gray-700 leading-relaxed">
+                      {block.items?.map((item, itemIndex) => (
+                        <li key={itemIndex}>{item}</li>
+                      ))}
+                    </ul>
+                  );
+                }
+
+                return (
+                  <p key={index} className="text-sm text-gray-700 leading-relaxed">
+                    {block.value}
+                  </p>
+                );
+              })}
+            </div>
+          )}
+
+          {Array.isArray(product.blog.items) && (
+            <div className="space-y-8">
+              {product.blog.items.map((post, index) => (
+                <section key={index} className="space-y-3">
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {post.title}
+                  </h3>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    {post.description}
+                  </p>
+                </section>
+              ))}
+            </div>
+          )}
+        </article>
+      )}
+
       {/* ================= INSTALLATIONS ================= */}
       {activeTab === 'feedback' && product.installations && (
         <div className="space-y-8 max-w-5xl mx-auto w-full">
@@ -242,56 +481,61 @@ export default function ProductTabContent({
           </div>
 
           {/* Installation List */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
-            {product.installations.items.map((app, index) => (
+          <div className="space-y-3">
+            {product.installations.items.map((installation, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-xl p-5 bg-white hover:shadow-sm transition"
+                className="bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-md"
               >
-                <h4 className="text-sm font-semibold text-gray-900">
-                  {app}
-                </h4>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+                {/* Top Row */}
+                <button
+                  onClick={() =>
+                    setOpenInstallation(openInstallation === index ? null : index)
+                  }
+                  className="w-full px-6 py-5 flex items-center justify-between text-left"
+                >
+                  <div className="flex items-center gap-5">
+                    {/* Icon */}
+                    <div className="min-w-[52px] h-[52px] rounded-xl bg-[#2B7EC2] flex items-center justify-center text-white">
+                      <MdHealthAndSafety size={24} />
+                    </div>
 
-      {activeTab === 'productImages' && product.productImages?.length > 0 && (
-        <div className="space-y-8 max-w-5xl mx-auto w-full">
+                    {/* Title */}
+                    <h3 className="text-[17px] font-semibold text-gray-900 leading-snug">
+                      Installation {index + 1}
+                    </h3>
+                  </div>
 
-          {/* Heading */}
-          <div className="flex flex-col items-center text-center">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-3 font-['Arial','Helvetica Neue','Helvetica',sans-serif]">
-              Product Images of {product.title}
-            </h2>
-          </div>
+                  {/* Plus / Minus */}
+                  <div className="min-w-[38px] h-[38px] rounded-full border border-gray-300 flex items-center justify-center text-gray-500">
+                    {openInstallation === index ? (
+                      <FiMinus size={18} />
+                    ) : (
+                      <FiPlus size={18} />
+                    )}
+                  </div>
+                </button>
 
-          {/* Images Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            {product.productImages.map((img, index) => (
-              <div
-                key={index}
-                className="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-md transition"
-              >
-                <div className="relative w-full h-[250px] flex items-center justify-center p-4">
-                  <Image
-                    src={img}
-                    alt={`${product.title} installation ${index + 1}`}
-                    width={400}
-                    height={250}
-                    className="object-contain max-h-full max-w-full"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
+                {/* Expand Content */}
+                <div
+                  className={`transition-all duration-300 overflow-hidden ${openInstallation === index
+                    ? "max-h-[200px] opacity-100"
+                    : "max-h-0 opacity-0"
+                    }`}
+                >
+                  <div className="px-6 pb-6 pl-[95px]">
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {installation}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
-
           </div>
-
         </div>
       )}
+
+
     </div>
   );
 }

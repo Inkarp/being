@@ -86,7 +86,7 @@ const profiles = [
     },
 ];
 
-export default function Verticals() {
+export default function ProductsPage() {
     return (
         <section className="w-full py-5 relative overflow-hidden">
             {/* Heading */}

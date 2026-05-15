@@ -57,13 +57,13 @@ export default function ProductActionSection({
                 <div
                     className="flex flex-wrap justify-center gap-3 lg:justify-end"
                 >
-                    <button
+                    {/* <button
                         onClick={() => setIsEnquiryOpen(true)}
                         className="flex items-center justify-center gap-2 bg-white text-[#2F4191] border border-[#2F4191] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2F4191] hover:text-white transition duration-300 w-full sm:w-auto cursor-pointer hover:scale-105"
                     >
                         <FaFileDownload size={14} />
                         Download Brochure
-                    </button>
+                    </button> */}
 
                     <button
                         onClick={handleShare}
@@ -100,13 +100,17 @@ export default function ProductActionSection({
             <ProductTabs
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
-                hasFeatures={product.features?.items?.length > 0}
+                hasFeatures={
+                    product.features?.keyFeatures?.length > 0 ||
+                    product.features?.items?.length > 0
+                }
                 hasSpecs={product.specifications?.items?.length > 0}
                 hasApplications={product.applications?.items?.length > 0}
                 hasFaqs={Array.isArray(product.faqs?.items) && product.faqs.items.length > 0}
                 hasServices={!!product.services}
+                hasBlog={!!product.blog}
                 hasFeedback={!!product.installations}
-                hasProductImages={Array.isArray(product.productImages) && product.productImages.length > 0}
+              
             />
 
             {/* ================= TAB CONTENT ================= */}

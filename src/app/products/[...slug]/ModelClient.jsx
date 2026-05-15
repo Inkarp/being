@@ -225,7 +225,7 @@ export default function Model() {
                     {/* ================= CENTER: PRODUCT INFO ================= */}
                     <div className="space-y-6">
                         <h1 className="text-2xl font-semibold text-gray-900">
-                            {product.title}
+                            {product.productTitle}
                         </h1>
 
                         {product.overview && (
@@ -255,7 +255,7 @@ export default function Model() {
 
                     {/* ================= RIGHT: PRODUCT IMAGE ================= */}
                     <div className="flex flex-col justify-center">
-                        <div className="relative  transition-colors duration-300">
+                        <div className="relative mx-auto aspect-[4/3] w-full max-w-[420px] transition-colors duration-300">
                             {/* GEM BADGE ON IMAGE */}
                             {product.gem && (
                                 <Image
@@ -263,23 +263,22 @@ export default function Model() {
                                     alt="GEM Image"
                                     width={60}
                                     height={60}
-                                    className="absolute top-3 right-3 z-10"
-                                    priority
+                                    className="absolute top-3 right-3 z-10 h-[60px] w-[60px] object-contain"
                                 />
                             )}
                             <div
                                 onClick={() => setShowImage(true)}
-                                className="p-2 bg-[#2F4191]/20 absolute bottom-3 right-3 rounded-full hover:bg-[#2F4191]/40 cursor-pointer"
+                                className="p-2 bg-[#2F4191]/20 absolute bottom-3 right-3 z-10 rounded-full hover:bg-[#2F4191]/40 cursor-pointer"
                             >
                                 <MdZoomOutMap size={24} />
                             </div>
 
                             <Image
                                 src={product.thumbnail}
-                                alt={product.imgAltText}
-                                width={400}
-                                height={400}
-                                className="object-contain mx-auto"
+                                alt={product.imgAltText || product.title}
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 33vw"
+                                className="object-contain"
                                 priority
                             />
                         </div>
@@ -335,7 +334,7 @@ export default function Model() {
                 onClose={() => setShowPricePopup(false)}
                 product={{
                     title: product.title,
-                    thumbnail: product.meta.thumbnail,
+                    thumbnail: product.thumbnail,
                     price: product.price,
                 }}
             />
@@ -436,6 +435,7 @@ export default function Model() {
                         alt={product.title}
                         width={800}
                         height={800}
+                        sizes="90vw"
                         className="object-contain max-h-[90vh] max-w-[90vw]"
                     />
                 </div>

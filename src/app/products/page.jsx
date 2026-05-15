@@ -1,11 +1,11 @@
 import Products from "./Products";
-import Verticals from "./Verticals";
+import ProductsPage from "./ProductsPage";
 
 export default function Page() {
   return (
     <div>
-      <Verticals />
-      {/* <Products /> */}
+      {/* <ProductsPage /> */}
+      <Products />
     </div>
   )
 }
