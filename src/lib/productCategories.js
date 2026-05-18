@@ -3,4 +3,5 @@ export const PRODUCT_CATEGORY_SLUGS = [
   "incubators",
   "cabinet",
   "pumps",
+  "rotary-evaporators",
 ];

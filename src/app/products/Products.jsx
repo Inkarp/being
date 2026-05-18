@@ -52,7 +52,7 @@ function getModelLabel(model) {
 
 export default function Products() {
     const [categories, setCategories] = useState([]);
-    const [activeCategory, setActiveCategory] = useState(ALL_PRODUCTS);
+    const [activeCategory, setActiveCategory] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
     const [loading, setLoading] = useState(true);
 
@@ -65,7 +65,10 @@ export default function Products() {
                 const json = await res.json();
                 const grouped = groupProductsByCategory(Array.isArray(json) ? json : []);
 
-                if (mounted) setCategories(grouped);
+                if (mounted) {
+                    setCategories(grouped);
+                    setActiveCategory(grouped[0]?.slug || ALL_PRODUCTS);
+                }
             } catch (error) {
                 console.error("Failed to load products:", error);
             } finally {
@@ -170,20 +173,7 @@ export default function Products() {
                         </p>
 
                         <div className="mt-3">
-                            <button
-                                type="button"
-                                onClick={() => setActiveCategory(ALL_PRODUCTS)}
-                                className={`relative flex w-full items-center justify-between px-6 py-3 text-left text-base transition ${activeCategory === ALL_PRODUCTS
-                                    ? "bg-[#eeeeea] font-bold text-[#111]"
-                                    : "font-medium text-[#303030] hover:bg-[#eeeeea]"
-                                    }`}
-                            >
-                                {activeCategory === ALL_PRODUCTS && (
-                                    <span className="absolute left-0 top-0 h-full w-[3px] bg-[#111]" />
-                                )}
-                                <span>All products</span>
-                                <span className="text-xs text-[#8a8a84]">{totalProducts}</span>
-                            </button>
+                            
 
                             {loading ? (
                                 <div className="px-6 py-4 text-sm text-[#777]">Loading...</div>
@@ -210,6 +200,21 @@ export default function Products() {
                                     );
                                 })
                             )}
+
+                            <button
+                                type="button"
+                                onClick={() => setActiveCategory(ALL_PRODUCTS)}
+                                className={`relative flex w-full items-center justify-between px-6 py-3 text-left text-base transition ${activeCategory === ALL_PRODUCTS
+                                    ? "bg-[#eeeeea] font-bold text-[#111]"
+                                    : "font-medium text-[#303030] hover:bg-[#eeeeea]"
+                                    }`}
+                            >
+                                {activeCategory === ALL_PRODUCTS && (
+                                    <span className="absolute left-0 top-0 h-full w-[3px] bg-[#111]" />
+                                )}
+                                <span>All products</span>
+                                <span className="text-xs text-[#8a8a84]">{totalProducts}</span>
+                            </button>
                         </div>
                     </aside>
 
