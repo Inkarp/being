@@ -514,10 +514,978 @@ export async function GET() {
             },
 
             {
-                name: "Heating Baths",
-                slug: "heating-baths",
+                name: "Recirculating Chiller (–10 °C to +100 °C)",
+                slug: "recirculating-chiller",
                 models: [
+                    {
+                        model: "MP-10C Recirculating Chiller Heater",
+                        title: "MP-10C Recirculating Chiller Heater",
 
+                        meta: {
+                            slug: "mp-10c",
+                            title:
+                                "MP-10C Recirculating Chiller Heater | -10°C to 100°C | ±0.2°C | 4.5L | 8 L/min | Being India",
+                            description:
+                                "MP-10C: Compact -10°C to 100°C heating & cooling recirculating chiller with ±0.2°C precision, LCD microprocessor, multi-step programmable control, 4.5L stainless steel bath, 8 L/min pump, auto restart & 5999-min timer. For lab temperature control. Enquire.",
+                            keywords:
+                                "MP-10C Heating Cooling Recirculating Chiller, -10°C to 100°C recirculating chiller heater, laboratory heating cooling circulator, MP-10C programmable chiller heater 4.5L, LCD microprocessor recirculating bath, MP-10C recirculating chiller heater -10°C to 100°C with LCD microprocessor controller and 8 L/min pump for laboratory temperature control and external equipment cooling heating, programmable heating cooling circulator 4.5L with ±0.2°C precision for chemical pharmaceutical and research temperature control, MP-10C recirculating chiller with multi-step programmable settings and auto restart for laboratory external bath applications, heating cooling recirculating chiller, laboratory temperature circulator, programmable chiller heater, LCD microprocessor chiller, stainless steel recirculating bath, external temperature control laboratory, -10 to 100°C laboratory chiller, auto restart recirculating chiller, what is a heating cooling recirculating chiller and how does it differ from a cooling-only chiller, how does a laboratory recirculating chiller/heater achieve both -10°C and 100°C, which programmable recirculating chiller has ±0.2°C precision for chemical and pharmaceutical use, is the MP-10C suitable for external cooling and heating of laboratory equipment, MP-10C vs MP-30C, MP-10C vs MPG-10C, 4.5L vs 13L recirculating chiller, -10 to 100°C vs -10 to 150°C circulator, buy MP-10C recirculating chiller, MP-10C price, order -10°C to 100°C heating cooling laboratory circulator"
+                        },
+
+                        productTitle:
+                            "MP-10C Recirculating Chiller Heater — Compact -10°C to 100°C Precision Temperature Control with LCD Microprocessor and Multi-Step Programmable Settings",
+
+                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+                        imgAltText:
+                            "MP-10C compact heating and cooling recirculating chiller with -10°C to 100°C range, ±0.2°C precision, LCD microprocessor controller, multi-step programmable settings, 4.5L stainless steel bath, 8 L/min pump, auto restart function, and 5999-minute timer for laboratory temperature control and external equipment cooling and heating applications_Being India",
+
+                        price: 253920,
+
+                        gem: true,
+
+                        tags: ["new"],
+
+                        related: ["mp-30c", "mpg-10c"],
+
+                        overview: [
+                            "The MP-10C Heating and Cooling Recirculating Chiller provides bidirectional temperature control from -10°C to 100°C — combining refrigeration-based cooling and electric heating within a single 4.5L stainless steel bath instrument for precise, stable temperature-controlled fluid circulation to external laboratory equipment. Unlike cooling-only recirculating chillers limited to sub-ambient operation, the MP-10C serves the full range of laboratory temperature control applications from cold-temperature reaction control and condenser cooling through ambient and above-ambient jacketed reactor heating — eliminating the need for separate cooling and heating circulator instruments for laboratories requiring temperature control across the full sub-ambient to elevated temperature range. With LCD microprocessor controller, multi-step programmable operation, 8 L/min built-in circulation pump, stainless steel chamber, 1–5999 minute timer, auto restart after power interruption, and comprehensive safety alarms — the MP-10C provides versatile, precision temperature control for chemical, pharmaceutical, and research external temperature applications."
+                        ],
+
+                        features: {
+                            overview: [
+                                "The MP-10C delivers -10°C to 100°C precise heating and cooling recirculation with ±0.2°C precision, LCD microprocessor controller, multi-step programmable settings, 4.5L stainless steel bath, 8 L/min built-in pump, 1–5999 minute timer, maintenance-free design, auto restart, and suitability for external bath applications — providing versatile bidirectional temperature control for chemical, pharmaceutical, and research laboratory applications."
+                            ],
+
+                            keyFeatures: [
+                                {
+                                    title: "LCD Microprocessor Controller for Precise Temperature Control",
+                                    description:
+                                        "The MP-10C's LCD microprocessor controller provides digital precision temperature management with ±0.2°C accuracy across the full -10°C to 100°C operating range — far more precise and stable than analogue temperature controllers or manual bath temperature management. The microprocessor PID algorithm continuously monitors the actual bath temperature and modulates both the compressor cooling and electrical heating outputs proportionally to maintain the setpoint temperature with ±0.2°C stability — preventing the temperature cycling that compromises reaction temperature control, analytical precision, and material characterisation accuracy in external temperature-controlled laboratory applications."
+                                },
+                                {
+                                    title: "Multi-Step Programmable Settings with Multiple Steps and Cycles",
+                                    description:
+                                        "The MP-10C's programmable controller enables definition of sequential temperature stages with independently specified setpoints and durations — executing automatically in order for complex temperature-time protocols. This multi-step capability is valuable for graduated cooling ramp protocols in crystallisation and precipitation studies, temperature cycling experiments in material characterisation, sequential reactor jacketing programmes in chemical synthesis scale-up, and biological temperature exposure studies requiring defined sequential temperature transitions without manual intervention at each stage transition."
+                                },
+                                {
+                                    title: "Built-In Circulation Pump for Stable Flow",
+                                    description:
+                                        "The MP-10C's built-in circulation pump delivers 8 L/min of coolant/heat transfer fluid through the external connection ports — providing the sustained fluid flow required for effective heat transfer at the connected external equipment's heat exchanger or jacketed surface. The 8 L/min flow rate is matched to the connection requirements of standard laboratory rotary evaporators, jacketed reactors, reaction vessels, analytical instrument temperature control inlets, and other external temperature-controlled equipment within the MP-10C's 4.5L compact format."
+                                },
+                                {
+                                    title: "Stainless Steel Chamber for Corrosion Resistance",
+                                    description:
+                                        "The MP-10C's 150 × 160 × 150 mm stainless steel bath chamber provides corrosion resistance for the range of heat transfer fluids used across -10°C to 100°C operation — water, glycol/water mixtures, and low-viscosity silicone oils — without the surface degradation or contamination risk of alternative chamber materials. The stainless steel surface enables thorough cleaning between different heat transfer fluid types and supports the hygiene requirements of pharmaceutical and chemical laboratory temperature control applications."
+                                },
+                                {
+                                    title: "Easy-to-Use Timer Function (1 to 5999 Minutes)",
+                                    description:
+                                        "The MP-10C's 1–5999 minute timer enables automated cycle management for defined-duration temperature control applications — chemical reaction temperature programmes, material conditioning cycles, stability testing thermal protocols, and analytical sample temperature equilibration procedures requiring defined timing without continuous operator supervision. Timer automation enables the MP-10C to maintain temperature-controlled conditions for precisely defined periods, automatically completing cycles at the programmed endpoint without operator intervention."
+                                },
+                                {
+                                    title: "Maintenance-Free Design and Auto Restart",
+                                    description:
+                                        "The MP-10C's maintenance-free design minimises the routine servicing burden in busy laboratory environments — eliminating the oil changes, filter replacements, and mechanical service requirements of more complex temperature control systems. The auto restart function automatically restores the MP-10C to its previous operating parameters after power interruption — resuming the programmed temperature setpoint and multi-step programme position without requiring manual operator restart after power outages, ensuring continuous temperature control recovery for extended unattended laboratory temperature applications."
+                                }
+                            ],
+
+                            safetyFeatures: {
+                                overview: [
+                                    "The MP-10C incorporates five independent safety systems — audible and visual temperature and water level alarm, over-temperature protection, sensor failure alarm, power interruption protection with auto restart, and over-current protection — providing comprehensive safe operation for -10°C to 100°C laboratory heating and cooling recirculation."
+                                ],
+
+                                items: [
+                                    {
+                                        title: "Audible and Visual Alarm for Temperature and Water Level",
+                                        description:
+                                            "Dual-mode alarms activate for temperature deviations beyond the configured threshold and for low coolant/heat transfer fluid level in the bath — the two primary operational conditions that compromise temperature control performance and risk pump damage. The audible and visual dual-mode ensures alarm conditions are detected across diverse laboratory environments regardless of ambient noise level or operator proximity to the MP-10C during active temperature control sessions."
+                                    },
+                                    {
+                                        title: "Over-Temperature Protection",
+                                        description:
+                                            "The MP-10C's over-temperature protection activates automatic heater cutoff if the bath temperature exceeds the safe upper limit — protecting the heating elements, heat transfer fluid, connected external equipment, and operating personnel from the consequences of uncontrolled heating at temperatures up to 100°C during extended unattended laboratory temperature control operations."
+                                    },
+                                    {
+                                        title: "Sensor Failure Alarm, Power Interruption Protection, and Over-Current Protection",
+                                        description:
+                                            "Sensor failure alarm notifies immediately of temperature measurement integrity loss. Power interruption protection combines with auto restart to provide automatic temperature control recovery after power events. Over-current protection safeguards the 2300W compressor and heating system from electrical overload conditions during extended heating and cooling laboratory temperature control operations."
+                                    }
+                                ]
+                            }
+                        },
+
+                        specifications: {
+                            overview: [
+                                "The MP-10C provides -10°C to 100°C bidirectional precision temperature control with ±0.2°C accuracy, LCD microprocessor, multi-step programmable settings, 4.5L stainless steel bath, 8 L/min pump, 5999-minute timer, auto restart, and 2300W — the compact MP Series heating and cooling laboratory temperature circulator for external equipment temperature control. Full specifications listed below."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Temperature Range",
+                                    value: "-10°C to 100°C"
+                                },
+                                {
+                                    label: "Precision",
+                                    value: "±0.2°C"
+                                },
+                                {
+                                    label: "Interior Dimensions (W×D×H)",
+                                    value: "150 × 160 × 150 mm"
+                                },
+                                {
+                                    label: "Chamber Volume",
+                                    value: "4.5 L"
+                                },
+                                {
+                                    label: "Electrical Requirement",
+                                    value: "220 V, 50 Hz"
+                                },
+                                {
+                                    label: "Pump Flow",
+                                    value: "8 L/min"
+                                },
+                                {
+                                    label: "Power Consumption",
+                                    value: "2300 W"
+                                }
+                            ]
+                        },
+
+                        applications: {
+                            overview: [
+                                "The MP-10C supports laboratory temperature control, chemical and pharmaceutical applications, external equipment cooling/heating, and research laboratories requiring bidirectional -10°C to 100°C precision recirculation."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Laboratory Temperature Control",
+                                    value:
+                                        "Research and analytical laboratories use the MP-10C for precise external temperature control of diverse laboratory instruments and process equipment requiring defined temperature conditions throughout experimental procedures. Jacketed reaction vessels, analytical instrument temperature control modules, spectrophotometer sample compartment temperature control, viscometer temperature baths, and rheometer sample temperature control all benefit from the MP-10C's ±0.2°C precise bidirectional circulation — maintaining consistent thermal conditions from -10°C cold reaction control through ambient precision and up to 100°C elevated temperature process support within a single compact instrument."
+                                },
+                                {
+                                    label: "Chemical and Pharmaceutical Applications",
+                                    value:
+                                        "Chemical synthesis and pharmaceutical process laboratories use the MP-10C for jacketed reactor temperature management throughout synthesis protocols requiring sub-ambient, ambient, and above-ambient temperature transitions — common in multi-step organic synthesis, pharmaceutical crystallisation, and pharmaceutical process development scale-up workflows. The MP-10C's bidirectional capability from -10°C to 100°C enables a single instrument to manage the full temperature range of typical pharmaceutical synthesis workflows — from cold addition of reactive reagents at -10°C through 20°C reaction control to 80°C reflux-temperature processing without the instrument changeover required by heating-only or cooling-only systems."
+                                },
+                                {
+                                    label: "External Equipment Cooling and Heating",
+                                    value:
+                                        "The MP-10C's 8 L/min pump delivers temperature-controlled fluid to external laboratory equipment requiring heat removal or heat addition — including rotary evaporator condensers (cooling at -10°C to 20°C), NMR probe temperature control (heating and cooling), electron microscope cold stage temperature management, and diverse analytical instrument temperature stabilisation applications where the MP-10C provides the external temperature control source for the connected instrument's thermostatted component."
+                                },
+                                {
+                                    label: "Research Laboratories",
+                                    value:
+                                        "University and industrial research laboratories use the MP-10C as a versatile compact temperature control resource for diverse research applications — material characterisation at defined temperatures, protein stability studies across the temperature range, crystallisation and precipitation research, biological thermal exposure studies, and physical chemistry experiments requiring precise, stable, and programmable external temperature control across the full -10°C to 100°C range within the compact 4.5L 150 × 160 × 150 mm format."
+                                }
+                            ],
+
+                            cta:
+                                "Enquire about the MP-10C Heating Cooling Recirculating Chiller for your laboratory temperature control applications."
+                        },
+
+                        faqs: {
+                            overview: [
+                                "These FAQs address the heating and cooling dual function, ±0.2°C precision specification, heat transfer fluid selection, auto restart function, multi-step programming, comparison with MP-30C and MPG-10C, pump connection, timer function, pharmaceutical applications, and maintenance."
+                            ],
+
+                            items: [
+                                {
+                                    question: "How does the MP-10C achieve both -10°C cooling and 100°C heating?",
+                                    answer:
+                                        "The MP-10C integrates two separate temperature modulation systems in the same 4.5L bath: a compressor-based refrigeration circuit for cooling the bath below ambient to -10°C minimum, and an electrical resistance heating element for heating the bath above ambient to 100°C maximum. The LCD microprocessor controller determines which system to activate based on the relationship between actual and setpoint temperature — engaging cooling when the bath is above the setpoint and heating when below. This integrated bidirectional control enables the MP-10C to maintain any temperature from -10°C to 100°C without manual configuration changes."
+                                },
+                                {
+                                    question: "What does ±0.2°C precision mean in the MP-10C?",
+                                    answer:
+                                        "±0.2°C precision means the MP-10C's PID microprocessor controller maintains the bath temperature within 0.2°C above or below the setpoint during stable operation — a tight tolerance that ensures consistent, reproducible thermal conditions for precision chemical synthesis control, analytical sample temperature equilibration, and research experiments where temperature accuracy directly affects results. This precision is achieved through continuous proportional modulation of both heating and cooling systems by the microprocessor PID algorithm."
+                                },
+                                {
+                                    question: "What heat transfer fluid should be used in the MP-10C?",
+                                    answer:
+                                        "For 0°C to 100°C operation: deionised or distilled water with corrosion inhibitor. For operation from -10°C to 0°C: 20–30% ethylene glycol in deionised water with corrosion inhibitor (provides freeze protection to approximately -15°C). For the full -10°C to 100°C range: 30% ethylene glycol/water mixture. Confirm heat transfer fluid compatibility with the stainless steel MP-10C bath and your external connected equipment material specifications before use."
+                                },
+                                {
+                                    question: "What does the auto restart function do?",
+                                    answer:
+                                        "Auto restart automatically restores the MP-10C to its previous temperature setpoint and multi-step programme position after a power interruption — without requiring manual operator intervention to restart and reprogram. This ensures that extended laboratory temperature control sessions (overnight crystallisation, long-duration stability studies, extended synthesis protocols) resume automatically after power events without operator presence, protecting time-critical temperature-controlled processes from extended interruption."
+                                },
+                                {
+                                    question: "How does multi-step programming benefit chemical synthesis?",
+                                    answer:
+                                        "Multi-step programming enables sequential temperature transitions to execute automatically — for example: cool to -5°C for cold addition of a reagent (30 min), ramp to 25°C for main reaction (120 min), heat to 70°C for reflux completion (60 min). Each step executes automatically at the defined temperature for the defined duration without manual intervention, enabling the MP-10C to serve as an automated temperature programme controller for multi-step synthesis protocols where precise temperature transitions are critical for reaction outcome."
+                                },
+                                {
+                                    question: "How does the MP-10C compare to the MP-30C?",
+                                    answer:
+                                        "The MP-30C provides a wider -10°C to 150°C temperature range (vs -10°C to 100°C for MP-10C) at 2800W (vs 2300W). Both share the same 4.5L chamber, 8 L/min pump, ±0.2°C precision, and LCD microprocessor platform. Choose MP-10C for standard laboratory applications to 100°C; MP-30C when temperatures above 100°C (up to 150°C) are required."
+                                },
+                                {
+                                    question: "How does the MP-10C compare to the MPG-10C?",
+                                    answer:
+                                        "The MPG-10C provides a larger 13L bath (vs 4.5L), larger 240 × 170 × 200 mm chamber (vs 150 × 160 × 150 mm), the same -10°C to 100°C range and ±0.2°C precision, and same 8 L/min pump. Choose MP-10C for compact small-bath applications; MPG-10C when larger thermal buffer or immersion bath volume is needed."
+                                },
+                                {
+                                    question: "What connections does the MP-10C use for external equipment?",
+                                    answer:
+                                        "The MP-10C has a pump outlet and return inlet for connecting to external equipment via standard laboratory tubing. Confirm the specific connection fitting diameters, thread types, and maximum operating pressure of the pump circuit with your supplier before connecting to specific external equipment."
+                                },
+                                {
+                                    question: "Can the MP-10C timer function run overnight unattended?",
+                                    answer:
+                                        "Yes — the MP-10C's 5999-minute timer (approximately 100 hours), auto restart, multi-step programme, and safety alarm system collectively support extended unattended overnight temperature control operation. The over-temperature protection, low fluid level alarm, and sensor failure notifications provide the monitoring infrastructure for safe unattended extended operation."
+                                },
+                                {
+                                    question: "What maintenance does the MP-10C require?",
+                                    answer:
+                                        "The maintenance-free design requires only periodic heat transfer fluid level monitoring and replacement at defined intervals, cleaning of the stainless steel bath at fluid changes, and inspection of external tubing connections for leakage and wear. No oil changes, filter replacements, or compressor servicing are required for routine operation within the specified ambient temperature range and duty cycle."
+                                }
+                            ]
+                        },
+
+                        blog: {
+                            heading:
+                                "MP-10C Recirculating Chiller Heater: Compact -10°C to 100°C Bidirectional Temperature Control for Chemical, Pharmaceutical, and Research Laboratory Applications",
+
+                            overview: [],
+
+                            items: [
+                                {
+                                    title: "One Instrument Instead of Two: The Bidirectional Temperature Control Advantage",
+                                    description:
+                                        "Standard laboratory temperature control often requires two separate instruments — a recirculating chiller for sub-ambient cooling and a heated circulating bath for above-ambient heating. The MP-10C's integrated -10°C to 100°C bidirectional capability eliminates this duplication — a single compact instrument manages the full temperature range of typical laboratory chemical synthesis, analytical sample conditioning, and research temperature control applications. For laboratories where synthesis protocols require both cold reagent addition (-10°C) and reflux heating (up to 100°C), the MP-10C provides continuous automated temperature transition between the two extremes with a single connected instrument and fluid circuit."
+                                },
+                                {
+                                    title: "Final Verdict on the MP-10C",
+                                    description:
+                                        "The MP-10C delivers -10°C to 100°C bidirectional precision temperature recirculation with ±0.2°C accuracy, LCD microprocessor PID control, multi-step programmable settings, 4.5L stainless steel bath, 8 L/min pump, 5999-minute timer, auto restart, and comprehensive safety alarms at 2300W — the compact versatile MP Series laboratory heating and cooling circulator for chemical synthesis, pharmaceutical process, and research external temperature control applications."
+                                }
+                            ]
+                        }
+                    },
+
+                    {
+                        model: "MP-30C Recirculating Chiller Heater",
+                        title: "MP-30C Recirculating Chiller Heater",
+
+                        meta: {
+                            slug: "mp-30c",
+                            title:
+                                "MP-30C Recirculating Chiller Heater | -10°C to 150°C | ±0.2°C | 4.5L | Extended Range | Being India",
+                            description:
+                                "MP-30C: Extended-range -10°C to 150°C heating & cooling recirculating chiller with ±0.2°C precision, LCD microprocessor, multi-step programmable control, 4.5L stainless steel bath, 8 L/min pump & 2800W. For high-temp lab & chemical process control. Enquire.",
+                            keywords:
+                                "MP-30C Heating Cooling Recirculating Chiller, -10°C to 150°C recirculating chiller heater extended range, high temperature laboratory circulator 150°C, MP-30C programmable chiller heater stainless steel, 150°C recirculating bath external temperature control, MP-30C recirculating chiller heater -10°C to 150°C with LCD microprocessor and multi-step programmable control for laboratory chemical and pharmaceutical high temperature applications, 150°C heating cooling circulator 4.5L with ±0.2°C precision and auto restart for chemical processing and research, MP-30C vs MP-10C, MP-30C vs MPG-10C, -10 to 150°C vs -10 to 100°C circulator, extended range vs standard heating cooling chiller, buy MP-30C recirculating chiller, MP-30C price, order -10°C to 150°C laboratory heating cooling circulator."
+                        },
+
+                        productTitle:
+                            "MP-30C Recirculating Chiller Heater — Extended-Range -10°C to 150°C with ±0.2°C Precision for High-Temperature Laboratory and Chemical Process Applications",
+
+                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+                        imgAltText:
+                            "MP-30C extended-range heating and cooling recirculating chiller with -10°C to 150°C range, ±0.2°C precision, LCD microprocessor controller, multi-step programmable settings, 4.5L stainless steel bath, 8 L/min pump, auto restart, and 2800W for high-temperature laboratory chemical and pharmaceutical process temperature control applications_Beign India",
+
+                        price: 402040,
+
+                        gem: false,
+
+                        // tags: ["new"],
+
+                        related: ["mp-10c", "mpg-10c"],
+
+                        overview: [
+                            "The MP-30C Heating and Cooling Recirculating Chiller extends the MP-10C's bidirectional temperature control from 100°C to a 150°C maximum — providing the higher temperature capability required for laboratory and chemical process applications exceeding the 100°C standard range, including jacketed reactor heating for high-temperature organic synthesis, high-temperature stability testing, elevated-temperature viscosity determination, and thermal conditioning of materials at temperatures above the water boiling point. The MP-30C maintains the full MP-10C feature platform — ±0.2°C precision, LCD microprocessor controller, multi-step programmable settings, 4.5L stainless steel bath, 8 L/min pump, 5999-minute timer, and auto restart — with increased 2800W power to support the higher thermal demands of 150°C operation. Enquire today."
+                        ],
+
+                        features: {
+                            overview: [
+                                "The MP-30C delivers extended -10°C to 150°C bidirectional heating and cooling recirculation with ±0.2°C precision, LCD microprocessor controller, multi-step programmable operation, efficient circulation system, 4.5L stainless steel bath, 8 L/min pump, 5999-minute timer, and auto restart — providing the wider temperature range required for high-temperature laboratory, chemical processing, and research applications."
+                            ],
+
+                            keyFeatures: [
+                                {
+                                    title: "Extended Temperature Range -10°C to 150°C",
+                                    description:
+                                        "The MP-30C's 150°C maximum — 50°C above the MP-10C's 100°C ceiling — enables high-temperature laboratory applications that the standard model cannot serve: organic synthesis at reflux temperatures above 100°C, high-temperature material conditioning studies, elevated-temperature viscosity and rheology measurements, thermal stability testing above boiling water, and process chemistry development at reaction temperatures up to 150°C. The same -10°C minimum as the MP-10C maintains the full cold-temperature capability — providing the complete -10°C to 150°C bidirectional range in a single compact circulator."
+                                },
+                                {
+                                    title: "LCD Microprocessor Controller",
+                                    description:
+                                        "The MP-30C's LCD microprocessor controller provides ±0.2°C precision PID control across the full -10°C to 150°C extended range — continuously modulating compressor cooling and 2800W electrical heating to maintain the setpoint with the same precision as the MP-10C's 2300W system, despite the larger temperature range and greater heating demands of 150°C operation."
+                                },
+                                {
+                                    title: "Multi-Step Programmable Operation",
+                                    description:
+                                        "Multi-step programming enables automated temperature protocol execution across the extended -10°C to 150°C range — supporting complex high-temperature synthesis protocols with sequential sub-ambient, ambient, and high-temperature stages, material thermal conditioning programmes with precise temperature-time profiles, and stability testing protocols requiring defined temperature transitions across the full extended range without manual intervention."
+                                },
+                                {
+                                    title: "Efficient Circulation System and Stainless Steel Chamber",
+                                    description:
+                                        "The MP-30C's 8 L/min pump and stainless steel bath provide the same circulation performance and corrosion resistance as the MP-10C — with the heat transfer fluid selection adapted to the higher 150°C maximum, requiring high-boiling silicone oil or synthetic heat transfer fluid above the water boiling point. The stainless steel chamber maintains material compatibility with high-temperature heat transfer fluid applications."
+                                },
+                                {
+                                    title: "Timer Function for Automation",
+                                    description:
+                                        "The 1–5999 minute timer provides automated cycle management across the extended temperature range — enabling defined-duration high-temperature conditioning, heat treatment, and stability testing protocols to run unattended with automatic cycle completion at the programmed endpoint."
+                                }
+                            ],
+
+                            safetyFeatures: {
+                                overview: [
+                                    "The MP-30C incorporates temperature and water level alarms, over-temperature protection, power interruption protection with auto restart, and over-current protection — with enhanced importance at the 150°C maximum where thermal safety management is more critical than in standard 100°C range circulators."
+                                ],
+
+                                items: [
+                                    {
+                                        title: "Temperature and Water Level Alarms",
+                                        description:
+                                            "Temperature deviation and low fluid level alarms are the primary safety monitors for the MP-30C's higher-temperature operation — where elevated heat transfer fluid temperatures create greater thermal energy and potential hazard than in the MP-10C's 100°C range. Audible and visual dual-mode alarm ensures reliable detection across diverse laboratory environments during high-temperature chemical processing and research operations."
+                                    },
+                                    {
+                                        title: "Over-Temperature Protection",
+                                        description:
+                                            "At temperatures up to 150°C, over-temperature protection is critical — preventing uncontrolled heating above the safe operating limit where heat transfer fluid decomposition, flash point risks (for silicone oil or synthetic fluid), and connected equipment damage could occur. The hardware over-temperature protection at the MP-30C's higher temperature range provides the essential safety backstop for extended unattended high-temperature laboratory temperature control."
+                                    },
+                                    {
+                                        title: "Power Interruption Protection with Auto Restart and Over-Current Protection",
+                                        description:
+                                            "Auto restart ensures the MP-30C resumes high-temperature temperature control automatically after power events — protecting extended high-temperature processes from prolonged interruption. Over-current protection safeguards the 2800W system's electrical components during the higher sustained power demands of continuous 150°C heating operation."
+                                    }
+                                ]
+                            }
+                        },
+
+                        specifications: {
+                            overview: [
+                                "The MP-30C provides -10°C to 150°C extended-range bidirectional precision temperature control with ±0.2°C accuracy, LCD microprocessor, multi-step programmable settings, 4.5L stainless steel bath, 8 L/min pump, 5999-minute timer, auto restart, and 2800W — the extended-range MP Series heating and cooling laboratory temperature circulator for high-temperature chemical, pharmaceutical, and research applications. Full specifications listed below."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Temperature Range",
+                                    value: "-10°C to 150°C"
+                                },
+                                {
+                                    label: "Precision",
+                                    value: "±0.2°C"
+                                },
+                                {
+                                    label: "Interior Dimensions (W×D×H)",
+                                    value: "150 × 160 × 150 mm"
+                                },
+                                {
+                                    label: "Chamber Volume",
+                                    value: "4.5 L"
+                                },
+                                {
+                                    label: "Electrical Requirement",
+                                    value: "220 V, 50 Hz"
+                                },
+                                {
+                                    label: "Pump Flow",
+                                    value: "8 L/min"
+                                },
+                                {
+                                    label: "Power Consumption",
+                                    value: "2800 W"
+                                }
+                            ]
+                        },
+
+                        applications: {
+                            overview: [
+                                "The MP-30C supports extended-range laboratory heating and cooling, high-temperature chemical processing, research applications requiring above-100°C control, and external temperature control systems requiring the -10°C to 150°C bidirectional range."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Laboratory Heating and Cooling",
+                                    value:
+                                        "Research and analytical laboratories use the MP-30C for extended-range temperature control of laboratory instruments, reaction vessels, and analytical equipment requiring temperatures above the 100°C ceiling of standard heating/cooling circulators — including high-temperature jacketed reactors, elevated-temperature analytical sample conditioning, above-water-boiling thermal stability testing, and research experiments requiring precise temperature control from -10°C cold through to 150°C elevated temperature within a single automated instrument."
+                                },
+                                {
+                                    label: "Chemical Processing",
+                                    value:
+                                        "Chemical synthesis and industrial process development laboratories use the MP-30C for jacketed reactor temperature management across the full range of common organic synthesis temperatures — from -10°C for cold additions and low-temperature reactions through 80–100°C standard reflux to 120–150°C high-temperature cyclisation, condensation, and rearrangement reactions. The MP-30C's single instrument coverage of this complete synthesis temperature range eliminates the need for separate cooling and heating circulator instruments in synthetic chemistry laboratories performing diverse multi-temperature synthesis programmes."
+                                },
+                                {
+                                    label: "Research Applications",
+                                    value:
+                                        "Materials science, polymer chemistry, and physical chemistry research laboratories use the MP-30C for high-temperature material characterisation — polymer processing studies at elevated temperatures, thermoplastic behaviour investigation above 100°C, cure kinetics research at elevated temperatures, and thermal analysis support at temperatures requiring stable precise circulation above the MP-10C's 100°C limit."
+                                },
+                                {
+                                    label: "External Temperature Control Systems",
+                                    value:
+                                        "External temperature control systems requiring above-ambient and above-boiling-point operation — including high-temperature analytical instrument temperature management, elevated-temperature process reactor control, and high-temperature component characterisation test equipment — use the MP-30C as the external temperature control source for the connected equipment's temperature-controlled components within the extended -10°C to 150°C operating range."
+                                }
+                            ],
+
+                            cta:
+                                "Contact us to enquire about the MP-30C Heating Cooling Recirculating Chiller."
+                        },
+
+                        faqs: {
+                            overview: [
+                                "These FAQs address the 150°C extended range, heat transfer fluid at above-100°C, comparison with MP-10C and MPG-10C, 2800W power, safety at 150°C, auto restart function, multi-step programming for synthesis, pharmaceutical process suitability, installation, and maintenance at elevated temperatures."
+                            ],
+
+                            items: [
+                                {
+                                    question: "What heat transfer fluid is required for the MP-30C above 100°C?",
+                                    answer:
+                                        "Water boils at 100°C — above this temperature, a high-boiling heat transfer fluid is required: typically high-temperature silicone oil (stable to 200–300°C), synthetic Dow Therminol or Marlotherm heat transfer fluids, or other laboratory-approved high-temperature bath fluids. Never use water above 100°C in the MP-30C. Confirm the appropriate high-temperature fluid specification with your supplier, ensuring compatibility with the stainless steel MP-30C bath and your connected external equipment materials."
+                                },
+                                {
+                                    question: "How does the MP-30C compare to the MP-10C?",
+                                    answer:
+                                        "The MP-30C provides a wider -10°C to 150°C temperature range (vs -10°C to 100°C) and higher 2800W power (vs 2300W) — all other specifications (bath volume, pump, precision, controller, timer, auto restart) are the same. Choose MP-10C for standard laboratory applications within 100°C; MP-30C when temperatures between 100°C and 150°C are required."
+                                },
+                                {
+                                    question: "How does the MP-30C compare to the MPG-10C?",
+                                    answer:
+                                        "The MPG-10C has a larger 13L bath (vs 4.5L) and larger 240 × 170 × 200 mm chamber for the same -10°C to 100°C range. The MP-30C has a 4.5L bath but extends to 150°C. Choose MP-30C for extended temperature range to 150°C; MPG-10C for larger bath volume with same 100°C maximum."
+                                },
+                                {
+                                    question: "Is the MP-30C safe for unattended 150°C operation?",
+                                    answer:
+                                        "Yes — with appropriate precautions: use only high-boiling heat transfer fluid rated for 150°C, ensure the over-temperature protection is configured for a safety threshold above 150°C setpoint, maintain adequate fluid level to prevent pump cavitation, and position the MP-30C with adequate clearance from flammable materials. The auto restart, over-temperature protection, and fluid level alarm collectively support safe extended unattended high-temperature operation within the specified safety framework."
+                                },
+                                {
+                                    question: "What is the power requirement of the MP-30C?",
+                                    answer:
+                                        "2800W at 220V, 50Hz — higher than the MP-10C's 2300W to support the greater heating demands of 150°C operation. A dedicated or adequately rated circuit is recommended. Confirm circuit capacity for continuous 2800W load with your facility's electrical engineer for extended high-temperature operation."
+                                },
+                                {
+                                    question: "Can multi-step programming span both cold and high-temperature stages?",
+                                    answer:
+                                        "Yes — the multi-step programmable controller enables programme stages spanning the full -10°C to 150°C range in sequence. A programme could define: Stage 1 at -10°C for 30 min, Stage 2 at 25°C for 60 min, Stage 3 at 100°C for 45 min, Stage 4 at 150°C for 120 min — executing automatically in order. This comprehensive range coverage makes the MP-30C suitable for entire multi-temperature synthesis protocols."
+                                },
+                                {
+                                    question: "Is the MP-30C suitable for pharmaceutical process development above 100°C?",
+                                    answer:
+                                        "Yes — the MP-30C provides the jacketed reactor temperature management for pharmaceutical synthesis reactions, intermediate processing, and API development workflows requiring reactor temperatures from -10°C cold addition through to 150°C high-temperature steps within a single automated temperature control system."
+                                },
+                                {
+                                    question: "What maintenance is required for the MP-30C operating at high temperatures?",
+                                    answer:
+                                        "At high temperatures (above 100°C), heat transfer fluid should be replaced more frequently than in ambient range operation — typically every 6–12 months for silicone oil or per manufacturer recommendation, as high-temperature operation accelerates thermal degradation of the fluid. Inspect external tubing connections for heat-related degradation at the elevated temperature range. Follow the same maintenance procedures as the MP-10C for routine operation within the 100°C range."
+                                },
+                                {
+                                    question: "What is the cooling time of the MP-30C from 150°C to -10°C?",
+                                    answer:
+                                        "Cooling from 150°C to -10°C requires both natural heat dissipation and active compressor cooling — the cooling time depends on the heat transfer fluid, ambient temperature, and the fluid's thermal mass. From 150°C to ambient (approximately 20°C) occurs through natural convection and active compressor cooling; from ambient to -10°C requires additional compressor operation. Contact your supplier for the specific cooling time specification for the MP-30C from maximum temperature to minimum temperature."
+                                },
+                                {
+                                    question: "What does the auto restart do in the MP-30C context?",
+                                    answer:
+                                        "Auto restart automatically resumes the programmed temperature setpoint after power interruption — critical for extended high-temperature chemical processing and research protocols where an overnight power event would otherwise require manual programme restart, potentially compromising time-temperature sensitive synthesis and conditioning outcomes."
+                                }
+                            ]
+                        },
+
+                        blog: {
+                            heading:
+                                "MP-30C Recirculating Chiller Heater: Extended-Range -10°C to 150°C Precision Bidirectional Temperature Control for High-Temperature Chemical and Research Applications",
+
+                            overview: [],
+
+                            items: [
+                                {
+                                    title: "Why 150°C Changes What's Possible with a Single Heating/Cooling Circulator",
+                                    description:
+                                        "At 100°C (MP-10C ceiling), water boiling limits jacketed reactor heating to approximately 95°C effective reaction temperature. At 150°C (MP-30C), silicone oil circulation enables reaction temperatures to 140°C — accessing the temperature range of high-temperature cyclisation reactions, Diels-Alder chemistry, thermal rearrangements, and polymerisation reactions that require above-boiling-water temperatures. For synthetic chemistry groups performing diverse multi-temperature programmes, the MP-30C's extended range enables a single circulator to serve all synthesis temperature requirements from cold addition through high-temperature reflux."
+                                },
+                                {
+                                    title: "Final Verdict on the MP-30C",
+                                    description:
+                                        "The MP-30C delivers -10°C to 150°C extended-range bidirectional precision recirculation with ±0.2°C accuracy, LCD microprocessor, multi-step programmable settings, 4.5L stainless steel bath, 8 L/min pump, auto restart, and 2800W — the extended-range MP Series choice for high-temperature chemical synthesis, pharmaceutical process development, and research applications requiring above-100°C precision temperature control."
+                                }
+                            ]
+                        }
+                    },
+
+                    {
+                        model: "MPG-10C Recirculating Chiller Heater",
+                        title: "MPG-10C Recirculating Chiller Heater",
+
+                        meta: {
+                            slug: "mpg-10c",
+                            title:
+                                "MPG-10C Recirculating Chiller Heater | -10°C to 100°C | ±0.2°C | 13L | 8 L/min | Being India",
+                            description:
+                                "MPG-10C: Medium-capacity 13L -10°C to 100°C heating & cooling recirculating chiller with ±0.2°C precision, LCD microprocessor, programmable temperature control, stainless steel bath, 8 L/min pump & 2300W. For medium lab & industrial use. Enquire.",
+                            keywords:
+                                "MPG-10C Heating Cooling Recirculating Chiller, 13L recirculating chiller heater -10°C to 100°C, medium capacity circulation bath, MPG-10C programmable temperature circulator 13L, larger bath heating cooling laboratory chiller, MPG-10C 13L -10°C to 100°C heating cooling recirculating chiller with LCD microprocessor and programmable temperature control for medium capacity laboratory and industrial applications, larger bath 13L recirculating chiller heater with ±0.2°C precision and stainless steel chamber for chemical pharma and research external temperature control, MPG-10C vs MP-10C, MPG-10C vs MPG-40C, 13L vs 4.5L recirculating chiller, medium capacity vs compact heating cooling chiller, buy MPG-10C recirculating chiller, MPG-10C price, order 13L -10°C to 100°C medium capacity heating cooling circulator"
+                        },
+
+                        productTitle:
+                            "MPG-10C Recirculating Chiller Heater — 13L Medium-Capacity -10°C to 100°C with ±0.2°C Precision for Medium Laboratory and Industrial Temperature Control",
+
+                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+                        imgAltText:
+                            "MPG-10C medium-capacity 13L heating and cooling recirculating chiller with -10°C to 100°C range, ±0.2°C precision, LCD microprocessor controller, programmable temperature control, stainless steel bath, 8 L/min pump, and 2300W for medium-capacity laboratory and industrial external temperature control applications_Being India",
+
+                        price: 370300,
+
+                        gem: false,
+
+                        // tags: ["new"],
+
+                        related: ["mp-10c", "mpg-40c"],
+
+                        overview: [
+                            "The MPG-10C Heating and Cooling Recirculating Chiller extends the MP-10C platform to a larger 13L bath format — providing medium-capacity laboratories and industrial process applications with the increased thermal buffer and direct immersion volume of the larger 240 × 170 × 200 mm bath alongside the same -10°C to 100°C bidirectional range, ±0.2°C precision, LCD microprocessor programmable controller, 8 L/min pump, stable heating and cooling performance, and comprehensive safety alarm system. The 13L bath provides three times more thermal mass than the compact MP-10C's 4.5L — maintaining more stable temperature conditions under variable external heat loads, accommodating larger direct immersion sample assemblies, and supporting simultaneous connection to multiple external equipment circuits from the larger reservoir volume."
+                        ],
+
+                        features: {
+                            overview: [
+                                "The MPG-10C delivers 13L medium-capacity -10°C to 100°C bidirectional heating and cooling recirculation with ±0.2°C precision, LCD microprocessor controller, programmable temperature control, built-in 8 L/min pump, stainless steel chamber, stable performance, and auto restart — supporting medium-capacity laboratory circulation systems, chemical and pharmaceutical applications, and external equipment temperature control."
+                            ],
+
+                            keyFeatures: [
+                                {
+                                    title: "LCD Microprocessor Controller",
+                                    description:
+                                        "The MPG-10C's LCD microprocessor controller provides the same ±0.2°C PID precision control as the compact MP-10C across the -10°C to 100°C range — applied to the larger 13L thermal mass that responds somewhat more slowly to control modulation but provides greater temperature stability under variable heat loads."
+                                },
+                                {
+                                    title: "13L Larger Bath Volume for Higher Thermal Stability",
+                                    description:
+                                        "The MPG-10C's 13L bath — approximately three times the MP-10C's 4.5L — provides substantially greater thermal buffer for temperature stability under variable external heat loads. In medium-capacity applications where connected jacketed reactors, multiple external equipment connections, or high-load temperature control generate significant and variable heat loads, the larger 13L thermal mass absorbs load transients and maintains more stable ±0.2°C conditions than the compact 4.5L bath would under equivalent load variability."
+                                },
+                                {
+                                    title: "Programmable Temperature Control",
+                                    description:
+                                        "The MPG-10C's programmable temperature control enables multi-step sequential protocols — the same capability as the compact MP-10C — across the medium-capacity 13L format. In medium-scale chemical processing and research applications, programmable control enables automated multi-temperature sequential protocols for crystallisation, stability testing, and synthesis workflows without manual setpoint adjustment."
+                                },
+                                {
+                                    title: "Built-In Circulation Pump and Stainless Steel Chamber",
+                                    description:
+                                        "The MPG-10C's 8 L/min pump and stainless steel 240 × 170 × 200 mm chamber provide the same circulation performance and corrosion resistance as the compact MP-10C — with the larger bath area accommodating both external circulation connections and direct immersion of larger sample assemblies within the 240 × 170 mm bath opening."
+                                },
+                                {
+                                    title: "Stable Heating and Cooling Performance",
+                                    description:
+                                        "The MPG-10C's combined compressor cooling and electrical heating systems provide stable bidirectional temperature control across the medium-capacity format — with the larger 13L thermal mass contributing to temperature stability during transitions between heating and cooling phases and under variable external connection loads."
+                                }
+                            ],
+
+                            safetyFeatures: {
+                                overview: [
+                                    "The MPG-10C incorporates temperature deviation alarm, over-temperature protection, power interruption protection, and over-current protection — providing safe medium-capacity heating and cooling recirculation across the -10°C to 100°C range."
+                                ],
+
+                                items: [
+                                    {
+                                        title: "Temperature Deviation Alarm",
+                                        description:
+                                            "Activates for temperature deviations beyond the configured threshold — monitoring the larger 13L bath temperature for deviations from the medium-capacity laboratory and industrial application setpoints."
+                                    },
+                                    {
+                                        title: "Over-Temperature Protection",
+                                        description:
+                                            "Protects the medium-capacity 13L system from uncontrolled heating — critical for the larger thermal mass where higher temperatures carry proportionally greater thermal energy."
+                                    },
+                                    {
+                                        title: "Power Interruption Protection and Over-Current Protection",
+                                        description:
+                                            "Combines with programmable control to provide automatic temperature recovery after power events and electrical safety for the medium-capacity system."
+                                    }
+                                ]
+                            }
+                        },
+
+                        specifications: {
+                            overview: [
+                                "The MPG-10C provides 13L medium-capacity -10°C to 100°C bidirectional precise temperature control with ±0.2°C accuracy, LCD microprocessor, programmable control, stainless steel bath, 8 L/min pump, and 2300W — the medium-capacity MPG Series heating and cooling laboratory circulator for external equipment and research applications. Full specifications listed below."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Temperature Range",
+                                    value: "-10°C to 100°C"
+                                },
+                                {
+                                    label: "Precision",
+                                    value: "±0.2°C"
+                                },
+                                {
+                                    label: "Interior Dimensions (W×D×H)",
+                                    value: "240 × 170 × 200 mm"
+                                },
+                                {
+                                    label: "Chamber Volume",
+                                    value: "13 L"
+                                },
+                                {
+                                    label: "Electrical Requirement",
+                                    value: "220 V, 50 Hz"
+                                },
+                                {
+                                    label: "Pump Flow",
+                                    value: "8 L/min"
+                                },
+                                {
+                                    label: "Power Consumption",
+                                    value: "2300 W"
+                                }
+                            ]
+                        },
+
+                        applications: {
+                            overview: [
+                                "The MPG-10C supports medium-capacity laboratory circulation systems, chemical and pharmaceutical external temperature control, and research applications requiring the 13L larger bath volume with -10°C to 100°C bidirectional precision."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Laboratory Circulation Systems",
+                                    value:
+                                        "Medium-capacity laboratory temperature control systems — including multiple simultaneously connected external equipment circuits, medium-scale jacketed reactor systems, and laboratory instrument temperature control networks requiring higher flow capacity and thermal reserve than compact 4.5L circulators provide — use the MPG-10C's 13L larger bath for more stable and versatile temperature-controlled fluid supply. The larger bath accommodates direct immersion of medium-format sample assemblies alongside external circulation connections."
+                                },
+                                {
+                                    label: "Chemical and Pharmaceutical Labs",
+                                    value:
+                                        "Chemical process development and pharmaceutical research laboratories use the MPG-10C for medium-scale jacketed reactor temperature control, pharmaceutical crystallisation at defined temperatures with larger thermal buffer for stable conditions during active exothermic crystallisation events, and medium-scale pharmaceutical synthesis workflows requiring the stability advantages of the 13L bath under the variable heat loads of medium-capacity chemical processing operations."
+                                },
+                                {
+                                    label: "External Equipment Cooling and Heating",
+                                    value:
+                                        "Medium-capacity external equipment temperature control — including simultaneous connection to multiple analytical instruments, medium-format process equipment temperature management, and multi-point temperature control distribution from a single medium-capacity circulator — uses the MPG-10C's 13L thermal reserve for stable simultaneous supply to multiple connected points without the temperature instability that a compact 4.5L bath would exhibit under combined multi-point heat loads."
+                                },
+                                {
+                                    label: "Research Applications",
+                                    value:
+                                        "Medium-scale research experiments requiring larger thermal bath volumes — direct immersion studies of larger sample assemblies, medium-scale material characterisation at defined temperatures, crystallisation kinetics research with variable heat evolution requiring a stable thermal buffer, and biological thermal exposure studies requiring the medium-capacity bath volume — use the MPG-10C for ±0.2°C precise temperature control with the stability advantages of the larger 13L thermal mass."
+                                }
+                            ],
+
+                            cta:
+                                "Contact us to enquire about the MPG-10C Heating Cooling Recirculating Chiller."
+                        },
+
+                        faqs: {
+                            overview: [
+                                "These FAQs address the 13L thermal buffer advantage, comparison with MP-10C and MPG-40C, medium-capacity applications, simultaneous multi-point supply, heat transfer fluid, auto restart, installation, and maintenance."
+                            ],
+
+                            items: [
+                                {
+                                    question: "Why does the 13L bath provide better temperature stability than a 4.5L bath?",
+                                    answer:
+                                        "Thermal mass (the product of bath volume and heat capacity) determines how much temperature change occurs per unit of external heat addition or removal. A 13L bath has approximately three times the thermal mass of a 4.5L bath — absorbing three times more heat input from variable external loads before showing the same temperature change. For medium-capacity applications with variable heat loads (active exothermic reactions, multiple simultaneous connections with variable loads), the 13L thermal buffer maintains more stable temperature than the compact 4.5L would under equivalent conditions."
+                                },
+                                {
+                                    question: "How does the MPG-10C compare to the MP-10C?",
+                                    answer:
+                                        "The MPG-10C provides 13L (vs 4.5L), a larger 240 × 170 × 200 mm bath (vs 150 × 160 × 150 mm) for the same -10°C to 100°C range, ±0.2°C precision, 8 L/min pump, and 2300W power. Choose MP-10C for compact single-application external cooling/heating; MPG-10C when larger thermal buffer or direct immersion bath volume is required."
+                                },
+                                {
+                                    question: "How does the MPG-10C compare to the MPG-40C?",
+                                    answer:
+                                        "The MPG-40C provides a wider -40°C to 100°C range (vs -10°C to 100°C for MPG-10C) and higher 3100W power (vs 2300W) — with the same 13L bath and 8 L/min pump. Choose MPG-10C for standard -10°C to 100°C medium-capacity applications; MPG-40C when temperatures below -10°C (down to -40°C) are required."
+                                },
+                                {
+                                    question: "Can the MPG-10C supply multiple external connections simultaneously?",
+                                    answer:
+                                        "Yes — the 13L thermal reserve supports simultaneous multi-point external circulation supply via a distribution manifold. The combined heat load from all connected points should not consistently exceed the MPG-10C's 2300W cooling and heating capacity to maintain ±0.2°C precision across all connection points."
+                                },
+                                {
+                                    question: "What heat transfer fluid is appropriate for the MPG-10C?",
+                                    answer:
+                                        "Same as MP-10C: deionised water with corrosion inhibitor for 0–100°C; 20–30% ethylene glycol/water for operation below 0°C. The larger 13L volume requires proportionally more fluid for initial fill and replacements compared to the compact MP-10C."
+                                },
+                                {
+                                    question: "What maintenance does the MPG-10C require?",
+                                    answer:
+                                        "Same maintenance as MP-10C: periodic fluid level monitoring, fluid replacement at manufacturer intervals, stainless steel bath cleaning, and external tubing inspection. The larger 13L volume extends the time between fluid replacements at the same fluid replacement interval due to the greater volume dilution of contamination and degradation products."
+                                },
+                                {
+                                    question: "Is the MPG-10C auto restart function available?",
+                                    answer:
+                                        "Yes — the MPG-10C specification lists power interruption protection with auto restart — resuming the programmed temperature setpoint after power events for continuous medium-capacity temperature control."
+                                },
+                                {
+                                    question: "What installation space does the MPG-10C require?",
+                                    answer:
+                                        "Larger than the compact MP-10C — the 240 × 170 × 200 mm bath exterior requires proportionally more bench space. Contact your supplier for the full MPG-10C exterior dimensions to confirm bench space availability."
+                                },
+                                {
+                                    question: "Is the MPG-10C suitable for pharmaceutical development temperature control?",
+                                    answer:
+                                        "Yes — ±0.2°C precision, programmable multi-step control, stable 13L thermal buffer for variable pharmaceutical process heat loads, stainless steel bath, and auto restart collectively support pharmaceutical synthesis, crystallisation, and process development medium-scale temperature control applications."
+                                },
+                                {
+                                    question: "What is the power requirement of the MPG-10C?",
+                                    answer:
+                                        "2300W at 220V, 50Hz — the same as the MP-10C despite the larger 13L bath, reflecting the thermal efficiency of the larger bath's reduced surface-area-to-volume ratio. A dedicated or adequately rated circuit for continuous 2300W load is recommended."
+                                }
+                            ]
+                        },
+
+                        blog: {
+                            heading:
+                                "MPG-10C Recirculating Chiller Heater: Medium-Capacity 13L -10°C to 100°C Precision Temperature Control for Chemical, Pharmaceutical, and Research Applications",
+
+                            overview: [],
+
+                            items: [
+                                {
+                                    title: "Three Times the Thermal Buffer: Why the MPG-10C's 13L Bath Changes Medium-Scale Temperature Control",
+                                    description:
+                                        "In medium-scale laboratory applications — multiple simultaneous external connections, active exothermic jacketed reactions, and medium-capacity process temperature management — the difference between 4.5L and 13L thermal mass is the difference between stable ±0.2°C performance and constant temperature hunting. The MPG-10C's 13L thermal reservoir absorbs the variable heat loads of medium-scale chemical processing and research without the temperature instability that the compact MP-10C would exhibit under equivalent combined load conditions."
+                                },
+                                {
+                                    title: "Final Verdict on the MPG-10C",
+                                    description:
+                                        "The MPG-10C delivers 13L medium-capacity -10°C to 100°C bidirectional heating and cooling recirculation with ±0.2°C precision, LCD microprocessor, programmable control, stainless steel bath, 8 L/min pump, auto restart, and 2300W — the medium-capacity MPG Series circulator for chemical, pharmaceutical, and research laboratory applications requiring larger thermal buffer than compact 4.5L systems provide."
+                                }
+                            ]
+                        }
+                    },
+
+
+                    {
+                        model: "MPG-40C Recirculating Chiller Heater",
+                        title: "MPG-40C Recirculating Chiller Heater",
+
+                        meta: {
+                            slug: "mpg-40c",
+                            title:
+                                "MPG-40C Recirculating Chiller Heater | -40°C to 100°C | ±0.2°C | 13L | Deep Cold | Being India",
+                            description:
+                                "MPG-40C: Deep-cold 13L -40°C to 100°C heating & cooling recirculating chiller with ±0.2°C precision, LCD microprocessor, multi-step programmable settings, stainless steel bath, 8 L/min pump & 3100W. For demanding lab, industrial & chemical use. Enquire.",
+                            keywords:
+                                "MPG-40C Heating Cooling Recirculating Chiller, -40°C to 100°C recirculating chiller heater deep cold, high precision laboratory circulator deep freeze, MPG-40C 13L deep cold heating cooling chiller, demanding laboratory industrial chiller -40°C, MPG-40C 13L -40°C to 100°C heating cooling recirculating chiller with LCD microprocessor and multi-step programmable control for high precision laboratory and industrial temperature control, deep cold heating chiller -40°C to 100°C 13L with ±0.2°C precision and stainless steel chamber for chemical pharmaceutical demanding temperature applications, -40°C laboratory recirculating chiller heater, deep cold heating cooling circulator, 13L -40°C chiller, demanding industrial laboratory circulator, high precision -40°C chiller, -40°C to 100°C bidirectional circulator, MPG series deep cold circulator, MPG-40C vs MPG-10C, MPG-40C vs MP-10C, -40°C to 100°C vs -10°C to 100°C, deep cold vs standard range heating cooling chiller, buy MPG-40C recirculating chiller, MPG-40C price, order -40°C to 100°C 13L deep cold heating cooling circulator."
+                        },
+
+                        productTitle:
+                            "MPG-40C Recirculating Chiller Heater — Deep-Cold 13L -40°C to 100°C with ±0.2°C Precision for Demanding Laboratory and Industrial Temperature Control",
+
+                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+                        imgAltText:
+                            "MPG-40C deep-cold 13L heating and cooling recirculating chiller with -40°C to 100°C range, ±0.2°C precision, LCD microprocessor controller, multi-step programmable settings, stainless steel bath, 8 L/min pump, and 3100W for demanding laboratory, industrial, and chemical process temperature control applications requiring deep sub-ambient cooling_Being India",
+
+                        price: 433780,
+
+                        gem: false,
+
+                        // tags: ["new"],
+
+                        related: ["mpg-10c", "mp-10c"],
+
+                        overview: [
+                            "The MPG-40C Heating and Cooling Recirculating Chiller is the highest-performance model in the MPG/MP Series — extending the bidirectional temperature control range to -40°C minimum while maintaining the 100°C maximum and the 13L medium-capacity bath of the MPG-10C. The deep -40°C cold capability enables demanding low-temperature chemistry, polymer glass transition characterisation, biological cryoprotection research, pharmaceutical cold temperature stability testing, and industrial process applications requiring precise temperature control well below the -10°C minimum of the standard MP and MPG-10C models. At 3100W — the highest power in the MP Series — the MPG-40C's refrigeration system achieves -40°C reliably across the 13L thermal mass while maintaining the same ±0.2°C precision, LCD microprocessor PID controller, multi-step programmable settings, 8 L/min pump, auto restart, and comprehensive safety platform as the MPG-10C."
+                        ],
+
+                        features: {
+                            overview: [
+                                "The MPG-40C delivers the widest temperature range in the MP/MPG Series — 13L -40°C to 100°C bidirectional heating and cooling recirculation with ±0.2°C precision, LCD microprocessor multi-step programmable control, reliable heating and cooling performance, stainless steel chamber, 8 L/min pump, power interruption protection, and auto restart — for high-precision demanding laboratory, industrial research, chemical, and pharmaceutical processing applications."
+                            ],
+
+                            keyFeatures: [
+                                {
+                                    title: "-40°C to 100°C Widest Range in the MP/MPG Series",
+                                    description:
+                                        "The MPG-40C's -40°C minimum — 30°C colder than the MPG-10C's and MP-10C's -10°C lower limit — enables access to the deep sub-ambient temperature range required for: low-temperature organic synthesis (organolithium additions, Grignard reactions, enzymatic reactions at -40°C), polymer characterisation below glass transition temperatures, pharmaceutical cold temperature stability and stress testing, biological cryoprotection mechanism studies, industrial cold process fluid management, and material characterisation at extreme sub-ambient temperatures that standard range circulators cannot reach."
+                                },
+                                {
+                                    title: "LCD Microprocessor Controller with Multi-Step Programmable Settings",
+                                    description:
+                                        "The MPG-40C's LCD microprocessor controller provides ±0.2°C PID precision across the full -40°C to 100°C extended range — maintaining the same measurement and control accuracy across the deeper cold temperatures as across the standard ambient temperature range. Multi-step programmable settings enable automated temperature protocols spanning the full -40°C to 100°C range in sequential stages — particularly valuable for temperature cycling experiments, freeze-thaw characterisation studies, and material thermal history simulations requiring precisely defined sub-ambient to above-ambient temperature transitions."
+                                },
+                                {
+                                    title: "High-Capacity Circulation System at 3100W",
+                                    description:
+                                        "The MPG-40C's 3100W power — the highest in the MP/MPG Series — reflects the greater refrigeration capacity required to achieve and maintain -40°C across the 13L larger bath thermal mass against ambient heat ingress. The 3100W system provides both the deep cooling capability for -40°C operation and the electrical heating for above-ambient heating through the same 13L stainless steel bath — maintaining ±0.2°C precision at both temperature extremes and throughout the full -40°C to 100°C bidirectional range."
+                                },
+                                {
+                                    title: "Stainless Steel Chamber and Reliable Performance",
+                                    description:
+                                        "The MPG-40C's stainless steel 240 × 170 × 200 mm chamber provides corrosion resistance across the full heat transfer fluid range required for -40°C to 100°C operation — from low-temperature ethylene glycol/water antifreeze mixtures through to ambient water and high-boiling heat transfer fluids. Reliable performance across the demanding temperature extremes of the MPG-40C is achieved through the 3100W-matched refrigeration and heating system design and the stable 13L thermal buffer that moderates temperature change rates under variable external loads."
+                                },
+                                {
+                                    title: "Power Interruption Protection with Auto Restart",
+                                    description:
+                                        "Auto restart is particularly important for the MPG-40C's demanding low-temperature applications — where restoring -40°C from ambient after a power interruption requires substantial refrigeration time and energy compared to the standard -10°C models. Auto restart initiates the re-cooling sequence automatically after power restoration, resuming the programmed deep-cold setpoint without requiring operator presence for manual restart."
+                                }
+                            ],
+
+                            safetyFeatures: {
+                                overview: [
+                                    "The MPG-40C incorporates temperature and water level alarms, over-temperature protection, power interruption protection with auto restart, and over-current protection — with enhanced importance at the -40°C deep cold extreme where safe operation management is more demanding than in standard range circulators."
+                                ],
+
+                                items: [
+                                    {
+                                        title: "Temperature and Water Level Alarms",
+                                        description:
+                                            "Both temperature deviation and low fluid level alarms are critical at -40°C operation — temperature deviation at deep cold temperatures may indicate refrigeration system anomalies requiring immediate attention, and low fluid level at sub-ambient operation risks pump damage from the reduced viscosity flow characteristics of cold glycol/water mixtures."
+                                    },
+                                    {
+                                        title: "Over-Temperature Protection, Power Interruption Protection, and Over-Current Protection",
+                                        description:
+                                            "Over-temperature protection, auto restart for power events, and 3100W system over-current protection collectively provide comprehensive safety management for the most demanding temperature range in the MP/MPG Series — supporting safe operation across the full -40°C to 100°C bidirectional range under the sustained high-power demands of deep cold operation."
+                                    }
+                                ]
+                            }
+                        },
+
+                        specifications: {
+                            overview: [
+                                "The MPG-40C is the highest-performance MP Series model — providing 13L deep-cold -40°C to 100°C bidirectional precision temperature control with ±0.2°C accuracy, LCD microprocessor, multi-step programmable settings, stainless steel bath, 8 L/min pump, auto restart, and 3100W for demanding laboratory, industrial, and chemical pharmaceutical applications. Full specifications listed below."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Temperature Range",
+                                    value: "-40°C to 100°C"
+                                },
+                                {
+                                    label: "Precision",
+                                    value: "±0.2°C"
+                                },
+                                {
+                                    label: "Interior Dimensions (W×D×H)",
+                                    value: "240 × 170 × 200 mm"
+                                },
+                                {
+                                    label: "Chamber Volume",
+                                    value: "13 L"
+                                },
+                                {
+                                    label: "Electrical Requirement",
+                                    value: "220 V, 50 Hz"
+                                },
+                                {
+                                    label: "Pump Flow",
+                                    value: "8 L/min"
+                                },
+                                {
+                                    label: "Power Consumption",
+                                    value: "3100 W"
+                                }
+                            ]
+                        },
+
+                        applications: {
+                            overview: [
+                                "The MPG-40C supports high-precision demanding laboratory temperature control, industrial and research laboratory deep cold applications, chemical and pharmaceutical processing from -40°C to 100°C, and external system cooling and heating at the widest temperature range in the MP/MPG Series."
+                            ],
+
+                            items: [
+                                {
+                                    label: "High-Precision Laboratory Temperature Control",
+                                    value:
+                                        "Advanced research and analytical laboratories use the MPG-40C for temperature control applications requiring the deep sub-ambient range that standard circulators cannot reach — including low-temperature NMR spectroscopy where NMR probe temperature control down to -40°C enables dynamic NMR studies of slow conformational exchange processes, low-temperature HPLC separation of thermolabile compounds requiring -40°C column temperature control, and precision low-temperature analytical measurements requiring stable ±0.2°C control at deep sub-ambient setpoints."
+                                },
+                                {
+                                    label: "Industrial and Research Labs",
+                                    value:
+                                        "Industrial process development and research laboratories use the MPG-40C for demanding temperature-controlled applications spanning the full -40°C to 100°C range — including cryogenic temperature process fluid management, low-temperature viscosity determination for lubrication and polymer studies, freeze-thaw stability testing of biological and pharmaceutical materials across the full -40°C to ambient temperature range, and industrial cold process simulation studies requiring precise deep sub-ambient temperature control with the stability of the MPG-40C's 13L thermal buffer."
+                                },
+                                {
+                                    label: "Chemical and Pharmaceutical Processing",
+                                    value:
+                                        "Chemical synthesis groups performing demanding low-temperature chemistry use the MPG-40C for deep cold jacketed reactor temperature management — controlling organolithium and Grignard reactions at -40°C to -20°C, pharmaceutical synthesis steps requiring deep sub-ambient temperature suppression of side reactions, highly exothermic reaction control at -40°C, and pharmaceutical process development workflows with sequential temperature steps from deep cold through ambient to above-ambient heating within a single automated temperature control system."
+                                },
+                                {
+                                    label: "External System Cooling and Heating",
+                                    value:
+                                        "External laboratory and industrial equipment requiring the deep -40°C cold temperature range for specialised analytical operations — cryogenic sample preparation stages, low-temperature material property testing equipment, and industrial process simulation systems requiring deep sub-ambient and above-ambient temperature transitions — use the MPG-40C as the external precision temperature control source for their connected temperature-controlled components."
+                                }
+                            ],
+
+                            cta:
+                                "The MPG-40C Recirculating Chiller Heater — the widest temperature range in the MP/MPG Series for your demanding deep-cold laboratory, industrial, and chemical processing temperature control applications. Contact us for pricing."
+                        },
+
+                        faqs: {
+                            overview: [
+                                "These FAQs cover the -40°C deep cold advantage, heat transfer fluid for -40°C, comparison with MPG-10C, 3100W power requirements, auto restart at -40°C, pharmaceutical cold temperature stability testing, installation, low-temperature chemistry applications, precision at -40°C, and maintenance at deep cold."
+                            ],
+
+                            items: [
+                                {
+                                    question: "Why does the MPG-40C require 3100W when the MPG-10C uses only 2300W?",
+                                    answer:
+                                        "The -40°C minimum temperature requires the refrigeration system to overcome a 60°C temperature differential from ambient (vs 30°C for the MPG-10C's -10°C minimum) — requiring approximately double the refrigeration capacity and compressor work. The 3100W system provides the additional refrigeration power needed to achieve and maintain -40°C across the 13L thermal mass reliably and efficiently."
+                                },
+                                {
+                                    question: "What heat transfer fluid is required for -40°C operation?",
+                                    answer:
+                                        "For -40°C operation: ethylene glycol/water mixture (typically 50% by volume) provides freeze protection to approximately -37°C — the minimum required for -40°C setpoint with adequate safety margin. Alternatively, automotive antifreeze (ethylene glycol-based) at 50% can be used. For below -37°C or superior performance, propylene glycol or specialised low-temperature heat transfer fluids (Dowfrost, Dynalene) are appropriate — confirm freeze point adequacy for the -40°C operating setpoint with your supplier."
+                                },
+                                {
+                                    question: "How does the MPG-40C compare to the MPG-10C?",
+                                    answer:
+                                        "The MPG-40C provides a wider -40°C to 100°C range (vs -10°C to 100°C) and higher 3100W power (vs 2300W). Both share 13L bath, 240 × 170 × 200 mm chamber, 8 L/min pump, ±0.2°C precision, and LCD microprocessor. Choose MPG-10C for standard -10°C to 100°C medium-capacity applications; MPG-40C when deep sub-ambient temperatures below -10°C are required."
+                                },
+                                {
+                                    question: "Is the MPG-40C suitable for pharmaceutical cold temperature stability testing?",
+                                    answer:
+                                        "Yes — the MPG-40C's -40°C minimum enables pharmaceutical stress testing and cold stability evaluation at temperatures relevant to pharmaceutical cold chain risk assessment, freeze-thaw stability studies of biological pharmaceuticals, cryoprotection formulation development research, and cold temperature API degradation kinetics studies — providing ±0.2°C precision temperature control at deep cold setpoints for reproducible pharmaceutical stability protocol execution."
+                                },
+                                {
+                                    question: "What is the power requirement of the MPG-40C?",
+                                    answer:
+                                        "3100W at 220V, 50Hz — the highest power requirement in the MP/MPG Series. A dedicated circuit rated for continuous 3100W load is required — confirm circuit amperage capacity with your facility's electrical engineer before installation, particularly for industrial and process laboratory environments where other high-power equipment shares the supply."
+                                },
+                                {
+                                    question: "What does auto restart do at -40°C?",
+                                    answer:
+                                        "At -40°C, the MPG-40C requires significant refrigeration runtime to return from ambient to the deep cold setpoint after a power interruption. Auto restart initiates the cooling sequence immediately upon power restoration — protecting temperature-controlled processes from extended interruption and beginning the return to -40°C without operator intervention. This is particularly important for overnight and weekend deep-cold applications where manual restart would leave the system at ambient temperature for extended periods before the next working day."
+                                },
+                                {
+                                    question: "What low-temperature organic chemistry applications does the MPG-40C support?",
+                                    answer:
+                                        "The MPG-40C supports jacketed reactor temperature management for: organolithium reagent additions (-78°C to -40°C, achieved with dry ice bath in reactor with MPG-40C cooling the jacket); Grignard reaction control at -40°C to prevent selectivity loss from temperature excursions; highly exothermic reaction heat management at -40°C; asymmetric synthesis reactions requiring deep cold to achieve selectivity; and pharmaceutical intermediate preparation at sub-ambient temperatures for reactant stability management."
+                                },
+                                {
+                                    question: "Can the MPG-40C operate at temperatures above 0°C with the same anti-freeze fluid?",
+                                    answer:
+                                        "Yes — 50% ethylene glycol/water antifreeze can be used from -40°C through to above 100°C (the boiling point of 50% ethylene glycol/water is approximately 105–110°C). This enables the full -40°C to 100°C range to be covered with a single heat transfer fluid load — simplifying the operation of the full MPG-40C temperature range without fluid changeover."
+                                },
+                                {
+                                    question: "What is the installation footprint of the MPG-40C?",
+                                    answer:
+                                        "The MPG-40C has a larger exterior than the compact MP-10C and MP-30C due to the more powerful 3100W refrigeration system required for -40°C operation. Contact your supplier for specific exterior dimensions of the MPG-40C to confirm bench space availability."
+                                },
+                                {
+                                    question: "What maintenance does the MPG-40C require at -40°C operating temperatures?",
+                                    answer:
+                                        "Anti-freeze fluid should be replaced annually or per manufacturer recommendation — cold temperature operation can gradually concentrate the glycol through preferential water evaporation at higher temperatures, requiring concentration verification and adjustment. The compressor condenser should be cleaned quarterly to maintain heat dissipation efficiency critical for the 3100W deep-cold refrigeration system. Inspect external tubing connections for cold-related brittleness and crack formation in standard rubber or plastic tubing — use tubing rated for -40°C flexibility if the external circuit passes through cold environments."
+                                }
+                            ]
+                        },
+
+                        blog: {
+                            heading:
+                                "MPG-40C Recirculating Chiller Heater: The Deep-Cold 13L -40°C to 100°C Precision Laboratory Circulator for Demanding Chemical, Industrial, and Research Temperature Control",
+
+                            overview: [],
+
+                            items: [
+                                {
+                                    title: "Why -40°C Changes What's Possible in Laboratory Temperature-Controlled Chemistry",
+                                    description:
+                                        "The -10°C minimum of standard laboratory circulators — while adequate for most rotary evaporation and general reaction temperature control — excludes the demanding low-temperature chemistry that requires deep sub-ambient conditions: organolithium reactions requiring -78°C to -40°C to prevent decomposition and side reactions, highly exothermic pharmaceutical synthesis steps requiring -40°C heat management, and cryogenic material property characterisation below the glass transition temperatures of many polymer systems. The MPG-40C's -40°C minimum opens these applications to programmable automatic temperature control — replacing manual dry ice bath management with ±0.2°C precise automated deep-cold control from a recirculating system."
+                                },
+                                {
+                                    title: "3100W and 13L: Engineering for Deep-Cold Precision",
+                                    description:
+                                        "Achieving -40°C in a 13L bath requires three key engineering elements: sufficient refrigeration power (3100W compressor capacity), adequate insulation to minimise ambient heat ingress to the large bath volume, and appropriate heat transfer fluid (50% ethylene glycol/water) that remains fluid and pump-able at -40°C. The MPG-40C combines all three — providing reliable deep-cold operation with the same ±0.2°C precision at -40°C as at ambient temperatures, enabling demanding low-temperature precision chemistry and material characterisation that cannot be achieved with standard-range circulators."
+                                },
+                                {
+                                    title: "Final Verdict on the MPG-40C",
+                                    description:
+                                        "The MPG-40C delivers the widest temperature range in the MP/MPG Series — 13L -40°C to 100°C bidirectional precision recirculation with ±0.2°C accuracy, LCD microprocessor, multi-step programmable settings, stainless steel bath, 8 L/min pump, auto restart, and 3100W — the high-performance MP Series circulator for demanding deep-cold laboratory chemistry, industrial process temperature management, pharmaceutical cold stability testing, and research requiring the deepest sub-ambient bidirectional temperature control in the range."
+                                }
+                            ]
+                        }
+                    },
                 ]
             },
         ]

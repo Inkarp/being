@@ -4,5 +4,7 @@ export const PRODUCT_CATEGORY_SLUGS = [
   "biological-saftey-cabinets",
   "pumps",
   "rotary-evaporators",
-  "water-baths"
+  "water-baths",
+  "freezers",
+  "chillers"
 ];

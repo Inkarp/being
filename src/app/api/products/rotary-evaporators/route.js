@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
     return NextResponse.json({
-        category: "Rotary Evaporator (Upto 185 °C Bath)",
+        category: "Rotary Evaporators",
         meta: {
             title: "Incubators | OEM & Service Provider in India | Being India",
             description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
@@ -10,8 +10,8 @@ export async function GET() {
         },
         subcategories: [
             {
-                name: "Rotary Evaporators",
-                slug: "rotary-evaporators",
+                name: "Rotary Evaporator (Upto 185 °C Bath)",
+                slug: "rotary-evaporators-baths",
                 models: [
 
                     {
@@ -1269,7 +1269,280 @@ export async function GET() {
                 slug: "rotary-evaporator-controller",
                 models: [
 
+                    {
+                        model: "VC-50 Digital Vacuum Controller",
+                        title: "VC-50 Digital Vacuum Controller",
 
+                        meta: {
+                            slug: "vc-50",
+                            title:
+                                "VC-50 Digital Vacuum Controller | 0–760 mmHg | Ceramic Sensor | PTFE | Boiling Point Detection | Being India",
+                            description:
+                                "VC-50: Digital vacuum controller with 0–760 mmHg range, ceramic diaphragm absolute pressure sensor, PTFE construction, programmable preset control, solenoid valve switch, boiling point detection & LCD display. For rotary evaporators, drying & distillation. Enquire.",
+                            keywords:
+                                "VC-50 Digital Vacuum Controller, digital vacuum controller rotary evaporator, PTFE ceramic diaphragm vacuum controller, VC-50 vacuum regulation laboratory, programmable vacuum controller boiling point detection, VC-50 digital vacuum controller 0 to 760 mmHg with ceramic diaphragm sensor and programmable preset control for rotary evaporator drying and distillation, PTFE vacuum controller with automatic boiling point detection and LCD display for chemical pharmaceutical laboratory vacuum systems, digital vacuum controller with solenoid valve switch for stable pressure control during evaporation and vacuum drying, digital vacuum controller laboratory, ceramic diaphragm vacuum sensor, boiling point detection vacuum, programmable vacuum regulation, solenoid valve vacuum control, PTFE vacuum controller corrosion resistant, rotary evaporator vacuum control, absolute pressure vacuum controller, what is a digital vacuum controller and how does it improve rotary evaporation, how does ceramic diaphragm sensing work in a vacuum controller, which vacuum controller detects boiling point automatically, what is the difference between fixed value and preset program vacuum control modes, VC-50 vs manual vacuum control, digital vs analogue vacuum controller, ceramic diaphragm vs piezo vacuum sensor, automatic vs manual boiling point detection, buy VC-50 vacuum controller, VC-50 price, order digital vacuum controller for rotary evaporator."
+                        },
+
+                        productTitle:
+                            "VC-50 Digital Vacuum Controller — Precise Programmable Vacuum Regulation with Ceramic Diaphragm Sensor and Boiling Point Detection for Rotary Evaporation and Vacuum Drying",
+
+                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+                        imgAltText:
+                            "VC-50 digital vacuum controller with ceramic alumina diaphragm absolute pressure sensor, PTFE 8mm vacuum connector, LCD display, programmable fixed value and preset program control modes, solenoid valve switch, and boiling point detection for rotary evaporator, vacuum drying, and laboratory distillation vacuum regulation_Being India",
+
+                        price: 327980,
+
+                        gem: false,
+
+                        // tags: ["new"],
+
+                        related: [],
+
+                        overview: [
+                            "The VC-50 Digital Vacuum Controller provides precise, stable, and automated vacuum regulation for laboratory and industrial vacuum processes — replacing manual needle valve vacuum adjustment with intelligent electronic control that maintains optimal vacuum conditions throughout rotary evaporation, vacuum distillation, and vacuum drying workflows. The VC-50's ceramic alumina diaphragm capacitive pressure sensor provides absolute pressure measurement from 0 to 800 mmHg, independent of gas type — enabling accurate vacuum regulation regardless of the solvent vapour and gas composition changes that cause drift in gas-type-dependent sensors. With two control modes (fixed value automatic and preset programme with solenoid valve switching), automatic boiling point detection to prevent foaming and bumping, steam temperature sensing from -20°C to 150°C, PTFE construction for corrosion resistance across all laboratory solvent environments, and a compact 190 × 105 × 180 mm format — the VC-50 delivers precision vacuum process control for rotary evaporators, vacuum drying systems, chemical processing, and general laboratory vacuum management."
+                        ],
+
+                        features: {
+                            overview: [
+                                "The VC-50 Digital Vacuum Controller delivers precise programmable vacuum regulation with a ceramic alumina diaphragm absolute pressure sensor, two-mode control (fixed value and preset program), automatic boiling point detection, PTFE corrosion-resistant construction, steam temperature measurement, LCD display, and solenoid valve switching — providing stable, intelligent vacuum control for rotary evaporation, drying, distillation, and general laboratory vacuum applications."
+                            ],
+
+                            keyFeatures: [
+                                {
+                                    title: "Ceramic Diaphragm Absolute Pressure Sensor for Gas-Type Independent Measurement",
+                                    description:
+                                        "The VC-50's measuring principle uses a ceramic alumina (Al₂O₃) diaphragm with capacitive sensing — an absolute pressure measurement technology that is completely independent of the gas type being measured. Unlike vacuum gauges using thermal conductivity (Pirani) or ionisation principles, the ceramic capacitive sensor responds identically to all gas compositions — pure air, solvent vapour/air mixtures, inert gas blankets, and reactive gas environments produce the same sensor response for the same pressure. This gas-type independence is critical for laboratory vacuum control where the gas composition in the connected system changes continuously during active evaporation — as solvent vapour concentration rises and falls, the ceramic diaphragm continues measuring actual pressure with unaffected accuracy across the 0 to 800 mmHg measuring range."
+                                },
+                                {
+                                    title: "Two Control Modes — Fixed Value and Preset Programme Automatic Control",
+                                    description:
+                                        "The VC-50 provides two distinct automatic control modes via solenoid valve switching. Fixed value automatic control maintains a single operator-defined vacuum setpoint throughout the process — appropriate for vacuum drying at a defined pressure, vacuum filtration at a constant level, and single-solvent rotary evaporation where the optimal condenser vacuum is constant. Preset programme automatic control enables the operator to define a sequential series of vacuum setpoints with automatic transitions — enabling the step-down vacuum profiling required for efficient multi-solvent or complex mixture evaporation, where the vacuum must be progressively reduced as lighter fractions are removed and heavier fractions remain, and for complex pharmaceutical or chemical process protocols requiring defined vacuum sequences."
+                                },
+                                {
+                                    title: "Automatic Boiling Point Detection to Reduce Foaming and Bumping",
+                                    description:
+                                        "The VC-50's boiling point detection function monitors the vacuum level and solvent vapour pressure relationship in real time — detecting the conditions where active boiling is about to occur and automatically adjusting the vacuum to maintain stable evaporation just below the bumping threshold. This intelligent boiling point control prevents the sudden violent bumping and foaming events that cause sample loss, flask breakage, and condenser contamination during rotary evaporation of complex mixtures — particularly important for biologically derived extracts, crude pharmaceutical synthesis products, and complex organic mixture evaporation where bumping is a persistent operational challenge with manually controlled vacuum systems."
+                                },
+                                {
+                                    title: "PTFE Construction for Corrosion Resistance",
+                                    description:
+                                        "The VC-50's 8 mm PTFE vacuum connector and PTFE-wetted internal components provide chemical inertness across all standard laboratory solvents and corrosive vapours — including chlorinated solvents (DCM, chloroform), strong acids (HCl, HNO₃, acetic acid), halogenated compounds, and aggressive pharmaceutical synthesis solvents that would degrade standard rubber and polymer vacuum fittings. The PTFE construction ensures that the VC-50 does not contribute corrosive or contaminating materials to the connected vacuum system, and maintains its dimensional and sealing integrity throughout extended contact with the full range of laboratory chemical vapours encountered in chemical synthesis and pharmaceutical evaporation workflows."
+                                },
+                                {
+                                    title: "Steam Temperature Measurement -20°C to 150°C",
+                                    description:
+                                        "The VC-50's steam temperature measurement capability — monitoring the vapour temperature in the range -20°C to 150°C using the optional steam temperature sensor — provides a second data channel for process control alongside the vacuum pressure measurement. In rotary evaporation, the vapour temperature at the solvent boiling point under the operating vacuum is the definitive indicator of evaporation progress and process completeness. The VC-50's steam temperature measurement enables vapour temperature-based process control and monitoring — allowing operators to confirm actual boiling point conditions and use vapour temperature as an additional process parameter for evaporation protocol development and documentation."
+                                },
+                                {
+                                    title: "Compatible with Diaphragm Vacuum Pumps and Rotary Evaporators",
+                                    description:
+                                        "The VC-50 is designed to integrate with the standard vacuum system components of laboratory rotary evaporation setups — connecting between the connected vacuum pump (diaphragm or rotary vane) and the rotary evaporator's vacuum inlet. The 8 mm PTFE connector interfaces with standard laboratory vacuum tubing, and the solenoid valve regulates the effective vacuum at the evaporator independently of the vacuum pump's ultimate pressure — allowing a single vacuum pump to serve multiple evaporators at different controlled vacuum levels, or to provide automatic vacuum regulation beyond the pump's own vacuum level adjustment capability."
+                                },
+                                {
+                                    title: "LCD Display and Chemical-Resistant Housing",
+                                    description:
+                                        "The VC-50's LCD display provides real-time visibility of vacuum pressure reading, setpoint, and control status throughout evaporation, drying, and distillation operations. The chemical corrosion-resistant plastic housing protects the VC-50's electronics from the solvent vapour environments typical of rotary evaporation benches and vacuum drying workstations — maintaining reliable electronic performance in the challenging chemical atmosphere of active laboratory evaporation operations without the surface degradation that would affect unprotected electronic enclosures."
+                                }
+                            ],
+
+                            safetyFeatures: {
+                                overview: [
+                                    "The VC-50 Digital Vacuum Controller incorporates stable pressure control for safe operation, corrosion-resistant construction for harsh chemical environments, and a reliable electronic control system — providing safe, consistent vacuum regulation for laboratory rotary evaporation, drying, and distillation applications."
+                                ],
+
+                                items: [
+                                    {
+                                        title: "Stable Pressure Control for Safe Operation",
+                                        description:
+                                            "The VC-50's automatic pressure control maintains stable vacuum throughout connected processes — preventing the uncontrolled vacuum surges and sudden pressure drops that cause bumping, foaming, sample loss, and flask breakage during rotary evaporation of complex chemical mixtures. Stable vacuum control is the primary safety contribution of a digital vacuum controller over manual needle valve approaches — eliminating the operator-dependent vacuum fluctuations that make manual rotary evaporation unpredictable and potentially hazardous for bumping-prone samples."
+                                    },
+                                    {
+                                        title: "Corrosion-Resistant Construction for Harsh Environments",
+                                        description:
+                                            "The PTFE vacuum connector and chemical-resistant housing protect both the VC-50's components and the connected vacuum system from chemical degradation by the corrosive solvent vapours, acidic atmospheres, and reactive gas environments encountered in pharmaceutical synthesis and chemical analytical laboratory vacuum applications. Corrosion-resistant construction is a safety requirement for vacuum system components — degraded connectors and seals create vacuum leaks that expose operators to chemical vapour and cause process failures during critical evaporation and drying operations."
+                                    },
+                                    {
+                                        title: "Reliable Electronic Control System",
+                                        description:
+                                            "The VC-50's electronic control system provides consistent, repeatable vacuum regulation throughout extended process runs — eliminating the operator fatigue and attention variability that cause manual vacuum control errors during long evaporation sessions and unattended overnight drying operations. Reliable electronic control enables the VC-50 to maintain defined vacuum conditions throughout the full duration of programmed processes without the drift and manual correction required by analogue systems."
+                                    }
+                                ]
+                            }
+                        },
+
+                        specifications: {
+                            overview: [
+                                "The VC-50 provides programmable digital vacuum control from 0 to 760 mmHg with a ceramic alumina diaphragm absolute pressure sensor, two-mode solenoid valve control, PTFE 8mm connector, steam temperature sensing, LCD display, and chemical-resistant housing — the precision vacuum regulation instrument for rotary evaporation, vacuum drying, distillation, and laboratory vacuum control systems. Full specifications listed below."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Control Range",
+                                    value: "0 to 760 mmHg (Torr), 0 to 1013 hPa (mbar)"
+                                },
+                                {
+                                    label: "Measuring Principle",
+                                    value:
+                                        "Ceramic diaphragm (alumina), capacitive, gas-type independent, absolute pressure"
+                                },
+                                {
+                                    label: "Measuring Range",
+                                    value: "0 to 800 mmHg (Torr), 0 to 1066 hPa (mbar)"
+                                },
+                                {
+                                    label: "Control Mode",
+                                    value:
+                                        "Fixed value automatic control; Preset programme automatic control (solenoid valve)"
+                                },
+                                {
+                                    label: "Screen Display",
+                                    value: "LCD"
+                                },
+                                {
+                                    label: "Steam Measurement Range",
+                                    value: "-20°C to 150°C (with steam temperature sensor)"
+                                },
+                                {
+                                    label: "Vacuum Connector",
+                                    value: "8 mm PTFE joint"
+                                },
+                                {
+                                    label: "Operating Ambient Temperature",
+                                    value: "10°C to 40°C"
+                                },
+                                {
+                                    label: "Shell Material",
+                                    value: "Chemical corrosion-resistant plastic housing"
+                                },
+                                {
+                                    label: "Dimensions (L×W×H)",
+                                    value: "190 × 105 × 180 mm"
+                                }
+                            ]
+                        },
+
+                        applications: {
+                            overview: [
+                                "The VC-50 Digital Vacuum Controller supports all laboratory and industrial vacuum applications requiring precise, programmable, and automated vacuum pressure regulation — from rotary evaporation and vacuum drying to chemical distillation and general laboratory vacuum control system management."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Rotary Evaporation Systems",
+                                    value:
+                                        "The VC-50 is the standard vacuum control upgrade for laboratory rotary evaporators — replacing manual needle valve vacuum adjustment with programmable automatic pressure regulation that maintains optimal evaporation conditions throughout the full evaporation cycle. In single-solvent rotary evaporation, fixed value control maintains the condenser vacuum at the optimum level for the solvent's boiling point at the bath temperature. For multi-solvent or complex mixture evaporation, preset programme control enables automatic step-down vacuum profiling that progressively lowers the pressure as lighter fractions are removed — maintaining efficient evaporation as the mixture composition changes without requiring continuous manual adjustment. The boiling point detection feature prevents bumping and foaming events that cause sample loss and apparatus contamination."
+                                },
+                                {
+                                    label: "Vacuum Drying Processes",
+                                    value:
+                                        "Vacuum drying ovens and drying systems use the VC-50 to precisely control the operating vacuum level — enabling defined pressure setpoints for different sample types and drying stages, and maintaining consistent vacuum conditions throughout extended unattended drying protocols. Fixed value control maintains the defined 133 Pa or 99 Pa operating vacuum against the moisture vapour load generated by active sample drying, and programmable control enables step-down vacuum protocols for complex pharmaceutical moisture determination methods specifying defined vacuum level transitions during drying. The steam temperature sensing provides an additional monitoring channel for tracking drying progress through vapour temperature changes."
+                                },
+                                {
+                                    label: "Chemical and Pharmaceutical Applications",
+                                    value:
+                                        "Chemical synthesis and pharmaceutical research laboratories use the VC-50 for vacuum regulation during vacuum distillation of heat-sensitive compounds, reduced-pressure synthesis reactions requiring defined vacuum conditions, vacuum concentration of pharmaceutical formulations, and rotary evaporation solvent removal from pharmaceutical synthesis products. The PTFE construction and ceramic sensor's gas-type independence make the VC-50 chemically compatible with the full range of pharmaceutical synthesis solvents and reactive chemical intermediates encountered in demanding chemical and pharmaceutical laboratory vacuum applications."
+                                },
+                                {
+                                    label: "Laboratory Vacuum Control Systems",
+                                    value:
+                                        "General laboratory vacuum management applications — including multi-instrument vacuum manifold pressure regulation, vacuum filtration at defined pressures, Schlenk line vacuum control, and centralised laboratory vacuum system monitoring — use the VC-50 to provide automatic pressure regulation at defined setpoints for diverse simultaneous vacuum applications. The VC-50's compact format enables placement at individual instrument positions within a laboratory vacuum network, and the two-mode control enables application-specific vacuum regulation from a single versatile controller."
+                                }
+                            ],
+
+                            cta:
+                                "Enquire about the VC-50 Digital Vacuum Controller for your rotary evaporation, vacuum drying, and laboratory vacuum control applications."
+                        },
+
+                        faqs: {
+                            overview: [
+                                "These FAQs address the VC-50's ceramic diaphragm sensor advantage, two control modes, boiling point detection, PTFE compatibility, steam temperature sensing, rotary evaporator installation, comparison with manual vacuum control, gas-type independence, preset programme applications, and compatibility with vacuum pumps."
+                            ],
+
+                            items: [
+                                {
+                                    question: "Why is the ceramic alumina diaphragm sensor better than other vacuum sensing technologies?",
+                                    answer:
+                                        "Ceramic alumina capacitive sensors measure absolute pressure through the physical deflection of the ceramic diaphragm — a measurement independent of the gas composition, thermal conductivity, or ionisation properties of the measured gas. In rotary evaporation and vacuum drying, the gas in the connected system is a constantly changing mixture of solvent vapour and air — thermal conductivity sensors (Pirani gauges) give inaccurate readings when solvent vapour is present because their measurement depends on the gas's thermal conductivity, which changes dramatically with vapour composition. The VC-50's ceramic sensor measures the same pressure regardless of what gas mixture is present, providing reliable vacuum control throughout the full evaporation cycle."
+                                },
+                                {
+                                    question: "What is the difference between fixed value and preset programme control in the VC-50?",
+                                    answer:
+                                        "Fixed value control maintains a single operator-defined vacuum setpoint continuously — appropriate for single-solvent evaporation, constant-pressure vacuum drying, and vacuum filtration. Preset programme control automatically transitions through a sequence of defined vacuum setpoints — enabling step-down evaporation profiling for multi-solvent mixtures (progressively reducing pressure as lighter fractions evaporate), pharmacopoeial vacuum drying protocols with defined pressure transitions, and complex chemical process vacuum sequences. Both modes use the solenoid valve to implement pressure control by regulating the connection between the vacuum pump and the connected process."
+                                },
+                                {
+                                    question: "How does the boiling point detection feature work in the VC-50?",
+                                    answer:
+                                        "The VC-50 monitors the relationship between vacuum pressure and solvent vapour behaviour in the connected system — detecting the conditions where active boiling and bumping are likely to occur. When the system approaches boiling point conditions, the VC-50 automatically adjusts the vacuum to maintain stable evaporation just below the bumping threshold — reducing vacuum depth slightly to prevent violent boiling while maintaining efficient evaporation. This prevents the sudden pressure drops and violent bubbling that cause sample loss and flask breakage during evaporation of crude mixtures, biological extracts, and pharmaceutical synthesis products prone to foaming."
+                                },
+                                {
+                                    question: "Is the VC-50 compatible with oil rotary vane vacuum pumps as well as diaphragm pumps?",
+                                    answer:
+                                        "Yes. The VC-50 is compatible with any vacuum pump that achieves the required operating pressure — diaphragm pumps (V Series) and oil rotary vane pumps (VRI/VRD Series) are both compatible. The VC-50 connects between the vacuum pump outlet and the connected process equipment, using the solenoid valve to regulate the effective vacuum at the process side independently of the pump's ultimate pressure. The pump continues operating at its normal performance level; the VC-50 modulates the pressure delivered to the connected evaporator or drying system."
+                                },
+                                {
+                                    question: "What does the steam temperature measurement capability provide?",
+                                    answer:
+                                        "The steam temperature sensor (optional) measures the temperature of the vapour in the connected system — typically at the rotary evaporator's vapour tube or condenser inlet. During evaporation, the vapour temperature equals the solvent's boiling point at the operating vacuum level. Monitoring vapour temperature alongside vacuum pressure enables confirmation of actual boiling conditions, detection of solvent changeover (vapour temperature changes when a new fraction begins evaporating), and documentation of complete evaporation (vapour temperature no longer stable at a solvent boiling point). This second data channel enriches the process monitoring capability of the VC-50 beyond single-parameter vacuum measurement."
+                                },
+                                {
+                                    question: "How do I install the VC-50 in a rotary evaporation setup?",
+                                    answer:
+                                        "The VC-50 connects between the vacuum pump and the rotary evaporator's vacuum inlet using standard vacuum tubing and the 8 mm PTFE connectors. The solenoid valve is part of the vacuum line — when closed, it restricts vacuum from reaching the evaporator; when open, full pump vacuum is applied. The VC-50 modulates the solenoid valve open/close duty cycle to maintain the programmed vacuum setpoint at the evaporator. Connect the VC-50's power to a standard laboratory outlet; connect the solenoid valve inline between pump and evaporator; set the desired vacuum programme on the LCD display, and start the vacuum pump normally."
+                                },
+                                {
+                                    question: "What is the control range of the VC-50?",
+                                    answer:
+                                        "0 to 760 mmHg (Torr) — covering the full range from atmospheric pressure (760 mmHg) to deep vacuum conditions. The measuring range extends to 800 mmHg to accommodate overpressure conditions. In mbar units: 0 to 1013 mbar control range, 0 to 1066 mbar measuring range. Most laboratory rotary evaporation operates between 10 and 200 mmHg depending on the solvent — well within the VC-50's control range."
+                                },
+                                {
+                                    question: "Can the VC-50 control vacuum for simultaneous multiple processes?",
+                                    answer:
+                                        "The VC-50 is designed as a single-channel vacuum controller — one solenoid valve controlling one vacuum line. For multi-instrument vacuum control, multiple VC-50 units connected to individual instruments from a shared vacuum pump manifold can provide independent pressure regulation for each connected instrument simultaneously."
+                                },
+                                {
+                                    question: "What PTFE connector size does the VC-50 use?",
+                                    answer:
+                                        "The VC-50 uses an 8 mm PTFE joint for the vacuum connection — compatible with standard 8 mm (outer diameter) laboratory vacuum tubing commonly used in rotary evaporation, vacuum filtration, and vacuum drying systems. Confirm tubing outer diameter compatibility with your existing vacuum system before ordering."
+                                },
+                                {
+                                    question: "What maintenance does the VC-50 require?",
+                                    answer:
+                                        "The VC-50's maintenance-free design requires only periodic cleaning of the PTFE connector and housing exterior with appropriate laboratory cleaning solutions. The ceramic diaphragm sensor has no moving parts subject to wear. The solenoid valve should be inspected periodically for sticky actuation caused by solvent condensate accumulation, and the PTFE connector should be replaced if chemical attack or physical damage compromises the vacuum seal integrity."
+                                }
+                            ]
+                        },
+
+                        blog: {
+                            heading:
+                                "VC-50 Digital Vacuum Controller: Precise Programmable Vacuum Regulation for Rotary Evaporation, Drying, and Laboratory Vacuum Systems",
+
+                            overview: [],
+
+                            items: [
+                                {
+                                    title: "Why Manual Vacuum Control Is the Limiting Factor in Laboratory Evaporation Efficiency",
+                                    description:
+                                        "Manual needle valve vacuum control requires the operator to continuously monitor evaporation rate, manually adjust the valve in response to process changes, and intervene immediately when bumping occurs. This constant attention prevents the operator from completing other tasks during evaporation, introduces operator-dependent variability between runs, and fails entirely during unattended operation. The VC-50 replaces this manual dependency with programmable automatic pressure control — maintaining the optimal vacuum setpoint throughout the full evaporation cycle while the operator performs other work, and detecting boiling point conditions to prevent bumping without human intervention."
+                                },
+                                {
+                                    title: "Ceramic Diaphragm Sensing: The Technology That Makes Gas-Type Independence Possible",
+                                    description:
+                                        "In standard rotary evaporation, the gas composition in the vacuum system changes continuously — as solvent evaporates, vapour concentration rises; as condensate accumulates, the rate changes. Thermal conductivity vacuum gauges measure how quickly gas conducts heat away from a hot wire — a reading that changes substantially with gas composition, giving inaccurate pressure readings when solvent vapour is present. The VC-50's ceramic alumina capacitive sensor measures physical diaphragm deflection caused by actual pressure — a measurement completely unaffected by what gas is causing the pressure. This fundamental sensing advantage translates directly to more accurate vacuum control throughout the evaporation cycle."
+                                },
+                                {
+                                    title: "Preset Programme Control: The Feature That Makes Complex Mixture Evaporation Efficient",
+                                    description:
+                                        "For a mixture of DCM (boiling point 40°C at 400 mmHg), ethanol (boiling point 45°C at 200 mmHg), and toluene (boiling point 60°C at 100 mmHg), optimal evaporation requires progressively reducing the vacuum as each fraction is removed. Manual step-down requires constant operator attention and expertise. The VC-50's preset programme stores the entire sequence — DCM fraction at 400 mmHg, ethanol fraction at 200 mmHg, toluene fraction at 100 mmHg — executing automatically without operator intervention. This automated step-down not only improves evaporation efficiency but also protects thermosensitive residues from excessive vacuum exposure during the early high-vacuum stages."
+                                },
+                                {
+                                    title: "Final Verdict on the VC-50",
+                                    description:
+                                        "The VC-50 delivers precise digital vacuum regulation from 0 to 760 mmHg with ceramic alumina absolute pressure sensing, fixed value and preset programme solenoid valve control, automatic boiling point detection, PTFE chemical resistance, steam temperature measurement, and chemical-resistant LCD display housing — the essential vacuum process control upgrade for rotary evaporation, vacuum drying, and laboratory vacuum system management."
+                                }
+                            ]
+                        }
+                    },
 
                 ]
             },
