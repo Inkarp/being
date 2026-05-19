@@ -77,6 +77,12 @@ function collectTracking() {
   };
 }
 
+function pushDataLayer(eventData) {
+  if (typeof window === 'undefined') return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(eventData);
+}
+
 // ─── Sanitizers ───────────────────────────────────────────────────────────────
 
 const SANITIZERS = {
@@ -493,8 +499,7 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
       }
 
 
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
+      pushDataLayer({
         event: `price_enquiry_success`,
         form_name: "price enquiry",
         product_id: productData?.productId || '',
@@ -502,17 +507,18 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
         page_url: window.location.href
       });
 
-      console.log(dataLayer)
-
       onSuccess?.({ product: productData, price: productData?.price });
       handleClose();
     } catch (err) {
       console.error('[PriceEnquiry]', err);
       setApiError(err.message || 'Submission failed. Please try again.');
-      // ❗ Optional: failure tracking
-      window.dataLayer.push({
+      pushDataLayer({
         event: "price_enquiry_failed",
-        product_slug: productData?.meta?.slug || ''
+        form_name: "price enquiry",
+        product_id: productData?.productId || '',
+        product_name: productData?.model || '',
+        product_slug: productData?.meta?.slug || '',
+        page_url: window.location.href
       });
     } finally {
       setLoading(false);

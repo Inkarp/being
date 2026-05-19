@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const categories = [
   { name: "Ovens", link: "/products/laboratory-ovens" },
-  { name: "Cabinets", link: "/products/cabinet" },
+  { name: "Saftey Cabinets", link: "/products/biological-saftey-cabinets" },
   { name: "Incubators", link: "/products/incubators" },
   { name: "Chillers", link: "/products/chillers" },
   { name: "Water Baths", link: "/products/water-baths" },
@@ -17,7 +17,6 @@ const categories = [
 ];
 
 export default function Categories() {
-  const [active, setActive] = useState("Ovens");
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -73,9 +72,9 @@ export default function Categories() {
         }
 
         .cat-label h2 {
-          font-family: 'Playfair Display', serif;
+      
           font-size: clamp(0.95rem, 1.5vw, 1.2rem);
-          font-weight: 700;
+          font-weight: 400;
           color: #1a1a1a;
           white-space: nowrap;
           line-height: 1.25;
@@ -118,16 +117,19 @@ export default function Categories() {
           position: relative;
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           padding: 22px 20px;
           font-size: clamp(0.8rem, 1.1vw, 0.92rem);
           font-weight: 500;
           color: #6b6456;
           white-space: nowrap;
           text-decoration: none;
-          transition: color 0.2s;
+          transition: color 0.22s, background 0.22s, box-shadow 0.22s;
           cursor: pointer;
           letter-spacing: 0.01em;
           flex-shrink: 0;
+          align-self: stretch;
+          overflow: hidden;
         }
 
         .cat-tab::after {
@@ -145,25 +147,17 @@ export default function Categories() {
         }
 
         .cat-tab:hover {
-          color: #1a1a1a;
+          color: #fff;
+          background: linear-gradient(135deg, #2F4191, #2B7EC2);
+          box-shadow: inset 0 -3px 0 rgba(255,255,255,0.22);
         }
 
         .cat-tab:hover::after {
-          transform: scaleX(0.4);
-        }
-
-        .cat-tab.active {
-          color: #1a1a1a;
-          font-weight: 600;
-        }
-
-        .cat-tab.active::after {
           transform: scaleX(1);
-          background: linear-gradient(90deg, #2F4191, #2B7EC2);
+          background: rgba(255,255,255,0.85);
         }
 
-        /* pill count badge on active */
-        .cat-tab.active .cat-tab-dot {
+        .cat-tab:hover .cat-tab-dot {
           opacity: 1;
           transform: scale(1);
         }
@@ -173,7 +167,7 @@ export default function Categories() {
           width: 5px;
           height: 5px;
           border-radius: 50%;
-          background: #2B7EC2;
+          background: currentColor;
           margin-left: 6px;
           opacity: 0;
           transform: scale(0);
@@ -234,8 +228,7 @@ export default function Categories() {
                 <Fragment key={item.name}>
                   <Link
                     href={item.link}
-                    onClick={() => setActive(item.name)}
-                    className={`cat-tab${active === item.name ? " active" : ""}`}
+                    className="cat-tab"
                   >
                     {item.name}
                     <span className="cat-tab-dot" />

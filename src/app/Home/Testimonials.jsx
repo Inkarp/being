@@ -73,10 +73,6 @@ export default function Testimonials() {
           </span>{" "}
           to understand their business and customers better.
         </p>
-
-        <button className="inline-block rounded-full bg-[#2F4191] py-2.5 px-10 font-bold text-white hover:shadow-lg transition">
-          Read success stories
-        </button>
       </div>
 
       {/* RIGHT TESTIMONIAL CARDS */}

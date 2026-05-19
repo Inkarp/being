@@ -30,8 +30,8 @@ export async function GET() {
             thumbnail: "/products/shaking-incubators/bis-2.webp",
             imgAltText:
               "BIS-2 benchtop shaking incubator with touch screen LCD, transparent lid, and orbital shaking platform for microbiology and cell culture applications_ Being India",
-            price: 15000,
-            discount: 50,
+            price: 465520,
+            // discount: 50,
             gem: true,
             tags: ["new"],
             related: ["bis-3c"],
@@ -338,8 +338,8 @@ export async function GET() {
             thumbnail: "/products/shaking-incubators/bis-3c.webp",
             imgAltText:
               "BIS-3C high-capacity benchtop shaking incubator with cooling to 4°C, 450×450mm platform, touch screen control, and 2000mL flask support for pharmaceutical and biotechnology applications_Being India",
-            price: 15000,
-            discount: 50,
+            price: 518420,
+            // discount: 50,
             gem: true,
             tags: ["new"],
             related: ["bis-2"],
@@ -1186,7 +1186,7 @@ export async function GET() {
                   title: "Why Mid-Capacity Is the Right Format for Routine Laboratory Incubation",
                   description: "The BPH-9082 serves the practical routine laboratory incubation requirement between compact single-protocol and large-batch formats — providing sufficient capacity for concurrent multi-protocol incubation in busy microbiological testing, chemical analysis, and research environments where the compact BPH-9042 is consistently near full capacity but the larger BPH-9162's 500W power and footprint exceed what routine workflows require."
                 },
-          
+
                 {
                   title: "Final Verdict on the BPH-9082",
                   description: "The BPH-9082 delivers ±0.2°C precision mid-capacity incubation with easy-clean stainless steel construction, auto airflow protection, RS485 connectivity, self-diagnostic capability, programmable control, and independent safety at 250W — the routine mid-scale laboratory heating incubator for microbiology, chemical testing, and research applications."
@@ -1195,6 +1195,752 @@ export async function GET() {
             }
           },
 
+          {
+            model: "BPH-9162 Heating Incubator ",
+            title: "BPH-9162 Heating Incubator ",
+
+            meta: {
+              slug: "bph-9162",
+              title:
+                "BPH-9162 Heating Incubator | 80°C | ±0.2°C | 500W | RS485 | Large Capacity | Being India",
+              description:
+                "BPH-9162: Large-capacity precision heating incubator with RT+5°C to 80°C, ±0.2°C stability, ±1.5°C uniformity, stainless steel chamber, auto fan speed, RS485, self-check & 500W. For biological, pharmaceutical & research labs. Enquire now. ",
+              keywords:
+                "BPH-9162 Heating Incubator, large capacity heating incubator 80°C 500W, biological pharmaceutical heating incubator 150L, BPH-9162 RS485 stainless steel incubator, precision large incubator ±0.2°C 750mm height, BPH-9162 large capacity heating incubator RT+5°C to 80°C with 500W and RS485 for biological and pharmaceutical laboratory incubation, 150L heating incubator with ±0.2°C stability stainless steel auto fan speed and self-check for chemical and research labs, large precision incubator 750mm interior height programmable LCD controller independent limiter for large sample batch incubation, large capacity laboratory heating incubator, biological pharmaceutical incubator 500W, 150L precision incubator, RS485 large incubator, 750mm interior incubator, large batch biological incubation, precision temperature large incubator, what is the best large capacity heating incubator for biological and pharmaceutical laboratories, how does a 500W heating incubator maintain ±0.2°C across a large chamber, which large capacity incubator has RS485 and auto fan control for pharmaceutical batch incubation, BPH-9162 vs BPH-9082, BPH-9162 vs BPH-9272, large vs mid-capacity heating incubator, buy BPH-9162 heating incubator, BPH-9162 price, order large capacity precision heating incubator."
+            },
+            productTitle: "BPH-9162 Heating Incubator — Large-Capacity Precision Incubation with ±0.2°C Stability and RS485 for Biological and Pharmaceutical Applications",
+            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            imgAltText:
+              "BPH-9162 large-capacity precision heating incubator with RT+5°C to 80°C range, ±0.2°C stability, stainless steel chamber, 500W, RS485 connectivity, auto fan speed, self-check function, and independent temperature limiter for biological, pharmaceutical, and research laboratory incubation_ Being India",
+            price: 270000,
+            // discount: 50,
+            gem: true,
+            tags: ["new"],
+            related: ["bph-9082"],
+
+            overview: [
+              "The BPH-9162 Heating Incubator extends the BPH Series precision incubation platform to a large-capacity format — providing 500 × 380 × 750 mm of stainless steel precision incubation space at 500W for biological, pharmaceutical, chemical, and research laboratory applications requiring significantly more simultaneous incubation capacity than mid-scale models provide. Maintaining the full BPH Series specification of ±0.2°C temperature stability, ±1.5°C uniformity at 37°C, RS485 connectivity, auto fan speed control, self-check diagnostic function, programmable multi-step LCD controller, and independent temperature limiter — the BPH-9162 delivers large-batch incubation precision for pharmaceutical testing, institutional microbiology, chemical laboratory, and research institution applications. Enquire about the BPH-9162 today."
+            ],
+
+            features: {
+              overview: [
+                "The BPH-9162 delivers large-capacity precision incubation with ±0.2°C stability across a 500×380×750mm stainless steel chamber — integrating auto fan speed, RS485 data recording, self-check diagnostics, programmable LCD control, and independent temperature limiter for biological, pharmaceutical, chemical, and research laboratory incubation at higher throughput."
+              ],
+
+              keyFeatures: [
+                {
+                  title: "Large Stainless Steel Chamber for Biological and Pharmaceutical Batch Incubation",
+                  description:
+                    "The BPH-9162's 500 × 380 × 750 mm stainless steel chamber provides substantially more incubation volume than the mid-capacity BPH-9082 — accommodating larger simultaneous biological sample sets, pharmaceutical stability testing batches, chemical analysis arrays, and research specimen collections within the 750 mm internal height that enables flexible shelf configuration across diverse sample format heights."
+                },
+                {
+                  title: "500W Power for Uniform Large-Chamber Heating",
+                  description:
+                    "At 500W, the BPH-9162's heating system provides the thermal capacity required to maintain ±0.2°C stability across the larger 500 × 380 × 750 mm chamber volume — achieving temperature recovery after door opening within the rated specification and maintaining consistent uniformity from the top shelf to the bottom shelf of the large interior without the temperature stratification that would occur with insufficient heating power at this chamber scale."
+                },
+                {
+                  title: "Automatic Fan Speed Control",
+                  description:
+                    "The BPH-9162's automatic fan speed controller optimises airflow across the larger 750 mm tall chamber — actively distributing heated air uniformly throughout the height of the interior to maintain the ±1.5°C uniformity specification across all shelf positions, while protecting sensitive biological cultures from excessive air movement disturbance during stable operation."
+                },
+                {
+                  title: "RS485 Interface",
+                  description:
+                    "The BPH-9162's RS485 interface enables continuous electronic temperature data recording for the large-batch biological and pharmaceutical incubation protocols that define the BPH-9162's primary application context — where a single door-opening event or temperature deviation simultaneously affects a large number of high-value samples that require comprehensive electronic batch documentation."
+                },
+                {
+                  title: "Self-Check Function and RS485 Interface",
+                  description:
+                    "The self-check function rapidly identifies faults in the BPH-9162's large-capacity system — critical for a high-throughput incubation instrument where an undetected fault affecting a large sample batch would represent a significant research or quality control loss. Rapid self-check diagnostics enable faster fault resolution and shorter incubator downtime in busy pharmaceutical and biological research environments."
+                }
+              ],
+
+              safetyFeatures: {
+                overview: [
+                  "The BPH-9162 incorporates over-temperature protection, independent temperature limiter, and alarm system — providing comprehensive safety for large-batch biological, pharmaceutical, chemical, and research incubation across the RT+5°C to 80°C range at 500W."
+                ],
+
+                items: [
+                  {
+                    title: "Over-Temperature Protection",
+                    description:
+                      "Protective heating cutoff activates independently of the primary controller if chamber temperature exceeds the safe limit — the critical safety response for large-batch biological and pharmaceutical incubation where an over-temperature event simultaneously affects a large volume of high-value samples."
+                  },
+                  {
+                    title: "Independent Temperature Limiter",
+                    description:
+                      "The hardware-level independent temperature limiter provides backup safety protection entirely separate from the primary LCD controller — ensuring that primary controller faults cannot result in uncontrolled heating of the large biological and pharmaceutical sample loads of the BPH-9162 during extended unattended incubation."
+                  },
+                  {
+                    title: "Alarm System",
+                    description:
+                      "Audible and visual alarms communicate all abnormal conditions including temperature deviations and system faults for large-batch biological and pharmaceutical incubation operations where undetected deviations would affect significant research or quality control investments."
+                  }
+                ]
+              }
+            },
+
+            specifications: {
+              overview: [],
+
+              items: [
+                {
+                  label: "Electrical Requirement",
+                  value: "220 V, 50 Hz"
+                },
+                {
+                  label: "Temperature Range",
+                  value: "RT +5°C to 80°C"
+                },
+                {
+                  label: "Display Resolution",
+                  value: "0.1°C"
+                },
+                {
+                  label: "Temperature Stability",
+                  value: "±0.2°C"
+                },
+                {
+                  label: "Temperature Uniformity",
+                  value: "±1.5°C"
+                },
+                {
+                  label: "Power Consumption",
+                  value: "500 W"
+                },
+                {
+                  label: "Interior Dimensions (W×D×H)",
+                  value: "500 × 380 × 750 mm"
+                },
+                {
+                  label: "Exterior Dimensions (W×D×H)",
+                  value: "655 × 715 × 980 mm"
+                },
+                {
+                  label: "Shelves",
+                  value: "2 pcs"
+                },
+                {
+                  label: "Timing Range",
+                  value: "0 to 5999 minutes"
+                },
+                {
+                  label: "RS485",
+                  value: "Yes"
+                }
+              ]
+            },
+
+            applications: {
+              overview: [],
+
+              items: [
+                {
+                  label: "Biological Incubation",
+                  value:
+                    "Large-batch mammalian, bacterial, and yeast culture incubation for research and pharmaceutical biological research."
+                },
+                {
+                  label: "Pharmaceutical Testing",
+                  value:
+                    "Large pharmaceutical stability testing batch incubation, biological assay incubation, and pharmaceutical raw material conditioning."
+                },
+                {
+                  label: "Chemical Laboratories",
+                  value:
+                    "Large-scale chemical reaction incubation, analytical sample conditioning, and bulk sample temperature equilibration."
+                },
+                {
+                  label: "Research Institutions",
+                  value:
+                    "University core facility and institutional research laboratory large-batch incubation for diverse biological and chemical research programmes."
+                }
+              ],
+
+              cta:
+                "Contact us to enquire about the BPH-9162 Heating Incubator."
+            },
+
+            faqs: {
+              overview: [
+                "These FAQs cover the BPH-9162's capacity advantages, 500W power at large-chamber scale, comparison with BPH-9082 and BPH-9272, biological incubation suitability, RS485 for large-batch documentation, auto fan uniformity across 750mm height, pharmaceutical batch suitability, installation, self-check function, and timer range."
+              ],
+
+              items: [
+                {
+                  question: "Why does the BPH-9162 use 500W while the BPH-9082 uses only 250W?",
+                  answer:
+                    "The BPH-9162's 500 × 380 × 750 mm interior is substantially larger than the BPH-9082's 400 × 320 × 550 mm chamber — requiring 500W heating power to maintain ±0.2°C stability and achieve temperature recovery within the rated specification across the larger thermal mass. The 250W of the BPH-9082 is designed to match the smaller chamber volume; the BPH-9162's 500W is matched to the larger chamber's thermal requirements."
+                },
+                {
+                  question: "How does the BPH-9162 compare to the BPH-9272?",
+                  answer:
+                    "The BPH-9272 provides a larger interior of 600 × 450 × 900 mm (vs 500 × 380 × 750 mm), higher power of 600W (vs 500W), and the same ±0.2°C stability, RS485, and BPH Series platform. Choose the BPH-9162 for large biological and pharmaceutical batch incubation at 500W; the BPH-9272 for the next capacity tier up."
+                },
+                {
+                  question: "Is the BPH-9162 suitable for large pharmaceutical stability testing?",
+                  answer:
+                    "Yes. The BPH-9162's large chamber accommodates pharmaceutical stability batch sample sets at the volume required for complete time-point processing within a single incubation run. The ±0.2°C stability, RS485 electronic documentation, and independent temperature limiter support pharmaceutical GLP quality management requirements for stability testing incubation."
+                },
+                {
+                  question: "How does the auto fan speed maintain ±1.5°C uniformity across the 750mm interior height?",
+                  answer:
+                    "The automatic fan speed controller increases airflow during temperature recovery and large thermal load periods to actively distribute heated air throughout the 750 mm tall interior — preventing vertical temperature stratification between the top and bottom shelf positions. During stable operation, fan speed is reduced to the minimum required for maintaining uniformity — protecting sensitive biological cultures from unnecessary airflow disturbance."
+                },
+                {
+                  question: "What timer range does the BPH-9162 have?",
+                  answer:
+                    "0 to 5999 minutes — the same as all BPH Series models, covering the full range of standard laboratory incubation durations from short assays through extended multi-day pharmaceutical stability intervals."
+                },
+                {
+                  question: "What is the RS485 network capacity for BPH-9162 monitoring?",
+                  answer:
+                    "Multiple BPH-9162 units can be connected to a single RS485 network for centralised monitoring — the specific maximum number of addressable devices depends on the RS485 master system configuration. Confirm with your LIMS or monitoring software vendor for the maximum device count per RS485 bus in your specific data management infrastructure."
+                },
+                {
+                  question: "Can the BPH-9162 be used for 37°C mammalian cell incubation without CO₂?",
+                  answer:
+                    "Yes — for simple CO₂-independent mammalian cell incubation using HEPES-buffered media or media with pH indicators not dependent on CO₂/bicarbonate buffering, the BPH-9162's ±0.2°C stability at 37°C provides the thermal precision required. For CO₂-dependent mammalian cell culture requiring controlled CO₂ atmosphere, a dedicated CO₂ incubator is the appropriate instrument."
+                },
+                {
+                  question: "What are the installation requirements for the BPH-9162?",
+                  answer:
+                    "The BPH-9162 has exterior dimensions of 655 × 715 × 980 mm — a floor-standing unit at 980 mm height requiring stable floor or reinforced bench support at 500W continuous power. Allow 150mm clearance on sides and rear for ventilation and RS485/power cable routing."
+                },
+                {
+                  question: "Does the BPH-9162 have the same self-check function as the BPH-9042?",
+                  answer:
+                    "Yes. The BPH-9162 uses the same self-diagnostic self-check function platform as all BPH Series models — providing automated component fault identification and diagnostic display at startup or on demand."
+                },
+                {
+                  question: "What shelves does the BPH-9162 come with?",
+                  answer:
+                    "The BPH-9162 comes with 2 standard adjustable shelves within the 500 × 380 × 750 mm interior. The 750 mm interior height enables flexible shelf position configuration for diverse sample vessel heights across the 2 shelf levels."
+                }
+              ]
+            },
+
+            blog: {
+              heading: "BPH-9162 Heating Incubator: Large-Capacity ±0.2°C Precision for Biological, Pharmaceutical, and Research Laboratory Batch Incubation",
+              overview: [
+                ""
+              ],
+              items: [
+                {
+                  title: "500W at Large Scale: Why Heating Power Matters for Uniformity",
+                  description: "The BPH-9162's 500W heating is not simply twice the BPH-9082's 250W — it is the power specification matched to the larger chamber volume for maintaining ±0.2°C stability and ±1.5°C uniformity across the 750 mm tall, 500 × 380 mm floor interior. Underpowered heating at large scale results in temperature stratification between shelf levels and slow recovery after door opening — both affecting the precision performance expected of a quality-managed incubator. The BPH-9162's 500W ensures the same precision performance at large scale."
+                },
+
+                {
+                  title: "Final Verdict on the BPH-9162",
+                  description: "The BPH-9162 delivers large-capacity ±0.2°C precision biological and pharmaceutical incubation with stainless steel construction, 500W thermal capacity, auto fan uniformity, RS485 documentation, self-check diagnostics, programmable control, and independent safety — the high-throughput BPH Series choice for biological research, pharmaceutical stability testing, and institutional laboratory incubation."
+                }
+              ]
+            }
+          },
+
+          {
+            model: "BPH-9272 Heating Incubator ",
+            title: "BPH-9272 Heating Incubator ",
+
+            meta: {
+              slug: "bph-9272",
+              title:
+                "BPH-9272 Heating Incubator | 80°C | ±0.2°C | 600W | RS485 | High Capacity | Being India",
+              description:
+                "BPH-9272: High-capacity precision heating incubator with RT+5°C to 80°C, ±0.2°C stability, 600×450×900mm stainless steel chamber, auto airflow, RS485, programmable controller & 600W. For advanced lab, pharmaceutical & microbiology. Enquire. ",
+              keywords:
+                "BPH-9272 Heating Incubator, high capacity heating incubator 80°C 600W, advanced laboratory incubator RS485, BPH-9272 large precision incubator 250L, pharmaceutical large batch incubator ±0.2°C, BPH-9272 high capacity heating incubator RT+5°C to 80°C 600W with RS485 for advanced laboratory and pharmaceutical applications, large precision incubator 600×450×900mm ±0.2°C stability with auto airflow LCD and independent limiter for research and microbiology, 600W laboratory incubator programmable RS485 for high volume pharmaceutical and research batch incubation, high capacity precision incubator, large pharmaceutical incubator 600W, 900mm interior incubator, advanced laboratory incubator RS485, microbiology large batch incubator, BPH-9272 vs BPH-9162, BPH-9272 vs BPH-9402, 600W vs 500W vs 1200W heating incubator, buy BPH-9272 heating incubator, BPH-9272 price, order high capacity laboratory incubator."
+            },
+            productTitle: "BPH-9272 Heating Incubator — High-Capacity ±0.2°C Precision Incubation with 600W and RS485 for Advanced Laboratory Applications",
+            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            imgAltText:
+              "BPH-9272 high-capacity precision heating incubator with RT+5°C to 80°C, ±0.2°C stability, 600×450×900mm stainless steel chamber, 600W, RS485 connectivity, automatic airflow control, and independent temperature limiter for advanced laboratory and pharmaceutical incubation_Being India",
+            price: 350000,
+            // discount: 50,
+            gem: true,
+            tags: ["new"],
+            related: ["bph-9162"],
+
+            overview: [
+              "The BPH-9272 Heating Incubator extends the BPH Series platform to 600 × 450 × 900 mm of precision incubation space at 600W — providing advanced laboratory, pharmaceutical, microbiology, and large-scale research applications with the high-capacity incubation volume required for extensive simultaneous sample sets, large pharmaceutical stability batches, and advanced research incubation matrices beyond the reach of 500W large-capacity models. With the full BPH Series platform of ±0.2°C stability, ±1.5°C uniformity, RS485, automatic airflow, programmable LCD control, and independent temperature limiter — the BPH-9272 delivers precision performance at the high-capacity scale demanded by leading pharmaceutical research, institutional microbiology, and advanced research facilities."
+            ],
+
+            features: {
+              overview: [
+                "The BPH-9272 delivers high-capacity precision incubation with ±0.2°C stability across a 600×450×900mm large stainless steel chamber — combining automatic airflow for 900mm-height uniformity, RS485 data connectivity, programmable LCD control, and independent temperature limiter for advanced laboratory, pharmaceutical, and microbiology large-batch incubation applications."
+              ],
+
+              keyFeatures: [
+                {
+                  title: "Large Stainless Steel Chamber with 900mm Interior Height",
+                  description:
+                    "The BPH-9272's 600 × 450 × 900 mm stainless steel chamber provides the tallest interior in the standard BPH Series range — with 900 mm of height enabling the widest flexible shelf position range for diverse sample vessel formats, from compact microtitre plates to tall culture vessels and large sample assemblies. The 600 × 450 mm wide floor area accommodates the widest simultaneous sample array configurations in the standard BPH Series."
+                },
+                {
+                  title: "600W Power for Large-Chamber ±0.2°C Stability",
+                  description:
+                    "The BPH-9272's 600W heating power is matched to the thermal requirements of the 600 × 450 × 900 mm large chamber — providing the capacity needed to maintain ±0.2°C stability and achieve temperature recovery within specification after large-batch sample loading events. The 600W heating output ensures consistent performance throughout high-volume pharmaceutical stability testing, institutional microbiology batch incubation, and advanced research large-specimen-set incubation protocols."
+                },
+                {
+                  title: "Automatic Airflow Control for 900mm Uniformity",
+                  description:
+                    "The BPH-9272's automatic airflow controller manages airflow actively across the 900 mm tall interior — the most demanding uniformity challenge in the standard BPH Series. Active fan speed management counteracts vertical temperature stratification across the taller chamber, maintaining the ±1.5°C uniformity specification from the top shelf to the bottom shelf across all simultaneous sample positions in the high-capacity incubator."
+                },
+                {
+                  title: "RS485 Communication for Advanced Documentation",
+                  description:
+                    "The BPH-9272's RS485 connectivity supports centralised electronic monitoring of a high-capacity incubator running advanced pharmaceutical and research incubation — where the value and quantity of simultaneously incubated samples make comprehensive automated batch documentation most important. RS485 integration with LIMS and quality management systems provides the automated temperature record infrastructure required for advanced pharmaceutical research GxP compliance and institutional quality assurance."
+                },
+                {
+                  title: "Programmable LCD Controller",
+                  description:
+                    "The BPH-9272's programmable multi-step LCD controller enables automated protocol execution for complex advanced laboratory and pharmaceutical incubation sequences — supporting sequential temperature transitions, defined hold durations, and automated cycle management across the high-capacity chamber without continuous operator supervision throughout extended advanced research and pharmaceutical stability incubation protocols."
+                }
+              ],
+
+              safetyFeatures: {
+                overview: [
+                  "The BPH-9272 incorporates over-temperature protection, independent temperature limiter, and alarm system — providing comprehensive safety for high-capacity advanced laboratory, pharmaceutical, and microbiology incubation at 600W."
+                ],
+
+                items: [
+                  {
+                    title: "Over-Temperature Protection",
+                    description:
+                      "Activated automatically if the chamber temperature exceeds the safe limit — protecting the highest-value simultaneous sample load in the standard BPH Series."
+                  },
+                  {
+                    title: "Independent Temperature Limiter",
+                    description:
+                      "Hardware-level backup protection completely separate from the primary controller for reliable safety during extended advanced pharmaceutical and research incubation."
+                  },
+                  {
+                    title: "Alarm System",
+                    description:
+                      "Audible and visual alerts for all abnormal conditions in the high-capacity incubation environment."
+                  }
+                ]
+              }
+            },
+
+            specifications: {
+              overview: [],
+
+              items: [
+                {
+                  label: "Electrical Requirement",
+                  value: "220 V, 50 Hz"
+                },
+                {
+                  label: "Temperature Range",
+                  value: "RT +5°C to 80°C"
+                },
+                {
+                  label: "Display Resolution",
+                  value: "0.1°C"
+                },
+                {
+                  label: "Temperature Stability",
+                  value: "±0.2°C"
+                },
+                {
+                  label: "Temperature Uniformity",
+                  value: "±1.5°C"
+                },
+                {
+                  label: "Power Consumption",
+                  value: "600 W"
+                },
+                {
+                  label: "Interior Dimensions (W×D×H)",
+                  value: "600 × 450 × 900 mm"
+                },
+                {
+                  label: "Exterior Dimensions (W×D×H)",
+                  value: "755 × 785 × 1130 mm"
+                },
+                {
+                  label: "Shelves",
+                  value: "2 pcs"
+                },
+                {
+                  label: "Timing Range",
+                  value: "0 to 5999 minutes"
+                },
+                {
+                  label: "RS485",
+                  value: "Yes"
+                }
+              ]
+            },
+
+            applications: {
+              overview: [],
+
+              items: [
+                {
+                  label: "Large Sample Incubation",
+                  value:
+                    "Simultaneous incubation of large research specimen sets, pharmaceutical stability sample matrices, and high-volume microbiological culture series."
+                },
+                {
+                  label: "Laboratory Research",
+                  value:
+                    "Advanced biological, chemical, and pharmaceutical research requiring high-capacity ±0.2°C precision for large experimental datasets."
+                },
+                {
+                  label: "Pharmaceutical Applications",
+                  value:
+                    "Large-scale pharmaceutical stability testing, biological assay batch incubation, and pharmaceutical API biological process incubation."
+                },
+                {
+                  label: "Microbiology",
+                  value:
+                    "Institutional microbiology laboratory large-batch culture and identification incubation for high-throughput clinical and food safety testing."
+                }
+              ],
+
+              cta:
+                "Contact us to enquire about the BPH-9272 Heating Incubator."
+            },
+
+            faqs: {
+              overview: [
+                "These FAQs cover the BPH-9272's 900mm height advantage, 600W vs 500W performance, comparison with BPH-9162 and BPH-9402, RS485 connectivity, pharmaceutical batch suitability, uniformity across the tall interior, installation, auto airflow, power supply, and self-check."
+              ],
+
+              items: [
+                {
+                  question: "What is the advantage of the 900mm interior height in the BPH-9272?",
+                  answer:
+                    "The 900 mm height — 150 mm taller than the BPH-9162's 750 mm — accommodates taller sample vessel formats including large culture bottles, tall flask assemblies, and specialised research culture systems. Combined with the 600 × 450 mm wide floor area, the 900 mm height provides the most flexible shelf configuration range in the standard BPH Series for diverse advanced research and pharmaceutical sample formats."
+                },
+                {
+                  question: "How does the BPH-9272 compare to the BPH-9162?",
+                  answer:
+                    "The BPH-9272 offers a larger interior (600 × 450 × 900 mm vs 500 × 380 × 750 mm), higher power (600W vs 500W), and greater simultaneous sample capacity — at the same ±0.2°C stability, RS485, and BPH Series platform. Choose the BPH-9272 for advanced applications requiring the additional volume and height; the BPH-9162 for large-batch applications within its 500 × 380 × 750 mm interior."
+                },
+                {
+                  question: "How does the BPH-9272 compare to the BPH-9402?",
+                  answer:
+                    "The BPH-9402 provides the largest interior in the BPH Series at 1000 × 510 × 800 mm (vs 600 × 450 × 900 mm), 1200W power (vs 600W), and is designed for large-scale industrial and pharmaceutical production laboratory incubation at the highest throughput in the series. Choose the BPH-9272 for advanced research and high-volume pharmaceutical applications; the BPH-9402 for production-scale industrial incubation."
+                },
+                {
+                  question: "Is the BPH-9272 suitable for pharmaceutical stability batch incubation?",
+                  answer:
+                    "Yes. The BPH-9272's high-capacity 600 × 450 × 900 mm chamber accommodates complete pharmaceutical stability study sample sets, the ±0.2°C stability meets ICH stability condition temperature tolerances, and RS485 provides automated electronic batch documentation. Consult your QA team for IQ/OQ/PQ requirements."
+                },
+                {
+                  question: "What power supply does the BPH-9272 require?",
+                  answer:
+                    "AC 220V, 50Hz at 600W — a moderate load suitable for standard laboratory circuits with adequate amperage for 600W continuous operation. A dedicated circuit is recommended in installations with multiple high-power instruments."
+                },
+                {
+                  question: "How does the BPH-9272 maintain ±2°C uniformity across the 900mm interior?",
+                  answer:
+                    "The automatic fan speed controller actively distributes heated air throughout the 900 mm tall interior — counteracting vertical temperature stratification between the top and bottom shelf positions. Higher fan speeds during recovery phases ensure rapid uniform heat distribution, while lower speeds during stable operation protect cultures from air disturbance."
+                },
+                {
+                  question: "Does the BPH-9272 have a self-check function?",
+                  answer:
+                    "Yes — all BPH Series models share the self-diagnostic self-check function for rapid fault identification and diagnostic display."
+                },
+                {
+                  question: "What are the installation dimensions of the BPH-9272?",
+                  answer:
+                    "755 × 785 × 1130 mm exterior — a floor-standing unit at 1130 mm height requiring stable floor support and adequate clearance for door opening and ventilation around all sides."
+                },
+                {
+                  question: "Can the BPH-9272 be used for high-volume microbiological culture incubation?",
+                  answer:
+                    "Yes. The large 600 × 450 × 900 mm chamber with 2 adjustable shelves accommodates large numbers of simultaneously incubated culture plates, tubes, and flasks for high-throughput institutional and clinical microbiology operations. RS485 connectivity supports continuous temperature documentation for accredited laboratory quality management."
+                },
+                {
+                  question: "What timer range does the BPH-9272 offer?",
+                  answer:
+                    "0 to 5999 minutes — the same across all BPH Series models, covering all standard laboratory incubation durations from short assays through extended multi-day pharmaceutical and research protocols."
+                }
+              ]
+            },
+
+            blog: {
+              heading: "BPH-9272 Heating Incubator: High-Capacity ±0.2°C Precision for Advanced Pharmaceutical and Research Incubation",
+              overview: [
+                ""
+              ],
+              items: [
+                {
+                  title: "Why 600W and 900mm Define the BPH-9272's Advanced Application Range",
+                  description: "The BPH-9272's combination of 600W heating power and 900mm interior height positions it as the advanced-tier standard BPH Series model — providing the thermal capacity for ±0.2°C precision across the widest interior in the series and the vertical clearance for tall vessel formats and complex multi-tier sample configurations that define advanced pharmaceutical and research incubation requirements."
+                },
+
+                {
+                  title: "Final Verdict on the BPH-9272",
+                  description: "The BPH-9272 delivers ±0.2°C high-capacity precision incubation with 600W matched heating, 900mm tall stainless steel chamber, auto airflow uniformity management, RS485 documentation, programmable control, and independent safety — the advanced-tier standard BPH Series heating incubator for pharmaceutical stability testing, institutional microbiology, and advanced research large-batch incubation."
+                }
+              ]
+            }
+          },
+
+          {
+            model: "BPH-9402 Heating Incubator ",
+            title: "BPH-9402 Heating Incubator ",
+
+            meta: {
+              slug: "bph-9402",
+              title:
+                "BPH-9402 Heating Incubator | 80°C | ±0.2°C | 1200W | RS485 | Production Scale | Being India",
+              description:
+                "BPH-9402: Production-scale precision heating incubator with RT+5°C to 80°C, ±0.2°C stability, 1000×510×800mm stainless steel chamber, auto airflow, RS485, programmable controller & 1200W. For large-scale pharma, industrial & advanced research. Enquire. ",
+              keywords:
+                "BPH-9402 Heating Incubator, production scale heating incubator 1200W 80°C, industrial laboratory incubator large capacity, BPH-9402 RS485 large incubator pharmaceutical, large scale heating incubator 1000mm wide ±0.2°C, BPH-9402 production scale heating incubator RT+5°C to 80°C 1200W with RS485 for large-scale pharmaceutical production and industrial laboratory incubation, largest BPH Series incubator 1000×510×800mm ±0.2°C stability auto airflow and independent limiter for advanced research, 1200W large laboratory incubator programmable LCD RS485 for industrial pharmaceutical and research large batch incubation, production scale laboratory incubator, largest BPH series incubator, 1200W heating incubator, industrial pharmaceutical incubator, 1000mm wide incubator, BPH-9402 vs BPH-9272, production vs advanced capacity heating incubator, largest vs high capacity BPH incubator, buy BPH-9402 heating incubator, BPH-9402 price, order production scale laboratory heating incubator."
+            },
+
+            productTitle:
+              "BPH-9402 Heating Incubator — Production-Scale ±0.2°C Precision Incubation at 1200W for Large-Scale Pharmaceutical and Industrial Laboratories",
+
+            thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+            imgAltText:
+              "BPH-9402 production-scale precision heating incubator with RT+5°C to 80°C range, ±0.2°C stability, 1000×510×800mm stainless steel chamber, 1200W, RS485 connectivity, automatic airflow control, and independent temperature limiter for large-scale pharmaceutical production and industrial laboratory incubation_Being India",
+
+            price: 580000,
+
+            gem: true,
+
+            tags: ["new"],
+
+            related: ["bph-9272"],
+
+            overview: [
+              "The BPH-9402 Heating Incubator is the flagship of the BPH Series — delivering the full BPH precision platform at the highest capacity with a 1000 × 510 × 800 mm interior and 1200W heating power for large-scale pharmaceutical production support, industrial laboratory incubation, and advanced research applications requiring the maximum incubation volume available in the BPH Series. The 1000 mm interior width — the widest in the series — accommodates production-scale sample tray configurations, large industrial batch sample arrays, and extensive research specimen matrices that cannot fit within narrower incubator interiors. With ±0.2°C stability, ±1.5°C uniformity, RS485, automatic airflow, programmable LCD, self-check diagnostics, and independent temperature limiter — the BPH-9402 maintains the BPH Series precision specification at production scale."
+            ],
+
+            features: {
+              overview: [
+                "The BPH-9402 delivers production-scale precision incubation with ±0.2°C stability across a 1000×510×800mm large stainless steel chamber — integrating 1200W matched heating, automatic airflow for wide-format uniformity, RS485 documentation, programmable LCD control, self-check diagnostics, and independent temperature limiter for large-scale pharmaceutical, industrial, and advanced research incubation."
+              ],
+
+              keyFeatures: [
+                {
+                  title: "Large Stainless Steel Chamber with 1000mm Interior Width",
+                  description:
+                    "The BPH-9402's 1000 × 510 × 800 mm stainless steel chamber is the largest in the BPH Series — with the 1000 mm interior width providing side-by-side loading capacity for production-scale sample tray arrays, wide industrial batch configurations, and extensive parallel research specimen sets that require lateral space beyond the narrower interiors of standard BPH models."
+                },
+                {
+                  title: "1200W Power for Production-Scale ±0.2°C Stability",
+                  description:
+                    "At 1200W — the highest in the BPH Series — the BPH-9402's heating system provides the thermal capacity required to maintain ±0.2°C stability across the 1000 × 510 × 800 mm production-scale chamber. The 1200W output supports fast recovery after door opening of the large chamber, consistent temperature uniformity across the full 1000 mm width, and stable performance throughout extended production-scale incubation cycles."
+                },
+                {
+                  title: "Automatic Airflow Control for Wide-Format Chamber Uniformity",
+                  description:
+                    "The BPH-9402's automatic airflow controller manages airflow across the 1000 × 510 mm wide floor area — the most demanding lateral temperature uniformity challenge in the BPH Series. Active fan speed management distributes heated air evenly across the full 1000 mm width, preventing lateral temperature gradients between samples at different lateral positions within the large chamber."
+                },
+                {
+                  title: "RS485 for Production-Scale Documentation",
+                  description:
+                    "RS485 connectivity for the BPH-9402 supports the most comprehensive batch documentation requirement in the BPH Series — where the largest simultaneous sample load requires the most thorough electronic temperature recording for pharmaceutical production GxP compliance, industrial quality management documentation, and advanced research data integrity."
+                },
+                {
+                  title: "Programmable LCD Controller",
+                  description:
+                    "The BPH-9402's programmable multi-step LCD controller enables automated protocol execution for production-scale pharmaceutical and industrial incubation — supporting complex large-batch incubation sequences without continuous operator supervision throughout extended production-scale protocol durations."
+                }
+              ],
+
+              safetyFeatures: {
+                overview: [
+                  "The BPH-9402 incorporates over-temperature protection, independent temperature limiter, and alarm system at 1200W production scale — providing comprehensive safety for the largest-capacity BPH Series heating incubator during large-scale pharmaceutical, industrial, and advanced research incubation."
+                ],
+
+                items: [
+                  {
+                    title: "Over-Temperature Protection",
+                    description:
+                      "At 1200W, the over-temperature protection responds to the highest heating energy in the BPH Series — providing immediate cutoff if chamber temperature exceeds the safe limit to protect production-scale pharmaceutical and industrial sample loads."
+                  },
+                  {
+                    title: "Independent Temperature Limiter",
+                    description:
+                      "Hardware-level independent safety completely separate from the 1200W primary controller — the most critical safety feature for unattended production-scale incubation where primary controller malfunction would affect the largest sample load in the series."
+                  },
+                  {
+                    title: "Alarm System",
+                    description:
+                      "Audible and visual alarms for all abnormal conditions at production-scale incubation — enabling rapid operator response before production-scale sample losses occur."
+                  }
+                ]
+              }
+            },
+
+            specifications: {
+              overview: [],
+
+              items: [
+                {
+                  label: "Electrical Requirement",
+                  value: "220 V, 50 Hz"
+                },
+                {
+                  label: "Temperature Range",
+                  value: "RT +5°C to 80°C"
+                },
+                {
+                  label: "Display Resolution",
+                  value: "0.1°C"
+                },
+                {
+                  label: "Temperature Stability",
+                  value: "±0.2°C"
+                },
+                {
+                  label: "Temperature Uniformity",
+                  value: "±1.5°C"
+                },
+                {
+                  label: "Power Consumption",
+                  value: "1200 W"
+                },
+                {
+                  label: "Interior Dimensions (W×D×H)",
+                  value: "1000 × 510 × 800 mm"
+                },
+                {
+                  label: "Exterior Dimensions (W×D×H)",
+                  value: "1140 × 850 × 1080 mm"
+                },
+                {
+                  label: "Shelves",
+                  value: "2 pcs"
+                },
+                {
+                  label: "Timing Range",
+                  value: "0 to 5999 minutes"
+                },
+                {
+                  label: "RS485",
+                  value: "Yes"
+                }
+              ]
+            },
+
+            applications: {
+              overview: [],
+
+              items: [
+                {
+                  label: "Large-Scale Incubation",
+                  value:
+                    "Production-scale simultaneous incubation of entire pharmaceutical stability batch sets, industrial QC sample arrays, and comprehensive research experimental matrices."
+                },
+                {
+                  label: "Industrial Laboratories",
+                  value:
+                    "Industrial quality control, process support, and manufacturing laboratory incubation at the production-adjacent scale requiring the widest interior of the BPH Series."
+                },
+                {
+                  label: "Pharmaceutical Production Labs",
+                  value:
+                    "Large-scale pharmaceutical stability testing, production batch biological assay incubation, and pharmaceutical production quality support at production-scale sample volumes."
+                },
+                {
+                  label: "Advanced Research",
+                  value:
+                    "Large-scale university core facility and institutional research incubation for high-throughput biological, chemical, and pharmaceutical research programmes requiring maximum BPH Series incubation capacity."
+                }
+              ],
+
+              cta:
+                "The BPH-9402 Heating Incubator — production-scale ±0.2°C precision for your pharmaceutical, industrial, and advanced research incubation needs. Contact us for pricing."
+            },
+
+            faqs: {
+              overview: [
+                "These FAQs address the BPH-9402's production-scale capabilities, 1000mm width advantage, 1200W thermal performance, comparison with BPH-9272, pharmaceutical production suitability, power supply requirements, uniformity across the wide format, RS485 integration, installation, and self-check function."
+              ],
+
+              items: [
+                {
+                  question: "What makes the BPH-9402 a production-scale incubator?",
+                  answer:
+                    "The BPH-9402's 1000 × 510 × 800 mm interior — the largest in the BPH Series — combined with 1200W heating power provides the incubation volume required for complete production-scale pharmaceutical stability batch sets, full industrial QC analytical sample arrays, and comprehensive research experimental matrices within a single incubation cycle. The 1000 mm interior width enables wide production sample tray configurations impossible in narrower incubators."
+                },
+                {
+                  question: "How does the BPH-9402 compare to the BPH-9272?",
+                  answer:
+                    "The BPH-9402 provides the largest interior (1000 × 510 × 800 mm vs 600 × 450 × 900 mm), highest power (1200W vs 600W), and is 1140 × 850 × 1080 mm exterior — substantially larger than the BPH-9272. Both share ±0.2°C stability, RS485, and the full BPH platform. The BPH-9272 has a taller 900 mm interior height (vs 800 mm), while the BPH-9402 is wider at 1000 mm. Choose based on which dimension — height or width — is most critical for your sample format."
+                },
+                {
+                  question: "Is the BPH-9402 suitable for pharmaceutical production support incubation?",
+                  answer:
+                    "Yes. The BPH-9402's production-scale 1000 × 510 × 800 mm capacity, ±0.2°C stability, 1200W performance, RS485 electronic documentation, and independent temperature limiter support large-scale pharmaceutical production quality testing, stability batch incubation, and biological assay incubation in pharmaceutical production-adjacent environments. Consult your QA team for qualification requirements."
+                },
+                {
+                  question: "What power supply does the BPH-9402 require?",
+                  answer:
+                    "AC 220V, 50Hz at 1200W — the highest power consumption in the BPH Series. A dedicated circuit rated for continuous 1200W is required. In pharmaceutical production and industrial facilities, confirm circuit capacity and protection rating with your electrical engineer."
+                },
+                {
+                  question: "How does the BPH-9402 maintain ±1.5°C uniformity across its 1000mm wide interior?",
+                  answer:
+                    "The automatic airflow controller distributes heated air uniformly across the full 1000 × 510 mm floor area — preventing the lateral temperature gradients that can develop in wide-format chambers with inadequate lateral air distribution. Fan speed is managed dynamically based on chamber conditions to maintain uniform heating from the left side to the right side of the 1000 mm wide interior."
+                },
+                {
+                  question: "What installation space does the BPH-9402 require?",
+                  answer:
+                    "1140 × 850 × 1080 mm exterior — the largest BPH Series unit, requiring dedicated floor space rated for the unit weight at 1200W continuous power. Allow 200mm minimum clearance on sides and rear for ventilation, and 600–800mm front clearance for door opening access. A dedicated 1200W AC 220V circuit is required."
+                },
+                {
+                  question: "Does the BPH-9402 support RS485 network monitoring with multiple units?",
+                  answer:
+                    "Yes. Multiple BPH-9402 units can share a RS485 network bus for centralised monitoring — enabling a pharmaceutical or industrial facility to centrally monitor all production-scale incubators simultaneously from a single LIMS or monitoring interface."
+                },
+                {
+                  question: "What is the self-check function in the BPH-9402?",
+                  answer:
+                    "The self-check function is the same across all BPH Series models — providing automated diagnostic assessment at startup or on demand to identify and display fault conditions in the BPH-9402's heating, sensing, and control systems. Rapid self-check diagnostics are particularly important in production-scale incubation environments where incubator downtime has production scheduling consequences."
+                },
+                {
+                  question: "How many shelves does the BPH-9402 have?",
+                  answer:
+                    "The BPH-9402 comes with 2 adjustable shelves within the 1000 × 510 × 800 mm interior. The 800 mm interior height with 2 shelf positions provides appropriate height clearance for each shelf level. For higher-density sample loading in the wide format, confirm additional shelf availability with your supplier."
+                },
+                {
+                  question: "Can the BPH-9402 run automated incubation programmes unattended?",
+                  answer:
+                    "Yes. The BPH-9402's programmable LCD multi-step controller, 5999-minute timer, independent temperature limiter, and alarm system collectively support safe unattended production-scale automated incubation — with the alarm system providing operator notification of any deviations and the independent limiter providing hardware-level backup safety for 1200W production-scale heating without continuous operator supervision."
+                }
+              ]
+            },
+
+            blog: {
+              heading:
+                "BPH-9402 Heating Incubator: Production-Scale 1200W Precision for Large-Scale Pharmaceutical and Industrial Laboratory Incubation",
+
+              overview: [""],
+
+              items: [
+                {
+                  title:
+                    "The 1000mm Interior Width: Why the BPH-9402 Changes Production-Scale Incubation",
+                  description:
+                    "No other model in the standard BPH Series offers 1000mm of interior width — a dimension that enables production-scale sample tray configurations, wide industrial batch arrays, and comprehensive research experimental matrices that simply cannot be accommodated in narrower laboratory incubators. For pharmaceutical production laboratories processing complete stability batch sets and industrial QC facilities running full batch sample arrays, the BPH-9402's 1000mm width is the capacity enabler."
+                },
+                {
+                  title: "1200W at ±0.2°C: Precision at Production Scale",
+                  description:
+                    "Maintaining ±0.2°C stability across a 1000 × 510 × 800 mm production-scale chamber requires 1200W of matched heating power — not because precision is harder to achieve at scale, but because thermal recovery time and lateral uniformity both require proportional heating energy. The BPH-9402's 1200W is specifically matched to these requirements — delivering the same ±0.2°C precision across the production-scale interior that the compact BPH-9042 achieves at 250W in its smaller format."
+                },
+                {
+                  title: "Final Verdict on the BPH-9402",
+                  description:
+                    "The BPH-9402 delivers the highest capacity in the BPH Series — 1000 × 510 × 800 mm of ±0.2°C precise stainless steel incubation at 1200W, with auto airflow, RS485, programmable control, self-check diagnostics, and independent safety — the production-scale BPH Series heating incubator for pharmaceutical production support, industrial quality control, and large-scale advanced research laboratory incubation."
+                }
+              ]
+            }
+          },
         ]
       },
     ]

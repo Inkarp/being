@@ -3,12 +3,30 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-    FaPaperPlane,
     FaFacebookF,
     FaInstagram,
     FaYoutube,
     FaLinkedin
 } from 'react-icons/fa';
+
+const socialLinks = [
+    {
+        label: 'Facebook',
+        href: 'https://www.facebook.com/people/Being-India/61580278097295/',
+        icon: FaFacebookF,
+    },
+    {
+        label: 'Instagram',
+        href: 'https://www.instagram.com/beingindia_scientific',
+        icon: FaInstagram,
+    },
+   
+    {
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/company/being-scientific-india',
+        icon: FaLinkedin,
+    },
+];
 
 export default function Footer() {
     return (
@@ -46,7 +64,7 @@ export default function Footer() {
                                 Email Address
                             </h4>
                             <p className="text-base font-semibold text-[#2F4191] animate-bounce">
-                                support.india@beinglab-usa.com
+                                info@beinglab.co.in
                             </p>
                         </div>
                     </div>
@@ -64,7 +82,7 @@ export default function Footer() {
                                 Call Us For Support
                             </h4>
                             <p className="text-base font-semibold text-[#2F4191] animate-bounce">
-                                +91 9030357676
+                                +91 9966634008
                             </p>
                         </div>
                     </div>
@@ -247,18 +265,18 @@ export default function Footer() {
 
                             {/* Social Icons */}
                             <div className="flex gap-4">
-                                <div className="bg-white p-3 rounded-full hover:text-white hover:bg-black transition-all duration-300 text-[#2B7EC2] cursor-pointer hover:scale-110 transition">
-                                    <FaFacebookF />
-                                </div>
-                                <div className="bg-white p-3 rounded-full hover:text-white hover:bg-black transition-all duration-300 text-[#2B7EC2] cursor-pointer hover:scale-110 transition">
-                                    <FaInstagram />
-                                </div>
-                                <div className="bg-white p-3 rounded-full hover:text-white hover:bg-black transition-all duration-300 text-[#2B7EC2] cursor-pointer hover:scale-110 transition">
-                                    <FaYoutube />
-                                </div>
-                                <div className="bg-white p-3 rounded-full hover:text-white hover:bg-black transition-all duration-300 text-[#2B7EC2] cursor-pointer hover:scale-110 transition">
-                                    <FaLinkedin />
-                                </div>
+                                {socialLinks.map(({ label, href, icon: Icon }) => (
+                                    <a
+                                        key={label}
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`Follow Being India on ${label}`}
+                                        className="bg-white p-3 rounded-full hover:text-white hover:bg-black transition-all duration-300 text-[#2B7EC2] cursor-pointer hover:scale-110"
+                                    >
+                                        <Icon />
+                                    </a>
+                                ))}
                             </div>                  
                         </div>
                     </div>
@@ -270,7 +288,7 @@ export default function Footer() {
                 <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-black">
                     <p>Privacy Policy</p>
                     <p>
-                        Copyright © <span className="font-semibold">Inkarp</span>. All rights reserved.
+                        Copyright © <span className="font-semibold">Beinglab</span>. All rights reserved.
                     </p>
                     <p>Terms and Conditions</p>
                 </div>

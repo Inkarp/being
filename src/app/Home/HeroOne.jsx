@@ -12,23 +12,6 @@ const SUBTITLE =
   'Discover our cutting-edge solutions to accelerate scientific excellence.';
 const TYPING_SPEED = 80;
 
-const TRUST_PILLS = [
-  {
-    text: "Your Trusted Lab Partner",
-    bg: "bg-red-100",
-    textColor: "text-red-700",
-  },
-  {
-    text: "24/7 Service",
-    bg: "bg-blue-100",
-    textColor: "text-blue-700",
-  },
-  {
-    text: "100+ Instruments",
-    bg: "bg-green-100",
-    textColor: "text-green-700",
-  },
-];
 
 export default function HeroOne() {
   const [animKey, setAnimKey] = useState(0);
@@ -159,7 +142,7 @@ export default function HeroOne() {
             width={220}
             height={64}
             className="inline-block"
-            style={{ filter: 'brightness(0) invert(1)' }}
+            style={{ filter: '' }}
           />
         </span>
 
@@ -332,21 +315,11 @@ export default function HeroOne() {
                     className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] shadow-lg opacity-0 ${ctaVisible ? 'cta-visible' : ''
                       }`}
                   >
-                    Request a Quote <FaArrowRight size={13} />
+                    Explore Products <FaArrowRight size={13} />
                   </button>
                 </Link>
 
-                <div className="flex flex-wrap gap-2 mt-5">
-                  {TRUST_PILLS.map((pill, i) => (
-                    <span
-                      key={pill.text}
-                      className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/30 ${pill.bg} ${pill.textColor}`}
-                    >
-                      <span className={`w-[5px] h-[5px] rounded-full ${pill.dot}`} />
-                      {pill.text}
-                    </span>
-                  ))}
-                </div>
+
               </div>
             )}
           </div>

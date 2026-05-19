@@ -39,11 +39,11 @@ export async function generateMetadata({ params }) {
     if (!subSlug) {
       title = categoryData.meta.title;
       description = categoryData.meta.description;
-      if (categoryData.meta.keywords) {
-        keywords = Array.isArray(categoryData.meta.keywords)
-          ? categoryData.meta.keywords
-          : categoryData.meta.keywords.split(',').map(k => k.trim());
-      }
+      // if (categoryData.meta.keywords) {
+      //   keywords = Array.isArray(categoryData.meta.keywords)
+      //     ? categoryData.meta.keywords
+      //     : categoryData.meta.keywords.split(',').map(k => k.trim());
+      // }
     }
 
     /* ---------- SUBCATEGORY ---------- */
@@ -71,11 +71,11 @@ export async function generateMetadata({ params }) {
             model.overview?.[0] ||
             `Technical details and applications of ${model.meta.title}.`;
 
-          if (model.meta.keywords) {
-            keywords = Array.isArray(model.meta.keywords)
-              ? model.meta.keywords
-              : model.meta.keywords.split(',').map(k => k.trim());
-          }
+          // if (model.meta.keywords) {
+          //   keywords = Array.isArray(model.meta.keywords)
+          //     ? model.meta.keywords
+          //     : model.meta.keywords.split(',').map(k => k.trim());
+          // }
         }
       }
     }

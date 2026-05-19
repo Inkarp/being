@@ -26,7 +26,7 @@ export default function Home() {
       {/* <HeroNew /> */}
       {/* <Hero />     */}
       {/* <Products /> */}
-      {/* <QuickLinks /> */}
+      <QuickLinks />
       {/* <ProductQueries /> */}
       <About />
       <TestTwo />

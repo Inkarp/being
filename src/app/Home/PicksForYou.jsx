@@ -6,6 +6,8 @@ import { useEffect, useMemo, useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 const ALL_TAB = "all";
+const SCIENTIST_RECOMMENDED_LABEL = "Scientist Recommended";
+const SCIENTIST_RECOMMENDED_TAB = normalizeTag(SCIENTIST_RECOMMENDED_LABEL);
 const CARDS_PER_PAGE = 4;
 const TAG_COLORS = ["#4FA8E0", "#FFD700", "#34d399", "#fb923c", "#a78bfa", "#f87171", "#38bdf8"];
 
@@ -23,9 +25,9 @@ function formatTag(tag) {
 
 function getTagColor(tag) {
   const normalized = normalizeTag(tag);
-  if (normalized === "best-seller") return "#FFD700";
-  if (normalized === "new") return "#4FA8E0";
-  if (normalized === "featured") return "#34d399";
+  if (normalized === SCIENTIST_RECOMMENDED_TAB) return "#FFD700";
+  // if (normalized === "new") return "#4FA8E0";
+  // if (normalized === "featured") return "#34d399";
 
   const index = [...normalized].reduce((sum, char) => sum + char.charCodeAt(0), 0);
   return TAG_COLORS[index % TAG_COLORS.length];
@@ -106,6 +108,18 @@ export default function PicksForYou() {
   }, []);
 
   const tabs = useMemo(() => {
+    return [
+      {
+        value: ALL_TAB,
+        label: "All",
+      },
+      {
+        value: SCIENTIST_RECOMMENDED_TAB,
+        label: "Scientist Recommended",
+      },
+    ];
+
+    /*
     const tagMap = new Map();
 
     products.forEach((product) => {
@@ -115,7 +129,8 @@ export default function PicksForYou() {
       });
     });
 
-    return [{ value: ALL_TAB, label: "All" }, ...[...tagMap].map(([value, label]) => ({ value, label }))];
+    return [...tagMap].map(([value, label]) => ({ value, label }));
+    */
   }, [products]);
 
   const filteredProducts = useMemo(() => {
@@ -134,7 +149,9 @@ export default function PicksForYou() {
   }, [activeTab]);
 
   useEffect(() => {
-    if (!tabs.some((tab) => tab.value === activeTab)) setActiveTab(ALL_TAB);
+    if (!tabs.some((tab) => tab.value === activeTab)) {
+      setActiveTab(ALL_TAB);
+    }
   }, [activeTab, tabs]);
 
   const navigate = (dir) => {
@@ -208,13 +225,17 @@ export default function PicksForYou() {
 
         {!loading && visible.length === 0 && (
           <div className="col-span-full text-center text-white/70 py-10">
-            No tagged products found.
+            No recommended products found.
           </div>
         )}
 
         {!loading &&
           visible.map((product, i) => {
-            const badge = product.tags?.[0] || product.categoryName || "Product";
+            const badge =
+              product.tags?.find((tag) => normalizeTag(tag) === SCIENTIST_RECOMMENDED_TAB) ||
+              product.tags?.[0] ||
+              product.categoryName ||
+              "Product";
             const badgeColor = getTagColor(badge);
 
             return (
@@ -238,7 +259,7 @@ export default function PicksForYou() {
                   style={{ background: badgeColor, opacity: 0.12 }}
                 />
 
-                <span
+                {/* <span
                   className="text-[10px] font-extrabold tracking-[0.1em] uppercase px-2.5 py-[3px] rounded-full inline-block w-fit"
                   style={{
                     background: `${badgeColor}22`,
@@ -246,7 +267,7 @@ export default function PicksForYou() {
                   }}
                 >
                   {formatTag(badge)}
-                </span>
+                </span> */}
 
                 <div
                   className="h-40 rounded-2xl flex items-center justify-center overflow-hidden"

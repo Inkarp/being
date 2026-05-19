@@ -11,6 +11,7 @@ export const runtime = 'nodejs';
 const GST_REGEX   = /^[0-3][0-9][A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^\d{10}$/;
+const REQUIRED_EMAIL_ENV = ['EMAIL_USER', 'EMAIL_PASS', 'COMPANY_EMAIL'];
 
 // ─────────────────────────────────────────────────────────────────────────────
 // NODEMAILER TRANSPORTER
@@ -85,6 +86,10 @@ function getIp(request) {
   const cfIp = request.headers.get('cf-connecting-ip');
   if (cfIp) return cfIp.trim();
   return 'Unknown';
+}
+
+function getMissingEmailEnv() {
+  return REQUIRED_EMAIL_ENV.filter((key) => !process.env[key]);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -374,6 +379,7 @@ export async function POST(request) {
 
   // ── 8. Save to MongoDB ──
   let dbInsertedId = null;
+  let dbSaved = false;
 
   try {
     const client = await clientPromise;
@@ -427,6 +433,7 @@ export async function POST(request) {
 
     const dbResult = await db.collection('productPriceEnquiries').insertOne(dbDoc);
     dbInsertedId   = dbResult.insertedId;
+    dbSaved        = true;
     console.log('[PriceEnquiry] Saved to DB:', dbInsertedId);
 
   } catch (dbError) {
@@ -436,7 +443,15 @@ export async function POST(request) {
   }
 
   // ── 9. Send Email ──
+  let emailSent = false;
+  let emailErrorMessage = null;
+
   try {
+    const missingEmailEnv = getMissingEmailEnv();
+    if (missingEmailEnv.length > 0) {
+      throw new Error(`Missing email environment variable(s): ${missingEmailEnv.join(', ')}`);
+    }
+
     const emailHtml = buildEmailHtml(formData, ip, submittedAt);
     const emailText = buildPlainText(formData, ip, submittedAt);
     const subject   = `[Price Enquiry] ${formData.product || 'New Lead'} — ${ip}`;
@@ -450,19 +465,41 @@ export async function POST(request) {
       html:    emailHtml,
     });
 
+    emailSent = true;
     console.log('[PriceEnquiry] Email sent for:', formData.product);
 
   } catch (emailError) {
+    emailErrorMessage = emailError?.message || 'Unknown email error';
     console.error('[PriceEnquiry] Email failed:', emailError);
+
+    if (dbSaved) {
+      return NextResponse.json(
+        {
+          success: true,
+          insertedId: dbInsertedId ? dbInsertedId.toString() : null,
+          emailSent: false,
+          warning: 'Your enquiry was saved, but the notification email could not be sent.',
+        },
+        { status: 200 }
+      );
+    }
+
     return NextResponse.json(
-      { error: 'Failed to send confirmation email. Please try again.' },
+      {
+        error: 'Failed to submit enquiry because the notification email could not be sent.',
+        details: process.env.NODE_ENV === 'development' ? emailErrorMessage : undefined,
+      },
       { status: 500 }
     );
   }
 
   // ── 10. Success ──
   return NextResponse.json(
-    { success: true, insertedId: dbInsertedId ? dbInsertedId.toString() : null },
+    {
+      success: true,
+      insertedId: dbInsertedId ? dbInsertedId.toString() : null,
+      emailSent,
+    },
     { status: 200 }
   );
 }

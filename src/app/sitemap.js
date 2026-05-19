@@ -4,7 +4,7 @@ import { GET as getIncubatorProducts } from "./api/products/incubators/route";
 import { GET as getLaboratoryOvenProducts } from "./api/products/laboratory-ovens/route";
 
 const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  "https://www.beinglab.co.in/"
 ).replace(/\/$/, "");
 
 const staticRoutes = [
@@ -24,7 +24,7 @@ const categoryLoaders = {
   cabinet: getCabinetProducts,
 };
 
-function sitemapEntry(path, priority = 0.7, changeFrequency = "weekly") {
+function sitemapEntry(path, priority = 0.7, changeFrequency = "monthly") {
   return {
     url: `${SITE_URL}${path}`,
     lastModified: new Date(),

@@ -128,41 +128,17 @@ export default function Products() {
         <section className="w-full bg-[#f7f7f5]">
             <div className="mx-auto overflow-hidden border border-[#d9d9d5] bg-[#fafaf8] shadow-[0_12px_40px_rgba(17,24,39,0.12)]">
                 <div className="relative overflow-hidden bg-[#111] text-white">
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#2F4191]/95 via-[#2B7EC2]/75 to-[#2B7EC2]/60" />
-                    <div className="mx-auto grid gap-6 px-5 py-10 sm:grid-cols-[1.3fr_0.9fr] sm:px-10 sm:py-12 lg:px-10 lg:py-8">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#2F4191]/95 via-[#2B7EC2]/75 to-[#2B7EC2]/60" />                  
                         <div className="relative z-10 flex flex-col justify-center gap-6">
-                            <div>
+                            <div className="h-50 flex flex-col justify-center items-center">
                                 <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl">
-                                    Explore premium lab products with 
-                                    <span className="text-[#2B7EC2]"> confidence</span>
+                                    Explore premium lab products with confidence
+                                    {/* <span className="text-[#2B7EC2]"> </span> */}
                                 </h1>
-                                <p className="mt-4 max-w-xl text-base leading-7 text-white/80 sm:text-lg">
+                                <p className="mt-4 max-w-5xl text-base leading-7 text-white/80 sm:text-lg">
                                     Discover the latest models, automatic category updates and powerful product search in one beautiful experience.
                                 </p>
-                            </div>
-                            <div className="grid gap-3 sm:grid-cols-2">
-                                <div className="rounded-3xl border border-white/15 bg-white/10 p-5 shadow-lg backdrop-blur-sm">
-                                    <p className="text-sm uppercase tracking-[0.25em] text-white/80">Total models</p>
-                                     <p className="mt-3 text-3xl font-bold text-white">120+</p>
-                                </div>
-                                <div className="rounded-3xl border border-white/15 bg-white/10 p-5 shadow-lg backdrop-blur-sm">
-                                    <p className="text-sm uppercase tracking-[0.25em] text-white/80">Total Categories</p>
-                                  
-                                    <p className="mt-3 text-3xl font-bold text-white">{totalProducts}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="relative flex items-center justify-center">
-                            <div className="relative h-72 w-full overflow-hidden rounded-[2rem] border border-white/20 bg-slate-950 shadow-2xl sm:h-80 lg:h-[26rem]">
-                                <Image
-                                    src="/HeroImage2.webp"
-                                    alt="Lab product showcase"
-                                    fill
-                                    className="object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                            </div>
-                        </div>
+                            </div>                    
                     </div>
                 </div>
 
@@ -174,7 +150,6 @@ export default function Products() {
 
                         <div className="mt-3">
                             
-
                             {loading ? (
                                 <div className="px-6 py-4 text-sm text-[#777]">Loading...</div>
                             ) : (

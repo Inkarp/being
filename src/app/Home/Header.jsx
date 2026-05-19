@@ -43,15 +43,10 @@ export default function Header() {
 
   const menuItems = [
     { name: "Home", href: "/" },
-    { name: "Products", href: "/products" },
-    {
-      name: "Insights & Updates",
-      children: [
-        { name: "Events", href: "/events" },
-        { name: "Blogs", href: "/blogs" },
-      ],
-    },
     { name: "About Us", href: "/about-us" },
+    { name: "Products", href: "/products" },
+    { name: "White Papers", href: "/blogs" },
+    { name: "Events", href: "/events" },
     { name: "Contact Us", href: "/contact-us" },
     { name: "Product Profile", href: "/product-profile" },
   ];
@@ -60,19 +55,19 @@ export default function Header() {
   const socialLinks = [
     {
       icon: <FaLinkedinIn size={28} />,
-      url: "https://www.linkedin.com/company/yourcompany",
+      url: "https://www.linkedin.com/company/being-scientific-india",
       bg: "bg-white",
       textColor: "text-blue-600"
     },
     {
       icon: <FaInstagram size={28} />,
-      url: "https://www.instagram.com/yourpage",
+      url: "https://www.instagram.com/beingindia_scientific",
       bg: "bg-white",
       textColor: "text-pink-500"
     },
     {
       icon: <FaFacebookF size={28} />,
-      url: "https://www.facebook.com/yourpage",
+      url: "https://www.facebook.com/people/Being-India/61580278097295/",
       bg: "bg-white",
       textColor: "text-blue-700"
     },
