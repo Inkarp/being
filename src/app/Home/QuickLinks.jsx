@@ -6,28 +6,17 @@ import { Fragment, useState } from "react";
 import ServiceForm from "../../components/ServiceForm";
 
 const links = [
-  { image: "/service-tools.gif", title: "Exclusive Partner", action: "exclusivePartner", color: "#2B7EC2" },
-  { image: "/warranty.gif", title: "Buy AMC", action: "oneYearService", color: "#2F4191" },
+  { image: "/service-tools.gif",      title: "Exclusive Partner",            color: "#2B7EC2" },
+  { image: "/warranty.gif",      title: "Buy AMC",    color: "#2F4191" },
   // { image: "/sale.gif",  title: "Offers",     href: "/offers",      color: "#2B7EC2" },
-  { image: "/services.gif", title: "Service", action: "service", color: "#2F4191" },
+  { image: "/services.gif",      title: "Service", action: "service",    color: "#2F4191" },
 ];
 
 export default function QuickLinks() {
   const [isServiceOpen, setIsServiceOpen] = useState(false);
-  const [isExclusiveOpen, setIsExclusiveOpen] = useState(false);
-  const [isOneYearServiceOpen, setIsOneYearServiceOpen] = useState(false);
   const serviceProductData = {
     model: "General Service Request",
     category: "Service",
-  };
-  const oneYearServiceProductData = {
-    model: "One Year Service / AMC Request",
-    category: "Service",
-    warranty: "One Year",
-  };
-  const exclusivePartnerData = {
-    model: "Exclusive Partnership Request",
-    category: "Exclusive Partner",
   };
 
   const renderQuickLink = (item, i) => {
@@ -58,34 +47,6 @@ export default function QuickLinks() {
           style={itemStyle}
           onClick={() => setIsServiceOpen(true)}
           aria-label="Open service enquiry form"
-        >
-          {content}
-        </button>
-      );
-    }
-
-    if (item.action === "exclusivePartner") {
-      return (
-        <button
-          type="button"
-          className="ql-item ql-button"
-          style={itemStyle}
-          onClick={() => setIsExclusiveOpen(true)}
-          aria-label="Open exclusive partnership form"
-        >
-          {content}
-        </button>
-      );
-    }
-
-    if (item.action === "oneYearService") {
-      return (
-        <button
-          type="button"
-          className="ql-item ql-button"
-          style={itemStyle}
-          onClick={() => setIsOneYearServiceOpen(true)}
-          aria-label="Open one year service form"
         >
           {content}
         </button>
@@ -217,30 +178,6 @@ export default function QuickLinks() {
         isOpen={isServiceOpen}
         onClose={() => setIsServiceOpen(false)}
         productData={serviceProductData}
-        includeInstrumentFields
-      />
-      <ServiceForm
-        isOpen={isOneYearServiceOpen}
-        onClose={() => setIsOneYearServiceOpen(false)}
-        productData={oneYearServiceProductData}
-        warrantyPeriod="One Year"
-        includeInstrumentFields
-        eyebrow="Warranty Service"
-        title="One Year Service Form"
-        submitLabel="Submit Service Request"
-        dialogLabel="One Year Service Form"
-      />
-      <ServiceForm
-        isOpen={isExclusiveOpen}
-        onClose={() => setIsExclusiveOpen(false)}
-        productData={exclusivePartnerData}
-        endpoint="/api/exclusivePatner"
-        eyebrow="Partner Request"
-        title="Exclusive Partnership Form"
-        submitLabel="Submit Partnership Request"
-        successLabel="Request Sent!"
-        dialogLabel="Exclusive Partnership Form"
-        productLabel="Request Type"
       />
     </>
   );
