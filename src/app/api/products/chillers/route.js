@@ -515,7 +515,7 @@ export async function GET() {
 
             {
                 name: "Recirculating Chiller (–10 °C to +100 °C)",
-                slug: "recirculating-chiller",
+                slug: "recirculating-chillers",
                 models: [
                     {
                         model: "MP-10C Recirculating Chiller Heater",
@@ -1245,7 +1245,6 @@ export async function GET() {
                         }
                     },
 
-
                     {
                         model: "MPG-40C Recirculating Chiller Heater",
                         title: "MPG-40C Recirculating Chiller Heater",
@@ -1482,6 +1481,1228 @@ export async function GET() {
                                     title: "Final Verdict on the MPG-40C",
                                     description:
                                         "The MPG-40C delivers the widest temperature range in the MP/MPG Series — 13L -40°C to 100°C bidirectional precision recirculation with ±0.2°C accuracy, LCD microprocessor, multi-step programmable settings, stainless steel bath, 8 L/min pump, auto restart, and 3100W — the high-performance MP Series circulator for demanding deep-cold laboratory chemistry, industrial process temperature management, pharmaceutical cold stability testing, and research requiring the deepest sub-ambient bidirectional temperature control in the range."
+                                }
+                            ]
+                        }
+                    },
+                ]
+            },
+
+
+            {
+                name: "Recirculating Chiller (–20 °C to +20 °C)",
+                slug: "recirculating-chiller",
+                models: [
+
+                    {
+                        model: "BR-03A Recirculating Chiller",
+                        title: "BR-03A Recirculating Chiller",
+
+                        meta: {
+                            slug: "br-03a",
+                            title:
+                                "BR-03A Recirculating Chiller | -20°C to 20°C | 5L | PID | 530W | DIN 12880 | Being India",
+                            description:
+                                "BR-03A: Compact 5L recirculating chiller with -20°C to +20°C range, 530W cooling at 10°C, PID controller, programmable multi-step, PT100 sensor, DIN 12880 over-temperature protection & 6 L/min pump. For lab & rotary evaporation. Enquire.",
+                            keywords:
+                                "BR-03A Recirculating Chiller, compact recirculating chiller -20°C to 20°C, laboratory chiller rotary evaporator, PID recirculating chiller 5L, BR-03A precision cooling chiller, BR-03A compact recirculating chiller -20°C to 20°C with PID controller for rotary evaporator and laboratory cooling, 5L recirculating chiller R404A 530W cooling capacity for chemical and pharmaceutical process cooling, small recirculating chiller with DIN 12880 compliant over-temperature protection and programmable multi-step control, compact laboratory recirculating chiller, Peltier-free compressor chiller, rotary evaporator chiller cooling, PID temperature chiller laboratory, R404A recirculating chiller, DIN 12880 chiller safety, programmable chiller laboratory, 530W cooling capacity chiller, what is the best compact recirculating chiller for a 2L rotary evaporator, how does a recirculating chiller provide -20°C for laboratory cooling, which small recirculating chiller has DIN 12880 compliant safety and PID control, what is the cooling capacity of a laboratory recirculating chiller at 0°C, BR-03A vs BR-05A, 5L vs 8L recirculating chiller, compact vs mid-capacity laboratory chiller, BR-03A vs circulating bath, buy BR-03A recirculating chiller, BR-03A price, order compact laboratory recirculating chiller."
+                        },
+
+                        productTitle:
+                            "BR-03A Recirculating Chiller — 5L Compact Precision Cooling from -20°C to +20°C with PID Control and DIN 12880 Safety",
+
+                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+                        imgAltText:
+                            "BR-03A compact 5L recirculating chiller with -20°C to +20°C range, PID controller, LCD display, 530W cooling capacity, PT100 sensor, stainless steel bath, and DIN 12880 compliant safety for laboratory rotary evaporation and precision cooling applications_Being India",
+
+                        price: 232180,
+
+                        gem: true,
+
+                        // tags: ["new"],
+
+                        related: ["br-05a"],
+
+                        overview: [
+                            "The BR-03A Recirculating Chiller is the compact entry model of the BR Series — delivering precise, stable temperature-controlled coolant circulation from -20°C to +20°C in a 5L stainless steel bath format specifically suited for compact laboratory setups, single rotary evaporator support, material testing temperature control, and small-scale chemical and pharmaceutical process cooling. With 530W of cooling capacity at 10°C, 230W at 0°C, an R404A refrigerant system, PID temperature controller with programmable multi-step control, PT100 sensor, LCD display, independent circulation pump delivering 6 L/min at up to 9 m head, and DIN 12880 compliant independent over-temperature protection — the BR-03A provides professional-grade recirculating chiller performance in a compact 210 × 410 × 511 mm footprint with casters. Enquire about the BR-03A today."
+                        ],
+
+                        features: {
+                            overview: [
+                                "The BR-03A Recirculating Chiller delivers compact 5L precision cooling from -20°C to +20°C with PID controller, programmable multi-step control, PT100 sensor, independent circulation pump, corrosion-resistant stainless steel bath, preset ON/OFF timing, and DIN 12880 compliant safety — providing stable, accurate coolant circulation for laboratory rotary evaporation, chemical processing, material testing, and cell culture cooling applications."
+                            ],
+
+                            keyFeatures: [
+                                {
+                                    title: "PID Temperature Controller for Accurate Control",
+                                    description:
+                                        "The BR-03A's PID (Proportional–Integral–Derivative) temperature controller continuously monitors the bath temperature via the PT100 resistance temperature sensor and modulates the compressor and heating outputs to maintain the setpoint with ±2°C accuracy across the full -20°C to +20°C operating range. The PID control eliminates the temperature oscillations of simple on/off thermostat control — providing stable, reproducible coolant delivery temperatures throughout extended connected process operations and preventing the thermal cycling that causes condensation and temperature fluctuations in connected analytical instruments."
+                                },
+                                {
+                                    title: "Programmable Multi-Step Control",
+                                    description:
+                                        "The BR-03A's programmable multi-step controller enables operators to pre-define sequential temperature setpoints and transition protocols — supporting automated cooling ramp profiles, temperature hold sequences, and defined setpoint transitions for complex laboratory protocols. In rotary evaporation and chemical process cooling applications where the optimal coolant temperature changes as the operation progresses (e.g., as solvent composition changes during evaporation), the multi-step control automates temperature adjustments without requiring continuous manual intervention at the chiller."
+                                },
+                                {
+                                    title: "Independent Circulation Pump for Stable Operation",
+                                    description:
+                                        "The BR-03A's independent circulation pump delivers 6 L/min flow rate at up to 9 m maximum head through the Φ10 mm interface connections — providing the sustained coolant delivery required for effective heat transfer at the connected equipment's heat exchanger or condenser. The independent pump circuit ensures consistent coolant flow regardless of compressor cycling — maintaining stable coolant delivery to connected equipment throughout the full operating cycle without the flow interruptions that occur in single-circuit designs during compressor on/off transitions."
+                                },
+                                {
+                                    title: "Corrosion-Resistant Stainless Steel Bath",
+                                    description:
+                                        "The BR-03A's 5L storage tank is constructed from corrosion-resistant stainless steel — providing durability and resistance to the ethylene glycol/water mixtures, silicone heat transfer fluids, and deionised water commonly used as coolant media in laboratory recirculating chillers. The 240 × 150 × 150 mm liquid tank opening accommodates standard laboratory sample vessel immersion formats alongside the external circulation connections — enabling the BR-03A to serve as both a direct immersion cooling bath and an external circulation coolant source."
+                                },
+                                {
+                                    title: "Preset ON/OFF Timing Function",
+                                    description:
+                                        "The BR-03A's preset ON/OFF timing function enables scheduled automated start and stop of the chiller operation — allowing the unit to begin cooling automatically at a programmed start time before the operator's arrival (pre-cooling the connected system to the required temperature), and to shut down automatically at the end of a defined operating period. This scheduling capability supports laboratory workflow optimisation — enabling rotary evaporator systems to be pre-cooled to the condenser setpoint before the operator's working session begins, reducing preparation time and energy consumption during off-hours."
+                                },
+                                {
+                                    title: "Liquid Level Viewing Window for Monitoring",
+                                    description:
+                                        "The BR-03A's liquid level viewing window allows operators to verify the coolant level in the 5L bath without opening the tank — providing continuous visual monitoring of bath liquid volume throughout operation. Maintaining adequate liquid level is critical for recirculating chiller performance: insufficient coolant reduces the thermal mass available for heat absorption, reduces pump flow rate due to inlet cavitation, and can cause pump damage from dry-running. The viewing window enables periodic liquid level checks without interrupting the cooling operation."
+                                },
+                                {
+                                    title: "Maintenance-Free Operation with Clean Surface Design",
+                                    description:
+                                        "The BR-03A is designed for maintenance-free routine operation — with sealed refrigerant circuit, no lubrication requirements, corrosion-resistant stainless steel bath, and clean surface design that facilitates easy exterior cleaning. The maintenance-free design is practical for busy laboratory environments where instrument servicing diverts operational time — the BR-03A's routine maintenance is limited to periodic coolant level monitoring, coolant replacement at defined intervals, and exterior cleaning, without the oil management, filter replacement, and mechanical service requirements of more complex cooling systems."
+                                }
+                            ],
+
+                            safetyFeatures: {
+                                overview: [
+                                    "The BR-03A Recirculating Chiller incorporates four independent safety systems — temperature deviation alarm, over-current protection, DIN 12880 compliant independent over-temperature protection, and liquid level viewing window monitoring — providing comprehensive protection for safe laboratory cooling operation across the full -20°C to +20°C range."
+                                ],
+
+                                items: [
+                                    {
+                                        title: "Temperature Deviation Alarm",
+                                        description:
+                                            "The BR-03A activates an alarm when the bath temperature deviates beyond the configured threshold from the setpoint — alerting operators to cooling system performance issues, excessive heat load from the connected process, or coolant level problems affecting the chiller's temperature control capability. In a laboratory recirculating chiller supplying coolant to a rotary evaporator condenser, temperature deviation alerts enable corrective action before the condenser temperature rise causes solvent recovery efficiency to decline below acceptable levels."
+                                    },
+                                    {
+                                        title: "Over-Current Protection",
+                                        description:
+                                            "The BR-03A's over-current protection circuit monitors the compressor and pump motor current draw and activates protective shutdown if the current exceeds the safe operating limit — protecting the electrical components from damage caused by compressor overload, pump obstruction, or electrical supply voltage anomalies. At 550W total power, the over-current protection is the primary electrical safety mechanism ensuring that compressor and pump motor overload conditions cannot cause sustained electrical component damage during unattended laboratory cooling operation."
+                                    },
+                                    {
+                                        title: "Independent Over-Temperature Protection (DIN 12880 Compliant)",
+                                        description:
+                                            "The BR-03A's independent over-temperature protection system operates as a completely separate circuit from the primary PID temperature controller — monitoring bath temperature and activating protective shutdown if the temperature exceeds the safe upper limit regardless of the primary controller state. DIN 12880 compliance of this independent protection confirms that the safety architecture meets the internationally recognised standard for laboratory thermostat safety — providing documented assurance of independent backup protection appropriate for unattended laboratory cooling operations."
+                                    },
+                                    {
+                                        title: "Liquid Level Viewing Window for Safe Operation Monitoring",
+                                        description:
+                                            "The liquid level viewing window provides continuous passive safety monitoring of the bath coolant level — enabling operators to verify that adequate coolant volume is maintained for safe pump and compressor operation throughout extended cooling sessions. Adequate coolant level is a safety prerequisite for recirculating chiller operation: insufficient coolant causes pump cavitation, reduces cooling efficiency, and can cause compressor overheating from inadequate heat transfer medium."
+                                    }
+                                ]
+                            }
+                        },
+
+                        specifications: {
+                            overview: [
+                                "The BR-03A provides 5L of precise recirculating coolant at -20°C to +20°C with 530W cooling capacity at 10°C, 6 L/min pump flow, PID control, and DIN 12880 safety compliance — the compact entry model in the BR Series for laboratory rotary evaporation and precision cooling. Full specifications below."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Storage Tank Capacity",
+                                    value: "5 L"
+                                },
+                                {
+                                    label: "Temperature Range",
+                                    value: "-20°C to +20°C (optional: -20°C to 80°C)"
+                                },
+                                {
+                                    label: "Ambient Temperature Range",
+                                    value: "+5°C to 30°C"
+                                },
+                                {
+                                    label: "Temperature Accuracy",
+                                    value: "±2°C"
+                                },
+                                {
+                                    label: "Cooling Capacity at 10°C",
+                                    value: "530 W"
+                                },
+                                {
+                                    label: "Cooling Capacity at 0°C",
+                                    value: "230 W"
+                                },
+                                {
+                                    label: "Cooling Capacity at -20°C",
+                                    value: "0.09 kW"
+                                },
+                                {
+                                    label: "Refrigerant",
+                                    value: "R404A"
+                                },
+                                {
+                                    label: "Sensor",
+                                    value: "PT100"
+                                },
+                                {
+                                    label: "Display",
+                                    value: "LCD"
+                                },
+                                {
+                                    label: "Total Power",
+                                    value: "550 W"
+                                },
+                                {
+                                    label: "Power Supply",
+                                    value: "AC 220 V ±10%, 50 Hz"
+                                },
+                                {
+                                    label: "Pump Flow",
+                                    value: "6 L/min"
+                                },
+                                {
+                                    label: "Maximum Head",
+                                    value: "9 m"
+                                },
+                                {
+                                    label: "Interface Pipe Diameter",
+                                    value: "Φ10 mm (10 pagoda)"
+                                },
+                                {
+                                    label: "Noise Level",
+                                    value: "≤45 dB"
+                                },
+                                {
+                                    label: "Liquid Tank Opening",
+                                    value: "240 × 150 × 150 mm"
+                                },
+                                {
+                                    label: "Dimensions (W×D×H)",
+                                    value: "210 × 410 × 511 mm (with casters)"
+                                },
+                                {
+                                    label: "Rotary Evaporator Adaptation",
+                                    value: "2L × 1 unit"
+                                },
+                                {
+                                    label: "Safety",
+                                    value: "Delay, leakage, overcurrent, overvoltage protection"
+                                }
+                            ]
+                        },
+
+                        applications: {
+                            overview: [
+                                "The BR-03A Recirculating Chiller supports compact laboratory cooling applications requiring -20°C to +20°C precision coolant circulation — from rotary evaporator condenser cooling and laboratory instrument temperature control to chemical process cooling and material testing."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Rotary Evaporators",
+                                    value:
+                                        "The BR-03A is rated for cooling a 2L rotary evaporator — providing the condenser coolant circulation required for efficient solvent condensation during rotary evaporation. At -20°C minimum temperature, the BR-03A enables efficient condensation of low-boiling solvents (diethyl ether, dichloromethane, chloroform, and acetone) that poorly condense at ambient temperature — improving solvent recovery efficiency and reducing solvent vapour losses in chemical synthesis and extraction workflows."
+                                },
+                                {
+                                    label: "Laboratory Cooling Systems",
+                                    value:
+                                        "Laboratory instruments and analytical systems requiring external temperature-controlled coolant supply — including laser cooling systems, analytical detector temperature control, NMR probe cooling, and precision spectroscopy instrument temperature regulation — use the BR-03A as a compact, stable coolant source providing ±2°C accuracy across the -20°C to +20°C range within the minimal bench footprint of the 210 × 410 × 511 mm exterior dimensions."
+                                },
+                                {
+                                    label: "Chemical and Pharmaceutical Processes",
+                                    value:
+                                        "Small-scale chemical synthesis and pharmaceutical research laboratories use the BR-03A for jacketed reactor cooling, low-temperature reaction control at defined temperatures between -20°C and +20°C, cold trap cooling for vacuum systems, and pharmaceutical process temperature control requiring stable, accurate sub-ambient coolant delivery in a compact, reliable chiller format."
+                                },
+                                {
+                                    label: "Material Testing and Research",
+                                    value:
+                                        "Material testing and physical chemistry research laboratories use the BR-03A for temperature-controlled testing of material properties at defined sub-ambient temperatures — including cold-temperature mechanical testing, viscosity determination at low temperatures, cold-temperature crystallisation studies, and physical property measurements requiring stable coolant temperature control between -20°C and +20°C."
+                                }
+                            ],
+
+                            cta:
+                                "Enquire about the BR-03A Recirculating Chiller for your compact laboratory cooling requirements. Contact us for pricing and availability."
+                        },
+
+                        faqs: {
+                            overview: [
+                                "These FAQs address the key questions about the BR-03A Recirculating Chiller — covering the -20°C to +20°C temperature range, cooling capacity specifications at different temperatures, rotary evaporator compatibility, heat transfer fluid selection, DIN 12880 safety compliance, pump performance, comparison with the BR-05A, installation requirements, programmable multi-step control, and coolant maintenance."
+                            ],
+
+                            items: [
+                                {
+                                    question: "What temperature range does the BR-03A Recirculating Chiller achieve?",
+                                    answer:
+                                        "The BR-03A provides a temperature range of -20°C to +20°C as standard — with an optional extended range of -20°C to +80°C available (confirm with your supplier). The -20°C minimum enables cooling well below ambient for laboratory applications including low-temperature reaction control, cold trap cooling, and efficient condensation of low-boiling solvents in rotary evaporation. The +20°C maximum enables precise sub-ambient setpoints close to ambient without the overshooting that occurs with simple ice bath or tap water cooling approaches."
+                                },
+                                {
+                                    question: "What is the cooling capacity of the BR-03A at different temperatures?",
+                                    answer:
+                                        "The BR-03A provides 530W cooling capacity at 10°C, 230W at 0°C, and 0.09 kW (90W) at -20°C. Cooling capacity decreases as the setpoint temperature approaches the compressor's lower limit — this is normal for all vapour-compression refrigeration systems. The 530W at 10°C is the relevant specification for most laboratory rotary evaporation and process cooling applications, where condenser temperatures between 0°C and 15°C are standard. For applications requiring maximum cooling at -20°C, the 90W capacity is the limiting specification."
+                                },
+                                {
+                                    question: "Which rotary evaporator sizes is the BR-03A rated for?",
+                                    answer:
+                                        "The BR-03A is rated for cooling a 2L rotary evaporator — a single unit operating with a 2L evaporation flask. This rating reflects the condenser heat load of a standard 2L rotary evaporator at typical solvent evaporation rates. For larger 5L or 10L rotary evaporators, the BR-05A (rated 2L×2 or 5L×1) and BR-20A/BR-30A (rated 10L×2 or 20L×1) provide the higher cooling capacity required."
+                                },
+                                {
+                                    question: "What heat transfer fluid should be used in the BR-03A?",
+                                    answer:
+                                        "For operation at 0°C to +20°C, distilled or deionised water is the standard heat transfer fluid. For operation below 0°C, an antifreeze mixture is required — typically 30–50% ethylene glycol with deionised water, depending on the minimum setpoint temperature (50% ethylene glycol provides protection to approximately -37°C). For applications above 60°C (optional range), a high-boiling silicone oil or appropriate heat transfer fluid must be used. Always confirm the heat transfer fluid specification with your supplier for the specific temperature range of your application."
+                                },
+                                {
+                                    question: "What does DIN 12880 compliant over-temperature protection mean in the BR-03A?",
+                                    answer:
+                                        "DIN 12880 is the German standard (adopted internationally) for laboratory thermostatic baths and circulators, specifying safety requirements including mandatory independent secondary over-temperature protection operating entirely separately from the primary temperature controller. DIN 12880 compliance in the BR-03A means the independent protection circuit meets this internationally recognised safety standard — providing documented assurance of backup thermal protection appropriate for the unattended continuous laboratory operation typical of recirculating chiller use."
+                                },
+                                {
+                                    question: "What is the pump performance of the BR-03A?",
+                                    answer:
+                                        "The BR-03A's independent circulation pump delivers 6 L/min maximum flow at up to 9 m maximum head through Φ10 mm interface connections. In practice, actual flow rate decreases as the external system pressure drop (from connected tubing length, tubing bore, and connected equipment resistance) increases. For connected rotary evaporator condenser circuits, the 6 L/min and 9 m head are adequate for standard laboratory tubing runs. For longer tubing runs or higher-resistance external systems, verify flow adequacy with your supplier."
+                                },
+                                {
+                                    question: "How does the BR-03A compare to the BR-05A?",
+                                    answer:
+                                        "The BR-05A offers a larger 8L bath (vs 5L), higher cooling capacity of 600W at 10°C (vs 530W) and 350W at 0°C (vs 230W), a larger liquid tank opening of 240 × 200 × 170 mm (vs 240 × 150 × 150 mm), and is rated for 2L×2 or 5L×1 rotary evaporators (vs 2L×1). Both models share PID control, R404A refrigerant, 6 L/min pump, 9 m head, and DIN 12880 safety compliance. Choose the BR-03A for compact single 2L rotary evaporator support; the BR-05A for dual 2L or single 5L rotary evaporator cooling."
+                                },
+                                {
+                                    question: "What are the installation requirements for the BR-03A?",
+                                    answer:
+                                        "The BR-03A has exterior dimensions of 210 × 410 × 511 mm (with casters) — exceptionally compact for a -20°C capable recirculating chiller, suitable for standard laboratory bench installation. The compact footprint allows placement beside the connected rotary evaporator or analytical instrument without requiring dedicated floor space. A standard AC 220V ±10%, 50Hz supply at 550W total power is required. Ensure adequate ventilation clearance around the condenser outlet (typically rear of unit) for efficient heat dissipation during cooling operation. The casters enable easy repositioning between laboratory workstations."
+                                },
+                                {
+                                    question: "What is the programmable multi-step control in the BR-03A?",
+                                    answer:
+                                        "The programmable multi-step controller allows sequential temperature setpoints and hold durations to be pre-programmed — executing automatically in order. For example: pre-cool to 0°C, hold 30 min, transition to -10°C, hold 60 min, return to 15°C. This automation is particularly useful in chemical synthesis workflows requiring defined temperature ramps, rotary evaporation protocols where condenser temperature is adjusted as solvent composition changes, and material testing protocols specifying temperature-time profiles."
+                                },
+                                {
+                                    question: "How often should the coolant be changed in the BR-03A?",
+                                    answer:
+                                        "Coolant replacement intervals depend on the heat transfer fluid type and operating conditions. Distilled water should be replaced every 6–12 months — or when the fluid appears cloudy, discoloured, or contains visible contamination. Ethylene glycol/water mixtures should be replaced every 12–24 months. Always add a corrosion inhibitor appropriate for the system materials (stainless steel, copper, aluminium) when using water or glycol mixtures. Discard and replace immediately if biological contamination is suspected. Contact your supplier for the recommended coolant specification and replacement interval for the BR-03A."
+                                }
+                            ]
+                        },
+
+                        blog: {
+                            heading:
+                                "BR-03A Recirculating Chiller: The Compact -20°C to +20°C Precision Cooling Solution for Laboratory Rotary Evaporation and Process Cooling",
+
+                            overview: [],
+
+                            items: [
+                                {
+                                    title: "Why a Recirculating Chiller Is Better Than Tap Water or Ice for Laboratory Condenser Cooling",
+                                    description:
+                                        "Tap water cooling for rotary evaporator condensers is unreliable — water temperature varies seasonally and between facilities, making solvent recovery efficiency unpredictable. Ice baths require continuous replenishment and cannot achieve stable setpoints. The BR-03A's recirculating chiller provides consistent -20°C to +20°C coolant at ±2°C accuracy, continuous circulation at 6 L/min, and automated temperature control — eliminating the variability of both alternatives and enabling reproducible condenser temperatures for consistent solvent recovery performance throughout the working day."
+                                },
+                                {
+                                    title: "530W Cooling Capacity at 10°C: What It Means for Rotary Evaporation",
+                                    description:
+                                        "The BR-03A's 530W cooling capacity at 10°C is the practical specification for most standard rotary evaporation applications. Standard laboratory rotary evaporators with 2L flasks operating at typical solvent evaporation rates generate condenser heat loads of 200–500W — within the BR-03A's 530W capacity at 10°C. For high-boiling solvents requiring colder condenser temperatures (0°C to -20°C), the capacity decreases to 230W at 0°C and 90W at -20°C — match the required condenser temperature to the available cooling capacity for your specific solvent."
+                                },
+                                {
+                                    title: "DIN 12880 Safety Compliance: Why It Matters for Unattended Chiller Operation",
+                                    description:
+                                        "Laboratory recirculating chillers frequently operate unattended during long-duration cooling cycles. DIN 12880's requirement for independent secondary over-temperature protection — which the BR-03A meets — ensures that even in the event of primary controller failure, a completely separate circuit prevents unsafe thermal conditions. For quality management systems requiring documented equipment safety compliance, DIN 12880 certification provides the audit-ready assurance that the BR-03A's safety architecture meets an internationally recognised standard."
+                                },
+                                {
+                                    title: "Final Verdict on the BR-03A",
+                                    description:
+                                        "The BR-03A delivers -20°C to +20°C precision coolant recirculation with 530W cooling capacity, PID control, multi-step programmability, PT100 sensor, DIN 12880 safety, 6 L/min pump, and an exceptionally compact 210 × 410 × 511 mm footprint — the ideal compact laboratory recirculating chiller for single 2L rotary evaporator support, small-scale chemical process cooling, and laboratory instrument temperature control."
+                                }
+                            ]
+                        }
+                    },
+
+                    {
+                        model: "BR-05A Recirculating Chiller",
+                        title: "BR-05A Recirculating Chiller",
+
+                        meta: {
+                            slug: "br-05a",
+                            title:
+                                "BR-05A Recirculating Chiller | 8L | -20°C to 20°C | 600W | Dual Rotary Evaporator | Being India",
+                            description:
+                                "BR-05A: 8L recirculating chiller with -20°C to +20°C range, 600W cooling at 10°C, PID control, R404A, PT100 sensor, 6 L/min pump & DIN 12880 safety. Supports 2L×2 or 5L×1 rotary evaporators. For lab, pharma & chemical processes. Enquire.",
+                            keywords:
+                                "BR-05A Recirculating Chiller, 8L recirculating chiller -20°C to 20°C, dual rotary evaporator chiller laboratory, BR-05A PID chiller 600W, routine laboratory cooling chiller 8 litre, BR-05A 8L recirculating chiller -20°C to 20°C with 600W cooling for dual 2L or single 5L rotary evaporator, routine laboratory cooling chiller with PID controller R404A and DIN 12880 safety, 8 litre recirculating chiller 6 L/min pump for chemical and pharmaceutical laboratory process cooling, routine laboratory recirculating chiller, dual rotary evaporator cooling, 8L chiller laboratory, 600W cooling capacity chiller, R404A chiller pharmaceutical, chemical process cooling chiller, 8 litre recirculating bath chiller, what is the best recirculating chiller for two 2L rotary evaporators, how does an 8L recirculating chiller compare to a 5L model, which laboratory chiller supports both dual small and single large rotary evaporators, is the BR-05A suitable for pharmaceutical chemical process cooling, BR-05A vs BR-03A, BR-05A vs BR-20A, 8L vs 5L vs 30L recirculating chiller, dual rotary evaporator vs single 5L chiller, buy BR-05A recirculating chiller, BR-05A price, order 8L dual rotary evaporator chiller."
+                        },
+
+                        productTitle:
+                            "BR-05A Recirculating Chiller — 8L with 600W Cooling Capacity for Dual 2L or Single 5L Rotary Evaporator Support",
+
+                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+                        imgAltText:
+                            "BR-05A 8L recirculating chiller with -20°C to +20°C range, 600W cooling capacity, PID programmable controller, LCD display, independent circulation pump, and DIN 12880 safety for dual rotary evaporator and laboratory pharmaceutical cooling applications_Being India",
+
+                        price: 309240,
+
+                        gem: true,
+
+                        // tags: ["new"],
+
+                        related: ["br-03a", "br-20a"],
+
+                        overview: [
+                            "The BR-05A Recirculating Chiller extends the BR-03A's compact precision cooling to an 8L bath format with increased 600W cooling capacity at 10°C — specifically rated for simultaneous cooling of two 2L rotary evaporators or a single 5L unit, making it the practical choice for laboratories running dual rotary evaporation setups or medium-scale solvent recovery. Sharing the BR-03A's full feature platform — PID temperature controller, programmable multi-step control, PT100 sensor, LCD display, preset ON/OFF timing, maintenance-free operation, DIN 12880 compliant independent over-temperature protection, and temperature deviation and over-current alarms — the BR-05A adds the increased tank volume, cooling capacity, and larger 240 × 200 × 170 mm tank opening of the mid-range BR Series format. Enquire about the BR-05A today."
+                        ],
+
+                        features: {
+                            overview: [
+                                "The BR-05A Recirculating Chiller delivers 8L of precision -20°C to +20°C coolant circulation with 600W cooling capacity, PID programmable multi-step control, PT100 sensor, independent 6 L/min pump, preset timing, corrosion-resistant stainless steel bath, and DIN 12880 compliant safety — supporting routine laboratory cooling for dual 2L rotary evaporators, single 5L rotary evaporator, chemical processing, and pharmaceutical laboratory applications."
+                            ],
+
+                            keyFeatures: [
+                                {
+                                    title: "8L Increased Tank Capacity for Higher Thermal Buffer",
+                                    description:
+                                        "The BR-05A's 8L stainless steel bath provides 60% more coolant volume than the BR-03A's 5L — delivering a proportionally larger thermal mass that buffers temperature fluctuations from variable external heat loads more effectively. In applications where the connected rotary evaporator or chemical process generates variable heat loads (e.g., during solvent changeovers or process startup transients), the larger thermal mass of the BR-05A's 8L bath maintains more stable coolant delivery temperatures than the smaller 5L bath — supporting the ±2°C accuracy specification more consistently across variable load conditions."
+                                },
+                                {
+                                    title: "PID Controller with Programmable Multi-Step Control",
+                                    description:
+                                        "The BR-05A's PID controller continuously monitors bath temperature via the PT100 sensor and modulates the R404A compressor and heating outputs to maintain the setpoint with ±2°C accuracy across the full -20°C to +20°C range. The programmable multi-step function enables sequential temperature protocols to be automated — particularly useful in dual rotary evaporator setups where different sequential solvents may require different condenser temperatures, and in pharmaceutical process cooling where defined temperature transitions are protocol requirements."
+                                },
+                                {
+                                    title: "600W Cooling Capacity for Dual Rotary Evaporator Support",
+                                    description:
+                                        "The BR-05A's 600W cooling capacity at 10°C enables simultaneous condenser cooling for two 2L rotary evaporators — each presenting a condenser heat load of approximately 200–300W at typical evaporation rates. At 0°C setpoint, the 350W capacity supports a single 5L rotary evaporator's condenser requirements. This cooling capacity rating makes the BR-05A the most versatile entry-level BR Series model for multi-instrument laboratory rotary evaporation setups, where a single compact chiller must simultaneously service multiple evaporators."
+                                },
+                                {
+                                    title: "Larger Tank Opening for Immersion Applications",
+                                    description:
+                                        "The BR-05A's 240 × 200 × 170 mm liquid tank opening — larger than the BR-03A's 240 × 150 × 150 mm — accommodates a wider range of direct immersion applications alongside external circulation. The larger opening enables immersion cooling of larger sample containers, reaction vessels, and cold trap assemblies directly in the BR-05A bath — expanding the unit's application versatility beyond external circulation-only use."
+                                },
+                                {
+                                    title: "Preset ON/OFF Timing for Automated Operation",
+                                    description:
+                                        "The BR-05A's preset ON/OFF timing function enables scheduled chiller start and stop — allowing the unit to pre-cool to the required condenser temperature before the operator's working session begins and to shut down automatically at the end of defined working periods. For laboratory environments running dual rotary evaporator setups with defined morning start times, the preset timing eliminates manual start-up procedures and ensures the coolant is at the required temperature when operation begins."
+                                },
+                                {
+                                    title: "Maintenance-Free Operation",
+                                    description:
+                                        "The BR-05A's maintenance-free design — sealed refrigerant circuit, no oil changes, corrosion-resistant stainless steel construction, and clean surface exterior — minimises the routine maintenance burden in busy routine laboratory environments. Periodic coolant level monitoring through the liquid level viewing window and scheduled coolant replacement at defined intervals constitute the primary routine maintenance requirements, without the mechanical service requirements of more complex cooling system designs."
+                                }
+                            ],
+
+                            safetyFeatures: {
+                                overview: [
+                                    "The BR-05A Recirculating Chiller incorporates temperature deviation alarm, over-current protection, DIN 12880 compliant independent over-temperature protection, and liquid level viewing window — providing the same comprehensive four-system safety architecture as the compact BR-03A, scaled to the 8L mid-range format."
+                                ],
+
+                                items: [
+                                    {
+                                        title: "Temperature Deviation Alarm",
+                                        description:
+                                            "The BR-05A's temperature deviation alarm activates when bath temperature strays beyond the configured threshold — providing early warning of cooling performance issues in dual rotary evaporator setups where a single temperature deviation event simultaneously affects two connected condensers."
+                                    },
+                                    {
+                                        title: "Over-Current Protection",
+                                        description:
+                                            "Over-current protection monitors the compressor and pump motors and activates protective shutdown if current exceeds safe limits — protecting against compressor overload, pump obstruction, and supply voltage anomalies at 600W total operating power."
+                                    },
+                                    {
+                                        title: "Independent Over-Temperature Protection (DIN 12880)",
+                                        description:
+                                            "DIN 12880 compliant independent over-temperature protection operates entirely separately from the primary PID controller — the critical backup safety circuit for unattended dual rotary evaporator cooling operations where primary controller malfunction must not result in unsafe temperature conditions affecting connected equipment."
+                                    },
+                                    {
+                                        title: "Liquid Level Viewing Window",
+                                        description:
+                                            "The liquid level viewing window provides continuous visual monitoring of the 8L bath coolant level — ensuring operators can verify adequate coolant volume for safe pump and compressor operation during extended dual evaporator cooling sessions."
+                                    }
+                                ]
+                            }
+                        },
+
+                        specifications: {
+                            overview: [],
+
+                            items: [
+                                {
+                                    label: "Storage Tank Capacity",
+                                    value: "8 L"
+                                },
+                                {
+                                    label: "Temperature Range",
+                                    value: "-20°C to +20°C (optional: -20°C to 80°C)"
+                                },
+                                {
+                                    label: "Ambient Temperature Range",
+                                    value: "+5°C to 30°C"
+                                },
+                                {
+                                    label: "Temperature Accuracy",
+                                    value: "±2°C"
+                                },
+                                {
+                                    label: "Cooling Capacity at 10°C",
+                                    value: "600 W"
+                                },
+                                {
+                                    label: "Cooling Capacity at 0°C",
+                                    value: "350 W"
+                                },
+                                {
+                                    label: "Cooling Capacity at -20°C",
+                                    value: "0.12 kW"
+                                },
+                                {
+                                    label: "Refrigerant",
+                                    value: "R404A"
+                                },
+                                {
+                                    label: "Sensor",
+                                    value: "PT100"
+                                },
+                                {
+                                    label: "Display",
+                                    value: "LCD"
+                                },
+                                {
+                                    label: "Total Power",
+                                    value: "600 W"
+                                },
+                                {
+                                    label: "Power Supply",
+                                    value: "AC 220 V ±10%, 50 Hz"
+                                },
+                                {
+                                    label: "Pump Flow",
+                                    value: "6 L/min"
+                                },
+                                {
+                                    label: "Maximum Head",
+                                    value: "9 m"
+                                },
+                                {
+                                    label: "Interface Pipe Diameter",
+                                    value: "Φ10 mm"
+                                },
+                                {
+                                    label: "Noise Level",
+                                    value: "≤45 dB"
+                                },
+                                {
+                                    label: "Liquid Tank Opening",
+                                    value: "240 × 200 × 170 mm"
+                                },
+                                {
+                                    label: "Dimensions (W×D×H)",
+                                    value: "310 × 445 × 570 mm (with casters)"
+                                },
+                                {
+                                    label: "Rotary Evaporator Adaptation",
+                                    value: "2L × 2 sets, 5L × 1"
+                                }
+                            ]
+                        },
+
+                        applications: {
+                            overview: [
+                                "The BR-05A supports routine laboratory cooling for dual rotary evaporator setups, pharmaceutical and chemical process cooling, and laboratory cooling systems requiring 8L thermal buffer and 600W cooling capacity."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Laboratory Cooling",
+                                    value:
+                                        "Routine analytical and research laboratories use the BR-05A as the primary cooling source for dual 2L rotary evaporator setups — providing stable condenser coolant at defined temperatures for consistent solvent recovery across both units simultaneously from a single compact chiller."
+                                },
+                                {
+                                    label: "Chemical Processing",
+                                    value:
+                                        "Chemical synthesis laboratories use the BR-05A for jacketed reactor cooling at medium scale, cold trap cooling for vacuum manifold systems, low-temperature reaction temperature control, and solvent recovery cooling for dual evaporation stations — where the 600W capacity provides adequate cooling for the combined heat loads of medium-scale chemical process cooling."
+                                },
+                                {
+                                    label: "Pharmaceutical Labs",
+                                    value:
+                                        "Pharmaceutical research and QC laboratories use the BR-05A for API crystallisation cooling, pharmaceutical intermediate reaction temperature control, cold storage cooling for temperature-sensitive biological materials, and dual pharmaceutical rotary evaporation setups requiring stable -20°C to +20°C coolant from a single compact chiller unit."
+                                },
+                                {
+                                    label: "Rotary Evaporation",
+                                    value:
+                                        "The BR-05A's dual 2L or single 5L rotary evaporator rating makes it the versatile BR Series choice for laboratories transitioning from single to dual rotary evaporation capacity — or for research groups using both a 2L and a 5L rotary evaporator and requiring a single chiller to serve either configuration with a simple tubing reconnection."
+                                }
+                            ],
+
+                            cta:
+                                "Enquire about the BR-05A Recirculating Chiller for dual rotary evaporator and routine laboratory cooling applications."
+                        },
+
+                        faqs: {
+                            overview: [
+                                "These FAQs address the key questions about the BR-05A — covering dual rotary evaporator suitability, 600W cooling capacity, 8L vs 5L thermal buffer advantage, comparison with BR-03A and BR-20A, R404A refrigerant, pump performance, DIN 12880 compliance, heat transfer fluid, installation, and coolant maintenance."
+                            ],
+
+                            items: [
+                                {
+                                    question: "Can the BR-05A simultaneously cool two 2L rotary evaporators?",
+                                    answer:
+                                        "Yes. The BR-05A is specifically rated for 2L×2 simultaneous rotary evaporator cooling — its 600W cooling capacity at 10°C accommodates the combined condenser heat loads of two standard 2L rotary evaporators operating at typical solvent evaporation rates simultaneously. Both condensers must be connected to the BR-05A's pump outlet and inlet using appropriate tubing and a manifold or T-piece splitter — confirm flow distribution between the two connected condensers is adequate with your supplier."
+                                },
+                                {
+                                    question: "How does the 8L tank improve performance over the BR-03A's 5L?",
+                                    answer:
+                                        "The BR-05A's 8L bath provides 60% more thermal mass — absorbing and buffering heat loads from the connected process more effectively. In dual rotary evaporator setups where startup thermal loads (warming two condensers simultaneously) are higher than steady-state loads, the larger thermal mass maintains bath temperature stability more effectively during transient loading periods. The larger 240 × 200 × 170 mm tank opening also accommodates more immersion applications."
+                                },
+                                {
+                                    question: "What is the noise level of the BR-05A?",
+                                    answer:
+                                        "≤45 dB — the same quiet operation specification as the compact BR-03A. This low noise level is compatible with shared open-plan laboratory environments without acoustic enclosure requirements."
+                                },
+                                {
+                                    question: "How does the BR-05A compare to the BR-20A?",
+                                    answer:
+                                        "The BR-20A provides a substantially larger 30L tank, much higher cooling capacity of 2500W at 10°C and 1600W at 0°C, higher pump flow at 17 L/min, 15 m maximum head, and is rated for 10L×2 or 20L×1 rotary evaporators — with R410A refrigerant, larger dimensions, and higher 1600W total power. Choose the BR-05A for compact dual 2L or single 5L rotary evaporator applications; the BR-20A for medium-scale 10L–20L rotary evaporator cooling."
+                                },
+                                {
+                                    question: "What refrigerant does the BR-05A use?",
+                                    answer:
+                                        "R404A — an HFC refrigerant with zero ozone depletion potential (ODP = 0) that provides excellent thermodynamic performance for the -20°C to +20°C operating range. R404A is the standard refrigerant for compact laboratory recirculating chillers in this temperature range, with a well-established service infrastructure. Note that R404A has a global warming potential (GWP) of approximately 3922 — laboratories with strict sustainability requirements should confirm refrigerant acceptability with their environmental management team."
+                                },
+                                {
+                                    question: "Is the BR-05A DIN 12880 compliant?",
+                                    answer:
+                                        "Yes. The BR-05A shares the BR-03A's DIN 12880 compliant independent over-temperature protection architecture — the completely separate backup temperature protection circuit required by the standard for laboratory thermostat safety compliance."
+                                },
+                                {
+                                    question: "What installation space does the BR-05A require?",
+                                    answer:
+                                        "The BR-05A has exterior dimensions of 310 × 445 × 570 mm (with casters) — a compact bench or floor-positioned format suitable for placement beside connected rotary evaporators or under-bench installation. The 310 mm width and 445 mm depth are within standard bench depth, and the 570 mm height enables under-bench installation in standard laboratory cabinetry with minimum 600 mm internal height clearance."
+                                },
+                                {
+                                    question: "How long does the BR-05A take to reach its minimum temperature?",
+                                    answer:
+                                        "The pre-cooling time from ambient (approximately 25°C) to the minimum -20°C setpoint for the BR-05A's 8L bath is typically 30–60 minutes depending on ambient temperature, coolant type, and initial coolant temperature. Plan ahead to pre-cool the bath before starting connected rotary evaporation or process cooling operations — or use the preset timing function to schedule pre-cooling automatically before the working session."
+                                },
+                                {
+                                    question: "What maintenance does the BR-05A require?",
+                                    answer:
+                                        "Routine maintenance: monitor coolant level through the viewing window and top up as needed; replace coolant (distilled water or glycol/water mixture) every 6–12 months or when contaminated; clean the exterior surfaces; verify temperature accuracy with a reference thermometer periodically. No oil changes, filter replacements, or compressor service are required for routine operation within the rated duty cycle and ambient temperature specification."
+                                },
+                                {
+                                    question: "Can the BR-05A be used with a single 5L rotary evaporator?",
+                                    answer:
+                                        "Yes. The BR-05A is rated for 5L×1 single rotary evaporator cooling — its 600W at 10°C provides adequate cooling for the condenser heat load of a standard 5L rotary evaporator at typical solvent evaporation rates. For demanding high-boiling solvent evaporation at high evaporation rates, or for operation at lower condenser temperatures approaching -20°C, verify cooling capacity adequacy for your specific application with your supplier."
+                                }
+                            ]
+                        },
+
+                        blog: {
+                            heading:
+                                "BR-05A Recirculating Chiller: Dual 2L or Single 5L Rotary Evaporator Cooling in a Compact 8L Format",
+
+                            overview: [],
+
+                            items: [
+                                {
+                                    title: "Why Dual Rotary Evaporator Setups Benefit from a Dedicated Recirculating Chiller",
+                                    description:
+                                        "Laboratories running two 2L rotary evaporators simultaneously — a common configuration in busy synthetic chemistry groups — face a cooling supply challenge: tap water cooling is unreliable and wasteful, and two separate ice baths require constant management. The BR-05A resolves this with a single compact chiller simultaneously servicing both condensers at stable, defined temperatures, reducing both water consumption and manual cooling maintenance across the dual evaporator setup."
+                                },
+                                {
+                                    title: "8L Thermal Buffer: Why Larger Tanks Matter in Multi-Load Applications",
+                                    description:
+                                        "In dual evaporator setups, the combined condenser heat load is approximately double that of single-evaporator operation — increasing the demands on the chiller's thermal buffer. The BR-05A's 8L bath maintains stable coolant temperatures more effectively under this combined load than the BR-03A's 5L — absorbing load transients during startup, flask changes, and solvent transitions without the temperature spikes that a smaller bath would exhibit under the same dual load conditions."
+                                },
+                                {
+                                    title: "Final Verdict on the BR-05A",
+                                    description:
+                                        "The BR-05A delivers -20°C to +20°C precision coolant circulation at 600W cooling capacity, PID multi-step control, PT100 precision sensing, DIN 12880 compliant safety, and 8L thermal buffer in a compact 310 × 445 × 570 mm format — the practical routine laboratory choice for dual 2L or single 5L rotary evaporator cooling."
+                                }
+                            ]
+                        }
+                    },
+
+                    {
+                        model: "BR-20A Recirculating Chiller",
+                        title: "BR-20A Recirculating Chiller",
+
+                        meta: {
+                            slug: "br-20a",
+                            title:
+                                "BR-20A Recirculating Chiller | 30L | -20°C to 20°C | 2500W | R410A | 17 L/min | Being India",
+                            description:
+                                "BR-20A: 30L medium-capacity recirculating chiller with -20°C to +20°C range, 2500W at 10°C, 17 L/min pump, 15m head, R410A, PID control & DIN 12880 safety. Supports 10L×2 or 20L×1 rotary evaporators. For industrial & research labs. Enquire.",
+                            keywords:
+                                "BR-20A Recirculating Chiller, 30L recirculating chiller -20°C to 20°C medium scale, high capacity chiller 2500W R410A, BR-20A rotary evaporator 20L chiller, industrial research recirculating chiller 17 L/min, BR-20A 30L medium capacity recirculating chiller -20°C to 20°C with 2500W cooling for 10L and 20L rotary evaporators, high capacity R410A chiller 17 L/min 15m head for industrial research and chemical pharmaceutical processes, 30 litre recirculating chiller with PID programmable control and DIN 12880 safety for medium scale laboratory cooling, medium capacity recirculating chiller, 30L laboratory chiller, 2500W cooling capacity chiller, R410A industrial chiller, rotary evaporator 20L cooling, high flow recirculating chiller 17 L/min, industrial research chiller, what recirculating chiller is best for a 20L rotary evaporator, how does a 30L recirculating chiller differ from an 8L model, which high capacity chiller has 2500W cooling for industrial research, is the BR-20A suitable for large rotary evaporator cooling, BR-20A vs BR-05A, BR-20A vs BR-30A, 30L vs 8L recirculating chiller, medium scale vs compact laboratory chiller, buy BR-20A recirculating chiller, BR-20A price, order 30L medium capacity recirculating chiller."
+                        },
+
+                        productTitle:
+                            "BR-20A Recirculating Chiller — 30L Medium-Capacity with 2500W Cooling for 10L and 20L Rotary Evaporator Applications",
+
+                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+                        imgAltText:
+                            "BR-20A 30L medium-capacity recirculating chiller with -20°C to +20°C range, 2500W cooling capacity, 17 L/min pump, PID programmable controller, R410A refrigerant, and DIN 12880 safety for large rotary evaporation and industrial research laboratory cooling_Being India",
+
+                        price: 550160,
+
+                        gem: true,
+
+                        // tags: ["new"],
+
+                        related: ["br-05a", "br-30a"],
+
+                        overview: [
+                            "The BR-20A Recirculating Chiller is the high-capacity step-up in the BR Series — delivering 30L of precision -20°C to +20°C coolant circulation at 2500W cooling capacity for medium-scale industrial research, chemical process, and pharmaceutical laboratory applications requiring the higher flow rates, extended range, and greater thermal capacity demanded by large rotary evaporators, multi-instrument cooling supply networks, and demanding continuous industrial process cooling. Rated for simultaneous cooling of two 10L rotary evaporators or a single 20L unit, the BR-20A provides 17 L/min pump flow at up to 15 m maximum head through Φ12 mm interface connections — delivering substantially more coolant flow than the compact BR Series models. With R410A refrigerant, PID multi-step programmable control, PT100 sensor, LCD display, and DIN 12880 compliant independent over-temperature protection — the BR-20A serves as the central precision cooling hub for medium-scale laboratory and industrial research cooling infrastructure. Enquire today."
+                        ],
+
+                        features: {
+                            overview: [
+                                "The BR-20A Recirculating Chiller delivers medium-capacity 30L precision cooling at -20°C to +20°C with 2500W cooling at 10°C, 17 L/min pump flow at 15m head, R410A refrigerant, PID programmable multi-step control, PT100 sensor, LCD display, and DIN 12880 compliant safety — supporting large rotary evaporator cooling, multi-instrument laboratory cooling supply, and demanding industrial research and chemical pharmaceutical process cooling applications."
+                            ],
+
+                            keyFeatures: [
+                                {
+                                    title: "30L High-Capacity Tank with 2500W Cooling at 10°C",
+                                    description:
+                                        "The BR-20A's 30L stainless steel bath and 2500W cooling capacity at 10°C represent a substantial performance step above the compact BR Series models — providing the thermal mass (30L vs 5–8L) and cooling power (2500W vs 530–600W) required for large rotary evaporator condenser cooling and sustained industrial process cooling. The 30L thermal mass absorbs the high transient heat loads of 20L rotary evaporator operation — including flask changes, solvent transitions, and startup loads — without the temperature spikes that would occur in small-bath chillers under equivalent thermal demands."
+                                },
+                                {
+                                    title: "17 L/min Pump with 15m Maximum Head",
+                                    description:
+                                        "The BR-20A's pump delivers 17 L/min at up to 15 m maximum head through Φ12 mm interface connections — providing the higher flow rate and pressure head required to effectively circulate coolant through the larger condenser coils of 10L and 20L rotary evaporators and through longer tubing runs in multi-instrument cooling supply configurations. The Φ12 mm interface diameter reduces pressure drop at high flow rates compared to the Φ10 mm connections of the compact BR models — maintaining effective flow delivery through the larger condenser circuits of medium-scale rotary evaporation systems."
+                                },
+                                {
+                                    title: "R410A Refrigerant for High Cooling Capacity",
+                                    description:
+                                        "The BR-20A uses R410A refrigerant — selected for its superior thermodynamic efficiency and higher volumetric cooling capacity compared to R404A at the medium-scale power ratings required for 2500W cooling performance. R410A provides the refrigerant circuit characteristics needed for reliable 2500W cooling at 10°C and 1600W at 0°C in the BR-20A's medium-capacity compressor configuration, while maintaining ODP = 0 (zero ozone depletion potential)."
+                                },
+                                {
+                                    title: "PID Controller with Programmable Multi-Step Control",
+                                    description:
+                                        "The BR-20A's PID temperature controller with programmable multi-step function provides the same advanced control capability as the compact BR models — at the medium-capacity scale. In 20L rotary evaporation applications where the condenser temperature may need to be adjusted as solvent composition changes during multi-fraction separation or mixed-solvent evaporation, the multi-step programming automates these temperature transitions — maintaining optimal condensation efficiency throughout complex large-scale evaporation protocols without manual intervention."
+                                },
+                                {
+                                    title: "350 × 350 × 250mm Tank Opening for Versatile Immersion Use",
+                                    description:
+                                        "The BR-20A's 350 × 350 × 250 mm liquid tank opening provides a substantially larger immersion area than the compact BR models — enabling direct immersion cooling of large reaction vessels, pilot-scale process containers, and large sample assemblies alongside the external circulation function. This larger tank opening makes the BR-20A suitable for both direct immersion large-scale cooling applications and external circulation to connected large rotary evaporators and process equipment."
+                                }
+                            ],
+
+                            safetyFeatures: {
+                                overview: [
+                                    "The BR-20A incorporates the full BR Series four-system safety architecture — temperature deviation alarm, over-current protection, DIN 12880 compliant independent over-temperature protection, and liquid level monitoring — scaled to the 30L, 2500W medium-capacity industrial and research laboratory cooling format."
+                                ],
+
+                                items: [
+                                    {
+                                        title: "Temperature Deviation Alarm",
+                                        description:
+                                            "The BR-20A's temperature deviation alarm provides early warning of cooling performance issues in large-scale rotary evaporation and industrial process cooling — where a temperature deviation affecting a 20L rotary evaporator condenser or industrial process cooling circuit represents a proportionally greater operational impact than in compact lab applications."
+                                    },
+                                    {
+                                        title: "Over-Current Protection",
+                                        description:
+                                            "Over-current protection at 1600W total power provides electrical safety for the medium-capacity compressor and 17 L/min pump motor — protecting against overload conditions during the higher sustained electrical demand of continuous medium-scale industrial and research laboratory cooling operation."
+                                    },
+                                    {
+                                        title: "Independent Over-Temperature Protection (DIN 12880)",
+                                        description:
+                                            "DIN 12880 compliant independent over-temperature protection provides the critical backup safety layer for the BR-20A's larger thermal energy content — the 30L bath at elevated temperatures represents a proportionally greater thermal hazard requiring the documented independent protection of DIN 12880 compliance."
+                                    },
+                                    {
+                                        title: "Liquid Level Monitoring",
+                                        description:
+                                            "The liquid level viewing window monitors the 30L bath coolant level — ensuring that the higher flow rate 17 L/min pump has adequate coolant volume for continuous medium-scale cooling operation without pump cavitation or thermal runaway from insufficient coolant."
+                                    }
+                                ]
+                            }
+                        },
+
+                        specifications: {
+                            overview: [],
+
+                            items: [
+                                {
+                                    label: "Storage Tank Capacity",
+                                    value: "30 L"
+                                },
+                                {
+                                    label: "Temperature Range",
+                                    value: "-20°C to +20°C (optional: -20°C to 80°C)"
+                                },
+                                {
+                                    label: "Ambient Temperature Range",
+                                    value: "+5°C to 30°C"
+                                },
+                                {
+                                    label: "Temperature Accuracy",
+                                    value: "±2°C"
+                                },
+                                {
+                                    label: "Cooling Capacity at 10°C",
+                                    value: "2500 W"
+                                },
+                                {
+                                    label: "Cooling Capacity at 0°C",
+                                    value: "1600 W"
+                                },
+                                {
+                                    label: "Cooling Capacity at -20°C",
+                                    value: "0.57 kW"
+                                },
+                                {
+                                    label: "Refrigerant",
+                                    value: "R410A"
+                                },
+                                {
+                                    label: "Sensor",
+                                    value: "PT100"
+                                },
+                                {
+                                    label: "Display",
+                                    value: "LCD"
+                                },
+                                {
+                                    label: "Total Power",
+                                    value: "1600 W"
+                                },
+                                {
+                                    label: "Power Supply",
+                                    value: "AC 220 V ±10%, 50 Hz"
+                                },
+                                {
+                                    label: "Pump Flow",
+                                    value: "17 L/min"
+                                },
+                                {
+                                    label: "Maximum Head",
+                                    value: "15 m"
+                                },
+                                {
+                                    label: "Interface Pipe Diameter",
+                                    value: "Φ12 mm"
+                                },
+                                {
+                                    label: "Noise Level",
+                                    value: "≤55 dB"
+                                },
+                                {
+                                    label: "Liquid Tank Opening",
+                                    value: "350 × 350 × 250 mm"
+                                },
+                                {
+                                    label: "Dimensions (W×D×H)",
+                                    value: "450 × 600 × 821 mm (with casters)"
+                                },
+                                {
+                                    label: "Rotary Evaporator Adaptation",
+                                    value: "10L × 2 sets, 20L × 1"
+                                }
+                            ]
+                        },
+
+                        applications: {
+                            overview: [
+                                "The BR-20A supports medium-scale laboratory cooling for large rotary evaporators, industrial research, pharmaceutical chemical processes, and multi-instrument cooling supply networks requiring 30L thermal buffer and 2500W precision cooling capacity."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Medium-Scale Laboratory Cooling",
+                                    value:
+                                        "Research institutes, university core facilities, and industrial research laboratories use the BR-20A as the primary cooling source for large 10L and 20L rotary evaporators — providing the high-capacity coolant circulation required for efficient solvent condensation and recovery in large-scale preparative chemistry, natural product extraction, and pharmaceutical synthesis workflows."
+                                },
+                                {
+                                    label: "Industrial Research Labs",
+                                    value:
+                                        "Industrial process development and scale-up laboratories use the BR-20A for pilot-scale process cooling — maintaining defined temperature conditions in jacketed pilot reactors, providing cooling for large-scale vacuum distillation systems, and supplying temperature-controlled coolant to multiple connected instruments simultaneously via the high-capacity 17 L/min pump."
+                                },
+                                {
+                                    label: "Chemical and Pharma Processes",
+                                    value:
+                                        "Pharmaceutical API synthesis and chemical process development laboratories use the BR-20A for large-scale jacketed reactor cooling, bulk solvent recovery via large rotary evaporation, pharmaceutical intermediate crystallisation cooling, and continuous process temperature control at the medium scale where compact chillers lack sufficient cooling capacity."
+                                },
+                                {
+                                    label: "Rotary Evaporation Systems",
+                                    value:
+                                        "The BR-20A's 10L×2 or 20L×1 rotary evaporator rating makes it the standard choice for large-scale preparative rotary evaporation setups — supporting both simultaneous dual 10L configurations and single 20L units at the full cooling capacity required for efficient condenser performance across the evaporation rate range of large-format rotary evaporator operation."
+                                }
+                            ],
+
+                            cta:
+                                "The BR-20A Recirculating Chiller delivers medium-capacity precision cooling for your large rotary evaporation, industrial research, and pharmaceutical chemical process applications. Contact us for pricing."
+                        },
+
+                        faqs: {
+                            overview: [
+                                "These FAQs address the BR-20A's 2500W cooling advantage, 17 L/min pump capability, 20L rotary evaporator suitability, R410A vs R404A refrigerant, 30L thermal buffer, noise level, comparison with BR-30A, installation requirements, heat transfer fluid for -20°C, and multi-instrument supply capability."
+                            ],
+
+                            items: [
+                                {
+                                    question: "What rotary evaporator sizes does the BR-20A support?",
+                                    answer:
+                                        "The BR-20A is rated for 10L×2 (two simultaneous 10L rotary evaporators) or 20L×1 (single 20L rotary evaporator) — providing the 2500W cooling capacity at 10°C required for the higher condenser heat loads of large-format rotary evaporation systems."
+                                },
+                                {
+                                    question: "Why does the BR-20A use R410A instead of R404A?",
+                                    answer:
+                                        "R410A is selected for the medium-capacity BR-20A because its superior thermodynamic properties provide higher volumetric cooling capacity at the power levels required for 2500W cooling performance — enabling more efficient compressor operation at the BR-20A's medium-scale rating. R404A is more appropriate for the lower-capacity compact BR-03A and BR-05A configurations."
+                                },
+                                {
+                                    question: "How does the 30L tank improve stability compared to the BR-05A's 8L?",
+                                    answer:
+                                        "The BR-20A's 30L bath provides nearly four times the thermal mass of the BR-05A — absorbing the heat loads of two simultaneous 10L or one 20L rotary evaporator far more effectively. During large flask changes, solvent transitions, and high-rate evaporation phases, the 30L thermal buffer prevents the coolant temperature spikes that a small bath would exhibit, maintaining stable condenser temperature throughout the most demanding large-scale evaporation operations."
+                                },
+                                {
+                                    question: "What is the noise level of the BR-20A?",
+                                    answer:
+                                        "≤55 dB — higher than the compact BR-03A and BR-05A (≤45 dB) due to the more powerful compressor and higher-flow pump required for 2500W cooling at 17 L/min. The 55 dB level is comparable to normal conversation level and is generally acceptable in open laboratory environments — though it may be noticeable in quiet dedicated analytical areas."
+                                },
+                                {
+                                    question: "How does the BR-20A compare to the BR-30A?",
+                                    answer:
+                                        "Based on the published specifications, the BR-20A and BR-30A share identical technical specifications — 30L tank, 2500W at 10°C, 1600W at 0°C, R410A, 17 L/min, 15m head, same dimensions. The BR-30A is positioned for demanding and industrial-scale applications, potentially with different duty cycle or performance rating specifications. Contact your supplier to confirm any performance differentiation between the BR-20A and BR-30A for your specific application."
+                                },
+                                {
+                                    question: "What heat transfer fluid is recommended for the BR-20A at -20°C?",
+                                    answer:
+                                        "For operation at -20°C, a 50% ethylene glycol, 50% deionised water mixture (by volume) provides adequate freeze protection to approximately -37°C. Always add a corrosion inhibitor appropriate for the stainless steel and copper alloy components of the BR-20A's cooling circuit. For the optional +80°C range, a high-boiling silicone oil or synthetic heat transfer fluid rated above 80°C is required — never use water above 100°C or standard glycol mixtures above 80°C."
+                                },
+                                {
+                                    question: "Can the BR-20A supply cooling to multiple laboratory instruments simultaneously?",
+                                    answer:
+                                        "Yes. The BR-20A's 17 L/min pump flow and 15m head can supply coolant simultaneously to multiple connected instruments via a distribution manifold — with individual ball valves at each branch to balance flow between connected instruments. The total heat load of all simultaneously connected instruments should not exceed the BR-20A's cooling capacity at the operating temperature setpoint to maintain ±2°C accuracy across all connections."
+                                },
+                                {
+                                    question: "What are the installation requirements for the BR-20A?",
+                                    answer:
+                                        "The BR-20A has exterior dimensions of 450 × 600 × 821 mm (with casters) — a floor-positioned unit with casters for laboratory mobility. At 1600W total power, a dedicated or adequately rated AC 220V circuit is recommended. Allow 200mm minimum clearance around the condenser outlet for heat dissipation. The Φ12 mm interface connections require appropriate tubing and fittings rated for the operating temperature range and coolant chemistry."
+                                },
+                                {
+                                    question: "How long does the BR-20A take to cool to -20°C?",
+                                    answer:
+                                        "Pre-cooling the 30L bath from ambient to -20°C typically requires 60–90 minutes depending on ambient temperature, coolant type, and initial coolant temperature — longer than the compact BR models due to the larger thermal mass. Use the preset timing function to schedule pre-cooling before the working session to ensure the bath is at the required temperature when operation begins."
+                                },
+                                {
+                                    question: "What is the pump head rating of the BR-20A and why does it matter?",
+                                    answer:
+                                        "15m maximum head means the BR-20A's pump can overcome the resistance of tubing and connected equipment equivalent to 15m of coolant column height. In practice, the external system pressure drop (from tubing length, bore, fittings, and connected equipment resistance) determines actual flow rate at each operating point. For long tubing runs or high-resistance connected equipment (such as narrow-bore condenser coils), verify that the available head at the required flow rate is adequate for your specific installation."
+                                }
+                            ]
+                        },
+
+                        blog: {
+                            heading:
+                                "BR-20A Recirculating Chiller: High-Capacity 30L Precision Cooling for Large Rotary Evaporation and Industrial Research",
+
+                            overview: [],
+
+                            items: [
+                                {
+                                    title: "Scaling from Compact to Medium-Capacity: Why Large Rotary Evaporators Need More Than Compact Chillers",
+                                    description:
+                                        "A 20L rotary evaporator generates condenser heat loads that a compact 5L or 8L chiller simply cannot absorb effectively during sustained operation — the thermal mass is too small and the cooling capacity too limited. The BR-20A's 2500W at 10°C and 30L bath transforms large-scale rotary evaporation cooling from a limiting factor into a reliable, stable process — providing the thermal reserve needed for consistent condenser performance throughout long evaporation sessions."
+                                },
+                                {
+                                    title: "17 L/min at 15m Head: Why Flow Rate and Pressure Head Matter for Large Condensers",
+                                    description:
+                                        "The large condenser coils of 10L and 20L rotary evaporators present significantly higher coolant flow resistance than compact unit condensers — requiring both higher flow rate and higher pump head to maintain effective coolant velocity through the heat exchanger. The BR-20A's 17 L/min at 15m head ensures adequate coolant velocity through large condenser circuits, maintaining the heat transfer coefficient required for efficient solvent condensation across the evaporation rate range of large-format operation."
+                                },
+                                {
+                                    title: "Final Verdict on the BR-20A",
+                                    description:
+                                        "The BR-20A delivers 30L of -20°C to +20°C precision coolant circulation at 2500W cooling capacity, 17 L/min high-flow pump, R410A efficiency, PID multi-step control, and DIN 12880 safety for medium-scale industrial research, large rotary evaporation, and pharmaceutical chemical process cooling — the standard high-capacity choice for large laboratory cooling infrastructure."
+                                }
+                            ]
+                        }
+                    },
+
+                    {
+                        model: "BR-30A Recirculating Chiller",
+                        title: "BR-30A Recirculating Chiller",
+
+                        meta: {
+                            slug: "br-30a",
+                            title:
+                                "BR-30A Recirculating Chiller | 30L | -20°C to 20°C | 2500W | Industrial | R410A | Being India",
+                            description:
+                                "BR-30A: High-capacity 30L industrial recirculating chiller with -20°C to +20°C, 2500W at 10°C, 17 L/min pump, 15m head, R410A, PID multi-step control & DIN 12880 safety. For demanding labs, industrial cooling & large rotary evaporation. Enquire.",
+                            keywords:
+                                "BR-30A Recirculating Chiller, high capacity recirculating chiller -20°C industrial, 2500W chiller demanding laboratory industrial, BR-30A large scale cooling chiller, industrial R410A recirculating chiller continuous, BR-30A high capacity recirculating chiller -20°C to 20°C with 2500W cooling for demanding laboratory and industrial process applications, large scale industrial recirculating chiller 30L R410A 17 L/min for continuous chemical and pharmaceutical cooling, high capacity precision chiller with DIN 12880 safety for 20L rotary evaporator and industrial research cooling systems, high capacity industrial recirculating chiller, demanding laboratory cooling chiller, continuous operation recirculating chiller, large scale chiller 2500W, industrial cooling system 30L, R410A high capacity chiller, DIN 12880 industrial chiller, what is the most powerful recirculating chiller for demanding industrial laboratory use, which high capacity chiller handles continuous large-scale cooling processes, how does the BR-30A differ from the BR-20A, is BR-30A suitable for industrial cooling of large rotary evaporation systems, BR-30A vs BR-20A, high capacity vs medium capacity recirculating chiller, BR-30A for industrial vs research laboratory use, buy BR-30A recirculating chiller, BR-30A price, order high capacity industrial recirculating chiller."
+                        },
+
+                        productTitle:
+                            "BR-30A Recirculating Chiller — High-Capacity 30L Industrial-Grade Cooling for Demanding Laboratory and Process Applications",
+
+                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+                        imgAltText:
+                            "BR-30A high-capacity 30L industrial recirculating chiller with -20°C to +20°C range, 2500W cooling capacity, 17 L/min pump, PID programmable controller, R410A refrigerant, and DIN 12880 safety for demanding laboratory and industrial process cooling applications_Being India",
+
+                        price: 835820,
+
+                        gem: true,
+
+                        // tags: ["new"],
+
+                        related: ["br-20a"],
+
+                        overview: [
+                            "The BR-30A Recirculating Chiller is the flagship of the BR Series — positioned for demanding laboratory and industrial applications requiring the highest reliability, sustained performance, and comprehensive safety in a high-capacity -20°C to +20°C recirculating chiller format. With 30L tank capacity, 2500W cooling at 10°C, 1600W at 0°C, 17 L/min pump flow at 15 m head through Φ12 mm connections, R410A refrigerant, PID multi-step programmable control, PT100 sensor, LCD display, and DIN 12880 compliant independent over-temperature protection — the BR-30A provides the industrial-grade cooling infrastructure required for large-scale rotary evaporation (10L×2 or 20L×1), demanding chemical and pharmaceutical process cooling, and industrial research laboratory cooling systems where reliability and sustained performance across intensive continuous duty cycles are the primary selection criteria. Enquire about the BR-30A today."
+                        ],
+
+                        features: {
+                            overview: [
+                                "The BR-30A Recirculating Chiller delivers the highest capacity in the BR Series — 30L precision cooling at -20°C to +20°C with 2500W cooling at 10°C, 17 L/min high-flow pump, R410A refrigerant, PID programmable multi-step control, PT100 sensor, and DIN 12880 compliant safety — for demanding industrial laboratory, large-scale rotary evaporation, chemical, and pharmaceutical process cooling applications."
+                            ],
+
+                            keyFeatures: [
+                                {
+                                    title: "High-Capacity 30L Tank for Sustained Industrial Cooling",
+                                    description:
+                                        "The BR-30A's 30L stainless steel bath provides the largest thermal buffer in the BR Series — absorbing the sustained high heat loads of intensive industrial continuous process cooling, large-scale rotary evaporation, and multi-instrument cooling supply without the temperature instability that affects smaller-bath chillers under continuous heavy-duty operation. The large thermal mass of the 30L bath is particularly important for industrial continuous duty applications where the chiller operates at or near maximum cooling capacity throughout extended production periods."
+                                },
+                                {
+                                    title: "Industrial-Grade 2500W Cooling Capacity",
+                                    description:
+                                        "At 2500W cooling at 10°C — the same specification as the BR-20A — the BR-30A provides the cooling power for simultaneous dual 10L or single 20L rotary evaporator support. In demanding industrial contexts where elevated ambient temperatures (approaching 30°C) reduce effective chiller cooling capacity, the BR-30A's industrial-grade compressor specification maintains reliable cooling performance within rated parameters under the more challenging ambient conditions of industrial laboratory environments."
+                                },
+                                {
+                                    title: "High-Flow 17 L/min Pump at 15m Head",
+                                    description:
+                                        "The BR-30A's 17 L/min pump at 15 m maximum head through Φ12 mm interfaces delivers the high-capacity coolant flow required for effective heat transfer through the large condenser circuits of 20L rotary evaporators, industrial jacketed reactors, and multi-instrument cooling supply networks. In demanding industrial applications where longer tubing runs and higher system pressure drops are typical, the 15 m head ensures adequate coolant delivery to all connected equipment even in complex cooling infrastructure configurations."
+                                },
+                                {
+                                    title: "R410A Refrigerant for Efficient High-Capacity Operation",
+                                    description:
+                                        "The BR-30A's R410A refrigerant system provides efficient thermodynamic performance at the 2500W cooling scale — with R410A's superior volumetric cooling capacity supporting the medium-high power compressor operation required for sustained high-capacity industrial cooling duty cycles. R410A's zero ODP and established service infrastructure make it the appropriate refrigerant choice for the BR-30A's industrial laboratory context."
+                                },
+                                {
+                                    title: "PID Programmable Multi-Step Control for Process Automation",
+                                    description:
+                                        "The BR-30A's PID controller with programmable multi-step function enables automation of complex industrial cooling protocols — including temperature ramp profiles for controlled crystallisation, sequential cooling stage profiles for pharmaceutical process development, and automated temperature transitions in large-scale solvent recovery operations. In industrial process contexts where cooling temperature profiles must be precisely reproducible across repeated production batches, the multi-step programming eliminates manual setpoint adjustment and associated operator variability."
+                                },
+                                {
+                                    title: "Preset ON/OFF Timing for Industrial Scheduling",
+                                    description:
+                                        "The BR-30A's preset ON/OFF timing function enables integration with industrial laboratory work schedules — allowing the high-capacity chiller to pre-cool from ambient to the required operating temperature before the production shift begins, and to shut down automatically at shift end. This scheduling capability reduces energy consumption during non-production periods and ensures the cooling system is at the required temperature when industrial processes begin."
+                                }
+                            ],
+
+                            safetyFeatures: {
+                                overview: [
+                                    "The BR-30A incorporates the full BR Series four-system safety architecture — temperature deviation alarm, over-current protection, DIN 12880 compliant independent over-temperature protection, and liquid level monitoring — at the 30L industrial-grade high-capacity specification."
+                                ],
+
+                                items: [
+                                    {
+                                        title: "Temperature Deviation Alarm",
+                                        description:
+                                            "In demanding industrial applications where the BR-30A maintains cooling for critical process equipment, the temperature deviation alarm provides immediate notification of cooling performance issues — enabling rapid intervention before process quality, product integrity, or connected equipment is compromised by sustained coolant temperature deviation."
+                                    },
+                                    {
+                                        title: "Over-Current Protection",
+                                        description:
+                                            "The BR-30A's over-current protection safeguards the high-capacity compressor and 17 L/min pump motor from electrical overload conditions during intensive continuous industrial cooling cycles — where sustained high-current operation increases the risk of overload events compared to intermittent laboratory use patterns."
+                                    },
+                                    {
+                                        title: "Independent Over-Temperature Protection (DIN 12880)",
+                                        description:
+                                            "DIN 12880 compliant independent over-temperature protection provides the highest safety assurance for the BR-30A's industrial application context — where unattended continuous operation during production periods requires documented independent safety compliance beyond basic thermostat protection."
+                                    },
+                                    {
+                                        title: "Liquid Level Viewing Window",
+                                        description:
+                                            "Continuous visual monitoring of the 30L bath coolant level ensures adequate coolant volume for the high-flow 17 L/min pump during sustained industrial continuous operation — preventing the cavitation and thermal events that would occur with insufficient coolant in a high-flow high-power industrial cooling circuit."
+                                    }
+                                ]
+                            }
+                        },
+
+                        specifications: {
+                            overview: [],
+
+                            items: [
+                                {
+                                    label: "Storage Tank Capacity",
+                                    value: "30 L"
+                                },
+                                {
+                                    label: "Temperature Range",
+                                    value: "-20°C to +20°C (optional: -20°C to 80°C)"
+                                },
+                                {
+                                    label: "Ambient Temperature Range",
+                                    value: "+5°C to 30°C"
+                                },
+                                {
+                                    label: "Temperature Accuracy",
+                                    value: "±2°C"
+                                },
+                                {
+                                    label: "Cooling Capacity at 10°C",
+                                    value: "2500 W"
+                                },
+                                {
+                                    label: "Cooling Capacity at 0°C",
+                                    value: "1600 W"
+                                },
+                                {
+                                    label: "Cooling Capacity at -20°C",
+                                    value: "0.57 kW"
+                                },
+                                {
+                                    label: "Refrigerant",
+                                    value: "R410A"
+                                },
+                                {
+                                    label: "Sensor",
+                                    value: "PT100"
+                                },
+                                {
+                                    label: "Display",
+                                    value: "LCD"
+                                },
+                                {
+                                    label: "Total Power",
+                                    value: "1600 W"
+                                },
+                                {
+                                    label: "Power Supply",
+                                    value: "AC 220 V ±10%, 50 Hz"
+                                },
+                                {
+                                    label: "Pump Flow",
+                                    value: "17 L/min"
+                                },
+                                {
+                                    label: "Maximum Head",
+                                    value: "15 m"
+                                },
+                                {
+                                    label: "Interface Pipe Diameter",
+                                    value: "Φ12 mm"
+                                },
+                                {
+                                    label: "Noise Level",
+                                    value: "≤55 dB"
+                                },
+                                {
+                                    label: "Liquid Tank Opening",
+                                    value: "350 × 350 × 250 mm"
+                                },
+                                {
+                                    label: "Dimensions (W×D×H)",
+                                    value: "450 × 600 × 821 mm (with casters)"
+                                },
+                                {
+                                    label: "Rotary Evaporator Adaptation",
+                                    value: "10L × 2 sets / 20L × 1"
+                                }
+                            ]
+                        },
+
+                        applications: {
+                            overview: [
+                                "The BR-30A supports demanding large-scale laboratory cooling, industrial cooling systems, large-scale chemical and pharmaceutical processes, and rotary evaporation systems requiring the highest capacity and reliability in the BR Series."
+                            ],
+
+                            items: [
+                                {
+                                    label: "Large-Scale Laboratory Cooling",
+                                    value:
+                                        "Large research institutes and industrial analytical facilities use the BR-30A as the primary high-capacity cooling source — supplying temperature-controlled coolant at 17 L/min to multiple simultaneously connected laboratory instruments, large rotary evaporators, and analytical instruments requiring sub-ambient coolant under demanding high-throughput laboratory operation."
+                                },
+                                {
+                                    label: "Industrial Cooling Systems",
+                                    value:
+                                        "Industrial process development, pilot plant, and manufacturing quality control laboratories use the BR-30A for sustained continuous process cooling — including jacketed pilot reactor temperature control, industrial cold trap cooling for continuous vacuum systems, and sustained process temperature maintenance in demanding industrial research environments."
+                                },
+                                {
+                                    label: "Chemical and Pharmaceutical Processes",
+                                    value:
+                                        "Pharmaceutical API manufacturing support, bulk chemical synthesis, and pharmaceutical process development operations use the BR-30A for sustained precision cooling of large jacketed reactors, continuous process crystallisation cooling, large-scale solvent recovery condenser cooling, and sustained pharmaceutical process temperature control in demanding continuous production-adjacent environments."
+                                },
+                                {
+                                    label: "Rotary Evaporation Systems",
+                                    value:
+                                        "The BR-30A provides the high-capacity precision cooling for large preparative chemistry rotary evaporation — simultaneously cooling two 10L units or a single 20L rotary evaporator with the reliability and sustained cooling performance demanded by intensive large-scale solvent recovery operations in pharmaceutical and chemical production research."
+                                }
+                            ],
+
+                            cta:
+                                "The BR-30A Recirculating Chiller is the high-capacity industrial-grade precision cooling solution for your demanding laboratory and process applications. Contact us for pricing and technical specifications."
+                        },
+
+                        faqs: {
+                            overview: [
+                                "These FAQs address the BR-30A's industrial positioning, comparison with BR-20A, sustained duty cycle capability, 2500W performance in high ambient temperatures, pharmaceutical process suitability, power supply requirements, pump performance for long tubing runs, multi-instrument supply capability, heat transfer fluid, and installation."
+                            ],
+
+                            items: [
+                                {
+                                    question: "How does the BR-30A differ from the BR-20A in practical terms?",
+                                    answer:
+                                        "The BR-30A and BR-20A share the same published technical specifications — 30L, 2500W at 10°C, 17 L/min, R410A. The BR-30A is positioned for demanding industrial and continuous-duty applications where sustained high-intensity cooling performance and industrial reliability are the primary requirements. Contact your supplier to confirm any performance or construction differentiation between the two models for your specific application."
+                                },
+                                {
+                                    question: "Is the BR-30A suitable for continuous industrial operation?",
+                                    answer:
+                                        "Yes. The BR-30A is designed for sustained continuous industrial operation — with compressor, pump, and refrigerant system components specified for intensive duty cycle performance. For continuous 24/7 industrial cooling applications, confirm the BR-30A's specific continuous duty rating with your supplier and ensure adequate ventilation for sustained compressor heat dissipation."
+                                },
+                                {
+                                    question: "How does 2500W cooling capacity perform in warm industrial laboratory environments?",
+                                    answer:
+                                        "Cooling capacity is specified at defined ambient conditions (typically +20–25°C ambient). As ambient temperature approaches the 30°C upper limit, effective cooling capacity decreases. In warm industrial laboratory environments operating at 28–30°C ambient, the BR-30A's effective cooling capacity may be reduced below the 2500W specification — plan for a cooling capacity margin of 20–30% above the maximum expected process heat load to maintain ±2°C accuracy in warm ambient conditions."
+                                },
+                                {
+                                    question: "What pharmaceutical process applications is the BR-30A suitable for?",
+                                    answer:
+                                        "The BR-30A is suitable for pharmaceutical API crystallisation cooling, bulk pharmaceutical synthesis jacketed reactor cooling, large-scale pharmaceutical solvent recovery via 20L rotary evaporation, pharmaceutical intermediate cold trap cooling, and sustained pharmaceutical process temperature control in production-adjacent environments requiring high-capacity, reliable precision cooling with documented DIN 12880 safety compliance."
+                                },
+                                {
+                                    question: "What power supply does the BR-30A require?",
+                                    answer:
+                                        "The BR-30A requires AC 220V ±10%, 50Hz at 1600W total power — a substantial electrical load requiring a dedicated circuit rated for continuous 1600W. Confirm circuit capacity with your facility's electrical engineer, particularly in industrial environments where multiple high-power instruments share supply infrastructure."
+                                },
+                                {
+                                    question: "How does the 17 L/min pump handle long tubing runs to connected equipment?",
+                                    answer:
+                                        "The BR-30A's 15m maximum head accommodates total system pressure drops equivalent to 15m of coolant column height — which, for standard laboratory-grade coolant tubing at 17 L/min, corresponds to approximately 5–8m of tubing run (depending on bore diameter). For longer runs, use the largest practical tubing bore to reduce friction losses and ensure the system pressure drop at the required flow rate does not exceed the 15m head rating. Contact your supplier for specific tubing sizing recommendations for your installation."
+                                },
+                                {
+                                    question: "Can the BR-30A supply cooling to a multi-instrument industrial laboratory network?",
+                                    answer:
+                                        "Yes. With appropriate manifolding, individual branch isolation valves, and flow balancing, the BR-30A's 17 L/min pump can supply a multi-instrument cooling network — providing the total heat load of all simultaneously connected instruments does not exceed the 2500W (at 10°C) or 1600W (at 0°C) cooling capacity. Use a system design with flow meters or visual flow indicators at each branch to confirm adequate coolant delivery to all connected instruments."
+                                },
+                                {
+                                    question: "What heat transfer fluid is recommended for the BR-30A?",
+                                    answer:
+                                        "For operation between 0°C and +20°C: deionised water with corrosion inhibitor. For operation between -20°C and 0°C: 50% ethylene glycol / 50% deionised water with corrosion inhibitor (freeze protection to approximately -37°C). For the optional +80°C extended range: appropriate high-boiling silicone oil or synthetic heat transfer fluid. Always use heat transfer fluids compatible with stainless steel, copper alloy, and elastomer seal materials of the BR-30A's cooling circuit."
+                                },
+                                {
+                                    question: "What are the installation requirements for the BR-30A?",
+                                    answer:
+                                        "The BR-30A has exterior dimensions of 450 × 600 × 821 mm (with casters) — a floor-positioned unit for laboratory or industrial process floor installation. Minimum 200–300mm clearance around the condenser outlet for heat dissipation. A dedicated AC 220V ±10%, 50Hz circuit rated for continuous 1600W load. Φ12mm interface connections require appropriate tubing and fittings rated for the operating temperature range and coolant chemistry. For industrial installations with continuous 24/7 operation, confirm circuit protection specification with your facility's electrical engineer."
+                                }
+                            ]
+                        },
+
+                        blog: {
+                            heading:
+                                "BR-30A Recirculating Chiller: Industrial-Grade High-Capacity Cooling for Demanding Laboratory and Chemical Process Applications",
+
+                            overview: [],
+
+                            items: [
+                                {
+                                    title: "When Industrial Reliability Is Non-Negotiable in a Laboratory Chiller",
+                                    description:
+                                        "For industrial process development, pharmaceutical production support, and intensive continuous research operations, the primary chiller selection criterion is not compact size or lowest cost — it is sustained reliability under continuous high-demand operation. The BR-30A's industrial positioning within the BR Series addresses this requirement: 2500W cooling capacity, 30L thermal buffer, 17 L/min high-flow pump, R410A efficiency, and DIN 12880 certified safety in a configuration specified for the demands of continuous industrial laboratory cooling."
+                                },
+                                {
+                                    title: "20L Rotary Evaporator Cooling: Why High Capacity Matters",
+                                    description:
+                                        "A 20L rotary evaporator operating at high evaporation rates generates condenser heat loads that approach or exceed the capabilities of compact chillers — particularly during startup phases, flask changes, and high-vapour-pressure solvent evaporation. The BR-30A's 2500W at 10°C provides the capacity margin needed for consistent condenser performance throughout the most demanding large-scale evaporation cycles, maintaining solvent recovery efficiency without the condenser temperature rise that would reduce recovery in under-capacity cooling configurations."
+                                },
+                                {
+                                    title: "Final Verdict on the BR-30A",
+                                    description:
+                                        "The BR-30A delivers 30L of industrial-grade -20°C to +20°C precision cooling at 2500W capacity, 17 L/min high-flow pump, R410A efficiency, PID multi-step control, and DIN 12880 safety — the high-capacity BR Series solution for demanding industrial research, large-scale rotary evaporation, and continuous pharmaceutical chemical process cooling applications where sustained performance and reliability are the defining requirements."
                                 }
                             ]
                         }

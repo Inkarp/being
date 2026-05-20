@@ -6263,6 +6263,660 @@ export async function GET() {
       },
 
       {
+        name: "Large Shaking Incubator (Vertical Floor)",
+        slug: "large-shaking-incubator-vertical-floor)",
+        models: [
+          {
+            model: "HZQ-X300C Vertical Shaking Incubator",
+            title: "HZQ-X300C Vertical Shaking Incubator",
+
+            meta: {
+              slug: "hzq-x300c",
+              title:
+                "HZQ-X300C Vertical Shaking Incubator | Double Platform | 4–65°C | 300 rpm | 1100W | Being India",
+              description:
+                "HZQ-X300C: Double platform floor-standing vertical shaking incubator with 4–65°C, 40–300 rpm, 20mm amplitude, 500×350mm platform, PID control, LCD, 25mm test hole, observation window & 1100W. For cell culture & fermentation. Enquire now.",
+              keywords:
+                "HZQ-X300C Vertical Shaking Incubator, double platform floor standing shaking incubator 4–65°C, vertical shaking incubator 300 rpm double shelf, HZQ-X300C PID shaking incubator large capacity, floor standing orbital shaker incubator 500×350mm, HZQ-X300C double platform floor standing vertical shaking incubator 4°C to 65°C with PID controller for cell culture and fermentation, large capacity vertical shaking incubator 500×350mm platform 300 rpm with 25mm test hole and observation window, double shelf shaking incubator 1100W adjustable fan speed for microbiology and pharmaceutical biotech labs, double platform vertical shaking incubator, floor standing vertical shaker incubator, large capacity shaking incubator double shelf, PID shaking incubator 300 rpm, 25mm test hole shaking incubator, observation window shaking incubator, what is a double platform floor standing vertical shaking incubator, how does a double shelf vertical shaking incubator differ from chest type, which floor standing shaking incubator supports double platform for cell culture and fermentation, is HZQ-X300C suitable for pilot-scale production, HZQ-X300C vs HZQ-X500C, double platform vs chest type shaking incubator, 500×350mm vs 750×460mm platform, vertical vs horizontal shaking incubator floor standing, buy HZQ-X300C shaking incubator, HZQ-X300C price, order double platform floor standing vertical shaking incubator."
+            },
+
+            productTitle:
+              "HZQ-X300C Vertical Shaking Incubator — Double Platform Floor-Standing with 4°C to 65°C and 40–300 rpm for Large-Capacity Cell Culture and Fermentation",
+
+            thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+            imgAltText:
+              "HZQ-X300C double platform floor-standing vertical shaking incubator with 4–65°C refrigerated range, 40–300 rpm, 20mm amplitude, 500×350mm orbital platform, PID microprocessor controller, 304 stainless steel chamber, observation window, and 25mm test hole for cell culture, fermentation, and biotechnology laboratory applications_Being India",
+
+            // price: 350000,
+
+            gem: true,
+
+            // tags: ["new"],
+
+            related: ["hzq-x500c", "hzq-211c"],
+
+            overview: [
+              "The HZQ-X300C Large Capacity Vertical Shaking Incubator is a floor-standing, double-platform orbital shaking incubator designed for high-volume incubation and shaking applications requiring the vertical cabinet format's space efficiency over the horizontal chest-type alternative. With a double platform configuration providing two independent 500 × 350 mm orbital shaking levels, 4°C to 65°C temperature control, 40–300 rpm speed range with 20 mm amplitude, 304 stainless steel chamber with observation window, PID microprocessor controller, adjustable fan speed, 25 mm test hole, power failure memory, and a 1100W system — the HZQ-X300C serves cell culture, fermentation, biotechnology, microbial cultivation, and laboratory pilot-scale production applications requiring the double-platform throughput advantage in a vertical floor-standing format. Enquire about the HZQ-X300C today."
+            ],
+
+            features: {
+              overview: [
+                "The HZQ-X300C Vertical Shaking Incubator delivers double-platform floor-standing orbital shaking with 4–65°C refrigerated temperature control, 40–300 rpm range, 20mm amplitude, 304 stainless steel chamber, large observation window, PID microprocessor control, adjustable fan speed, 25mm test hole, power failure parameter memory, and door safety auto-pause — supporting cell culture, fermentation, biotechnology, and pilot-scale production applications."
+              ],
+
+              keyFeatures: [
+                {
+                  title: "Large LCD Display for Real-Time Parameter Monitoring",
+                  description:
+                    "The HZQ-X300C's large LCD display provides real-time visibility of all operating parameters — temperature at 0.1°C resolution, shaking speed with accuracy of approximately ±1 rpm, timer status, and operational mode — across the double-platform double-shelf incubation system. The clear LCD readout enables operators to verify all critical shaking incubation parameters at a glance during routine monitoring visits without opening the cabinet door and disturbing the temperature and CO₂ environment."
+                },
+                {
+                  title: "Double Platform Design for Higher Sample Capacity",
+                  description:
+                    "The HZQ-X300C's double platform configuration provides two independent 500 × 350 mm orbital shaking levels within the vertical floor-standing cabinet — enabling simultaneous incubation of flasks on two shelf levels for higher total sample throughput than a single-level shaking incubator of equivalent footprint. The double platform configuration is the defining feature of the HZQ-X300C compared to single-platform vertical shaking incubators — providing approximately double the flask density per unit of floor space."
+                },
+                {
+                  title: "304 Stainless Steel Chamber and Shaking Platform",
+                  description:
+                    "The HZQ-X300C's inner chamber and shaking platform are constructed from Grade 304 stainless steel — providing corrosion resistance, hygienic cleaning compatibility, and long-term durability appropriate for the diverse microbiological media, cell culture supplements, and fermentation broths that contact the chamber interior during extended high-throughput shaking incubation operation. The stainless steel construction enables thorough cleaning with laboratory disinfectants between different culture types."
+                },
+                {
+                  title: "Large Observation Window for Clear Sample Visibility",
+                  description:
+                    "The HZQ-X300C's large observation window provides clear visibility of both shaking platform levels during operation — allowing operators to monitor flask loading status, culture turbidity development, foam formation, and general orbital shaking performance across both levels without opening the door and disrupting the temperature-controlled environment. The observation window is particularly valuable for monitoring fermentation progress across the double-platform loading during extended unattended shaking incubation runs."
+                },
+                {
+                  title: "Microprocessor PID Controller for Temperature and Speed Control",
+                  description:
+                    "The HZQ-X300C's microprocessor PID controller maintains temperature with precision across the 4°C to 65°C range via the built-in refrigeration system and supplementary heating — providing continuous proportional modulation of both cooling and heating to maintain stable incubation conditions throughout extended double-platform shaking runs. The PID speed control maintains orbital shaking accuracy and consistency across the full 40–300 rpm range during both steady-state and ramp transitions."
+                },
+                {
+                  title: "Adjustable Fan Speed to Protect Sensitive Samples",
+                  description:
+                    "The HZQ-X300C's adjustable fan speed controller allows operators to optimise airflow within the double-platform cabinet for specific application requirements — reducing fan speed for sensitive cell cultures requiring gentle air circulation and increasing speed for temperature uniformity optimisation between the two platform levels during recovery phases. The adjustable control accommodates the diverse fan speed requirements of the cell culture, microbiology, and fermentation applications served by the double-platform format."
+                },
+                {
+                  title: "25mm Test Hole for External Monitoring",
+                  description:
+                    "The HZQ-X300C's 25 mm test hole provides sealed access for inserting dissolved oxygen probes, pH sensors, temperature reference probes, and gas supply tubes into the shaking incubator cabinet — enabling continuous real-time monitoring of fermentation parameters or independent temperature verification without opening the door and disturbing the incubation environment across both platform levels."
+                },
+                {
+                  title: "Automatic Parameter Memory in Case of Power Failure",
+                  description:
+                    "The HZQ-X300C's automatic parameter memory function preserves all operating parameters — temperature setpoint, shaking speed, timer position — in non-volatile memory during power interruptions, automatically resuming from the preserved parameters when power is restored. This power failure memory is critical for extended multi-day fermentation and cell culture runs in the double-platform format — where an unexpected power interruption without automatic recovery would interrupt the shaking and temperature-controlled environment for an indefinite period before manual restart."
+                }
+              ],
+
+              safetyFeatures: {
+                overview: [
+                  "The HZQ-X300C incorporates six independent safety systems — door safety switch with auto-pause, over-temperature protection, audio and visual alarm, smooth start/stop system, self-diagnostic fault detection, and reliable long-duration operation design — providing comprehensive safe continuous shaking incubation for cell culture, fermentation, and biotechnology laboratory applications."
+                ],
+
+                items: [
+                  {
+                    title: "Door Safety Switch with Automatic Pause When Opened",
+                    description:
+                      "The HZQ-X300C's door safety switch automatically pauses the orbital shaking mechanism when the cabinet door is opened — preventing flask spillage and culture contamination from shaking platform motion during sample access. This door interlock is a fundamental safety feature for a double-platform vertical shaking incubator where both platform levels continue shaking simultaneously during normal operation — the automatic pause eliminates the risk of flask ejection during unexpected door opening events."
+                  },
+                  {
+                    title: "Over-Temperature Protection System",
+                    description:
+                      "The HZQ-X300C's over-temperature protection monitors chamber temperature and activates heating cutoff if the temperature exceeds the configured safe upper limit — protecting all cultures across both shaking platform levels from simultaneous thermal damage during extended unattended shaking incubation operations."
+                  },
+                  {
+                    title: "Alarm System with Audio and Visual Alerts",
+                    description:
+                      "The HZQ-X300C's alarm system provides audible and visual notification for temperature deviations, speed anomalies, and operational faults — ensuring that safety-relevant conditions are communicated to operators during extended unattended multi-day cell culture and fermentation runs on both platform levels."
+                  },
+                  {
+                    title: "Smooth Start and Stop System to Prevent Sample Spillage",
+                    description:
+                      "The HZQ-X300C's smooth start and stop system gradually accelerates the orbital shaking from zero to the setpoint speed at start, and decelerates smoothly to rest at stop — preventing the sudden flask motion and culture splashing that can occur with abrupt shaking transitions. This is particularly important in the double-platform format where both levels start and stop simultaneously."
+                  },
+                  {
+                    title: "Self-Diagnostic System for Fault Detection",
+                    description:
+                      "The HZQ-X300C's self-diagnostic system monitors key operational parameters and identifies system faults — enabling rapid fault identification and resolution to minimise the duration of any operational interruption to extended multi-day shaking incubation runs on the double platform."
+                  },
+                  {
+                    title: "Reliable Long-Duration Operation",
+                    description:
+                      "The HZQ-X300C is designed for reliable continuous long-duration operation — with orbital shaking mechanism, refrigeration compressor, temperature controller, and electrical components specified for sustained performance across multi-day fermentation and cell culture runs without mechanical or thermal degradation."
+                  }
+                ]
+              }
+            },
+
+            specifications: {
+              overview: [
+                "The HZQ-X300C provides double-platform floor-standing orbital shaking at 40–300 rpm with 20mm amplitude across 500×350mm platforms, 4–65°C refrigerated temperature control, and 1100W — the compact double-platform vertical shaking incubator for cell culture, fermentation, biotechnology, and pilot-scale production. Full specifications listed below."
+              ],
+
+              items: [
+                {
+                  label: "Electrical Requirement",
+                  value: "AC 220 V, 50 Hz"
+                },
+                {
+                  label: "Speed Range",
+                  value: "40 to 300 rpm"
+                },
+                {
+                  label: "Amplitude",
+                  value: "20 mm"
+                },
+                {
+                  label: "Temperature Range",
+                  value: "4°C to 65°C (ambient 20°C)"
+                },
+                {
+                  label: "Display Resolution",
+                  value: "0.1°C"
+                },
+                {
+                  label: "Power Consumption",
+                  value: "1100 W"
+                },
+                {
+                  label: "Platform Size",
+                  value: "500 × 350 mm"
+                },
+                {
+                  label: "Exterior Dimensions (W×D×H)",
+                  value: "725 × 720 × 1150 mm"
+                },
+                {
+                  label: "Timer Range",
+                  value: "0 to 5999 minutes"
+                },
+                {
+                  label: "Flask Capacity — 50 mL",
+                  value: "37 pcs"
+                },
+                {
+                  label: "Flask Capacity — 100 mL",
+                  value: "22 pcs"
+                },
+                {
+                  label: "Flask Capacity — 250 mL",
+                  value: "14 pcs"
+                },
+                {
+                  label: "Flask Capacity — 500 mL",
+                  value: "10 pcs"
+                },
+                {
+                  label: "Flask Capacity — 1000 mL",
+                  value: "6 pcs"
+                },
+                {
+                  label: "Flask Capacity — 2000 mL",
+                  value: "Not supported"
+                }
+              ]
+            },
+
+            applications: {
+              overview: [
+                "The HZQ-X300C Large Capacity Vertical Shaking Incubator supports double-platform simultaneous incubation applications from 4°C to 65°C — delivering high-throughput cell culture, fermentation, biotechnology research, microbial cultivation, and pilot-scale production incubation across two 500×350mm orbital shaking levels in a compact vertical floor-standing format."
+              ],
+
+              items: [
+                {
+                  label: "Cell Culture",
+                  value:
+                    "Double-platform mammalian and microbial cell suspension culture at 37°C with adjustable low-speed orbital shaking for gentle mixing without shear stress."
+                },
+                {
+                  label: "Fermentation Studies",
+                  value:
+                    "Aerobic microbial fermentation parameter optimisation in Erlenmeyer flask format across both platform levels simultaneously for high-throughput condition screening."
+                },
+                {
+                  label: "Biotechnology and Pharmaceutical Labs",
+                  value:
+                    "Recombinant protein expression, enzyme characterisation, microbial strain screening, and pharmaceutical biological research at higher throughput than single-platform vertical shaking incubators."
+                },
+                {
+                  label: "Microbial Cultivation",
+                  value:
+                    "Large-scale parallel microbial culture incubation across both platform levels for microbiology research, industrial strain development, and antimicrobial susceptibility testing at higher throughput."
+                },
+                {
+                  label: "Pilot-Scale Production",
+                  value:
+                    "Small-scale pilot production incubation in Erlenmeyer flask format across the double platform for process development and scale-up preparation."
+                }
+              ],
+
+              cta:
+                "Contact us to enquire about the HZQ-X300C Vertical Shaking Incubator."
+            },
+
+            faqs: {
+              overview: [
+                "These FAQs address the double platform configuration, vertical vs chest-type comparison, temperature range, flask capacity, power failure memory, door safety interlock, comparison with HZQ-X500C, smooth start/stop, test hole function, and continuous operation suitability."
+              ],
+
+              items: [
+                {
+                  question: "What is the advantage of the double platform configuration in the HZQ-X300C?",
+                  answer:
+                    "The double platform provides two independent 500 × 350 mm orbital shaking levels within the vertical cabinet — approximately doubling the flask capacity per unit of floor space compared to a single-platform vertical incubator. Both levels share the same temperature control environment, enabling simultaneous incubation of twice the flask count under identical temperature and shaking conditions with a single floor-standing unit."
+                },
+                {
+                  question: "How does the HZQ-X300C's vertical design compare to the chest-type HZQ-211C?",
+                  answer:
+                    "The HZQ-X300C's vertical floor-standing design provides double-platform capacity in a narrower floor footprint (725 × 720 mm vs 1060 × 680 mm for the chest-type HZQ-211C) — more space-efficient for laboratories where floor width is constrained. The HZQ-211C chest-type provides a single larger 750 × 460 mm platform with wider flask access from above, including 2000 mL flask support (not available on HZQ-X300C's 500 × 350 mm platforms). The HZQ-X500C's 750 × 460 mm double platforms match the HZQ-211C's single-platform width at double capacity."
+                },
+                {
+                  question: "What temperature range does the HZQ-X300C support?",
+                  answer:
+                    "4°C to 65°C — the same as the HZQ-X500C and the chest-type HZQ-211C. The 4°C minimum is achieved through the built-in compressor refrigeration system (at ambient temperature 20°C) — enabling cold-temperature microbial culture, 4°C inoculum storage, and psychrophilic organism incubation alongside standard 37°C cell culture and high-temperature 60–65°C thermophile incubation within the same double-platform unit."
+                },
+                {
+                  question: "What is the maximum flask size the HZQ-X300C supports?",
+                  answer:
+                    "1000 mL Erlenmeyer flasks — 6 per platform level. The HZQ-X300C does not support 2000 mL flasks on its 500 × 350 mm platforms (compared to the HZQ-X500C with 750 × 460 mm platforms that support 6 × 2000 mL per level). For 2000 mL flask incubation, the HZQ-X500C is the appropriate model."
+                },
+                {
+                  question: "How does the power failure memory work in the HZQ-X300C?",
+                  answer:
+                    "During a power interruption, all operating parameters (temperature setpoint, shaking speed, timer position, programme stage) are saved to non-volatile memory. When power is restored, the HZQ-X300C automatically resumes from the saved parameter state — maintaining the programmed temperature setpoint and shaking speed without requiring manual restart. This automatic recovery is essential for multi-day fermentation and cell culture runs where manual restart delays could compromise temperature-controlled incubation continuity."
+                },
+                {
+                  question: "What does the door safety switch do in the HZQ-X300C?",
+                  answer:
+                    "The door safety switch detects door opening and automatically pauses the orbital shaking mechanism — stopping both platform levels simultaneously when the door is opened. This prevents flask ejection, culture spillage, and contamination from shaking platform motion during sample access. The shaking resumes automatically when the door is closed, continuing from the programmed speed setpoint."
+                },
+                {
+                  question: "How does the HZQ-X300C compare to the HZQ-X500C?",
+                  answer:
+                    "The HZQ-X500C provides larger 750 × 460 mm double platforms (vs 500 × 350 mm), higher speed accuracy of ±1 rpm, 26mm amplitude (vs 20mm), support for 2000 mL flasks, three-eccentric axis drive for enhanced shaking stability, rated 2250W power, and a significantly larger exterior (1030 × 875 × 1370 mm vs 725 × 720 × 1150 mm). The HZQ-X300C is the compact double-platform choice for 50–1000 mL flask applications; the HZQ-X500C for maximum double-platform capacity including 2000 mL flask support."
+                },
+                {
+                  question: "What is the smooth start and stop function in the HZQ-X300C?",
+                  answer:
+                    "The smooth start gradually accelerates the orbital shaking mechanism from rest to the setpoint speed over a defined ramp period — preventing the flask motion and culture splashing that occurs with abrupt shaking startup from zero. Smooth stop decelerates gradually to rest. This protective function is particularly important at the beginning of incubation runs when flasks are newly loaded and at the end of runs when samples are at maximum biomass density."
+                },
+                {
+                  question: "Is the HZQ-X300C suitable for continuous multi-day fermentation runs?",
+                  answer:
+                    "Yes. The HZQ-X300C is designed for reliable long-duration continuous operation — with compressor, shaking mechanism, and electrical components specified for sustained multi-day shaking incubation. The power failure memory ensures automatic recovery from power interruptions without manual restart, and the alarm system provides unattended monitoring of temperature and operational deviations throughout extended fermentation runs."
+                },
+                {
+                  question: "What is the 25mm test hole used for in the HZQ-X300C?",
+                  answer:
+                    "The 25 mm test hole provides sealed probe access to the HZQ-X300C's interior without door opening — for inserting dissolved oxygen sensors, pH probes, temperature reference thermometers, CO₂ supply tubes, and data acquisition cables to monitor fermentation parameters in real time across both shaking platform levels during continuous operation."
+                }
+              ]
+            },
+
+            blog: {
+              heading:
+                "HZQ-X300C Vertical Shaking Incubator: Double Platform Floor-Standing Design for High-Throughput Cell Culture and Fermentation",
+
+              overview: [],
+
+              items: [
+                {
+                  title: "Double Platform: Twice the Flask Capacity in the Same Footprint",
+                  description:
+                    "The HZQ-X300C's defining operational advantage is the double-platform configuration — two independent 500 × 350 mm orbital shaking levels within a 725 × 720 mm floor footprint. For laboratories where floor space constrains the number of shaking incubators that can be installed, the double-platform design provides approximately double the simultaneous flask capacity per square metre of laboratory floor compared to a single-platform vertical shaking incubator."
+                },
+                {
+                  title: "Vertical vs Chest-Type: Choosing the Right Format for Your Lab",
+                  description:
+                    "The vertical floor-standing double-platform format of the HZQ-X300C offers space efficiency (narrower footprint) and front-access flask loading from both levels simultaneously. The chest-type HZQ-211C offers top access to a single large platform with 2000 mL flask support. For laboratories prioritising floor footprint efficiency and 50–1000 mL flask formats, the HZQ-X300C's vertical double-platform design is the practical choice."
+                },
+                {
+                  title: "Final Verdict on the HZQ-X300C",
+                  description:
+                    "The HZQ-X300C delivers double-platform 4°C to 65°C orbital shaking incubation with 40–300 rpm at 20mm amplitude, PID precision, stainless steel chamber, observation window, 25mm test hole, power failure memory, door safety interlock, and smooth start/stop in a compact 725 × 720 × 1150 mm vertical floor-standing format — the high-throughput cell culture and fermentation choice for laboratories requiring double-platform capacity within a space-efficient vertical incubator footprint."
+                }
+              ]
+            }
+          },
+
+          {
+            model: "HZQ-X500C Vertical Shaking Incubator",
+            title: "HZQ-X500C Vertical Shaking Incubator",
+
+            meta: {
+              slug: "hzq-x500c",
+              title:
+                "HZQ-X500C Vertical Shaking Incubator | Double Platform | 750×460mm | 300 rpm | 2250W | Being India",
+              description:
+                "HZQ-X500C: High-capacity double platform vertical shaking incubator with 4–65°C, 40–300 rpm ±1 rpm, 26mm amplitude, 750×460mm platforms, 3-eccentric drive, ±0.8°C uniformity & 2250W. For large fermentation, biotech & pharma. Enquire now.",
+              keywords:
+                "HZQ-X500C Vertical Shaking Incubator, high capacity double platform vertical shaking incubator 4–65°C, 750×460mm double platform shaking incubator 300 rpm, HZQ-X500C three eccentric axis drive shaking incubator, large floor standing vertical shaking incubator 2250W, HZQ-X500C high capacity double platform vertical shaking incubator 4°C to 65°C with 750×460mm platform and 26mm amplitude for large scale fermentation and industrial microbiology, large floor standing vertical shaking incubator with three-eccentric axis drive ±1 rpm accuracy and 2000ml flask support for biotechnology pharmaceutical and pilot production, 2250W double platform vertical shaker 40–300 rpm with ±0.8°C uniformity and power failure memory for large-scale incubation, high capacity double platform shaking incubator, three eccentric axis drive shaking incubator, large vertical shaker incubator floor standing, 750×460mm shaking platform incubator, industrial pilot scale shaking incubator, 2000ml flask shaking incubator double platform, what is the largest double platform vertical shaking incubator, how does three-eccentric axis drive improve shaking uniformity, which high capacity floor standing shaking incubator supports 2000ml flasks on double platforms, is HZQ-X500C suitable for industrial pilot scale fermentation, HZQ-X500C vs HZQ-X300C, HZQ-X500C vs HZQ-211C chest type, double platform large vs compact vertical shaking incubator, buy HZQ-X500C vertical shaking incubator, HZQ-X500C price, order large capacity double platform floor standing shaking incubator."
+            },
+
+            productTitle:
+              "HZQ-X500C Vertical Shaking Incubator — High-Capacity 750×460mm Double Platform with Three-Eccentric Axis Drive and ±0.8°C Uniformity for Large-Scale Fermentation and Biotech",
+
+            thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+            imgAltText:
+              "HZQ-X500C high-capacity double platform floor-standing vertical shaking incubator with 4–65°C refrigerated range, 40–300 rpm ±1 rpm accuracy, 26mm amplitude, 750×460mm double platforms supporting 2000mL flasks, three-eccentric axis drive, and ±0.8°C uniformity for large-scale fermentation, biotechnology, and pharmaceutical laboratory and pilot-scale production_Being India",
+
+            price: 909880,
+
+            gem: true,
+
+            // tags: ["new"],
+
+            related: ["hzq-x300c", "hzq-211c"],
+
+            overview: [
+              "The HZQ-X500C Large Capacity Vertical Shaking Incubator is the high-performance flagship of the HZQ-X Series — delivering the maximum double-platform shaking capacity in a vertical floor-standing format with 750 × 460 mm platforms (matched to the chest-type HZQ-211C's single platform) across two shelf levels at 2250W. The HZQ-X500C introduces three significant performance advances over the compact HZQ-X300C: a three-eccentric axis drive system for superior shaking uniformity across the wide platform, enhanced ±1 rpm speed accuracy, larger 26 mm amplitude matched to the wider platform format, and ±0.8°C temperature uniformity at 37°C with insulated chamber design for better thermal performance. With 40–300 rpm, 4°C to 65°C refrigerated control, PID microprocessor temperature and speed control, 56 × 250 mL flask standard configuration, 2000 mL flask support, door safety interlock, smooth start/stop, power failure memory, and 50 mm test hole — the HZQ-X500C serves large-scale fermentation, industrial microbiology, pharmaceutical production laboratories, and biotechnology pilot-scale applications. Enquire today."
+            ],
+
+            features: {
+              overview: [
+                "The HZQ-X500C delivers the highest capacity double-platform vertical shaking incubation — 750×460mm orbital platforms across two levels with three-eccentric axis drive, ±1 rpm speed accuracy, 26mm amplitude, ±0.8°C uniformity at 37°C, PID control, large observation windows, automatic fan adjustment, 50mm test hole, power memory, and door safety interlock for large-scale fermentation, industrial microbiology, pharmaceutical, and biotech pilot production."
+              ],
+
+              keyFeatures: [
+                {
+                  title: "Large LCD Controller with Real-Time Data Display",
+                  description:
+                    "The HZQ-X500C's large LCD controller provides clear real-time display of all operating parameters — temperature at 0.1°C resolution, speed at ±1 rpm accuracy, timer to 99 hours 59 minutes, and operational mode — across the largest double-platform configuration in the HZQ-X Series. The extended 99-hour 59-minute timer range of the HZQ-X500C (vs 5999-minute/99-hour range of the HZQ-X300C) supports multi-day large-scale fermentation runs without timer limit interruption."
+                },
+                {
+                  title: "Double Platform Configuration for Maximum Sample Capacity",
+                  description:
+                    "The HZQ-X500C's two 750 × 460 mm orbital shaking platforms — the same size as the chest-type HZQ-211C's single platform — provide double the HZQ-211C's single-platform capacity in a vertical cabinet format. Each 750 × 460 mm level supports: 82 × 50 mL, 50 × 100 mL, 28 × 250 mL, 23 × 500 mL, 12 × 1000 mL, or 6 × 2000 mL flasks — giving the double-platform HZQ-X500C a total capacity of 164 × 50 mL or 12 × 2000 mL flasks simultaneously across both levels."
+                },
+                {
+                  title: "Three-Eccentric Axis Drive System for Stable and Uniform Shaking",
+                  description:
+                    "The HZQ-X500C's three-eccentric axis drive system is the key shaking mechanism upgrade over the single-eccentric HZQ-X300C — providing more balanced orbital motion distribution across the larger 750 × 460 mm platform. The three-point drive eliminates the platform tilt and wobble that can occur in single-eccentric systems at the wider 750mm platform width and higher flask loads, maintaining consistent 26 mm orbital amplitude across all positions of the large platform from the centre to the periphery at all speed settings from 40 to 300 rpm."
+                },
+                {
+                  title: "±1 rpm Speed Accuracy for Reproducible Shaking",
+                  description:
+                    "The HZQ-X500C's ±1 rpm speed accuracy specification confirms the precision of the three-eccentric drive system and PID speed controller — ensuring that the shaking speed experienced by all flasks on both 750 × 460 mm platforms remains within 1 rpm of the setpoint throughout extended large-scale fermentation and cell culture runs. Precise speed control is directly linked to reproducible oxygen transfer rates — the key parameter for aerobic fermentation yield consistency across repeated large-scale runs."
+                },
+                {
+                  title: "±0.8°C Temperature Uniformity at 37°C",
+                  description:
+                    "The HZQ-X500C achieves ±0.8°C temperature uniformity at 37°C across both shaking platform levels — a tighter specification than the HZQ-X300C's uniformity level, achieved through the insulated chamber design and three automatic fan speed adjustments that optimise airflow distribution between the two 750 × 460 mm platform levels. This improved uniformity ensures that flasks at all positions across both levels of the large double-platform configuration experience comparable temperature conditions for reproducible fermentation and cell culture outcomes."
+                },
+                {
+                  title: "Large Tempered Glass Observation Windows",
+                  description:
+                    "The HZQ-X500C's large tempered glass observation windows provide clear visibility of both 750 × 460 mm platform levels simultaneously during operation — the observation window area scaled to the wider platform format to provide adequate visual coverage across the full platform width for monitoring of all flask positions, orbital motion uniformity, foam formation, and culture colour change across both levels during large-scale fermentation runs."
+                },
+                {
+                  title: "Automatic Fan Speed Adjustment",
+                  description:
+                    "The HZQ-X500C's three automatic fan speed adjustment settings (referenced in the specifications) optimise airflow based on chamber conditions across the larger insulated cabinet — providing active temperature distribution management between the two platform levels for the ±0.8°C uniformity specification. The adjustment is automatic and continuous, responding to temperature sensor feedback to maintain consistent thermal conditions throughout extended large-scale shaking incubation."
+                },
+                {
+                  title: "50mm Test Hole for External Sensors",
+                  description:
+                    "The HZQ-X500C's 50 mm test hole — larger than the HZQ-X300C's 25 mm — accommodates larger-diameter fermentation monitoring probes, multi-sensor assemblies, and larger-bore gas supply connections appropriate for the pilot-scale applications and industrial process monitoring requirements of the larger HZQ-X500C format."
+                }
+              ],
+
+              safetyFeatures: {
+                overview: [
+                  "The HZQ-X500C incorporates seven independent safety systems — door safety interlock with auto-pause, over-temperature protection, over-current and overload protection, audio and visual alarm, self-diagnostic fault display, smooth start/stop, and safe insulated chamber design — providing comprehensive safety for large-scale fermentation, pharmaceutical production, and industrial microbiology continuous shaking incubation."
+                ],
+
+                items: [
+                  {
+                    title: "Door Safety Interlock with Auto Pause",
+                    description:
+                      "The HZQ-X500C's door safety interlock immediately pauses both 750 × 460 mm orbital shaking platform levels when the cabinet door is opened — preventing flask ejection and culture contamination across the maximum-capacity double-platform loading. At 2000 mL flask capacity, uncontrolled orbital motion during door opening would represent a significant contamination and spill risk — the automatic door interlock pause is the essential safety mechanism for safe large-scale flask access."
+                  },
+                  {
+                    title: "Over-Temperature Protection",
+                    description:
+                      "Over-temperature protection monitors the insulated chamber and activates heating cutoff if temperature exceeds the safe limit — protecting the high-value large-scale fermentation and pharmaceutical cultures across both 750 × 460 mm platform levels from simultaneous thermal damage during extended unattended multi-day runs."
+                  },
+                  {
+                    title: "Over-Current and Overload Protection",
+                    description:
+                      "The HZQ-X500C's 2250W system incorporates over-current and overload protection for the three-eccentric drive motor, refrigeration compressor, and heating system — protecting against electrical overload conditions during the sustained high-power continuous operation characteristic of large-scale industrial fermentation and pharmaceutical production shaking incubation."
+                  },
+                  {
+                    title: "Audio and Visual Alarm System",
+                    description:
+                      "Audible and visual alarms provide notification of temperature deviations, speed anomalies, and system faults across the large-scale double-platform incubation — ensuring safety-relevant conditions are communicated during unattended extended fermentation runs where manual monitoring is impractical."
+                  },
+                  {
+                    title: "Self-Diagnostic Fault Display",
+                    description:
+                      "The self-diagnostic system identifies and displays fault conditions for the HZQ-X500C's complex three-eccentric drive, refrigeration, temperature control, and electrical systems — enabling rapid fault identification to minimise interruption to large-scale fermentation campaigns where incubator downtime has significant production consequences."
+                  },
+                  {
+                    title: "Smooth Start and Stop to Prevent Spillage",
+                    description:
+                      "The smooth start/stop system is particularly important at the HZQ-X500C's maximum 2000 mL flask capacity — where abrupt orbital motion initiation or cessation would generate significant flask motion and potential culture spillage across the fully loaded double-platform configuration."
+                  },
+                  {
+                    title: "Safe Insulated Chamber Design",
+                    description:
+                      "The HZQ-X500C's insulated chamber design maintains external surface temperatures within safe limits during operation across the full 4°C to 65°C range — protecting operators from cold surface contact at 4°C operation and from warm surface contact at 65°C thermophile incubation during routine flask loading and monitoring access."
+                  }
+                ]
+              }
+            },
+
+            specifications: {
+              overview: [
+                "The HZQ-X500C is the high-performance flagship of the HZQ-X Series — providing double 750×460mm platforms with three-eccentric axis drive, ±1 rpm accuracy, 26mm amplitude, ±0.8°C uniformity at 37°C, 4–65°C refrigerated control, and 2250W for large-scale fermentation, industrial microbiology, pharmaceutical production, and biotechnology pilot-scale incubation. Full specifications listed below."
+              ],
+
+              items: [
+                {
+                  label: "Electrical Requirement",
+                  value: "AC 220 V, 50 Hz"
+                },
+                {
+                  label: "Speed Range",
+                  value: "40 to 300 rpm"
+                },
+                {
+                  label: "Speed Accuracy",
+                  value: "±1 rpm"
+                },
+                {
+                  label: "Amplitude",
+                  value: "26 mm"
+                },
+                {
+                  label: "Temperature Range",
+                  value: "4°C to 65°C (ambient 20°C)"
+                },
+                {
+                  label: "Temperature Resolution",
+                  value: "0.1°C"
+                },
+                {
+                  label: "Temperature Uniformity",
+                  value: "±0.8°C (at 37°C)"
+                },
+                {
+                  label: "Timer Range",
+                  value: "0 to 99 hours 59 minutes"
+                },
+                {
+                  label: "Platform Size",
+                  value: "750 × 460 mm (double shelves)"
+                },
+                {
+                  label: "Exterior Dimensions (W×D×H)",
+                  value: "1030 × 875 × 1370 mm"
+                },
+                {
+                  label: "Rated Power",
+                  value: "2250 W"
+                },
+                {
+                  label: "Standard Configuration",
+                  value: "250 mL × 56 flasks"
+                },
+                {
+                  label: "Flask Capacity — 50 mL",
+                  value: "82 pcs per level"
+                },
+                {
+                  label: "Flask Capacity — 100 mL",
+                  value: "50 pcs per level"
+                },
+                {
+                  label: "Flask Capacity — 250 mL",
+                  value: "28 pcs per level"
+                },
+                {
+                  label: "Flask Capacity — 500 mL",
+                  value: "23 pcs per level"
+                },
+                {
+                  label: "Flask Capacity — 1000 mL",
+                  value: "12 pcs per level"
+                },
+                {
+                  label: "Flask Capacity — 2000 mL",
+                  value: "6 pcs per level"
+                }
+              ]
+            },
+
+            applications: {
+              overview: [
+                "The HZQ-X500C Large Capacity Vertical Shaking Incubator delivers the maximum double-platform shaking incubation capacity — 750×460mm orbital platforms across two levels with three-eccentric axis drive and ±0.8°C uniformity — for large-scale fermentation, industrial microbiology, pharmaceutical production laboratory support, biotechnology research, and pilot-scale production incubation requiring the highest single-unit flask throughput."
+              ],
+
+              items: [
+                {
+                  label: "Large-Scale Fermentation",
+                  value:
+                    "Double 750×460mm platform simultaneous fermentation of up to 12 × 2000 mL flasks for large-scale process development, enzyme production, and industrial strain characterisation."
+                },
+                {
+                  label: "Industrial Microbiology",
+                  value:
+                    "High-throughput industrial microbiology screening and production incubation across both platform levels for maximum flask density in a single floor-standing vertical unit."
+                },
+                {
+                  label: "Pharmaceutical Production Labs",
+                  value:
+                    "Pharmaceutical production support incubation for biological assay preparation, microbial seed culture production, and large-scale pharmaceutical fermentation development requiring the double-platform 750×460mm capacity."
+                },
+                {
+                  label: "Biotechnology Research",
+                  value:
+                    "Large-scale recombinant protein expression, viral vector seed culture, hybridoma expansion, and advanced biotechnology research requiring the maximum simultaneous flask capacity of the HZQ-X500C double platform."
+                },
+                {
+                  label: "Pilot and Production-Scale Incubation",
+                  value:
+                    "Pilot-scale production incubation in Erlenmeyer flask format across both 750×460mm levels for process optimisation before bioreactor scale-up in pharmaceutical and biotechnology production development."
+                }
+              ],
+
+              cta:
+                "The HZQ-X500C Vertical Shaking Incubator delivers maximum double-platform large-scale shaking incubation for your fermentation, biotechnology, and pharmaceutical production laboratory requirements. Contact us for pricing."
+            },
+
+            faqs: {
+              overview: [
+                "These FAQs address the three-eccentric axis drive advantage, 750×460mm platform flask capacity, ±0.8°C uniformity achievement, comparison with HZQ-X300C and HZQ-211C, 50mm test hole, 2000mL flask support, power requirements, timer range, safety features, and pilot production suitability."
+              ],
+
+              items: [
+                {
+                  question: "What is the three-eccentric axis drive system in the HZQ-X500C?",
+                  answer:
+                    "The three-eccentric axis drive uses three eccentric drive points distributed across the 750 × 460 mm platform — compared to a single-point eccentric drive in simpler designs. The three-point distribution provides more balanced orbital motion across the wide platform, preventing platform tilt and wobble that can occur in single-eccentric systems at high flask loads across a 750mm wide platform. The result is consistent 26mm orbital amplitude from the platform centre to the periphery at all speed and load conditions."
+                },
+                {
+                  question: "What is the total flask capacity of the HZQ-X500C's double platform?",
+                  answer:
+                    "Each 750 × 460 mm level supports: 82 × 50 mL, 50 × 100 mL, 28 × 250 mL, 23 × 500 mL, 12 × 1000 mL, or 6 × 2000 mL flasks. For the double platform, total capacity is twice these numbers: 164 × 50 mL, 56 × 250 mL (standard configuration), or 12 × 2000 mL flasks simultaneously across both platform levels."
+                },
+                {
+                  question: "How does the HZQ-X500C achieve ±0.8°C temperature uniformity across both platform levels?",
+                  answer:
+                    "±0.8°C uniformity across both 750 × 460 mm platform levels is achieved through the combination of PID temperature control, insulated chamber design reducing heat loss, and three automatic fan speed adjustments optimising airflow distribution between the two levels. The insulated chamber design is particularly important for the 4°C low-temperature performance — minimising the thermal gradient between the refrigerated chamber interior and the ambient environment."
+                },
+                {
+                  question: "How does the HZQ-X500C compare to the HZQ-X300C?",
+                  answer:
+                    "The HZQ-X500C provides larger 750 × 460 mm platforms per level (vs 500 × 350 mm), higher power at 2250W (vs 1100W), three-eccentric axis drive (vs standard), ±1 rpm speed accuracy (vs unspecified), 26mm amplitude (vs 20mm), ±0.8°C uniformity (vs unspecified), 2000 mL flask support (not available on HZQ-X300C), 50mm test hole (vs 25mm), and extended 99-hour timer (vs 5999-minute). Choose the HZQ-X300C for compact double-platform applications with 50–1000 mL flasks; the HZQ-X500C for maximum capacity including 2000 mL flasks."
+                },
+                {
+                  question: "How does the HZQ-X500C compare to the chest-type HZQ-211C?",
+                  answer:
+                    "Both have 750 × 460 mm platforms and support identical flask configurations per level. The HZQ-X500C's double platform provides double the total flask capacity in a vertical format (floor footprint 1030 × 875 mm vs 1060 × 680 mm chest-type). The HZQ-211C chest-type provides easier top-access flask loading and pneumatic gas spring lid safety; the HZQ-X500C provides front-access two-level loading and larger total capacity in a slightly wider floor footprint. Choose based on access preference and whether double-platform capacity justifies the larger HZQ-X500C footprint."
+                },
+                {
+                  question: "Is the HZQ-X500C suitable for pilot-scale pharmaceutical production?",
+                  answer:
+                    "Yes. The HZQ-X500C's large-scale double-platform capacity (12 × 2000 mL per level, 24 × 2000 mL total), ±1 rpm speed accuracy, ±0.8°C uniformity, power failure memory for continuous unattended operation, and seven-system safety architecture make it appropriate for pharmaceutical pilot-scale production incubation in Erlenmeyer flask format — including microbial seed culture production, biological assay preparation, and fermentation process development at pre-bioreactor pilot scale."
+                },
+                {
+                  question: "What power supply does the HZQ-X500C require?",
+                  answer:
+                    "The HZQ-X500C requires AC 220V, 50Hz at 2250W rated power. A dedicated circuit rated for continuous 2250W load is required for extended large-scale fermentation and pharmaceutical production incubation runs. Confirm circuit capacity with your facility's electrical engineer, particularly in industrial laboratory environments where multiple high-power instruments share supply infrastructure."
+                },
+                {
+                  question: "What is the timer range of the HZQ-X500C?",
+                  answer:
+                    "0 to 99 hours 59 minutes — approximately 4 days in a single timer setting. This extended range supports multi-day large-scale fermentation runs without requiring timer reset interruption, and covers the typical duration of pilot-scale pharmaceutical and biotechnology fermentation protocols in Erlenmeyer flask format."
+                },
+                {
+                  question: "Does the HZQ-X500C have over-current and overload protection?",
+                  answer:
+                    "Yes — the HZQ-X500C specifically incorporates over-current and overload protection for its 2250W three-eccentric drive and refrigeration systems. This provides electrical safety appropriate for the sustained high-power continuous industrial and pharmaceutical production operation that defines the HZQ-X500C's application context."
+                },
+                {
+                  question: "What are the installation requirements for the HZQ-X500C?",
+                  answer:
+                    "1030 × 875 × 1370 mm exterior — a large floor-standing unit requiring approximately 1.5 m² of dedicated floor space with minimum 300mm clearance on all sides for ventilation and access. The 1370mm exterior height requires minimum 1500mm ceiling clearance above the installation point. A dedicated 2250W AC 220V circuit is required. At rated power and weight, confirm floor loading capacity with your facility's structural engineer before installation."
+                }
+              ]
+            },
+
+            blog: {
+              heading:
+                "HZQ-X500C Vertical Shaking Incubator: Maximum Double-Platform Large-Scale Shaking Incubation for Industrial Fermentation and Biotechnology",
+
+              overview: [],
+
+              items: [
+                {
+                  title: "Three-Eccentric Axis Drive: Why It Matters at 750×460mm Scale",
+                  description:
+                    "At 750 × 460 mm platform width with 2000 mL flasks at high loading density, maintaining consistent orbital motion quality across the full platform is the primary shaking mechanism engineering challenge. A single eccentric drive point creates uneven stress distribution across the wide platform — leading to tilt, wobble, and inconsistent orbital amplitude between the platform centre and periphery at high flask loads. The HZQ-X500C's three-eccentric axis drive distributes the orbital drive force across three balanced points — eliminating platform instability and delivering consistent 26 mm amplitude across all flask positions for reproducible oxygen transfer rates and mixing quality."
+                },
+                {
+                  title: "Double 750×460mm Platforms: The Highest Single-Unit Flask Capacity Available",
+                  description:
+                    "The HZQ-X500C's double 750 × 460 mm platforms provide the highest single-unit Erlenmeyer flask capacity in the Being Instruments shaking incubator range — 12 × 2000 mL per level (24 total), 56 × 250 mL standard configuration (28 per level), or 164 × 50 mL simultaneously. For large pharmaceutical fermentation, industrial biotechnology, and pilot-scale production operations, the HZQ-X500C's capacity eliminates the throughput limitation that forces laboratories to operate multiple smaller shaking incubators with between-unit variability."
+                },
+                {
+                  title: "±0.8°C Uniformity Across Two Levels: Why Insulated Design and Three Fan Speeds Deliver What Single-Fan Systems Cannot",
+                  description:
+                    "Temperature uniformity across two 750 × 460 mm shaking platform levels is inherently more challenging than within a single level — the upper level is closer to the refrigeration evaporator while the lower level is closer to floor-level ambient thermal influences. The HZQ-X500C's insulated chamber design reduces external thermal gradients, and the three automatic fan speed settings optimise air distribution between levels — achieving ±0.8°C uniformity that ensures consistent culture conditions across both levels for reproducible large-scale shaking incubation outcomes."
+                },
+                {
+                  title: "Final Verdict on the HZQ-X500C",
+                  description:
+                    "The HZQ-X500C delivers the maximum double-platform large-scale vertical shaking incubation — 750 × 460 mm platforms per level, three-eccentric axis drive, ±1 rpm speed accuracy, 26 mm amplitude, ±0.8°C uniformity, 2000 mL flask support, power failure memory, seven-system safety, and 2250W at 4°C to 65°C refrigerated temperature control. The flagship large-capacity floor-standing vertical shaking incubator for industrial fermentation, pharmaceutical production support, biotechnology pilot-scale, and maximum-throughput research incubation."
+                }
+              ]
+            }
+          },
+        ]
+      },
+
+      {
         name: "Heating Incubators",
         slug: "heating-incubators",
         models: [
@@ -7549,6 +8203,1392 @@ export async function GET() {
                   title: "Final Verdict on the BPH-9402",
                   description:
                     "The BPH-9402 delivers the highest capacity in the BPH Series — 1000 × 510 × 800 mm of ±0.2°C precise stainless steel incubation at 1200W, with auto airflow, RS485, programmable control, self-check diagnostics, and independent safety — the production-scale BPH Series heating incubator for pharmaceutical production support, industrial quality control, and large-scale advanced research laboratory incubation."
+                }
+              ]
+            }
+          },
+        ]
+      },
+
+
+      {
+        name: "Stackable Incubated Refrigerated Shaker with CO₂",
+        slug: "stackable-incubated-refrigerated-shaker-with-co2",
+        models: [
+          {
+            model: "BSIC-103 Stackable CO₂ Incubated Refrigerated Shaker",
+            title: "BSIC-103 Stackable CO₂ Incubated Refrigerated Shaker",
+
+            meta: {
+              slug: "bsic-103",
+              title:
+                "BSIC-103 CO₂ Incubated Refrigerated Shaker | 4–65°C | ±0.1% CO₂ | Triple Drive | Being India",
+              description:
+                "BSIC-103: Stackable CO₂ incubated refrigerated orbital shaker with 4–65°C, 40–300 rpm, ±0.4°C uniformity, ±0.1% CO₂ accuracy, IR sensor, 7-inch touch screen, triple eccentric drive, UV + 90°C sterilization & 1200W. For cell culture & biotech. Enquire.",
+              keywords:
+                "BSIC-103 CO₂ Incubated Refrigerated Shaker, stackable CO₂ shaker incubator 4–65°C, CO₂ incubated refrigerated orbital shaker, BSIC-103 7-inch touch screen IR CO₂ sensor shaker, 500×460mm CO₂ shaking incubator, BSIC-103 stackable CO₂ incubated refrigerated shaker with 7-inch touch screen infrared CO₂ sensor and triple eccentric drive for cell culture and fermentation, CO₂ shaking incubator 4 to 65°C with UV and 90°C moist heat sterilization and ±0.1% CO₂ accuracy for pharmaceutical and life science labs, CO₂ orbital shaker incubator, stackable CO₂ shaker, infrared CO₂ sensor shaker, 7-inch touch screen incubator shaker, triple eccentric drive shaker, UV moist heat sterilization shaker, refrigerated CO₂ shaker, cell culture CO₂ shaking incubator, what is a CO₂ incubated refrigerated shaker and how does it differ from a standard CO₂ incubator, how does infrared CO₂ sensing improve accuracy in a shaking incubator, which stackable CO₂ shaker has UV and moist heat sterilization, is the BSIC-103 suitable for mammalian cell culture with CO₂ control, BSIC-103 vs BSIC-113, CO₂ shaker vs standard CO₂ incubator, BSIC-103 vs floor standing shaking incubator without CO₂, buy BSIC-103 CO₂ incubated refrigerated shaker, BSIC-103 price, order stackable CO₂ orbital shaking incubator."
+            },
+
+            productTitle:
+              "BSIC-103 Stackable CO₂ Incubated Refrigerated Shaker — Combined CO₂, Temperature, Humidity and Orbital Shaking Control with 7-Inch Touch Screen and IR Sensor",
+
+            thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+            imgAltText:
+              "BSIC-103 stackable CO₂ incubated refrigerated orbital shaker with 4–65°C temperature range, 40–300 rpm, ±0.1% CO₂ accuracy, infrared CO₂ sensor, 7-inch touch screen, triple eccentric drive, 500×460mm platform, UV and 90°C moist heat sterilization for CO₂ cell culture and biotechnology research applications_Being India",
+
+            price: 9543160,
+
+            gem: false,
+
+            // tags: ["new"],
+
+            related: ["bsic-113"],
+
+            overview: [
+              "The BSIC-103 Stackable CO₂ Incubated Refrigerated Shaker is a uniquely integrated laboratory instrument — combining the precise CO₂ atmosphere control of a CO₂ incubator with the orbital shaking capability of a temperature-controlled shaking incubator in a single stackable unit, enabling advanced cell culture and microbiological research under simultaneous CO₂, temperature, humidity, and shaking control. With a 7-inch touch screen controller, infrared CO₂ sensor providing ±0.1% CO₂ accuracy and ±0.1% stability at 5% CO₂, 4°C to 65°C temperature range, ±0.4°C uniformity at 37°C, 40–300 rpm orbital shaking range, 26 mm orbital diameter, triple eccentric drive for uniform motion, 500 × 460 mm platform (supporting 27 × 250 mL flasks), UV sterilization combined with 90°C moist heat sterilization, 50–95% RH humidity control, stackable design for space efficiency, and a comprehensive seven-system safety architecture — the BSIC-103 is the advanced cell culture and fermentation instrument for pharmaceutical, life science, and biotechnology laboratories requiring the combined CO₂ incubation and orbital shaking capabilities that separate instruments cannot simultaneously provide. Enquire about the BSIC-103 today."
+            ],
+
+            features: {
+              overview: [
+                "The BSIC-103 integrates CO₂ incubation and orbital shaking in a single stackable unit — with 7-inch touch screen control, infrared CO₂ sensor (±0.1%), triple eccentric orbital drive, 4–65°C refrigerated range, ±0.4°C uniformity, 40–300 rpm speed range, UV and 90°C moist heat dual sterilization, humidity control (50–95% RH), and 10 kg platform load — providing advanced cell culture, biotechnology, fermentation, and life science research capabilities under simultaneous environmental control."
+              ],
+
+              keyFeatures: [
+                {
+                  title: "7-Inch Touch Screen Controller for Easy Operation and Real-Time Monitoring",
+                  description:
+                    "The BSIC-103's 7-inch colour touch screen provides an intuitive, visually comprehensive control interface for all simultaneously controlled parameters — temperature, CO₂ concentration, humidity, shaking speed, timer, and sterilization cycle management — from a single integrated display panel. The large touch screen enables clear real-time parameter display with graphical trend monitoring, alarm status indicators, and multi-step programme configuration for complex cell culture protocols requiring defined environmental transitions. The colour touch interface eliminates the confusion of multi-knob and multi-button parameter entry across simultaneous control systems, providing single-screen access to all BSIC-103 operating parameters throughout cell culture and fermentation runs."
+                },
+                {
+                  title: "Stackable Design for Space Optimisation and Higher Throughput",
+                  description:
+                    "The BSIC-103's stackable architecture allows two or more units to be vertically stacked — multiplying available CO₂ shaking incubation capacity within the same laboratory floor footprint. For pharmaceutical cell culture and biotechnology research laboratories where floor space is at a premium but research throughput requirements demand multiple simultaneously operating CO₂ shaking environments, the BSIC-103's stacking capability enables efficient capacity expansion without proportional floor space commitment. Each stacked unit operates independently with its own CO₂, temperature, humidity, and shaking setpoints — enabling simultaneous multi-condition cell culture experiments across stacked units within a shared footprint."
+                },
+                {
+                  title: "Infrared CO₂ Sensor for Fast and Accurate Gas Monitoring",
+                  description:
+                    "The BSIC-103's non-dispersive infrared (NDIR) CO₂ sensor provides ±0.1% CO₂ accuracy and ±0.1% CO₂ stability at 5% CO₂ — performance substantially superior to older thermal conductivity (TC) CO₂ sensing technology. The infrared sensor directly and specifically measures CO₂ molecular absorption in the infrared spectrum — unaffected by humidity changes, temperature fluctuations, and other gas components that compromise TC sensor accuracy. The CO₂ recovery time of ≤3 minutes after 30 seconds door opening confirms the sensor's rapid response — re-establishing the CO₂ setpoint within 3 minutes of the access event that disturbed the atmosphere."
+                },
+                {
+                  title: "Triple Eccentric Drive System for Stable and Uniform Shaking",
+                  description:
+                    "The BSIC-103's triple eccentric axis drive system distributes the orbital drive force across three balanced eccentric points across the 500 × 460 mm platform — providing superior shaking uniformity compared to single-eccentric designs. Three-point drive prevents platform tilt and wobble under the 10 kg maximum permissible load, maintains consistent 26 mm orbital amplitude from the platform centre to the periphery at all speed settings from 40 to 300 rpm, and eliminates the differential oxygen transfer rates between central and peripheral flasks that compromise reproducibility in single-eccentric large-platform shaking incubators."
+                },
+                {
+                  title: "Integrated Refrigeration System for Low-Temperature Applications",
+                  description:
+                    "The BSIC-103's built-in refrigeration system enables incubation below ambient temperature — achieving the 4°C minimum for cold-temperature cell culture studies, psychrophilic organism cultivation, cold-temperature enzyme characterisation, and inoculum culture cold storage. The combination of refrigeration and heating within the CO₂-controlled shaking environment enables the full 4°C to 65°C range under simultaneous CO₂, humidity, and shaking control — a capability set that would require multiple separate instruments to replicate without the BSIC-103's integrated design."
+                },
+                {
+                  title: "Dual Sterilization: UV and 90°C Moist Heat",
+                  description:
+                    "The BSIC-103 provides two independent sterilization modes — UV-C light for rapid surface decontamination before and between cell culture runs, and 90°C moist heat sterilization for more thorough chamber sterilization of all internal surfaces. The dual sterilization capability supports the strict contamination control requirements of CO₂ cell culture work, where mycoplasma and airborne contaminant elimination from the shaking incubator interior is essential for maintaining culture integrity across extended multi-week experiments and between different cell line applications."
+                },
+                {
+                  title: "Humidity Control System for Stable Culture Conditions",
+                  description:
+                    "The BSIC-103's humidity control system maintains 50–95% RH within the CO₂ shaking chamber — with 85% ±5% accuracy at 37°C. Controlled humidity in a CO₂ shaker is essential for preventing excessive media evaporation from shaken flask cultures during the extended incubation periods of mammalian cell culture and fermentation — evaporation that would concentrate solutes, alter osmolality, reduce culture volume, and potentially change the pH of bicarbonate-buffered media. The humidity control system maintains culture conditions stable throughout multi-day shaking runs without the media volume management that would be required in uncontrolled-humidity shaking environments."
+                },
+                {
+                  title: "Large Observation Window and External Handle Design",
+                  description:
+                    "The BSIC-103's large observation window provides visual access to the shaking platform and flask cultures during operation — enabling monitoring of orbital motion quality, culture turbidity, and foam formation without opening the door and disrupting CO₂ atmosphere recovery. The external handle design facilitates safe, convenient door operation during flask loading and unloading in the CO₂ shaking environment where door opening duration should be minimised to reduce CO₂ and humidity recovery time."
+                }
+              ],
+
+              safetyFeatures: {
+                overview: [
+                  "The BSIC-103 incorporates seven independent safety systems — door safety switch with auto-stop, independent temperature limiting alarm, over-temperature protection, over-current and overload protection, audio and visual alarms, stable airflow to prevent sample evaporation, and reliable long-duration operation design — providing comprehensive safe continuous CO₂ cell culture and fermentation shaking incubation."
+                ],
+
+                items: [
+                  {
+                    title: "Door Safety Switch with Automatic Stop When Opened",
+                    description:
+                      "The BSIC-103's door safety switch automatically stops the 40–300 rpm orbital shaking when the chamber door is opened — preventing flask ejection, culture spillage, and media splash contamination of the CO₂ chamber interior during sample access. Automatic shaking stop is the critical safety feature for a CO₂ shaking incubator where the platform carries flask loads of up to 10 kg at speeds that would cause immediate flask ejection and contamination if the shaking continued during door opening."
+                  },
+                  {
+                    title: "Independent Temperature Limiting Alarm System",
+                    description:
+                      "The independent temperature limiter operates as a completely separate hardware circuit from the primary 7-inch touch screen controller — providing backup thermal protection against controller malfunction during extended multi-day mammalian cell culture and fermentation runs in the BSIC-103's CO₂ controlled environment. For cell culture work with valuable, irreplaceable cell lines, the independent temperature limiter is the critical safety backstop that prevents a primary controller fault from destroying entire culture collections during unattended overnight incubation."
+                  },
+                  {
+                    title: "Over-Temperature Protection",
+                    description:
+                      "Over-temperature protection monitors chamber temperature and activates protective heating cutoff if temperature exceeds the safe limit — protecting cell cultures, microbial fermentation batches, and biological research materials from simultaneous thermal damage across all flask positions on the 500 × 460 mm shaking platform during extended CO₂ shaking incubation."
+                  },
+                  {
+                    title: "Over-Current and Overload Protection",
+                    description:
+                      "The BSIC-103's 1200W system incorporates over-current and overload protection for the triple eccentric drive motor, refrigeration compressor, heating system, and CO₂ control electronics — preventing electrical damage during the sustained continuous duty of multi-day cell culture and fermentation CO₂ shaking incubation operations."
+                  },
+                  {
+                    title: "Alarm System with Audio and Visual Alerts",
+                    description:
+                      "Dual-mode alarms activate for CO₂ level deviations, temperature excursions, humidity anomalies, and system faults — ensuring that any abnormal condition affecting the controlled CO₂ shaking environment is communicated to operators during extended unattended cell culture and fermentation runs."
+                  },
+                  {
+                    title: "Stable Airflow System to Prevent Sample Evaporation",
+                    description:
+                      "The BSIC-103's controlled airflow system maintains the humidity environment required to minimise media evaporation from shaken flask cultures — the critical practical difference between a CO₂ shaking incubator and a standard shaking incubator for mammalian cell culture where media evaporation directly affects culture osmolality, pH stability, and long-term viability."
+                  },
+                  {
+                    title: "Reliable Operation for Long-Duration Experiments",
+                    description:
+                      "All BSIC-103 components — triple eccentric drive, refrigeration system, CO₂ control hardware, heating elements, and IR sensor — are specified for reliable continuous operation throughout multi-day and multi-week cell culture and fermentation campaigns typical of advanced biological research requiring the simultaneous CO₂, temperature, humidity, and shaking control the BSIC-103 provides."
+                  }
+                ]
+              }
+            },
+
+            specifications: {
+              overview: [
+                "The BSIC-103 provides stackable CO₂ incubated refrigerated orbital shaking with 4–65°C temperature range, ±0.4°C uniformity, 40–300 rpm speed, ±0.1% CO₂ accuracy, 50–95% RH humidity, 500×460mm platform, triple eccentric drive, dual sterilization, and 1200W — the compact stackable CO₂ shaking incubator for advanced cell culture, fermentation, and life science research. Full specifications listed below."
+              ],
+
+              items: [
+                {
+                  label: "Display",
+                  value: "7-inch Touch Screen"
+                },
+                {
+                  label: "Temperature Range",
+                  value: "4°C to 65°C"
+                },
+                {
+                  label: "Temperature Uniformity",
+                  value: "±0.4°C (at 37°C, ambient 25°C)"
+                },
+                {
+                  label: "Temperature Resolution",
+                  value: "0.1°C"
+                },
+                {
+                  label: "Shaking Type",
+                  value: "Orbital"
+                },
+                {
+                  label: "Orbital Diameter",
+                  value: "26 mm"
+                },
+                {
+                  label: "Speed Range",
+                  value: "40 to 300 rpm"
+                },
+                {
+                  label: "Timer Range",
+                  value: "0 to 599 minutes"
+                },
+                {
+                  label: "Platform Size",
+                  value: "500 × 460 mm"
+                },
+                {
+                  label: "Permissible Shaking Load",
+                  value: "10 kg"
+                },
+                {
+                  label: "Exterior Dimensions (W×D×H)",
+                  value: "1000 × 670 × 920 mm"
+                },
+                {
+                  label: "CO₂ Control Range",
+                  value: "0 to 20%"
+                },
+                {
+                  label: "CO₂ Control Accuracy",
+                  value: "±0.1%"
+                },
+                {
+                  label: "CO₂ Stability",
+                  value: "±0.1% (at 5% CO₂)"
+                },
+                {
+                  label: "CO₂ Sensor",
+                  value: "Infrared (NDIR)"
+                },
+                {
+                  label: "CO₂ Recovery Time",
+                  value: "≤3 min (door open 30 sec)"
+                },
+                {
+                  label: "Humidity Control Range",
+                  value: "50% to 95% RH"
+                },
+                {
+                  label: "Humidity Accuracy",
+                  value: "85% ±5% (at 37°C)"
+                },
+                {
+                  label: "Sterilization",
+                  value: "UV + 90°C Moist Heat"
+                },
+                {
+                  label: "Power Consumption",
+                  value: "1200 W"
+                },
+                {
+                  label: "Voltage",
+                  value: "AC 220 V, 50 Hz"
+                },
+                {
+                  label: "Flask Capacity — 250 mL",
+                  value: "27 pcs"
+                },
+                {
+                  label: "Flask Capacity — 500 mL",
+                  value: "16 pcs"
+                },
+                {
+                  label: "Flask Capacity — 1000 mL",
+                  value: "9 pcs"
+                },
+                {
+                  label: "Flask Capacity — 2000 mL",
+                  value: "5 pcs"
+                }
+              ]
+            },
+
+            applications: {
+              overview: [
+                "The BSIC-103 supports advanced cell culture, microbiology, biotechnology, pharmaceutical, and fermentation applications requiring simultaneous precise CO₂ atmosphere, temperature, humidity, and orbital shaking control — the combination that distinguishes CO₂ shaking incubation from standard shaking incubation for sensitive biological research."
+              ],
+
+              items: [
+                {
+                  label: "CO₂ Cell Culture",
+                  value:
+                    "The BSIC-103 provides the integrated CO₂ atmosphere, temperature, humidity, and orbital shaking environment required for suspension mammalian cell culture — combining the 5% CO₂/95% air bicarbonate buffering system of a CO₂ incubator with the oxygen transfer and mixing of orbital shaking at 40–300 rpm. This enables high-density suspension culture of CHO cells, HEK 293 cells, hybridomas, and other mammalian cell lines in spinner flasks and Erlenmeyer flasks under simultaneous CO₂ atmosphere control — a culture format not possible in standard shaking incubators without CO₂ control or in standard CO₂ incubators without shaking capability."
+                },
+                {
+                  label: "Microbiology and Biotechnology Research",
+                  value:
+                    "Microbiology and biotechnology research laboratories use the BSIC-103 for CO₂-dependent microorganism culture — including capnophilic bacteria requiring elevated CO₂ for growth, CO₂-enriched aerobic fermentation studies, and mixed culture microbiome research under controlled CO₂ atmosphere. The 4°C minimum temperature enables cold-temperature CO₂-controlled incubation for psychrophilic capnophile research, and the 40–300 rpm range accommodates gentle microorganism culture through high-speed aerobic fermentation within the same CO₂-controlled shaking environment."
+                },
+                {
+                  label: "Pharmaceutical and Life Science Labs",
+                  value:
+                    "Pharmaceutical cell biology and life science research laboratories use the BSIC-103 for drug screening assays in suspension cell culture format under defined CO₂ atmosphere, biological assay development requiring CO₂-controlled shaking incubation, viral vector production in suspension cell culture, and pharmaceutical biological research requiring the combined environmental control of the BSIC-103's simultaneous CO₂, temperature, humidity, and shaking capability for reproducible cell culture-based assay results."
+                },
+                {
+                  label: "Fermentation Studies",
+                  value:
+                    "Fermentation research using CO₂-sensitive culture systems — including yeast fermentation studies where CO₂ production monitoring is integral to process characterisation, fermentation parameter optimisation studies requiring defined CO₂ atmosphere as an independent variable, and CO₂-enhanced fermentation systems for secondary metabolite production — uses the BSIC-103's ±0.1% CO₂ accuracy and simultaneous orbital shaking for precise fermentation parameter control within the controlled CO₂ atmosphere."
+                },
+                {
+                  label: "Dynamic Microbial Cultivation",
+                  value:
+                    "Advanced microbiology research using dynamic culture conditions — including multi-parameter controlled aerobic microbial cultivation, oxygen/CO₂ ratio optimisation studies, and dynamic atmosphere-switching experiments exploring microbial physiological responses to changing CO₂ levels during active orbital shaking — uses the BSIC-103's integrated CO₂ control and orbital shaking capability within the 0–20% CO₂ control range for controlled atmosphere dynamic cultivation research."
+                }
+              ],
+
+              cta:
+                "Enquire about the BSIC-103 CO₂ Incubated Refrigerated Shaker for your cell culture, biotechnology, and fermentation research requirements."
+            },
+
+            faqs: {
+              overview: [
+                "These FAQs address the BSIC-103's combined CO₂ and shaking capability, infrared CO₂ sensor advantages, stacking configuration, dual sterilization modes, mammalian cell culture suitability, comparison with BSIC-113, CO₂ recovery time, triple eccentric drive uniformity, timer range, and pharmaceutical applications."
+              ],
+
+              items: [
+                {
+                  question: "How does the BSIC-103 differ from a standard CO₂ incubator?",
+                  answer:
+                    "A standard CO₂ incubator provides CO₂ atmosphere control and temperature control but no orbital shaking — suitable for static cell culture in T-flasks and well plates. The BSIC-103 adds 40–300 rpm orbital shaking with 26 mm amplitude to the CO₂-controlled, temperature-controlled, humidity-controlled environment — enabling suspension cell culture in spinner flasks and Erlenmeyer flasks under simultaneous CO₂ atmosphere control. This capability is essential for high-density suspension mammalian cell culture, aerobic CO₂-dependent fermentation, and agitated CO₂ biological research that static CO₂ incubators cannot support."
+                },
+                {
+                  question: "Why is infrared (NDIR) CO₂ sensing better than thermal conductivity sensing?",
+                  answer:
+                    "Non-dispersive infrared (NDIR) sensors directly measure CO₂ molecular infrared absorption — providing CO₂-specific measurement unaffected by the humidity changes, temperature fluctuations, and non-CO₂ gas composition variations that cause drift and error in thermal conductivity (TC) sensors. NDIR sensors maintain ±0.1% CO₂ accuracy throughout the humid, multi-gas environment of a CO₂ shaking incubator — where TC sensors would require frequent calibration and deliver lower accuracy. NDIR is the recognised superior technology for CO₂ incubator applications requiring reliable long-term CO₂ control accuracy."
+                },
+                {
+                  question: "How many BSIC-103 units can be stacked?",
+                  answer:
+                    "Confirm the maximum stack height with your supplier — typically 2–3 units depending on structural stability and accessibility requirements. Each stacked unit operates completely independently with its own CO₂, temperature, humidity, and shaking setpoints. The 1000 × 670 mm external base footprint of the BSIC-103 requires a stable, level floor surface rated for the combined weight of the full stack configuration."
+                },
+                {
+                  question: "What are the two sterilization modes in the BSIC-103?",
+                  answer:
+                    "UV-C sterilization uses ultraviolet light to rapidly inactivate microorganisms on directly exposed surfaces within the chamber — appropriate for quick surface decontamination before beginning a cell culture session (typically 15–30 minutes). 90°C moist heat sterilization raises the chamber to 90°C for a defined period — providing more thorough sterilization of all internal surfaces including areas partially shadowed from UV irradiance. Use UV for routine pre-culture decontamination; 90°C moist heat for deeper sterilization after contamination events or between different cell line applications."
+                },
+                {
+                  question: "Is the BSIC-103 suitable for mammalian cell culture?",
+                  answer:
+                    "Yes. The BSIC-103 provides the complete mammalian cell culture environment — 37°C at ±0.4°C uniformity, 5% CO₂ at ±0.1% accuracy, 85% relative humidity, and orbital shaking at 40–300 rpm for suspension culture. The 27 × 250 mL flask capacity enables large-scale suspension mammalian cell culture for antibody production, recombinant protein expression, viral vector manufacturing, and biological assay development. The dual sterilization capability supports the contamination management requirements of extended mammalian cell culture campaigns."
+                },
+                {
+                  question: "How does the BSIC-103 compare to the BSIC-113?",
+                  answer:
+                    "The BSIC-113 provides a larger 760 × 460 mm platform (vs 500 × 460 mm), 15 kg load capacity (vs 10 kg), 41 × 250 mL flask support (vs 27 × 250 mL), and 1400W power (vs 1200W) — with all other specifications identical. Choose the BSIC-103 for the compact stackable configuration; the BSIC-113 for larger platform capacity and higher flask density requirements."
+                },
+                {
+                  question: "What is the CO₂ recovery time after door opening?",
+                  answer:
+                    "The BSIC-103 recovers to the 5% CO₂ setpoint within ≤3 minutes after a 30-second door opening event — the specified recovery time under standard test conditions. Minimise door opening duration during flask loading and unloading to reduce CO₂ recovery time and protect CO₂-sensitive cell cultures from extended atmosphere disruption."
+                },
+                {
+                  question: "How does triple eccentric drive improve shaking uniformity?",
+                  answer:
+                    "Three-point eccentric drive distributes orbital force across three balanced points on the 500 × 460 mm platform — eliminating the platform tilt and amplitude variation between central and peripheral positions that occurs in single-eccentric designs. All flask positions experience consistent 26 mm orbital amplitude at all speeds, providing uniform oxygen transfer rates across the full 27-flask 250 mL loading — essential for reproducible cell culture and fermentation outcomes across all simultaneously incubated flasks."
+                },
+                {
+                  question: "What is the timer range of the BSIC-103?",
+                  answer:
+                    "0 to 599 minutes (approximately 10 hours) — covering standard single-session cell culture and fermentation protocols. For continuous multi-day culture requiring longer uninterrupted operation, the BSIC-103 also operates in continuous mode without timer limitation. Confirm continuous operation specifications and alarm monitoring requirements for extended multi-day culture campaigns with your supplier."
+                },
+                {
+                  question: "What CO₂ source is required for the BSIC-103?",
+                  answer:
+                    "The BSIC-103 requires an external CO₂ gas supply — typically a laboratory CO₂ cylinder with a pressure regulator delivering CO₂ at the connection pressure specified for the BSIC-103's gas inlet. Confirm the required supply pressure and connection fittings with your supplier. A gas line from the laboratory central CO₂ supply can also be used where available. Ensure adequate CO₂ supply volume for the planned culture duration without mid-experiment gas cylinder change."
+                }
+              ]
+            },
+
+            blog: {
+              heading:
+                "BSIC-103 CO₂ Incubated Refrigerated Shaker: The Integrated CO₂ Control and Orbital Shaking Solution for Advanced Cell Culture and Biotechnology Research",
+
+              overview: [],
+
+              items: [
+                {
+                  title: "Why Standard Shaking Incubators and CO₂ Incubators Cannot Replace the BSIC-103",
+                  description:
+                    "Standard shaking incubators provide temperature-controlled orbital shaking — but without CO₂ atmosphere control, mammalian cells in bicarbonate-buffered media undergo pH drift within hours as CO₂ partial pressure equilibrates to atmospheric 0.04%. Standard CO₂ incubators provide CO₂ atmosphere — but without orbital shaking, high-density suspension cell culture and aerobic fermentation cannot be performed. The BSIC-103 integrates both capabilities simultaneously in a stackable unit — enabling the biological research that neither instrument alone can support."
+                },
+                {
+                  title: "NDIR CO₂ Sensing: Why ±0.1% Accuracy Changes Cell Culture Outcomes",
+                  description:
+                    "In mammalian cell culture with standard bicarbonate buffering (typically 25 mM NaHCO₃), the equilibrium pH is directly determined by CO₂ partial pressure: ±0.1% CO₂ variation at 5% CO₂ corresponds to approximately ±0.01–0.02 pH units — well within the range that maintains culture viability. TC sensors with ±0.3–0.5% accuracy would introduce ±0.05–0.1 pH unit variation — sufficient to cause measurable effects on cell growth rate, metabolite production, and differentiation state in sensitive mammalian cell lines. NDIR accuracy is not a specification detail — it directly protects cell culture biological outcomes."
+                },
+                {
+                  title: "Final Verdict on the BSIC-103",
+                  description:
+                    "The BSIC-103 delivers the complete integrated CO₂ shaking incubation environment — 4–65°C with ±0.4°C uniformity, ±0.1% CO₂ accuracy via NDIR, 40–300 rpm triple eccentric orbital shaking, 50–95% RH humidity control, dual UV and 90°C sterilization, 27 × 250 mL flask capacity, 7-inch touch screen, stackable design, and comprehensive seven-system safety at 1200W — the definitive integrated CO₂ incubated shaker for advanced mammalian cell culture, fermentation, and biotechnology research."
+                }
+              ]
+            }
+          },
+
+          {
+            model: "BSIC-113 CO₂ Incubated Refrigerated Shaker",
+            title: "BSIC-113 CO₂ Incubated Refrigerated Shaker",
+
+            meta: {
+              slug: "bsic-113",
+              title:
+                "BSIC-113 CO₂ Incubated Refrigerated Shaker | 760×460mm | 15 kg | 41 Flasks | 1400W | Being India",
+              description:
+                "BSIC-113: Large-platform 760×460mm stackable CO₂ incubated refrigerated shaker with 4–65°C, 40–300 rpm, ±0.1% CO₂ accuracy, NDIR sensor, 15 kg load, 41×250mL flasks, dual sterilization & 1400W. For large-scale cell culture & biotech. Enquire.",
+              keywords:
+                "BSIC-113 CO₂ Incubated Refrigerated Shaker, large platform CO₂ shaker incubator 760×460mm, high capacity CO₂ orbital shaker 15kg load, BSIC-113 stackable CO₂ shaker 41 flasks, large scale CO₂ incubated refrigerated shaker 1400W, BSIC-113 large platform 760×460mm CO₂ incubated refrigerated shaker 15kg load with triple eccentric drive and IR CO₂ sensor for large-scale cell culture and pilot production, high capacity stackable CO₂ shaker 41×250ml flask 1400W with UV and 90°C sterilization for pharmaceutical and biotechnology research, BSIC-113 vs BSIC-103, 760×460mm vs 500×460mm CO₂ shaker, high capacity vs compact CO₂ shaking incubator, buy BSIC-113 CO₂ incubated shaker, BSIC-113 price, order large platform CO₂ refrigerated shaker."
+            },
+
+            productTitle:
+              "BSIC-113 CO₂ Incubated Refrigerated Shaker — Large-Platform 760×460mm with 15 kg Load and 41-Flask Capacity for Large-Scale Cell Culture and Pilot-Scale Production",
+
+            thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+            imgAltText:
+              "BSIC-113 large-platform stackable CO₂ incubated refrigerated orbital shaker with 760×460mm platform, 15 kg load, 41×250mL flask capacity, 4–65°C temperature range, ±0.1% CO₂ accuracy NDIR sensor, triple eccentric drive, UV and 90°C dual sterilization, and 1400W for large-scale CO₂ cell culture, pharmaceutical, and biotechnology research_Being India",
+
+            price: 9924040,
+
+            gem: false,
+
+            // tags: ["new"],
+
+            related: ["bsic-103"],
+
+            overview: [
+              "The BSIC-113 CO₂ Incubated Refrigerated Shaker extends the BSIC-103's integrated CO₂ shaking incubation platform to a larger 760 × 460 mm format with 15 kg permissible shaking load — increasing the single-platform flask capacity to 41 × 250 mL, 25 × 500 mL, 15 × 1000 mL, or 8 × 2000 mL simultaneously. The larger platform and 1400W power make the BSIC-113 the appropriate choice for large-scale cell culture research, pharmaceutical production support, pilot-scale biological production, and advanced biotechnology research where the compact BSIC-103's 500 × 460 mm platform is a throughput constraint. The BSIC-113 maintains all BSIC-103 performance specifications — ±0.1% CO₂ accuracy via NDIR sensor, ±0.4°C uniformity at 37°C, 4–65°C temperature range, 40–300 rpm, triple eccentric drive, UV and 90°C moist heat dual sterilization, 50–95% RH humidity, and stackable design — applied to the larger platform format for maximum CO₂ shaking incubation throughput. Enquire today."
+            ],
+
+            features: {
+              overview: [
+                "The BSIC-113 provides large-platform CO₂ incubated refrigerated orbital shaking — 760×460mm platform with 15 kg load, 7-inch intelligent touch screen, NDIR CO₂ sensor (±0.1%), triple eccentric drive, 4–65°C refrigerated range, 40–300 rpm, UV + 90°C dual sterilization, advanced humidity control, and 1400W — for large-scale cell culture, biotechnology research, fermentation, advanced life science, and pilot-scale production."
+              ],
+
+              keyFeatures: [
+                {
+                  title: "7-Inch Intelligent Touch Screen Control System",
+                  description:
+                    "The BSIC-113's 7-inch intelligent touch screen provides the same comprehensive control interface as the BSIC-103 — with real-time display of all environmental parameters (temperature, CO₂, humidity, speed, timer) and graphical trend monitoring for the extended multi-day culture sessions typical of large-scale cell culture and pilot biological production. The intelligent interface provides programme management for complex multi-step protocols, alarm threshold configuration, and data review — all accessible from the single large touch screen without multi-button navigation across separate control modules."
+                },
+                {
+                  title: "Large 760×460mm Platform for Higher Flask Capacity",
+                  description:
+                    "The BSIC-113's 760 × 460 mm platform — 260 mm wider than the BSIC-103's 500 × 460 mm — provides 52% more platform surface area and supports 41 × 250 mL flasks (vs 27 × 250 mL), 25 × 500 mL (vs 16), 15 × 1000 mL (vs 9), or 8 × 2000 mL (vs 5) simultaneously. This substantially higher flask density per CO₂ incubated shaking run enables pharmaceutical production support, large biotechnology research campaigns, and pilot biological production to achieve the throughput required for production-scale CO₂ shaking incubation without the stacking of multiple BSIC-103 units."
+                },
+                {
+                  title: "High-Performance Refrigeration System",
+                  description:
+                    "The BSIC-113's high-performance refrigeration system achieves the 4°C minimum temperature under the higher thermal load of the larger 1000 × 870 × 920 mm cabinet and 15 kg maximum platform load — providing reliable cold-temperature CO₂ incubated shaking for cold-temperature cell biology, psychrophilic organism culture, and cold-temperature enzyme research at the larger scale without compromising the refrigeration performance that the compact BSIC-103 achieves at smaller scale."
+                },
+                {
+                  title: "Triple Eccentric Drive for Uniform Shaking at 760mm Width",
+                  description:
+                    "The BSIC-113's triple eccentric drive is particularly important at the wider 760 × 460 mm platform scale — maintaining consistent 26 mm orbital amplitude across the full 760 mm platform width from the centre to the left and right periphery simultaneously under the higher 15 kg maximum load. Three-point drive across the wider platform prevents the amplitude variation between central and peripheral flask positions that would develop in a single-eccentric system at this platform width and load, ensuring reproducible orbital motion conditions for all 41 simultaneously loaded 250 mL flasks."
+                },
+                {
+                  title: "Advanced Airflow System for Stable Chamber Conditions",
+                  description:
+                    "The BSIC-113's advanced airflow system distributes conditioned air uniformly throughout the larger cabinet volume — supporting consistent temperature uniformity (±0.4°C at 37°C), humidity distribution (85% ±5% at 37°C), and CO₂ atmosphere homogeneity across the wider 760 × 460 mm platform and all flask positions. Uniform airflow distribution in the larger BSIC-113 cabinet is a more demanding engineering requirement than in the compact BSIC-103 — the advanced system design ensures the same environmental uniformity specification is met at the larger scale."
+                },
+                {
+                  title: "Easy-to-Operate Interface with Real-Time Parameter Display",
+                  description:
+                    "The BSIC-113's 7-inch touch screen provides intuitive real-time display of all six simultaneously controlled environmental parameters — CO₂ concentration, temperature, humidity, shaking speed, timer status, and sterilization cycle — enabling efficient single-screen monitoring of complex multi-parameter large-scale CO₂ shaking incubation during extended pharmaceutical production support and biotechnology research campaigns."
+                }
+              ],
+
+              safetyFeatures: {
+                overview: [
+                  "The BSIC-113 incorporates seven independent safety systems — door interlock with automatic stop, independent temperature limiter, over-temperature protection, over-current and overload protection, audio and visual alarms, stable airflow evaporation prevention, and continuous operation reliability — providing comprehensive safety for large-scale CO₂ cell culture, biotechnology, and pilot production shaking incubation."
+                ],
+
+                items: [
+                  {
+                    title: "Door Interlock Safety System with Automatic Stop",
+                    description:
+                      "The BSIC-113's door interlock immediately stops the 40–300 rpm orbital shaking when the door is opened — critical for the larger 760 × 460 mm platform with 15 kg maximum load where orbital motion at high speeds would generate significant flask ejection and culture contamination risk during access events."
+                  },
+                  {
+                    title: "Independent Temperature Limiter",
+                    description:
+                      "Hardware-level independent backup temperature protection operates separately from the primary 7-inch controller — providing the critical safety redundancy for large-scale pharmaceutical and biotechnology cell culture runs where primary controller malfunction without independent backup protection could destroy entire large-scale culture batches."
+                  },
+                  {
+                    title: "Over-Temperature Protection, Over-Current/Overload Protection, and Alarms",
+                    description:
+                      "The full multi-system safety architecture protects the BSIC-113's 1400W system across all operating conditions — with thermal protection for the larger cabinet's heating system, electrical protection for the larger-capacity drive, refrigeration, and CO₂ control systems, and dual-mode alarms for all abnormal environmental conditions during extended large-scale CO₂ shaking incubation."
+                  },
+                  {
+                    title: "Reliable and Continuous Operation Capability",
+                    description:
+                      "All BSIC-113 components are rated for reliable continuous operation throughout the extended multi-day and multi-week large-scale cell culture and pilot production runs that define the BSIC-113's application context — ensuring uninterrupted CO₂ shaking incubation throughout the complete duration of large-scale biological production campaigns."
+                  }
+                ]
+              }
+            },
+
+            specifications: {
+              overview: [
+                "The BSIC-113 provides large-platform 760×460mm CO₂ incubated refrigerated orbital shaking with 4–65°C, ±0.4°C uniformity, 40–300 rpm, ±0.1% CO₂ accuracy, 15 kg load, dual sterilization, and 1400W — the high-capacity BSIC Series CO₂ shaking incubator for large-scale cell culture, biotechnology, fermentation, and pilot production. Full specifications listed below."
+              ],
+
+              items: [
+                {
+                  label: "Display",
+                  value: "7-inch Touch Screen"
+                },
+                {
+                  label: "Temperature Range",
+                  value: "4°C to 65°C"
+                },
+                {
+                  label: "Temperature Uniformity",
+                  value: "±0.4°C (at 37°C, ambient 25°C)"
+                },
+                {
+                  label: "Temperature Resolution",
+                  value: "0.1°C"
+                },
+                {
+                  label: "Shaking Type",
+                  value: "Orbital"
+                },
+                {
+                  label: "Orbital Diameter",
+                  value: "26 mm"
+                },
+                {
+                  label: "Speed Range",
+                  value: "40 to 300 rpm"
+                },
+                {
+                  label: "Timer Range",
+                  value: "0 to 599 minutes"
+                },
+                {
+                  label: "Platform Size",
+                  value: "760 × 460 mm"
+                },
+                {
+                  label: "Permissible Shaking Load",
+                  value: "15 kg"
+                },
+                {
+                  label: "Exterior Dimensions (W×D×H)",
+                  value: "1000 × 870 × 920 mm"
+                },
+                {
+                  label: "CO₂ Control Range",
+                  value: "0 to 20%"
+                },
+                {
+                  label: "CO₂ Control Accuracy",
+                  value: "±0.1%"
+                },
+                {
+                  label: "CO₂ Stability",
+                  value: "±0.1% (at 5% CO₂)"
+                },
+                {
+                  label: "CO₂ Sensor",
+                  value: "Infrared (NDIR)"
+                },
+                {
+                  label: "CO₂ Recovery Time",
+                  value: "≤3 min"
+                },
+                {
+                  label: "Humidity Control Range",
+                  value: "50% to 95% RH"
+                },
+                {
+                  label: "Humidity Accuracy",
+                  value: "85% ±5% (at 37°C)"
+                },
+                {
+                  label: "Sterilization",
+                  value: "UV + 90°C Moist Heat"
+                },
+                {
+                  label: "Power Consumption",
+                  value: "1400 W"
+                },
+                {
+                  label: "Voltage",
+                  value: "AC 220 V, 50 Hz"
+                },
+                {
+                  label: "Flask Capacity — 250 mL",
+                  value: "41 pcs"
+                },
+                {
+                  label: "Flask Capacity — 500 mL",
+                  value: "25 pcs"
+                },
+                {
+                  label: "Flask Capacity — 1000 mL",
+                  value: "15 pcs"
+                },
+                {
+                  label: "Flask Capacity — 2000 mL",
+                  value: "8 pcs"
+                }
+              ]
+            },
+
+            applications: {
+              overview: [
+                "The BSIC-113 supports large-scale CO₂ cell culture, biotechnology research, fermentation, advanced life science, and pilot-scale biological production requiring the highest simultaneous flask capacity in a CO₂ incubated refrigerated shaking incubator — 41×250mL or 8×2000mL simultaneously under integrated CO₂, temperature, humidity, and orbital shaking control."
+              ],
+
+              items: [
+                {
+                  label: "Large-Scale CO₂ Cell Culture",
+                  value:
+                    "The BSIC-113 supports large-scale suspension mammalian cell culture for CHO cell recombinant protein production, HEK 293 cell viral vector manufacturing, hybridoma antibody production, and advanced cell biology research requiring the 41 × 250 mL or 8 × 2000 mL flask capacity of the larger platform for simultaneous high-density suspension culture under precise CO₂, temperature, and humidity control. The higher 15 kg load capacity accommodates the heavier flask loads of fully filled 2000 mL flasks at high media volumes — enabling true production-scale suspension mammalian cell culture under integrated CO₂ atmosphere control."
+                },
+                {
+                  label: "Biotechnology and Pharmaceutical Research",
+                  value:
+                    "Pharmaceutical biotechnology research teams and production development laboratories use the BSIC-113 for large-scale biological assay development in suspension culture format, pharmaceutical API biological process research, vaccine production development in flask culture, and biotechnology product characterisation studies requiring the higher throughput of the 760 × 460 mm platform for statistically powered large-scale experimental designs under simultaneous CO₂ atmosphere, temperature, and shaking control."
+                },
+                {
+                  label: "Fermentation and Microbial Studies",
+                  value:
+                    "Fermentation science and industrial microbiology laboratories use the BSIC-113 for large-scale aerobic CO₂-enriched fermentation parameter optimisation, pilot-scale seed culture production for bioreactor inoculation, and high-throughput microbial strain screening under defined CO₂ atmosphere — where the 41 × 250 mL or 15 × 1000 mL flask capacity enables complete screening campaign sample sets to be processed simultaneously within a single CO₂-controlled orbital shaking run."
+                },
+                {
+                  label: "Advanced Life Science Laboratories",
+                  value:
+                    "Advanced life science research laboratories use the BSIC-113 for complex multi-variable cell culture experimental designs, organoid culture in suspension format requiring CO₂ atmosphere and gentle orbital shaking, 3D cell culture model development under controlled CO₂ shaking conditions, and large-scale tissue engineering research requiring simultaneous CO₂ atmosphere, temperature, humidity, and shaking parameter control across complete experimental sample sets within the larger 760 × 460 mm platform."
+                },
+                {
+                  label: "Pilot-Scale Production",
+                  value:
+                    "Pharmaceutical and biotechnology pilot-scale biological production groups use the BSIC-113 for scale-up production incubation in Erlenmeyer flask format under CO₂ atmosphere — bridging flask-scale laboratory cell culture and full bioreactor production scale. The 8 × 2000 mL flask capacity of the BSIC-113 platform enables significant pilot-scale biological production volumes under integrated CO₂, temperature, and humidity control, supporting process development, GMP process comparability studies, and pilot production campaigns for pharmaceutical biological products requiring CO₂-controlled orbital shaking incubation at pilot scale."
+                }
+              ],
+
+              cta:
+                "Contact us to enquire about the BSIC-113 CO₂ Incubated Refrigerated Shaker for your large-scale cell culture, pharmaceutical, and biotechnology research requirements."
+            },
+
+            faqs: {
+              overview: [
+                "These FAQs address the BSIC-113's larger platform advantages, 15 kg load capacity, comparison with BSIC-103, triple eccentric drive at 760mm width, pharmaceutical production suitability, CO₂ uniformity across the larger chamber, power requirements, stacking, 2000 mL flask support, and continuous operation."
+              ],
+
+              items: [
+                {
+                  question: "What is the flask capacity advantage of the BSIC-113 over the BSIC-103?",
+                  answer:
+                    "The BSIC-113 supports: 41 × 250 mL (vs 27), 25 × 500 mL (vs 16), 15 × 1000 mL (vs 9), and 8 × 2000 mL (vs 5) simultaneously — approximately 52% more flasks per platform level across all flask formats. This higher capacity is the defining selection criterion between the two models: choose the BSIC-113 when large-scale throughput, pilot production volumes, or high-density screening campaign flask counts exceed the BSIC-103's 500 × 460 mm platform capacity."
+                },
+                {
+                  question: "How does the 15 kg load capacity benefit large-scale flask culture?",
+                  answer:
+                    "At 15 kg maximum load, the BSIC-113 accommodates the full weight of 8 × 2000 mL Erlenmeyer flasks at high media volumes (typically 600–800 mL per flask), with the additional weight of the flask holder assembly — a load that exceeds the BSIC-103's 10 kg limit when fully loaded with 2000 mL flasks. The higher 15 kg capacity enables reliable triple eccentric orbital shaking at all speeds without mechanical overload risk during large-scale pilot production runs with maximum-volume flask loads."
+                },
+                {
+                  question: "Does the BSIC-113 maintain CO₂ uniformity across its wider 760mm platform?",
+                  answer:
+                    "Yes. The BSIC-113's CO₂ control system and advanced airflow distribution are designed to maintain ±0.1% CO₂ accuracy uniformly across the wider 760 × 460 mm platform — the same specification as the BSIC-103. The advanced airflow system specifically addresses the greater challenge of uniform CO₂ distribution across the larger cabinet volume, ensuring consistent CO₂ atmosphere at all flask positions across the full width of the 760 mm platform."
+                },
+                {
+                  question: "Is the BSIC-113 suitable for pharmaceutical pilot-scale production?",
+                  answer:
+                    "Yes. The BSIC-113's 760 × 460 mm platform with 8 × 2000 mL flask capacity, ±0.1% CO₂ accuracy, ±0.4°C temperature uniformity, dual sterilization, and reliable continuous operation make it appropriate for pharmaceutical pilot-scale biological production in Erlenmeyer flask format — including mammalian cell culture for recombinant protein production, viral vector manufacturing, and biological assay development at pilot scale. Consult your QA team for GxP qualification requirements applicable to your pharmaceutical production context."
+                },
+                {
+                  question: "What is the power requirement of the BSIC-113?",
+                  answer:
+                    "1400W at AC 220V, 50Hz — 200W more than the BSIC-103's 1200W, reflecting the additional heating and refrigeration capacity required for the larger cabinet volume and higher platform load. A dedicated circuit rated for continuous 1400W is recommended for reliable operation during extended large-scale culture campaigns."
+                },
+                {
+                  question: "Can BSIC-113 units be stacked?",
+                  answer:
+                    "Yes. The BSIC-113's stackable design allows vertical stacking for space-efficient large-scale CO₂ shaking incubation capacity. The wider 1000 × 870 mm BSIC-113 base requires a stable floor surface with load capacity rated for the combined weight of the full stack configuration. Confirm maximum stack height and specific stacking requirements with your supplier."
+                },
+                {
+                  question: "Does the BSIC-113 support 2000 mL Erlenmeyer flasks at CO₂ atmosphere?",
+                  answer:
+                    "Yes. The BSIC-113 supports 8 × 2000 mL Erlenmeyer flasks simultaneously on the 760 × 460 mm platform under integrated CO₂ atmosphere control — enabling large-scale pilot production and high-density cell culture at 2000 mL flask format within a CO₂-controlled orbital shaking environment. This capability is the BSIC-113's defining advantage for pharmaceutical biological pilot production in flask culture format."
+                },
+                {
+                  question: "What is the CO₂ recovery time of the BSIC-113?",
+                  answer:
+                    "≤3 minutes — the same specification as the BSIC-103. The larger BSIC-113 cabinet volume requires an appropriately sized CO₂ delivery system to achieve equivalent recovery time after door opening events. Minimise door opening duration during flask access to maintain the ≤3 minute recovery time specification in actual operation."
+                },
+                {
+                  question: "How does the triple eccentric drive manage the heavier 15 kg load?",
+                  answer:
+                    "The triple eccentric drive distributes the 15 kg orbital shaking load across three balanced drive points — preventing the platform tilt, vibration, and excessive mechanical stress on the shaking mechanism that would occur with single-eccentric drive under the higher 15 kg combined flask and holder weight. This balanced three-point distribution enables reliable high-speed (up to 300 rpm) orbital shaking at maximum load without the vibration and noise that would characterise an inadequately designed drive system under 15 kg loading."
+                },
+                {
+                  question: "What makes the BSIC-113 appropriate for large-scale biotechnology research?",
+                  answer:
+                    "The combination of 41 × 250 mL flask capacity, ±0.1% CO₂ accuracy via NDIR, ±0.4°C temperature uniformity, 40–300 rpm triple eccentric orbital shaking, dual sterilization, 50–95% RH humidity control, 4–65°C refrigerated range, and stackable design collectively provide the environmental control precision and biological throughput capacity required for large-scale biotechnology research — enabling complete experimental designs with full biological replication to be processed simultaneously under identical CO₂ shaking conditions for statistically valid comparative outcomes."
+                }
+              ]
+            },
+
+            blog: {
+              heading:
+                "BSIC-113 CO₂ Incubated Refrigerated Shaker: Large-Platform 760×460mm Maximum-Capacity CO₂ Shaking Incubation for Pharmaceutical, Biotechnology, and Pilot Production",
+
+              overview: [],
+
+              items: [
+                {
+                  title: "41 Flasks Under Simultaneous CO₂ Control: The Throughput Difference That Matters",
+                  description:
+                    "The BSIC-113's 41 × 250 mL simultaneous flask capacity under integrated CO₂ atmosphere, temperature, humidity, and orbital shaking control represents a throughput level that previously required either multiple standard CO₂ incubators with static culture or expensive dedicated CO₂ bioreactor systems. For pharmaceutical biological assay development, large-scale cell culture research, and pilot biological production in flask format, the BSIC-113 provides the throughput-environment combination that enables efficient scale-up decision-making under the full array of controlled culture variables."
+                },
+                {
+                  title: "The 760×460mm Platform: When Scale Changes What Biological Research Can Accomplish",
+                  description:
+                    "At 760 × 460 mm — the same platform width as the chest-type HZQ-211C floor shaker but now in a CO₂-controlled, humidity-controlled, refrigerated unit — the BSIC-113 provides research teams with the ability to run complete large experimental designs in statistically powered replicate counts simultaneously. For pharmaceutical cell culture researchers needing n=8 replicates across 5 conditions simultaneously (40 total flasks), the BSIC-113 makes this possible in a single CO₂-controlled shaking run that a compact BSIC-103 (27 flasks) cannot accommodate."
+                },
+                {
+                  title: "Final Verdict on the BSIC-113",
+                  description:
+                    "The BSIC-113 delivers the highest-capacity BSIC Series CO₂ shaking incubation — 760 × 460 mm platform, 15 kg load, 41 × 250 mL flask capacity, ±0.1% NDIR CO₂ accuracy, ±0.4°C uniformity, triple eccentric drive, dual sterilization, stackable design, and 1400W — the definitive large-scale CO₂ incubated shaker for pharmaceutical production support, large biotechnology research, and pilot biological production."
+                }
+              ]
+            }
+          },
+        ]
+      },
+
+
+      {
+        name: "CO₂ Incubator (Tri-Gas)",
+        slug: "co2-incubator-tri-gas)",
+        models: [
+          {
+            model: "BIO-150RHP III Tri-Gas CO₂ Incubator",
+            title: "BIO-150RHP III Tri-Gas CO₂ Incubator",
+
+            meta: {
+              slug: "bio-150rhp-iii",
+              title:
+                "BIO-150RHP III Tri-Gas CO₂ Incubator | 155L | O₂ Control | Hypoxia | Zirconium Sensor | Being India",
+              description:
+                "BIO-150RHP III: 155L tri-gas CO₂ incubator with CO₂ IR sensor, zirconium O₂ sensor, 1–90% O₂ control, ±0.1°C deviation, ±0.3°C uniformity, 7-inch touch screen, HEPA filtration & 90°C sterilization. For hypoxia, stem cell & IVF research. Enquire.",
+              keywords:
+                "BIO-150RHP III Tri-Gas CO₂ Incubator, tri-gas CO₂ incubator hypoxia O₂ control, CO₂ O₂ incubator zirconium sensor, BIO-150RHP III 155L stem cell IVF incubator, direct heat air jacket tri-gas incubator, BIO-150RHP III 155L tri-gas CO₂ incubator with CO₂ IR sensor O₂ zirconium sensor and 7-inch touch screen for hypoxia stem cell and IVF applications, tri-gas incubator with direct heat air jacket ±0.1°C temperature deviation and HEPA filtration for advanced cell culture and cancer research, CO₂ O₂ incubator 155L with 90°C moist heat sterilization and automatic recovery for pharmaceutical and biotech laboratories, tri-gas incubator CO₂ O₂, hypoxia incubator laboratory, zirconium O₂ sensor incubator, stem cell research incubator, IVF incubator CO₂ control, HEPA filtered CO₂ incubator, direct heat air jacket incubator, 90°C sterilization CO₂ incubator, what is a tri-gas CO₂ incubator and how does it differ from a standard CO₂ incubator, how does oxygen control in a tri-gas incubator support hypoxia studies, which CO₂ incubator has zirconium O₂ sensor for precise oxygen regulation, is the BIO-150RHP III suitable for IVF and stem cell culture, BIO-150RHP III vs BIO-240RHP III, tri-gas vs standard CO₂ incubator, 155L vs 233L tri-gas incubator, IR CO₂ sensor vs TC sensor incubator, buy BIO-150RHP III tri-gas incubator, BIO-150RHP III price, order 155L CO₂ O₂ hypoxia incubator"
+            },
+
+            productTitle:
+              "BIO-150RHP III Tri-Gas CO₂ Incubator — 155L with Zirconium O₂ Sensor, IR CO₂ Sensor and Direct Heat Air Jacket for Hypoxia, Stem Cell and IVF Research",
+
+            thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+            imgAltText:
+              "BIO-150RHP III 155L tri-gas CO₂ incubator with zirconium oxygen sensor, infrared CO₂ sensor, direct heat air jacket, 7-inch touch screen, HEPA Level 100 filtration, ±0.1°C temperature deviation, stainless steel rounded corner chamber, and 90°C moist heat sterilization for hypoxia, stem cell, cancer research, and IVF cell culture applications_Being India",
+
+            price: 1597580,
+
+            gem: false,
+
+            // tags: ["new"],
+
+            related: ["bio-240rhp-iii"],
+
+            overview: [
+              "The BIO-150RHP III Tri-Gas CO₂ Incubator extends standard CO₂ incubation to the third gas dimension — simultaneous independent control of O₂ concentration (1% to 90%) alongside CO₂ (0–20%) and temperature (ambient +3°C to 50°C) — enabling the precise hypoxic and physioxic culture environments that advanced cell biology, stem cell research, cancer biology, and IVF applications require. A standard CO₂ incubator cannot create sub-atmospheric oxygen environments; only a tri-gas system with active nitrogen injection can reduce O₂ below ambient 21% to the 1–5% physiological levels and further to the 0.5–1% conditions of cancer and stem cell hypoxia studies. The BIO-150RHP III achieves this with a zirconium oxide O₂ sensor providing ±0.2% accuracy, infrared CO₂ sensor providing ±0.10% deviation, direct heat plus air jacket technology for ±0.1°C temperature deviation and ±0.3°C uniformity at 37°C, 7-inch touch screen control, real-time four-parameter monitoring, stainless steel rounded-corner chamber, HEPA Level 100 filtration, and 90°C moist heat sterilization — in a 155L stackable format."
+            ],
+
+            features: {
+              overview: [
+                "The BIO-150RHP III integrates zirconium O₂ sensor for precise oxygen regulation (1–90%), infrared CO₂ sensor for accurate gas control, direct heat plus air jacket for ±0.1°C temperature precision, 7-inch touch screen with real-time multi-parameter monitoring, stainless steel rounded-corner chamber, HEPA Level 100 filtration, 90°C moist heat sterilization, automatic gas recovery, and stackable design — providing the advanced hypoxic cell culture environment for stem cell, cancer, IVF, and biotech research."
+              ],
+
+              keyFeatures: [
+                {
+                  title: "Tri-Gas Control System for CO₂, O₂ and Temperature Regulation",
+                  description:
+                    "The BIO-150RHP III's tri-gas architecture simultaneously and independently controls three atmospheric parameters within the 155L chamber: CO₂ concentration (0–20%) via infrared sensor and CO₂ injection solenoid, O₂ concentration (1%–90%) via zirconium sensor and nitrogen injection solenoid to displace atmospheric oxygen, and temperature (ambient +3°C to 50°C) via the direct heat plus air jacket system. This three-dimensional atmosphere control enables any combination of CO₂ and O₂ levels simultaneously — from standard 5% CO₂/21% O₂ atmospheric cell culture through 5% CO₂/5% O₂ physioxic conditions to 5% CO₂/1% O₂ severe hypoxia — without any hardware change or chamber reconfiguration, simply by adjusting the setpoints on the 7-inch touch screen."
+                },
+                {
+                  title: "Direct Heat and Air Jacket System for Uniform Temperature Distribution",
+                  description:
+                    "The BIO-150RHP III's direct heat plus air jacket hybrid temperature system combines two heating mechanisms: direct heating elements embedded in the chamber walls for fast temperature response and recovery, and an outer air jacket that distributes heat uniformly around the full inner chamber surface. This hybrid approach achieves the advantages of both water jacket uniformity (±0.3°C at 37°C) and direct heat recovery speed (≤8 minutes after 30 second door opening) — without the maintenance requirements and contamination risks of water jacket systems. The ±0.1°C temperature deviation specification confirms the precision of temperature maintenance at the 37°C mammalian cell culture setpoint."
+                },
+                {
+                  title: "Zirconium O₂ Sensor for Precise Oxygen Regulation",
+                  description:
+                    "The BIO-150RHP III's zirconium oxide (ZrO₂) oxygen sensor uses the electrochemical properties of zirconium oxide at elevated temperatures to measure oxygen partial pressure — providing highly accurate, stable, and long-lived O₂ measurement with ±0.2% control accuracy and ±0.1% resolution across the full 1% to 90% O₂ control range. Zirconium sensors provide superior long-term stability compared to electrochemical (Clark electrode) O₂ sensors used in simpler designs — maintaining accuracy without the periodic electrolyte replacement that limits Clark electrode sensor service life. Accurate O₂ control is directly critical for hypoxia research reproducibility: a ±0.2% control accuracy at 2% O₂ setpoint means the actual O₂ is 1.8–2.2% — sufficient precision for meaningful hypoxia study results."
+                },
+                {
+                  title: "Infrared CO₂ Sensor for Stable and Accurate Control",
+                  description:
+                    "The BIO-150RHP III's non-dispersive infrared (NDIR) CO₂ sensor provides ±0.10% CO₂ deviation and <5-minute CO₂ recovery after door opening — the same high-accuracy infrared sensing that provides cell culture pH buffer stability through CO₂-bicarbonate equilibrium maintenance. In tri-gas culture where both CO₂ and O₂ levels are simultaneously controlled, the accuracy of CO₂ sensing is equally important as O₂ accuracy — because CO₂ partial pressure directly determines the pH of bicarbonate-buffered cell culture media at every O₂ setpoint."
+                },
+                {
+                  title: "7-Inch Touch Screen Display for Easy Operation",
+                  description:
+                    "The BIO-150RHP III's 7-inch colour touch screen provides simultaneous real-time display of all four controlled parameters — temperature, CO₂ concentration, O₂ concentration, and humidity — alongside setpoints, alarm status, and operational mode. The large touch screen interface simplifies navigation of the multi-parameter control system for researchers who must configure CO₂, O₂, and temperature setpoints independently for different experimental conditions, and provides the comprehensive real-time monitoring required for critical hypoxia, stem cell, and IVF culture protocols."
+                },
+                {
+                  title: "Stainless Steel Chamber with Rounded Corners for Easy Cleaning",
+                  description:
+                    "The BIO-150RHP III's 480 × 530 × 610 mm stainless steel inner chamber with fully rounded corners provides the hygienic, easy-clean interior required for advanced cell biology research — where contamination between different cell line cultures, mycoplasma cross-contamination, and fungal spore accumulation in corner zones are critical concerns that rounded-corner construction specifically addresses. The stainless steel surface resists the range of cleaning agents and decontamination solutions used in cell culture laboratories for between-experiment chamber cleaning."
+                },
+                {
+                  title: "HEPA Filtration for Contamination-Free Environment",
+                  description:
+                    "The BIO-150RHP III's HEPA filtration system achieves Level 100 cleanliness (ISO Class 5 equivalent — the same cleanliness as a laminar flow cabinet) within 5 minutes of activation — providing continuous airborne particle and microorganism removal from the chamber atmosphere throughout cell culture operations. HEPA filtration in a tri-gas CO₂ incubator is particularly important because the continuous gas injection required for O₂ and CO₂ control creates internal airflow that could carry contaminating particles — the HEPA filter ensures this circulating atmosphere remains clean throughout extended culture operations."
+                },
+                {
+                  title: "90°C High Temperature Moist Heat Sterilization",
+                  description:
+                    "The BIO-150RHP III's 90°C moist heat sterilization system provides thorough chamber sterilization without the chemical exposure and residue concerns of formaldehyde-based decontamination — raising the chamber to 90°C under high humidity conditions to inactivate bacteria, fungal spores, and mycoplasma across all internal surfaces. Periodic 90°C sterilization is the recommended practice for tri-gas incubators used in stem cell and IVF applications where contamination events carry the highest cost — loss of irreplaceable cell lines or IVF embryo cultures — and where chemical sterilant residues would compromise sensitive biological material integrity."
+                }
+              ],
+
+              safetyFeatures: {
+                overview: [
+                  "The BIO-150RHP III incorporates eight independent safety and alarm systems — high/low temperature alarm, CO₂ and O₂ concentration alarms, sensor failure alarms, door open alarm, independent temperature limiter, over-temperature protection, sterilization status reminder, and audible/visual alarm system — providing comprehensive protection for irreplaceable hypoxic cell culture, stem cell, and IVF biological materials."
+                ],
+
+                items: [
+                  {
+                    title: "High and Low Temperature Alarm",
+                    description:
+                      "Temperature alarms activate when the chamber temperature deviates above or below the configured threshold — providing early warning of heating or cooling system anomalies before the temperature deviation causes irreversible damage to temperature-sensitive stem cell, IVF embryo, and primary cell cultures that cannot tolerate temperature excursions outside the narrow 36–38°C mammalian culture range."
+                  },
+                  {
+                    title: "CO₂ and O₂ Concentration Alarms",
+                    description:
+                      "Independent CO₂ and O₂ concentration alarms activate when either gas level deviates beyond the configured threshold — critical for hypoxia research where unexpected O₂ breakthrough (increase above the setpoint) would expose hypoxia-conditioned cells to atmospheric oxygen, invalidating experimental results and potentially inducing irreversible reoxygenation injury to oxygen-sensitive cell cultures."
+                  },
+                  {
+                    title: "Sensor Failure Alarms",
+                    description:
+                      "Independent CO₂ sensor and O₂ sensor failure alarms notify operators when either gas sensor malfunctions or delivers out-of-range readings — ensuring that loss of monitoring accuracy for either gas parameter is immediately communicated, enabling prompt corrective action before undetected gas concentration drift compromises ongoing hypoxia, stem cell, or IVF culture protocols."
+                  },
+                  {
+                    title: "Door Open Alarm, Independent Temperature Limiter, and Over-Temperature Protection",
+                    description:
+                      "The door open alarm prevents undetected O₂ and CO₂ atmosphere loss from inadvertent door-left-open events that would displace the carefully established hypoxic atmosphere. The independent hardware temperature limiter provides backup thermal protection separate from the primary controller — essential for irreplaceable stem cell and IVF cultures where primary controller malfunction must not result in uncontrolled heating. Over-temperature protection provides immediate heating cutoff for any thermal anomaly."
+                  },
+                  {
+                    title: "Sterilization Status Reminder and Audible/Visual Alarms",
+                    description:
+                      "The sterilization status reminder ensures the 90°C sterilization cycle is performed at recommended intervals — maintaining the contamination control discipline required for high-value stem cell, IVF, and cancer research cultures. Dual-mode audible and visual alarms ensure all abnormal conditions are communicated regardless of operator proximity during extended hypoxic culture protocols."
+                  }
+                ]
+              }
+            },
+
+            specifications: {
+              overview: [
+                "The BIO-150RHP III provides 155L of tri-gas CO₂ and O₂ controlled incubation with ±0.1°C temperature deviation, ±0.3°C uniformity at 37°C, ±0.10% CO₂ deviation, ±0.2% O₂ control accuracy, direct heat air jacket, zirconium O₂ sensor, IR CO₂ sensor, HEPA Level 100 filtration, and 90°C sterilization — the standard-capacity tri-gas CO₂ incubator for hypoxia, stem cell, cancer, and IVF research. Full specifications listed below."
+              ],
+
+              items: [
+                {
+                  label: "Temperature Control Method",
+                  value: "Direct heat and air jacket"
+                },
+                {
+                  label: "Display",
+                  value: "7-inch touch screen"
+                },
+                {
+                  label: "Chamber Volume",
+                  value: "155 L"
+                },
+                {
+                  label: "Temperature Sensor",
+                  value: "PT100"
+                },
+                {
+                  label: "Temperature Range",
+                  value: "Ambient +3°C to 50°C"
+                },
+                {
+                  label: "Temperature Deviation",
+                  value: "±0.1°C"
+                },
+                {
+                  label: "Temperature Uniformity (at 37°C)",
+                  value: "±0.3°C"
+                },
+                {
+                  label: "Temperature Recovery Time",
+                  value: "≤8 minutes (after 30 sec door opening)"
+                },
+                {
+                  label: "CO₂ Range",
+                  value: "0 to 20% V/V"
+                },
+                {
+                  label: "CO₂ Sensor",
+                  value: "Infrared (NDIR)"
+                },
+                {
+                  label: "CO₂ Deviation",
+                  value: "±0.10%"
+                },
+                {
+                  label: "CO₂ Recovery Time",
+                  value: "<5 minutes"
+                },
+                {
+                  label: "O₂ Range",
+                  value: "1% to 90%"
+                },
+                {
+                  label: "O₂ Control Accuracy",
+                  value: "±0.2%"
+                },
+                {
+                  label: "O₂ Sensor",
+                  value: "Zirconium oxide"
+                },
+                {
+                  label: "O₂ Control Resolution",
+                  value: "±0.1%"
+                },
+                {
+                  label: "Humidity Method",
+                  value: "Natural vaporization ≥90%"
+                },
+                {
+                  label: "HEPA Filtration",
+                  value: "Level 100 (within 5 minutes)"
+                },
+                {
+                  label: "Shelves",
+                  value: "3 pcs"
+                },
+                {
+                  label: "Interior Dimensions (W×D×H)",
+                  value: "480 × 530 × 610 mm"
+                },
+                {
+                  label: "Exterior Dimensions (W×D×H)",
+                  value: "670 × 770 × 880 mm"
+                },
+                {
+                  label: "Electrical Requirement",
+                  value: "AC 220 V, 50 Hz"
+                },
+                {
+                  label: "Power Consumption",
+                  value: "750 W"
+                },
+                {
+                  label: "Ambient Temperature",
+                  value: "+5°C to 30°C"
+                },
+                {
+                  label: "Sterilization",
+                  value: "90°C high temperature moist heat"
+                }
+              ]
+            },
+
+            applications: {
+              overview: [
+                "The BIO-150RHP III supports all advanced cell culture applications requiring simultaneous CO₂ and O₂ atmosphere control — from hypoxia and low oxygen studies to stem cell research, cancer biology, IVF embryo culture, and advanced biotechnology laboratory applications requiring physiological or sub-physiological oxygen environments."
+              ],
+
+              items: [
+                {
+                  label: "Hypoxia and Low Oxygen Studies",
+                  value:
+                    "The BIO-150RHP III is the primary tool for hypoxia research — enabling precise control of O₂ from 1% (severe hypoxia) to 5% (physioxia, the physiological O₂ level in most mammalian tissues, significantly below atmospheric 21%) to 21% (normoxia) simultaneously with CO₂ control for pH buffering. Hypoxia researchers use the BIO-150RHP III to study the cellular responses to oxygen deprivation that underlie ischaemia, tumour biology, wound healing, and angiogenesis — experiments where the O₂ setpoint accuracy of ±0.2% is critical for reproducible results across repeated experiments and between different research groups."
+                },
+                {
+                  label: "Stem Cell Research",
+                  value:
+                    "Stem cell biologists use the BIO-150RHP III to replicate the physiological niche oxygen environments of stem cell niches in vivo — typically 2–7% O₂ — which profoundly affect stem cell self-renewal, differentiation fate decisions, and epigenetic state. Culturing stem cells at atmospheric 21% O₂ (as in a standard CO₂ incubator) creates artificial hyperoxic stress that alters gene expression, reduces pluripotency, and compromises the physiological relevance of differentiation outcomes. The BIO-150RHP III enables stem cell research at physiologically meaningful O₂ tensions — improving the translational relevance and reproducibility of stem cell biology research."
+                },
+                {
+                  label: "Cancer Research",
+                  value:
+                    "Cancer biology researchers use the BIO-150RHP III to study tumour hypoxia — the oxygen-deprived microenvironment within solid tumours where O₂ levels can drop below 1%. Hypoxic tumour cells exhibit distinct gene expression profiles, increased resistance to radiation and chemotherapy, elevated metastatic potential, and activation of HIF (Hypoxia-Inducible Factor) signalling pathways. The BIO-150RHP III's ability to maintain precisely controlled 0.5–2% O₂ environments enables reproducible in vitro modelling of tumour hypoxia for drug target identification, drug resistance mechanism studies, and cancer metastasis research that atmospheric culture conditions cannot replicate."
+                },
+                {
+                  label: "IVF and Cell Culture Applications",
+                  value:
+                    "IVF (in vitro fertilisation) embryology laboratories use the BIO-150RHP III for human embryo culture under physiological atmosphere conditions — 5–6% CO₂ and 5% O₂ — which more closely approximate the fallopian tube and uterine environment of normal embryo development than the atmospheric 21% O₂ of standard incubators. Reduced-oxygen IVF culture has demonstrated improved blastocyst development rates and embryo quality compared to atmospheric culture — making the BIO-150RHP III an essential instrument in advanced IVF clinics and embryology research programmes seeking optimal embryo development outcomes."
+                },
+                {
+                  label: "Advanced Biotechnology Laboratories",
+                  value:
+                    "Biotechnology research and pharmaceutical development laboratories use the BIO-150RHP III for physioxic culture of primary cells from human tissue sources — which maintain gene expression profiles more representative of in vivo physiology when cultured at tissue-specific O₂ tensions rather than atmospheric levels — enabling more relevant cell-based assay development for drug discovery and toxicology screening programmes where the oxygen environment of cultured cells directly affects drug response profiles and assay results."
+                }
+              ],
+
+              cta:
+                "Enquire about the BIO-150RHP III Tri-Gas CO₂ Incubator for your hypoxia, stem cell, cancer research, and IVF laboratory applications."
+            },
+
+            faqs: {
+              overview: [
+                "These FAQs address the tri-gas system concept, zirconium O₂ sensor advantages, how O₂ control is achieved, comparison with standard CO₂ incubators, direct heat air jacket function, HEPA filtration importance, 90°C sterilization process, IVF suitability, comparison with BIO-240RHP III, nitrogen gas requirements, and temperature recovery performance."
+              ],
+
+              items: [
+                {
+                  question: "What is a tri-gas CO₂ incubator and how does it differ from a standard CO₂ incubator?",
+                  answer:
+                    "A standard CO₂ incubator controls two atmospheric parameters — CO₂ concentration and temperature — in atmospheric air (21% O₂). A tri-gas incubator adds independent O₂ concentration control as the third parameter, using nitrogen injection to displace atmospheric oxygen and precisely reduce O₂ below ambient 21% to any level from 1% (severe hypoxia) to 90% (hyperoxia). A standard CO₂ incubator cannot create O₂ levels below the ambient 21% regardless of settings — only a tri-gas system with active N₂ injection can achieve the sub-atmospheric O₂ conditions required for hypoxia research, physioxic stem cell culture, and reduced-oxygen IVF embryo culture."
+                },
+                {
+                  question: "Why does the BIO-150RHP III use a zirconium sensor for O₂ measurement?",
+                  answer:
+                    "Zirconium oxide (ZrO₂) sensors use the electrochemical properties of zirconium oxide at elevated temperatures to measure O₂ partial pressure — providing high accuracy (±0.2%), excellent stability, and long service life without electrolyte replacement. Compared to Clark electrode electrochemical O₂ sensors, zirconium sensors maintain stable calibration over longer periods, are not consumed by operation, and provide consistent performance across the full 1%–90% O₂ range without the measurement drift that affects Clark electrodes over extended use in continuously operating incubators."
+                },
+                {
+                  question: "How does the BIO-150RHP III reduce O₂ below atmospheric 21%?",
+                  answer:
+                    "The BIO-150RHP III injects nitrogen (N₂) from an external gas supply into the chamber to displace atmospheric oxygen — diluting the chamber atmosphere and reducing O₂ partial pressure to the setpoint level. The zirconium O₂ sensor continuously measures actual O₂ concentration and controls the N₂ injection solenoid valve to maintain the programmed O₂ setpoint. Increasing N₂ injection displaces O₂; the solenoid valve modulates to maintain the target between 1% and 90%."
+                },
+                {
+                  question: "What gas supplies does the BIO-150RHP III require?",
+                  answer:
+                    "Three gas connections: CO₂ cylinder (medical grade or high purity) for CO₂ injection, N₂ cylinder (high purity, ≥99.999%) for O₂ displacement and control, and atmospheric air supply (from ambient or compressed air) for O₂ levels above ambient. Confirm specific gas connection fittings, supply pressures, and purity requirements with your supplier before ordering."
+                },
+                {
+                  question: "How does the direct heat plus air jacket system compare to water jacket systems?",
+                  answer:
+                    "Water jacket systems circulate temperature-controlled water around the full chamber perimeter — providing excellent uniformity but requiring water filling/maintenance and risking biological contamination from water system leaks. Direct heat air jacket systems use embedded heating elements plus circulated warm air — providing faster temperature recovery (≤8 minutes vs 15–30 minutes for water jacket), easier maintenance (no water management), and equivalent uniformity (±0.3°C at 37°C). For tri-gas incubators where the gas atmosphere is carefully controlled, the absence of water jacket maintenance and contamination risk is a practical advantage."
+                },
+                {
+                  question: "Why does HEPA filtration matter specifically in a tri-gas incubator?",
+                  answer:
+                    "In a tri-gas incubator, gas injection for CO₂ and N₂ control creates internal atmosphere circulation that would distribute any airborne particles and microorganisms throughout the chamber. HEPA Level 100 filtration ensures this circulating atmosphere is continuously cleaned to ISO Class 5 levels — removing bacteria, fungal spores, and particles that would otherwise accumulate and contaminate stem cell cultures, IVF embryos, and primary cell cultures from their biological source environments during the extended culture periods typical of hypoxia and physioxic research protocols."
+                },
+                {
+                  question: "What does the 90°C moist heat sterilization cycle do?",
+                  answer:
+                    "The 90°C sterilization cycle raises the chamber interior to 90°C under high-humidity conditions — thermally inactivating bacteria, fungal spores, mycoplasma, and other microorganisms across all internal surfaces, shelves, water pan, and chamber walls. Sterilization is performed between different cell line cultures, after contamination events, and at scheduled intervals. At 90°C, the heat and humidity combination provides effective sterilization of all accessible surfaces without the formaldehyde chemical exposure risk of older fumigation-based decontamination methods."
+                },
+                {
+                  question: "Is the BIO-150RHP III suitable for IVF embryo culture?",
+                  answer:
+                    "Yes — the BIO-150RHP III's 5% O₂ and 5–6% CO₂ simultaneous control capability directly supports the reduced-oxygen IVF embryo culture conditions demonstrated to improve blastocyst development rates and embryo quality compared to atmospheric O₂ culture. The ±0.1°C temperature deviation and ≤8-minute temperature recovery ensure precise thermal maintenance critical for embryo development kinetics, and the HEPA filtration provides the contamination-free environment essential for clinical IVF embryology laboratory applications. Confirm regulatory and clinical qualification requirements with your IVF laboratory quality management team."
+                },
+                {
+                  question: "How does the BIO-150RHP III compare to the BIO-240RHP III?",
+                  answer:
+                    "The BIO-240RHP III offers 233L capacity (vs 155L), a larger interior of 600 × 630 × 670 mm (vs 480 × 530 × 610 mm), and 1000W power (vs 750W) — accommodating larger cell culture experimental setups and higher simultaneous flask/dish capacity. Both models share identical tri-gas control specifications (CO₂, O₂, temperature deviation, recovery times), sensors, sterilization, HEPA filtration, and 7-inch touch screen. Choose BIO-150RHP III for standard-capacity hypoxia and cell culture; BIO-240RHP III for large-scale or multi-investigator tri-gas incubation."
+                },
+                {
+                  question: "What is the O₂ recovery time after door opening?",
+                  answer:
+                    "The O₂ recovery time is not separately specified but is linked to the temperature and CO₂ recovery time — the sealed chamber with gas injection system re-establishes O₂ setpoint within a similar timeframe to CO₂ recovery (<5 minutes) following door opening events. Minimise door opening duration during hypoxic culture access to reduce atmosphere disruption and recovery time for the tightly controlled O₂ environment."
+                }
+              ]
+            },
+
+            blog: {
+              heading:
+                "BIO-150RHP III Tri-Gas CO₂ Incubator: The Complete CO₂, O₂, and Temperature Control Platform for Hypoxia, Stem Cell, and IVF Research",
+
+              overview: [],
+
+              items: [
+                {
+                  title: "Why Atmospheric O₂ Is the Hidden Variable Compromising Cell Biology Research Reproducibility",
+                  description:
+                    "Most laboratory cell culture is performed at atmospheric 21% O₂ — despite the fact that virtually every human tissue exists at O₂ levels between 1% and 13%. Hepatocytes in the liver experience 4–8% O₂; bone marrow stem cell niches are at 1–4%; the fallopian tube and uterus where embryo development begins are at 5–8%. Culturing these cells at 21% O₂ creates systematic hyperoxic stress that alters gene expression, mitochondrial function, ROS levels, and differentiation outcomes. The BIO-150RHP III brings cell culture O₂ conditions in line with physiological reality — enabling research with higher translational relevance and improving reproducibility across laboratories worldwide."
+                },
+                {
+                  title: "Zirconium O₂ Sensor: Long-Term Accuracy That Clark Electrode Systems Cannot Match",
+                  description:
+                    "IVF embryology and long-term stem cell culture programmes run the same incubator continuously for months or years. Clark electrode O₂ sensors consume electrolyte during operation — their accuracy degrades progressively and requires periodic electrolyte replacement and recalibration. The BIO-150RHP III's zirconium oxide sensor maintains accuracy without electrolyte consumption — providing stable ±0.2% O₂ accuracy throughout extended continuous operation that supports consistent long-term research programmes without calibration drift disrupting ongoing hypoxic culture protocols."
+                },
+                {
+                  title: "Final Verdict on the BIO-150RHP III",
+                  description:
+                    "The BIO-150RHP III delivers 155L of tri-gas controlled cell culture with ±0.1°C temperature deviation, ±0.10% CO₂ deviation, ±0.2% O₂ accuracy via zirconium sensor, direct heat air jacket, HEPA Level 100, 90°C sterilization, 7-inch touch screen, and comprehensive eight-system safety — the complete tri-gas CO₂ incubator platform for hypoxia, stem cell, cancer, IVF, and advanced biotech research."
+                }
+              ]
+            }
+          },
+
+          {
+            model: "BIO-240RHP III Tri-Gas CO₂ Incubator",
+            title: "BIO-240RHP III Tri-Gas CO₂ Incubator",
+
+            meta: {
+              slug: "bio-240rhp-iii",
+              title:
+                "BIO-240RHP III Tri-Gas CO₂ Incubator | 233L | O₂ Control | Zirconium | HEPA | 7-inch | Being India",
+              description:
+                "BIO-240RHP III: 233L high-capacity tri-gas CO₂ incubator with IR CO₂, zirconium O₂ sensor, 1–90% O₂, ±0.1°C deviation, ±0.3°C uniformity, 7-inch touch screen, HEPA Level 100 & 90°C sterilization. For large-scale hypoxia, pharma & IVF. Enquire.",
+              keywords:
+                "BIO-240RHP III Tri-Gas CO₂ Incubator, high capacity tri-gas CO₂ incubator 233L, large CO₂ O₂ incubator advanced cell culture, BIO-240RHP III 233L hypoxia pharmaceutical biotech, large tri-gas incubator zirconium sensor tissue engineering, BIO-240RHP III 233L high capacity tri-gas CO₂ incubator with CO₂ IR sensor O₂ zirconium sensor and 7-inch touch screen for large scale hypoxia and cell culture, high capacity tri-gas incubator with direct heat air jacket ±0.1°C and HEPA filtration for pharmaceutical biotech tissue engineering and IVF research, 233L CO₂ O₂ incubator with 90°C sterilization and stackable design for pharmaceutical and advanced life science, high capacity tri-gas CO₂ incubator, 233L hypoxia incubator, large scale cell culture O₂ control, pharmaceutical biotech tri-gas incubator, tissue engineering CO₂ O₂ incubator, large IVF research incubator, 233L direct heat air jacket incubator, what is the best high capacity tri-gas CO₂ incubator for pharmaceutical and biotech research, how does a 233L tri-gas incubator support large scale hypoxia studies, which large tri-gas incubator has zirconium O₂ sensor and HEPA filtration, is the BIO-240RHP III suitable for tissue engineering and IVF research, BIO-240RHP III vs BIO-150RHP III, 233L vs 155L tri-gas incubator, large vs standard capacity CO₂ O₂ incubator, buy BIO-240RHP III tri-gas incubator, BIO-240RHP III price, order 233L CO₂ O₂ hypoxia incubator."
+            },
+
+            productTitle:
+              "BIO-240RHP III Tri-Gas CO₂ Incubator — 233L High-Capacity CO₂ and O₂ Controlled Incubation for Large-Scale Pharmaceutical, Biotech, and Tissue Engineering Research",
+
+            thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+            imgAltText:
+              "BIO-240RHP III 233L high-capacity tri-gas CO₂ incubator with zirconium oxygen sensor, infrared CO₂ sensor, direct heat air jacket, 7-inch touch screen, HEPA Level 100 filtration, stainless steel chamber, 90°C moist heat sterilization, and stackable design for large-scale hypoxia, pharmaceutical, biotechnology, and tissue engineering cell culture applications_Being India",
+
+            price: 1724540,
+
+            gem: false,
+
+            // tags: ["new"],
+
+            related: ["bio-150rhp-iii"],
+
+            overview: [
+              "The BIO-240RHP III Tri-Gas CO₂ Incubator extends the BIO-150RHP III's tri-gas control platform to a 233L high-capacity format — providing pharmaceutical, biotechnology, tissue engineering, and advanced life science laboratories requiring simultaneous CO₂ and O₂ atmosphere control with substantially more incubation capacity for large experimental designs, multi-investigator shared incubation, and pilot-scale hypoxic cell culture production. The BIO-240RHP III maintains all BIO-150RHP III performance specifications — ±0.1°C temperature deviation, ±0.3°C uniformity at 37°C, ±0.10% CO₂ deviation via NDIR sensor, ±0.2% O₂ accuracy via zirconium sensor, 1–90% O₂ control, HEPA Level 100 filtration, 90°C moist heat sterilization, and 7-inch touch screen — in the larger 600 × 630 × 670 mm interior at 1000W for the most demanding large-scale tri-gas cell biology research."
+            ],
+
+            features: {
+              overview: [
+                "The BIO-240RHP III delivers 233L high-capacity tri-gas CO₂ and O₂ controlled incubation with zirconium O₂ sensor, infrared CO₂ sensor, direct heat air jacket for ±0.1°C precision, 7-inch touch screen with real-time multi-parameter display, stainless steel chamber, HEPA Level 100 filtration, 90°C sterilization, automatic gas recovery, and stackable design — supporting large-scale pharmaceutical, biotechnology, tissue engineering, IVF, and medical research hypoxic cell culture."
+              ],
+
+              keyFeatures: [
+                {
+                  title: "Tri-Gas Control System for CO₂ and O₂ Regulation at 233L Scale",
+                  description:
+                    "The BIO-240RHP III's tri-gas control architecture simultaneously manages CO₂ (0–20%) and O₂ (1–90%) alongside temperature across the larger 600 × 630 × 670 mm interior — providing all the hypoxic atmosphere control capabilities of the BIO-150RHP III at 50% more chamber volume. For pharmaceutical and biotech organisations running large parallel hypoxia experiments, multi-investigator shared tri-gas incubation resources, and pilot-scale physioxic cell culture programmes, the BIO-240RHP III's larger capacity enables processing of substantially more simultaneous culture dishes, flasks, and plates within the same precisely controlled tri-gas environment."
+                },
+                {
+                  title: "Direct Heat and Air Jacket Technology for Uniform Large-Chamber Temperature",
+                  description:
+                    "The BIO-240RHP III's direct heat plus air jacket system achieves ±0.1°C temperature deviation and ±0.3°C uniformity at 37°C across the larger 600 × 630 × 670 mm interior — a more demanding thermal engineering requirement than in the compact BIO-150RHP III due to the greater volume and surface area requiring uniform temperature distribution. The hybrid heating system's combination of embedded direct heating for fast recovery (≤8 minutes) and air jacket circulation for uniformity ensures consistent temperature conditions across all shelf positions in the larger chamber for reproducible large-scale hypoxic and physioxic cell culture outcomes."
+                },
+                {
+                  title: "Infrared CO₂ and Zirconium O₂ Sensors for Large-Scale Precision",
+                  description:
+                    "The BIO-240RHP III applies the same high-precision NDIR CO₂ sensing (±0.10% deviation) and zirconium O₂ sensing (±0.2% accuracy) as the BIO-150RHP III — maintaining the sensor accuracy advantages across the larger chamber volume. In a larger tri-gas incubator with more frequent access for larger culture loads, the <5-minute CO₂ recovery time and rapid O₂ re-establishment after door opening are even more important for maintaining consistent hypoxic conditions throughout active large-scale culture management workflows."
+                },
+                {
+                  title: "Stainless Steel Chamber with HEPA Filtration",
+                  description:
+                    "The BIO-240RHP III's stainless steel interior and HEPA Level 100 filtration provide the hygienic, contamination-free large chamber environment required for pharmaceutical GMP-adjacent cell culture, biotech multi-line culture operations, and tissue engineering research where diverse cell types and tissue constructs must share the same incubator space without cross-contamination risk."
+                },
+                {
+                  title: "Large 233L Capacity for Multi-Investigator Shared Incubation",
+                  description:
+                    "At 233L with 3 shelves in a 600 × 630 mm interior, the BIO-240RHP III accommodates the full culture loads of multiple simultaneous investigators or research programmes within a single precisely controlled tri-gas environment — eliminating the between-unit variability that compromises experimental reproducibility when different research groups use separate tri-gas incubators with slightly different environmental conditions."
+                },
+                {
+                  title: "Stackable Design for Efficient Large Lab Space Usage",
+                  description:
+                    "The BIO-240RHP III's stackable architecture enables vertical capacity expansion without floor footprint increase — critical for pharmaceutical and biotech facilities where tri-gas incubation space is at a premium relative to the available floor area and where multiple large-capacity units may be required for simultaneous multi-programme hypoxic culture operations."
+                }
+              ],
+
+              safetyFeatures: {
+                overview: [
+                  "The BIO-240RHP III incorporates eight independent safety systems — high/low temperature alarm, CO₂ and O₂ deviation alarms, sensor failure alarms, door open alarm, independent temperature limiter, over-temperature protection, sterilization monitoring, and audible/visual alarm system — providing comprehensive protection for large-scale pharmaceutical, biotech, tissue engineering, and IVF tri-gas cell culture operations."
+                ],
+
+                items: [
+                  {
+                    title: "High and Low Temperature Alarm",
+                    description:
+                      "Activates for temperature deviations affecting the larger 233L culture load — where the greater simultaneous biological material value makes early thermal warning notification more critical than in the standard BIO-150RHP III."
+                  },
+                  {
+                    title: "CO₂ and O₂ Deviation Alarms",
+                    description:
+                      "Independent gas concentration alarms notify immediately of any O₂ or CO₂ deviation affecting the large-scale hypoxic or physioxic culture environment across the full 233L chamber."
+                  },
+                  {
+                    title: "Sensor Failure Alarms",
+                    description:
+                      "CO₂ and O₂ sensor failure alarms ensure immediate notification of any monitoring integrity loss in the large-capacity tri-gas environment."
+                  },
+                  {
+                    title: "Door Open Alarm and Independent Temperature Limiter",
+                    description:
+                      "Prevent atmosphere loss and provide hardware backup thermal protection for the large-scale pharmaceutical and biotech culture materials in the 233L chamber."
+                  },
+                  {
+                    title: "Over-Temperature Protection, Sterilization Monitoring, and Audible/Visual Alarms",
+                    description:
+                      "Complete safety system coverage for the large-scale tri-gas incubation environment at 1000W operating power."
+                  }
+                ]
+              }
+            },
+
+            specifications: {
+              overview: [
+                "The BIO-240RHP III provides 233L of high-capacity tri-gas CO₂ and O₂ controlled incubation with ±0.1°C temperature deviation, ±0.3°C uniformity, ±0.10% CO₂ deviation, ±0.2% O₂ control accuracy, direct heat air jacket, NDIR CO₂ and zirconium O₂ sensors, HEPA Level 100 filtration, 90°C sterilization, and 1000W — the high-capacity tri-gas CO₂ incubator for pharmaceutical, biotech, tissue engineering, and large-scale hypoxia research. Full specifications listed below."
+              ],
+
+              items: [
+                {
+                  label: "Temperature Control Method",
+                  value: "Direct heat and air jacket"
+                },
+                {
+                  label: "Display",
+                  value: "7-inch touch screen"
+                },
+                {
+                  label: "Chamber Volume",
+                  value: "233 L"
+                },
+                {
+                  label: "Temperature Sensor",
+                  value: "PT100"
+                },
+                {
+                  label: "Temperature Range",
+                  value: "Ambient +3°C to 50°C"
+                },
+                {
+                  label: "Temperature Deviation",
+                  value: "±0.1°C"
+                },
+                {
+                  label: "Temperature Uniformity (at 37°C)",
+                  value: "±0.3°C"
+                },
+                {
+                  label: "Temperature Recovery Time",
+                  value: "≤8 minutes (after 30 sec door opening)"
+                },
+                {
+                  label: "CO₂ Range",
+                  value: "0 to 20% V/V"
+                },
+                {
+                  label: "CO₂ Sensor",
+                  value: "Infrared (NDIR)"
+                },
+                {
+                  label: "CO₂ Deviation",
+                  value: "±0.10%"
+                },
+                {
+                  label: "CO₂ Recovery Time",
+                  value: "<5 minutes"
+                },
+                {
+                  label: "O₂ Range",
+                  value: "1% to 90%"
+                },
+                {
+                  label: "O₂ Control Accuracy",
+                  value: "±0.2%"
+                },
+                {
+                  label: "O₂ Sensor",
+                  value: "Zirconium oxide"
+                },
+                {
+                  label: "O₂ Control Resolution",
+                  value: "±0.1%"
+                },
+                {
+                  label: "Humidity Method",
+                  value: "Natural vaporization ≥90%"
+                },
+                {
+                  label: "HEPA Filtration",
+                  value: "Level 100 (within 5 minutes)"
+                },
+                {
+                  label: "Shelves",
+                  value: "3 pcs"
+                },
+                {
+                  label: "Interior Dimensions (W×D×H)",
+                  value: "600 × 630 × 670 mm"
+                },
+                {
+                  label: "Exterior Dimensions (W×D×H)",
+                  value: "788 × 817 × 950 mm"
+                },
+                {
+                  label: "Electrical Requirement",
+                  value: "AC 220 V, 50 Hz"
+                },
+                {
+                  label: "Power Consumption",
+                  value: "1000 W"
+                },
+                {
+                  label: "Ambient Temperature",
+                  value: "+5°C to 30°C"
+                },
+                {
+                  label: "Sterilization",
+                  value: "90°C high temperature moist heat"
+                }
+              ]
+            },
+
+            applications: {
+              overview: [
+                "The BIO-240RHP III supports large-scale hypoxia research, advanced cell culture at pharmaceutical and biotech scale, tissue engineering, IVF and medical research, and high-throughput biotech applications requiring the combination of large 233L tri-gas controlled incubation capacity with ±0.1°C temperature precision and ±0.2% O₂ accuracy."
+              ],
+
+              items: [
+                {
+                  label: "Large-Scale Hypoxia Research",
+                  value:
+                    "Pharmaceutical research groups and academic hypoxia biology institutes use the BIO-240RHP III for large parallel hypoxia experiment sets — simultaneously incubating multiple cell lines, treatment conditions, and time points under precisely controlled 1–5% O₂ environments. The 233L capacity enables complete experimental designs with full statistical replication to fit within a single tri-gas environment — eliminating between-unit O₂ level variability that would confound dose-response relationships and mechanistic conclusions in large hypoxia research programmes. The larger chamber volume also supports long-duration hypoxia experiments where repeated access for sampling and media change across many dishes requires the physical space of the larger interior."
+                },
+                {
+                  label: "Advanced Cell Culture at Pharmaceutical and Biotech Scale",
+                  value:
+                    "Pharmaceutical biologics development and biotechnology manufacturing support laboratories use the BIO-240RHP III for large-scale physioxic primary cell culture — maintaining human primary cells at physiological 3–8% O₂ tensions for drug target validation, toxicology screening, and biological assay development at throughputs that the compact BIO-150RHP III cannot accommodate. The 233L tri-gas environment enables production of large quantities of physiologically relevant primary cells or physioxic-conditioned cell culture materials for pharmaceutical pipeline research and biologics process development programmes."
+                },
+                {
+                  label: "Tissue Engineering",
+                  value:
+                    "Tissue engineering research groups use the BIO-240RHP III for three-dimensional tissue construct development under physiological O₂ environments — where the 233L capacity accommodates the large bioreactor inserts, scaffold assemblies, and tissue construct arrays that 3D tissue engineering experimental setups require. Many tissue engineering applications require O₂ gradients and controlled hypoxia to promote vascularisation, chondrocyte differentiation, and osteogenic differentiation in engineered tissue constructs — the BIO-240RHP III provides the O₂ control precision and chamber volume needed for large-scale tissue engineering programmes."
+                },
+                {
+                  label: "IVF and Medical Research",
+                  value:
+                    "IVF embryology programmes and reproductive medicine research laboratories use the BIO-240RHP III for high-throughput embryo culture under reduced-oxygen conditions — enabling simultaneous culture of larger numbers of embryos across multiple IVF cycles under the 5% O₂ reduced-oxygen conditions that support optimal blastocyst development. The 233L capacity enables IVF clinics with higher cycle volumes or combined research and clinical operations to maintain adequate incubation space for all simultaneous embryo cultures within a single comprehensively monitored tri-gas environment."
+                },
+                {
+                  label: "Pharmaceutical and Biotech Labs",
+                  value:
+                    "Pharmaceutical research and biotech production support organisations use the BIO-240RHP III as a shared large-capacity tri-gas incubation resource — providing the simultaneously controlled CO₂/O₂/temperature environment for multiple research groups' concurrent physioxic culture programmes, reducing the total number of tri-gas instruments required across the facility while maintaining precise environmental control for each programme's specific O₂ and CO₂ requirements through the 7-inch touch screen's accessible setpoint management."
+                }
+              ],
+
+              cta:
+                "Contact us to enquire about the BIO-240RHP III Tri-Gas CO₂ Incubator for your large-scale pharmaceutical, biotech, tissue engineering, and hypoxia research applications."
+            },
+
+            faqs: {
+              overview: [
+                "These FAQs address the 233L capacity advantages, comparison with BIO-150RHP III, pharmaceutical and biotech suitability, power requirements, stackability, tissue engineering applications, temperature uniformity across the larger chamber, gas supply requirements, shared multi-investigator use, and HEPA filtration at 233L scale."
+              ],
+
+              items: [
+                {
+                  question: "What additional capacity does the BIO-240RHP III provide over the BIO-150RHP III?",
+                  answer:
+                    "The BIO-240RHP III provides 233L (vs 155L) — approximately 50% more chamber volume — with a larger 600 × 630 × 670 mm interior (vs 480 × 530 × 610 mm). This increased volume accommodates proportionally more culture dishes, flasks, and multi-well plates simultaneously within the tri-gas controlled environment — enabling larger experimental designs, higher throughput physioxic culture, and shared multi-investigator incubation within a single large tri-gas unit."
+                },
+                {
+                  question: "Is the BIO-240RHP III suitable for pharmaceutical GMP-adjacent cell culture?",
+                  answer:
+                    "Yes — the BIO-240RHP III's ±0.1°C temperature precision, ±0.10% CO₂ control, ±0.2% O₂ accuracy, HEPA Level 100 contamination control, 90°C sterilization, and comprehensive eight-system alarm monitoring support the precision, contamination management, and documentation capabilities appropriate for pharmaceutical GMP-adjacent cell-based assay development and biological process development research. Confirm specific GMP qualification and validation requirements with your quality assurance team."
+                },
+                {
+                  question: "What power supply does the BIO-240RHP III require?",
+                  answer:
+                    "1000W at AC 220V, 50Hz — a substantial load requiring a dedicated or adequately rated circuit. In shared laboratory facilities, confirm circuit capacity for continuous 1000W load in the installation location."
+                },
+                {
+                  question: "Can BIO-240RHP III units be stacked?",
+                  answer:
+                    "Yes — the stackable design enables vertical stacking for space-efficient tri-gas incubation capacity expansion in pharmaceutical and biotech facilities. Confirm specific stacking compatibility and maximum stack height with your supplier for the BIO-240RHP III's larger 788 × 817 mm external footprint."
+                },
+                {
+                  question: "How does the BIO-240RHP III achieve ±0.3°C uniformity across the larger 233L chamber?",
+                  answer:
+                    "The direct heat plus air jacket hybrid system is scaled to the 600 × 630 × 670 mm larger interior — with embedded heating element distribution and air jacket circulation designed to maintain uniform temperature across all three shelf positions and the full 600mm lateral and 630mm depth dimensions of the larger chamber. The ±0.3°C uniformity specification at 37°C is verified across all chamber positions at the stated ambient temperature, ensuring consistent culture conditions for all simultaneous large-scale tri-gas culture applications."
+                },
+                {
+                  question: "What gas supplies does the BIO-240RHP III require?",
+                  answer:
+                    "CO₂ (medical grade or high purity), N₂ (≥99.999% high purity for O₂ displacement), and ambient air or compressed air supply. The larger chamber volume of the BIO-240RHP III consumes proportionally more gas for initial atmosphere establishment and recovery after door opening compared to the BIO-150RHP III — plan for adequate gas cylinder capacity or central gas line connections for sustained large-scale tri-gas culture operations."
+                },
+                {
+                  question: "Can the BIO-240RHP III serve as a shared multi-investigator tri-gas incubator?",
+                  answer:
+                    "Yes — the 233L three-shelf interior accommodates separate research programme allocations across different shelf levels, with independent tri-gas setpoints accessible from the 7-inch touch screen. Physical separation of different cell line cultures across shelf levels, combined with HEPA Level 100 filtration and 90°C sterilization between different programme users, enables shared multi-investigator tri-gas incubation management within the large-capacity BIO-240RHP III."
+                },
+                {
+                  question: "Is the BIO-240RHP III suitable for tissue engineering 3D construct development?",
+                  answer:
+                    "Yes. The 233L capacity accommodates large bioreactor inserts, scaffold assemblies, and 3D tissue construct arrays in the tri-gas controlled environment — with ±0.2% O₂ accuracy enabling the precise hypoxic gradient and zone control important for vascularisation, chondrogenesis, and osteogenesis in large-scale tissue engineering programmes."
+                },
+                {
+                  question: "What is the CO₂ recovery time after door opening in the BIO-240RHP III?",
+                  answer:
+                    "<5 minutes — the same specification as the BIO-150RHP III, achieved through the efficient gas injection system adjusted for the larger 233L volume. Minimise door opening duration during active large-scale culture access to reduce gas consumption and recovery time in the larger chamber."
+                },
+                {
+                  question: "How does the 90°C sterilization work in the larger BIO-240RHP III chamber?",
+                  answer:
+                    "The 90°C moist heat sterilization cycle raises the entire 233L chamber to 90°C under high humidity — the larger volume requires proportionally more time for complete heat penetration and sterilization of all internal surfaces compared to the BIO-150RHP III. The sterilization status reminder ensures the cycle is performed at recommended intervals for the larger shared tri-gas environment. Follow the manufacturer's recommended sterilization frequency and duration for the BIO-240RHP III's larger chamber volume."
+                }
+              ]
+            },
+
+            blog: {
+              heading:
+                "BIO-240RHP III Tri-Gas CO₂ Incubator: High-Capacity 233L Tri-Gas Control for Large-Scale Pharmaceutical, Biotechnology, and Tissue Engineering Research",
+
+              overview: [],
+
+              items: [
+                {
+                  title: "Why Capacity Matters in Tri-Gas Incubation: The BIO-240RHP III Case",
+                  description:
+                    "Tri-gas incubators are rarely purchased in multiples — the cost and complexity of maintaining multiple tri-gas systems with independent gas supplies makes shared large-capacity models the preferred solution for most pharmaceutical and biotech facilities. The BIO-240RHP III's 233L provides 50% more incubation space than the standard model within a single monitored, sterilized, and documented tri-gas environment — enabling more investigators, more simultaneous experimental conditions, and higher-throughput physioxic culture management from a single instrument with a single alarm monitoring infrastructure."
+                },
+                {
+                  title: "Final Verdict on the BIO-240RHP III",
+                  description:
+                    "The BIO-240RHP III delivers 233L of high-capacity tri-gas controlled cell culture with ±0.1°C precision, ±0.10% CO₂ accuracy, ±0.2% O₂ accuracy via zirconium sensor, HEPA Level 100, 90°C sterilization, 7-inch touch screen, and eight-system safety at 1000W — the large-scale tri-gas CO₂ incubator for pharmaceutical research, biotechnology, tissue engineering, and large-volume hypoxia and IVF research programmes."
                 }
               ]
             }

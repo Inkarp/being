@@ -4,7 +4,7 @@ export async function GET() {
     return NextResponse.json({
         category: "Rotary Evaporators",
         meta: {
-            title: "Incubators | OEM & Service Provider in India | Being India",
+            title: "Rotary Evaporators | OEM & Service Provider in India | Being India",
             description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
             keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
         },
@@ -31,10 +31,10 @@ export async function GET() {
                         thumbnail: "/products/shaking-incubators/bis-2.webp",
                         imgAltText:
                             "RV-21A compact 2L rotary evaporator with DC brushless motor, LCD display, auto lift mechanism, and PTFE sealing for small-scale solvent evaporation_ Being India",
-                        price: 15000,
-                        discount: 50,
-                        gem: true,
-                        tags: ["new"],
+                        price: 306820,
+                        // discount: 50,
+                        gem: false,
+                        // tags: ["new"],
                         related: ["bis-3c"],
                         productTitle: "RV-21A Rotary Evaporator — Compact 2L with DC Brushless Motor and 300 rpm for Small-Scale Labs",
 
@@ -326,10 +326,10 @@ export async function GET() {
                         thumbnail: "/products/shaking-incubators/bis-3c.webp",
                         imgAltText:
                             "RV-5A 5L rotary evaporator with PID temperature controller, LCD display, automatic lift mechanism, and PTFE Teflon sealing for chemical and pharmaceutical solvent evaporation_ Being India",
-                        price: 15000,
-                        discount: 50,
-                        gem: true,
-                        tags: ["new"],
+                        price: 507840,
+                        // discount: 50,
+                        gem: false,
+                        // tags: ["new"],
                         related: ["bis-2"],
                         productTitle: "RV-5A Rotary Evaporator — 5L with PID Temperature Control and Auto Lift for Chemical and Pharma Labs",
 
@@ -649,7 +649,7 @@ export async function GET() {
                         price: 1036840,
                         // discount: 50,
                         gem: false,
-                        tags: ["new", "featured"],
+                        // tags: ["new", "featured"],
                         related: ["rv-5a"],
                         productTitle: "RV-20A Rotary Evaporator — 20L Large-Scale with PID Control and 7 L/h for Pilot-Scale Processing",
 
@@ -963,7 +963,7 @@ export async function GET() {
                         price: 1396560,
                         // discount: 50,
                         gem: false,
-                        tags: ["new", "featured"],
+                        // tags: ["new", "featured"],
                         related: ["rv-20a"],
                         productTitle: "RV-50A Rotary Evaporator — 50L High-Capacity with PID Control and 9 L/h for Industrial-Scale Processing",
 
@@ -1260,9 +1260,6 @@ export async function GET() {
                     },
                 ]
             },
-
-
-
 
             {
                 name: "Rotary Evaporator Controller",
