@@ -109,7 +109,7 @@ export default function PricePopup({ isOpen, onClose, product, price }) {
           <div className="pp-body">
 
             {/* Product image */}
-            {product?.thumbnail && (
+            {/* {product?.thumbnail && (
               <div className="pp-img-wrap">
                 <Image
                   src={product.thumbnail}
@@ -119,7 +119,7 @@ export default function PricePopup({ isOpen, onClose, product, price }) {
                   style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '100%' }}
                 />
               </div>
-            )}
+            )} */}
 
             {/* Product name */}
             {(product?.title || product?.model) && (

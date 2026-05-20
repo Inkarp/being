@@ -1,13 +1,14 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const INITIAL_STATE = {
   name: '', company: '', designation: '', department: '',
   phone: '', email: '', country: '', state: '', city: '',
-  message: '', product: '', category: '',
+  message: '', product: '', category: '', warranty: '',
+  instrument: '', instrumentName: '', selectedModel: '', serialNumber: '', poDate: '', purchaseDate: '',
 };
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
@@ -102,14 +103,53 @@ function FocusTextarea({ name, placeholder, value, onChange, rows = 4 }) {
   );
 }
 
+function FocusSelect({ name, value, onChange, required, children, disabled }) {
+  const [focused, setFocused] = useState(false);
+  return (
+    <select
+      id={name} name={name}
+      value={value} onChange={onChange} required={required} disabled={disabled}
+      onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
+      style={{
+        width: '100%', boxSizing: 'border-box',
+        border: `1.5px solid ${focused ? '#2563EB' : '#CBD5E1'}`,
+        borderRadius: 10, padding: '10px 14px',
+        fontSize: 14, fontFamily: 'inherit',
+        color: disabled ? '#64748B' : '#0F172A',
+        background: disabled ? '#F8FAFC' : '#fff',
+        outline: 'none',
+        boxShadow: focused ? '0 0 0 3px rgba(59,130,246,0.1)' : 'none',
+        transition: 'border-color 0.18s, box-shadow 0.18s',
+      }}
+    >
+      {children}
+    </select>
+  );
+}
+
 // ─── Main component ───────────────────────────────────────────────────────────
 
-export default function ServiceForm({ isOpen, onClose, productData }) {
+export default function ServiceForm({
+  isOpen,
+  onClose,
+  productData,
+  endpoint = '/api/service',
+  eyebrow = 'Service Request',
+  title = 'Service Enquiry',
+  submitLabel = 'Send Enquiry',
+  successLabel = 'Enquiry Sent!',
+  dialogLabel = 'Service Enquiry',
+  productLabel = 'Product',
+  warrantyPeriod = '',
+  includeInstrumentFields = false,
+}) {
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [loading,  setLoading]  = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error,    setError]    = useState('');
   const [visible,  setVisible]  = useState(false);
+  const [productOptions, setProductOptions] = useState([]);
+  const [productOptionsLoading, setProductOptionsLoading] = useState(false);
   const overlayRef = useRef(null);
 
   /* Animate in/out */
@@ -131,9 +171,60 @@ export default function ServiceForm({ isOpen, onClose, productData }) {
         ...prev,
         product: productData.model || '',
         category: productData.category || '',
+        warranty: productData.warranty || warrantyPeriod || '',
       }));
     }
-  }, [isOpen, productData]);
+  }, [isOpen, productData, warrantyPeriod]);
+
+  useEffect(() => {
+    if (!isOpen || !includeInstrumentFields || productOptions.length > 0) return;
+
+    let mounted = true;
+    async function loadProductOptions() {
+      setProductOptionsLoading(true);
+      try {
+        const res = await fetch('/api/products', { cache: 'no-store' });
+        const json = await res.json();
+        if (mounted) setProductOptions(Array.isArray(json) ? json : []);
+      } catch (err) {
+        console.error('Failed to load product options:', err);
+        if (mounted) setError('Failed to load product list. Please try again.');
+      } finally {
+        if (mounted) setProductOptionsLoading(false);
+      }
+    }
+
+    loadProductOptions();
+    return () => {
+      mounted = false;
+    };
+  }, [isOpen, includeInstrumentFields, productOptions.length]);
+
+  const instrumentOptions = useMemo(() => {
+    const map = new Map();
+    productOptions.forEach((item) => {
+      const key = item.subcategory || item.category || item.subcategoryName || item.categoryName;
+      if (!key) return;
+      map.set(key, {
+        value: key,
+        label: item.subcategoryName || item.categoryName || key,
+      });
+    });
+    return Array.from(map.values()).sort((a, b) => a.label.localeCompare(b.label));
+  }, [productOptions]);
+
+  const modelOptions = useMemo(() => {
+    const filtered = formData.instrument
+      ? productOptions.filter((item) => (item.subcategory || item.category) === formData.instrument)
+      : productOptions;
+
+    return filtered
+      .map((item) => ({
+        value: item.model || item.title || item.id,
+        label: [item.model, item.title].filter(Boolean).join(' - ') || item.id,
+      }))
+      .filter((item) => item.value);
+  }, [formData.instrument, productOptions]);
 
   /* Escape key */
   useEffect(() => {
@@ -155,15 +246,35 @@ export default function ServiceForm({ isOpen, onClose, productData }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const selectedInstrument = name === 'instrument'
+      ? instrumentOptions.find((item) => item.value === value)
+      : null;
+
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+      ...(name === 'instrument'
+        ? { selectedModel: '', instrumentName: selectedInstrument?.label || '' }
+        : {}),
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
+
+    if (
+      includeInstrumentFields &&
+      (!formData.instrument || !formData.selectedModel || !formData.serialNumber || !formData.poDate || !formData.purchaseDate)
+    ) {
+      setError('Please complete instrument, model, Sl.No, PO date and purchase date.');
+      setLoading(false);
+      return;
+    }
+
     try {
-      const res = await fetch('/api/service', {
+      const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -190,7 +301,7 @@ export default function ServiceForm({ isOpen, onClose, productData }) {
         ref={overlayRef}
         className={`sf-overlay ${visible ? 'sf-overlay--in' : ''}`}
         onClick={(e) => { if (e.target === overlayRef.current) handleClose(); }}
-        role="dialog" aria-modal="true" aria-label="Service Enquiry"
+        role="dialog" aria-modal="true" aria-label={dialogLabel}
       >
         {/* Card */}
         <div className={`sf-card ${visible ? 'sf-card--in' : ''}`}>
@@ -203,8 +314,8 @@ export default function ServiceForm({ isOpen, onClose, productData }) {
             <div className="sf-header-left">
               <span className="sf-icon-badge"><IconWrench /></span>
               <div>
-                <p className="sf-eyebrow">Service Request</p>
-                <h2 className="sf-title">Service Enquiry</h2>
+                <p className="sf-eyebrow">{eyebrow}</p>
+                <h2 className="sf-title">{title}</h2>
               </div>
             </div>
             <button onClick={handleClose} className="sf-close" aria-label="Close">
@@ -217,9 +328,14 @@ export default function ServiceForm({ isOpen, onClose, productData }) {
             <div className="sf-product">
               <div className="sf-product-inner">
                 <div>
-                  <p className="sf-product-eyebrow">Product</p>
+                  <p className="sf-product-eyebrow">{productLabel}</p>
                   <p className="sf-product-name">{productData.model}</p>
                 </div>
+                {formData.warranty && (
+                  <span className="sf-product-path">
+                    Warranty: {formData.warranty}
+                  </span>
+                )}
                 {/* {(productData.category || productData.subcategory) && (
                   <span className="sf-product-path">
                     {[productData.category, productData.subcategory].filter(Boolean).join(' → ')}
@@ -277,6 +393,103 @@ export default function ServiceForm({ isOpen, onClose, productData }) {
               </Field>
             </div>
 
+            {formData.warranty && (
+              <div>
+                <label style={{ display: 'block', fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#475569', marginBottom: 6 }}>
+                  Warranty
+                </label>
+                <input
+                  name="warranty"
+                  value={formData.warranty}
+                  readOnly
+                  style={{
+                    width: '100%', boxSizing: 'border-box',
+                    border: '1.5px solid #CBD5E1',
+                    borderRadius: 10, padding: '10px 14px',
+                    fontSize: 14, fontFamily: 'inherit',
+                    color: '#1E3A8A', background: '#EFF6FF', outline: 'none',
+                    fontWeight: 700,
+                  }}
+                />
+              </div>
+            )}
+
+            {includeInstrumentFields && (
+              <div className="sf-equipment-block">
+                <p className="sf-section-title">Instrument Details</p>
+
+                <div className="sf-row">
+                  <Field label="Instrument">
+                    <FocusSelect
+                      name="instrument"
+                      value={formData.instrument}
+                      onChange={handleChange}
+                      required
+                      disabled={productOptionsLoading}
+                    >
+                      <option value="">
+                        {productOptionsLoading ? 'Loading instruments...' : 'Select instrument'}
+                      </option>
+                      {instrumentOptions.map((item) => (
+                        <option key={item.value} value={item.value}>
+                          {item.label}
+                        </option>
+                      ))}
+                    </FocusSelect>
+                  </Field>
+                  <Field label="Model">
+                    <FocusSelect
+                      name="selectedModel"
+                      value={formData.selectedModel}
+                      onChange={handleChange}
+                      required
+                      disabled={productOptionsLoading}
+                    >
+                      <option value="">
+                        {productOptionsLoading ? 'Loading models...' : 'Select model'}
+                      </option>
+                      {modelOptions.map((item, index) => (
+                        <option key={`${item.value}-${index}`} value={item.value}>
+                          {item.label}
+                        </option>
+                      ))}
+                    </FocusSelect>
+                  </Field>
+                </div>
+
+                <div className="sf-row">
+                  <Field label="Sl.No">
+                    <FocusInput
+                      name="serialNumber"
+                      placeholder="Enter serial number"
+                      value={formData.serialNumber}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Field>
+                  <Field label="PO Date">
+                    <FocusInput
+                      name="poDate"
+                      type="date"
+                      value={formData.poDate}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Field>
+                </div>
+
+                <Field label="Purchase Date">
+                  <FocusInput
+                    name="purchaseDate"
+                    type="date"
+                    value={formData.purchaseDate}
+                    onChange={handleChange}
+                    required
+                  />
+                </Field>
+              </div>
+            )}
+
             {/* Message */}
             <div>
               <label style={{ display: 'block', fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#475569', marginBottom: 6 }}>
@@ -304,8 +517,8 @@ export default function ServiceForm({ isOpen, onClose, productData }) {
               className={`sf-submit ${submitted ? 'sf-submit--done' : ''}`}
             >
               {loading  && <><span className="sf-spinner" />Sending…</>}
-              {!loading && submitted && <><IconCheck />Enquiry Sent!</>}
-              {!loading && !submitted && <><IconSend />Send Enquiry</>}
+              {!loading && submitted && <><IconCheck />{successLabel}</>}
+              {!loading && !submitted && <><IconSend />{submitLabel}</>}
             </button>
 
           </form>
@@ -404,6 +617,24 @@ const css = `
 
   .sf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .sf-row--3 { grid-template-columns: 1fr 1fr 1fr; }
+
+  .sf-equipment-block {
+    border: 1px solid #DBEAFE;
+    background: linear-gradient(180deg, #F8FBFF, #FFFFFF);
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .sf-section-title {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1E3A8A;
+  }
 
   /* Error */
   .sf-error {

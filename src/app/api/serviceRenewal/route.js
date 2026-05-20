@@ -1,6 +1,7 @@
 
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import clientPromise from "../../library/mongodb";
 
 // Ensure this runs only on Node (not Edge)
 export const runtime = 'nodejs';
@@ -29,6 +30,33 @@ export async function POST(request) {
       );
     }
 
+    const client = await clientPromise;
+    const db = client.db("BeingDB");
+    const dbResult = await db.collection("serviceRenewalEnquiries").insertOne({
+      leadType: "Service Renewal Request",
+      name: formData.name,
+      company: formData.company || null,
+      designation: formData.designation || null,
+      department: formData.department || null,
+      phone: formData.phone || null,
+      email: formData.email,
+      country: formData.country || "India",
+      state: formData.state || null,
+      city: formData.city || null,
+      product: formData.product,
+      category: formData.category || null,
+      warranty: formData.warranty || null,
+      instrument: formData.instrument || null,
+      instrumentName: formData.instrumentName || null,
+      selectedModel: formData.selectedModel || null,
+      serialNumber: formData.serialNumber || null,
+      poDate: formData.poDate || null,
+      purchaseDate: formData.purchaseDate || null,
+      message: formData.message || null,
+      status: "New",
+      createdAt: new Date(),
+    });
+
     const mailOptions = {
       from: `"Being Instruments India" <${process.env.EMAIL_USER}>`,
       to: COMPANY_EMAIL,
@@ -44,6 +72,11 @@ export async function POST(request) {
           <div style="background:#1e293b; padding:16px; border-radius:10px; margin-bottom:20px;">
             <p style="color:#e5e7eb;"><strong>Product:</strong> ${formData.product}</p>
             <p style="color:#e5e7eb;"><strong>Category:</strong> ${formData.category || 'N/A'}</p>
+            <p style="color:#e5e7eb;"><strong>Instrument:</strong> ${formData.instrumentName || formData.instrument || 'N/A'}</p>
+            <p style="color:#e5e7eb;"><strong>Model:</strong> ${formData.selectedModel || 'N/A'}</p>
+            <p style="color:#e5e7eb;"><strong>Sl.No:</strong> ${formData.serialNumber || 'N/A'}</p>
+            <p style="color:#e5e7eb;"><strong>PO Date:</strong> ${formData.poDate || 'N/A'}</p>
+            <p style="color:#e5e7eb;"><strong>Purchase Date:</strong> ${formData.purchaseDate || 'N/A'}</p>
           </div>
 
           <table style="width:100%; border-collapse:collapse; background:#020617; border-radius:10px;">
@@ -108,7 +141,7 @@ export async function POST(request) {
     // Send mail
     await transporter.sendMail(mailOptions);
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, id: dbResult.insertedId });
   } catch (error) {
     console.error('Mail Error:', error);
     return NextResponse.json(

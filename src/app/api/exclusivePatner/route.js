@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import clientPromise from "../../library/mongodb";
 
 // Ensure this runs only on Node (not Edge)
 export const runtime = 'nodejs';
@@ -27,6 +28,26 @@ export async function POST(request) {
         { status: 400 }
       );
     }
+
+    const client = await clientPromise;
+    const db = client.db("BeingDB");
+    const dbResult = await db.collection("exclusivePartnerEnquiries").insertOne({
+      leadType: "Exclusive Partnership",
+      name: formData.name,
+      company: formData.company || null,
+      designation: formData.designation || null,
+      department: formData.department || null,
+      phone: formData.phone || null,
+      email: formData.email,
+      country: formData.country || "India",
+      state: formData.state || null,
+      city: formData.city || null,
+      product: formData.product,
+      category: formData.category || null,
+      message: formData.message || null,
+      status: "New",
+      createdAt: new Date(),
+    });
 
     const mailOptions = {
       from: `"Being Instruments India" <${process.env.EMAIL_USER}>`,
@@ -107,7 +128,7 @@ export async function POST(request) {
     // Send mail
     await transporter.sendMail(mailOptions);
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, id: dbResult.insertedId });
   } catch (error) {
     console.error('Mail Error:', error);
     return NextResponse.json(

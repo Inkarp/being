@@ -358,6 +358,7 @@ export default function Model() {
                     category: categorySlug,
                     subcategory: subSlug,
                 }}
+                includeInstrumentFields
             />
 
             {/* {subCategory?.models?.length > 1 && (
