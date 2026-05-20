@@ -223,10 +223,7 @@ export default function Products() {
                     <main className="bg-[#f7f9fc] p-5 sm:p-7 lg:p-8">
                         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                             <div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-[#e8f2ff] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#2F4191]">
-                                    <FaFilter />
-                                    Product finder
-                                </div>
+                               
                                 <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[#151b2d] sm:text-3xl">
                                     {activeCategory === ALL_PRODUCTS
                                         ? "All product lines"
