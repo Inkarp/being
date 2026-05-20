@@ -1,5 +1,4 @@
 import { PRODUCT_CATEGORY_SLUGS } from "../lib/productCategories";
-import { GET as getCabinetProducts } from "./api/products/cabinet/route";
 import { GET as getIncubatorProducts } from "./api/products/incubators/route";
 import { GET as getLaboratoryOvenProducts } from "./api/products/laboratory-ovens/route";
 
