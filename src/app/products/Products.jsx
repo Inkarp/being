@@ -168,7 +168,7 @@ export default function Products() {
                                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#6f7c91]">
                                     Categories
                                 </p>
-                                <p className="text-sm font-semibold text-[#182033]">Choose a product family</p>
+                                <p className="text-sm font-medium text-[#182033]">Choose a product family</p>
                             </div>
                         </div>
 
@@ -185,7 +185,7 @@ export default function Products() {
                                             type="button"
                                             onClick={() => setActiveCategory(category.slug)}
                                             className={`group relative flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-base transition ${isActive
-                                                ? "bg-[#182033] font-bold text-white shadow-lg shadow-[#182033]/18"
+                                                ? "bg-[#182033] font-semibold text-white shadow-lg shadow-[#182033]/18"
                                                 : "font-semibold text-[#30394d] hover:bg-[#eef5ff] hover:text-[#2F4191]"
                                                 }`}
                                         >
@@ -205,7 +205,7 @@ export default function Products() {
                                 type="button"
                                 onClick={() => setActiveCategory(ALL_PRODUCTS)}
                                 className={`relative flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-base transition ${activeCategory === ALL_PRODUCTS
-                                    ? "bg-[#182033] font-bold text-white shadow-lg shadow-[#182033]/18"
+                                    ? "bg-[#182033] font-semibold text-white shadow-lg shadow-[#182033]/18"
                                     : "font-semibold text-[#30394d] hover:bg-[#eef5ff] hover:text-[#2F4191]"
                                     }`}
                             >
@@ -227,7 +227,7 @@ export default function Products() {
                                     <FaFilter />
                                     Product finder
                                 </div>
-                                <h2 className="mt-3 text-2xl font-black tracking-tight text-[#151b2d] sm:text-3xl">
+                                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[#151b2d] sm:text-3xl">
                                     {activeCategory === ALL_PRODUCTS
                                         ? "All product lines"
                                         : categories.find((category) => category.slug === activeCategory)?.name}
@@ -277,7 +277,7 @@ export default function Products() {
 
                                                 <div className="min-w-0 flex-1">
                                                     <div className="flex flex-wrap items-center gap-2">
-                                                        <h3 className="text-lg font-black leading-snug text-[#151b2d]">
+                                                        <h3 className="text-lg font-semibold leading-snug text-[#151b2d]">
                                                             {sub.name}
                                                         </h3>
                                                         {activeCategory === ALL_PRODUCTS && (
