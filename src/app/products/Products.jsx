@@ -168,7 +168,7 @@ export default function Products() {
                                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#6f7c91]">
                                     Categories
                                 </p>
-                                <p className="text-sm font-medium text-[#182033]">Choose a product family</p>
+                                <p className="text-sm font-medium text-[#182033]">Choose your Product</p>
                             </div>
                         </div>
 
