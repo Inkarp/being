@@ -6,5 +6,6 @@ export const PRODUCT_CATEGORY_SLUGS = [
   "rotary-evaporators",
   "water-baths",
   "freezers",
-  "chillers"
+  "chillers",
+  "muffle-furnace"
 ];

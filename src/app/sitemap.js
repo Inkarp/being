@@ -1,6 +1,13 @@
 import { PRODUCT_CATEGORY_SLUGS } from "../lib/productCategories";
+import { GET as getBiologicalSafetyCabinetProducts } from "./api/products/biological-saftey-cabinets/route";
+import { GET as getChillerProducts } from "./api/products/chillers/route";
+import { GET as getFreezerProducts } from "./api/products/freezers/route";
 import { GET as getIncubatorProducts } from "./api/products/incubators/route";
 import { GET as getLaboratoryOvenProducts } from "./api/products/laboratory-ovens/route";
+import { GET as getMuffleFurnaceProducts } from "./api/products/muffle-furnace/route";
+import { GET as getPumpProducts } from "./api/products/pumps/route";
+import { GET as getRotaryEvaporatorProducts } from "./api/products/rotary-evaporators/route";
+import { GET as getWaterBathProducts } from "./api/products/water-baths/route";
 
 const SITE_URL = (
   "https://www.beinglab.co.in/"
@@ -20,7 +27,13 @@ const staticRoutes = [
 const categoryLoaders = {
   "laboratory-ovens": getLaboratoryOvenProducts,
   incubators: getIncubatorProducts,
-
+  "biological-saftey-cabinets": getBiologicalSafetyCabinetProducts,
+  pumps: getPumpProducts,
+  "rotary-evaporators": getRotaryEvaporatorProducts,
+  "water-baths": getWaterBathProducts,
+  freezers: getFreezerProducts,
+  chillers: getChillerProducts,
+  "muffle-furnace": getMuffleFurnaceProducts,
 };
 
 function sitemapEntry(path, priority = 0.7, changeFrequency = "monthly") {
