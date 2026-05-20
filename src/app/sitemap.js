@@ -20,7 +20,7 @@ const staticRoutes = [
 const categoryLoaders = {
   "laboratory-ovens": getLaboratoryOvenProducts,
   incubators: getIncubatorProducts,
-  cabinet: getCabinetProducts,
+
 };
 
 function sitemapEntry(path, priority = 0.7, changeFrequency = "monthly") {
