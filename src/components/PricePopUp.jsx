@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
 // ─── Icons (zero extra deps) ──────────────────────────────────────────────────
@@ -70,6 +69,20 @@ export default function PricePopup({ isOpen, onClose, product, price }) {
     return isNaN(num) ? String(raw) : num.toLocaleString('en-IN');
   })();
 
+  const openWhatsApp = () => {
+    const productName = product?.title || product?.model || 'this product';
+    const priceText = formattedPrice ? `₹ ${formattedPrice}` : 'price shown on website';
+    const pageUrl = typeof window !== 'undefined' ? window.location.href : '';
+    const message = [
+      `Hi, I want this product: ${productName}.`,
+      `Price: ${priceText}.`,
+      pageUrl ? `Product link: ${pageUrl}` : '',
+      'Please contact me with more details.',
+    ].filter(Boolean).join('\n');
+
+    window.open(`https://wa.me/919030357676?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <>
       <style>{styles}</style>
@@ -99,8 +112,7 @@ export default function PricePopup({ isOpen, onClose, product, price }) {
             <div className="pp-check-ring">
               <IconCheck />
             </div>
-            <p className="pp-header-title">Price Unlocked</p>
-            <p className="pp-header-sub">Thank you for your enquiry</p>
+            <p className="pp-header-title">Price Unlocked</p>          
           </div>
 
           <div className="pp-divider" />
@@ -146,13 +158,13 @@ export default function PricePopup({ isOpen, onClose, product, price }) {
             </div>
 
             {/* CTA */}
-            <button onClick={handleClose} className="pp-cta">
+            {/* <button onClick={openWhatsApp} className="pp-cta">
               <IconClock />
-              We'll get back to you shortly
-            </button>
+             Contact Us
+            </button> */}
 
             {/* Trust note */}
-            <p className="pp-trust">Our team will reach you within 1–2 business days</p>
+            {/* <p className="pp-trust">Our team will reach you within 1–2 business days</p> */}
 
           </div>
         </div>
