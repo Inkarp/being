@@ -254,8 +254,8 @@ export default function Model() {
                     </div>
 
                     {/* ================= RIGHT: PRODUCT IMAGE ================= */}
-                    <div className="flex flex-col justify-center">
-                        <div className="relative mx-auto aspect-[4/3] w-full max-w-[420px] transition-colors duration-300">
+                    <div className="flex h-full items-center justify-center">
+                        <div className="relative flex aspect-[4/3] w-full max-w-[420px] items-center justify-center transition-colors duration-300">
                             {/* GEM BADGE ON IMAGE */}
                             {product.gem && (
                                 <Image
@@ -277,8 +277,8 @@ export default function Model() {
                                 src={product.thumbnail}
                                 alt={product.imgAltText || product.title}
                                 fill
-                                sizes="(max-width: 1024px) 100vw, 33vw"
-                                className="object-contain"
+                                sizes="(max-width: 1024px) 100vw, 40vw"
+                                className="object-contain object-center"
                                 priority
                             />
                         </div>

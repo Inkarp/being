@@ -30,7 +30,7 @@ export async function GET() {
                         productTitle:
                             "BWF-12/07CR Muffle Furnace — 7L Chamber with 1200°C Maximum Temperature and Programmable PID Control",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/muffle-furnace/bwf-12-07cr.webp",
 
                         imgAltText:
                             "BWF-12/07CR 7L muffle furnace with 1200°C maximum temperature, PID programmable controller, ceramic fiber insulation, and stainless steel exterior for laboratory ashing and sintering_ Being India",
@@ -359,7 +359,7 @@ export async function GET() {
                         productTitle:
                             "BWF-12/12CR Muffle Furnace — 12L High-Throughput with 1200°C Maximum Temperature and Programmable PID Control",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                         thumbnail: "/products/muffle-furnace/bwf-12-07cr.webp",
 
                         imgAltText:
                             "BWF-12/12CR 12L high-throughput muffle furnace with 1200°C maximum temperature, PID programmable controller, ceramic fiber insulation, and 4kW power for industrial and academic laboratory ashing, sintering, and heat treatment_Being India",
@@ -677,8 +677,6 @@ export async function GET() {
                     },
                 ]
             },
-
-
 
         ]
     });

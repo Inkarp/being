@@ -25,7 +25,7 @@ export async function GET() {
                         productTitle:
                             "VRI-4 Oil Rotary Vane Vacuum Pump — Compact Dual-Stage 4 m³/h with Solenoid Anti-Backflow Valve and 1×10⁻¹ Pa for Laboratory Vacuum Applications",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/pumps/vri-4.webp",
 
                         imgAltText:
                             "VRI-4 compact dual-stage oil rotary vane vacuum pump with 4 m³/h flow, 1×10⁻¹ Pa ultimate partial pressure, KF16 inlet, electric solenoid anti-backflow valve, built-in gear pump oil circulation, and IP44 protection for laboratory vacuum oven and drying system applications_Being India",
@@ -309,7 +309,7 @@ export async function GET() {
                         productTitle:
                             "VRI-8 Oil Rotary Vane Vacuum Pump — Higher-Capacity Dual-Stage 8 m³/h with Solenoid Anti-Backflow Valve for Laboratory and Industrial Vacuum Applications",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/pumps/vri-8.webp",
 
                         imgAltText:
                             "VRI-8 higher-capacity dual-stage oil rotary vane vacuum pump with 8 m³/h flow, 1×10⁻¹ Pa ultimate partial pressure, KF16 inlet, solenoid anti-backflow valve, IP44 protection, and 0.55 kW for laboratory and industrial vacuum oven, drying, and chemical processing applications_Being India",
@@ -584,7 +584,7 @@ export async function GET() {
                         productTitle:
                             "VRD-16 Oil Rotary Vane Vacuum Pump — High-Efficiency 16 m³/h Two-Stage with Fluororubber Seals, Double Anti-Return Oil and 4×10⁻² Pa for Industrial and Research Applications",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/pumps/vrd-16.webp",
 
                         imgAltText:
                             "VRD-16 high-efficiency two-stage oil rotary vane vacuum pump with 16 m³/h flow, 4×10⁻² Pa ultimate partial pressure, double anti-return oil structure, fluororubber seals, KF25 inlet, advanced exhaust valve, and single or three-phase power for industrial laboratory and chemical processing vacuum applications",
@@ -878,7 +878,7 @@ export async function GET() {
                         productTitle:
                             "V-20 Diaphragm Vacuum Pump — Oil-Free PTFE with 20 L/min Flow and 8 mbar Ultimate Vacuum for Laboratory and Corrosive Gas Applications",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/pumps/v-20.webp",
 
                         imgAltText:
                             "V-20 oil-free PTFE diaphragm vacuum pump with 20 L/min flow, 8 mbar ultimate vacuum, two-stage pump head, anticorrosion design, and quiet low-vibration operation for laboratory filtration, pharmaceutical, and corrosive gas applications_Being India",
@@ -1166,8 +1166,7 @@ export async function GET() {
                         productTitle:
                             "V-40 Diaphragm Vacuum Pump — Oil-Free PTFE with 35 L/min Flow and 8 mbar for General Laboratory Vacuum Applications",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
-
+                        thumbnail: "/products/pumps/v-20.webp",
                         imgAltText:
                             "V-40 oil-free PTFE diaphragm vacuum pump with 35 L/min maximum flow, 8 mbar ultimate vacuum, two-stage anticorrosion pump head, and low-noise direct drive for general laboratory vacuum and chemical processing applications_Being India",
 
@@ -1444,7 +1443,7 @@ export async function GET() {
                         productTitle:
                             "V-65 Diaphragm Vacuum Pump — High-Flow Oil-Free PTFE with 65 L/min and 8 mbar for Demanding Laboratory Conditions",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/pumps/v-65.webp",
 
                         imgAltText:
                             "V-65 high-flow oil-free PTFE diaphragm vacuum pump with 65 L/min maximum flow, 8 mbar ultimate vacuum, 12mm interface, two-stage anticorrosion pump head, and direct drive for demanding pharmaceutical and chemical laboratory vacuum applications_Being India",
@@ -1728,7 +1727,7 @@ export async function GET() {
                         productTitle:
                             "V-135 Diaphragm Vacuum Pump — High-Capacity 125 L/min Oil-Free PTFE with Real-Time Vacuum Adjustment for Industrial and Large Laboratory Use",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/pumps/v-135.webp",
 
                         imgAltText:
                             "V-135 high-capacity oil-free PTFE diaphragm vacuum pump with 125 L/min maximum flow, 8 mbar ultimate vacuum, real-time vacuum adjustment display, two-stage pump head, and 600W for industrial laboratory and large-scale chemical processing vacuum applications_Being India",

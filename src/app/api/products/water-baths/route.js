@@ -31,7 +31,7 @@ export async function GET() {
                         productTitle:
                             "BWS-20 Digital Water Bath — 20L with PID Control and Uniform Heating up to 100°C",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/water-baths/bws-20.webp",
 
                         imgAltText:
                             "BWS-20 20L Digital Water Bath with PID temperature controller, circulating pump, and stainless steel chamber for laboratory heating and incubation_ Being India",
@@ -326,15 +326,7 @@ export async function GET() {
                 ]
             },
 
-            {
-                name: "Laminar Air Flow (Vertical Clean Bench)",
-                slug: "laminar-air-flow",
-                models: [
-
-
-
-                ]
-            },
+            
         ]
     });
 }
