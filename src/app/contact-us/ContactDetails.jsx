@@ -99,10 +99,7 @@ export default function ContactDetails() {
                                         <FaPhoneAlt className="text-white/70" />
                                         +91 9030357676
                                     </p>
-                                    <p className="flex items-center gap-2 text-lg">
-                                        <FaEnvelope className="text-white/70" />
-                                        <a href="mailto:accounts@techin.com" className="hover:underline truncate">accounts@techin.com</a>
-                                    </p>
+                                  
                                 </div>
                             </div>
                         </div>
