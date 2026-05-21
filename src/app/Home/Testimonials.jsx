@@ -7,27 +7,75 @@ import { FaQuoteRight, FaUser } from "react-icons/fa";
 const testimonials = [
   {
     id: 1,
-    name: "Timothy Quano",
-    role: "Symph, Designer",
-    // image:
-    //   "/dp.jpg",
-    text: "This product really helped my brand expand in a very manageable way. Would really use this for any future expansion.",
+    name: "Shalin Chaappan",
+    role: "Customer",
+    text: "The service was good, and the customer support was amazing for all the equipment present in our lab. The service engineer was also very professional. While quality and cost are important when purchasing equipment, reliable future support is equally important. That kind of support is what we received from Inkarp. Keep up the spirit.",
   },
   {
     id: 2,
-    name: "Jane Doe",
-    role: "ANI, CEO",
-    image:
-      "/dp.jpg",
-    text: "Scalability will never be an issue now for my brand!",
+    name: "Manu Eswar",
+    role: "Customer",
+    text: "Good service was delivered for the Being chillers we purchased from Inkarp Instruments. The demonstration was also clear and helpful. Thank you.",
   },
   {
     id: 3,
-    name: "Rowen Smith",
-    role: "Golden Bowl, CEO",
-    image:
-      "/dp.jpg",
-    text: "The product is really easy to use that I didn't have to set training for my employees.",
+    name: "Ramesh Ponnam",
+    role: "Customer",
+    text: "The Being Instruments equipment is working well, and the service provided was good.",
+  },
+  {
+    id: 4,
+    name: "Gokul G",
+    role: "Customer",
+    text: "We are using a Being rotary evaporator in our purification lab, and it is working well. Inkarp provides timely support for preventive maintenance and service requests, and their team handles everything professionally.",
+  },
+  {
+    id: 5,
+    name: "Apurv Uday Rakhonde",
+    role: "Customer",
+    text: "The Being chiller is working properly, and we are satisfied with its performance.",
+  },
+  {
+    id: 6,
+    name: "Dnyaneshwar Chaudhari",
+    role: "Customer",
+    text: "The Being chiller is working well. It was checked by Mr. Afroj, and his service work was satisfactory.",
+  },
+  {
+    id: 7,
+    name: "Vembu K",
+    role: "Customer",
+    text: "The instrument was installed successfully, and the demo was explained clearly. The equipment is working well.",
+  },
+  {
+    id: 8,
+    name: "Sanjeev Regula",
+    role: "Customer",
+    text: "We received good service for the Being chiller and rotary evaporator. The support experience was satisfactory.",
+  },
+  {
+    id: 9,
+    name: "Vaishnavi Thakare",
+    role: "Customer",
+    text: "We received good service for the Being vacuum pump. The support provided was helpful and satisfactory.",
+  },
+  {
+    id: 10,
+    name: "Rinku Varshney",
+    role: "Customer",
+    text: "The Being Instruments engineer visited for the installation, and the overall service experience was very good.",
+  },
+  {
+    id: 11,
+    name: "Prateek Sachan",
+    role: "Customer",
+    text: "The Being rotary evaporator is a very nice instrument, and the service engineer handled the work very well.",
+  },
+  {
+    id: 12,
+    name: "Devika Krishnan",
+    role: "Customer",
+    text: "We are satisfied with the overall quality of installation and maintenance of the instruments. Thank you for the timely servicing, which helps support uninterrupted performance.",
   },
 ];
 
@@ -53,7 +101,8 @@ export default function Testimonials() {
 
   return (
     <section
-      style={{ perspective: '1200px' ,
+      style={{
+        perspective: '1200px',
         background: 'linear-gradient(160deg, #275c9c 0%, #6cacdf 50%, #f0f7ff 100%)'
       }}
       className="overflow-hidden relative min-h-[500px] grid grid-cols-1 lg:grid-cols-12 place-content-center lg:place-items-center lg:gap-10 mx-auto  border-b border-white"
@@ -63,11 +112,11 @@ export default function Testimonials() {
         <div className="hidden xl:block absolute top-[-6rem] left-[-5rem] w-64 h-64 bg-[#2F4191]/50 hover:scale-110 transition-transform duration-300 rounded-full"></div>
 
         <h1 className="relative z-10 text-3xl text-white sm:text-5xl 2xl:text-6xl font-bold sm:leading-snug 2xl:leading-tight">
-          What our customers <br/> say about us.
+          What our customers <br /> say about us.
         </h1>
 
         <p className="mt-4 mb-7 text-white max-w-sm 2xl:text-lg">
-         Customers know what we are {" "}
+          Customers know what we are {" "}
           <span className="text-black  hover:underline cursor-pointer">
             Being
           </span>{" "}

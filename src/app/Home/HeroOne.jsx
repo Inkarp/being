@@ -253,7 +253,7 @@ export default function HeroOne() {
 
       <section
         ref={sectionRef}
-        className="relative w-full lg:h-[750px] h-[600px] overflow-hidden">
+        className="relative w-full lg:h-[750px] h-[560px] sm:h-[600px] overflow-hidden bg-[#2F4191]">
         <Image
           src="/HeroImage2.webp"
           alt="Hero"
@@ -261,12 +261,12 @@ export default function HeroOne() {
           priority
           quality={75}
           sizes="100vw"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="hidden sm:block absolute inset-0 w-full h-full object-cover"
         />
 
-        <div className="relative z-20 h-full flex items-start lg:mt-20 mt-5 px-6 md:px-7 lg:px-24">
-          <div className="w-full lg:max-w-3xl max-w-2xl space-y-5">
-            <h1 className="text-6xl font-black text-white">
+        <div className="relative z-20 h-full flex items-start lg:mt-20 mt-8 px-5 sm:px-6 md:px-7 lg:px-24">
+          <div className="w-full lg:max-w-3xl max-w-2xl space-y-4 sm:space-y-5">
+            <h1 className="text-[2.4rem] leading-tight sm:text-5xl lg:text-6xl font-black text-white">
               {renderLine1()}
 
               {line1 === FULL_LINE1 && (
@@ -283,7 +283,7 @@ export default function HeroOne() {
             {subtitle && (
               <div
                 onClick={() => setIsSearchOpen(true)}
-                className={`inline-flex items-center bg-white/95 rounded-full px-5 py-2 gap-3 shadow-xl cursor-pointer opacity-0 ${subtitle ? 'search-visible' : ''
+                className={`inline-flex max-w-full items-center bg-white/95 rounded-full px-4 sm:px-5 py-2 gap-2 sm:gap-3 shadow-xl cursor-pointer opacity-0 ${subtitle ? 'search-visible' : ''
                   }`}
               >
                 <FaSearch className="text-[#2F4191]" />
@@ -292,7 +292,7 @@ export default function HeroOne() {
                   type="text"
                   placeholder="Search for products..."
                   readOnly
-                  className="bg-transparent outline-none text-sm w-[200px]"
+                  className="bg-transparent outline-none text-sm w-[150px] sm:w-[200px] min-w-0"
                 />
 
                 <span className="bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] text-white text-xs font-bold px-3 py-1 rounded-full">

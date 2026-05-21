@@ -147,13 +147,95 @@ export default function About() {
           border-radius: 2px;
           background: linear-gradient(90deg, var(--blue-deep), var(--blue-light));
         }
+
+        .about-shell {
+          width: 100%;
+          max-width: 1280px;
+          margin: 0 auto;
+          padding-inline: clamp(0rem, 4vw, 2.5rem);
+        }
+
+        .about-image-wrap {
+          box-shadow: 0 24px 64px rgba(43,126,194,0.22), 0 0 0 1px rgba(43,126,194,0.08);
+        }
+
+        .about-stat-strip {
+          position: absolute;
+          bottom: 1.25rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 0;
+          overflow: hidden;
+          border-radius: 1rem;
+          box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+          backdrop-filter: blur(12px);
+        }
+
+        .about-stat-cell {
+          min-width: 90px;
+          padding: 0.75rem 1.25rem;
+          text-align: center;
+        }
+
+        @media (max-width: 640px) {
+          .about-img-col,
+          .about-copy-col {
+            opacity: 1;
+          }
+
+          .about-img-col.visible,
+          .about-copy-col.visible {
+            animation: fadeUp 0.55s ease forwards;
+          }
+
+          .about-image-wrap {
+            border-radius: 1.125rem;
+            box-shadow: 0 14px 34px rgba(43,126,194,0.18), 0 0 0 1px rgba(43,126,194,0.08);
+          }
+
+          .about-image-wrap img {
+            aspect-ratio: 4 / 3 !important;
+            min-height: 220px;
+          }
+
+          .about-stat-strip {
+            left: 0.75rem;
+            right: 0.75rem;
+            bottom: 0.75rem;
+            transform: none;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            width: auto;
+            border-radius: 0.875rem;
+          }
+
+          .about-stat-cell {
+            min-width: 0;
+            padding: 0.65rem 0.35rem;
+          }
+
+          .about-stat-value {
+            font-size: 1rem;
+          }
+
+          .about-stat-label {
+            font-size: 8px;
+            line-height: 1.15;
+            letter-spacing: 0.08em;
+          }
+
+          .img-accent {
+            display: none;
+          }
+        }
       `}</style>
 
       <section
         ref={sectionRef}
         className="w-full py-5 px-4"
       >
-        <div className="px-10 mx-auto">
+        <div className="about-shell">
           {/* ── Main Two-Column Grid ── */}
           <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-center">
             {/* Left — Image */}
@@ -163,12 +245,9 @@ export default function About() {
               <div className="img-accent" style={{ width: 200, height: 200, bottom: -20, right: -20, background: 'linear-gradient(135deg,#2F4191,#2B7EC2)' }} />
 
               {/* Image frame */}
-              <div className="relative overflow-hidden rounded-3xl"
-                style={{
-                  boxShadow: '0 24px 64px rgba(43,126,194,0.22), 0 0 0 1px rgba(43,126,194,0.08)',
-                }}>
+              <div className="about-image-wrap relative overflow-hidden rounded-3xl">
                 <Image
-                  src="/contact.png"
+                  src="/about-us.png"
                   alt="Inkarp Instruments Laboratory Solutions"
                   width={650}
                   height={520}
@@ -185,34 +264,27 @@ export default function About() {
               </div>
 
               {/* Floating stat strip */}
-              <div
-                className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-0 rounded-2xl overflow-hidden"
-                style={{
-                  boxShadow: '0 12px 40px rgba(0,0,0,0.18)',
-                  backdropFilter: 'blur(12px)',
-                }}
-              >
+              <div className="about-stat-strip">
                 {STATS.map((s, i) => (
                   <div
                     key={i}
-                    className={`stat-item ${visible ? 'visible' : ''} px-5 py-3 text-center`}
+                    className={`about-stat-cell stat-item ${visible ? 'visible' : ''}`}
                     style={{
                       animationDelay: `${0.4 + i * 0.12}s`,
                       background: i === 1
                         ? 'linear-gradient(135deg, var(--blue-deep), var(--blue-mid))'
                         : 'rgba(255,255,255,0.88)',
                       borderRight: i < 2 ? '1px solid rgba(43,126,194,0.15)' : 'none',
-                      minWidth: 90,
                     }}
                   >
                     <div
-                      className="text-xl font-black leading-none"
+                      className="about-stat-value text-xl font-black leading-none"
                       style={{ color: i === 1 ? '#fff' : 'var(--blue-deep)' }}
                     >
                       {s.value}
                     </div>
                     <div
-                      className="text-[10px] font-semibold mt-0.5 uppercase tracking-wider"
+                      className="about-stat-label text-[10px] font-semibold mt-0.5 uppercase tracking-wider"
                       style={{ color: i === 1 ? 'rgba(255,255,255,0.8)' : '#6b7280' }}
                     >
                       {s.label}

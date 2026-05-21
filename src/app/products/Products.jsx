@@ -14,6 +14,19 @@ import {
 
 const ALL_PRODUCTS = "all-products";
 
+function getCategoryFromUrl() {
+    if (typeof window === "undefined") return "";
+    return new URLSearchParams(window.location.search).get("category") || "";
+}
+
+function setCategoryInUrl(categorySlug) {
+    if (typeof window === "undefined") return;
+
+    const url = new URL(window.location.href);
+    url.searchParams.set("category", categorySlug);
+    window.history.replaceState(window.history.state, "", url);
+}
+
 function groupProductsByCategory(items) {
     const categories = items.reduce((acc, item) => {
         const categorySlug = item.category || "unknown";
@@ -74,7 +87,13 @@ export default function Products() {
 
                 if (mounted) {
                     setCategories(grouped);
-                    setActiveCategory(grouped[0]?.slug || ALL_PRODUCTS);
+                    const categoryFromUrl = getCategoryFromUrl();
+                    const isKnownCategory = grouped.some((category) => category.slug === categoryFromUrl);
+                    const initialCategory = categoryFromUrl === ALL_PRODUCTS || isKnownCategory
+                        ? categoryFromUrl
+                        : grouped[0]?.slug || ALL_PRODUCTS;
+
+                    setActiveCategory(initialCategory);
                 }
             } catch (error) {
                 console.error("Failed to load products:", error);
@@ -88,6 +107,11 @@ export default function Products() {
             mounted = false;
         };
     }, []);
+
+    const handleCategoryChange = (categorySlug) => {
+        setActiveCategory(categorySlug);
+        setCategoryInUrl(categorySlug);
+    };
 
     const totalProducts = useMemo(
         () => categories.reduce((sum, category) => sum + category.totalModels, 0),
@@ -183,7 +207,7 @@ export default function Products() {
                                         <button
                                             key={category.slug}
                                             type="button"
-                                            onClick={() => setActiveCategory(category.slug)}
+                                            onClick={() => handleCategoryChange(category.slug)}
                                             className={`group relative flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-base transition ${isActive
                                                 ? "bg-[#182033] font-semibold text-white shadow-lg shadow-[#182033]/18"
                                                 : "font-semibold text-[#30394d] hover:bg-[#eef5ff] hover:text-[#2F4191]"
@@ -203,7 +227,7 @@ export default function Products() {
 
                             <button
                                 type="button"
-                                onClick={() => setActiveCategory(ALL_PRODUCTS)}
+                                onClick={() => handleCategoryChange(ALL_PRODUCTS)}
                                 className={`relative flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-base transition ${activeCategory === ALL_PRODUCTS
                                     ? "bg-[#182033] font-semibold text-white shadow-lg shadow-[#182033]/18"
                                     : "font-semibold text-[#30394d] hover:bg-[#eef5ff] hover:text-[#2F4191]"

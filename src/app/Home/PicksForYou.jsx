@@ -163,10 +163,10 @@ export default function PicksForYou() {
 
   return (
     <section
-      className="py-10 px-5 md:px-10">
-      <div className="flex items-center justify-between mb-1">
+      className="pt-9 pb-7 md:py-10 px-5 md:px-10">
+      <div className="flex items-center justify-between gap-3 mb-1">
         <div
-          className="inline-flex items-center gap-2 px-5 py-2 rounded-full border"
+          className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full border flex-shrink-0"
           style={{
             borderColor: "rgba(43,126,194,0.25)",
             background: "white",
@@ -179,29 +179,29 @@ export default function PicksForYou() {
           </span>
         </div>
 
-        <div className="flex items-center gap-3">
-          <span className="text-[13px] font-semibold text-white/60">
+        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <span className="text-[12px] sm:text-[13px] font-semibold text-white/60">
             <span className="text-white font-bold">{page + 1}</span>{" "}
             <span className="text-white/30">/ {totalPages}</span>
           </span>
           <button
             onClick={() => navigate(-1)}
             disabled={page === 0}
-            className="w-10 h-10 flex items-center justify-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-105 disabled:opacity-80 disabled:cursor-not-allowed"
+            className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-105 disabled:opacity-80 disabled:cursor-not-allowed"
           >
             <FaArrowLeft size={13} />
           </button>
           <button
             onClick={() => navigate(1)}
             disabled={page === totalPages - 1}
-            className="w-10 h-10 flex items-center justify-center rounded-full border border-white/25 bg-white text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-105 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full border border-white/25 bg-white text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-105 disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <FaArrowRight size={13} color="black" />
           </button>
         </div>
       </div>
 
-      <div className="flex items-center justify-center gap-2 py-6 flex-wrap">
+      <div className="flex items-center justify-center gap-2 py-5 md:py-6 flex-wrap">
         {tabs.map((tab) => (
           <button
             key={tab.value}

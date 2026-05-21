@@ -32,7 +32,7 @@ export async function GET() {
             productTitle:
               "BPG-9040A Forced Air Drying Oven — 40L Precision Hot Air Oven with LCD Controller and RS-485 Connectivity up to 250°C",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/bpg-9070a.webp",
 
             imgAltText:
               "BPG-9040A 40L precision forced air drying oven with LCD controller, 250°C maximum, ±1°C accuracy, stainless steel rounded-corner chamber, side test port, and optional RS-485 connectivity for pharmaceutical, research, and biotechnology laboratory drying applications_Being India",
@@ -312,7 +312,7 @@ export async function GET() {
             productTitle:
               "BPG-9070A Forced Air Drying Oven — 80L Precision Drying with ±0.5°C Accuracy and 9999-Minute Timer for Laboratory and Industry",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/bpg-9070a.webp",
 
             imgAltText:
               "BPG-9070A 80L precision forced air drying oven with ±0.5°C accuracy, LCD programmable controller, 9999-minute timer, stainless steel smooth-edge chamber, and optional RS-485 connectivity for pharmaceutical, material science, and research laboratory drying applications_Being India",
@@ -578,7 +578,7 @@ export async function GET() {
             productTitle:
               "BPG-9140A Forced Air Drying Oven — 150L Large-Capacity with 3-Shelf Configuration and RS-485 Connectivity up to 250°C",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/bpg-9140a.webp",
 
             imgAltText:
               "BPG-9140A 150L large-capacity precision forced air drying oven with LCD controller, 250°C maximum, ±1°C accuracy, 3 adjustable shelves, stainless steel smooth-corner chamber, and optional RS-485 connectivity for pharmaceutical, research, and material science laboratory drying_Being India",
@@ -861,7 +861,7 @@ export async function GET() {
             productTitle:
               "BPG-9240A Forced Air Drying Oven — 250L High-Volume Precision Drying with Uniform Airflow and RS-485 Connectivity",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/bpg-9240a.webp",
 
             imgAltText:
               "BPG-9240A 250L high-volume forced air drying oven with LCD controller, 250°C maximum, ±1°C accuracy, 3 adjustable shelves, stainless steel smooth-edge chamber, uniform airflow, and optional RS-485 connectivity for bulk pharmaceutical, research, and industrial laboratory drying_ Being India",
@@ -1135,7 +1135,7 @@ export async function GET() {
             productTitle:
               "BPG-9420A Forced Air Drying Oven — 420L High-Capacity with ±0.5°C Accuracy and 9999-Minute Timer for High-Volume Laboratory and Industrial Use",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/bpg-9240a.webp",
 
             imgAltText:
               "BPG-9420A 420L high-capacity industrial forced air drying oven with ±0.5°C accuracy, LCD multi-step programmable controller, 9999-minute timer, 1300mm interior height, stable uniform airflow, and optional RS-485 connectivity for high-volume pharmaceutical production support and industrial laboratory drying",
@@ -1425,7 +1425,7 @@ export async function GET() {
             productTitle:
               "BO-30F Forced Air Oven — 30L Compact Precision Drying with Color Touch Screen and 300°C Maximum Temperature",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/bo-30f.webp",
 
             imgAltText:
               "BO-30F 30L compact precision forced air laboratory oven with color touch screen, RT+10°C to 300°C range, ±0.3°C temperature fluctuation, DIN-12880 compliant design, and stackable structure for laboratory drying, pharmaceutical, and material testing applications_Being India",
@@ -1738,7 +1738,7 @@ export async function GET() {
             productTitle:
               "BO-50F Forced Air Oven — 50L Mid-Capacity Precision Drying with 300°C Maximum and Multi-Stage Programmable Control",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/bo-50f.webp",
 
             imgAltText:
               "BO-50F 50L precision forced air laboratory oven with color touch screen, 300°C maximum temperature, ±0.3°C fluctuation, DIN-12880 compliance, up to 9 shelves, and stackable design for pharmaceutical, research, and material conditioning applications",
@@ -2022,7 +2022,7 @@ export async function GET() {
             productTitle:
               "BO-120F Forced Air Oven — 115L Medium-Capacity Precision Thermal Processing with Color Touch Screen and DIN-12880 Compliance",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/bo-120f.webp",
 
             imgAltText:
               "BO-120F 115L medium-capacity precision forced air oven with color touch screen, 300°C maximum temperature, ±0.3°C fluctuation, up to 12 shelves, DIN-12880 compliance, and 2050W for industrial laboratory, research, and thermal processing applications_Being India",
@@ -2286,7 +2286,8 @@ export async function GET() {
             productTitle:
               "BO-200F Forced Air Oven — 210L High-Capacity Precision Drying with DIN-12880 Compliance and 16-Shelf Configuration",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+            thumbnail: "/products/ovens/bo-200f.webp",
 
             imgAltText:
               "BO-200F 210L high-capacity precision forced air oven with color touch screen, 300°C maximum, ±0.3°C fluctuation, up to 16 shelves, DIN-12880 compliance, 2500W for bulk pharmaceutical, industrial, and material testing laboratory drying_Being India",
@@ -2537,7 +2538,6 @@ export async function GET() {
             }
           },
 
-
           {
             model: "BO-400F Forced Air Oven",
             title: "BO-400F Forced Air Oven",
@@ -2555,7 +2555,8 @@ export async function GET() {
             productTitle:
               "BO-400F Forced Air Oven — 400L Large-Scale Precision Drying for Heavy-Duty Industrial and Production Laboratory Applications",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+
+            thumbnail: "/products/ovens/bo-400f.webp",
 
             imgAltText:
               "BO-400F 400L large-scale industrial precision forced air oven with color touch screen, 300°C maximum, ±0.3°C fluctuation, DIN-12880 compliance, 3100W, and 16-shelf maximum for heavy-duty industrial and production laboratory bulk material drying and processing_Being India",
@@ -2829,7 +2830,7 @@ export async function GET() {
             productTitle:
               "DZF-6032 Vacuum Oven — 30L Compact Precision Vacuum Drying with 316 Stainless Steel Chamber and 133 Pa Vacuum up to 200°C",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/dzf-6032.webp",
 
             imgAltText:
               "DZF-6032 compact 30L vacuum drying oven with 316 stainless steel mirror-polished chamber, PID controller, double-layer tempered glass observation window, silicon gasket door seal, and 133 Pa vacuum for heat-sensitive pharmaceutical and chemical laboratory drying applications",
@@ -3109,7 +3110,7 @@ export async function GET() {
             productTitle:
               "DZF-6053 Vacuum Oven — 50L Mid-Capacity Routine Vacuum Drying with 3-Shelf Configuration and 133 Pa Precision",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/dzf-6032.webp",
 
             imgAltText:
               "DZF-6053 50L mid-capacity vacuum drying oven with 304 stainless steel polished chamber, PID controller, 3 shelves, double-layer observation window, silicon gasket door seal, and 133 Pa vacuum for routine pharmaceutical, chemical, and material testing laboratory drying",
@@ -3384,7 +3385,7 @@ export async function GET() {
             productTitle:
               "DZF-6092 Vacuum Oven — 90L Medium-Capacity Precise Vacuum Drying for Research and Industrial Laboratory Applications",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/dzf-6032.webp",
 
             imgAltText:
               "DZF-6092 90L medium-capacity vacuum drying oven with 304 stainless steel smooth chamber, PID LED controller, double-layer observation window, silicon gasket seal, 133 Pa vacuum, and 2 shelves for research, industrial, and biotechnology laboratory vacuum drying applications",
@@ -3649,7 +3650,7 @@ export async function GET() {
             productTitle:
               "DZF-6123 Vacuum Oven — 125L Large-Capacity 3-Shelf Vacuum Drying for Large-Batch Industrial and Research Laboratory Applications",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/dzf-6032.webp",
 
             imgAltText:
               "DZF-6123 125L large-capacity vacuum drying oven with 304 stainless steel chamber, 3 shelves, PID LED controller, double-layer observation window, silicon gasket seal, 133 Pa vacuum, and 1500W for large batch pharmaceutical, industrial, and chemical laboratory vacuum drying_Being India",
@@ -3914,7 +3915,7 @@ export async function GET() {
             productTitle:
               "DZF-6213 Vacuum Oven — 216L High-Capacity with Independent Shelf Temperature Control and 133 Pa for Large-Scale Pharmaceutical and Industrial Drying",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/dzf-6032.webp",
 
             imgAltText:
               "DZF-6213 216L high-capacity vacuum oven with 304 stainless steel large chamber, 3 shelves with independent temperature control, PID LED controller, double-layer observation window, silicon gasket, and 133 Pa vacuum for large-scale pharmaceutical, industrial, and research laboratory vacuum drying_Being India",
@@ -4195,7 +4196,7 @@ export async function GET() {
             productTitle:
               "BV-20 Programmable Vacuum Oven — 24L Compact with 99 Pa Vacuum, Touch Screen Multi-Stage Control, Inert Gas Inlet and 6-Layer Safety for Pharmaceutical Drying",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/bv-20.webp",
 
             imgAltText:
               "BV-20 compact 24L programmable vacuum oven with touch screen controller, 99 Pa maximum vacuum, RT+10°C to 200°C range, ±1°C accuracy, inert gas inlet, secondary temperature limiting protection, 6-layer safety system, and 304 stainless steel chamber for pharmaceutical and chemical laboratory heat-sensitive material drying_Being India",
@@ -4494,7 +4495,7 @@ export async function GET() {
             productTitle:
               "BV-50 Programmable Vacuum Oven — 51L Routine Laboratory Precision Vacuum Drying with 99 Pa, Touch Screen, Inert Gas Inlet and 1400W",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/bv-50.webp",
 
             imgAltText:
               "BV-50 51L programmable vacuum oven with touch screen, 99 Pa vacuum, ±1°C accuracy, inert gas inlet, secondary temperature protection, 6-layer safety, 304 SS chamber, and 1400W for routine pharmaceutical, chemical, and research laboratory vacuum drying",
@@ -4763,7 +4764,7 @@ export async function GET() {
             productTitle:
               "BV-90 Programmable Vacuum Oven — 91L Medium-Capacity Cubic Chamber with 99 Pa, Touch Screen and Up to 6 Shelves for Pharmaceutical and Material Testing",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+            thumbnail: "/products/ovens/bv-90.webp",
 
             imgAltText:
               "BV-90 91L medium-capacity programmable vacuum oven with touch screen, 99 Pa vacuum, ±1°C accuracy, inert gas inlet, secondary temperature protection, 6-layer safety, 450×450×450mm 304 SS cubic chamber, and 2000W for pharmaceutical, material testing, and research laboratory vacuum drying_Beign India",
@@ -5032,7 +5033,7 @@ export async function GET() {
             productTitle:
               "BV-120 Programmable Vacuum Oven — 125L High-Capacity with 99 Pa, 10-Shelf Configuration and 2400W for Large-Batch Industrial and Pharmaceutical Vacuum Drying",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+              thumbnail: "/products/ovens/bv-90.webp",
 
             imgAltText:
               "BV-120 125L high-capacity programmable vacuum oven with touch screen, 99 Pa vacuum, ±1°C accuracy, inert gas inlet, secondary temperature protection, 10-shelf maximum, 500×500×500mm 304 SS cubic chamber, and 2400W for large batch pharmaceutical, industrial, and research laboratory vacuum drying_Being India",
@@ -5296,7 +5297,7 @@ export async function GET() {
             productTitle:
               "BV-210 Programmable Vacuum Oven — 216L Flagship High-Capacity with 99 Pa, 13 Shelves and 2800W for Industrial-Scale Pharmaceutical and Production Laboratory Vacuum Drying",
 
-            thumbnail: "/products/shaking-incubators/bis-2.webp",
+              thumbnail: "/products/ovens/bv-90.webp",
 
             imgAltText:
               "BV-210 216L flagship programmable vacuum oven with touch screen controller, 99 Pa vacuum, ±1°C accuracy, inert gas inlet, 13-shelf maximum, 600×600×600mm 304 SS cubic chamber, overload and electrical protection, 6-layer safety, and 2800W for high-capacity industrial pharmaceutical and research laboratory vacuum drying_Being India",

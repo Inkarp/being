@@ -67,9 +67,9 @@ export default function RootLayout({ children }) {
         <ScrollToTop />
         <Header />
         {/* <ShareButton /> */}
-        <SocialContactBar />
+        {/* <SocialContactBar /> */}
         {/* <FestivalUpdates /> */}
-        <ProductsSidebar />
+        {/* <ProductsSidebar /> */}
         <ProductProvider>
           <main 
           // className="w-[95%] mx-auto"
