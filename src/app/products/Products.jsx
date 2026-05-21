@@ -214,7 +214,7 @@ export default function Products() {
                                                 }`}
                                         >
                                             {isActive && (
-                                                <span className="absolute left-0 top-1/2 h-8 w-1 -translate-y-1/2 rounded-r-full bg-[#79d9ff]" />
+                                                <span className="absolute left-0 top-1/2 h-8 w-1 -translate-y-1/2 rounded-r-full bg-[#2B7EC2]" />
                                             )}
                                             <span className="truncate">{category.name}</span>
                                             <span className={`ml-3 rounded-full px-2.5 py-1 text-xs ${isActive ? "bg-white/15 text-white" : "bg-white text-[#7a8798] shadow-sm"}`}>
@@ -313,7 +313,7 @@ export default function Products() {
 
                                                         <div className="mt-3 flex items-center gap-2 text-sm font-semibold text-[#667386]">
                                                             <FaBoxes className="text-[#2B7EC2]" />
-                                                            <span>{sub.models.length} models available</span>
+                                                            <span>{sub.models.length} {sub.models.length === 1 ? "model" : "models"} available</span>
                                                         </div>
 
                                                         <div className="mt-4 flex flex-wrap gap-2">

@@ -5,8 +5,10 @@ import Link from 'next/link';
 import {
     FaFacebookF,
     FaInstagram,
-    FaLinkedin
+    FaLinkedin,
+    FaTwitter
 } from 'react-icons/fa';
+import { FaSquareXTwitter } from 'react-icons/fa6';
 
 const socialLinks = [
     {
@@ -24,6 +26,11 @@ const socialLinks = [
         href: 'https://www.linkedin.com/company/being-scientific-india',
         icon: FaLinkedin,
     },
+    {
+        label: 'Twitter',
+        href: 'https://x.com/BEINGlabindia',
+        icon: FaSquareXTwitter ,
+    },
 ];
 
 const quickLinks = [
@@ -36,7 +43,7 @@ const quickLinks = [
         { label: 'Products', href: '/products' },
         { label: 'Events', href: '/events' },
         { label: 'Blogs', href: '/blogs' },
-        { label: 'Product Profile', href: '/product-profile' },
+        // { label: 'Product Profile', href: '/product-profile' },
     ],
 ];
 
@@ -46,13 +53,12 @@ const productLinks = [
         { label: 'Incubators', href: '/products/incubators' },
         { label: 'Chillers', href: '/products/chillers' },
         { label: 'Rotary Evaporators', href: '/products/rotary-evaporators' },
-        { label: 'Waterbaths', href: '/products/waterbaths' },
+        { label: 'Water baths', href: '/products/water-baths' },
     ],
     [
         { label: 'Pumps', href: '/products/pumps' },
-        { label: 'Cabinets', href: '/products/cabinets' },
+        { label: 'Saftey Cabinets', href: '/products/biological-saftey-cabinets' },
         { label: 'Freezers', href: '/products/freezers' },
-        { label: 'Digital Viscometers', href: '/products/digital-viscometers' },
         { label: 'Muffle Furnace', href: '/products/muffle-furnace' },
     ],
 ];

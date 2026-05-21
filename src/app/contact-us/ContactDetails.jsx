@@ -18,9 +18,9 @@ export default function ContactDetails() {
                         <div className="space-y-3 w-full">
                             {[
                                 { icon: FaClock, title: "Office Hours", info: "Mon–Fri: 09:30AM–05:30PM", color: "from-[#2F4191] to-[#2B7EC2]" },
-                                { icon: FaPhoneAlt, title: "Call Anytime", info: "+(009) 1888 000 2222", color: "from-[#2F4191] to-[#2B7EC2]" },
-                                { icon: FaEnvelope, title: "Email Us", info: "info@techin.com", color: "from-[#2F4191] to-[#2B7EC2]" },
-                                { icon: FaMapMarkerAlt, title: "Our Location", info: "12th Street, New York, USA", color: "from-[#2F4191] to-[#2B7EC2]" },
+                                { icon: FaPhoneAlt, title: "Call Anytime", info: "+91 9966634008", color: "from-[#2F4191] to-[#2B7EC2]" },
+                                { icon: FaEnvelope, title: "Email Us", info: "info@beinglab.co.in", color: "from-[#2F4191] to-[#2B7EC2]" },
+                                { icon: FaMapMarkerAlt, title: "Our Location", info: "Nacharam, Habsiguda, Hyderabad, Telangana, 500076", color: "from-[#2F4191] to-[#2B7EC2]" },
                             ].map(({ icon: Icon, title, info, color }, idx) => (
                                 <div key={idx} className="group/contact flex items-start gap-4 p-4 hover:bg-white/10 rounded-2xl transition-all duration-300 hover:backdrop-blur-sm hover:scale-[1.02] w-full">
                                     <div className={`w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-r ${color} shadow-lg group-hover/contact:rotate-12 transition-transform duration-300 flex-shrink-0`}>
@@ -49,16 +49,16 @@ export default function ContactDetails() {
                                 <FaHeadset className="w-7 h-7 text-white" />
                             </div>
                             <div className="flex flex-col gap-3 min-w-0 flex-1">
-                                <h4 className="font-bold text-white text-lg">Service Queries</h4>
+                                <h4 className="font-bold text-white text-lg">Service and Support </h4>
                                 <div className="space-y-2 text-white text-lg">
                                     <p className="flex items-center gap-2">
                                         <FaPhoneAlt className="text-white/70" />
-                                        +91 9030357676
+                                        +91 7330731315
                                     </p>
-                                    <p className="flex items-center gap-2 text-lg">
+                                    {/* <p className="flex items-center gap-2 text-lg">
                                         <FaEnvelope className="text-white/70" />
                                         <a href="mailto:service@techin.com" className="hover:underline truncate">service@techin.com</a>
-                                    </p>
+                                    </p> */}
                                 </div>
                             </div>
                         </div>
@@ -71,16 +71,16 @@ export default function ContactDetails() {
                                 <FaPhoneAlt className="w-7 h-7 text-white" />
                             </div>
                             <div className="flex flex-col gap-3 min-w-0 flex-1">
-                                <h4 className="font-bold text-white text-lg">Support</h4>
+                                <h4 className="font-bold text-white text-lg">Dispath Support</h4>
                                 <div className="space-y-2 text-white text-lg">
                                     <p className="flex items-center gap-2">
                                         <FaPhoneAlt className="text-white/70" />
-                                        +91 9030357676
+                                        +91 9515365959
                                     </p>
-                                    <p className="flex items-center gap-2 text-lg">
+                                    {/* <p className="flex items-center gap-2 text-lg">
                                         <FaEnvelope className="text-white/70" />
                                         <a href="mailto:support@techin.com" className="hover:underline truncate">support@techin.com</a>
-                                    </p>
+                                    </p> */}
                                 </div>
                             </div>
                         </div>
@@ -93,7 +93,7 @@ export default function ContactDetails() {
                                 <FaUserCog className="w-7 h-7 text-white" />
                             </div>
                             <div className="flex flex-col gap-3 min-w-0 flex-1">
-                                <h4 className="font-bold text-white text-lg">Account Queries</h4>
+                                <h4 className="font-bold text-white text-lg">Application Support</h4>
                                 <div className="space-y-2 text-white text-lg">
                                     <p className="flex items-center gap-2">
                                         <FaPhoneAlt className="text-white/70" />

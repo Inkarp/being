@@ -302,6 +302,21 @@ export default function Chatbot({ open, onClose }) {
     if (bodyRef.current) bodyRef.current.scrollTop = 0;
   }, [step]);
 
+  useEffect(() => {
+    if (!open) return;
+
+    setStep(0);
+    setCategory(null);
+    setSelectedProduct('');
+    setProductSearch('');
+    setFormData({});
+    setErrors({});
+    setApiError('');
+    setLoading(false);
+    setShowCrossSell(false);
+    setRecommendedProducts([]);
+  }, [open]);
+
   if (!open) return null;
 
   // ─── Handlers ──────────────────────────────────────────────────────────────

@@ -48,7 +48,7 @@ export default function Header() {
     { name: "White Papers", href: "/blogs" },
     { name: "Events", href: "/events" },
     { name: "Contact Us", href: "/contact-us" },
-    { name: "Product Profile", href: "/product-profile" },
+    // { name: "Product Profile", href: "/product-profile" },
   ];
 
 

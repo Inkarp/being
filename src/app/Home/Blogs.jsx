@@ -15,7 +15,7 @@ function GearCTA({ dark = false }) {
         : "bg-gradient-to-r from-[#2F4191] to-[#2B7EC2] hover:shadow-lg"}
       `}
     >
-      <span className="text-[12px] font-bold tracking-wide text-white">
+      <span className="text-sm font-bold tracking-wide text-white">
         Know More
       </span>
 
@@ -36,32 +36,32 @@ function GearCTA({ dark = false }) {
 }
 
 const events = [
-  { title: "Annual Tech Summit 2025", date: "20 March, 2025", place: "Hyderabad", image: "/about.jpg" },
-  { title: "Cloud Infrastructure Workshop", date: "28 March, 2025", place: "Bangalore", image: "/about.jpg" },
-  { title: "AI in Scientific Research Conf.", date: "10 April, 2025", place: "Mumbai", image: "/about.jpg" },
+  { title: "Annual Tech Summit 2025", date: "25 May, 2026", place: "Mumbai", image: "/assets/events/Analytica-Mumbai.webp" },
+  // { title: "Cloud Infrastructure Workshop", date: "28 March, 2025", place: "Bangalore", image: "/about.jpg" },
+  // { title: "AI in Scientific Research Conf.", date: "10 April, 2025", place: "Mumbai", image: "/about.jpg" },
 ];
 
 const blogs = [
   { title: "How to Optimize Your IT Infrastructure for Maximum Efficiency", image: "/about.jpg", date: "16 March, 2025", author: "Admin" },
-  { title: "How IT Infrastructure Can Improve Efficiency and Productivity", image: "/about.jpg", date: "22 March, 2025", author: "Admin" },
+  // { title: "How IT Infrastructure Can Improve Efficiency and Productivity", image: "/about.jpg", date: "22 March, 2025", author: "Admin" },
 ];
 
 export default function Blogs() {
   return (
-    <section className="py-5 px-6 bg-gradient-to-br from-[#f8faff] via-[#eef4fd] to-[#f8faff]">
-      <div className="w-full mx-auto">
+    <section className="py-10 md:py-12 px-5 md:px-10 bg-gradient-to-br from-[#f8faff] via-[#eef4fd] to-[#f8faff]">
+      <div className="w-full mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center ">
-          <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#2F4191]/10 border border-[#2F4191]/20 text-[#2F4191]">
+        <div className="text-center">
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-[11px] font-bold uppercase tracking-[0.18em] bg-[#2F4191]/10 border border-[#2F4191]/20 text-[#2F4191]">
             <span className="w-[5px] h-[5px] rounded-full bg-[#2B7EC2]" />
             Events & Blogs
           </span>
 
-          <h2 className="text-[clamp(26px,4vw,42px)] font-black text-[#0f1c3f] mt-3">
+          <h2 className="text-3xl md:text-4xl font-black leading-tight text-[#0f1c3f] mt-4">
             Our Latest <span className="text-[#2B7EC2]">Events</span> & News
           </h2>
 
-          <p className="text-sm  m-2">
+          <p className="text-base md:text-lg leading-relaxed text-gray-600 mt-3 mb-8 mx-auto max-w-2xl">
             Stay updated with our upcoming events, workshops, and industry insights.
           </p>
 
@@ -72,7 +72,7 @@ export default function Blogs() {
 
           {/* Events */}
           <div>
-            <div className="flex items-center gap-3 text-[10px] font-extrabold uppercase tracking-widest text-[#2F4191] mb-4">
+            <div className="flex items-center gap-3 text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#2F4191] mb-4">
               <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#2F4191]/20 to-transparent" />
               Upcoming Events
               <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#2F4191]/20 to-transparent" />
@@ -96,11 +96,11 @@ export default function Blogs() {
 
                   <div className="p-4 flex flex-col gap-2">
 
-                    <h3 className="text-[13px] font-bold text-gray-900 line-clamp-3">
+                    <h3 className="text-base font-bold leading-snug text-gray-900 line-clamp-3">
                       {ev.title}
                     </h3>
 
-                    <div className="flex items-center gap-1 text-[11px] text-gray-500 font-semibold">
+                    <div className="flex items-center gap-1 text-sm text-gray-500 font-semibold">
                       <FaMapMarkerAlt className="text-[#2B7EC2]" size={10}/>
                       {ev.place}
                     </div>
@@ -115,7 +115,7 @@ export default function Blogs() {
           </div>
           {/* Blogs */}
           <div>
-            <div className="flex items-center gap-3 text-[10px] font-extrabold uppercase tracking-widest text-[#2F4191] mb-4">
+            <div className="flex items-center gap-3 text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#2F4191] mb-4">
               <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#2F4191]/20 to-transparent"/>
               Latest Blogs
               <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#2F4191]/20 to-transparent"/>
@@ -126,9 +126,9 @@ export default function Blogs() {
               {blogs.map((blog,i)=>(
                 <div key={i} className="flex flex-col sm:flex-row rounded-2xl overflow-hidden bg-gradient-to-br from-[#1e2d6e] via-[#2F4191] to-[#2B7EC2] shadow-lg">
 
-                  <div className="relative sm:w-[120px] h-[160px] overflow-hidden">
+                  {/* <div className="relative sm:w-[120px] h-[160px] overflow-hidden">
                     <Image src={blog.image} alt={blog.title} fill className="object-cover hover:scale-105 transition"/>
-                  </div>
+                  </div> */}
 
                   <div className="p-4 flex flex-col gap-2 text-white">
 
@@ -137,11 +137,11 @@ export default function Blogs() {
                       {blog.date}
                     </span>
 
-                    <h3 className="text-[13px] font-bold line-clamp-3">
+                    <h3 className="text-base font-bold leading-snug line-clamp-3">
                       {blog.title}
                     </h3>
 
-                    <div className="flex items-center gap-1 text-[11px] text-white/70 font-semibold">
+                    <div className="flex items-center gap-1 text-sm text-white/70 font-semibold">
                       <FaUser size={9}/>
                       {blog.author}
                     </div>
