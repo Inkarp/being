@@ -1,18 +1,10 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
 import clientPromise from "../../library/mongodb";
+import { sendEmail } from "../../library/mailer";
 
 export const runtime = 'nodejs';
 
 const COMPANY_EMAIL = process.env.COMPANY_EMAIL;
-
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
 
 /* ---------------- UTILITY FUNCTIONS ---------------- */
 
@@ -193,7 +185,7 @@ export async function POST(request) {
   `;
     }
 
-    await transporter.sendMail(mailOptions);
+    await sendEmail(mailOptions);
 
     return NextResponse.json({
       success: true,

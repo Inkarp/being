@@ -1,21 +1,12 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
 import clientPromise from "../../library/mongodb";
+import { sendEmail } from "../../library/mailer";
 
 // Ensure this runs only on Node (not Edge)
 export const runtime = 'nodejs';
 
 // Company email (receiver)
 const COMPANY_EMAIL = process.env.COMPANY_EMAIL ;
-
-// Create transporter (✅ correct method)
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER, // your gmail
-    pass: process.env.EMAIL_PASS, // gmail app password
-  },
-});
 
 export async function POST(request) {
   try {
@@ -126,7 +117,7 @@ export async function POST(request) {
     };
 
     // Send mail
-    await transporter.sendMail(mailOptions);
+    await sendEmail(mailOptions);
 
     return NextResponse.json({ success: true, id: dbResult.insertedId });
   } catch (error) {

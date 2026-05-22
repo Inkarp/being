@@ -1,8 +1,9 @@
 'use client'
 
 const TABS = [
-  { key: 'features', label: 'Key Features', flag: 'hasFeatures' },
+
   { key: 'specs', label: 'Specifications', flag: 'hasSpecs' },
+  { key: 'features', label: 'Key Features', flag: 'hasFeatures' },
   { key: 'applications', label: 'Applications', flag: 'hasApplications' },
   { key: 'faqs', label: 'FAQs', flag: 'hasFaqs' },
   { key: 'services', label: 'Service & Support', flag: 'hasServices' },

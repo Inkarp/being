@@ -1,22 +1,12 @@
 import crypto from "crypto";
-import nodemailer from "nodemailer";
 import clientPromise from "../../library/mongodb";
+import { sendEmail } from "../../library/mailer";
 
 export const runtime = "nodejs";
 
 const OTP_EXPIRY_MINUTES = 10;
 const OTP_RESEND_COOLDOWN_SECONDS = 60;
-const OTP_MAX_REQUESTS_PER_HOUR = 5;
-
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+const OTP_MAX_REQUESTS_PER_HOUR = 20;
 
 let indexesReady;
 
@@ -115,7 +105,7 @@ export async function POST(req) {
       expiresAt,
     });
 
-    await transporter.sendMail({
+    await sendEmail({
       from: `"Being India Enquiry" <${process.env.EMAIL_USER}>`,
       to: normalizedEmail,
       subject: "Your Being India verification code",

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
 import clientPromise from '../../library/mongodb';
+import { sendEmail } from '../../library/mailer';
 
 export const runtime = 'nodejs';
 
@@ -18,15 +18,7 @@ const REQUIRED_EMAIL_ENV = ['EMAIL_USER', 'EMAIL_PASS', 'COMPANY_EMAIL'];
 // Created once outside the handler to reuse the SMTP connection pool.
 // ─────────────────────────────────────────────────────────────────────────────
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS, // Gmail App Password — NOT your real password
-  },
-  pool: true,        // Keep connection alive and reuse it
-  maxConnections: 3, // Max 3 parallel SMTP connections
-});
+const transporter = { sendMail: sendEmail };
 
 // ─────────────────────────────────────────────────────────────────────────────
 // RATE LIMITER

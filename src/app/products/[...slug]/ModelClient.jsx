@@ -63,7 +63,7 @@ export default function Model() {
     /* ---------------- STATE ---------------- */
     const [subCategory, setSubCategory] = useState(null);
     const [product, setProduct] = useState(null);
-    const [activeTab, setActiveTab] = useState('features');
+    const [activeTab, setActiveTab] = useState('specs');
     const [loading, setLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [priceUnlocked, setPriceUnlocked] = useState(false);

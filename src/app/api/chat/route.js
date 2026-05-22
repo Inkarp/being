@@ -1,32 +1,8 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
 import clientPromise from '../../library/mongodb';
+import { sendEmail, validateEmailEnv } from '../../library/mailer';
 
 export const runtime = 'nodejs';
-
-// ─── Environment Validation ────────────────────────────────────────────────────
-const REQUIRED_ENV = ['EMAIL_USER', 'EMAIL_PASS', 'COMPANY_EMAIL'];
-
-function validateEnv() {
-  const missing = REQUIRED_ENV.filter((key) => !process.env[key]);
-  if (missing.length > 0) throw new Error(`Missing env vars: ${missing.join(', ')}`);
-}
-
-// ─── Transporter (lazy singleton) ─────────────────────────────────────────────
-let _transporter = null;
-function getTransporter() {
-  if (_transporter) return _transporter;
-  validateEnv();
-  _transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
-    pool: true,
-    maxConnections: 3,
-    rateDelta: 1000,
-    rateLimit: 5,
-  });
-  return _transporter;
-}
 
 // ─── Rate Limiting (in-memory, per IP) ────────────────────────────────────────
 const rateLimitMap = new Map();
@@ -469,7 +445,6 @@ export async function POST(request) {
       status: 'New',
     });
 
-    const transporter = getTransporter();
     const category    = data.category ?? 'General';
     const product     = data.product  ?? '';
 
@@ -482,7 +457,8 @@ export async function POST(request) {
       html:    buildEmailHtml({ data, now, visitorIp }),
     };
 
-    await transporter.sendMail(emailOptions);
+    validateEmailEnv();
+    await sendEmail(emailOptions);
 
     return NextResponse.json({ success: true, id: dbResult.insertedId }, { status: 200 });
 

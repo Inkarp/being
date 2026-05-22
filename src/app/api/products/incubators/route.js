@@ -2248,7 +2248,7 @@ export async function GET() {
             imgAltText:
               "BIO-190RHP Pro 170L water-jacketed CO₂ incubator with 180°C dry heat sterilization, infrared CO₂ sensor, touch screen controller, HEPA filtration, UV sterilization, and 3 shelves for biotechnology and pharmaceutical cell culture_ Being India",
 
-            // price: 350000,
+            price:1590000,
 
             gem: false,
 
@@ -2574,7 +2574,7 @@ export async function GET() {
             imgAltText:
               "BIO-240RHP Pro 240L water-jacketed CO₂ incubator with 180°C dry heat sterilization, 1000W, infrared CO₂ sensor, touch screen controller, HEPA filtration, and 3 shelves for large-scale pharmaceutical production and advanced cell culture research_ Being India",
 
-            // price: 350000,
+            price: 1680000,
 
             gem: true,
 
@@ -3536,7 +3536,7 @@ export async function GET() {
             imgAltText:
               "BPN-190CH(UV) 190L large air-jacketed CO₂ incubator with infrared sensor, UV sterilization, door temperature control, 3 shelves, and stackable design for advanced research and biotechnology cell culture applications_Being India",
 
-            // price: 350000,
+            price: 900000,
 
             gem: true,
 
@@ -4744,7 +4744,6 @@ export async function GET() {
               ]
             }
           },
-
 
           {
             model: "BEC-250 Peltier Cooling Incubator ",
@@ -6288,7 +6287,7 @@ export async function GET() {
             imgAltText:
               "HZQ-X300C double platform floor-standing vertical shaking incubator with 4–65°C refrigerated range, 40–300 rpm, 20mm amplitude, 500×350mm orbital platform, PID microprocessor controller, 304 stainless steel chamber, observation window, and 25mm test hole for cell culture, fermentation, and biotechnology laboratory applications_Being India",
 
-            // price: 350000,
+            price: 740000,
 
             gem: true,
 
