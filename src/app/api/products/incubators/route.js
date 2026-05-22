@@ -4768,7 +4768,7 @@ export async function GET() {
             imgAltText:
               "BEC-250 250L high-capacity Peltier cooling incubator with silent vibration-free operation, LCD display, 1000mm interior height, and adjustable shelves for large-scale pharmaceutical and biotechnology laboratory incubation ",
 
-            // price: 350000,
+            price: 740000,
 
             gem: true,
 

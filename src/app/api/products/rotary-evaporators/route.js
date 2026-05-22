@@ -28,7 +28,7 @@ export async function GET() {
                                 "RV-21A Rotary Evaporator, compact rotary evaporator 2L, small scale rotary evaporator 300 rpm, laboratory rotary evaporator PTFE seal, RV-21A solvent evaporation, compact 2L rotary evaporator with DC brushless motor and auto lift for academic labs, small scale rotary evaporator with 8 mbar vacuum and PTFE seal for chemical sample processing, RV-21A rotary evaporator with LCD display and 300 rpm for laboratory research, solvent evaporation system, reduced pressure evaporation, vacuum rotary evaporator, DC brushless motor evaporator, vertical condenser rotary evaporator, PTFE sealed rotovap, compact rotovap laboratory, small scale evaporation, what is the best compact rotary evaporator for academic labs, how does a 2L rotary evaporator work, which rotary evaporator is best for small scale chemical processing, what does 8 mbar vacuum mean for rotary evaporator performance, RV-21A vs RV-5A rotary evaporator, 2L vs 5L rotary evaporator, compact vs mid-size rotary evaporator, buy RV-21A rotary evaporator, RV-21A price, order compact 2L rotary evaporator"
                         },
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/rotary-evaporators/rv-21a.webp",
                         imgAltText:
                             "RV-21A compact 2L rotary evaporator with DC brushless motor, LCD display, auto lift mechanism, and PTFE sealing for small-scale solvent evaporation_ Being India",
                         price: 306820,
@@ -323,7 +323,7 @@ export async function GET() {
                                 "RV-5A Rotary Evaporator, 5L rotary evaporator with PID control, laboratory rotary evaporator auto lift, 5 litre rotary evaporator 8 mbar vacuum, RV-5A solvent evaporation PID, RV-5A 5L rotary evaporator with PID temperature controller and auto lift for pharmaceutical and chemical processing, 5 litre rotary evaporator with PTFE sealing and 2 L/h evaporation rate for laboratory distillation, compact 5L rotary evaporator with LCD display for chemical and research applications, PID rotary evaporator, solvent recovery system, reduced pressure distillation, chemical laboratory evaporator, pharmaceutical solvent evaporation, rotovap with auto lift, PTFE Teflon sealed evaporator, 5L rotovap, what is the best 5L rotary evaporator for pharmaceutical and chemical labs, how does PID temperature control improve rotary evaporation, which 5L rotary evaporator has the lowest ultimate vacuum, how fast does a 5L rotary evaporator evaporate solvent, RV-5A vs RV-20A rotary evaporator, 5L vs 20L rotary evaporator, RV-5A vs RV-21A rotary evaporator, buy RV-5A rotary evaporator, RV-5A price, order 5L PID rotary evaporator online."
                         },
 
-                        thumbnail: "/products/shaking-incubators/bis-3c.webp",
+                         thumbnail: "/products/rotary-evaporators/rv-5a.webp",
                         imgAltText:
                             "RV-5A 5L rotary evaporator with PID temperature controller, LCD display, automatic lift mechanism, and PTFE Teflon sealing for chemical and pharmaceutical solvent evaporation_ Being India",
                         price: 507840,
@@ -643,7 +643,7 @@ export async function GET() {
                                 "RV-20A Rotary Evaporator, 20L rotary evaporator PID control, large scale rotary evaporator laboratory, 20 litre rotovap 7 L/h, RV-20A pilot scale evaporator, RV-20A 20L rotary evaporator with PID controller and 7 L/h evaporation rate for chemical and pharmaceutical pilot scale, large scale 20 litre rotary evaporator with aluminum alloy bracket and PTFE sealing for industrial lab, 20L rotary evaporator with 1.29 m² condenser and auto lift for medium scale solvent evaporation, pilot scale rotary evaporator, medium scale solvent evaporation, industrial laboratory evaporator, 20L rotovap, large batch solvent recovery, pharmaceutical pilot plant rotary evaporator, aluminum alloy rotary evaporator bracket, high throughput evaporation, what size rotary evaporator for pilot scale pharmaceutical production, how does a 20L rotary evaporator compare to a 5L unit, which rotary evaporator handles 7 litres per hour evaporation rate, best 20L rotary evaporator for industrial laboratory use, RV-20A vs RV-50A rotary evaporator, 20L vs 50L rotary evaporator, RV-5A vs RV-20A scale-up, buy RV-20A rotary evaporator, RV-20A price, order 20L large scale rotary evaporator"
                         },
 
-                        thumbnail: "/products/shaking-incubators/bis-3c.webp",
+                         thumbnail: "/products/rotary-evaporators/rv-20a.webp",
                         imgAltText:
                             "RV-20A 20L large-scale rotary evaporator with PID temperature controller, aluminum alloy bracket, 1.29 m² condenser, and auto lift for pilot-scale pharmaceutical and chemical solvent evaporation_ Being India",
                         price: 1036840,
@@ -957,7 +957,7 @@ export async function GET() {
                                 " RV-50A Rotary Evaporator, 50L rotary evaporator high capacity, large scale industrial rotary evaporator, 50 litre rotovap 9 L/h, RV-50A production scale evaporator, RV-50A 50L rotary evaporator with PID controller and 9 L/h for industrial chemical and pharmaceutical production, high capacity 50 litre rotary evaporator with 1.75 m² condenser and PTFE sealing for large scale solvent recovery, 50L rotary evaporator with 5300W and aluminum alloy bracket for large scale laboratory and production operations, production scale rotary evaporator, high capacity solvent recovery, large scale rotovap, 50L rotary evaporation system, industrial solvent evaporation, pharmaceutical production rotary evaporator, heavy duty rotary evaporator, high volume solvent processing, what is the largest laboratory rotary evaporator available, which rotary evaporator can process 50 litres for industrial use, how does a 50L rotary evaporator work for large scale pharmaceutical production, best high capacity rotary evaporator for industrial chemical processing, RV-50A vs RV-20A rotary evaporator, 50L vs 20L rotary evaporator, largest rotary evaporator in RV Series, buy RV-50A rotary evaporator, RV-50A price order 50L high-capacity industrial rotary evaporator "
                         },
 
-                        thumbnail: "/products/shaking-incubators/bis-3c.webp",
+                         thumbnail: "/products/rotary-evaporators/rv-20a.webp",
                         imgAltText:
                             "RV-50A 50L high-capacity industrial rotary evaporator with PID temperature controller, aluminum alloy bracket, 1.75 m² condenser, and 280mm auto lift for large-scale pharmaceutical and chemical solvent processing_ Being India",
                         price: 1396560,
@@ -1283,7 +1283,7 @@ export async function GET() {
                         productTitle:
                             "VC-50 Digital Vacuum Controller — Precise Programmable Vacuum Regulation with Ceramic Diaphragm Sensor and Boiling Point Detection for Rotary Evaporation and Vacuum Drying",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                         thumbnail: "/products/rotary-evaporators/rv-21a.webp",
 
                         imgAltText:
                             "VC-50 digital vacuum controller with ceramic alumina diaphragm absolute pressure sensor, PTFE 8mm vacuum connector, LCD display, programmable fixed value and preset program control modes, solenoid valve switch, and boiling point detection for rotary evaporator, vacuum drying, and laboratory distillation vacuum regulation_Being India",

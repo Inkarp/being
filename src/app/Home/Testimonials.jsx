@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import React from "react";
-import { FaQuoteRight, FaUser } from "react-icons/fa";
+import { FaQuoteRight } from "react-icons/fa";
 
 const testimonials = [
   {
@@ -129,11 +128,11 @@ export default function Testimonials() {
         {visible.map((item, idx) => (
           <div
             key={`${item.id}-${startIndex}-${idx}`}
-            className="relative bg-white shadow-[0_5px_30px_-15px_rgba(0,0,0,0.3)] rounded-xl flex flex-col lg:flex-row lg:items-center justify-between gap-10 p-7 hover:shadow-xl transition duration-300 animate-flip-cube"
+            className="relative bg-white shadow-[0_5px_30px_-15px_rgba(0,0,0,0.3)] rounded-xl p-7 hover:shadow-xl transition duration-300 animate-flip-cube"
             style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' }}
           >
             {/* TEXT */}
-            <div >
+            <div className="w-full">
               <FaQuoteRight className="text-[#2F4191] mb-3" />
               <p className="my-3 text-gray-700 2xl:text-lg">
                 {item.text}
@@ -147,22 +146,6 @@ export default function Testimonials() {
               </p>
             </div>
 
-            {/* IMAGE */}
-            <div className="relative shrink-0">
-              {item.image ? (
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  width={112}
-                  height={112}
-                  className="rounded-full object-cover w-24 h-24 2xl:w-28 2xl:h-28"
-                />
-              ) : (
-                <div className="w-24 h-24 2xl:w-28 2xl:h-28 rounded-full bg-gray-300 flex items-center justify-center text-xl font-bold text-gray-700">
-                  {item.name ? item.name.charAt(0).toUpperCase() : ""}
-                </div>
-              )}
-            </div>
           </div>
         ))}
       </div>

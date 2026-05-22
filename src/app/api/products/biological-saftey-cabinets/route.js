@@ -31,7 +31,7 @@ export async function GET() {
                         productTitle:
                             "BBC-3S1 Biological Safety Cabinet — Class II A2 with 99.99% HEPA Filtration & Triple Protection",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/saftey-cabinets/bbc-4s1.webp",
 
                         imgAltText:
                             "BBC-3S1 Class II A2 Biological Safety Cabinet with HEPA filtration and UV sterilization for microbiology and pharmaceutical laboratories_ Being India",
@@ -333,7 +333,7 @@ export async function GET() {
                         productTitle:
                             "BBC-4S1 Biological Safety Cabinet — Mid-Size Class II A2 with 99.99% HEPA Filtration",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/saftey-cabinets/bbc-4s1.webp",
 
                         imgAltText:
                             "BBC-4S1 mid-size Class II A2 Biological Safety Cabinet with 1220mm internal width, HEPA filtration and UV sterilization_ Being India",
@@ -625,7 +625,7 @@ export async function GET() {
                         productTitle:
                             "BBC-5S1 Biological Safety Cabinet — Large 1520mm Class II A2 for High-Throughput Laboratories",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/saftey-cabinets/bbc-4s1.webp",
 
                         imgAltText:
                             "BBC-5S1 large 1520mm Class II A2 Biological Safety Cabinet with uniform HEPA airflow and UV sterilization for high-throughput laboratories_ Being India",
@@ -917,7 +917,7 @@ export async function GET() {
                         productTitle:
                             "BBC-6S1 Biological Safety Cabinet — 1820mm Large-Scale Class II A2 for Multi-User Laboratories",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/saftey-cabinets/bbc-4s1.webp",
 
                         imgAltText:
                             "BBC-6S1 large-scale 1820mm Class II A2 Biological Safety Cabinet with HEPA filtration and UV sterilization for multi-user and institutional research laboratories_ Being India",
@@ -1196,8 +1196,6 @@ export async function GET() {
                 ]
             },
 
-
-
             {
                 name: "Vertical Laminar Airflow Cabinet",
                 slug: "vertical-laminar-airflow-cabinet",
@@ -1219,7 +1217,7 @@ export async function GET() {
                         productTitle:
                             "BCV-3S1 Vertical Laminar Air Flow Clean Bench — Compact 920mm ISO Class 5 HEPA with UV Sterilization and Password Protection",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/saftey-cabinets/bcv-4s1.webp",
 
                         imgAltText:
                             "BCV-3S1 compact 920mm vertical laminar air flow clean bench with ISO Class 5 HEPA filtration, UV sterilization, 5° slanted front glass, tempered side windows, LCD display, 304 stainless steel work surface, and audio-visual alarm for microbiology, pharmaceutical, and biotechnology laboratory applications_Being India",
@@ -1503,7 +1501,7 @@ export async function GET() {
                         productTitle:
                             "BCV-4S1 Vertical Laminar Air Flow Clean Bench — 1220mm Width with ISO Class 5 HEPA and UV Sterilization for Wider Single-Operator Clean Zone Applications",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/saftey-cabinets/bcv-4s1.webp",
 
                         imgAltText:
                             "BCV-4S1 1220mm vertical laminar air flow clean bench with ISO Class 5 HEPA filtration, UV sterilization, LCD display, 1360×720mm internal work area, stainless steel work surface, and audio-visual alarm for pharmaceutical, biotechnology, and research laboratory single-operator clean zone applications_Being India",
@@ -1765,7 +1763,7 @@ export async function GET() {
                         productTitle:
                             "BCV-5S1 Vertical Laminar Air Flow Clean Bench — 1520mm Dual-Operator ISO Class 5 Clean Zone for High-Throughput Microbiology and Pharmaceutical Applications",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/saftey-cabinets/bcv-4s1.webp",
 
                         imgAltText:
                             "BCV-5S1 1520mm dual-operator vertical laminar air flow clean bench with ISO Class 5 HEPA filtration, 1660×720mm work area, UV sterilization, LCD monitoring, stainless steel work surface, and audio-visual alarm for high-throughput microbiology, pharmaceutical, and biotechnology laboratory clean zone applications_Beign India",
@@ -2022,7 +2020,7 @@ export async function GET() {
                         productTitle:
                             "BCV-6S1 Vertical Laminar Air Flow Clean Bench — 1820mm Three-Operator ISO Class 5 Clean Zone for Large Pharmaceutical and Institutional Laboratories",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/saftey-cabinets/bcv-4s1.webp",
 
                         imgAltText:
                             "BCV-6S1 1820mm three-operator vertical laminar air flow clean bench with ISO Class 5 HEPA filtration, 1960×720mm internal work area, UV sterilization, LCD display, stainless steel work surface, and audio-visual alarm for large pharmaceutical production support, biotechnology, and institutional laboratory clean zone applications_Being India",

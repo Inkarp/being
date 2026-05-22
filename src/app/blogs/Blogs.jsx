@@ -54,16 +54,6 @@ export default function Blogs() {
   return (
     <div className="bg-[#f6f7f9] text-[#1d1d1d]">
 
-      {/* HERO */}
-      <section className="bg-white px-8 py-20 opacity-0 animate-[fadeUp_0.9s_cubic-bezier(.22,.61,.36,1)_forwards]">
-        <h1 className="text-4xl font-bold mb-3">
-          Scientific Insights & Innovation
-        </h1>
-        <p className="max-w-xl text-gray-500">
-          Curated perspectives on laboratory automation, analytical science, and real-world research applications.
-        </p>
-      </section>
-
       {/* FEATURED */}
       <section className="grid lg:grid-cols-2 gap-10 px-8 py-16 opacity-0 animate-[fadeUp_1s_cubic-bezier(.22,.61,.36,1)_0.15s_forwards]">
         <div className="relative overflow-hidden rounded-2xl group">

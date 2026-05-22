@@ -30,7 +30,7 @@ export async function GET() {
                         productTitle:
                             "BDW-25L300RF Combined Refrigerator & Deep Freezer — 200L Refrigerator (2–8°C) and 100L Freezer (-25°C) in a Single Unit",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/freezers/bdw-25l300rf.webp",
 
                         imgAltText:
                             "BDW-25L300RF combined laboratory refrigerator and deep freezer with 200L upper refrigerator chamber at 2–8°C and 100L lower freezer at -25°C, battery backup, mechanical lock, and digital display for pharmaceutical and hospital storage_ Being India",
@@ -433,7 +433,7 @@ export async function GET() {
                         productTitle:
                             "BYC-5L310 Laboratory Refrigerator — 310L Upright 2–8°C with Glass Door, Battery Backup and CE/RoHS for Vaccine, Pharmaceutical and Hospital Storage",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/freezers/byc-5l320.webp",
 
                         imgAltText:
                             "BYC-5L310 310L laboratory refrigerator with 2–8°C temperature range, ±1.5°C stability, large double-paned glass door, LED control panel, 5 adjustable shelves, mechanical lock, battery backup alarm, heated door frame, independent inner door, and CE/RoHS certification for vaccine, pharmaceutical, and hospital laboratory storage_Being India",
@@ -767,7 +767,7 @@ export async function GET() {
                         productTitle:
                             "BYC-5L656 Laboratory Refrigerator — 656L High-Capacity 2–8°C with 10 Shelves for Hospital Pharmacy, Blood Banks and Large Research Institution Storage",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/freezers/byc-5l656.webp",
 
                         imgAltText:
                             "BYC-5L656 656L high-capacity laboratory refrigerator with 2–8°C range, ±1.5°C stability, large glass door, 10 adjustable shelves, 60mm insulation, HC refrigerant, mechanical lock, battery backup alarm, magnetic seal, and CE/RoHS for hospital pharmacy, blood bank, and large research institution pharmaceutical storage_Being India",
@@ -1408,7 +1408,7 @@ export async function GET() {
                         productTitle:
                             "BDW-25L320 Low Temperature Freezer — 320L -25°C with 5 Independent Inner Doors, Non-HCFC Refrigerant and CE/RoHS for Pharmaceutical and Biological Sample Storage",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/freezers/bdw-25l320.webp",
 
                         imgAltText:
                             "BDW-25L320 320L -25°C upright low temperature freezer with 5 independent inner doors, 80mm polyurethane insulation, non-HCFC refrigerant, digital temperature controller, mechanical lock, battery backup alarm, heated door frame, right-side test port, and CE/RoHS certification for pharmaceutical, biological sample, vaccine, and food storage applications_Being India",
@@ -1746,7 +1746,7 @@ export async function GET() {
                         productTitle:
                             "BDW-40L320 Low Temperature Freezer — 320L Upright -40°C Storage with 5 Independent Inner Doors, Battery Backup and CE/RoHS Certification",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/freezers/bdw-40l320.webp",
 
                         imgAltText:
                             "BDW-40L320 320L upright -40°C low temperature freezer with 5 independent inner doors, 80mm polyurethane insulation, magnetic door sealing, heated door frame, mechanical lock, digital controller, battery backup alarm, and CE/RoHS certification for hospital, pharmaceutical, and research laboratory biological sample storage_Being India",
@@ -2110,7 +2110,7 @@ export async function GET() {
                         productTitle:
                             "BDW-40L530D Low Temperature Freezer — High-Capacity 530L -40°C Storage for Large-Volume Pharmaceutical, Biotechnology, and Research Applications",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/freezers/bdw-40l530d.webp",
 
                         imgAltText:
                             "BDW-40L530D high-capacity 530L upright -40°C low temperature freezer with multi-layer door sealing, independent inner door design, digital temperature controller, battery backup alarm, mechanical lock, and non-HCFC refrigerant for pharmaceutical, biotechnology, and large research institution biological material long-term storage_Being India",
@@ -2398,7 +2398,7 @@ export async function GET() {
                                 }
                             ]
                         }
-                    }, 
+                    },
                 ]
             },
 
@@ -2424,7 +2424,7 @@ export async function GET() {
                         productTitle:
                             "BDW-86L390 Ultra-Low Temperature Freezer — 390L -86°C with Touch Screen, Data Logger, and 126mm Insulation for Pharmaceutical and Biobank Biological Sample Storage",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/freezers/bdw-86l390.webp",
 
                         imgAltText:
                             "BDW-86L390 390L -86°C ultra-low temperature upright freezer with touch screen controller, data logger, 126mm polyurethane insulation, SS304 stainless steel interior, 4 inner doors, 16 racks for 240 boxes, battery backup alarm, and CE/RoHS certification for pharmaceutical, biobank, and research laboratory biological sample storage_Being India",
@@ -2779,7 +2779,7 @@ export async function GET() {
                         productTitle:
                             "BDW-86L490 Ultra-Low Temperature Freezer — 490L -86°C with 16 Racks/320 Boxes and Full Data Logging for Higher-Capacity Pharmaceutical and Biobank Storage",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/freezers/bdw-86l390.webp",
 
                         imgAltText:
                             "BDW-86L490 490L -86°C ultra-low temperature upright freezer with touch screen, data logger, 126mm polyurethane insulation, SS304 stainless steel interior, 4 inner doors, 16 racks for 320 boxes, battery backup alarm, and CE/RoHS for pharmaceutical, biobank, and research laboratory biological sample storage_Being India",
@@ -3074,7 +3074,7 @@ export async function GET() {
                         productTitle:
                             "BDW-86L650 Ultra-Low Temperature Freezer — Large-Capacity 650L -86°C with 20 Racks and 400-Box Storage for High-Volume Biobanks and Research Institutions",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/freezers/bdw-86l390.webp",
 
                         imgAltText:
                             "BDW-86L650 large-capacity 650L -86°C ultra-low temperature upright freezer with 20 racks for 400 boxes, touch screen controller, data logger, stainless steel interior, thick polyurethane insulation, battery backup, and comprehensive alarm system for large biobank and high-volume research laboratory biological sample storage_Being India",
@@ -3335,12 +3335,12 @@ export async function GET() {
                         productTitle:
                             "BDW-86L770 Ultra-Low Temperature Freezer — Maximum-Capacity 770L -86°C with 20 Racks/500 Boxes and 1800W for National Biobanks and High-Demand Clinical Research",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/freezers/bdw-86l390.webp",
 
                         imgAltText:
                             "BDW-86L770 maximum-capacity 770L -86°C ultra-low temperature upright freezer with 20 racks for 500 boxes, touch screen controller, data recording, stainless steel interior, advanced insulation, comprehensive alarm system, battery backup, lockable door, and 1800W for national biobank, pharmaceutical, and clinical research -86°C biological material storage_Being India",
 
-                        price:1544680,
+                        price: 1544680,
 
                         gem: false,
 

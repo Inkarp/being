@@ -31,7 +31,7 @@ export async function GET() {
                         productTitle:
                             "BP-5B Circulating Heating & Cooling Bath — -40°C to 150°C with ±0.2°C Precision and 8 L/min Circulation",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/chillers/bp-5b.webp",
 
                         imgAltText:
                             "BP-5B compact circulating heating cooling bath with -40°C to 150°C temperature range, built-in circulation pump, and stainless steel chamber for laboratory temperature control and external circulation applications_ Being India",
@@ -277,7 +277,7 @@ export async function GET() {
                         productTitle:
                             "BP-13L Circulating Heating & Cooling Bath — 13L with -10°C to 150°C, ±0.2°C Precision and Continuous Operation",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/chillers/bp-5b.webp",
 
                         imgAltText:
                             "BP-13L large 13L circulating heating cooling bath with -10°C to 150°C temperature range, built-in circulation pump, stainless steel chamber, and external circulation capability for laboratory and pharmaceutical temperature control_Being India",
@@ -534,7 +534,7 @@ export async function GET() {
                         productTitle:
                             "MP-10C Recirculating Chiller Heater — Compact -10°C to 100°C Precision Temperature Control with LCD Microprocessor and Multi-Step Programmable Settings",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/chillers/mp-10c.webp",
 
                         imgAltText:
                             "MP-10C compact heating and cooling recirculating chiller with -10°C to 100°C range, ±0.2°C precision, LCD microprocessor controller, multi-step programmable settings, 4.5L stainless steel bath, 8 L/min pump, auto restart function, and 5999-minute timer for laboratory temperature control and external equipment cooling and heating applications_Being India",
@@ -780,7 +780,7 @@ export async function GET() {
                         productTitle:
                             "MP-30C Recirculating Chiller Heater — Extended-Range -10°C to 150°C with ±0.2°C Precision for High-Temperature Laboratory and Chemical Process Applications",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/chillers/mp-10c.webp",
 
                         imgAltText:
                             "MP-30C extended-range heating and cooling recirculating chiller with -10°C to 150°C range, ±0.2°C precision, LCD microprocessor controller, multi-step programmable settings, 4.5L stainless steel bath, 8 L/min pump, auto restart, and 2800W for high-temperature laboratory chemical and pharmaceutical process temperature control applications_Beign India",
@@ -1021,7 +1021,7 @@ export async function GET() {
                         productTitle:
                             "MPG-10C Recirculating Chiller Heater — 13L Medium-Capacity -10°C to 100°C with ±0.2°C Precision for Medium Laboratory and Industrial Temperature Control",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/chillers/mp-10c.webp",
 
                         imgAltText:
                             "MPG-10C medium-capacity 13L heating and cooling recirculating chiller with -10°C to 100°C range, ±0.2°C precision, LCD microprocessor controller, programmable temperature control, stainless steel bath, 8 L/min pump, and 2300W for medium-capacity laboratory and industrial external temperature control applications_Being India",
@@ -1262,7 +1262,7 @@ export async function GET() {
                         productTitle:
                             "MPG-40C Recirculating Chiller Heater — Deep-Cold 13L -40°C to 100°C with ±0.2°C Precision for Demanding Laboratory and Industrial Temperature Control",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/chillers/mp-10c.webp",
 
                         imgAltText:
                             "MPG-40C deep-cold 13L heating and cooling recirculating chiller with -40°C to 100°C range, ±0.2°C precision, LCD microprocessor controller, multi-step programmable settings, stainless steel bath, 8 L/min pump, and 3100W for demanding laboratory, industrial, and chemical process temperature control applications requiring deep sub-ambient cooling_Being India",
@@ -1511,7 +1511,7 @@ export async function GET() {
                         productTitle:
                             "BR-03A Recirculating Chiller — 5L Compact Precision Cooling from -20°C to +20°C with PID Control and DIN 12880 Safety",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/chillers/br-03a.webp",
 
                         imgAltText:
                             "BR-03A compact 5L recirculating chiller with -20°C to +20°C range, PID controller, LCD display, 530W cooling capacity, PT100 sensor, stainless steel bath, and DIN 12880 compliant safety for laboratory rotary evaporation and precision cooling applications_Being India",
@@ -1829,7 +1829,7 @@ export async function GET() {
                         productTitle:
                             "BR-05A Recirculating Chiller — 8L with 600W Cooling Capacity for Dual 2L or Single 5L Rotary Evaporator Support",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/chillers/br-03a.webp",
 
                         imgAltText:
                             "BR-05A 8L recirculating chiller with -20°C to +20°C range, 600W cooling capacity, PID programmable controller, LCD display, independent circulation pump, and DIN 12880 safety for dual rotary evaporator and laboratory pharmaceutical cooling applications_Being India",
@@ -2131,7 +2131,7 @@ export async function GET() {
                         productTitle:
                             "BR-20A Recirculating Chiller — 30L Medium-Capacity with 2500W Cooling for 10L and 20L Rotary Evaporator Applications",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/chillers/br-03a.webp",
 
                         imgAltText:
                             "BR-20A 30L medium-capacity recirculating chiller with -20°C to +20°C range, 2500W cooling capacity, 17 L/min pump, PID programmable controller, R410A refrigerant, and DIN 12880 safety for large rotary evaporation and industrial research laboratory cooling_Being India",
@@ -2428,7 +2428,7 @@ export async function GET() {
                         productTitle:
                             "BR-30A Recirculating Chiller — High-Capacity 30L Industrial-Grade Cooling for Demanding Laboratory and Process Applications",
 
-                        thumbnail: "/products/shaking-incubators/bis-2.webp",
+                        thumbnail: "/products/chillers/br-03a.webp",
 
                         imgAltText:
                             "BR-30A high-capacity 30L industrial recirculating chiller with -20°C to +20°C range, 2500W cooling capacity, 17 L/min pump, PID programmable controller, R410A refrigerant, and DIN 12880 safety for demanding laboratory and industrial process cooling applications_Being India",

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import clientPromise from '../../library/mongodb';
 
 export const runtime = 'nodejs';
 
@@ -458,6 +459,16 @@ export async function POST(request) {
   const now = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
 
   try {
+    const client = await clientPromise;
+    const db = client.db('BeingDB');
+    const dbResult = await db.collection('chatEnquiries').insertOne({
+      ...data,
+      visitorIp,
+      submittedAt: now,
+      createdAt: new Date(),
+      status: 'New',
+    });
+
     const transporter = getTransporter();
     const category    = data.category ?? 'General';
     const product     = data.product  ?? '';
@@ -473,12 +484,12 @@ export async function POST(request) {
 
     await transporter.sendMail(emailOptions);
 
-    return NextResponse.json({ success: true }, { status: 200 });
+    return NextResponse.json({ success: true, id: dbResult.insertedId }, { status: 200 });
 
   } catch (err) {
-    console.error('[Chatbot API] Email failed:', err);
+    console.error('[Chatbot API] Submission failed:', err);
     return NextResponse.json(
-      { error: 'Failed to send email. Please try again later.' },
+      { error: 'Failed to submit enquiry. Please try again later.' },
       { status: 500 }
     );
   }

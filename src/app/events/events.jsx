@@ -6,23 +6,15 @@ import { FaArrowRight, FaClock, FaMapMarkerAlt, FaSearch } from 'react-icons/fa'
 const events = [
 
   {
-    title: 'Wapii Lucknow',
-    date: 'May 14, 2015 3.00 PM',
-    location: 'Conference Hall, 12 Marcon Street, Africa',
+    title: 'Mumbai Analytica',
+    date: 'May 27, 2026',
+    location: 'Mumbai',
     description:
-      'Ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti sat quos dolores et quas molestias excepturi sint occaecat.',
-    image: '/event3.webp', // Replace with actual path
+      'We will be there at Mumbai Analytica 2026! Join us in Mumbai to explore our latest scientific instruments, connect with our team, and discover solutions designed for modern laboratories.',
+    image: '/assets/events/Analytica-Mumbai.webp',
     extraImage: '/event4.webp',
   },
-  {
-    title: 'PMEc Hyderabad',
-    date: 'May 14, 2015 3.00 PM',
-    location: 'Conference Hall, 12 Marcon Street, Africa',
-    description:
-      'Ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti sat quos dolores et quas molestias excepturi sint occaecat.',
-    image: '/event.jpg',
-    extraImage: '/eventImg2.webp',
-  },
+
 
 ];
 

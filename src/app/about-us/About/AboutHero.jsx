@@ -1,66 +1,31 @@
 'use client'
 
+import { FaBuildingFlag } from "react-icons/fa6";
+
 export default function AboutHero() {
   return (
-    <section className="relative overflow-hidden bg-[#0a0a0a] px-6 py-16 text-white md:py-20">
-      <div className="absolute inset-y-0 left-0 w-1/2 bg-[#2B7EC2]" />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0)_0%,rgba(10,10,10,0.35)_42%,#0a0a0a_68%)]" />
+    <section className="w-full bg-[radial-gradient(circle_at_top_left,#e8f3ff_0,#f8fafc_34%,#eef2f7_100%)]">
+      <div className="mx-auto overflow-hidden border border-white/80 bg-white/75 shadow-[0_28px_80px_rgba(22,35,72,0.16)] backdrop-blur">
+        <div className="relative overflow-hidden bg-[#101728] text-white">
+          <div className="absolute inset-0 bg-[linear-gradient(120deg,#2F4191_0%,#2B7EC2_55%,#2F4191_100%)]" />
+          <div className="absolute -right-16 top-8 h-52 w-52 rounded-full border border-white/20" />
+          <div className="absolute right-20 -bottom-24 h-72 w-72 rounded-full bg-white/10 blur-2xl" />
+          <div className="absolute left-8 top-10 hidden h-20 w-20 rotate-12 rounded-2xl border border-white/15 bg-white/10 sm:block" />
 
-      <div className="relative z-10 mx-auto grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
-        <div className="space-y-6">
-          <div className="flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.28em] text-white/80">
-            <span className="h-[2px] w-8 bg-white" />
-            ABOUT BEING INDIA
-          </div>
-          <h1 className="max-w-3xl text-4xl font-black leading-tight md:text-6xl">
-            Engineering Precision<br />
-            Delivered for India
-          </h1>
-          <p className="max-w-2xl text-base leading-relaxed text-white/[0.68] md:text-lg">
-            Official India partner delivering instruments engineered in China,
-            customized, controlled, and supported locally.
-          </p>
-        </div>
-
-        <div className="border border-white/15 bg-white/[0.08] p-7 shadow-2xl backdrop-blur-md md:p-9">
-          <div className="flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.28em] text-[#78c4ff]">
-            <span className="h-[2px] w-8 bg-[#78c4ff]" />
-            OUR PHILOSOPHY
-          </div>
-          <p className="mt-6 text-2xl font-semibold leading-tight text-white md:text-3xl">
-            Global manufacturing, Indian expertise, uncompromised control.
-          </p>
-          <div className="mt-8 grid grid-cols-2 gap-3">
-            <div className="border border-white/[0.12] bg-white/[0.08] p-4">
-              <p className="text-2xl font-black text-[#78c4ff]">01</p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-white/[0.62]">
-                Selection
-              </p>
+          <div className="relative z-10 px-6 py-12 sm:px-10 lg:px-12 lg:py-14">
+            <div className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white/90 shadow-sm">
+              <FaBuildingFlag className="text-[#a9efff]" />
+              About Being India
             </div>
-            <div className="border border-white/[0.12] bg-white/[0.08] p-4">
-              <p className="text-2xl font-black text-[#78c4ff]">02</p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-white/[0.62]">
-                Support
-              </p>
-            </div>
+            <h1 className="max-w-4xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Engineering Precision Delivered for India
+            </h1>
+            <p className="mt-5 max-w-3xl text-base leading-8 text-white/82 sm:text-lg">
+              Official India partner delivering globally engineered laboratory instruments with local selection, control and support.
+            </p>
           </div>
-          {/* <div className="relative z-10">
-            <p className="text-md md:text-sm font-raleway uppercase tracking-widest text-white font-medium mb-4">
-              Our Philosophy
-            </p>
-            <p className="text-xl md:text-2xl text-white/95 leading-tight drop-shadow-lg">
-              Global manufacturing, Indian expertise, uncompromised control.
-            </p>
-          </div> */}
         </div>
-
       </div>
-
-      <style jsx>{`
-        section {
-          min-height: 420px;
-        }
-      `}</style>
     </section>
   );
 }
