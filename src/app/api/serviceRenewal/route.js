@@ -6,9 +6,6 @@ import { sendEmail } from "../../library/mailer";
 // Ensure this runs only on Node (not Edge)
 export const runtime = 'nodejs';
 
-// Company email (receiver)
-const COMPANY_EMAIL = process.env.COMPANY_EMAIL ;
-
 export async function POST(request) {
   try {
     const formData = await request.json();
@@ -50,7 +47,7 @@ export async function POST(request) {
 
     const mailOptions = {
       from: `"Being Instruments India" <${process.env.EMAIL_USER}>`,
-      to: COMPANY_EMAIL,
+      to: process.env.COMPANY_EMAIL,
       replyTo: formData.email,
       subject: `Service Renewal Request | ${formData.product}`,
       html: `

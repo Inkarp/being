@@ -5,15 +5,12 @@ import { sendEmail } from "../../library/mailer";
 // Ensure this runs only on Node (not Edge)
 export const runtime = 'nodejs';
 
-// Company email (receiver)
-const COMPANY_EMAIL = process.env.COMPANY_EMAIL ;
-
 export async function POST(request) {
   try {
     const formData = await request.json();
 
     // Basic validation
-    if (!formData.email || !formData.name || !formData.product) {
+    if (!formData.email) {
       return NextResponse.json(
         { error: 'Required fields missing' },
         { status: 400 }
@@ -22,9 +19,9 @@ export async function POST(request) {
 
     const mailOptions = {
       from: `"Being Instruments India" <${process.env.EMAIL_USER}>`,
-      to: COMPANY_EMAIL,
-    //   replyTo: formData.email,
-      subject: `New Subsription for Newsletter | ${formData.product}`,
+      to: process.env.COMPANY_EMAIL,
+      replyTo: formData.email,
+      subject: `New Subscription for Newsletter${formData.product ? ` | ${formData.product}` : ''}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 620px; margin: auto; background:#0f172a; padding:32px; border-radius:16px;">      
           <h2 style="color:#f97316; margin-bottom:24px;">

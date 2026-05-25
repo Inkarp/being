@@ -4,8 +4,6 @@ import { sendEmail } from "../../library/mailer";
 
 export const runtime = 'nodejs';
 
-const COMPANY_EMAIL = process.env.COMPANY_EMAIL;
-
 /* ---------------- UTILITY FUNCTIONS ---------------- */
 
 function escapeHtml(str = '') {
@@ -113,7 +111,7 @@ export async function POST(request) {
 
     const mailOptions = {
       from: `"Inkarp Instruments India" <${process.env.EMAIL_USER}>`,
-      to: COMPANY_EMAIL,
+      to: process.env.COMPANY_EMAIL,
       replyTo: formData.email,
       subject: `New Product Enquiry | ${escapeHtml(formData.product)}`,
       html: `

@@ -554,7 +554,7 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
               </span>
               <div>
                 <p className="peq-eyebrow">Price Enquiry</p>
-                <h2 className="peq-title">Unlock Your Exclusive Quote</h2>
+                <h2 className="peq-title">Unlock Your Exclusive Price</h2>
               </div>
             </div>
             <button onClick={handleClose} className="peq-close" aria-label="Close">

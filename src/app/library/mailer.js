@@ -10,7 +10,7 @@ export function validateEmailEnv(mailOptions = {}) {
   }
 
   if (process.env.RESEND_API_KEY) {
-    if (!getResendFromAddress()) missing.push("RESEND_FROM");
+    if (!getResendFromAddress(mailOptions)) missing.push("RESEND_FROM");
   } else {
     missing.push(...REQUIRED_SMTP_ENV.filter((key) => !process.env[key]));
   }
@@ -73,8 +73,13 @@ function createEmailTransporter() {
   return transporter;
 }
 
-function getResendFromAddress() {
+function isUsableAddress(value) {
+  return typeof value === "string" && value.trim() && !/\b(undefined|null)\b/i.test(value);
+}
+
+function getResendFromAddress(mailOptions = {}) {
   if (process.env.RESEND_FROM) return process.env.RESEND_FROM;
+  if (isUsableAddress(mailOptions.from)) return mailOptions.from;
   const fallbackAddress = process.env.EMAIL_FROM || process.env.EMAIL_USER;
   return fallbackAddress ? `Being India <${fallbackAddress}>` : "";
 }
@@ -92,7 +97,7 @@ function normalizeRecipients(value) {
 
 async function sendWithResend(mailOptions) {
   const payload = {
-    from: getResendFromAddress(),
+    from: getResendFromAddress(mailOptions),
     to: normalizeRecipients(mailOptions.to),
     subject: mailOptions.subject,
     html: mailOptions.html,

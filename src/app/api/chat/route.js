@@ -457,7 +457,7 @@ export async function POST(request) {
       html:    buildEmailHtml({ data, now, visitorIp }),
     };
 
-    validateEmailEnv();
+    validateEmailEnv(emailOptions);
     await sendEmail(emailOptions);
 
     return NextResponse.json({ success: true, id: dbResult.insertedId }, { status: 200 });

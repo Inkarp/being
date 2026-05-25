@@ -4,8 +4,6 @@ import { sendEmail } from "../../library/mailer";
 
 export const runtime = "nodejs";
 
-const COMPANY_EMAIL = process.env.COMPANY_EMAIL;
-
 /* ================= HELPERS ================= */
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -91,7 +89,7 @@ export async function POST(request) {
       );
     }
 
-    if (!COMPANY_EMAIL) {
+    if (!process.env.COMPANY_EMAIL) {
       return NextResponse.json(
         { error: "Email environment variables not configured" },
         { status: 500 }
@@ -131,7 +129,7 @@ export async function POST(request) {
 
     const mailOptions = {
       from: `"Website Enquiry" <${process.env.EMAIL_USER}>`,
-      to: COMPANY_EMAIL,
+      to: process.env.COMPANY_EMAIL,
       replyTo: email,
       subject: `New Enquiry | ${name} | ${company}`,
       html: `
