@@ -28,7 +28,7 @@ export default function Page() {
             </div> */}
             {/* Content Container */}
             <div className="relative z-10">
-                <AboutHero />
+                {/* <AboutHero /> */}
                 <AboutPage />
                 {/* <NewTeam />
                 <Team />

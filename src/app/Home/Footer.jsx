@@ -168,11 +168,11 @@ export default function Footer() {
 
             <div className="bg-white py-4">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row gap-2 sm:gap-4 justify-between items-center text-xs sm:text-sm text-black text-center">
-                    <p>Privacy Policy</p>
+                  <Link href="/privacy-policy" className='hover:underline' > <p>Privacy Policy</p></Link> 
                     <p>
                         Copyright © <span className="font-semibold">Beinglab</span>. All rights reserved.
                     </p>
-                    <p>Terms and Conditions</p>
+                <Link href={"/terms-and-conditions"} className='hover:underline'>    <p>Terms and Conditions</p></Link>
                 </div>
             </div>
         </footer>

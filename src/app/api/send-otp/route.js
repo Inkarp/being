@@ -29,6 +29,20 @@ async function getOtpCollection() {
 }
 
 export async function POST(req) {
+
+  if (!process.env.EMAIL_FROM) {
+    return Response.json(
+      { success: false, message: "EMAIL_FROM is missing" },
+      { status: 500 }
+    );
+  }
+
+  if (!process.env.MONGODB_URI) {
+    return Response.json(
+      { success: false, message: "MONGODB_URI is missing" },
+      { status: 500 }
+    );
+  }
   try {
     const { email } = await req.json();
     const normalizedEmail = normalizeEmail(email);
@@ -90,9 +104,11 @@ export async function POST(req) {
       expiresAt,
     });
 
+
     try {
       await sendEmail({
-        from: `"Being India Enquiry" <${process.env.EMAIL_USER}>`,
+        from: `"Being India Enquiry" <${process.env.EMAIL_FROM}>`,
+
         to: normalizedEmail,
         subject: "Your Being India verification code",
         text: `Your Being India verification code is ${otp}. This code expires in ${OTP_EXPIRY_MINUTES} minutes.`,
