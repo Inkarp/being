@@ -5,8 +5,8 @@ export async function GET() {
         category: "Freezers",
         meta: {
             title: "Freezers | OEM & Service Provider in India | Being India",
-            description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
-            keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
+            // description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
+            // keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
         },
         subcategories: [
             {
@@ -39,7 +39,7 @@ export async function GET() {
 
                         gem: false,
 
-                        // tags: ["new"],
+                        tags: ["Scientist Recommended"],
 
                         related: [],
 
@@ -433,7 +433,7 @@ export async function GET() {
                         productTitle:
                             "BYC-5L310 Laboratory Refrigerator — 310L Upright 2–8°C with Glass Door, Battery Backup and CE/RoHS for Vaccine, Pharmaceutical and Hospital Storage",
 
-                        thumbnail: "/products/freezers/byc-5l320.webp",
+                        thumbnail: "/products/freezers/byc-5l310.webp",
 
                         imgAltText:
                             "BYC-5L310 310L laboratory refrigerator with 2–8°C temperature range, ±1.5°C stability, large double-paned glass door, LED control panel, 5 adjustable shelves, mechanical lock, battery backup alarm, heated door frame, independent inner door, and CE/RoHS certification for vaccine, pharmaceutical, and hospital laboratory storage_Being India",
@@ -442,7 +442,7 @@ export async function GET() {
 
                         gem: false,
 
-                        // tags: ["new"],
+                        tags: ["Scientist Recommended"],
 
                         related: ["byc-5l656"],
 
@@ -2119,7 +2119,7 @@ export async function GET() {
 
                         gem: false,
 
-                        // tags: ["new"],
+                        tags: ["Scientist Recommended"],
 
                         related: ["bdw-40l320"],
 
@@ -2788,7 +2788,7 @@ export async function GET() {
 
                         gem: false,
 
-                        // tags: ["new"],
+                        tags: ["Scientist Recommended"],
 
                         related: ["bdw-86l390", "bdw-86l650"],
 
@@ -3083,7 +3083,7 @@ export async function GET() {
 
                         gem: false,
 
-                        // tags: ["new"],
+                        tags: ["Scientist Recommended"],
 
                         related: ["bdw-86l490", "bdw-86l770"],
 

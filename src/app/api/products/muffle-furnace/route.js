@@ -5,8 +5,8 @@ export async function GET() {
         category: "Muffle furnace",
         meta: {
             title: "Muffle Furnace | OEM & Service Provider in India | Being India",
-            description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
-            keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
+            // description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
+            // keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
         },
         subcategories: [
             {
@@ -39,7 +39,7 @@ export async function GET() {
 
                         gem: false,
 
-                        // tags: ["new"],
+                        tags: ["Scientist Recommended"],
 
                         related: ["bwf-12-12cr"],
 
@@ -359,7 +359,7 @@ export async function GET() {
                         productTitle:
                             "BWF-12/12CR Muffle Furnace — 12L High-Throughput with 1200°C Maximum Temperature and Programmable PID Control",
 
-                         thumbnail: "/products/muffle-furnace/bwf-12-07cr.webp",
+                        thumbnail: "/products/muffle-furnace/bwf-12-07cr.webp",
 
                         imgAltText:
                             "BWF-12/12CR 12L high-throughput muffle furnace with 1200°C maximum temperature, PID programmable controller, ceramic fiber insulation, and 4kW power for industrial and academic laboratory ashing, sintering, and heat treatment_Being India",

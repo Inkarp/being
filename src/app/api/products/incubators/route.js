@@ -5,8 +5,8 @@ export async function GET() {
     category: "Incubators",
     meta: {
       title: "Incubators | OEM & Service Provider in India | Being India",
-      description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
-      keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
+      // description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
+      // keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
     },
     subcategories: [
       {
@@ -341,7 +341,7 @@ export async function GET() {
             price: 518420,
             // discount: 50,
             gem: true,
-            tags: ["new"],
+            tags: ["Scientist Recommended"],
             related: ["bis-2"],
 
             overview: [
@@ -681,7 +681,7 @@ export async function GET() {
 
             gem: true,
 
-            // tags: ["new"],
+            tags: ["Scientist Recommended"],
 
             related: ["bpn-150crh", "bpn-190crh"],
 
@@ -995,7 +995,7 @@ export async function GET() {
 
             gem: true,
 
-            // tags: ["new"],
+            tags: ["Scientist Recommended"],
 
             related: ["bpn-80crh", "bpn-190crh"],
 
@@ -2248,7 +2248,7 @@ export async function GET() {
             imgAltText:
               "BIO-190RHP Pro 170L water-jacketed CO₂ incubator with 180°C dry heat sterilization, infrared CO₂ sensor, touch screen controller, HEPA filtration, UV sterilization, and 3 shelves for biotechnology and pharmaceutical cell culture_ Being India",
 
-            price:1590000,
+            price: 1590000,
 
             gem: false,
 
@@ -5355,7 +5355,7 @@ export async function GET() {
 
             gem: true,
 
-            // tags: ["new"],
+            tags: ["Scientist Recommended"],
 
             related: ["lrh-70", "lrh-250"],
 
@@ -5648,7 +5648,7 @@ export async function GET() {
 
             gem: true,
 
-            // tags: ["new"],
+            tags: ["Scientist Recommended"],
 
             related: ["lrh-150", "bec-250"],
 
@@ -5947,7 +5947,7 @@ export async function GET() {
 
             gem: true,
 
-            // tags: ["new"],
+            tags: ["Scientist Recommended"],
 
             // related: ["bis-3c"],
 
@@ -8598,7 +8598,7 @@ export async function GET() {
 
             gem: false,
 
-            // tags: ["new"],
+            tags: ["Scientist Recommended"],
 
             related: ["bsic-103"],
 

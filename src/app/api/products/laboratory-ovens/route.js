@@ -5,8 +5,8 @@ export async function GET() {
     category: "Laboratory Ovens",
     meta: {
       title: "Laboratory Drying Ovens | OEM & Service Provider in India | Being India",
-      description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
-      keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
+      // description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
+      // keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
     },
     subcategories: [
       {
@@ -321,7 +321,7 @@ export async function GET() {
 
             gem: false,
 
-            // tags: ["new"],
+            tags: ["Scientist Recommended"],
 
             related: ["bpg-9040a", "bpg-9140a"],
 
@@ -584,11 +584,8 @@ export async function GET() {
               "BPG-9140A 150L large-capacity precision forced air drying oven with LCD controller, 250°C maximum, ±1°C accuracy, 3 adjustable shelves, stainless steel smooth-corner chamber, and optional RS-485 connectivity for pharmaceutical, research, and material science laboratory drying_Being India",
 
             price: 253920,
-
             gem: false,
-
-            // tags: ["new"],
-
+            tags: ["Scientist Recommended"],
             related: ["bpg-9070a", "bpg-9240a"],
 
             overview: [
@@ -2031,7 +2028,7 @@ export async function GET() {
 
             gem: false,
 
-            // tags: ["new"],
+            tags: ["Scientist Recommended"],
 
             related: ["bo-50f", "bo-200f"],
 
@@ -2839,7 +2836,7 @@ export async function GET() {
 
             gem: true,
 
-            // tags: ["new"],
+            tags: ["Scientist Recommended"],
 
             related: ["dzf-6053", "bv-20", "vri-4"],
 
@@ -3119,7 +3116,7 @@ export async function GET() {
 
             gem: true,
 
-            // tags: ["new"],
+            tags: ["Scientist Recommended"],
 
             related: ["dzf-6032", "dzf-6092", "bv-50"],
 
@@ -5033,7 +5030,7 @@ export async function GET() {
             productTitle:
               "BV-120 Programmable Vacuum Oven — 125L High-Capacity with 99 Pa, 10-Shelf Configuration and 2400W for Large-Batch Industrial and Pharmaceutical Vacuum Drying",
 
-              thumbnail: "/products/ovens/bv-90.webp",
+            thumbnail: "/products/ovens/bv-90.webp",
 
             imgAltText:
               "BV-120 125L high-capacity programmable vacuum oven with touch screen, 99 Pa vacuum, ±1°C accuracy, inert gas inlet, secondary temperature protection, 10-shelf maximum, 500×500×500mm 304 SS cubic chamber, and 2400W for large batch pharmaceutical, industrial, and research laboratory vacuum drying_Being India",
@@ -5297,7 +5294,7 @@ export async function GET() {
             productTitle:
               "BV-210 Programmable Vacuum Oven — 216L Flagship High-Capacity with 99 Pa, 13 Shelves and 2800W for Industrial-Scale Pharmaceutical and Production Laboratory Vacuum Drying",
 
-              thumbnail: "/products/ovens/bv-90.webp",
+            thumbnail: "/products/ovens/bv-90.webp",
 
             imgAltText:
               "BV-210 216L flagship programmable vacuum oven with touch screen controller, 99 Pa vacuum, ±1°C accuracy, inert gas inlet, 13-shelf maximum, 600×600×600mm 304 SS cubic chamber, overload and electrical protection, 6-layer safety, and 2800W for high-capacity industrial pharmaceutical and research laboratory vacuum drying_Being India",
