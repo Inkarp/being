@@ -18,8 +18,6 @@ const REQUIRED_EMAIL_ENV = ['COMPANY_EMAIL'];
 // Created once outside the handler to reuse the SMTP connection pool.
 // ─────────────────────────────────────────────────────────────────────────────
 
-const transporter = { sendMail: sendEmail };
-
 // ─────────────────────────────────────────────────────────────────────────────
 // RATE LIMITER
 // Prevents the same IP from spamming the form.
@@ -448,7 +446,7 @@ export async function POST(request) {
     const emailText = buildPlainText(formData, ip, submittedAt);
     const subject   = `[Price Enquiry] ${formData.product || 'New Lead'} — ${ip}`;
 
-    await transporter.sendMail({
+    await sendEmail({
       from:    `"Being India Website" <${process.env.EMAIL_USER}>`,
       to:      process.env.COMPANY_EMAIL,
       replyTo: formData.email, // Reply in Gmail opens the customer's email directly

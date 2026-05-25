@@ -1,18 +1,14 @@
 import nodemailer from "nodemailer";
 
-const REQUIRED_SMTP_ENV = ["EMAIL_USER", "EMAIL_PASS"];
+const REQUIRED_SMTP_ENV = ["EMAIL_USER", "EMAIL_FROM", "EMAIL_PASS"];
 
 export function validateEmailEnv(mailOptions = {}) {
-  const missing = [];
+  const missing = [
+    ...REQUIRED_SMTP_ENV.filter((key) => !process.env[key]),
+  ];
 
   if ("to" in mailOptions && !normalizeRecipients(mailOptions.to).length) {
     missing.push("email recipient");
-  }
-
-  if (process.env.RESEND_API_KEY) {
-    if (!getResendFromAddress(mailOptions)) missing.push("RESEND_FROM");
-  } else {
-    missing.push(...REQUIRED_SMTP_ENV.filter((key) => !process.env[key]));
   }
 
   if (missing.length) {
@@ -22,66 +18,6 @@ export function validateEmailEnv(mailOptions = {}) {
 
 function getEmailPassword() {
   return process.env.EMAIL_PASS?.replace(/\s+/g, "");
-}
-
-export async function sendEmail(mailOptions) {
-  validateEmailEnv(mailOptions);
-
-  if (process.env.RESEND_API_KEY) {
-    return sendWithResend(mailOptions);
-  }
-
-  const transporter = createEmailTransporter();
-
-  try {
-    return await transporter.sendMail(mailOptions);
-  } finally {
-    transporter.close();
-  }
-}
-
-export async function verifyEmailTransport() {
-  validateEmailEnv({ to: process.env.COMPANY_EMAIL || "healthcheck@example.com" });
-
-  if (process.env.RESEND_API_KEY) {
-    return verifyResendTransport();
-  }
-
-  const transporter = createEmailTransporter();
-
-  try {
-    return await transporter.verify();
-  } finally {
-    transporter.close();
-  }
-}
-
-function createEmailTransporter() {
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: getEmailPassword(),
-    },
-    connectionTimeout: 15000,
-    greetingTimeout: 10000,
-    socketTimeout: 20000,
-  });
-
-  return transporter;
-}
-
-function isUsableAddress(value) {
-  return typeof value === "string" && value.trim() && !/\b(undefined|null)\b/i.test(value);
-}
-
-function getResendFromAddress(mailOptions = {}) {
-  if (process.env.RESEND_FROM) return process.env.RESEND_FROM;
-  if (isUsableAddress(mailOptions.from)) return mailOptions.from;
-  const fallbackAddress = process.env.EMAIL_FROM || process.env.EMAIL_USER;
-  return fallbackAddress ? `Being India <${fallbackAddress}>` : "";
 }
 
 function normalizeRecipients(value) {
@@ -95,54 +31,59 @@ function normalizeRecipients(value) {
   return [];
 }
 
-async function sendWithResend(mailOptions) {
-  const payload = {
-    from: getResendFromAddress(mailOptions),
-    to: normalizeRecipients(mailOptions.to),
-    subject: mailOptions.subject,
-    html: mailOptions.html,
-    text: mailOptions.text,
-  };
-
-  const replyTo = normalizeRecipients(mailOptions.replyTo || mailOptions.reply_to);
-  if (replyTo.length) payload.reply_to = replyTo;
-
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
-
-  const result = await response.json().catch(() => ({}));
-
-  if (!response.ok) {
-    const message = result?.message || result?.error || `Resend API failed with ${response.status}`;
-    const error = new Error(message);
-    error.code = result?.name || `RESEND_${response.status}`;
-    error.details = result;
-    throw error;
-  }
-
-  return result;
+function getDisplayName(from = "") {
+  const match = String(from).match(/^\s*"?([^"<]+?)"?\s*</);
+  return match?.[1]?.trim() || "Being India";
 }
 
-async function verifyResendTransport() {
-  const response = await fetch("https://api.resend.com/domains", {
-    headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+function getFromAddress(from) {
+  const address = process.env.EMAIL_FROM || process.env.EMAIL_USER;
+  const displayName = getDisplayName(from);
+  return `"${displayName}" <${address}>`;
+}
+
+function buildMailOptions(mailOptions) {
+  return {
+    ...mailOptions,
+    from: getFromAddress(mailOptions.from),
+  };
+}
+
+function createEmailTransporter() {
+  return nodemailer.createTransport({
+    host: process.env.EMAIL_HOST || "smtp.gmail.com",
+    port: Number(process.env.EMAIL_PORT || 465),
+    secure: String(process.env.EMAIL_SECURE || "true") !== "false",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: getEmailPassword(),
     },
+    connectionTimeout: 15000,
+    greetingTimeout: 10000,
+    socketTimeout: 20000,
   });
+}
 
-  if (!response.ok) {
-    const result = await response.json().catch(() => ({}));
-    const message = result?.message || result?.error || `Resend API failed with ${response.status}`;
-    const error = new Error(message);
-    error.code = result?.name || `RESEND_${response.status}`;
-    throw error;
+export async function sendEmail(mailOptions) {
+  validateEmailEnv(mailOptions);
+
+  const transporter = createEmailTransporter();
+
+  try {
+    return await transporter.sendMail(buildMailOptions(mailOptions));
+  } finally {
+    transporter.close();
   }
+}
 
-  return true;
+export async function verifyEmailTransport() {
+  validateEmailEnv();
+
+  const transporter = createEmailTransporter();
+
+  try {
+    return await transporter.verify();
+  } finally {
+    transporter.close();
+  }
 }

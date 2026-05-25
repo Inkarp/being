@@ -6,7 +6,7 @@ import { hashOtp, isValidEmail, normalizeEmail } from "../../library/otp";
 export const runtime = "nodejs";
 
 const OTP_EXPIRY_MINUTES = 10;
-const OTP_RESEND_COOLDOWN_SECONDS = 60;
+const OTP_SEND_COOLDOWN_SECONDS = 60;
 const OTP_MAX_REQUESTS_PER_HOUR = 20;
 
 let indexesReady;
@@ -43,7 +43,7 @@ export async function POST(req) {
     const collection = await getOtpCollection();
     const now = new Date();
     const oneHourAgo = new Date(now.getTime() - 60 * 60 * 1000);
-    const cooldownStart = new Date(now.getTime() - OTP_RESEND_COOLDOWN_SECONDS * 1000);
+    const cooldownStart = new Date(now.getTime() - OTP_SEND_COOLDOWN_SECONDS * 1000);
 
     const recentRequest = await collection.findOne({
       email: normalizedEmail,
@@ -54,7 +54,7 @@ export async function POST(req) {
       return Response.json(
         {
           success: false,
-          message: `Please wait ${OTP_RESEND_COOLDOWN_SECONDS} seconds before requesting another OTP.`,
+          message: `Please wait ${OTP_SEND_COOLDOWN_SECONDS} seconds before requesting another OTP.`,
         },
         { status: 429 }
       );
