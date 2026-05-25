@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
+import { submitFormEmail } from '../../lib/emailService';
 
 export default function Form() {
 
@@ -134,13 +135,7 @@ export default function Form() {
         setLoading(true);
 
         try {
-            const res = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(form),
-            });
-
-            if (!res.ok) throw new Error();
+            await submitFormEmail('Contact Enquiry', form);
 
             setStatus('success');
 

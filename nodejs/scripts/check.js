@@ -1,4 +1,5 @@
 const files = [
+  "../api/index.js",
   "../api/mail-health.js",
   "../api/send-otp.js",
   "../api/verify-otp.js",

@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FaTimes, FaPaperPlane, FaCheckCircle, FaSpinner } from 'react-icons/fa';
+import { sendOtp, submitFormEmail, verifyOtp } from '../lib/emailService';
 
 /* ─────────────────────────────────────────── */
 /*  Constants                                  */
@@ -192,13 +193,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
 
     setLoading(true);
     try {
-      const res = await fetch('/api/enquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || data.message || 'Submission failed');
+      await submitFormEmail('Product Enquiry', formData);
 
       setSubmitted(true);
 
@@ -243,13 +238,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
     if (!EMAIL_RE.test(formData.email)) { setOtpError('Enter a valid email first'); return; }
     setSendOtpLoading(true); setOtpError('');
     try {
-      const res = await fetch('/api/send-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: formData.email }),
-      });
-      const data = await res.json();
-      if (!res.ok || !data.success) throw new Error(data.message || 'Unable to send OTP');
+      await sendOtp(formData.email);
       setOtpSent(true);
     } catch (err) {
       setOtpError(err.message || 'Failed to send OTP');
@@ -262,18 +251,9 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
     if (!otp.trim()) return;
     setVerifyOtpLoading(true); setOtpError('');
     try {
-      const res = await fetch('/api/verify-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: formData.email, otp }),
-      });
-      const data = await res.json();
-      if (res.ok && data.success) {
-        setOtpVerified(true);
-        setErrors(prev => ({ ...prev, otp: '' }));
-      } else {
-        throw new Error(data.message || 'Invalid OTP');
-      }
+      await verifyOtp(formData.email, otp);
+      setOtpVerified(true);
+      setErrors(prev => ({ ...prev, otp: '' }));
     } catch (err) {
       setOtpVerified(false);
       setOtpError(err.message || 'Verification failed');
@@ -291,7 +271,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
     <>
       {/* ── Styles ── */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+    
 
         .enq-overlay {
           font-family: 'DM Sans', sans-serif;
