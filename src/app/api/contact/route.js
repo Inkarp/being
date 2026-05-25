@@ -91,7 +91,7 @@ export async function POST(request) {
       );
     }
 
-    if (!COMPANY_EMAIL || !process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    if (!COMPANY_EMAIL) {
       return NextResponse.json(
         { error: "Email environment variables not configured" },
         { status: 500 }

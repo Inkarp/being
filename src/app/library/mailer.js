@@ -1,13 +1,19 @@
 import nodemailer from "nodemailer";
 
-const REQUIRED_EMAIL_ENV = ["COMPANY_EMAIL"];
 const REQUIRED_SMTP_ENV = ["EMAIL_USER", "EMAIL_PASS"];
 
-export function validateEmailEnv() {
-  const missing = [
-    ...REQUIRED_EMAIL_ENV.filter((key) => !process.env[key]),
-    ...(process.env.RESEND_API_KEY ? [] : REQUIRED_SMTP_ENV.filter((key) => !process.env[key])),
-  ];
+export function validateEmailEnv(mailOptions = {}) {
+  const missing = [];
+
+  if ("to" in mailOptions && !normalizeRecipients(mailOptions.to).length) {
+    missing.push("email recipient");
+  }
+
+  if (process.env.RESEND_API_KEY) {
+    if (!getResendFromAddress()) missing.push("RESEND_FROM");
+  } else {
+    missing.push(...REQUIRED_SMTP_ENV.filter((key) => !process.env[key]));
+  }
 
   if (missing.length) {
     throw new Error(`Missing email env vars: ${missing.join(", ")}`);
@@ -19,7 +25,7 @@ function getEmailPassword() {
 }
 
 export async function sendEmail(mailOptions) {
-  validateEmailEnv();
+  validateEmailEnv(mailOptions);
 
   if (process.env.RESEND_API_KEY) {
     return sendWithResend(mailOptions);
@@ -35,7 +41,7 @@ export async function sendEmail(mailOptions) {
 }
 
 export async function verifyEmailTransport() {
-  validateEmailEnv();
+  validateEmailEnv({ to: process.env.COMPANY_EMAIL || "healthcheck@example.com" });
 
   if (process.env.RESEND_API_KEY) {
     return verifyResendTransport();
@@ -68,7 +74,9 @@ function createEmailTransporter() {
 }
 
 function getResendFromAddress() {
-  return process.env.RESEND_FROM || `Being India <${process.env.EMAIL_FROM || process.env.EMAIL_USER}>`;
+  if (process.env.RESEND_FROM) return process.env.RESEND_FROM;
+  const fallbackAddress = process.env.EMAIL_FROM || process.env.EMAIL_USER;
+  return fallbackAddress ? `Being India <${fallbackAddress}>` : "";
 }
 
 function normalizeRecipients(value) {

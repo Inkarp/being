@@ -11,7 +11,7 @@ export const runtime = 'nodejs';
 const GST_REGEX   = /^[0-3][0-9][A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^\d{10}$/;
-const REQUIRED_EMAIL_ENV = ['EMAIL_USER', 'EMAIL_PASS', 'COMPANY_EMAIL'];
+const REQUIRED_EMAIL_ENV = ['COMPANY_EMAIL'];
 
 // ─────────────────────────────────────────────────────────────────────────────
 // NODEMAILER TRANSPORTER
