@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-const REQUIRED_SMTP_ENV = ["EMAIL_USER", "EMAIL_FROM", "EMAIL_PASS"];
+const REQUIRED_SMTP_ENV = ["EMAIL_USER", "EMAIL_PASS"];
 
 export function validateEmailEnv(mailOptions = {}) {
   const missing = [
