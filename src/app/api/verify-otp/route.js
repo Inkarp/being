@@ -1,31 +1,11 @@
-import crypto from "crypto";
 import clientPromise from "../../library/mongodb";
+import { hashOtp, isValidEmail, normalizeEmail, normalizeOtp } from "../../library/otp";
 
 export const runtime = "nodejs";
 
 const OTP_MAX_ATTEMPTS = 5;
 
 let indexesReady;
-
-function normalizeEmail(email = "") {
-  return String(email).trim().toLowerCase();
-}
-
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function normalizeOtp(otp = "") {
-  return String(otp).replace(/\D/g, "").slice(0, 6);
-}
-
-function hashOtp(email, otp) {
-  const secret = process.env.OTP_SECRET || process.env.EMAIL_PASS || "otp-secret";
-  return crypto
-    .createHash("sha256")
-    .update(`${normalizeEmail(email)}:${otp}:${secret}`)
-    .digest("hex");
-}
 
 async function getOtpCollection() {
   const client = await clientPromise;

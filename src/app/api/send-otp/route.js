@@ -1,6 +1,7 @@
 import crypto from "crypto";
 import clientPromise from "../../library/mongodb";
 import { sendEmail } from "../../library/mailer";
+import { hashOtp, isValidEmail, normalizeEmail } from "../../library/otp";
 
 export const runtime = "nodejs";
 
@@ -10,24 +11,8 @@ const OTP_MAX_REQUESTS_PER_HOUR = 20;
 
 let indexesReady;
 
-function normalizeEmail(email = "") {
-  return String(email).trim().toLowerCase();
-}
-
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
 function generateOtp() {
   return String(crypto.randomInt(100000, 1000000));
-}
-
-function hashOtp(email, otp) {
-  const secret = process.env.OTP_SECRET || process.env.EMAIL_PASS || "otp-secret";
-  return crypto
-    .createHash("sha256")
-    .update(`${normalizeEmail(email)}:${otp}:${secret}`)
-    .digest("hex");
 }
 
 async function getOtpCollection() {
@@ -95,7 +80,7 @@ export async function POST(req) {
       { $set: { invalidatedAt: now } }
     );
 
-    await collection.insertOne({
+    const insertResult = await collection.insertOne({
       email: normalizedEmail,
       otpHash: hashOtp(normalizedEmail, otp),
       attempts: 0,
@@ -105,22 +90,35 @@ export async function POST(req) {
       expiresAt,
     });
 
-    await sendEmail({
-      from: `"Being India Enquiry" <${process.env.EMAIL_USER}>`,
-      to: normalizedEmail,
-      subject: "Your Being India verification code",
-      html: `
-        <div style="font-family:Arial,sans-serif;padding:24px;line-height:1.6;color:#111827;">
-          <h2 style="margin:0 0 12px;color:#2F4191;">Email Verification</h2>
-          <p style="margin:0 0 14px;">Use this OTP to verify your enquiry email address.</p>
-          <div style="font-size:32px;font-weight:800;letter-spacing:6px;color:#2F4191;margin:18px 0;">
-            ${otp}
+    try {
+      await sendEmail({
+        from: `"Being India Enquiry" <${process.env.EMAIL_USER}>`,
+        to: normalizedEmail,
+        subject: "Your Being India verification code",
+        text: `Your Being India verification code is ${otp}. This code expires in ${OTP_EXPIRY_MINUTES} minutes.`,
+        html: `
+          <div style="font-family:Arial,sans-serif;padding:24px;line-height:1.6;color:#111827;">
+            <h2 style="margin:0 0 12px;color:#2F4191;">Email Verification</h2>
+            <p style="margin:0 0 14px;">Use this OTP to verify your enquiry email address.</p>
+            <div style="font-size:32px;font-weight:800;letter-spacing:6px;color:#2F4191;margin:18px 0;">
+              ${otp}
+            </div>
+            <p style="margin:0;color:#6b7280;">This code expires in ${OTP_EXPIRY_MINUTES} minutes.</p>
+            <p style="margin:12px 0 0;color:#6b7280;font-size:13px;">If you did not request this, you can safely ignore this email.</p>
           </div>
-          <p style="margin:0;color:#6b7280;">This code expires in ${OTP_EXPIRY_MINUTES} minutes.</p>
-          <p style="margin:12px 0 0;color:#6b7280;font-size:13px;">If you did not request this, you can safely ignore this email.</p>
-        </div>
-      `,
-    });
+        `,
+      });
+    } catch (emailError) {
+      await collection.deleteOne({ _id: insertResult.insertedId });
+      console.error("Send OTP Email Error:", emailError);
+      return Response.json(
+        {
+          success: false,
+          message: emailError?.message || "Unable to send OTP email",
+        },
+        { status: 502 }
+      );
+    }
 
     return Response.json({
       success: true,
