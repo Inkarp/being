@@ -1,0 +1,19 @@
+{
+  "name": "being-email-service",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev",
+    "check": "node scripts/check.js"
+  },
+  "dependencies": {
+    "@vercel/node": "^5.5.12",
+    "mongodb": "^7.0.0",
+    "nodemailer": "^7.0.12"
+  },
+  "devDependencies": {
+    "vercel": "^50.0.1"
+  }
+}
