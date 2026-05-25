@@ -6,7 +6,7 @@ import { hashOtp, isValidEmail, normalizeEmail } from "../../library/otp";
 export const runtime = "nodejs";
 
 const OTP_EXPIRY_MINUTES = 10;
-const OTP_SEND_COOLDOWN_SECONDS = 60;
+const OTP_SEND_COOLDOWN_SECONDS = 20;
 const OTP_MAX_REQUESTS_PER_HOUR = 20;
 
 let indexesReady;
