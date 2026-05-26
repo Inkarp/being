@@ -24,15 +24,17 @@ const staticRoutes = [
   "/thank-you",
 ];
 
+const yearlyStaticRoutes = new Set(["/about-us", "/contact-us"]);
+
 const categoryLoaders = {
   "laboratory-ovens": getLaboratoryOvenProducts,
-  incubators: getIncubatorProducts,
+  "incubators": getIncubatorProducts,
   "biological-saftey-cabinets": getBiologicalSafetyCabinetProducts,
-  pumps: getPumpProducts,
+  "pumps": getPumpProducts,
   "rotary-evaporators": getRotaryEvaporatorProducts,
   "water-baths": getWaterBathProducts,
-  freezers: getFreezerProducts,
-  chillers: getChillerProducts,
+  "freezers": getFreezerProducts,
+  "chillers": getChillerProducts,
   "muffle-furnace": getMuffleFurnaceProducts,
 };
 
@@ -64,7 +66,7 @@ async function getCategoryData(categorySlug) {
 
 export default async function sitemap() {
   const routes = staticRoutes.map((path) =>
-    sitemapEntry(path, path === "" ? 1 : 0.8)
+    sitemapEntry(path, path === "" ? 1 : 0.8, yearlyStaticRoutes.has(path) ? "yearly" : "monthly")
   );
 
   for (const categorySlug of PRODUCT_CATEGORY_SLUGS) {

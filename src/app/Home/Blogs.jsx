@@ -36,7 +36,7 @@ function GearCTA({ dark = false }) {
 }
 
 const events = [
-  { title: "Annual Tech Summit 2025", date: "25 May, 2026", place: "Mumbai", image: "/assets/events/Analytica-Mumbai.webp" },
+  { title: "Annual Tech Summit 202", date: "25 May, 2026", place: "Mumbai", image: "/assets/events/Analytica-Mumbai.webp" },
   // { title: "Cloud Infrastructure Workshop", date: "28 March, 2025", place: "Bangalore", image: "/about.jpg" },
   // { title: "AI in Scientific Research Conf.", date: "10 April, 2025", place: "Mumbai", image: "/about.jpg" },
 ];

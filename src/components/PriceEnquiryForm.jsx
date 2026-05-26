@@ -500,12 +500,14 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
 
 
       pushDataLayer({
-        event: `price_enquiry_success`,
-        form_name: "price enquiry",
+        event: `price_enquiry_success_${productData?.productId }`,
+        form_name: "price_enquiry",
         product_id: productData?.productId || '',
         product_name: productData?.model || '',
         page_url: window.location.href
       });
+
+      console.log(window.dataLayer)
 
       onSuccess?.({ product: productData, price: productData?.price });
       handleClose();

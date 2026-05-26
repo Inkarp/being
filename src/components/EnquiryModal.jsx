@@ -207,7 +207,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
       if (!submitted) {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          event: "enquiry_success",
+          event: `enquiry_success_${productData?.productId}`,
           form_name: "enquiry",
           product_id: productData?.productId || '',
           product_name: productData?.model || '',
@@ -215,7 +215,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
         });
       }
 
-      // console.log(window.dataLayer)
+      console.log(window.dataLayer)
 
       setTimeout(() => {
         handleClose();
@@ -529,7 +529,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
                 <Field error={errors.department}>
                   <TextInput name="department" placeholder="Department *" value={formData.department} onChange={handleChange} required className={errors.department ? 'error' : ''} />
                 </Field>
-                <Field error={errors.industry} className="enq-grid-full" style={{ gridColumn: '1 / -1' }}>
+                <Field error={errors.industry}>
                   <TextInput name="industry" placeholder="Industry *" value={formData.industry} onChange={handleChange} required className={errors.industry ? 'error' : ''} />
                 </Field>
                 <Field error={errors.phone}>

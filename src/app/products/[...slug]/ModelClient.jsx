@@ -27,6 +27,7 @@ import ServiceForm from '../../../components/ServiceForm';
 import ProductTabs from './ProductsTab';
 import ProductTabContent from './ProductTabContent';
 import ProductActionSection from './ProductActionSection';
+import ProductComparisonModal from './ProductComparisonModal';
 import Loading from '../../../app/loading';
 import ParadotForm from '../../../components/PardotForm';
 
@@ -77,6 +78,7 @@ export default function Model() {
     const [isExclusivePatnership, setIsExclusivePatnership] = useState(false);
     const [isServiceRenewalOpen, setIsServiceRenewalOpen] = useState(false);
     const [isPardotOpen, setIsPardotOpen] = useState(false);
+    const [isCompareOpen, setIsCompareOpen] = useState(false);
 
     const [showImage, setShowImage] = useState(false);
 
@@ -298,6 +300,7 @@ export default function Model() {
                 setIsServiceOpen={setIsServiceOpen}
                 setIsServiceRenewalOpen={setIsServiceRenewalOpen}
                 setIsPardotOpen={setIsPardotOpen}
+                setIsCompareOpen={setIsCompareOpen}
             />
             <div className='text-center py-2 italic'><span className='text-red-500 font-bold'>Disclaimer:</span> Specifications are indicative. Performance may vary depending on load, usage, and ambient conditions.</div>
 
@@ -337,6 +340,14 @@ export default function Model() {
                     thumbnail: product.thumbnail,
                     price: product.price,
                 }}
+            />
+
+            <ProductComparisonModal
+                isOpen={isCompareOpen}
+                onClose={() => setIsCompareOpen(false)}
+                currentCategorySlug={categorySlug}
+                currentSubSlug={subSlug}
+                currentModelSlug={modelSlug}
             />
 
 

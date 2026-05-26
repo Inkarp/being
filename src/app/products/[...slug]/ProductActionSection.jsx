@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { FaFileDownload, FaShare } from 'react-icons/fa';
+import { FaBalanceScale, FaFileDownload, FaShare } from 'react-icons/fa';
 import { FcCollaboration } from 'react-icons/fc';
 import ProductTabs from './ProductsTab';
 import ProductTabContent from './ProductTabContent';
@@ -18,7 +18,8 @@ export default function ProductActionSection({
     setIsExclusivePatnership,
     setIsServiceOpen,
     setIsServiceRenewalOpen,
-    setIsPardotOpen
+    setIsPardotOpen,
+    setIsCompareOpen
 }) {
     return (
         <div className="mt-5 border border-gray-200 rounded-2xl">
@@ -71,6 +72,13 @@ export default function ProductActionSection({
                     >
                         <FaShare size={14} />
                         Share
+                    </button>
+                    <button
+                        onClick={() => setIsCompareOpen(true)}
+                        className="flex items-center justify-center gap-2 bg-white text-[#2F4191] border border-[#2F4191] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2F4191] hover:text-white transition duration-300 w-full sm:w-auto cursor-pointer hover:scale-105"
+                    >
+                        <FaBalanceScale size={14} />
+                        Compare
                     </button>
                     {/* <button
                         onClick={() => setIsPardotOpen(true)}

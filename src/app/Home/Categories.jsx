@@ -74,7 +74,7 @@ export default function Categories() {
         .cat-label h2 {
       
           font-size: clamp(0.95rem, 1.5vw, 1.2rem);
-          font-weight: 400;
+          font-weight: 600;
           color: #1a1a1a;
           white-space: nowrap;
           line-height: 1.25;
@@ -120,8 +120,8 @@ export default function Categories() {
           justify-content: center;
           padding: 22px 20px;
           font-size: clamp(0.8rem, 1.1vw, 0.92rem);
-          font-weight: 500;
-          color: #6b6456;
+          font-weight: 700;
+          color: #2F4191;
           white-space: nowrap;
           text-decoration: none;
           transition: color 0.22s, background 0.22s, box-shadow 0.22s;

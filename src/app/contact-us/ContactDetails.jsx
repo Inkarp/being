@@ -4,10 +4,9 @@ import Form from './Form';
 
 export default function ContactDetails() {
 
-
     return (
-        <section className="min-h-screen flex md:flex-row flex-col items-center justify-center py-5">
-            <div className="w-full grid lg:grid-cols-4 gap-3 items-start relative px-4 bg-[#2F4191]/10  py-8">
+        <section className="flex md:flex-row flex-col items-center justify-center py-5">
+            <div className="w-full grid lg:grid-cols-4 gap-3 items-start relative px-4 bg-[#2F4191]/10 py-8">
                 {/* Left Side - Info Content (2/5) */}
                 <div className="lg:col-span-2 w-full space-y-8 text-white flex flex-col items-center justify-start lg:items-start">
                     <div className="text-left lg:text-left">
@@ -71,7 +70,7 @@ export default function ContactDetails() {
                                 <FaPhoneAlt className="w-7 h-7 text-white" />
                             </div>
                             <div className="flex flex-col gap-3 min-w-0 flex-1">
-                                <h4 className="font-bold text-white text-lg">Dispath Support</h4>
+                                <h4 className="font-bold text-white text-lg">Dispatch Support</h4>
                                 <div className="space-y-2 text-white text-lg">
                                     <p className="flex items-center gap-2">
                                         <FaPhoneAlt className="text-white/70" />
