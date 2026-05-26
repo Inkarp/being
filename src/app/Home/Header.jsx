@@ -54,18 +54,21 @@ export default function Header() {
 
   const socialLinks = [
     {
+      name: "LinkedIn",
       icon: <FaLinkedinIn size={28} />,
       url: "https://www.linkedin.com/company/being-scientific-india",
       bg: "bg-white",
       textColor: "text-blue-600"
     },
     {
+      name: "Instagram",
       icon: <FaInstagram size={28} />,
       url: "https://www.instagram.com/beingindia_scientific",
       bg: "bg-white",
       textColor: "text-pink-500"
     },
     {
+      name: "Facebook",
       icon: <FaFacebookF size={28} />,
       url: "https://www.facebook.com/people/Being-India/61580278097295/",
       bg: "bg-white",
@@ -226,17 +229,18 @@ export default function Header() {
           <div>
             <h3 className="font-bold mb-3 text-gray-700">Follow Us</h3>
             <div className="flex gap-3">
-              {[FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube, FaLinkedin].map(
-                (Icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="bg-[#2B7EC2] p-2 rounded-full text-white"
-                  >
-                    <Icon />
-                  </a>
-                )
-              )}
+              {socialLinks.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${item.name}`}
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#2B7EC2] text-white transition hover:bg-[#2F4191]"
+                >
+                  {item.icon}
+                </a>
+              ))}
             </div>
           </div>
           {/* CONTACT */}
@@ -246,17 +250,17 @@ export default function Header() {
             <div className="flex gap-3 items-start">
               <FaMapMarkerAlt className="text-[#2B7EC2] mt-1" />
               <p className="text-sm text-gray-700">
-                12th Street, New York, USA
+                Nacharam, Habsiguda, Hyderabad, Telangana, 500076
               </p>
             </div>
 
             <div className="flex gap-3 items-start">
               <FaEnvelope className="text-[#2B7EC2] mt-1" />
               <a
-                href="mailto:info@being.com"
+                href="mailto:info@beinglab.co.in"
                 className="text-sm text-gray-700 hover:text-[#2B7EC2]"
               >
-                info@being.com
+                info@beinglab.co.in
               </a>
             </div>
           </div>

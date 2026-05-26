@@ -3,6 +3,15 @@ import { FaPaperPlane, FaCheckCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, Fa
 import Form from './Form';
 
 export default function ContactDetails() {
+    const renderInfo = (info, href) => {
+        if (!href) return <p className="text-black font-medium text-lg">{info}</p>;
+
+        return (
+            <a href={href} className="text-black font-medium text-lg hover:text-[#2F4191] hover:underline">
+                {info}
+            </a>
+        );
+    };
 
     return (
         <section className="flex md:flex-row flex-col items-center justify-center py-5">
@@ -17,17 +26,17 @@ export default function ContactDetails() {
                         <div className="space-y-3 w-full">
                             {[
                                 { icon: FaClock, title: "Office Hours", info: "Mon–Fri: 09:30AM–05:30PM", color: "from-[#2F4191] to-[#2B7EC2]" },
-                                { icon: FaPhoneAlt, title: "Call Anytime", info: "+91 9966634008", color: "from-[#2F4191] to-[#2B7EC2]" },
-                                { icon: FaEnvelope, title: "Email Us", info: "info@beinglab.co.in", color: "from-[#2F4191] to-[#2B7EC2]" },
+                                { icon: FaPhoneAlt, title: "Call Anytime", info: "+91 9966634008", href: "tel:+919966634008", color: "from-[#2F4191] to-[#2B7EC2]" },
+                                { icon: FaEnvelope, title: "Email Us", info: "info@beinglab.co.in", href: "mailto:info@beinglab.co.in", color: "from-[#2F4191] to-[#2B7EC2]" },
                                 { icon: FaMapMarkerAlt, title: "Our Location", info: "Nacharam, Habsiguda, Hyderabad, Telangana, 500076", color: "from-[#2F4191] to-[#2B7EC2]" },
-                            ].map(({ icon: Icon, title, info, color }, idx) => (
+                            ].map(({ icon: Icon, title, info, href, color }, idx) => (
                                 <div key={idx} className="group/contact flex items-start gap-4 p-4 hover:bg-white/10 rounded-2xl transition-all duration-300 hover:backdrop-blur-sm hover:scale-[1.02] w-full">
                                     <div className={`w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-r ${color} shadow-lg group-hover/contact:rotate-12 transition-transform duration-300 flex-shrink-0`}>
                                         <Icon className="w-7 h-7 text-white" />
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-[#2F4191] text-lg mb-1">{title}</h4>
-                                        <p className="text-black font-medium text-lg">{info}</p>
+                                        {renderInfo(info, href)}
                                     </div>
                                 </div>
                             ))}
@@ -52,12 +61,10 @@ export default function ContactDetails() {
                                 <div className="space-y-2 text-white text-lg">
                                     <p className="flex items-center gap-2">
                                         <FaPhoneAlt className="text-white/70" />
-                                        +91 7330731315
+                                        <a href="tel:+917330731315" className="hover:underline">
+                                            +91 7330731315
+                                        </a>
                                     </p>
-                                    {/* <p className="flex items-center gap-2 text-lg">
-                                        <FaEnvelope className="text-white/70" />
-                                        <a href="mailto:service@techin.com" className="hover:underline truncate">service@techin.com</a>
-                                    </p> */}
                                 </div>
                             </div>
                         </div>
@@ -74,12 +81,10 @@ export default function ContactDetails() {
                                 <div className="space-y-2 text-white text-lg">
                                     <p className="flex items-center gap-2">
                                         <FaPhoneAlt className="text-white/70" />
-                                        +91 9515365959
+                                        <a href="tel:+919515365959" className="hover:underline">
+                                            +91 9515365959
+                                        </a>
                                     </p>
-                                    {/* <p className="flex items-center gap-2 text-lg">
-                                        <FaEnvelope className="text-white/70" />
-                                        <a href="mailto:support@techin.com" className="hover:underline truncate">support@techin.com</a>
-                                    </p> */}
                                 </div>
                             </div>
                         </div>
@@ -96,9 +101,11 @@ export default function ContactDetails() {
                                 <div className="space-y-2 text-white text-lg">
                                     <p className="flex items-center gap-2">
                                         <FaPhoneAlt className="text-white/70" />
-                                        +91 9030357676
+                                        <a href="tel:+919100712689" className="hover:underline">
+                                            +91 9100712689
+                                        </a>
                                     </p>
-                                  
+
                                 </div>
                             </div>
                         </div>
