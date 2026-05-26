@@ -8,6 +8,8 @@ if (!uri) {
 
 const options = {
   serverSelectionTimeoutMS: 10000,
+  tls: true,
+  retryWrites: true,
 };
 
 let client;
