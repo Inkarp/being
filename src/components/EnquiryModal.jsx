@@ -208,8 +208,8 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: `enquiry_success_${productData?.productId}`,
-          form_name: "enquiry",
           product_id: productData?.productId || '',
+          form_name: "enquiry",
           product_name: productData?.model || '',
           page_url: window.location.href
         });

@@ -331,41 +331,6 @@ function EmailInput({ value, onChange, errors }) {
   return (
     <div>
       <FieldLabel htmlFor="email">Email Address<span style={{ color: '#EF4444', marginLeft: 3 }}>*</span></FieldLabel>
-
-      {/* Toggle */}
-      {/* <div style={{
-        display: 'inline-flex', background: '#F1F5F9', borderRadius: 8,
-        padding: 3, gap: 3, marginBottom: 8,
-        border: '1px solid #E2E8F0',
-      }}>
-        {[['personal', 'Personal'], ['official', 'Official']].map(([t, label]) => (
-          <button
-            key={t} type="button" onClick={() => setEmailType(t)}
-            style={{
-              padding: '5px 14px', borderRadius: 6, fontSize: 12, fontWeight: 600,
-              border: 'none', cursor: 'pointer', transition: 'all 0.15s',
-              background: emailType === t ? '#1E3A8A' : 'transparent',
-              color: emailType === t ? '#fff' : '#64748B',
-            }}
-          >
-            {label}
-          </button>
-        ))}
-      </div> */}
-
-      <input
-        id="email" name="email" type="email" value={value} onChange={onChange} required
-        placeholder={emailType === 'personal' ? 'yourname@gmail.com' : 'name@company.com'}
-        onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
-        style={{
-          ...inputStyle(!!err),
-          borderColor: err ? '#F87171' : focused ? '#2563EB' : '#CBD5E1',
-          boxShadow: focused && !err ? '0 0 0 3px rgba(59,130,246,0.1)' : 'none',
-        }}
-      />
-      {/* <p style={{ fontSize: 11, color: '#94A3B8', marginTop: 5 }}>
-        {'Personal email (Gmail, Outlook, etc.) Official / work email address'}
-      </p> */}
       <FieldError msg={err} />
     </div>
   );
@@ -469,15 +434,6 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
       return;
     }
 
-    // ✅ ADD TRACKING HERE
-    // window.dataLayer = window.dataLayer || [];
-    // window.dataLayer.push({
-    //   event: "price_enquiry_submit",
-    //   product_name: productData?.model || '',
-    //   product_slug: productData?.meta?.slug || '',
-    //   price: productData?.price || '',
-    //   page_url: window.location.href
-    // });
     setLoading(true);
     setApiError('');
     const payload = {
@@ -498,11 +454,10 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
         throw new Error(body?.error || `Server error ${res.status}`);
       }
 
-
       pushDataLayer({
-        event: `price_enquiry_success_${productData?.productId }`,
-        form_name: "price_enquiry",
+        event: `price_enquiry_success`,
         product_id: productData?.productId || '',
+        form_name: "price_enquiry",
         product_name: productData?.model || '',
         page_url: window.location.href
       });
