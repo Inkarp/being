@@ -6,7 +6,9 @@ if (!uri) {
   throw new Error("Please define MONGODB_URI in .env.local");
 }
 
-const options = {};
+const options = {
+  serverSelectionTimeoutMS: 10000,
+};
 
 let client;
 let clientPromise;

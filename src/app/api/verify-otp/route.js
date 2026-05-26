@@ -4,12 +4,14 @@ import { hashOtp, isValidEmail, normalizeEmail, normalizeOtp } from "../../libra
 export const runtime = "nodejs";
 
 const OTP_MAX_ATTEMPTS = 5;
+const DB_NAME = process.env.MONGODB_DB || "BeingDB";
+const OTP_COLLECTION = "emailOtps";
 
 let indexesReady;
 
 async function getOtpCollection() {
   const client = await clientPromise;
-  const collection = client.db("BeingDB").collection("emailOtps");
+  const collection = client.db(DB_NAME).collection(OTP_COLLECTION);
 
   indexesReady ||= Promise.all([
     collection.createIndex({ email: 1, createdAt: -1 }),

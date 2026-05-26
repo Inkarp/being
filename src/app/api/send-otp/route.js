@@ -8,6 +8,8 @@ export const runtime = "nodejs";
 const OTP_EXPIRY_MINUTES = 10;
 const OTP_SEND_COOLDOWN_SECONDS = 20;
 const OTP_MAX_REQUESTS_PER_HOUR = 20;
+const DB_NAME = process.env.MONGODB_DB || "BeingDB";
+const OTP_COLLECTION = "emailOtps";
 
 let indexesReady;
 
@@ -50,7 +52,7 @@ function generateOtp() {
 
 async function getOtpCollection() {
   const client = await clientPromise;
-  const collection = client.db("BeingDB").collection("emailOtps");
+  const collection = client.db(DB_NAME).collection(OTP_COLLECTION);
 
   indexesReady ||= Promise.all([
     collection.createIndex({ email: 1, createdAt: -1 }),
@@ -72,6 +74,8 @@ export async function POST(req) {
     hasEmailPass: Boolean(process.env.EMAIL_PASS),
     emailPassLength: getEmailPassLength(),
     hasMongoUri: Boolean(process.env.MONGODB_URI),
+    mongoDbName: DB_NAME,
+    otpCollection: OTP_COLLECTION,
     emailHost: process.env.EMAIL_HOST || "smtp.gmail.com",
     emailPort: Number(process.env.EMAIL_PORT || 465),
     emailSecure: String(process.env.EMAIL_SECURE || "true") !== "false",
