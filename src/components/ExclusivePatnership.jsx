@@ -1,7 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState, useRef } from 'react';
-import { submitFormEmail } from '../lib/emailService';
 
 const INITIAL_STATE = {
   name: '',
@@ -113,7 +112,12 @@ export default function ExclusivePartner({ isOpen, onClose, productData }) {
     setLoading(true);
     setError('');
     try {
-      await submitFormEmail('Exclusive Partnership', { ...formData, country: 'India' });
+      const res = await fetch('/api/exclusivePatner', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, country: 'India' }),
+      });
+      if (!res.ok) throw new Error('Submission failed');
       setSubmitted(true);
       setTimeout(() => {
         handleClose();

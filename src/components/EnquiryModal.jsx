@@ -3,7 +3,6 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FaTimes, FaPaperPlane, FaCheckCircle, FaSpinner } from 'react-icons/fa';
-import { sendOtp, submitFormEmail, verifyOtp } from '../lib/emailService';
 
 /* ─────────────────────────────────────────── */
 /*  Constants                                  */
@@ -45,9 +44,9 @@ const TEXT_ONLY = /[^a-zA-Z\s]/g;
 /*  Sub-components                             */
 /* ─────────────────────────────────────────── */
 
-function Field({ label, error, children }) {
+function Field({ label, error, children, className = '', style }) {
   return (
-    <div className="enq-field">
+    <div className={`enq-field ${className}`.trim()} style={style}>
       {label && <label className="enq-label">{label}</label>}
       {children}
       {error && <span className="enq-field-error">{error}</span>}
@@ -193,7 +192,13 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
 
     setLoading(true);
     try {
-      await submitFormEmail('Product Enquiry', formData);
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || data.message || 'Submission failed');
 
       setSubmitted(true);
 
@@ -237,9 +242,18 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
     if (!formData.email) { setOtpError('Enter your email first'); return; }
     if (!EMAIL_RE.test(formData.email)) { setOtpError('Enter a valid email first'); return; }
     setSendOtpLoading(true); setOtpError('');
+    setOtpVerified(false);
     try {
-      await sendOtp(formData.email);
+      const res = await fetch('/api/send-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: formData.email }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.message || 'Unable to send OTP');
+      setOtp('');
       setOtpSent(true);
+      setErrors(prev => ({ ...prev, otp: '' }));
     } catch (err) {
       setOtpError(err.message || 'Failed to send OTP');
     } finally {
@@ -251,9 +265,18 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
     if (!otp.trim()) return;
     setVerifyOtpLoading(true); setOtpError('');
     try {
-      await verifyOtp(formData.email, otp);
-      setOtpVerified(true);
-      setErrors(prev => ({ ...prev, otp: '' }));
+      const res = await fetch('/api/verify-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: formData.email, otp }),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setOtpVerified(true);
+        setErrors(prev => ({ ...prev, otp: '' }));
+      } else {
+        throw new Error(data.message || 'Invalid OTP');
+      }
     } catch (err) {
       setOtpVerified(false);
       setOtpError(err.message || 'Verification failed');
@@ -543,11 +566,11 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
                       <button
                         type="button"
                         onClick={handleSendOtp}
-                        disabled={sendOtpLoading || otpSent || !formData.email}
+                        disabled={sendOtpLoading || !formData.email}
                         className="enq-pill-btn"
                       >
                         {sendOtpLoading ? <FaSpinner className="enq-spin" size={11} /> : null}
-                        {sendOtpLoading ? 'Sending…' : otpSent ? 'OTP Sent ✓' : 'Send OTP'}
+                        {sendOtpLoading ? 'Sending...' : otpSent ? 'Resend OTP' : 'Send OTP'}
                       </button>
                     )}
                     {otpVerified && (
@@ -572,17 +595,18 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
                       <button
                         type="button"
                         onClick={handleVerifyOtp}
-                        disabled={verifyOtpLoading || !otp}
+                        disabled={verifyOtpLoading || otp.length !== 6}
                         className="enq-pill-btn"
                       >
                         {verifyOtpLoading ? <FaSpinner className="enq-spin" size={11} /> : null}
-                        {verifyOtpLoading ? 'Checking…' : 'Verify'}
+                        {verifyOtpLoading ? 'Checking...' : 'Verify'}
                       </button>
                     </div>
-                    {otpError && <div className="enq-otp-error">{otpError}</div>}
-                    {errors.otp && <div className="enq-otp-error">{errors.otp}</div>}
                   </div>
                 )}
+
+                {otpError && <div className="enq-otp-error">{otpError}</div>}
+                {errors.otp && !otpVerified && <div className="enq-otp-error">{errors.otp}</div>}
 
                 {otpVerified && (
                   <div className="enq-verified-badge"><FaCheckCircle size={12} /> Email verified</div>

@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useCallback, useRef } from 'react';
 import Image from 'next/image';
-import { submitFormEmail } from '../lib/emailService';
 
 // ─── Regex & Constants ────────────────────────────────────────────────────────
 
@@ -489,7 +488,15 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
       ...collectTracking(),
     };
     try {
-      await submitFormEmail('Price Enquiry', payload);
+      const res = await fetch('/api/priceEnquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body?.error || `Server error ${res.status}`);
+      }
 
 
       pushDataLayer({

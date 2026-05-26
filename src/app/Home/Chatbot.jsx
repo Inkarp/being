@@ -1,6 +1,5 @@
 'use client';
 import { useState, useMemo, useRef, useEffect } from 'react';
-import { submitFormEmail } from '../../lib/emailService';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -359,7 +358,13 @@ export default function Chatbot({ open, onClose }) {
     };
 
     try {
-      await submitFormEmail('Chatbot Enquiry', payload);
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error(`Server error: ${res.status}`);
 
       if (category === 'Product' && CROSS_SELL_MAP[selectedProduct]) {
         const matched = PRODUCT_MASTER.filter((p) => CROSS_SELL_MAP[selectedProduct].includes(p.name));

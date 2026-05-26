@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { submitFormEmail } from '../lib/emailService';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -11,12 +10,6 @@ const INITIAL_STATE = {
   message: '', product: '', category: '', warranty: '',
   instrument: '', instrumentName: '', selectedModel: '', serialNumber: '', poDate: '', purchaseDate: '',
 };
-
-function getFormType(endpoint) {
-  if (endpoint?.includes('serviceRenewal')) return 'Service Renewal Request';
-  if (endpoint?.includes('exclusivePatner')) return 'Exclusive Partnership';
-  return 'Service Enquiry';
-}
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
@@ -281,7 +274,12 @@ export default function ServiceForm({
     }
 
     try {
-      await submitFormEmail(getFormType(endpoint), formData);
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Submission failed');
       setSubmitted(true);
       setTimeout(handleClose, 2000);    
     } catch (err) {
