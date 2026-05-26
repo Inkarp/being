@@ -24,6 +24,27 @@ function normalizeSpecValue(value) {
   return formatSpecValue(value).trim().replace(/\s+/g, ' ').toLowerCase();
 }
 
+function extractPrimaryNumber(value) {
+  const match = formatSpecValue(value).replace(/,/g, '').match(/-?\d+(?:\.\d+)?/);
+  return match ? Number(match[0]) : null;
+}
+
+function getAdvantageWinner(label, leftValue, rightValue) {
+  const leftNumber = extractPrimaryNumber(leftValue);
+  const rightNumber = extractPrimaryNumber(rightValue);
+
+  if (leftNumber === null || rightNumber === null || leftNumber === rightNumber) return null;
+
+  const lowerIsBetter = /noise|weight|power|consumption|dimension|size|footprint|external|depth|width|height/i.test(label);
+  const leftWins = lowerIsBetter ? leftNumber < rightNumber : leftNumber > rightNumber;
+
+  return leftWins ? 'left' : 'right';
+}
+
+function getModelCode(model) {
+  return model?.model || model?.title || model?.meta?.title || model?.meta?.slug || 'Selected model';
+}
+
 function SelectorColumn({
   label,
   badge,
@@ -211,6 +232,7 @@ export default function ProductComparisonModal({
         left: formatSpecValue(leftSpec?.value),
         right: formatSpecValue(rightSpec?.value),
         isDifferent: normalizeSpecValue(leftSpec?.value) !== normalizeSpecValue(rightSpec?.value),
+        winner: getAdvantageWinner(label, leftSpec?.value, rightSpec?.value),
       };
     });
   }, [leftModel, rightModel]);
@@ -219,6 +241,27 @@ export default function ProductComparisonModal({
     () => specRows.filter((row) => row.isDifferent).length,
     [specRows]
   );
+
+  const advantageSummary = useMemo(() => {
+    const leftAdvantages = specRows.filter((row) => row.winner === 'left').length;
+    const rightAdvantages = specRows.filter((row) => row.winner === 'right').length;
+
+    let suggestedModel = null;
+    let suggestedSide = null;
+
+    if (leftModel && rightModel && leftAdvantages !== rightAdvantages) {
+      suggestedSide = leftAdvantages > rightAdvantages ? 'A' : 'B';
+      suggestedModel = leftAdvantages > rightAdvantages ? leftModel : rightModel;
+    }
+
+    return {
+      leftAdvantages,
+      rightAdvantages,
+      suggestedModel,
+      suggestedSide,
+      comparableRows: leftAdvantages + rightAdvantages,
+    };
+  }, [leftModel, rightModel, specRows]);
 
   const handleLeftCategoryChange = (value) => {
     setLeftCategory(value);
@@ -312,6 +355,45 @@ export default function ProductComparisonModal({
             />
           </div>
 
+          {leftModel && rightModel && (
+            <div className="rounded-xl border border-emerald-100 bg-emerald-50 p-3">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-emerald-700">
+                    Suggested fit
+                  </p>
+                  <h3 className="mt-1 text-sm font-semibold text-gray-950">
+                    {advantageSummary.suggestedModel
+                      ? `${getModelCode(advantageSummary.suggestedModel)} has more measurable advantages`
+                      : 'Both models are closely matched'}
+                  </h3>
+                  <p className="mt-1 text-xs text-gray-600">
+                    Count is based on numeric specification comparisons where a clear winner can be detected.
+                  </p>
+                </div>
+
+                {advantageSummary.suggestedSide && (
+                  <span className="inline-flex items-center rounded-full bg-white px-2.5 py-1 text-[11px] font-bold text-emerald-700 ring-1 ring-emerald-200">
+                    Recommended: Product {advantageSummary.suggestedSide}
+                  </span>
+                )}
+              </div>
+
+              <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <div className={`rounded-lg border bg-white p-3 text-center ${advantageSummary.leftAdvantages > advantageSummary.rightAdvantages ? 'border-emerald-300' : 'border-blue-100'}`}>
+                  <div className="text-2xl font-black text-[#2F4191]">{advantageSummary.leftAdvantages}</div>
+                  <div className="mt-0.5 text-[10px] font-bold uppercase tracking-wide text-gray-500">Advantages</div>
+                  <div className="mt-0.5 text-xs font-semibold text-[#2F4191]">{getModelCode(leftModel)}</div>
+                </div>
+                <div className={`rounded-lg border bg-white p-3 text-center ${advantageSummary.rightAdvantages > advantageSummary.leftAdvantages ? 'border-emerald-300' : 'border-blue-100'}`}>
+                  <div className="text-2xl font-black text-emerald-700">{advantageSummary.rightAdvantages}</div>
+                  <div className="mt-0.5 text-[10px] font-bold uppercase tracking-wide text-gray-500">Advantages</div>
+                  <div className="mt-0.5 text-xs font-semibold text-emerald-700">{getModelCode(rightModel)}</div>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="overflow-hidden rounded-xl border border-gray-200">
             {leftModel && rightModel && (
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-200 bg-white px-4 py-3">
@@ -319,9 +401,14 @@ export default function ProductComparisonModal({
                   <p className="text-sm font-semibold text-gray-900">Specification differences</p>
                   <p className="text-xs text-gray-500">Highlighted rows show where Product B differs from Product A.</p>
                 </div>
-                <span className="rounded-full border border-[#2B7EC2]/30 bg-[#F3F8FC] px-3 py-1 text-xs font-bold text-[#2B7EC2]">
-                  {differenceCount} different
-                </span>
+                <div className="flex flex-wrap gap-2">
+                  <span className="rounded-full border border-[#2B7EC2]/30 bg-[#F3F8FC] px-3 py-1 text-xs font-bold text-[#2B7EC2]">
+                    {differenceCount} different
+                  </span>
+                  <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">
+                    {advantageSummary.comparableRows} judged
+                  </span>
+                </div>
               </div>
             )}
 
@@ -356,9 +443,25 @@ export default function ProductComparisonModal({
                         </span>
                       )}
                     </div>
-                    <div className="px-4 py-3 text-gray-700 md:border-r">{row.left}</div>
+                    <div className={`px-4 py-3 text-gray-700 md:border-r ${row.winner === 'left' ? 'bg-emerald-50 font-semibold text-emerald-800' : ''}`}>
+                      <div className="flex items-start justify-between gap-2">
+                        <span>{row.left}</span>
+                        {row.winner === 'left' && (
+                          <span className="shrink-0 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold uppercase text-emerald-700">
+                            Advantage
+                          </span>
+                        )}
+                      </div>
+                    </div>
                     <div className={`border-l-4 px-4 py-3 text-gray-800 ${row.isDifferent ? 'border-[#2B7EC2] bg-[#F3F8FC] font-semibold' : 'border-transparent bg-[#F8FBFD]'}`}>
-                      {row.right}
+                      <div className="flex items-start justify-between gap-2">
+                        <span>{row.right}</span>
+                        {row.winner === 'right' && (
+                          <span className="shrink-0 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold uppercase text-emerald-700">
+                            Advantage
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}

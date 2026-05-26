@@ -7,7 +7,7 @@ export default function Page() {
     return (
         <div className="">
             <Banner />
-            <Blogs />
+            {/* <Blogs /> */}
             <Blog />     
         </div>
     );

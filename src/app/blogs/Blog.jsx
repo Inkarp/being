@@ -12,12 +12,11 @@ export default function Blog() {
         <div className=" space-y-5 ">
           {/* Blog Grid (Example of two cards, repeat as needed) */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {[1, 2, 3, ].map((blog, index) => (
+            {[1,  ].map((blog, index) => (
               <div key={index} className="bg-white shadow-xl rounded-[20px] overflow-scroll-y">
                 <div className="relative">
                   <Image
-                    //   src={`/assets/images/blog/img${index + 1}.png`}
-                    src={'/about.jpg'}
+                      src={`/assets/events/Analytica-Mumbai.webp`}
                     alt="Blog"
                     width={600}
                     height={400}
