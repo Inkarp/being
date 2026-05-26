@@ -469,15 +469,6 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
       return;
     }
 
-    // ✅ ADD TRACKING HERE
-    // window.dataLayer = window.dataLayer || [];
-    // window.dataLayer.push({
-    //   event: "price_enquiry_submit",
-    //   product_name: productData?.model || '',
-    //   product_slug: productData?.meta?.slug || '',
-    //   price: productData?.price || '',
-    //   page_url: window.location.href
-    // });
     setLoading(true);
     setApiError('');
     const payload = {
@@ -500,9 +491,9 @@ export default function PriceEnquiryForm({ isOpen, onClose, productData, onSucce
 
 
       pushDataLayer({
-        event: `price_enquiry_success_${productData?.productId }`,
-        form_name: "price_enquiry",
+        event: `price_enquiry_success`,
         product_id: productData?.productId || '',
+        form_name: "price_enquiry",    
         product_name: productData?.model || '',
         page_url: window.location.href
       });
