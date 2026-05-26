@@ -1,4 +1,7 @@
 import nodemailer from "nodemailer";
+import { loadLocalEnv } from "./load-env.js";
+
+loadLocalEnv();
 
 const REQUIRED_ENV = ["EMAIL_USER", "EMAIL_PASS"];
 

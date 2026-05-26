@@ -4,8 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vercel dev",
-    "start": "vercel dev",
+    "local": "node local-server.js",
     "check": "node scripts/check.js"
   },
   "dependencies": {

@@ -1,4 +1,7 @@
 import { MongoClient } from "mongodb";
+import { loadLocalEnv } from "./load-env.js";
+
+loadLocalEnv();
 
 let clientPromise;
 

@@ -701,7 +701,7 @@ function TextareaField({ name, value, onChange, placeholder }) {
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
 const css = `
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap');
+
 
   .peq-overlay {
     position: fixed; inset: 0; z-index: 9999;
