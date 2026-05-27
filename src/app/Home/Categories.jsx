@@ -230,7 +230,7 @@ export default function Categories() {
                     href={item.link}
                     className="cat-tab"
                   >
-                    {item.name}
+                    <h3>{item.name}</h3>
                     <span className="cat-tab-dot" />
                   </Link>
                   {idx < categories.length - 1 && (

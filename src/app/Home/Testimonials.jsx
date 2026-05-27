@@ -110,9 +110,9 @@ export default function Testimonials() {
       <div className="relative z-10 p-5 lg:mb-0 col-span-6">
         <div className="hidden xl:block absolute top-[-6rem] left-[-5rem] w-64 h-64 bg-[#2F4191]/50 hover:scale-110 transition-transform duration-300 rounded-full"></div>
 
-        <h1 className="relative z-10 text-3xl text-white sm:text-5xl 2xl:text-6xl font-bold sm:leading-snug 2xl:leading-tight">
+        <h2 className="relative z-10 text-3xl text-white sm:text-5xl 2xl:text-6xl font-bold sm:leading-snug 2xl:leading-tight">
           What our customers <br /> say about us.
-        </h1>
+        </h2>
 
         <p className="mt-4 mb-7 text-white max-w-sm 2xl:text-lg">
           Customers know what we are {" "}

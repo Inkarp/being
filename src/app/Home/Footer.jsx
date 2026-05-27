@@ -9,6 +9,7 @@ import {
     FaTwitter
 } from 'react-icons/fa';
 import { FaSquareXTwitter } from 'react-icons/fa6';
+import { HiH2 } from 'react-icons/hi2';
 
 const socialLinks = [
     {
@@ -95,9 +96,9 @@ function ContactCard({ icon, alt, title, children }) {
 function LinkColumn({ title, groups }) {
     return (
         <div>
-            <h3 className="text-lg sm:text-xl font-bold border-b-2 border-white inline-block mb-4">
+            <h2 className="text-lg sm:text-xl font-bold border-b-2 border-white inline-block mb-4">
                 {title}
-            </h3>
+            </h2>
             <div className="grid grid-cols-2 gap-5">
                 {groups.map((group, index) => (
                     <ul key={index} className="space-y-2 text-sm sm:text-base">
@@ -119,21 +120,21 @@ export default function Footer() {
             <div className="w-full mx-auto py-6 md:py-3 px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row gap-7 lg:gap-8">
                 <div className="lg:w-1/4 flex flex-col justify-center gap-3">
                     <ContactCard icon="/location.svg" alt="Location" title="Office Address">
-                        <p className="text-sm sm:text-base leading-relaxed font-semibold text-[#2F4191]">
+                        <h2 className="text-sm sm:text-base leading-relaxed font-semibold text-[#2F4191]">
                             Nacharam, Habsiguda, Hyderabad, Telangana, 500076
-                        </p>
+                        </h2>
                     </ContactCard>
 
                     <ContactCard icon="/mail.svg" alt="Email" title="Email Address">
-                        <p className="text-sm sm:text-base break-all font-semibold text-[#2F4191] animate-bounce">
+                        <h2 className="text-sm sm:text-base break-all font-semibold text-[#2F4191] animate-bounce">
                             info@beinglab.co.in
-                        </p>
+                        </h2>
                     </ContactCard>
 
                     <ContactCard icon="/phone.svg" alt="Phone" title="Call Us For Support">
-                        <p className="text-sm sm:text-base font-semibold text-[#2F4191] animate-bounce">
+                        <h2 className="text-sm sm:text-base font-semibold text-[#2F4191] animate-bounce">
                             +91 9966634008
-                        </p>
+                        </h2>
                     </ContactCard>
                 </div>
 
@@ -143,9 +144,9 @@ export default function Footer() {
                         <LinkColumn title="Explore Products" groups={productLinks} />
 
                         <div className="space-y-5">
-                            <h3 className="text-lg sm:text-xl font-bold border-b-2 border-white inline-block mb-4">
+                            <h2 className="text-lg sm:text-xl font-bold border-b-2 border-white inline-block mb-4">
                                 Stay Connected
-                            </h3>
+                            </h2>
 
                             <div className="flex gap-4">
                                 {socialLinks.map(({ label, href, icon: Icon }) => (

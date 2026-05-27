@@ -301,9 +301,9 @@ export default function AboutPage() {
       {/* INDUSTRIES */}
       <section className="bg-[#2F4191] px-6 py-10 lg:px-8">
         <div className="mx-auto max-w-7xl rounded-[36px] bg-white p-8 text-black md:p-12">
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
+          <h2 className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
             Industries we serve
-          </p>
+          </h2>
 
           <p className="mt-6 text-xl font-semibold leading-9 text-black">
             Pharmaceutical and biotechnology · Life sciences and clinical

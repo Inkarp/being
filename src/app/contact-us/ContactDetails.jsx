@@ -35,7 +35,7 @@ export default function ContactDetails() {
                                         <Icon className="w-7 h-7 text-white" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-[#2F4191] text-lg mb-1">{title}</h4>
+                                        <h3 className="font-bold text-[#2F4191] text-lg mb-1">{title}</h3>
                                         {renderInfo(info, href)}
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@ export default function ContactDetails() {
                                 <FaHeadset className="w-7 h-7 text-white" />
                             </div>
                             <div className="flex flex-col gap-3 min-w-0 flex-1">
-                                <h4 className="font-bold text-white text-lg">Service and Support </h4>
+                                <h3 className="font-bold text-white text-lg">Service and Support </h3>
                                 <div className="space-y-2 text-white text-lg">
                                     <p className="flex items-center gap-2">
                                         <FaPhoneAlt className="text-white/70" />
@@ -77,7 +77,7 @@ export default function ContactDetails() {
                                 <FaPhoneAlt className="w-7 h-7 text-white" />
                             </div>
                             <div className="flex flex-col gap-3 min-w-0 flex-1">
-                                <h4 className="font-bold text-white text-lg">Dispatch Support</h4>
+                                <h3 className="font-bold text-white text-lg">Dispatch Support</h3>
                                 <div className="space-y-2 text-white text-lg">
                                     <p className="flex items-center gap-2">
                                         <FaPhoneAlt className="text-white/70" />
@@ -97,7 +97,7 @@ export default function ContactDetails() {
                                 <FaUserCog className="w-7 h-7 text-white" />
                             </div>
                             <div className="flex flex-col gap-3 min-w-0 flex-1">
-                                <h4 className="font-bold text-white text-lg">Application Support</h4>
+                                <h3 className="font-bold text-white text-lg">Application Support</h3>
                                 <div className="space-y-2 text-white text-lg">
                                     <p className="flex items-center gap-2">
                                         <FaPhoneAlt className="text-white/70" />

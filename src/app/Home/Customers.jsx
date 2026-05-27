@@ -119,12 +119,6 @@ const CATEGORY_COLORS = {
   Private: { active: 'border-rose-200 bg-rose-50 text-rose-700', dot: 'bg-rose-500' },
 };
 
-const ROW_ANIMATION_CLASSES = [
-  'animate-[marquee-left_28s_linear_infinite]',
-  'animate-[marquee-right_38s_linear_infinite]',
-  'animate-[marquee-left_48s_linear_infinite]',
-];
-
 const CUSTOMERS = Object.entries(CUSTOMER_LOGOS).flatMap(([category, logos]) =>
   logos.map((logo, index) => ({
     id: `${category}-${index}`,
@@ -134,17 +128,10 @@ const CUSTOMERS = Object.entries(CUSTOMER_LOGOS).flatMap(([category, logos]) =>
   }))
 );
 
-function padRow(row) {
-  if (row.length >= 8) return row;
-
-  const times = Math.ceil(8 / row.length);
-  return Array(times).fill(row).flat();
-}
-
 function CustomerCard({ customer }) {
   return (
-    <div className="group/card relative mx-3 shrink-0">
-      <div className="relative flex h-20 w-40 cursor-pointer items-center justify-center rounded-2xl border border-[#f0f0f0] bg-white px-4 shadow-[0_1px_4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:border-[#2B7EC2]/40 hover:shadow-[0_20px_40px_rgba(47,65,145,0.12),0_4px_12px_rgba(47,65,145,0.08)]">
+    <div className="group/card relative">
+      <div className="relative flex h-20 w-full cursor-pointer items-center justify-center rounded-2xl border border-[#f0f0f0] bg-white px-4 shadow-[0_1px_4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:border-[#2B7EC2]/40 hover:shadow-[0_20px_40px_rgba(47,65,145,0.12),0_4px_12px_rgba(47,65,145,0.08)]">
         <Image
           src={customer.logo}
           alt={customer.name}
@@ -160,25 +147,6 @@ function CustomerCard({ customer }) {
   );
 }
 
-function MarqueeRow({ customers, rowIndex }) {
-  const doubled = [...customers, ...customers];
-
-  return (
-    <div className="group/row relative w-full overflow-hidden">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white via-white/80 to-transparent sm:w-28" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white via-white/80 to-transparent sm:w-28" />
-
-      <div
-        className={`flex py-3 will-change-transform group-hover/row:[animation-play-state:paused] ${ROW_ANIMATION_CLASSES[rowIndex]}`}
-      >
-        {doubled.map((customer, index) => (
-          <CustomerCard key={`row-${rowIndex}-${index}-${customer.id}`} customer={customer} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export default function Customers() {
   const [activeCategory, setActiveCategory] = useState(null);
 
@@ -186,91 +154,67 @@ export default function Customers() {
     ? CUSTOMERS.filter((customer) => customer.category === activeCategory)
     : CUSTOMERS;
 
-  const chunkSize = Math.ceil(filtered.length / 3);
-  const rawRows = [
-    filtered.slice(0, chunkSize),
-    filtered.slice(chunkSize, chunkSize * 2),
-    filtered.slice(chunkSize * 2),
-  ].filter((row) => row.length > 0);
-
   return (
-    <>
-      <style>{`
-        @keyframes marquee-left {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        @keyframes marquee-right {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0); }
-        }
-      `}</style>
+    <section className="relative w-full overflow-hidden bg-white py-16">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,#c7d2e8_1px,transparent_1px)] bg-[length:28px_28px] opacity-40" />
+      <div className="absolute left-1/2 top-0 h-px w-48 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#2B7EC2] to-transparent" />
 
-      <section className="relative w-full overflow-hidden bg-white py-16">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,#c7d2e8_1px,transparent_1px)] bg-[length:28px_28px] opacity-40" />
-        <div className="absolute left-1/2 top-0 h-px w-48 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#2B7EC2] to-transparent" />
-
-        <div className="relative mb-10 px-6 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#2F4191]/20 bg-[#2F4191]/5 px-5 py-2">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-[#2B7EC2]" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#2F4191]">
-              Our Customers
-            </span>
-          </div>
-
-          <h2 className="mb-3 mt-4 text-2xl font-bold text-[#0f1e4a] sm:text-3xl lg:text-4xl">
-            Trusted Across Every Sector
-          </h2>
-          <p className="mx-auto max-w-5xl text-base leading-relaxed text-gray-500">
-            From government labs to leading private enterprises, our partnerships span academia, industry, and beyond.
-          </p>
+      <div className="relative mb-10 px-6 text-center">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#2F4191]/20 bg-[#2F4191]/5 px-5 py-2">
+          <span className="h-2 w-2 animate-pulse rounded-full bg-[#2B7EC2]" />
+          <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#2F4191]">
+            Our Customers
+          </span>
         </div>
 
-        <div className="relative mb-10 flex flex-wrap justify-center gap-2 px-6">
-          <button
-            onClick={() => setActiveCategory(null)}
-            className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-200 ${
-              activeCategory === null
-                ? 'scale-105 border-[#0f1e4a] bg-[#0f1e4a] text-white shadow-[0_4px_12px_rgba(15,30,74,0.25)]'
-                : 'border-gray-200 bg-white text-gray-500 hover:border-[#0f1e4a]/30 hover:text-[#0f1e4a]'
-            }`}
-          >
-            All Logos
-          </button>
+        <h2 className="mb-3 mt-4 text-2xl font-bold text-[#0f1e4a] sm:text-3xl lg:text-4xl">
+          Trusted Across Every Sector
+        </h2>
+        <p className="mx-auto max-w-5xl text-base leading-relaxed text-gray-500">
+          From government labs to leading private enterprises, our partnerships span academia, industry, and beyond.
+        </p>
+      </div>
 
-          {CATEGORIES.map((category) => {
-            const color = CATEGORY_COLORS[category];
-            const isActive = activeCategory === category;
+      <div className="relative mb-10 flex flex-wrap justify-center gap-2 px-6">
+        <button
+          onClick={() => setActiveCategory(null)}
+          className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-200 ${
+            activeCategory === null
+              ? 'scale-105 border-[#0f1e4a] bg-[#0f1e4a] text-white shadow-[0_4px_12px_rgba(15,30,74,0.25)]'
+              : 'border-gray-200 bg-white text-gray-500 hover:border-[#0f1e4a]/30 hover:text-[#0f1e4a]'
+          }`}
+        >
+          All Logos
+        </button>
 
-            return (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(isActive ? null : category)}
-                className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-200 ${
-                  isActive
-                    ? `scale-105 shadow-[0_2px_8px_rgba(0,0,0,0.1)] ${color.active}`
-                    : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-[#0f1e4a]'
-                }`}
-              >
-                <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${color.dot}`} />
-                {CATEGORY_LABELS[category] ?? category}
-              </button>
-            );
-          })}
-        </div>
+        {CATEGORIES.map((category) => {
+          const color = CATEGORY_COLORS[category];
+          const isActive = activeCategory === category;
 
-        <div className="flex flex-col gap-2">
-          {rawRows.map((row, rowIndex) => (
-            <MarqueeRow
-              key={`${activeCategory ?? 'all'}-row-${rowIndex}`}
-              customers={padRow(row)}
-              rowIndex={rowIndex}
-            />
-          ))}
-        </div>
+          return (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(isActive ? null : category)}
+              className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-200 ${
+                isActive
+                  ? `scale-105 shadow-[0_2px_8px_rgba(0,0,0,0.1)] ${color.active}`
+                  : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-[#0f1e4a]'
+              }`}
+            >
+              <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${color.dot}`} />
+              {CATEGORY_LABELS[category] ?? category}
+            </button>
+          );
+        })}
+      </div>
 
-        <div className="absolute bottom-0 left-1/2 h-px w-48 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#2B7EC2] to-transparent" />
-      </section>
-    </>
+      <div className="relative mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+        {filtered.map((customer) => (
+          <CustomerCard key={customer.id} customer={customer} />
+        ))}
+      </div>
+
+      <div className="absolute bottom-0 left-1/2 h-px w-48 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#2B7EC2] to-transparent" />
+    </section>
   );
 }
