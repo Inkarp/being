@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 
 const facilityImages = [
@@ -77,68 +79,8 @@ const whyLabsChooseUs = [
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white text-black">
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-[#2F4191]">
-        <div className="absolute inset-0">
-          <div className="absolute -left-28 top-12 h-80 w-80 rounded-full bg-white/10" />
-          <div className="absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full bg-[#2B7EC2]/30 blur-2xl" />
-        </div>
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
-          <div>
-            <p className="mb-5 inline-flex rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm font-semibold text-white backdrop-blur">
-              About Us
-            </p>
-
-            <h1 className="text-4xl font-black leading-tight tracking-tight text-white md:text-6xl">
-              Real labs. Real work. Real instruments.
-            </h1>
-
-            <p className="mt-6 text-lg leading-8 text-white/85">
-              Behind every breakthrough, there's a workhorse. The oven that ran
-              for 72 hours straight. The incubator that didn't blink during a
-              power dip. The freezer that kept your cell line alive while you
-              were on a flight. That's the kind of equipment we build our
-              business around.
-            </p>
-
-            <p className="mt-5 text-base leading-8 text-white/80">
-              Being India is the home of the BEING product range in India — a
-              complete portfolio of laboratory and life-science instruments,
-              brought to you by the same engineering family that's been quietly
-              powering labs in 80+ countries for over two decades.
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="rounded-[32px] bg-white p-4 shadow-2xl">
-              <div className="relative h-[420px] overflow-hidden rounded-[24px] bg-black">
-                <Image
-                  src="/assets/about/about-hero.webp"
-                  alt="Being India laboratory instruments"
-                  fill
-                  priority
-                  className="object-cover opacity-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-7">
-                  <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#2B7EC2]">
-                    The story in one line
-                  </p>
-                  <h2 className="mt-3 text-2xl font-black leading-snug text-white">
-                    Global engineering. Indian backing. Lab-grade reliability —
-                    finally with a local phone number, a local engineer, and a
-                    local service van.
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* STORY IN ONE LINE */}
-      <section className="bg-black px-6 py-10 text-white lg:px-8">
+      <section className=" px-6 py-5 text-black lg:px-8">
         <div className="mx-auto max-w-6xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#2B7EC2]">
             The story in one line
@@ -151,18 +93,18 @@ export default function AboutPage() {
       </section>
 
       {/* WHERE WE COME FROM */}
-      <section className="bg-white px-6 py-20 lg:px-8">
+      <section className="bg-[#2F4191] px-6 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
               Where we come from
             </p>
-            <h2 className="mt-4 text-3xl font-black leading-tight text-black md:text-5xl">
+            <h2 className="mt-4 text-3xl font-black leading-tight text-white md:text-5xl">
               Where we come from
             </h2>
           </div>
 
-          <div className="space-y-6 text-base leading-8 text-black/75">
+          <div className="space-y-6 text-base leading-8 text-white">
             <p>
               BEING Technology Co., Ltd. is headquartered in Shanghai and was
               founded with a single ambition — to make laboratory equipment that
@@ -222,10 +164,10 @@ export default function AboutPage() {
       </section>
 
       {/* WHY WE'RE HERE */}
-      <section className="px-6 py-20 lg:px-8">
+      <section className="bg-[#2F4191] px-6 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
-          <div className="rounded-[32px] bg-[#2F4191] p-8 text-white md:p-12">
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-white/70">
+          <div className="rounded-[32px] bg-white p-8 text-black md:p-12">
+            <p className="text-sm font-black uppercase tracking-[0.25em] ">
               Why we're here
             </p>
             <h2 className="mt-4 text-3xl font-black leading-tight md:text-5xl">
@@ -234,7 +176,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="space-y-6 text-base leading-8 text-black/75">
+          <div className="space-y-6 text-base leading-8 text-white">
             <p>
               Indian labs run hot. They run long. They run with power conditions
               that would make a European factory engineer cry. And they need
@@ -255,7 +197,7 @@ export default function AboutPage() {
       </section>
 
       {/* BACKED BY INKARP */}
-      <section className="bg-black px-6 py-20 text-white lg:px-8">
+      <section className="bg-white px-6 py-10 text-black lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
@@ -266,7 +208,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="text-base leading-8 text-white/75">
+          <div className="text-base leading-8 ">
             <p>
               Being India is an Inkarp Group company. Inkarp Instruments Pvt.
               Ltd. has been a trusted distributor of scientific and industrial
@@ -282,17 +224,17 @@ export default function AboutPage() {
       </section>
 
       {/* WHERE YOU'LL FIND US */}
-      <section className="px-6 py-20 lg:px-8">
+      <section className="bg-[#2F4191] px-6 py-10 lg:px-8">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
               Where you'll find us
             </p>
-            <h2 className="mt-4 text-3xl font-black leading-tight text-black md:text-5xl">
+            <h2 className="mt-4 text-3xl font-black leading-tight text-white md:text-5xl">
               Where you'll find us
             </h2>
 
-            <p className="mt-6 text-base leading-8 text-black/75">
+            <p className="mt-6 text-base leading-8 text-white">
               742 customer accounts. 1,789 instruments installed. 25 states and
               union territories. From Jammu & Kashmir to Kerala, from Gujarat to
               Assam — that's where Being equipment is running, right now.
@@ -316,7 +258,7 @@ export default function AboutPage() {
       </section>
 
       {/* WHAT WE OFFER */}
-      <section className="bg-[#F5F7FF] px-6 py-20 lg:px-8">
+      <section className="bg-[#F5F7FF] px-6 py-10 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
@@ -357,13 +299,13 @@ export default function AboutPage() {
       </section>
 
       {/* INDUSTRIES */}
-      <section className="px-6 py-20 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-[36px] bg-black p-8 text-white md:p-12">
+      <section className="bg-[#2F4191] px-6 py-10 lg:px-8">
+        <div className="mx-auto max-w-7xl rounded-[36px] bg-white p-8 text-black md:p-12">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
             Industries we serve
           </p>
 
-          <p className="mt-6 text-xl font-semibold leading-9 text-white/85">
+          <p className="mt-6 text-xl font-semibold leading-9 text-black">
             Pharmaceutical and biotechnology · Life sciences and clinical
             research · Hospitals and diagnostics · Universities and academic
             research · Food, beverage and agriculture · Chemicals and
@@ -372,7 +314,7 @@ export default function AboutPage() {
             test labs
           </p>
 
-          <p className="mt-8 border-t border-white/10 pt-8 text-base leading-8 text-white/70">
+          <p className="mt-8 border-t border-white/10 pt-8 text-base leading-8 text-black">
             Across all of this, our India base today splits roughly as 382
             private-sector accounts, 193 government and institutional accounts,
             and 167 channel partners — a customer mix that gives us perspective
@@ -410,23 +352,23 @@ export default function AboutPage() {
       </section>
 
       {/* PROMISE */}
-      <section className="px-6 py-20 lg:px-8">
+      <section className="bg-black px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-5xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
             The promise
           </p>
 
-          <h2 className="mt-5 text-3xl font-black leading-tight text-black md:text-6xl">
+          <h2 className="mt-5 text-3xl font-black leading-tight text-white md:text-3xl">
             We don't just sell equipment. We back it — with the people, the
             parts, and the patience to keep your lab running.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-black/70">
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-White">
             Because in this business, the spec sheet gets you in the door.
             Reliability is what keeps the relationship.
           </p>
 
-          <p className="mt-8 text-2xl font-black text-[#2F4191]">
+          <p className=" text-2xl font-black text-[#2B7EC2]">
             Welcome to Being India. Let's get to work.
           </p>
         </div>

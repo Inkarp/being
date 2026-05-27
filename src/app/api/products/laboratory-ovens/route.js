@@ -2290,7 +2290,6 @@ export async function GET() {
               "BO-200F 210L high-capacity precision forced air oven with color touch screen, 300°C maximum, ±0.3°C fluctuation, up to 16 shelves, DIN-12880 compliance, 2500W for bulk pharmaceutical, industrial, and material testing laboratory drying_Being India",
 
             price: 412620,
-
             gem: false,
 
             // tags: ["new"],
