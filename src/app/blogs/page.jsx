@@ -1,4 +1,5 @@
-import Banner from "../events/Banner";
+
+import Banner from "./Banner";
 import Blog from "./Blog";
 import Blogs from "./Blogs";
 

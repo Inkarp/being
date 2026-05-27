@@ -8,10 +8,10 @@ const bannerIcons = {
 }
 
 export default function Banner({
-    eyebrow = "Events and exhibitions",
-    title = "Upcoming Events",
+    eyebrow = "Blogs and Applications",
+    title = "Upcoming Blogs",
     description = "Meet Being at upcoming industry events, explore our latest laboratory solutions and connect with our product specialists.",
-    variant = "events",
+    variant = "blogs",
 }) {
     const Icon = bannerIcons[variant] || FaCalendarDays;
 
