@@ -1,3 +1,13 @@
+import { GET as getBiologicalSafetyCabinetProducts } from '../../api/products/biological-safety-cabinets/route';
+import { GET as getChillerProducts } from '../../api/products/chillers/route';
+import { GET as getFreezerProducts } from '../../api/products/freezers/route';
+import { GET as getIncubatorProducts } from '../../api/products/incubators/route';
+import { GET as getLaboratoryOvenProducts } from '../../api/products/laboratory-ovens/route';
+import { GET as getMuffleFurnaceProducts } from '../../api/products/muffle-furnace/route';
+import { GET as getPumpProducts } from '../../api/products/pumps/route';
+import { GET as getRotaryEvaporatorProducts } from '../../api/products/rotary-evaporators/route';
+import { GET as getWaterBathProducts } from '../../api/products/water-baths/route';
+
 function normalizeSlug(slug) {
   if (Array.isArray(slug)) return slug;
   if (!slug) return [];
@@ -16,6 +26,18 @@ function normalizeCategorySlug(slug) {
   return CATEGORY_ALIASES[slug] || slug;
 }
 
+const CATEGORY_LOADERS = {
+  'laboratory-ovens': getLaboratoryOvenProducts,
+  incubators: getIncubatorProducts,
+  'biological-safety-cabinets': getBiologicalSafetyCabinetProducts,
+  pumps: getPumpProducts,
+  'rotary-evaporators': getRotaryEvaporatorProducts,
+  'water-baths': getWaterBathProducts,
+  freezers: getFreezerProducts,
+  chillers: getChillerProducts,
+  'muffle-furnace': getMuffleFurnaceProducts,
+};
+
 export function getSiteUrl() {
   const vercelUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '';
   return (process.env.NEXT_PUBLIC_SITE_URL || vercelUrl || 'http://localhost:3000').replace(/\/$/, '');
@@ -28,9 +50,10 @@ export async function getCategoryFromSlug(slug) {
   if (!categorySlug) return null;
 
   try {
-    const res = await fetch(`${getSiteUrl()}/api/products/${categorySlug}`, {
-      cache: 'no-store',
-    });
+    const loadCategory = CATEGORY_LOADERS[categorySlug];
+    if (!loadCategory) return null;
+
+    const res = await loadCategory();
 
     if (!res.ok) return null;
 
