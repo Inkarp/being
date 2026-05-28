@@ -8,10 +8,21 @@ import { FaArrowRight } from 'react-icons/fa';
 import { useProductContext } from '../../../app/context/ProductContext'; // ✅ ADD
 import Loading from '../../../app/loading';
 
+const CATEGORY_ALIASES = {
+  cabinet: 'biological-safety-cabinets',
+  cabinets: 'biological-safety-cabinets',
+  'safety-cabinets': 'biological-safety-cabinets',
+  'biological-saftey-cabinets': 'biological-safety-cabinets',
+  'muffle-furnance': 'muffle-furnace',
+};
+
 
 
 export default function CategoryClient() {
   const { slug } = useParams();
+  const slugParts = Array.isArray(slug) ? slug : [slug].filter(Boolean);
+  const categorySlug = CATEGORY_ALIASES[slugParts[0]] || slugParts[0];
+  const requestedSubSlug = slugParts[1];
 
   const { setCategoryData } = useProductContext(); // ✅ ADD
 
@@ -24,20 +35,26 @@ export default function CategoryClient() {
   const prevIndexRef = useRef(0);
 
   useEffect(() => {
-    if (!slug) return;
+    if (!categorySlug) return;
 
     const fetchCategory = async () => {
       try {
-        const res = await fetch(`/api/products/${slug}`);
+        const res = await fetch(`/api/products/${categorySlug}`);
         const json = await res.json();
 
         setData(json);
         setCategoryData(json); // ✅ STORE DATA IN CONTEXT
 
         if (json.subcategories?.length) {
-          setActiveSub(json.subcategories[0].name);
-          setActiveSubSlug(json.subcategories[0].slug);
-          prevIndexRef.current = 0;
+          const requestedIndex = json.subcategories.findIndex(
+            (sub) => sub.slug?.toLowerCase() === requestedSubSlug?.toLowerCase()
+          );
+          const activeIndex = requestedIndex >= 0 ? requestedIndex : 0;
+          const activeSubcategory = json.subcategories[activeIndex];
+
+          setActiveSub(activeSubcategory.name);
+          setActiveSubSlug(activeSubcategory.slug);
+          prevIndexRef.current = activeIndex;
         }
       } catch (err) {
         console.error(err);
@@ -47,7 +64,7 @@ export default function CategoryClient() {
     };
 
     fetchCategory();
-  }, [slug, setCategoryData]);
+  }, [categorySlug, requestedSubSlug, setCategoryData]);
 
 
 
@@ -183,13 +200,13 @@ export default function CategoryClient() {
                 {models.map((model) => (
                   <Link
                     key={model.meta.slug}
-                    href={`/products/${slug}/${activeSubSlug}/${model.meta.slug}`}
+                    href={`/products/${categorySlug}/${activeSubSlug}/${model.meta.slug}`}
                     onClick={() => {
                       localStorage.setItem(
                         'lastProduct',
                         JSON.stringify({
                           name: model.title,
-                          url: `/products/${slug}/${activeSubSlug}/${model.meta.slug}`,
+                          url: `/products/${categorySlug}/${activeSubSlug}/${model.meta.slug}`,
                         })
                       );
                     }}

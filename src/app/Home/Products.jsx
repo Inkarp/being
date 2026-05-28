@@ -9,7 +9,7 @@ const causes = [
     title: 'Ovens',
     percentage: 10,
     image: '/ovens.png',
-    link: "products/laboratory-ovens",
+    link: "/products/laboratory-ovens",
     description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
   },
   {
@@ -51,7 +51,7 @@ const causes = [
     title: 'Cabinet',
     percentage: 5,
     image: '/incubators.png',
-    link: "/products/cabinet",
+    link: "/products/biological-safety-cabinets",
     description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
   },
   {
@@ -65,14 +65,14 @@ const causes = [
     title: 'Digital Viscometers',
     percentage: 6,
     image: '/incubators.png',
-    link: "/products/digital-viscometer",
+    link: "/products",
     description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
   },
   {
-    title: 'Muffle furnance',
+    title: 'Muffle Furnace',
     percentage: 6,
     image: '/incubators.png',
-    link: "/products/muffle-furnance",
+    link: "/products/muffle-furnace",
     description: 'Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.',
   },
 ];

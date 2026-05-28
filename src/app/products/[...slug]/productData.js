@@ -4,13 +4,26 @@ function normalizeSlug(slug) {
   return [slug];
 }
 
+const CATEGORY_ALIASES = {
+  cabinet: 'biological-safety-cabinets',
+  cabinets: 'biological-safety-cabinets',
+  'safety-cabinets': 'biological-safety-cabinets',
+  'biological-saftey-cabinets': 'biological-safety-cabinets',
+  'muffle-furnance': 'muffle-furnace',
+};
+
+function normalizeCategorySlug(slug) {
+  return CATEGORY_ALIASES[slug] || slug;
+}
+
 export function getSiteUrl() {
-  return (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').replace(/\/$/, '');
+  const vercelUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '';
+  return (process.env.NEXT_PUBLIC_SITE_URL || vercelUrl || 'http://localhost:3000').replace(/\/$/, '');
 }
 
 export async function getCategoryFromSlug(slug) {
   const slugArray = normalizeSlug(slug);
-  const categorySlug = slugArray[0];
+  const categorySlug = normalizeCategorySlug(slugArray[0]);
 
   if (!categorySlug) return null;
 
@@ -35,7 +48,8 @@ export async function getCategoryFromSlug(slug) {
 
 export async function getProductFromSlug(slug) {
   const slugArray = normalizeSlug(slug);
-  const [categorySlug, subSlug, modelSlug] = slugArray;
+  const [rawCategorySlug, subSlug, modelSlug] = slugArray;
+  const categorySlug = normalizeCategorySlug(rawCategorySlug);
 
   if (!categorySlug || !subSlug || !modelSlug) return null;
 
@@ -43,11 +57,13 @@ export async function getProductFromSlug(slug) {
   if (!categoryResult?.categoryData) return null;
 
   const subCategory = categoryResult.categoryData.subcategories?.find(
-    (sub) => sub.slug === subSlug
+    (sub) => sub.slug?.toLowerCase() === subSlug.toLowerCase()
   );
 
   const product = subCategory?.models?.find(
-    (model) => model.meta?.slug === modelSlug || model.slug === modelSlug
+    (model) =>
+      model.meta?.slug?.toLowerCase() === modelSlug.toLowerCase() ||
+      model.slug?.toLowerCase() === modelSlug.toLowerCase()
   );
 
   if (!subCategory || !product) return null;

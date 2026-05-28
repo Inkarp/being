@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const categories = [
   { name: "Ovens", link: "/products/laboratory-ovens" },
-  { name: "Safety Cabinets", link: "/products/biological-saftey-cabinets" },
+  { name: "Safety Cabinets", link: "/products/biological-safety-cabinets" },
   { name: "Incubators", link: "/products/incubators" },
   { name: "Chillers", link: "/products/chillers" },
   { name: "Water Baths", link: "/products/water-baths" },

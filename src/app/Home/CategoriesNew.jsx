@@ -5,15 +5,14 @@ import Link from "next/link";
 
 const categories = [
   { name: "Ovens", link: "/products/laboratory-ovens" },
-  { name: "Cabinets", link: "/products/cabinet" },
+  { name: "Cabinets", link: "/products/biological-safety-cabinets" },
   { name: "Incubators", link: "/products/incubators" },
   { name: "Chillers", link: "/products/chillers" },
   { name: "Water Baths", link: "/products/water-baths" },
   { name: "Rotary Evaporators", link: "/products/rotary-evaporators" },
   { name: "Pumps", link: "/products/pumps" },
-  { name: "Cabinet", link: "/products/cabinet" },
+  { name: "Safety Cabinets", link: "/products/biological-safety-cabinets" },
   { name: "Freezers", link: "/products/freezers" },
-  { name: "Digital Viscometers", link: "/products/digital-viscometers" },
   { name: "Muffle Furnace", link: "/products/muffle-furnace" },
 ];
 

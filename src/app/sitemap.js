@@ -29,7 +29,7 @@ const yearlyStaticRoutes = new Set(["/about-us", "/contact-us"]);
 const categoryLoaders = {
   "laboratory-ovens": getLaboratoryOvenProducts,
   "incubators": getIncubatorProducts,
-  "biological-saftey-cabinets": getBiologicalSafetyCabinetProducts,
+  "biological-safety-cabinets": getBiologicalSafetyCabinetProducts,
   "pumps": getPumpProducts,
   "rotary-evaporators": getRotaryEvaporatorProducts,
   "water-baths": getWaterBathProducts,

@@ -58,7 +58,7 @@ const productLinks = [
     ],
     [
         { label: 'Pumps', href: '/products/pumps' },
-        { label: 'Saftey Cabinets', href: '/products/biological-saftey-cabinets' },
+        { label: 'Safety Cabinets', href: '/products/biological-safety-cabinets' },
         { label: 'Freezers', href: '/products/freezers' },
         { label: 'Muffle Furnace', href: '/products/muffle-furnace' },
     ],
