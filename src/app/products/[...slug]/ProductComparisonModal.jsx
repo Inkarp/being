@@ -136,9 +136,18 @@ export default function ProductComparisonModal({
   currentCategorySlug,
   currentSubSlug,
   currentModelSlug,
+  initialCategoryData,
 }) {
   const currentModelId = `${currentCategorySlug}/${currentSubSlug}/${currentModelSlug}`;
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(() =>
+    initialCategoryData
+      ? [{
+          ...initialCategoryData,
+          slug: currentCategorySlug,
+          name: initialCategoryData.name || initialCategoryData.title || titleFromSlug(currentCategorySlug),
+        }]
+      : []
+  );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -153,14 +162,24 @@ export default function ProductComparisonModal({
   useEffect(() => {
     if (!isOpen) return;
 
+    if (initialCategoryData) {
+      setCategories([
+        {
+          ...initialCategoryData,
+          slug: currentCategorySlug,
+          name: initialCategoryData.name || initialCategoryData.title || titleFromSlug(currentCategorySlug),
+        },
+      ]);
+    }
+
     setLeftCategory(currentCategorySlug || '');
     setLeftSubcategory(currentSubSlug || '');
     setLeftModelId(currentModelId || '');
     setRightCategory(currentCategorySlug || '');
-  }, [isOpen, currentCategorySlug, currentSubSlug, currentModelId]);
+  }, [isOpen, currentCategorySlug, currentSubSlug, currentModelId, initialCategoryData]);
 
   useEffect(() => {
-    if (!isOpen || categories[0]?.slug === currentCategorySlug) return;
+    if (!isOpen || initialCategoryData || categories[0]?.slug === currentCategorySlug) return;
 
     const loadCategories = async () => {
       setLoading(true);
@@ -187,7 +206,7 @@ export default function ProductComparisonModal({
     };
 
     loadCategories();
-  }, [isOpen, categories, currentCategorySlug]);
+  }, [isOpen, initialCategoryData, categories, currentCategorySlug]);
 
   const modelMap = useMemo(() => {
     const map = new Map();

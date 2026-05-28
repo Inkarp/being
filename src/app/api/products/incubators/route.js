@@ -4,8 +4,8 @@ export async function GET() {
   return NextResponse.json({
     category: "Incubators",
     meta: {
-      title: "Incubators | OEM & Service Provider in India | Being India",
-      // description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
+      title: " Laboratory Incubators | CO₂, Heating, Shaking, Cooling | Being Instruments",
+      description: "Full range of BEING laboratory incubators — CO₂ incubators (BIO RHP Pro, Tri-Gas BIO III), heating incubators (BPH), cooling/BOD incubators (LRH, BEC Peltier), shaking incubators (BIS, BSIC, HZQ). CE-certified. Enquire for India pricing.",
       // keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
     },
     subcategories: [

@@ -4,8 +4,8 @@ export async function GET() {
     return NextResponse.json({
         category: "Chillers",
         meta: {
-            title: "Chillers | OEM & Service Provider in India | Being India",
-            // description: "BPG-9040A laboratory drying oven with precise temperature control, uniform hot air circulation, and OEM-authorized service support in India.",
+            title: "Laboratory Recirculating Chillers | Heating & Cooling | Being Instruments India",
+            description: "BEING recirculating chillers — BR Series cooling-only chillers (0.3–3 kW) and MP/MPG Series heating & cooling circulators (−40°C to 150°C, ±0.2°C). For rotary evaporators, reactors & external equipment cooling. Enquire.",
             // keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
         },
         subcategories: [

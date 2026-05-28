@@ -7,12 +7,12 @@ const events = [
 
   {
     title: 'Mumbai Analytica',
-    date: 'May 27, 2026',
+    date: 'April 22, 2026',
     location: 'Mumbai',
     description:
-      'We will be there at Mumbai Analytica 2026! Join us in Mumbai to explore our latest scientific instruments, connect with our team, and discover solutions designed for modern laboratories.',
-    image: '/assets/events/Analytica-Mumbai.webp',
-    extraImage: '/event4.webp',
+      'Mumbai Analytica 2026 was a successful event for Being, where we connected with researchers, laboratory professionals, and industry experts. The event gave us a valuable opportunity to showcase our latest scientific instruments, discuss modern laboratory needs, and present solutions built for research, quality control, and analytical workflows.',
+    image: '/assets/events/mumbai-analytica.png',
+    extraImage: '/assets/events/collages/mumbai-analytica-collage.jpeg',
   },
 
 
@@ -76,7 +76,7 @@ export default function Events() {
                   width={500}
                   height={300}
                   src={event.extraImage} // Replace with your right-side image
-                  alt="Extra Visual"
+                  alt="Event collage Image"
                   className="rounded-lg shadow-md w-full h-full object-cover"
                 />
               </div>

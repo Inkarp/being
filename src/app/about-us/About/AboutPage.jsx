@@ -96,12 +96,12 @@ export default function AboutPage() {
       <section className="bg-[#2F4191] px-6 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
-              Where we come from
-            </p>
-            <h2 className="mt-4 text-3xl font-black leading-tight text-white md:text-5xl">
+            <h2 className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
               Where we come from
             </h2>
+            <p className="mt-4 text-3xl font-black leading-tight text-white md:text-5xl">
+              Built by BEING Technology, engineered and tested for working labs.
+            </p>
           </div>
 
           <div className="space-y-6 text-base leading-8 text-white">
@@ -200,12 +200,12 @@ export default function AboutPage() {
       <section className="bg-white px-6 py-10 text-black lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
-              Backed by Inkarp
-            </p>
-            <h2 className="mt-4 text-3xl font-black md:text-5xl">
+            <h2 className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
               Backed by Inkarp
             </h2>
+            <p className="mt-4 text-3xl font-black md:text-5xl">
+              Backed by Inkarp’s network, applications team, and service strength.
+            </p>
           </div>
 
           <div className="text-base leading-8 ">
@@ -227,12 +227,12 @@ export default function AboutPage() {
       <section className="bg-[#2F4191] px-6 py-10 lg:px-8">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
-              Where you'll find us
-            </p>
-            <h2 className="mt-4 text-3xl font-black leading-tight text-white md:text-5xl">
+            <h2 className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
               Where you'll find us
             </h2>
+            <p className="mt-4 text-3xl font-black leading-tight text-white md:text-5xl">
+              Across India, inside labs that cannot afford downtime.
+            </p>
 
             <p className="mt-6 text-base leading-8 text-white">
               742 customer accounts. 1,789 instruments installed. 25 states and
@@ -327,12 +327,12 @@ export default function AboutPage() {
       <section className="bg-[#F5F7FF] px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl">
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
-              Why labs choose us
-            </p>
-            <h2 className="mt-4 text-3xl font-black text-black md:text-5xl">
+            <h2 className="text-sm font-black uppercase tracking-[0.25em] text-[#2B7EC2]">
               Why labs choose us
             </h2>
+            <p className="mt-4 text-3xl font-black text-black md:text-5xl">
+              Reliable instruments, clear guidance, real timelines, and service that stays.
+            </p>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

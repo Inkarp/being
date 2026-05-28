@@ -3,6 +3,11 @@ import { NextResponse } from 'next/server';
 export async function GET() {
     return NextResponse.json({
         category: "Pumps",
+        meta: {
+            title: "Laboratory Vacuum Pumps | Oil-Free & Rotary Vane | Being Instruments India",
+            description: "Being Instruments vacuum pumps — VRI/VRD oil rotary vane pumps (4–16 m³/h, KF16/KF25) and V Series oil-free PTFE diaphragm pumps (20–135 L/min). For vacuum ovens, filtration & chemical applications. CE/RoHS. Enquire.",
+            // keywords: "Laboratory Drying Oven, BPG-9040A Laboratory Drying Oven, Laboratory Drying Oven OEM India, Precision hot air oven, Laboratory drying oven specifications, Laboratory drying oven features, Hot air oven manufacturer India, Laboratory drying oven manufacturer in India, Laboratory drying oven OEM in India, Buy laboratory drying oven from OEM India, Laboratory oven installation and service India, Laboratory drying oven for pharmaceutical labs, Hot air oven for research laboratories, Drying oven for chemical laboratories, Laboratory oven for food testing labs, BPG-9040A hot air oven, BPG laboratory drying oven, BPG-9040A specifications",
+        },
         subcategories: [
             {
                 name: "Vaccum Pump (Oil-sealed)",

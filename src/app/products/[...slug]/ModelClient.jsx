@@ -1,7 +1,7 @@
 'use client';
 
-import { useParams, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import Image from 'next/image';
 
 import EnquiryModal from '../../../components/EnquiryModal';
@@ -21,18 +21,22 @@ import { FaChevronDown } from 'react-icons/fa';
 import { FcCollaboration } from 'react-icons/fc';
 import RelatedModels from '../../../components/RelatedModels';
 
-// ✅ ADD CONTEXT IMPORT
-import { useProductContext } from '../../../app/context/ProductContext';
 import ServiceForm from '../../../components/ServiceForm';
 import ProductTabs from './ProductsTab';
 import ProductTabContent from './ProductTabContent';
 import ProductActionSection from './ProductActionSection';
 import ProductComparisonModal from './ProductComparisonModal';
-import Loading from '../../../app/loading';
 import ParadotForm from '../../../components/PardotForm';
 
 
-export default function Model() {
+export default function ModelClient({
+    categorySlug,
+    subSlug,
+    modelSlug,
+    categoryData,
+    subCategory,
+    product,
+}) {
     /* ---------------- SHARE BUTTON ---------------- */
     const handleShare = async () => {
         const url = window.location.href;
@@ -53,19 +57,9 @@ export default function Model() {
     };
 
     const router = useRouter();
-    const { slug } = useParams();
-
-    const slugArray = Array.isArray(slug) ? slug : [];
-    const [categorySlug, subSlug, modelSlug] = slugArray;
-
-    // ✅ CONTEXT
-    const { categoryData, setCategoryData } = useProductContext();
 
     /* ---------------- STATE ---------------- */
-    const [subCategory, setSubCategory] = useState(null);
-    const [product, setProduct] = useState(null);
     const [activeTab, setActiveTab] = useState('specs');
-    const [loading, setLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [priceUnlocked, setPriceUnlocked] = useState(false);
 
@@ -81,81 +75,6 @@ export default function Model() {
     const [isCompareOpen, setIsCompareOpen] = useState(false);
 
     const [showImage, setShowImage] = useState(false);
-
-    /* ---------------- DATA LOADING ---------------- */
-    useEffect(() => {
-        if (!categorySlug || !subSlug || !modelSlug) return;
-
-        // ✅ 1. TRY CONTEXT FIRST (NO FETCH)
-        if (categoryData) {
-            const sub = categoryData.subcategories?.find(
-                (s) => s.slug === subSlug
-            );
-
-            const model = sub?.models?.find(
-                (m) => m.meta.slug === modelSlug
-            );
-
-            if (sub && model) {
-                setSubCategory(sub);
-                setProduct(model);
-                setLoading(false);
-                return;
-            }
-        }
-
-        // ✅ 2. FALLBACK FETCH (REFRESH / DIRECT URL)
-        const fetchFallback = async () => {
-            try {
-                const res = await fetch(`/api/products/${categorySlug}`);
-                const data = await res.json();
-
-                setCategoryData(data); // rehydrate context
-
-                const sub = data.subcategories?.find(
-                    (s) => s.slug === subSlug
-                );
-
-                const model = sub?.models?.find(
-                    (m) => m.meta.slug === modelSlug
-                );
-
-                setSubCategory(sub || null);
-                setProduct(model || null);
-            } catch (error) {
-                console.error(error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchFallback();
-    }, [
-        categorySlug,
-        subSlug,
-        modelSlug,
-        categoryData,
-        setCategoryData,
-    ]);
-
-    if (loading) {
-        return <Loading />;
-        // return (
-        //     <div className="min-h-screen flex items-center justify-center bg-white">
-        //         <div className="section-center">
-        //             <div className="section-path">
-        //                 <div className="globe">
-        //                     <div className="wrapper">
-        //                         {Array.from({ length: 16 }).map((_, i) => (
-        //                             <span key={i}></span>
-        //                         ))}
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>
-        // );
-    }
 
     /* ---------------- ERROR ---------------- */
     if (!product || !subCategory) {
@@ -348,6 +267,7 @@ export default function Model() {
                 currentCategorySlug={categorySlug}
                 currentSubSlug={subSlug}
                 currentModelSlug={modelSlug}
+                initialCategoryData={categoryData}
             />
 
 

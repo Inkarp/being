@@ -1,19 +1,27 @@
 'use client';
 
-import { useParams } from 'next/navigation';
 import CategoryClient from './CategoryClient';
 import ModelClient from './ModelClient';
 import { ProductProvider } from '../../../app/context/ProductContext';
 
 
-export default function Model() {
-  const { slug } = useParams();
-
+export default function Model({ slug = [], productResult = null }) {
   if (!slug || slug.length === 0) return null;
 
   return (
     <ProductProvider>
-      {slug.length === 3 ? <ModelClient /> : <CategoryClient />}
+      {slug.length === 3 && productResult ? (
+        <ModelClient
+          categorySlug={productResult.categorySlug}
+          subSlug={productResult.subSlug}
+          modelSlug={productResult.modelSlug}
+          categoryData={productResult.categoryData}
+          subCategory={productResult.subCategory}
+          product={productResult.product}
+        />
+      ) : (
+        <CategoryClient />
+      )}
     </ProductProvider>
   );
 }

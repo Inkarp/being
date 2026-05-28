@@ -45,10 +45,24 @@ const montserrat = Montserrat({
 
 export const metadata = {
   title: {
-    default: "Being India",
+    default: "Being Instruments India | Laboratory Equipment Supplier | Hyderabad ",
     template: "",
   },
-  description: "Scientific & Analytical Instrument Solutions",
+  description: "Being Instruments India — authorised distributor of BEING laboratory equipment. CO₂ incubators, vacuum ovens, ULT freezers, BSCs, rotary evaporators & more. 10+ years · 5,000+ instruments · Hyderabad. Enquire today. ",
+  keywords: [
+    "Being Instruments India",
+    "Being laboratory equipment",
+    "laboratory equipment supplier in Hyderabad",
+    "laboratory instruments Hyderabad",
+    "scientific instruments India",
+    "analytical instruments India",
+    "CO2 incubator supplier",
+    "vacuum oven supplier",
+    "ULT freezer supplier",
+    "biosafety cabinet supplier",
+    "rotary evaporator supplier",
+    "laboratory equipment distributor India",
+  ],
   icons: {
     icon: "/favicon.png",
   },

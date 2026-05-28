@@ -1,12 +1,15 @@
-
+import { notFound } from 'next/navigation';
 import Model from './Model';
+import {
+  getCategoryFromSlug,
+  getPlainDescription,
+  getProductFromSlug,
+  getSiteUrl,
+} from './productData';
 
 export async function generateMetadata({ params }) {
   const { slug = [] } = await params;
 
-  let keywords = [];
-
-  /* ---------- DEFAULT ---------- */
   if (slug.length === 0) {
     return {
       title: 'Products | Being',
@@ -14,97 +17,126 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const categorySlug = slug[0];
+  if (slug.length === 3) {
+    const result = await getProductFromSlug(slug);
 
-  try {
-    const baseUrl =
-      process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-
-    const res = await fetch(
-      `${baseUrl}/api/products/${categorySlug}`,
-      { next: { revalidate: 3600 } }
-    );
-
-    if (!res.ok) throw new Error('API failed');
-
-    const categoryData = await res.json();
-
-    const subSlug = slug[1];
-    const modelSlug = slug[2];
-
-    let title;
-    let description;
-
-    /* ---------- CATEGORY ---------- */
-    if (!subSlug) {
-      title = categoryData.meta.title;
-      description = categoryData.meta.description;
-      // if (categoryData.meta.keywords) {
-      //   keywords = Array.isArray(categoryData.meta.keywords)
-      //     ? categoryData.meta.keywords
-      //     : categoryData.meta.keywords.split(',').map(k => k.trim());
-      // }
+    if (!result) {
+      return {
+        title: 'Product Not Found | Being',
+      };
     }
 
-    /* ---------- SUBCATEGORY ---------- */
-    if (subSlug) {
-      const subCategory = categoryData.subcategories?.find(
-        (s) => s.slug === subSlug
-      );
-
-      if (subCategory) {
-        title = `${subCategory.name} | Being`;
-        description = `Discover ${subCategory.name} instruments with specifications, applications, and service support.`;
-      }
-
-      /* ---------- MODEL ---------- */
-      if (modelSlug && subCategory) {
-        const model = subCategory.models?.find(
-          (m) => m.meta.slug.toLowerCase() === modelSlug.toLowerCase()
-        );
-
-        if (model) {
-          title = `${model.meta.title} | Being`;
-
-          description =
-            model.meta.description ||
-            model.overview?.[0] ||
-            `Technical details and applications of ${model.meta.title}.`;
-
-          // if (model.meta.keywords) {
-          //   keywords = Array.isArray(model.meta.keywords)
-          //     ? model.meta.keywords
-          //     : model.meta.keywords.split(',').map(k => k.trim());
-          // }
-        }
-      }
-    }
+    const { product } = result;
+    const description =
+      product.meta?.description ||
+      getPlainDescription(product.overview) ||
+      `Technical details and applications of ${product.productTitle || product.title}.`;
 
     return {
-      title,
+      title: product.meta?.title || product.productTitle || product.title,
       description,
-      keywords,
+      keywords: product.meta?.keywords,
       alternates: {
         canonical: `/products/${slug.join('/')}`,
       },
       openGraph: {
-        title,
+        title: product.meta?.title || product.productTitle || product.title,
         description,
         type: 'website',
         url: `/products/${slug.join('/')}`,
+        images: product.thumbnail ? [{ url: product.thumbnail }] : undefined,
       },
     };
-  } catch (error) {
-    console.error('Metadata error:', error);
+  }
 
+  const categoryResult = await getCategoryFromSlug(slug);
+  const categoryData = categoryResult?.categoryData;
+  const subSlug = slug[1];
+
+  if (!categoryData) {
     return {
       title: 'Product | Being',
       description: 'Explore laboratory instruments and solutions by Being.',
     };
   }
+
+  let title = categoryData.meta?.title || `${categoryData.category} | Being`;
+  let description =
+    categoryData.meta?.description ||
+    `Discover ${categoryData.category} instruments with specifications, applications, and service support.`;
+
+  if (subSlug) {
+    const subCategory = categoryData.subcategories?.find((sub) => sub.slug === subSlug);
+
+    if (subCategory) {
+      title = `${subCategory.name} | Being`;
+      description = `Discover ${subCategory.name} instruments with specifications, applications, and service support.`;
+    }
+  }
+
+  return {
+    title,
+    description,
+    keywords: [],
+    alternates: {
+      canonical: `/products/${slug.join('/')}`,
+    },
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      url: `/products/${slug.join('/')}`,
+    },
+  };
 }
 
-/* ---------- PAGE RENDER ---------- */
-export default function Page() {
-  return <Model />;
+function ProductSchema({ result }) {
+  const { categorySlug, subSlug, modelSlug, product, subCategory, categoryData } = result;
+  const siteUrl = getSiteUrl();
+  const description =
+    product.meta?.description ||
+    getPlainDescription(product.overview) ||
+    product.productTitle ||
+    product.title;
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.productTitle || product.title || product.model,
+    description,
+    image: product.thumbnail ? `${siteUrl}${product.thumbnail}` : undefined,
+    sku: product.model || product.meta?.slug,
+    brand: {
+      '@type': 'Brand',
+      name: 'Being',
+    },
+    category: `${categoryData.category || categorySlug} > ${subCategory.name || subSlug}`,
+    url: `${siteUrl}/products/${categorySlug}/${subSlug}/${modelSlug}`,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export default async function Page({ params }) {
+  const { slug = [] } = await params;
+
+  if (slug.length === 3) {
+    const productResult = await getProductFromSlug(slug);
+
+    if (!productResult) notFound();
+
+    return (
+      <>
+        <ProductSchema result={productResult} />
+        <Model slug={slug} productResult={productResult} />
+      </>
+    );
+  }
+
+  return <Model slug={slug} />;
 }
