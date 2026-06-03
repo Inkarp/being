@@ -95,7 +95,7 @@ export default function ContactDetails() {
                         <div className="flex items-start gap-5">
                             <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 shadow-lg group-hover:rotate-[360deg] transition-transform duration-500">
                                 <FaUserCog className="w-7 h-7 text-white" />
-                            </divco
+                            </div>
                             <div className="flex flex-col gap-3 min-w-0 flex-1">
                                 <h3 className="font-bold text-white text-lg">Application Support</h3>
                                 <div className="space-y-2 text-white text-lg">
