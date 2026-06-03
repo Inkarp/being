@@ -14,7 +14,7 @@ export default function ContactDetails() {
     };
 
     return (
-        <section className="flex md:flex-row flex-col items-center justify-center py-5">
+        <section className="flex md:flex-row flex-col items-stretch md:items-center justify-center gap-4 py-5 px-4 md:px-0">
             <div className="w-full grid lg:grid-cols-4 gap-3 items-start relative px-4 bg-[#2F4191]/10 py-8">
                 {/* Left Side - Info Content (2/5) */}
                 <div className="lg:col-span-2 w-full space-y-8 text-white flex flex-col items-center justify-start lg:items-start">
@@ -95,7 +95,7 @@ export default function ContactDetails() {
                         <div className="flex items-start gap-5">
                             <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 shadow-lg group-hover:rotate-[360deg] transition-transform duration-500">
                                 <FaUserCog className="w-7 h-7 text-white" />
-                            </div>
+                            </divco
                             <div className="flex flex-col gap-3 min-w-0 flex-1">
                                 <h3 className="font-bold text-white text-lg">Application Support</h3>
                                 <div className="space-y-2 text-white text-lg">
