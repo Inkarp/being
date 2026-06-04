@@ -1488,7 +1488,6 @@ export async function GET() {
                 ]
             },
 
-
             {
                 name: "Recirculating Chiller (–20 °C to +20 °C)",
                 slug: "recirculating-chiller",

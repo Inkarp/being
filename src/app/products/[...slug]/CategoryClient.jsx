@@ -1,40 +1,53 @@
 'use client';
 
-import { useParams } from 'next/navigation';
 import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaArrowRight } from 'react-icons/fa';
-import { useProductContext } from '../../../app/context/ProductContext'; // ✅ ADD
 import Loading from '../../../app/loading';
+import { useProductContext } from '../../../app/context/ProductContext'; // ✅ ADD
 
-const CATEGORY_ALIASES = {
-  cabinet: 'biological-safety-cabinets',
-  cabinets: 'biological-safety-cabinets',
-  'safety-cabinets': 'biological-safety-cabinets',
-  'biological-saftey-cabinets': 'biological-safety-cabinets',
-  'muffle-furnance': 'muffle-furnace',
-};
+function getActiveSubcategory(data, requestedSubSlug) {
+  if (!data?.subcategories?.length) return { subcategory: null, index: 0 };
+
+  const requestedIndex = data.subcategories.findIndex(
+    (sub) => sub.slug?.toLowerCase() === requestedSubSlug?.toLowerCase()
+  );
+  const activeIndex = requestedIndex >= 0 ? requestedIndex : 0;
+
+  return {
+    subcategory: data.subcategories[activeIndex],
+    index: activeIndex,
+  };
+}
 
 
 
-export default function CategoryClient() {
-  const { slug } = useParams();
-  const slugParts = Array.isArray(slug) ? slug : [slug].filter(Boolean);
-  const categorySlug = CATEGORY_ALIASES[slugParts[0]] || slugParts[0];
-  const requestedSubSlug = slugParts[1];
-
+export default function CategoryClient({ categorySlug, requestedSubSlug, categoryData }) {
   const { setCategoryData } = useProductContext(); // ✅ ADD
 
-  const [data, setData] = useState(null);
-  const [activeSub, setActiveSub] = useState(null);
-  const [activeSubSlug, setActiveSubSlug] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const initialActive = getActiveSubcategory(categoryData, requestedSubSlug);
+  const [data, setData] = useState(categoryData || null);
+  const [activeSub, setActiveSub] = useState(initialActive.subcategory?.name || null);
+  const [activeSubSlug, setActiveSubSlug] = useState(initialActive.subcategory?.slug || null);
+  const [loading, setLoading] = useState(!categoryData);
   const [panelAnim, setPanelAnim] = useState('animate-slide-in-right');
 
-  const prevIndexRef = useRef(0);
+  const prevIndexRef = useRef(initialActive.index);
 
   useEffect(() => {
+    if (categoryData) {
+      const nextActive = getActiveSubcategory(categoryData, requestedSubSlug);
+
+      setData(categoryData);
+      setCategoryData(categoryData); // STORE DATA IN CONTEXT
+      setActiveSub(nextActive.subcategory?.name || null);
+      setActiveSubSlug(nextActive.subcategory?.slug || null);
+      prevIndexRef.current = nextActive.index;
+      setLoading(false);
+      return;
+    }
+
     if (!categorySlug) return;
 
     const fetchCategory = async () => {

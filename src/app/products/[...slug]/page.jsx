@@ -125,6 +125,8 @@ function ProductSchema({ result }) {
 export default async function Page({ params }) {
   const { slug = [] } = await params;
 
+  if (slug.length > 3) notFound();
+
   if (slug.length === 3) {
     const productResult = await getProductFromSlug(slug);
 
@@ -138,5 +140,19 @@ export default async function Page({ params }) {
     );
   }
 
-  return <Model slug={slug} />;
+  const categoryResult = await getCategoryFromSlug(slug);
+
+  if (!categoryResult?.categoryData) notFound();
+
+  const requestedSubSlug = slug[1];
+
+  if (requestedSubSlug) {
+    const hasSubcategory = categoryResult.categoryData.subcategories?.some(
+      (sub) => sub.slug?.toLowerCase() === requestedSubSlug.toLowerCase()
+    );
+
+    if (!hasSubcategory) notFound();
+  }
+
+  return <Model slug={slug} categoryResult={categoryResult} />;
 }

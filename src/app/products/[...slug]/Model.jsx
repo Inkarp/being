@@ -5,7 +5,7 @@ import ModelClient from './ModelClient';
 import { ProductProvider } from '../../../app/context/ProductContext';
 
 
-export default function Model({ slug = [], productResult = null }) {
+export default function Model({ slug = [], productResult = null, categoryResult = null }) {
   if (!slug || slug.length === 0) return null;
 
   return (
@@ -20,7 +20,11 @@ export default function Model({ slug = [], productResult = null }) {
           product={productResult.product}
         />
       ) : (
-        <CategoryClient />
+        <CategoryClient
+          categorySlug={categoryResult?.categorySlug}
+          requestedSubSlug={slug[1]}
+          categoryData={categoryResult?.categoryData}
+        />
       )}
     </ProductProvider>
   );
