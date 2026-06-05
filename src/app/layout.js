@@ -1,5 +1,6 @@
 // app/layout.js
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next"
 import { Geist, Geist_Mono, Raleway, DM_Sans, Montserrat } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "./ScrollToTop";
@@ -121,6 +122,7 @@ export default function RootLayout({ children }) {
         <ChatModal />
         <Footer />
         <LastViewedProduct />
+        <Analytics />
       </body>
     </html>
   );
