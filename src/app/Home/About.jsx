@@ -161,7 +161,7 @@ export default function About() {
 
         .about-stat-strip {
           position: absolute;
-          bottom: 1.25rem;
+          top: 1.25rem;
           left: 50%;
           transform: translateX(-50%);
           display: flex;
@@ -202,7 +202,7 @@ export default function About() {
           .about-stat-strip {
             left: 0.75rem;
             right: 0.75rem;
-            bottom: 0.75rem;
+            top: 0.75rem;
             transform: none;
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -36,13 +36,13 @@ function GearCTA({ dark = false }) {
 }
 
 const events = [
-  { title: "Annual Tech Summit 202", date: "25 May, 2026", place: "Mumbai", image: "/assets/events/Analytica-Mumbai.webp" },
+  { title: "Mumbai Analytica", date: "25 May, 2026", place: "Mumbai", image: "/assets/events/Analytica-Mumbai.webp" },
   // { title: "Cloud Infrastructure Workshop", date: "28 March, 2025", place: "Bangalore", image: "/about.jpg" },
   // { title: "AI in Scientific Research Conf.", date: "10 April, 2025", place: "Mumbai", image: "/about.jpg" },
 ];
 
 const blogs = [
-  { title: "How to Optimize Your IT Infrastructure for Maximum Efficiency", image: "/about.jpg", date: "16 March, 2025", author: "Admin" },
+  { title: "How to Optimize Your Efficiency", image: "/about.jpg", date: "16 March, 2026", author: "Admin" },
   // { title: "How IT Infrastructure Can Improve Efficiency and Productivity", image: "/about.jpg", date: "22 March, 2025", author: "Admin" },
 ];
 

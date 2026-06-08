@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
     FaArrowRight,
@@ -75,6 +75,7 @@ export default function Products() {
     const [activeCategory, setActiveCategory] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
     const [loading, setLoading] = useState(true);
+    const resultsRef = useRef(null);
 
     useEffect(() => {
         let mounted = true;
@@ -111,6 +112,16 @@ export default function Products() {
     const handleCategoryChange = (categorySlug) => {
         setActiveCategory(categorySlug);
         setCategoryInUrl(categorySlug);
+
+        if (typeof window !== "undefined" && window.innerWidth < 1024) {
+            window.setTimeout(() => {
+                const top = resultsRef.current?.getBoundingClientRect().top ?? 0;
+                window.scrollTo({
+                    top: window.scrollY + top - 96,
+                    behavior: "smooth",
+                });
+            }, 80);
+        }
     };
 
     const totalProducts = useMemo(
@@ -183,7 +194,7 @@ export default function Products() {
                 </div>
 
                 <div className="grid bg-[#f7f9fc] md:grid-cols-[310px_minmax(0,1fr)]">
-                    <aside className="border-b border-[#dfe7f1] bg-white/85 py-5 md:border-b-0 md:border-r">
+                    <aside className="hidden border-b border-[#dfe7f1] bg-white/85 py-5 md:block md:border-b-0 md:border-r">
                         <div className="flex items-center gap-3 px-6">
                             <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#2F4191] text-white shadow-lg shadow-[#2F4191]/25">
                                 <FaLayerGroup />
@@ -244,7 +255,34 @@ export default function Products() {
                         </div>
                     </aside>
 
-                    <main className="bg-[#f7f9fc] p-5 sm:p-7 lg:p-8">
+                    <main ref={resultsRef} className="scroll-mt-24 bg-[#f7f9fc] p-5 sm:p-7 lg:p-8">
+                        <div className="mb-5 rounded-3xl border border-[#dce6f1] bg-white p-4 shadow-sm md:hidden">
+                            <label
+                                htmlFor="mobile-category"
+                                className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[#2F4191]"
+                            >
+                                <FaLayerGroup />
+                                Categories
+                            </label>
+                            <select
+                                id="mobile-category"
+                                value={activeCategory}
+                                disabled={loading}
+                                onChange={(event) => handleCategoryChange(event.target.value)}
+                                className="h-14 w-full rounded-2xl border border-[#dce6f1] bg-[#f8fbff] px-4 py-3 text-base font-semibold text-[#151b2d] outline-none focus:border-[#2B7EC2] focus:ring-4 focus:ring-[#2B7EC2]/12"
+                            >
+                                {loading && <option value="">Loading categories...</option>}
+                                {categories.map((category) => (
+                                    <option key={category.slug} value={category.slug}>
+                                        {category.name} ({category.totalModels})
+                                    </option>
+                                ))}
+                                <option value={ALL_PRODUCTS}>
+                                    All products ({totalProducts})
+                                </option>
+                            </select>
+                        </div>
+
                         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                             <div>
                                 <div className="inline-flex items-center gap-2 rounded-full bg-[#e8f2ff] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#2F4191]">

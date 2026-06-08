@@ -118,7 +118,6 @@ export default function RootLayout({ children }) {
             {children}
           </main>
         </ProductProvider>
-
         <ChatModal />
         <Footer />
         <LastViewedProduct />

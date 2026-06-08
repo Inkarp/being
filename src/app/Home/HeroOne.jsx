@@ -128,7 +128,7 @@ export default function HeroOne() {
 
     return (
       /* Flex row keeps "Welcome to" + logo + "India" on one line, wrapping gracefully */
-      <span className="inline-flex flex-wrap items-center gap-x-3 leading-tight">
+      <span className="inline-flex flex-wrap items-center justify-center sm:justify-start gap-x-3 leading-tight">
         {/* "Welcome to" static text */}
         <span className={`opacity-0 ${logoVisible ? 'logo-fade-in' : ''}`}>Welcome to</span>
         {/* Being logo — fades in with "Welcome to", same baseline as text */}
@@ -264,8 +264,8 @@ export default function HeroOne() {
           className="hidden sm:block absolute inset-0 w-full h-full object-cover"
         />
 
-        <div className="relative z-20 h-full flex items-start lg:mt-20 mt-8 px-5 sm:px-6 md:px-7 lg:px-24">
-          <div className="w-full lg:max-w-3xl max-w-2xl space-y-4 sm:space-y-5">
+        <div className="relative z-20 h-full flex items-start justify-center sm:justify-start lg:mt-20 mt-8 px-5 sm:px-6 md:px-7 lg:px-24">
+          <div className="w-full lg:max-w-3xl max-w-2xl space-y-4 sm:space-y-5 text-center sm:text-left">
             <h1 className="text-[2.4rem] leading-tight sm:text-5xl lg:text-6xl font-black text-white">
               {renderLine1()}
 
@@ -302,7 +302,7 @@ export default function HeroOne() {
             )}
 
             {subtitle && (
-              <p className="text-sm md:text-base text-gray-300 max-w-lg">
+              <p className="text-sm md:text-base text-gray-300 max-w-lg mx-auto sm:mx-0">
                 {subtitle}
                 {showCursorSub && <span className="typing-cursor" />}
               </p>

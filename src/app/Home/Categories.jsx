@@ -100,6 +100,10 @@ export default function Categories() {
         .cat-scroll-fade-left  { left:  0; background: linear-gradient(to right, #F0ECE4, transparent); }
         .cat-scroll-fade-right { right: 0; background: linear-gradient(to left,  #F0ECE4, transparent); }
 
+        .cat-mobile-cue {
+          display: none;
+        }
+
         .cat-scroll {
           display: flex;
           align-items: center;
@@ -185,6 +189,11 @@ export default function Categories() {
         }
 
         /* ── mobile: stack vertically ── */
+        @keyframes catCueNudge {
+          0%, 100% { transform: translateX(0); opacity: 0.55; }
+          50% { transform: translateX(5px); opacity: 1; }
+        }
+
         @media (max-width: 639px) {
           .cat-inner {
             flex-direction: column;
@@ -194,11 +203,45 @@ export default function Categories() {
             border-right: none;
             border-bottom: 1.5px solid rgba(0,0,0,0.08);
             padding: 14px 20px;
+            justify-content: center;
+            text-align: center;
           }
           .cat-label h2 { font-size: 1rem; }
           .cat-scroll { padding: 0 16px; }
           .cat-tab { padding: 18px 14px; font-size: 0.82rem; }
           .cat-tab::after { left: 14px; right: 14px; }
+
+          .cat-mobile-cue {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            z-index: 3;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border: 1px solid rgba(47,65,145,0.18);
+            border-radius: 999px;
+            background: rgba(255,255,255,0.92);
+            box-shadow: 0 8px 20px rgba(47,65,145,0.16);
+            color: #2F4191;
+            pointer-events: none;
+            transform: translateY(-50%);
+          }
+
+          .cat-mobile-cue span {
+            display: inline-block;
+            font-size: 1.05rem;
+            font-weight: 900;
+            line-height: 1;
+            animation: catCueNudge 1.1s ease-in-out infinite;
+          }
+
+          .cat-mobile-cue span:nth-child(2) {
+            margin-left: -5px;
+            animation-delay: 0.14s;
+          }
         }
 
         @media (min-width: 640px) and (max-width: 1023px) {
@@ -239,6 +282,13 @@ export default function Categories() {
                 </Fragment>
               ))}
             </div>
+
+            {canScrollRight && (
+              <div className="cat-mobile-cue" aria-hidden="true">
+                <span>&rsaquo;</span>
+                <span>&rsaquo;</span>
+              </div>
+            )}
           </div>
 
         </div>
