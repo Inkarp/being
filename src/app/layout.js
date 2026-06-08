@@ -92,7 +92,7 @@ export default function RootLayout({ children }) {
         {/* End Google Tag Manager */}
       </head>
 
-      <body className="bg-white">
+      <body className="bg-white" suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

@@ -244,7 +244,10 @@ export default function PicksForYou() {
                 className="bg-white rounded-[20px] p-5 flex flex-col gap-3 relative overflow-hidden transition-all duration-250 hover:-translate-y-1 cursor-pointer"
                 style={{
                   animationDelay: `${i * 55}ms`,
-                  animation: "cardIn 0.35s ease both",
+                  animationName: "cardIn",
+                  animationDuration: "0.35s",
+                  animationTimingFunction: "ease",
+                  animationFillMode: "both",
                   boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
                 }}
                 onMouseEnter={(e) => {
