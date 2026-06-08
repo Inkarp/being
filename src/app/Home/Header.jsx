@@ -21,17 +21,16 @@ import SearchOverlay from "./SearchOverlay";
 export default function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (isOpen) {
+    if (isSidebarOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
     return () => (document.body.style.overflow = "");
-  }, [isOpen]);
+  }, [isSidebarOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,7 +76,8 @@ export default function Header() {
   ];
 
   return (
-    <div className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 w-[95%] lg:w-[100%] flex items-center justify-between lg:px-0 sm:px-0 lg:py-0 sm:py-0 px-0 border-b-2 border-[#2F4191]/30 shadow-2xl backdrop-blur-lg bg-white/80 font-raleway transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <>
+      <div className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 w-[100%] lg:w-[100%] flex items-center justify-between lg:px-0 sm:px-0 lg:py-0 sm:py-0 px-0 border-b-2 border-[#2F4191]/30 shadow-2xl backdrop-blur-lg bg-white/80 font-raleway transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <Link href="/" className="flex items-center lg:px-10 hidden lg:block justify-center w-auto lg:w-[15%] mx-auto overflow-hidden">
         <Image
           src="/logo.webp"
@@ -170,6 +170,8 @@ export default function Header() {
 
         </div>
       </header >
+    </div>
+
       {/* ================= OVERLAY ================= */}
       {isSidebarOpen && (
         <div
@@ -180,7 +182,7 @@ export default function Header() {
 
       {/* ================= SIDEBAR ================= */}
       <aside
-        className={`fixed top-0 right-0 h-screen w-[85%] sm:w-[340px] max-w-[360px] bg-white shadow-xl z-50  transform transition-transform duration-300 lg:hidden ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 z-50 h-screen w-[85%] max-w-[360px] transform bg-white transition-transform duration-300 sm:w-[340px] lg:hidden ${isSidebarOpen ? "translate-x-0 shadow-xl" : "translate-x-full shadow-none"}`}
       >
         {/* SIDEBAR HEADER */}
         <div className="flex items-center justify-between p-4 border-b sticky top-0 bg-white">
@@ -270,6 +272,6 @@ export default function Header() {
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
       />
-    </div >
+    </>
   );
 }
