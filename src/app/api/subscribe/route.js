@@ -18,20 +18,48 @@ export async function POST(request) {
       from: `"Being Instruments India" <${process.env.EMAIL_USER}>`,
       to: process.env.COMPANY_EMAIL,
       replyTo: formData.email,
-      subject: `New Subscription for Newsletter${formData.product ? ` | ${formData.product}` : ""}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 620px; margin: auto; background:#0f172a; padding:32px; border-radius:16px;">
-          <h2 style="color:#f97316; margin-bottom:24px;">Subscription for Newsletter</h2>
-          <table style="width:100%; border-collapse:collapse; background:#020617;">
+      subject: `Newsletter Subscription${formData.product ? ` | ${formData.product}` : ""}`,
+      html: `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Newsletter Subscription</title>
+</head>
+<body style="margin:0;padding:0;font-family:Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="padding:20px 0;">
+  <tr><td align="center">
+    <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;border:1px solid #e5e7eb;">
+      <tr>
+        <td style="padding:20px 15px;background:#2F4191;color:white;">
+          <h2 style="margin:0;font-size:18px;color:white;">Newsletter Subscription</h2>
+          <p style="margin:5px 0 0;font-size:12px;color:white;">Submitted on ${new Date().toLocaleString("en-IN")}</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:0;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
             <tr>
-              <td style="padding:10px; color:#94a3b8;">Email</td>
-              <td style="padding:10px; color:#f8fafc;">${formData.email}</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;font-weight:bold;text-align:left;width:35%;">Email</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:left;">${formData.email}</td>
             </tr>
+            ${formData.product ? `<tr>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;font-weight:bold;text-align:left;width:35%;">Product</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:left;">${formData.product}</td>
+            </tr>` : ""}
           </table>
-          <p style="margin-top:28px; color:#64748b; font-size:13px; text-align:center;">
-            Submitted on ${new Date().toLocaleString("en-IN")}
-          </p>
-        </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:15px;border-top:1px solid #e5e7eb;text-align:center;font-size:12px;">
+          Auto-generated from Being India website. Do not reply to this email.
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+</table>
+</body>
+</html>
       `,
     });
 

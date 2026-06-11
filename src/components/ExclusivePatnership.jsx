@@ -1,6 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState, useRef } from 'react';
+import { collectTracking } from '../lib/browserTracking';
 
 const INITIAL_STATE = {
   name: '',
@@ -115,7 +116,7 @@ export default function ExclusivePartner({ isOpen, onClose, productData }) {
       const res = await fetch('/api/exclusivePatner', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, country: 'India' }),
+        body: JSON.stringify({ ...formData, country: 'India', ...collectTracking() }),
       });
       if (!res.ok) throw new Error('Submission failed');
       setSubmitted(true);

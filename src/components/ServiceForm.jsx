@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { collectTracking } from '../lib/browserTracking';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -277,7 +278,7 @@ export default function ServiceForm({
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, ...collectTracking() }),
       });
       if (!res.ok) throw new Error('Submission failed');
       setSubmitted(true);

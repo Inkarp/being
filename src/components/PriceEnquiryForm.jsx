@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from 'react';
 import Image from 'next/image';
+import { collectTracking } from '../lib/browserTracking';
 
 // ─── Regex & Constants ────────────────────────────────────────────────────────
 
@@ -27,55 +28,6 @@ const INITIAL_FORM = {
 };
 
 // ─── Tracking ─────────────────────────────────────────────────────────────────
-
-function detectDevice(ua = '') {
-  if (/tablet|ipad|playbook|silk/i.test(ua)) return 'Tablet';
-  if (/mobile|android|iphone|ipod|blackberry|opera mini|iemobile/i.test(ua)) return 'Mobile';
-  return 'Desktop';
-}
-
-function parseReferrer(ref = '') {
-  if (!ref) return { source: 'Direct / None', keyword: '' };
-  try {
-    const url = new URL(ref);
-    const host = url.hostname.toLowerCase();
-    const engines = [
-      { p: /google\./, n: 'Google', q: 'q' },
-      { p: /bing\./, n: 'Bing', q: 'q' },
-      { p: /yahoo\./, n: 'Yahoo', q: 'p' },
-      { p: /duckduckgo\./, n: 'DuckDuckGo', q: 'q' },
-      { p: /yandex\./, n: 'Yandex', q: 'text' },
-    ];
-    for (const e of engines) {
-      if (e.p.test(host)) return { source: e.n, keyword: url.searchParams.get(e.q) || '(not provided)' };
-    }
-    const social = [
-      [/facebook\.|fb\.com/, 'Facebook'], [/instagram\./, 'Instagram'],
-      [/linkedin\./, 'LinkedIn'], [/twitter\.|x\.com/, 'Twitter / X'],
-      [/youtube\./, 'YouTube'], [/whatsapp\./, 'WhatsApp'],
-    ];
-    for (const [p, n] of social) if (p.test(host)) return { source: n, keyword: '' };
-    return { source: `Referral: ${url.hostname}`, keyword: '' };
-  } catch { return { source: 'Unknown', keyword: '' }; }
-}
-
-function collectTracking() {
-  if (typeof window === 'undefined') return {};
-  const ua = navigator.userAgent || '';
-  const ref = document.referrer || '';
-  const p = new URLSearchParams(window.location.search);
-  const { source, keyword } = parseReferrer(ref);
-  return {
-    _pageUrl: window.location.href,
-    _referrerUrl: ref || 'Direct / None',
-    _trafficSource: p.get('utm_source') || source,
-    _searchKeyword: p.get('utm_term') || p.get('utm_keyword') || keyword,
-    _utmMedium: p.get('utm_medium') || '',
-    _utmCampaign: p.get('utm_campaign') || '',
-    _deviceType: detectDevice(ua),
-    _userAgent: ua,
-  };
-}
 
 function pushDataLayer(eventData) {
   if (typeof window === 'undefined') return;

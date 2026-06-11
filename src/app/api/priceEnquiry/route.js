@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import clientPromise from '../../library/mongodb';
 import { sendEmail } from '../../library/mailer';
+import { normalizeTracking } from '../_utils/tracking';
 
 export const runtime = 'nodejs';
 
@@ -88,43 +89,22 @@ function getMissingEmailEnv() {
 
 function buildEmailHtml(formData, ip, submittedAt) {
 
-  function row(label, value, highlight) {
-    const bgColor    = highlight ? '#1e3a5f' : '#020617';
-    const labelColor = '#94a3b8';
-    const valueColor = highlight ? '#fbbf24' : '#e2e8f0';
-    return (
-      `<tr style="background:${bgColor};">` +
-        `<td style="padding:11px 16px;border-bottom:1px solid #1e293b;font-size:13px;font-weight:700;color:${labelColor};white-space:nowrap;width:36%;vertical-align:top;">${label}</td>` +
-        `<td style="padding:11px 16px;border-bottom:1px solid #1e293b;font-size:13px;color:${valueColor};word-break:break-word;font-weight:${highlight ? '700' : '400'};">${sanitize(value) || '<span style="color:#334155;">—</span>'}</td>` +
-      `</tr>`
-    );
-  }
-
-  function sectionHead(title, emoji) {
+  function row(label, value) {
     return (
       `<tr>` +
-        `<td colspan="2" style="padding:12px 16px 8px;background:#0f172a;border-bottom:1px solid #1e293b;border-top:2px solid #1e293b;">` +
-          `<span style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#475569;">${emoji}  ${title}</span>` +
-        `</td>` +
+        `<td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;font-weight:bold;text-align:left;width:35%;">${label}</td>` +
+        `<td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:left;">${sanitize(value) || '—'}</td>` +
       `</tr>`
     );
   }
 
-  const source      = formData._trafficSource || 'Direct';
-  let   accentColor = '#22d3ee';
-  if (/google/i.test(source))              accentColor = '#4285F4';
-  if (/bing/i.test(source))               accentColor = '#008373';
-  if (/facebook|instagram/i.test(source)) accentColor = '#1877F2';
-  if (/direct/i.test(source))             accentColor = '#64748b';
-
-  const device      = sanitize(formData._deviceType || 'Unknown');
-  let   deviceColor = '#22d3ee';
-  if (/mobile/i.test(device)) deviceColor = '#f59e0b';
-  if (/tablet/i.test(device)) deviceColor = '#a78bfa';
-
-  const kw      = formData._searchKeyword || '';
-  const hasReal = kw && !/not provided/i.test(kw);
-  const kwColor  = hasReal ? '#fbbf24' : '#475569';
+  function sectionHead(title) {
+    return (
+      `<tr>` +
+        `<td colspan="2" style="padding:10px 12px;font-weight:bold;text-align:left;background:#f9fafb;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">${title}</td>` +
+      `</tr>`
+    );
+  }
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -133,106 +113,56 @@ function buildEmailHtml(formData, ip, submittedAt) {
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Price Enquiry — ${sanitize(formData.product)}</title>
 </head>
-<body style="margin:0;padding:0;background:#0f172a;font-family:Arial,sans-serif;">
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#0f172a;padding:32px 16px;">
+<body style="margin:0;padding:0;font-family:Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="padding:20px 0;">
   <tr><td align="center">
-    <table width="620" cellpadding="0" cellspacing="0" style="max-width:620px;width:100%;">
+    <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;border:1px solid #e5e7eb;">
 
       <!-- HEADER -->
       <tr>
-        <td style="background:${accentColor}18;border:1px solid ${accentColor}44;border-radius:12px 12px 0 0;padding:24px 28px;">
-          <p style="margin:0 0 4px;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:${accentColor};">Being India — Price Enquiry</p>
-          <h1 style="margin:0;font-size:22px;color:#f8fafc;font-weight:800;">${sanitize(formData.product)}</h1>
-          ${formData.price ? `<p style="margin:6px 0 0;font-size:14px;color:#4ade80;font-weight:700;">₹ ${sanitize(formData.price)}</p>` : ''}
-          <p style="margin:10px 0 0;font-size:11px;color:#475569;">Received: ${submittedAt}</p>
+        <td style="padding:20px 15px;background:#2F4191;color:white;">
+          <h2 style="margin:0 0 10px;font-size:18px;color:white;">Price Enquiry</h2>
+          <p style="margin:0 0 5px;font-weight:bold;color:white;">Product: ${sanitize(formData.product)}</p>
+          ${formData.price ? `<p style="margin:0 0 5px;color:white;">Price: ₹ ${sanitize(formData.price)}</p>` : ''}
+          <p style="margin:0;font-size:12px;color:white;">Received: ${submittedAt}</p>
         </td>
       </tr>
 
       <!-- TABLE BODY -->
       <tr>
-        <td style="background:#020617;border-left:1px solid ${accentColor}33;border-right:1px solid ${accentColor}33;padding:0;">
+        <td style="padding:0;">
           <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
 
-            ${sectionHead('Contact Details', '👤')}
-            ${row('Full Name',    formData.name,        true)}
-            ${row('Company',      formData.company,     false)}
-            ${row('Designation',  formData.designation, false)}
-            ${row('Department',   formData.department,  false)}
-            ${row('Industry',     formData.industry,    false)}
-            ${row('Phone',        '+91 ' + formData.phone, false)}
-            ${row('Email',        formData.email,       false)}
+            ${sectionHead('Contact Information')}
+            ${row('Full Name', formData.name)}
+            ${row('Company', formData.company)}
+            ${row('Designation', formData.designation)}
+            ${row('Department', formData.department)}
+            ${row('Industry', formData.industry)}
+            ${row('Phone', '+91 ' + formData.phone)}
+            ${row('Email', formData.email)}
 
-            ${sectionHead('Business Info', '🏢')}
-            ${formData.gstNumber ? row('GST Number', formData.gstNumber, false) : ''}
-            ${row('City',    formData.city,  false)}
-            ${row('State',   formData.state, false)}
-            ${row('Country', 'India',        false)}
+            ${sectionHead('Location Details')}
+            ${row('City', formData.city)}
+            ${row('State', formData.state)}
+            ${row('Country', 'India')}
+            ${formData.gstNumber ? row('GST Number', formData.gstNumber) : ''}
 
             ${formData.message
-              ? sectionHead('Requirements / Message', '💬') +
-                `<tr><td colspan="2" style="padding:14px 16px;background:#020617;border-bottom:1px solid #1e293b;font-size:13px;color:#cbd5e1;line-height:1.7;">${sanitize(formData.message)}</td></tr>`
+              ? sectionHead('Message') +
+                `<tr><td colspan="2" style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">${sanitize(formData.message).replace(/\n/g, '<br>')}</td></tr>`
               : ''}
 
-            ${sectionHead('Visitor Intelligence', '📊')}
-
-            <!-- IP -->
-            <tr style="background:#020617;">
-              <td style="padding:11px 16px;border-bottom:1px solid #1e293b;font-size:13px;font-weight:700;color:#94a3b8;white-space:nowrap;width:36%;vertical-align:top;">🌐 IP Address</td>
-              <td style="padding:11px 16px;border-bottom:1px solid #1e293b;font-size:13px;color:#f87171;font-weight:700;font-family:monospace;">${sanitize(ip)}</td>
-            </tr>
-
-            <!-- Device -->
-            <tr style="background:#020617;">
-              <td style="padding:11px 16px;border-bottom:1px solid #1e293b;font-size:13px;font-weight:700;color:#94a3b8;white-space:nowrap;vertical-align:top;">💻 Device</td>
-              <td style="padding:11px 16px;border-bottom:1px solid #1e293b;">
-                <span style="display:inline-block;background:${deviceColor}22;color:${deviceColor};border:1px solid ${deviceColor}55;border-radius:20px;padding:2px 12px;font-size:11px;font-weight:800;letter-spacing:.5px;">${device}</span>
-              </td>
-            </tr>
-
-            <!-- Traffic Source -->
-            <tr style="background:#020617;">
-              <td style="padding:11px 16px;border-bottom:1px solid #1e293b;font-size:13px;font-weight:700;color:#94a3b8;white-space:nowrap;vertical-align:top;">🔍 Traffic Source</td>
-              <td style="padding:11px 16px;border-bottom:1px solid #1e293b;">
-                <span style="display:inline-block;background:${accentColor}22;color:${accentColor};border:1px solid ${accentColor}55;border-radius:20px;padding:2px 12px;font-size:11px;font-weight:800;letter-spacing:.5px;">${sanitize(source)}</span>
-              </td>
-            </tr>
-
-            <!-- Search Keyword -->
-            <tr style="background:#020617;">
-              <td style="padding:11px 16px;border-bottom:1px solid #1e293b;font-size:13px;font-weight:700;color:#94a3b8;white-space:nowrap;vertical-align:top;">🔑 Search Keyword</td>
-              <td style="padding:11px 16px;border-bottom:1px solid #1e293b;font-size:13px;color:${kwColor};font-weight:${hasReal ? '700' : '400'};">
-                ${kw ? sanitize(kw) : '<span style="color:#334155;font-style:italic;">Not available</span>'}
-              </td>
-            </tr>
-
-            ${formData._utmCampaign ? row('📢 Campaign', formData._utmCampaign, false) : ''}
-            ${formData._utmMedium   ? row('📡 Medium',   formData._utmMedium,   false) : ''}
-
-            <!-- Page URL -->
-            <tr style="background:#020617;">
-              <td style="padding:11px 16px;border-bottom:1px solid #1e293b;font-size:13px;font-weight:700;color:#94a3b8;white-space:nowrap;vertical-align:top;">📄 Page URL</td>
-              <td style="padding:11px 16px;border-bottom:1px solid #1e293b;font-size:12px;word-break:break-all;">
-                ${formData._pageUrl
-                  ? `<a href="${sanitize(formData._pageUrl)}" style="color:#38bdf8;text-decoration:none;">${sanitize(formData._pageUrl)}</a>`
-                  : '<span style="color:#334155;">—</span>'}
-              </td>
-            </tr>
-
-            <!-- Referrer -->
-            <tr style="background:#020617;">
-              <td style="padding:11px 16px;border-bottom:1px solid #1e293b;font-size:13px;font-weight:700;color:#94a3b8;white-space:nowrap;vertical-align:top;">🔗 Referrer</td>
-              <td style="padding:11px 16px;border-bottom:1px solid #1e293b;font-size:12px;word-break:break-all;color:#64748b;">
-                ${formData._referrerUrl && formData._referrerUrl !== 'Direct / None'
-                  ? `<a href="${sanitize(formData._referrerUrl)}" style="color:#64748b;text-decoration:none;">${sanitize(formData._referrerUrl)}</a>`
-                  : '<span style="color:#334155;font-style:italic;">Direct / None</span>'}
-              </td>
-            </tr>
-
-            <!-- User Agent -->
-            <tr style="background:#020617;">
-              <td style="padding:9px 16px;font-size:11px;font-weight:600;color:#334155;white-space:nowrap;vertical-align:top;">🖥️ User Agent</td>
-              <td style="padding:9px 16px;font-size:10px;color:#334155;word-break:break-all;font-family:monospace;">${sanitize(formData._userAgent || '')}</td>
-            </tr>
+            ${sectionHead('Tracking Information')}
+            ${row('IP Address', ip)}
+            ${row('Device', formData._deviceType || 'Unknown')}
+            ${row('Traffic Source', formData._trafficSource || 'Direct')}
+            ${row('Search Keyword', formData._searchKeyword || '—')}
+            ${formData._utmCampaign ? row('UTM Campaign', formData._utmCampaign) : ''}
+            ${formData._utmMedium ? row('UTM Medium', formData._utmMedium) : ''}
+            ${row('Page URL', formData._pageUrl || '—')}
+            ${row('Referrer', formData._referrerUrl || 'Direct / None')}
+            ${row('User Agent', formData._userAgent || '—')}
 
           </table>
         </td>
@@ -240,8 +170,8 @@ function buildEmailHtml(formData, ip, submittedAt) {
 
       <!-- FOOTER -->
       <tr>
-        <td style="background:#0f172a;border:1px solid ${accentColor}22;border-top:none;border-radius:0 0 12px 12px;padding:16px 28px;text-align:center;">
-          <p style="margin:0;font-size:11px;color:#334155;">Auto-generated from the Being India website. Do not reply to this email.</p>
+        <td style="padding:15px;border-top:1px solid #e5e7eb;text-align:center;font-size:12px;">
+          Auto-generated from Being India website. Do not reply to this email.
         </td>
       </tr>
 
@@ -366,6 +296,7 @@ export async function POST(request) {
 
   // ── 7. Timestamp ──
   const submittedAt = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+  const tracking = normalizeTracking(formData, ip);
 
   // ── 8. Save to MongoDB ──
   let dbInsertedId = null;
@@ -403,18 +334,7 @@ export async function POST(request) {
       message:     formData.message       || null,
 
       // Tracking
-      tracking: {
-        ip:            ip,
-        deviceType:    formData._deviceType    || null,
-        referrer:      formData._referrerUrl   || null,
-        pageUrl:       formData._pageUrl       || null,
-        trafficSource: formData._trafficSource || null,
-        searchKeyword: formData._searchKeyword || null,
-        utmSource:     formData._trafficSource || null,
-        utmMedium:     formData._utmMedium     || null,
-        utmCampaign:   formData._utmCampaign   || null,
-        userAgent:     formData._userAgent     || null,
-      },
+      tracking,
 
       // Timestamps
       createdAt: new Date(),

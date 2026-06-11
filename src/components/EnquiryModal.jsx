@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FaTimes, FaPaperPlane, FaCheckCircle, FaSpinner } from 'react-icons/fa';
+import { collectTracking } from '../lib/browserTracking';
 
 /* ─────────────────────────────────────────── */
 /*  Constants                                  */
@@ -195,7 +196,7 @@ export default function EnquiryModal({ isOpen, onClose, productData }) {
       const res = await fetch('/api/enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, ...collectTracking() }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || data.message || 'Submission failed');

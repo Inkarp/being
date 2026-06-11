@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import clientPromise from "../../library/mongodb";
 import { sendEmail } from "../../library/mailer";
+import { buildTrackingEmailRows, normalizeTracking } from "../_utils/tracking";
 
 export const runtime = 'nodejs';
 
@@ -62,6 +63,8 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
     }
 
+    const tracking = normalizeTracking(formData, request);
+
     /* ---------------- SAVE TO DATABASE ---------------- */
 
     const client = await clientPromise;
@@ -84,22 +87,7 @@ export async function POST(request) {
       category: formData.category || null,
       message: formData.message || null,
 
-      tracking: {
-        ipAddress: formData.ipAddress,
-        source: formData.source,
-        keyword: formData.keyword,
-        deviceType: formData.deviceType,
-        referrer: formData.referrer,
-        landingUrl: formData.landingUrl,
-        pagePath: formData.pagePath,
-        utm_source: formData.utm_source,
-        utm_medium: formData.utm_medium,
-        utm_campaign: formData.utm_campaign,
-        utm_term: formData.utm_term,
-        utm_content: formData.utm_content,
-        gclid: formData.gclid,
-        fbclid: formData.fbclid,
-      },
+      tracking,
 
       status: "New",
       createdAt: new Date(),
@@ -109,79 +97,76 @@ export async function POST(request) {
 
     /* ---------------- EMAIL CONTENT ---------------- */
 
+    function row(label, value) {
+      return `<tr>
+        <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;font-weight:bold;text-align:left;width:35%;">${label}</td>
+        <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:left;">${escapeHtml(String(value)) || '—'}</td>
+      </tr>`;
+    }
+
+    function sectionHead(title) {
+      return `<tr>
+        <td colspan="2" style="padding:10px 12px;font-weight:bold;text-align:left;background:#f9fafb;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">${title}</td>
+      </tr>`;
+    }
+
     const mailOptions = {
       from: `"Inkarp Instruments India" <${process.env.EMAIL_USER}>`,
       to: process.env.COMPANY_EMAIL,
       replyTo: formData.email,
       subject: `New Product Enquiry | ${escapeHtml(formData.product)}`,
-      html: `
-    <div style="font-family: Arial, sans-serif; max-width: 720px; margin:auto; background:#0f172a; padding:32px; border-radius:16px; color:white;">
-      
-      <h2 style="color:#f97316; margin-bottom:24px;">
-        🆕 New Product Enquiry
-      </h2>
-
-      <div style="background:#1e293b; padding:16px; border-radius:10px; margin-bottom:20px;">
-        <p><strong>Product:</strong> ${escapeHtml(formData.product)}</p>
-        <p><strong>Category:</strong> ${escapeHtml(formData.category || 'N/A')}</p>
-      </div>
-
-      <table style="width:100%; border-collapse:collapse; background:#020617;">
-        ${generateRow("Name", formData.name)}
-        ${generateRow("Company", formData.company)}
-        ${generateRow("Industry", formData.industry)}
-        ${generateRow("Designation", formData.designation)}
-        ${generateRow("Department", formData.department)}
-        ${generateRow("Phone", "+91 " + formData.phone)}
-        ${generateRow("Personal Email", formData.email)}
-      
-        ${generateRow("Country", formData.country || "India")}
-        ${generateRow("State", formData.state)}
-        ${generateRow("City", formData.city)}
-        ${generateRow("Message", formData.message || 'N/A')}
-      </table>
-
-      <hr style="margin:30px 0; border-color:#334155;" />
-
-      <h3 style="color:#38bdf8;">📊 Tracking Information</h3>
-
-      <table style="width:100%; border-collapse:collapse; background:#020617;">
-        ${generateRow("IP Address", formData.ipAddress)}
-        ${generateRow("Source", formData.source)}
-        ${generateRow("Keyword", formData.keyword)}
-        ${generateRow("Device Type", formData.deviceType)}
-        ${generateRow("Referrer", formData.referrer)}
-        ${generateRow("Landing URL", formData.landingUrl)}
-        ${generateRow("Page Path", formData.pagePath)}
-        ${generateRow("UTM Source", formData.utm_source)}
-        ${generateRow("UTM Medium", formData.utm_medium)}
-        ${generateRow("UTM Campaign", formData.utm_campaign)}
-        ${generateRow("UTM Term", formData.utm_term)}
-        ${generateRow("UTM Content", formData.utm_content)}
-        ${generateRow("GCLID", formData.gclid)}
-        ${generateRow("FBCLID", formData.fbclid)}
-      </table>
-
-      <p style="margin-top:28px; color:#94a3b8; font-size:13px; text-align:center;">
-        Submitted on ${new Date().toLocaleString('en-IN')}
-      </p>
-
-    </div>
-  `,
+      html: `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Product Enquiry — ${escapeHtml(formData.product)}</title>
+</head>
+<body style="margin:0;padding:0;font-family:Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="padding:20px 0;">
+  <tr><td align="center">
+    <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;border:1px solid #e5e7eb;">
+      <tr>
+        <td style="padding:20px 15px;background:#2F4191;color:white;">
+          <h2 style="margin:0 0 10px;font-size:18px;color:white;">Product Enquiry</h2>
+          <p style="margin:0 0 5px;font-weight:bold;color:white;">Product: ${escapeHtml(formData.product)}</p>
+          <p style="margin:0 0 5px;color:white;">Category: ${escapeHtml(formData.category || 'N/A')}</p>
+          <p style="margin:0;font-size:12px;color:white;">Submitted on ${new Date().toLocaleString('en-IN')}</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:0;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+            ${sectionHead('Contact Information')}
+            ${row('Full Name', formData.name)}
+            ${row('Company', formData.company)}
+            ${row('Industry', formData.industry)}
+            ${row('Designation', formData.designation)}
+            ${row('Department', formData.department)}
+            ${row('Phone', '+91 ' + formData.phone)}
+            ${row('Email', formData.email)}
+            ${sectionHead('Location Details')}
+            ${row('City', formData.city)}
+            ${row('State', formData.state)}
+            ${row('Country', formData.country || 'India')}
+            ${formData.message ? sectionHead('Message') + `<tr><td colspan="2" style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">${escapeHtml(formData.message).replace(/\n/g, '<br>')}</td></tr>` : ''}
+            ${sectionHead('Tracking Information')}
+            ${buildTrackingEmailRows(tracking)}
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:15px;border-top:1px solid #e5e7eb;text-align:center;font-size:12px;">
+          Auto-generated from Being India website. Do not reply to this email.
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+</table>
+</body>
+</html>
+      `,
     };
-
-    function generateRow(label, value) {
-      return `
-    <tr>
-      <td style="padding:10px; color:#94a3b8; border-bottom:1px solid #1e293b;">
-        ${label}
-      </td>
-      <td style="padding:10px; color:#f8fafc; border-bottom:1px solid #1e293b;">
-        ${value ? escapeHtml(String(value)) : 'N/A'}
-      </td>
-    </tr>
-  `;
-    }
 
     await sendEmail(mailOptions);
 

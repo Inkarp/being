@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
+import { collectTracking } from '../../lib/browserTracking';
 
 export default function Form() {
 
@@ -137,12 +138,21 @@ export default function Form() {
             const res = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(form),
+                body: JSON.stringify({ ...form, ...collectTracking() }),
             });
 
-            if (!res.ok) throw new Error();
+            const body = await res.json().catch(() => null);
+            if (!res.ok) {
+                const message = body?.error || `Request failed with status ${res.status}`;
+                throw new Error(message);
+            }
+
+            if (!body?.success) {
+                throw new Error(body?.error || 'Submission failed. Please try again.');
+            }
 
             setStatus('success');
+            setError(null);
 
             setForm(prev => ({
                 ...prev,
@@ -152,9 +162,9 @@ export default function Form() {
                 state: '', city: '', message: ''
             }));
 
-        } catch {
+        } catch (err) {
             setStatus('error');
-            setError('Something went wrong. Please try again later.');
+            setError(err?.message || 'Something went wrong. Please try again later.');
         } finally {
             setLoading(false);
         }
